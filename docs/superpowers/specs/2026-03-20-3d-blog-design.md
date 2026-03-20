@@ -97,6 +97,8 @@ A personal tech blog combining Apple-inspired design aesthetics with creative 3D
 
 ### Additional Dependencies
 
+- **geist** (Geist Sans and Geist Mono fonts via npm)
+- **Clash Display** (self-hosted font files, see Typography section)
 - **feed** (RSS feed generation)
 - **three** (core 3D library for React Three Fiber)
 
@@ -142,12 +144,98 @@ A personal tech blog combining Apple-inspired design aesthetics with creative 3D
 
 ### Typography
 
+#### Font Pairing: Geist + Clash Display
+
+**Body Text**: Geist Sans (Vercel's modern font, 2024)
+**Headings**: Clash Display (Geometric, bold, premium)
+
+**Why this pairing:**
+- Ultra-modern, tech-forward aesthetic
+- Perfect for 3D/graphics content
+- Excellent readability with distinctive personality
+- Geist optimized for UI/code
+- Clash Display adds visual impact to headings
+
 #### Font Stack
 
+**Body/UI (Geist Sans):**
 ```css
-font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display',
-             'Segoe UI', Roboto, sans-serif;
+font-family: var(--font-geist-sans), -apple-system, BlinkMacSystemFont,
+             'Segoe UI', sans-serif;
 ```
+
+**Headings (Clash Display):**
+```css
+font-family: var(--font-clash-display), var(--font-geist-sans), sans-serif;
+```
+
+**Code Blocks (Geist Mono):**
+```css
+font-family: var(--font-geist-mono), 'Courier New', monospace;
+```
+
+#### Font Loading (Next.js)
+
+```typescript
+// app/layout.tsx
+import { GeistSans } from 'geist/font/sans';
+import { GeistMono } from 'geist/font/mono';
+import localFont from 'next/font/local';
+
+const clashDisplay = localFont({
+  src: [
+    {
+      path: '../public/fonts/ClashDisplay-Regular.woff2',
+      weight: '400',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/ClashDisplay-Semibold.woff2',
+      weight: '600',
+      style: 'normal',
+    },
+    {
+      path: '../public/fonts/ClashDisplay-Bold.woff2',
+      weight: '700',
+      style: 'normal',
+    },
+  ],
+  variable: '--font-clash-display',
+  display: 'swap',
+});
+
+// In HTML tag:
+// className={`${GeistSans.variable} ${GeistMono.variable} ${clashDisplay.variable}`}
+```
+
+#### Font Acquisition
+
+**Geist (Free via npm):**
+```bash
+bun add geist
+```
+
+**Clash Display (Purchase Required):**
+
+**Option 1 - Fontshare (Free with limits, or paid):**
+- Visit: https://www.fontshare.com/fonts/clash-display
+- Free for personal and commercial use
+- Download WOFF2 files
+- Place in `/public/fonts/` directory
+
+**Option 2 - Indian Type Foundry (Full License):**
+- Visit: https://www.indiantypefoundry.com/fonts/clash
+- ~$60 for full family
+- Complete variable font support
+- Best for commercial use
+
+**Required Files:**
+- ClashDisplay-Regular.woff2
+- ClashDisplay-Semibold.woff2
+- ClashDisplay-Bold.woff2
+
+**Alternative (If budget constrained):**
+Use **Satoshi** from Fontshare (free alternative with similar geometric style)
 
 #### Type Scale
 
@@ -161,14 +249,21 @@ font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display',
 --text-3xl: 1.875rem;  /* 30px - Page titles */
 --text-4xl: 2.25rem;   /* 36px - Hero titles */
 --text-5xl: 3rem;      /* 48px - Main hero */
+--text-6xl: 3.75rem;   /* 60px - Large hero (Clash Display) */
 ```
 
 #### Font Weights
 
-- **Regular**: 400 (body text)
-- **Medium**: 500 (subheadings)
-- **Semibold**: 600 (card titles)
-- **Bold**: 700 (headings)
+**Geist Sans:**
+- **Regular**: 400 (body text, UI)
+- **Medium**: 500 (subtle emphasis)
+- **Semibold**: 600 (strong emphasis)
+- **Bold**: 700 (rare, special cases)
+
+**Clash Display:**
+- **Regular**: 400 (h3, h4)
+- **Semibold**: 600 (h2)
+- **Bold**: 700 (h1, hero)
 
 #### Line Heights
 
@@ -1224,13 +1319,18 @@ module.exports = {
 - [ ] Initialize Next.js 15 project with Bun
 - [ ] Configure Tailwind CSS v3.4+
 - [ ] Set up TypeScript (strict mode)
+- [ ] Install and configure fonts (Geist + Clash Display)
+  - Install `geist` package via Bun
+  - Download Clash Display from Fontshare or Indian Type Foundry
+  - Set up font loading in root layout
+  - Configure CSS variables for font families
 - [ ] Install shadcn/ui components
 - [ ] Implement design system (CSS variables, colors, typography)
 - [ ] Create basic layout components (Header, Footer)
 - [ ] Set up dark/light theme toggle
 - [ ] Configure ESLint + Prettier
 
-**Deliverable**: Basic site shell with theme switching
+**Deliverable**: Basic site shell with theme switching and premium typography
 
 ### Phase 2: Content Pipeline (Week 2)
 
