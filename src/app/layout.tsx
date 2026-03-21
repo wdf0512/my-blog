@@ -3,6 +3,8 @@ import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import localFont from 'next/font/local';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
+import { Header } from '@/components/layout/Header';
+import { Footer } from '@/components/layout/Footer';
 import './globals.css';
 
 const clashDisplay = localFont({
@@ -44,21 +46,14 @@ export default function RootLayout({
       className={`${GeistSans.variable} ${GeistMono.variable} ${clashDisplay.variable}`}
       suppressHydrationWarning
     >
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              try {
-                const theme = localStorage.getItem('theme') ||
-                  (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-                document.documentElement.classList.toggle('dark', theme === 'dark');
-              } catch (e) {}
-            `,
-          }}
-        />
-      </head>
       <body className="font-sans">
-        <ThemeProvider>{children}</ThemeProvider>
+        <ThemeProvider>
+          <div className="flex min-h-screen flex-col">
+            <Header />
+            <main className="flex-1">{children}</main>
+            <Footer />
+          </div>
+        </ThemeProvider>
       </body>
     </html>
   );
