@@ -62,3 +62,6 @@ next-env.d.ts
 # velite
 .velite
 public/static
+
+# Use bun.lock instead of package-lock.json
+package-lock.json
