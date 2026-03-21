@@ -1,0 +1,107 @@
+---
+title: Understanding React Server Components
+slug: react-server-components
+description: A deep dive into React Server Components and how they revolutionize data fetching
+date: 2026-03-20
+published: true
+tags: [react, nextjs, performance]
+---
+
+# Understanding React Server Components
+
+React Server Components (RSC) are a game-changer for building modern web applications. Let's explore how they work and why they matter.
+
+## What Are Server Components?
+
+Server Components are React components that **run only on the server**. They never ship JavaScript to the client, making your app significantly lighter.
+
+### Key Benefits
+
+- **Zero Bundle Size**: Server Components don't add to your JavaScript bundle
+- **Direct Database Access**: Fetch data directly without API routes
+- **Automatic Code Splitting**: Only client components are bundled
+- **Better Performance**: Reduced client-side JavaScript
+
+## Example: Fetching Data
+
+Here's how you fetch data in a Server Component:
+
+```tsx
+// app/posts/page.tsx (Server Component by default)
+import { posts } from '@/.velite';
+
+export default async function PostsPage() {
+  // Direct data access - no API route needed!
+  const publishedPosts = posts.filter((post) => post.published);
+
+  return (
+    <div className="container mx-auto">
+      <h1 className="font-display text-4xl mb-8">Blog Posts</h1>
+      <ul className="space-y-4">
+        {publishedPosts.map((post) => (
+          <li key={post.slug}>
+            <h2 className="text-2xl font-semibold">{post.title}</h2>
+            <p className="text-text-secondary">{post.description}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+```
+
+## Server vs Client Components
+
+| Feature | Server Component | Client Component |
+|---------|-----------------|------------------|
+| Interactivity | ❌ No | ✅ Yes |
+| State & Effects | ❌ No | ✅ Yes |
+| Bundle Size | ✅ Zero | ❌ Counted |
+| Data Fetching | ✅ Direct | ⚠️ Via API |
+
+## When to Use Each?
+
+**Use Server Components for:**
+- Static content
+- Data fetching
+- SEO-critical pages
+- Heavy dependencies (markdown processors, etc.)
+
+**Use Client Components for:**
+- Interactivity (onClick, onChange)
+- State management (useState, useContext)
+- Browser APIs (localStorage, window)
+- Third-party interactive libraries
+
+## The 'use client' Directive
+
+To create a Client Component, add `'use client'` at the top:
+
+```tsx
+'use client';
+
+import { useState } from 'react';
+
+export function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <button onClick={() => setCount(count + 1)}>
+      Count: {count}
+    </button>
+  );
+}
+```
+
+## Best Practices
+
+1. **Start with Server Components** - Only add 'use client' when needed
+2. **Keep Client Components Small** - Minimize the client-side JavaScript
+3. **Compose Wisely** - Server Components can import Client Components
+4. **Fetch High in the Tree** - Fetch data in parent Server Components
+
+## Conclusion
+
+React Server Components represent a fundamental shift in how we build React apps. By running components on the server, we can build faster, lighter applications with better SEO and user experience.
+
+The future of React is server-first, and it's pretty exciting! 🎉

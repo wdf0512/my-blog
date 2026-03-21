@@ -139,3 +139,114 @@ a:hover {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* MDX Prose Styles */
+.prose {
+  max-width: 65ch;
+  margin: 0 auto;
+}
+
+.prose h1 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+.prose h2 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+
+.prose h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose p {
+  margin-bottom: 1.5rem;
+}
+
+.prose ul,
+.prose ol {
+  margin-bottom: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.prose li {
+  margin-bottom: 0.5rem;
+  line-height: 1.7;
+}
+
+.prose table {
+  width: 100%;
+  margin: 2rem 0;
+  border-collapse: collapse;
+}
+
+.prose th,
+.prose td {
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  text-align: left;
+}
+
+.prose th {
+  background: var(--surface);
+  font-weight: 600;
+}
+
+.prose blockquote {
+  border-left: 4px solid var(--primary);
+  padding-left: 1.5rem;
+  margin: 1.5rem 0;
+  font-style: italic;
+  color: var(--text-secondary);
+}
+
+.prose strong {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.prose code:not(pre code) {
+  background: var(--surface);
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: var(--font-geist-mono), monospace;
+  color: var(--text-primary);
+  border: 1px solid var(--border);
+}
+
+/* Code Blocks - Shiki */
+.prose pre {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  background: var(--surface) !important;
+}
+
+.prose pre code {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.9em;
+  line-height: 1.7;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.prose pre code span {
+  line-height: 1.7;
+}
+
+/* Anchor links for headings */
+.prose .anchor {
+  text-decoration: none;
+  color: inherit;
+  position: relative;
+}
+
+.prose .anchor:hover {
+  color: var(--primary);
+}

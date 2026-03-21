@@ -58,3 +58,7 @@ next-env.d.ts
 # fonts (if purchased/licensed)
 # Uncomment if Clash Display is purchased:
 # public/fonts/ClashDisplay-*.woff2
+
+# velite
+.velite
+public/static
