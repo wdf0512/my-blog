@@ -10,7 +10,11 @@
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,md}\""
   },
   "dependencies": {
+    "@react-three/drei": "^10.7.7",
+    "@react-three/fiber": "^9.5.0",
+    "framer-motion": "^11.15.0",
     "geist": "^1.7.0",
+    "gsap": "^3.12.5",
     "lucide-react": "^0.577.0",
     "next": "^16.2.0",
     "react": "^19.2.4",
@@ -19,6 +23,7 @@
     "reading-time": "^1.5.0",
     "rehype-pretty-code": "^0.14.0",
     "shiki": "^1.24.2",
+    "three": "^0.171.0",
     "velite": "^0.1.1"
   },
   "devDependencies": {
@@ -26,6 +31,7 @@
     "@types/node": "latest",
     "@types/react": "latest",
     "@types/react-dom": "latest",
+    "@types/three": "^0.171.0",
     "autoprefixer": "^10.4.20",
     "eslint": "^9",
     "eslint-config-next": "^16.2.0",
