@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { Calendar, Clock, ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
+import { MDXContent } from '@/components/mdx/MDXContent';
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -37,8 +38,6 @@ export default async function PostPage({ params }: Props) {
   if (!post || !post.published) {
     notFound();
   }
-
-  const MDXContent = post.body;
 
   return (
     <article className="container mx-auto px-4 py-12 max-w-3xl">
@@ -92,7 +91,7 @@ export default async function PostPage({ params }: Props) {
       </header>
 
       <div className="prose">
-        <MDXContent />
+        <MDXContent code={post.body} />
       </div>
     </article>
   );
