@@ -54,21 +54,77 @@ export function Character() {
         zbuffer[i] = 0;
       }
 
-      // Render capital letter D - vertical bar + curved part
-      // The D is made of a vertical bar on the left and a semicircular arc on the right
+      // Banana Bézier curve control points (based on ASCII art analysis)
+      const p0 = { x: -2, y: 2, z: 0 };    // Stem end
+      const p1 = { x: -1, y: 1, z: 0 };    // Stem curve control
+      const p2 = { x: 1, y: -1, z: 0 };    // Body curve control
+      const p3 = { x: 2, y: -2, z: 0 };    // Tip end
 
-      // Vertical bar of D
-      for (let barY = -2; barY <= 2; barY += 0.1) {
-        for (let theta = 0; theta < Math.PI * 2; theta += 0.2) {
-          const barRadius = 0.3;
-          const x = -1.5 + barRadius * Math.cos(theta);
-          const y = barY;
-          const z = barRadius * Math.sin(theta);
+      // Generate banana surface using Bézier spine with circular cross-sections
+      for (let t = 0; t <= 1; t += 0.05) {
+        // Calculate spine point from Bézier curve
+        const spineX = bezier(t, p0.x, p1.x, p2.x, p3.x);
+        const spineY = bezier(t, p0.y, p1.y, p2.y, p3.y);
+        const spineZ = bezier(t, p0.z, p1.z, p2.z, p3.z);
+
+        // Calculate tangent vector (derivative of Bézier curve)
+        const tangentX = bezierTangent(t, p0.x, p1.x, p2.x, p3.x);
+        const tangentY = bezierTangent(t, p0.y, p1.y, p2.y, p3.y);
+        const tangentZ = bezierTangent(t, p0.z, p1.z, p2.z, p3.z);
+
+        const [tanX, tanY, tanZ] = normalize(tangentX, tangentY, tangentZ);
+
+        // Calculate radius at this point (thick in middle, thin at ends)
+        const radius = 0.15 + 0.25 * Math.sin(Math.PI * t);
+
+        // Create perpendicular basis vectors for circular cross-section
+        // Use world up vector [0, 1, 0] to create first perpendicular
+        let perpX = tanY;
+        let perpY = -tanX;
+        let perpZ = 0;
+        [perpX, perpY, perpZ] = normalize(perpX, perpY, perpZ);
+
+        // Second perpendicular is cross product of tangent and first perp
+        let perp2X = tanY * perpZ - tanZ * perpY;
+        let perp2Y = tanZ * perpX - tanX * perpZ;
+        let perp2Z = tanX * perpY - tanY * perpX;
+        [perp2X, perp2Y, perp2Z] = normalize(perp2X, perp2Y, perp2Z);
+
+        // Generate circular cross-section
+        for (let v = 0; v < Math.PI * 2; v += 0.2) {
+          const cosV = Math.cos(v);
+          const sinV = Math.sin(v);
+
+          // Surface point on circle
+          const x = spineX + radius * (cosV * perpX + sinV * perp2X);
+          const y = spineY + radius * (cosV * perpY + sinV * perp2Y);
+          const z = spineZ + radius * (cosV * perpZ + sinV * perp2Z);
+
+          // Surface normal (points radially outward from spine)
+          const [nx, ny, nz] = normalize(
+            cosV * perpX + sinV * perp2X,
+            cosV * perpY + sinV * perp2Y,
+            cosV * perpZ + sinV * perp2Z
+          );
+
+          // Apply X-axis rotation
+          const y1 = y * Math.cos(rotationX) - z * Math.sin(rotationX);
+          const z1 = y * Math.sin(rotationX) + z * Math.cos(rotationX);
+          const x1 = x;
 
           // Apply Y-axis rotation
-          const x2 = x * Math.cos(rotationY) + z * Math.sin(rotationY);
-          const y2 = y;
-          const z2 = -x * Math.sin(rotationY) + z * Math.cos(rotationY);
+          const x2 = x1 * Math.cos(rotationY) + z1 * Math.sin(rotationY);
+          const y2 = y1;
+          const z2 = -x1 * Math.sin(rotationY) + z1 * Math.cos(rotationY);
+
+          // Rotate normal vectors same way
+          const ny1 = ny * Math.cos(rotationX) - nz * Math.sin(rotationX);
+          const nz1 = ny * Math.sin(rotationX) + nz * Math.cos(rotationX);
+          const nx1 = nx;
+
+          const nx2 = nx1 * Math.cos(rotationY) + nz1 * Math.sin(rotationY);
+          const ny2 = ny1;
+          const nz2 = -nx1 * Math.sin(rotationY) + nz1 * Math.cos(rotationY);
 
           // Perspective projection
           const K2 = 10;
@@ -78,68 +134,10 @@ export function Character() {
           const xp = Math.floor(width / 2 + K1 * ooz * x2);
           const yp = Math.floor(height / 2 - K1 * ooz * y2 * 0.5);
 
-          // Surface normal
-          const nx = Math.cos(theta);
-          const ny = 0;
-          const nz = Math.sin(theta);
-
-          const nx2 = nx * Math.cos(rotationY) + nz * Math.sin(rotationY);
-          const nz2 = -nx * Math.sin(rotationY) + nz * Math.cos(rotationY);
-
-          const luminance = nx2 * 0.4 + ny * 0.3 + nz2 * 0.8;
-
-          if (xp >= 0 && xp < width && yp >= 0 && yp < height) {
-            const idx = xp + yp * width;
-            if (ooz > zbuffer[idx]) {
-              zbuffer[idx] = ooz;
-              const luminance_index = Math.floor((luminance + 1) * 5.5);
-              output[idx] = luminance_index >= 0 && luminance_index < chars.length
-                ? chars[Math.min(luminance_index, chars.length - 1)]
-                : ' ';
-            }
-          }
-        }
-      }
-
-      // Curved part of D (semicircle)
-      for (let u = -Math.PI / 2; u <= Math.PI / 2; u += 0.04) {
-        for (let v = 0; v < Math.PI * 2; v += 0.1) {
-          const majorRadius = 2.0;
-          const tubeRadius = 0.3;
-
-          const cx = majorRadius * Math.cos(u);
-          const cy = majorRadius * Math.sin(u);
-
-          const x = cx + tubeRadius * Math.cos(v) * Math.cos(u);
-          const y = cy + tubeRadius * Math.sin(v);
-          const z = tubeRadius * Math.cos(v) * Math.sin(u);
-
-          // Apply Y-axis rotation (vertical axis - 360° spin)
-          const x2 = x * Math.cos(rotationY) + z * Math.sin(rotationY);
-          const y2 = y;
-          const z2 = -x * Math.sin(rotationY) + z * Math.cos(rotationY);
-
-          // Perspective projection
-          const K2 = 10; // Distance from viewer
-          const K1 = 50; // Scaling factor
-          const ooz = 1 / (z2 + K2);
-
-          const xp = Math.floor(width / 2 + K1 * ooz * x2);
-          const yp = Math.floor(height / 2 - K1 * ooz * y2 * 0.5);
-
-          // Calculate surface normal for curved part
-          const nx = Math.cos(v) * Math.cos(u);
-          const ny = Math.sin(v);
-          const nz = Math.cos(v) * Math.sin(u);
-
-          // Rotate normal with Y rotation
-          const nx2 = nx * Math.cos(rotationY) + nz * Math.sin(rotationY);
-          const ny2 = ny;
-          const nz2 = -nx * Math.sin(rotationY) + nz * Math.cos(rotationY);
-
-          // Lighting
+          // Lighting calculation
           const luminance = nx2 * 0.4 + ny2 * 0.3 + nz2 * 0.8;
 
+          // Z-buffer test and render
           if (xp >= 0 && xp < width && yp >= 0 && yp < height) {
             const idx = xp + yp * width;
             if (ooz > zbuffer[idx]) {
