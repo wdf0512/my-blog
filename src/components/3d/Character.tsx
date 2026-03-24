@@ -19,6 +19,31 @@ export function Character() {
     // Optimized character set for better shading
     const chars = ' .:!*oe&#%@';
 
+    // Cubic Bézier curve: B(t) = (1-t)³P0 + 3(1-t)²t·P1 + 3(1-t)t²P2 + t³P3
+    function bezier(t: number, p0: number, p1: number, p2: number, p3: number): number {
+      const t2 = t * t;
+      const t3 = t2 * t;
+      const mt = 1 - t;
+      const mt2 = mt * mt;
+      const mt3 = mt2 * mt;
+      return mt3 * p0 + 3 * mt2 * t * p1 + 3 * mt * t2 * p2 + t3 * p3;
+    }
+
+    // Bézier tangent: B'(t) = 3(1-t)²(P1-P0) + 6(1-t)t(P2-P1) + 3t²(P3-P2)
+    function bezierTangent(t: number, p0: number, p1: number, p2: number, p3: number): number {
+      const t2 = t * t;
+      const mt = 1 - t;
+      const mt2 = mt * mt;
+      return 3 * mt2 * (p1 - p0) + 6 * mt * t * (p2 - p1) + 3 * t2 * (p3 - p2);
+    }
+
+    // Normalize a 3D vector to unit length
+    function normalize(x: number, y: number, z: number): [number, number, number] {
+      const len = Math.sqrt(x * x + y * y + z * z);
+      if (len < 0.0001) return [0, 1, 0]; // Fallback for zero vector
+      return [x / len, y / len, z / len];
+    }
+
     function render() {
       const output: string[] = [];
       const zbuffer: number[] = [];
