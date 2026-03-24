@@ -11,12 +11,15 @@ const config: Config = {
     extend: {
       colors: {
         background: 'var(--background)',
-        foreground: 'var(--foreground)',
+        surface: 'var(--surface)',
         primary: 'var(--primary)',
         'text-primary': 'var(--text-primary)',
         'text-secondary': 'var(--text-secondary)',
+        'text-muted': 'var(--text-muted)',
         border: 'var(--border)',
-        surface: 'var(--surface)',
+        'tag-bg': 'var(--tag-bg)',
+        brown: 'var(--brown)',
+        blue: 'var(--blue)',
       },
       fontFamily: {
         sans: ['var(--font-geist-sans)', 'sans-serif'],

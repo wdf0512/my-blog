@@ -31,8 +31,8 @@ const clashDisplay = localFont({
 });
 
 export const metadata: Metadata = {
-  title: 'Your Blog',
-  description: 'Personal blog about React, AI, and modern web development',
+  title: 'Creative Coding & Conversations',
+  description: 'Insights from a developer\'s journey - exploring tech, indie hacking, and web development',
 };
 
 export default function RootLayout({
