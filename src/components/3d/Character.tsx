@@ -54,11 +54,11 @@ export function Character() {
         zbuffer[i] = 0;
       }
 
-      // Banana Bézier curve control points (based on ASCII art analysis)
-      const p0 = { x: -2, y: 2, z: 0 };    // Stem end
-      const p1 = { x: -1, y: 1, z: 0 };    // Stem curve control
-      const p2 = { x: 1, y: -1, z: 0 };    // Body curve control
-      const p3 = { x: 2, y: -2, z: 0 };    // Tip end
+      // Refined Bézier control points to match ASCII art curve
+      const p0 = { x: -2.2, y: 2.5, z: 0 };    // Stem end (adjusted)
+      const p1 = { x: -0.8, y: 1.2, z: 0 };    // Stem curve control
+      const p2 = { x: 0.8, y: -1.2, z: 0 };    // Body curve control
+      const p3 = { x: 2.2, y: -2.5, z: 0 };    // Tip end (adjusted)
 
       // Generate banana surface using Bézier spine with circular cross-sections
       for (let t = 0; t <= 1; t += 0.05) {
@@ -75,7 +75,7 @@ export function Character() {
         const [tanX, tanY, tanZ] = normalize(tangentX, tangentY, tangentZ);
 
         // Calculate radius at this point (thick in middle, thin at ends)
-        const radius = 0.15 + 0.25 * Math.sin(Math.PI * t);
+        const radius = 0.15 + 0.3 * Math.sin(Math.PI * t);
 
         // Create perpendicular basis vectors for circular cross-section
         // Use world up vector [0, 1, 0] to create first perpendicular
