@@ -10,11 +10,6 @@ export function HeroSection() {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         {/* Left: Personal intro */}
         <div className="order-2 lg:order-1">
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 mb-6">
-            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
-            <span className="text-sm font-medium text-primary">Available for freelance</span>
-          </div>
-
           <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight mb-6 text-text-primary">
             Hi, I'm <span className="text-primary">Defang</span>
           </h1>
@@ -79,7 +74,7 @@ export function HeroSection() {
           {/* CTA */}
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-primary/30 transition-all group"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-yellow-500 text-text-primary hover:text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-primary/30 transition-all group"
           >
             Read my articles
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
