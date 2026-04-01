@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import { Github, Twitter, Mail } from 'lucide-react';
-import { HeroTypewriter } from '@/components/about/HeroTypewriter';
-import { TimelineTape } from '@/components/about/TimelineTape';
+import { HeroTypewriterLoader } from '@/components/about/HeroTypewriterLoader';
+import { TimelineTapeLoader } from '@/components/about/TimelineTapeLoader';
 import { FadeIn } from '@/components/animations/FadeIn';
 
 export const metadata: Metadata = {
@@ -44,7 +44,7 @@ export default function AboutPage() {
   return (
     <div style={{ background: '#000' }}>
       {/* ── Section 1: Hero ── */}
-      <HeroTypewriter />
+      <HeroTypewriterLoader />
 
       {/* ── Section 2: My Story ── */}
       <section
@@ -92,7 +92,7 @@ export default function AboutPage() {
       </section>
 
       {/* ── Section 3: Timeline ── */}
-      <TimelineTape />
+      <TimelineTapeLoader />
 
       {/* ── Section 4: What I'm Doing Now ── */}
       <section
