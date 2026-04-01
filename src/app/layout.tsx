@@ -44,9 +44,10 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${GeistSans.variable} ${GeistMono.variable} ${clashDisplay.variable}`}
+      data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
-      <body className="font-sans">
+      <body className="font-sans" suppressHydrationWarning>
         <ThemeProvider>
           <div className="flex min-h-screen flex-col">
             <Header />
