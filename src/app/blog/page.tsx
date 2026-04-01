@@ -60,7 +60,7 @@ export default function BlogPage() {
         {publishedPosts.map((post) => (
           <article
             key={post.slug}
-            className="group flex flex-col bg-surface rounded-2xl border border-border hover:border-primary/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+            className="group isolate flex flex-col bg-surface rounded-2xl border border-border hover:border-primary/30 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
           >
             {/* Card thumbnail */}
             <div className="relative h-36 overflow-hidden">
