@@ -1,6 +1,6 @@
 .section {
   min-height: 100vh;
-  background: #000;
+  background: var(--background);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -30,8 +30,8 @@
   gap: 6px;
   padding: 5px 12px;
   border-radius: 980px;
-  background: rgba(255,255,255,0.06);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: var(--surface);
+  border: 1px solid var(--border);
   margin-bottom: 32px;
 }
 
@@ -62,22 +62,22 @@
 }
 
 .phase1Color {
-  color: #f5f5f7;
+  color: var(--text-primary);
 }
 
 .phase2Color {
-  color: rgba(245, 245, 247, 0.85);
+  color: var(--text-secondary);
 }
 
 .gold {
-  color: #f2c94c;
+  color: var(--primary);
 }
 
 .cursor {
   display: inline-block;
   width: 3px;
   height: 0.85em;
-  background: #f2c94c;
+  background: var(--primary);
   margin-left: 4px;
   vertical-align: middle;
   animation: cursorBlink 1s step-end infinite;
@@ -114,9 +114,9 @@
   align-items: center;
   padding: 12px 28px;
   border-radius: 980px;
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.12);
-  color: #f5f5f7;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
   font-weight: 600;
   font-size: 15px;
   font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
@@ -125,7 +125,7 @@
 }
 
 .btnSecondary:hover {
-  background: rgba(255,255,255,0.13);
+  background: var(--border);
 }
 
 @keyframes cursorBlink {

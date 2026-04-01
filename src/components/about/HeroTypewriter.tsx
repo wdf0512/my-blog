@@ -71,15 +71,10 @@ export function HeroTypewriter() {
     <section className={styles.section}>
       <div className={styles.glow} />
       <div className={styles.content}>
-        <div className={styles.badge}>
-          <span className={styles.badgeDot} />
-          <span className={styles.badgeText}>Available for freelance</span>
-        </div>
 
         <div
-          className={`${styles.headline} ${
-            phase === 1 ? styles.phase1Color : styles.phase2Color
-          }`}
+          className={`${styles.headline} ${phase === 1 ? styles.phase1Color : styles.phase2Color
+            }`}
         >
           {renderContent()}
           <span className={styles.cursor} aria-hidden="true" />

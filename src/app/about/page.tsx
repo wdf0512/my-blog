@@ -18,7 +18,7 @@ const SECTION_LABEL: React.CSSProperties = {
   fontSize: '11px',
   fontWeight: 700,
   letterSpacing: '0.1em',
-  color: '#f2c94c',
+  color: 'var(--primary)',
   textTransform: 'uppercase',
 };
 
@@ -42,14 +42,14 @@ const NOW_ITEMS = [
 
 export default function AboutPage() {
   return (
-    <div style={{ background: '#000' }}>
+    <div style={{ background: 'var(--background)' }}>
       {/* ── Section 1: Hero ── */}
       <HeroTypewriterLoader />
 
       {/* ── Section 2: My Story ── */}
       <section
         className="px-4 md:px-8 py-12 md:py-20"
-        style={{ background: '#0a0e15', borderTop: '1px solid rgba(255,255,255,0.05)' }}
+        style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)' }}
       >
         <div className="max-w-[960px] mx-auto">
           <FadeIn>
@@ -60,7 +60,7 @@ export default function AboutPage() {
                   fontFamily: FONT,
                   fontSize: 'clamp(20px, 2.5vw, 26px)',
                   fontWeight: 700,
-                  color: '#f5f5f7',
+                  color: 'var(--text-primary)',
                   lineHeight: 1.35,
                   letterSpacing: '-0.03em',
                   margin: 0,
@@ -70,7 +70,7 @@ export default function AboutPage() {
               </p>
               <div
                 className="flex flex-col gap-4"
-                style={{ fontFamily: FONT, fontSize: '15px', color: '#6b7280', lineHeight: 1.75 }}
+                style={{ fontFamily: FONT, fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.75 }}
               >
                 <p style={{ margin: 0 }}>
                   What started as curiosity turned into a full career. I&apos;m self-taught,
@@ -97,7 +97,7 @@ export default function AboutPage() {
       {/* ── Section 4: What I'm Doing Now ── */}
       <section
         className="px-4 md:px-8 py-12 md:py-20"
-        style={{ background: '#0a0e15', borderTop: '1px solid rgba(255,255,255,0.05)' }}
+        style={{ background: 'var(--surface)', borderTop: '1px solid var(--border)' }}
       >
         <div className="max-w-[960px] mx-auto">
           <FadeIn>
@@ -107,8 +107,8 @@ export default function AboutPage() {
                 <div
                   key={item.label}
                   style={{
-                    background: '#161b22',
-                    border: '1px solid rgba(255,255,255,0.07)',
+                    background: 'var(--background)',
+                    border: '1px solid var(--border)',
                     borderRadius: '12px',
                     padding: '24px 20px',
                   }}
@@ -119,13 +119,13 @@ export default function AboutPage() {
                       fontFamily: FONT,
                       fontSize: '15px',
                       fontWeight: 600,
-                      color: '#e6edf3',
+                      color: 'var(--text-primary)',
                       marginBottom: '8px',
                     }}
                   >
                     {item.label}
                   </div>
-                  <div style={{ fontFamily: FONT, fontSize: '13px', color: '#6b7280', lineHeight: 1.65 }}>
+                  <div style={{ fontFamily: FONT, fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.65 }}>
                     {item.desc}
                   </div>
                 </div>
@@ -138,7 +138,7 @@ export default function AboutPage() {
       {/* ── Section 5: Contact ── */}
       <section
         className="px-4 md:px-8 py-12 md:py-20 text-center"
-        style={{ background: '#000', borderTop: '1px solid rgba(255,255,255,0.05)' }}
+        style={{ background: 'var(--background)', borderTop: '1px solid var(--border)' }}
       >
         <FadeIn>
           <p className="mb-4" style={SECTION_LABEL}>Let&apos;s Talk</p>
@@ -149,14 +149,14 @@ export default function AboutPage() {
               fontSize: 'clamp(24px, 3vw, 36px)',
               fontWeight: 700,
               letterSpacing: '-0.03em',
-              color: '#f5f5f7',
+              color: 'var(--text-primary)',
             }}
           >
             Want to work together?
           </p>
           <p
             className="mb-8"
-            style={{ fontFamily: FONT, fontSize: '15px', color: '#6b7280' }}
+            style={{ fontFamily: FONT, fontSize: '15px', color: 'var(--text-secondary)' }}
           >
             I&apos;m always open to interesting projects, collabs, or just a chat.
           </p>
@@ -169,7 +169,7 @@ export default function AboutPage() {
                 gap: '8px',
                 padding: '12px 28px',
                 borderRadius: '980px',
-                background: '#f2c94c',
+                background: 'var(--primary)',
                 color: '#000',
                 fontWeight: 700,
                 fontSize: '15px',
@@ -190,9 +190,9 @@ export default function AboutPage() {
                 gap: '8px',
                 padding: '12px 24px',
                 borderRadius: '980px',
-                background: 'rgba(255,255,255,0.08)',
-                border: '1px solid rgba(255,255,255,0.12)',
-                color: '#f5f5f7',
+                background: 'var(--surface)',
+                border: '1px solid var(--border)',
+                color: 'var(--text-primary)',
                 fontWeight: 600,
                 fontSize: '15px',
                 fontFamily: FONT,
@@ -212,9 +212,9 @@ export default function AboutPage() {
                 gap: '8px',
                 padding: '12px 24px',
                 borderRadius: '980px',
-                background: 'rgba(255,255,255,0.08)',
-                border: '1px solid rgba(255,255,255,0.12)',
-                color: '#f5f5f7',
+                background: 'var(--surface)',
+                border: '1px solid var(--border)',
+                color: 'var(--text-primary)',
                 fontWeight: 600,
                 fontSize: '15px',
                 fontFamily: FONT,
