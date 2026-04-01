@@ -9,8 +9,6 @@ export function Character() {
   useEffect(() => {
     if (!preRef.current) return;
 
-    const pre = preRef.current;
-
     // 纯粹的回归：完全使用你最初提供的 txt 原文，不增删任何一个空格
     // 它本身就是一个完美斜向上的香蕉轮廓
     const originalAscii = `                                                                                                                                                                                                              

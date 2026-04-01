@@ -47,7 +47,7 @@ export function FeaturesSection() {
         </FadeIn>
 
         <StaggerChildren className="grid grid-cols-1 md:grid-cols-3 gap-8">
-          {features.map((feature, index) => {
+          {features.map((feature) => {
             const Icon = feature.icon;
             return (
               <motion.div

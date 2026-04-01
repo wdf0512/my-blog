@@ -1,6 +1,6 @@
 import { posts } from '#/.velite';
 import { notFound } from 'next/navigation';
-import { Calendar, Clock, ArrowLeft, Share2, Twitter, Linkedin, Facebook } from 'lucide-react';
+import { Clock, ArrowLeft, Twitter, Linkedin, Facebook } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { MDXContent } from '@/components/mdx/MDXContent';

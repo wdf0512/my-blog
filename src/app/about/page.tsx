@@ -1,0 +1,295 @@
+import type { Metadata } from 'next';
+import { Github, Twitter, Mail } from 'lucide-react';
+import { HeroTypewriter } from '@/components/about/HeroTypewriter';
+import { TimelineTape } from '@/components/about/TimelineTape';
+import { FadeIn } from '@/components/animations/FadeIn';
+
+export const metadata: Metadata = {
+  title: 'About — Defang',
+  description:
+    "Developer, writer, and indie hacker. Learn about my story, journey, and what I'm doing now.",
+};
+
+const HERO_FONT =
+  "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif";
+
+const NOW_ITEMS = [
+  {
+    icon: '🔨',
+    label: 'Building',
+    desc: "AI-powered writing tools and exploring the boundaries of what's possible with LLMs.",
+  },
+  {
+    icon: '📖',
+    label: 'Learning',
+    desc: 'Going deeper on WebGL shaders and advanced Three.js techniques.',
+  },
+  {
+    icon: '✍️',
+    label: 'Writing',
+    desc: 'Regular articles on React patterns, indie hacking, and creative coding.',
+  },
+];
+
+export default function AboutPage() {
+  return (
+    <div style={{ background: '#000' }}>
+      {/* ── Section 1: Hero ── */}
+      <HeroTypewriter />
+
+      {/* ── Section 2: My Story ── */}
+      <section
+        style={{
+          padding: '80px 24px',
+          background: '#0a0e15',
+          borderTop: '1px solid rgba(255,255,255,0.05)',
+        }}
+      >
+        <div style={{ maxWidth: '960px', margin: '0 auto' }}>
+          <FadeIn>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+                gap: '48px',
+                alignItems: 'start',
+              }}
+            >
+              <p
+                style={{
+                  fontFamily: HERO_FONT,
+                  fontSize: 'clamp(20px, 2.5vw, 26px)',
+                  fontWeight: 700,
+                  color: '#f5f5f7',
+                  lineHeight: 1.35,
+                  letterSpacing: '-0.03em',
+                  margin: 0,
+                }}
+              >
+                &ldquo;I fell in love with coding in 2019 and never looked back.&rdquo;
+              </p>
+              <div
+                style={{
+                  display: 'flex',
+                  flexDirection: 'column',
+                  gap: '16px',
+                  fontFamily: HERO_FONT,
+                  fontSize: '15px',
+                  color: '#6b7280',
+                  lineHeight: 1.75,
+                }}
+              >
+                <p style={{ margin: 0 }}>
+                  What started as curiosity turned into a full career. I&apos;m self-taught,
+                  which means I&apos;ve always had to learn by building — and that&apos;s
+                  exactly how I like it.
+                </p>
+                <p style={{ margin: 0 }}>
+                  When I&apos;m not shipping code, I&apos;m experimenting with 3D graphics,
+                  writing about my experiences, or working on my next side project.
+                </p>
+                <p style={{ margin: 0 }}>
+                  I believe in learning in public and sharing everything freely with the
+                  community.
+                </p>
+              </div>
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ── Section 3: Timeline ── */}
+      <TimelineTape />
+
+      {/* ── Section 4: What I'm Doing Now ── */}
+      <section
+        style={{
+          padding: '80px 24px',
+          background: '#0a0e15',
+          borderTop: '1px solid rgba(255,255,255,0.05)',
+        }}
+      >
+        <div style={{ maxWidth: '960px', margin: '0 auto' }}>
+          <FadeIn>
+            <p
+              style={{
+                fontFamily: HERO_FONT,
+                fontSize: '11px',
+                fontWeight: 700,
+                letterSpacing: '0.1em',
+                color: '#f2c94c',
+                textTransform: 'uppercase',
+                marginBottom: '32px',
+                margin: '0 0 32px',
+              }}
+            >
+              What I&apos;m Doing Now
+            </p>
+            <div
+              style={{
+                display: 'grid',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+                gap: '16px',
+              }}
+            >
+              {NOW_ITEMS.map((item) => (
+                <div
+                  key={item.label}
+                  style={{
+                    background: '#161b22',
+                    border: '1px solid rgba(255,255,255,0.07)',
+                    borderRadius: '12px',
+                    padding: '24px 20px',
+                  }}
+                >
+                  <div style={{ fontSize: '24px', marginBottom: '12px' }}>{item.icon}</div>
+                  <div
+                    style={{
+                      fontFamily: HERO_FONT,
+                      fontSize: '15px',
+                      fontWeight: 600,
+                      color: '#e6edf3',
+                      marginBottom: '8px',
+                    }}
+                  >
+                    {item.label}
+                  </div>
+                  <div
+                    style={{
+                      fontFamily: HERO_FONT,
+                      fontSize: '13px',
+                      color: '#6b7280',
+                      lineHeight: 1.65,
+                    }}
+                  >
+                    {item.desc}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </FadeIn>
+        </div>
+      </section>
+
+      {/* ── Section 5: Contact ── */}
+      <section
+        style={{
+          padding: '80px 24px',
+          background: '#000',
+          borderTop: '1px solid rgba(255,255,255,0.05)',
+          textAlign: 'center',
+        }}
+      >
+        <FadeIn>
+          <p
+            style={{
+              fontFamily: HERO_FONT,
+              fontSize: '11px',
+              fontWeight: 700,
+              letterSpacing: '0.1em',
+              color: '#f2c94c',
+              textTransform: 'uppercase',
+              margin: '0 0 16px',
+            }}
+          >
+            Let&apos;s Talk
+          </p>
+          <p
+            style={{
+              fontFamily: HERO_FONT,
+              fontSize: 'clamp(24px, 3vw, 36px)',
+              fontWeight: 700,
+              letterSpacing: '-0.03em',
+              color: '#f5f5f7',
+              margin: '0 0 12px',
+            }}
+          >
+            Want to work together?
+          </p>
+          <p
+            style={{
+              fontFamily: HERO_FONT,
+              fontSize: '15px',
+              color: '#6b7280',
+              margin: '0 0 32px',
+            }}
+          >
+            I&apos;m always open to interesting projects, collabs, or just a chat.
+          </p>
+          <div
+            style={{
+              display: 'flex',
+              gap: '12px',
+              justifyContent: 'center',
+              flexWrap: 'wrap',
+            }}
+          >
+            <a
+              href="mailto:your@email.com"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '12px 28px',
+                borderRadius: '980px',
+                background: '#f2c94c',
+                color: '#000',
+                fontWeight: 700,
+                fontSize: '15px',
+                fontFamily: HERO_FONT,
+                textDecoration: 'none',
+              }}
+            >
+              <Mail size={16} />
+              your@email.com
+            </a>
+            <a
+              href="https://github.com/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '12px 24px',
+                borderRadius: '980px',
+                background: 'rgba(255,255,255,0.08)',
+                border: '1px solid rgba(255,255,255,0.12)',
+                color: '#f5f5f7',
+                fontWeight: 600,
+                fontSize: '15px',
+                fontFamily: HERO_FONT,
+                textDecoration: 'none',
+              }}
+            >
+              <Github size={16} />
+              GitHub
+            </a>
+            <a
+              href="https://twitter.com/yourusername"
+              target="_blank"
+              rel="noopener noreferrer"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px',
+                padding: '12px 24px',
+                borderRadius: '980px',
+                background: 'rgba(255,255,255,0.08)',
+                border: '1px solid rgba(255,255,255,0.12)',
+                color: '#f5f5f7',
+                fontWeight: 600,
+                fontSize: '15px',
+                fontFamily: HERO_FONT,
+                textDecoration: 'none',
+              }}
+            >
+              <Twitter size={16} />
+              Twitter
+            </a>
+          </div>
+        </FadeIn>
+      </section>
+    </div>
+  );
+}
