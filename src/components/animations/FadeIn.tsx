@@ -36,6 +36,7 @@ export function FadeIn({ children, delay = 0, direction = 'up', className }: Fad
         ease: [0.21, 0.47, 0.32, 0.98],
       }}
       className={className}
+      suppressHydrationWarning
     >
       {children}
     </motion.div>
