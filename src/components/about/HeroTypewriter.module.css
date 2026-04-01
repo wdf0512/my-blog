@@ -132,3 +132,29 @@
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
+
+@media (max-width: 640px) {
+  .section {
+    padding: 24px 20px;
+  }
+
+  .badge {
+    margin-bottom: 24px;
+  }
+
+  .headline {
+    /* phase-2 quote wraps to 3+ lines on small screens */
+    min-height: 130px;
+    margin-bottom: 28px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .btnPrimary,
+  .btnSecondary {
+    justify-content: center;
+  }
+}

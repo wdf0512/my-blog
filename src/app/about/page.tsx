@@ -10,8 +10,17 @@ export const metadata: Metadata = {
     "Developer, writer, and indie hacker. Learn about my story, journey, and what I'm doing now.",
 };
 
-const HERO_FONT =
+const FONT =
   "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif";
+
+const SECTION_LABEL: React.CSSProperties = {
+  fontFamily: FONT,
+  fontSize: '11px',
+  fontWeight: 700,
+  letterSpacing: '0.1em',
+  color: '#f2c94c',
+  textTransform: 'uppercase',
+};
 
 const NOW_ITEMS = [
   {
@@ -39,25 +48,16 @@ export default function AboutPage() {
 
       {/* ── Section 2: My Story ── */}
       <section
-        style={{
-          padding: '80px 24px',
-          background: '#0a0e15',
-          borderTop: '1px solid rgba(255,255,255,0.05)',
-        }}
+        className="px-4 md:px-8 py-12 md:py-20"
+        style={{ background: '#0a0e15', borderTop: '1px solid rgba(255,255,255,0.05)' }}
       >
-        <div style={{ maxWidth: '960px', margin: '0 auto' }}>
+        <div className="max-w-[960px] mx-auto">
           <FadeIn>
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-                gap: '48px',
-                alignItems: 'start',
-              }}
-            >
+            <p className="mb-8" style={SECTION_LABEL}>My Story</p>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
               <p
                 style={{
-                  fontFamily: HERO_FONT,
+                  fontFamily: FONT,
                   fontSize: 'clamp(20px, 2.5vw, 26px)',
                   fontWeight: 700,
                   color: '#f5f5f7',
@@ -69,15 +69,8 @@ export default function AboutPage() {
                 &ldquo;I fell in love with coding in 2019 and never looked back.&rdquo;
               </p>
               <div
-                style={{
-                  display: 'flex',
-                  flexDirection: 'column',
-                  gap: '16px',
-                  fontFamily: HERO_FONT,
-                  fontSize: '15px',
-                  color: '#6b7280',
-                  lineHeight: 1.75,
-                }}
+                className="flex flex-col gap-4"
+                style={{ fontFamily: FONT, fontSize: '15px', color: '#6b7280', lineHeight: 1.75 }}
               >
                 <p style={{ margin: 0 }}>
                   What started as curiosity turned into a full career. I&apos;m self-taught,
@@ -103,35 +96,13 @@ export default function AboutPage() {
 
       {/* ── Section 4: What I'm Doing Now ── */}
       <section
-        style={{
-          padding: '80px 24px',
-          background: '#0a0e15',
-          borderTop: '1px solid rgba(255,255,255,0.05)',
-        }}
+        className="px-4 md:px-8 py-12 md:py-20"
+        style={{ background: '#0a0e15', borderTop: '1px solid rgba(255,255,255,0.05)' }}
       >
-        <div style={{ maxWidth: '960px', margin: '0 auto' }}>
+        <div className="max-w-[960px] mx-auto">
           <FadeIn>
-            <p
-              style={{
-                fontFamily: HERO_FONT,
-                fontSize: '11px',
-                fontWeight: 700,
-                letterSpacing: '0.1em',
-                color: '#f2c94c',
-                textTransform: 'uppercase',
-                marginBottom: '32px',
-                margin: '0 0 32px',
-              }}
-            >
-              What I&apos;m Doing Now
-            </p>
-            <div
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
-                gap: '16px',
-              }}
-            >
+            <p className="mb-8" style={SECTION_LABEL}>What I&apos;m Doing Now</p>
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
               {NOW_ITEMS.map((item) => (
                 <div
                   key={item.label}
@@ -145,7 +116,7 @@ export default function AboutPage() {
                   <div style={{ fontSize: '24px', marginBottom: '12px' }}>{item.icon}</div>
                   <div
                     style={{
-                      fontFamily: HERO_FONT,
+                      fontFamily: FONT,
                       fontSize: '15px',
                       fontWeight: 600,
                       color: '#e6edf3',
@@ -154,14 +125,7 @@ export default function AboutPage() {
                   >
                     {item.label}
                   </div>
-                  <div
-                    style={{
-                      fontFamily: HERO_FONT,
-                      fontSize: '13px',
-                      color: '#6b7280',
-                      lineHeight: 1.65,
-                    }}
-                  >
+                  <div style={{ fontFamily: FONT, fontSize: '13px', color: '#6b7280', lineHeight: 1.65 }}>
                     {item.desc}
                   </div>
                 </div>
@@ -173,57 +137,30 @@ export default function AboutPage() {
 
       {/* ── Section 5: Contact ── */}
       <section
-        style={{
-          padding: '80px 24px',
-          background: '#000',
-          borderTop: '1px solid rgba(255,255,255,0.05)',
-          textAlign: 'center',
-        }}
+        className="px-4 md:px-8 py-12 md:py-20 text-center"
+        style={{ background: '#000', borderTop: '1px solid rgba(255,255,255,0.05)' }}
       >
         <FadeIn>
+          <p className="mb-4" style={SECTION_LABEL}>Let&apos;s Talk</p>
           <p
+            className="mb-3"
             style={{
-              fontFamily: HERO_FONT,
-              fontSize: '11px',
-              fontWeight: 700,
-              letterSpacing: '0.1em',
-              color: '#f2c94c',
-              textTransform: 'uppercase',
-              margin: '0 0 16px',
-            }}
-          >
-            Let&apos;s Talk
-          </p>
-          <p
-            style={{
-              fontFamily: HERO_FONT,
+              fontFamily: FONT,
               fontSize: 'clamp(24px, 3vw, 36px)',
               fontWeight: 700,
               letterSpacing: '-0.03em',
               color: '#f5f5f7',
-              margin: '0 0 12px',
             }}
           >
             Want to work together?
           </p>
           <p
-            style={{
-              fontFamily: HERO_FONT,
-              fontSize: '15px',
-              color: '#6b7280',
-              margin: '0 0 32px',
-            }}
+            className="mb-8"
+            style={{ fontFamily: FONT, fontSize: '15px', color: '#6b7280' }}
           >
             I&apos;m always open to interesting projects, collabs, or just a chat.
           </p>
-          <div
-            style={{
-              display: 'flex',
-              gap: '12px',
-              justifyContent: 'center',
-              flexWrap: 'wrap',
-            }}
-          >
+          <div className="flex flex-wrap justify-center gap-3">
             <a
               href="mailto:your@email.com"
               style={{
@@ -236,7 +173,7 @@ export default function AboutPage() {
                 color: '#000',
                 fontWeight: 700,
                 fontSize: '15px',
-                fontFamily: HERO_FONT,
+                fontFamily: FONT,
                 textDecoration: 'none',
               }}
             >
@@ -258,7 +195,7 @@ export default function AboutPage() {
                 color: '#f5f5f7',
                 fontWeight: 600,
                 fontSize: '15px',
-                fontFamily: HERO_FONT,
+                fontFamily: FONT,
                 textDecoration: 'none',
               }}
             >
@@ -280,7 +217,7 @@ export default function AboutPage() {
                 color: '#f5f5f7',
                 fontWeight: 600,
                 fontSize: '15px',
-                fontFamily: HERO_FONT,
+                fontFamily: FONT,
                 textDecoration: 'none',
               }}
             >
