@@ -1,6 +1,7 @@
 import { posts } from '#/.velite';
 import { notFound } from 'next/navigation';
-import { Clock, ArrowLeft, Twitter, Linkedin, Facebook } from 'lucide-react';
+import { Clock, ArrowLeft } from 'lucide-react';
+import { ShareButtons } from '@/components/blog/ShareButtons';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { MDXContent } from '@/components/mdx/MDXContent';
@@ -114,19 +115,7 @@ export default async function PostPage({ params }: Props) {
               </div>
             </div>
 
-            {/* Share buttons */}
-            <div className="flex items-center gap-2">
-              <span className="text-sm text-text-muted mr-2">Share:</span>
-              <button className="w-8 h-8 rounded-lg bg-surface hover:bg-primary/10 flex items-center justify-center transition-colors group">
-                <Twitter className="w-4 h-4 text-text-secondary group-hover:text-primary transition-colors" />
-              </button>
-              <button className="w-8 h-8 rounded-lg bg-surface hover:bg-primary/10 flex items-center justify-center transition-colors group">
-                <Linkedin className="w-4 h-4 text-text-secondary group-hover:text-primary transition-colors" />
-              </button>
-              <button className="w-8 h-8 rounded-lg bg-surface hover:bg-primary/10 flex items-center justify-center transition-colors group">
-                <Facebook className="w-4 h-4 text-text-secondary group-hover:text-primary transition-colors" />
-              </button>
-            </div>
+            <ShareButtons title={post.title} slug={post.slug} />
           </div>
         </header>
 
