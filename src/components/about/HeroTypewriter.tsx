@@ -88,7 +88,7 @@ export function HeroTypewriter() {
               <ChevronRight className={styles.btnKnobIcon} strokeWidth={2.25} />
             </span>
           </Link>
-          <a href="mailto:your@email.com" className={styles.btnSecondary}>
+          <a href="mailto:defangninj@outlook.com" className={styles.btnSecondary}>
             <Mail className={styles.btnSecondaryIcon} strokeWidth={2} aria-hidden />
             <span className={styles.btnLabel}>Say hello</span>
           </a>

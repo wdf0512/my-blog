@@ -162,7 +162,7 @@ export default function AboutPage() {
           </p>
           <div className="flex flex-wrap justify-center gap-3">
             <a
-              href="mailto:your@email.com"
+              href="mailto:defangninj@outlook.com"
               style={{
                 display: 'inline-flex',
                 alignItems: 'center',
@@ -178,7 +178,7 @@ export default function AboutPage() {
               }}
             >
               <Mail size={16} />
-              your@email.com
+              defangninj@outlook.com
             </a>
             <a
               href="https://github.com/yourusername"

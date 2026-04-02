@@ -89,7 +89,7 @@ export function Footer() {
                 LinkedIn
               </a>
               <a
-                href="mailto:your@email.com"
+                href="mailto:defangninj@outlook.com"
                 className="flex items-center gap-2 text-text-secondary hover:text-primary transition-colors"
               >
                 <Mail className="w-4 h-4" />

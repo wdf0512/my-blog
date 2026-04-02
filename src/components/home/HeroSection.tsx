@@ -61,7 +61,7 @@ export function HeroSection() {
               </span>
             </a>
             <a
-              href="mailto:your@email.com"
+              href="mailto:defangninj@outlook.com"
               className="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface hover:bg-primary transition-all group shadow-sm"
             >
               <Mail className="w-4 h-4 text-text-secondary group-hover:text-white transition-colors" />
