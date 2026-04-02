@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
+import { ChevronRight, Mail } from 'lucide-react';
 import styles from './HeroTypewriter.module.css';
 
 const PHASE1 = "Hi, I'm Defang";
@@ -82,10 +83,14 @@ export function HeroTypewriter() {
 
         <div className={styles.buttons}>
           <Link href="/blog" className={styles.btnPrimary}>
-            Read my articles
+            <span className={styles.btnLabel}>Read my articles</span>
+            <span className={styles.btnKnob} aria-hidden>
+              <ChevronRight className={styles.btnKnobIcon} strokeWidth={2.25} />
+            </span>
           </Link>
           <a href="mailto:your@email.com" className={styles.btnSecondary}>
-            Say hello
+            <Mail className={styles.btnSecondaryIcon} strokeWidth={2} aria-hidden />
+            <span className={styles.btnLabel}>Say hello</span>
           </a>
         </div>
       </div>
