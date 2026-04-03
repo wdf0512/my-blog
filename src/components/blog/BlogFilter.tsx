@@ -1,8 +1,10 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useRef } from 'react';
 import Link from 'next/link';
 import { ArrowRight, Search } from 'lucide-react';
+import { useFlipCards } from '@/hooks/useFlipCards';
+import { useFilterMorph } from '@/hooks/useFilterMorph';
 
 const THEMES = [
   {
@@ -53,6 +55,10 @@ type Props = {
 
 export function BlogFilter({ posts, allTags }: Props) {
   const [activeTag, setActiveTag] = useState<string | null>(null);
+  const gridRef = useRef<HTMLDivElement>(null);
+
+  useFlipCards(gridRef);
+  useFilterMorph(gridRef, activeTag);
 
   const filtered = activeTag
     ? posts.filter((p) => p.tags?.includes(activeTag))
@@ -96,7 +102,11 @@ export function BlogFilter({ posts, allTags }: Props) {
         </div>
       )}
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div
+        ref={gridRef}
+        className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        style={{ perspective: '1200px' }}
+      >
         {filtered.map((post, i) => {
           const theme = THEMES[i % THEMES.length];
           const date = new Date(post.date).toLocaleDateString('en-US', {
@@ -106,7 +116,11 @@ export function BlogFilter({ posts, allTags }: Props) {
           });
 
           return (
-            <article key={post.slug}>
+            <article
+              key={post.slug}
+              data-post-slug={post.slug}
+              data-post-tags={(post.tags ?? []).join(',')}
+            >
               <Link
                 href={`/blog/${post.slug}`}
                 className="group flex flex-col h-[400px] rounded-3xl overflow-hidden shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 border border-border"
