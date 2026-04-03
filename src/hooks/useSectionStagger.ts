@@ -25,7 +25,8 @@ export function useSectionStagger(
 
       // Animate SVG divider line drawing in
       if (svgLine) {
-        gsap.set(svgLine, { strokeDasharray: 2000, strokeDashoffset: 2000 });
+        const lineLength = sectionRef.current!.getBoundingClientRect().width || 2000;
+        gsap.set(svgLine, { strokeDasharray: lineLength, strokeDashoffset: lineLength });
         tl.to(svgLine, { strokeDashoffset: 0, duration: 0.8, ease: 'power2.inOut' });
       }
 
