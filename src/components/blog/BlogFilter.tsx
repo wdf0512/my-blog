@@ -60,10 +60,6 @@ export function BlogFilter({ posts, allTags }: Props) {
   useFlipCards(gridRef);
   useFilterMorph(gridRef, activeTag);
 
-  const filtered = activeTag
-    ? posts.filter((p) => p.tags?.includes(activeTag))
-    : posts;
-
   return (
     <>
       {allTags.length > 0 && (
@@ -167,15 +163,9 @@ export function BlogFilter({ posts, allTags }: Props) {
         })}
       </div>
 
-      {filtered.length === 0 && (
+      {posts.length === 0 && (
         <div className="text-center py-20">
-          <p className="text-text-secondary text-lg mb-3">No articles tagged &ldquo;{activeTag}&rdquo;</p>
-          <button
-            onClick={() => setActiveTag(null)}
-            className="text-sm text-primary hover:underline"
-          >
-            Clear filter
-          </button>
+          <p className="text-text-secondary text-lg">No articles yet. Check back soon!</p>
         </div>
       )}
     </>
