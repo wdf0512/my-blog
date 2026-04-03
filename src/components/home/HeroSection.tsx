@@ -1,89 +1,86 @@
 'use client';
 
 import { HeroSceneLoader } from '@/components/3d/HeroSceneLoader';
-import { Github, Twitter, Linkedin, Mail, ArrowRight } from 'lucide-react';
+import { Github, Twitter, Linkedin, Mail, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
+import btn from '@/styles/buttons.module.css';
+import styles from './HeroSection.module.css';
+
+const SOCIAL = [
+  { label: 'GitHub', href: 'https://github.com/yourusername', icon: Github, color: 'var(--text-primary)' },
+  { label: 'Twitter', href: 'https://twitter.com/yourusername', icon: Twitter, color: '#1DA1F2' },
+  { label: 'LinkedIn', href: 'https://linkedin.com/in/yourusername', icon: Linkedin, color: '#0A66C2' },
+  { label: 'Email', href: 'mailto:defangninj@outlook.com', icon: Mail, color: 'var(--primary)' },
+] as const;
 
 export function HeroSection() {
   return (
-    <section className="container mx-auto px-4 py-12 md:py-16 max-w-6xl">
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-        {/* Left: Personal intro */}
-        <div className="order-2 lg:order-1">
-          <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-black leading-[1.1] tracking-tight mb-6 text-text-primary">
-            Hi, I'm <span className="text-primary">Defang</span>
-          </h1>
+    <section className="relative overflow-hidden">
+      {/* Radial glow — gives glass buttons their blur target */}
+      <div
+        className="pointer-events-none absolute inset-0"
+        style={{ backgroundImage: 'radial-gradient(ellipse 55% 60% at 20% 50%, rgba(242,201,76,0.07) 0%, transparent 70%)' }}
+        aria-hidden
+      />
 
-          <p className="text-text-secondary text-xl md:text-2xl leading-relaxed mb-6">
-            A full-stack developer passionate about building beautiful web experiences,
-            indie hacking, and sharing what I learn along the way.
-          </p>
+      <div className="relative container mx-auto px-4 py-14 md:py-24 max-w-6xl">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
-          <p className="text-text-secondary text-lg leading-relaxed mb-8">
-            I write about React, Next.js, TypeScript, and the journey of building products
-            as an indie developer. Currently working on AI-powered tools and exploring
-            creative coding with Three.js.
-          </p>
+          {/* ── Left: text + CTA ── */}
+          <div className="order-2 lg:order-1 flex flex-col items-start gap-5">
 
-          {/* Social links */}
-          <div className="flex flex-wrap gap-4 mb-8">
-            <a
-              href="https://github.com/yourusername"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface hover:bg-primary transition-all group shadow-sm"
-            >
-              <Github className="w-4 h-4 text-text-secondary group-hover:text-white transition-colors" />
-              <span className="text-sm font-medium text-text-primary group-hover:text-white transition-colors">
-                GitHub
-              </span>
-            </a>
-            <a
-              href="https://twitter.com/yourusername"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface hover:bg-primary transition-all group shadow-sm"
-            >
-              <Twitter className="w-4 h-4 text-text-secondary group-hover:text-white transition-colors" />
-              <span className="text-sm font-medium text-text-primary group-hover:text-white transition-colors">
-                Twitter
-              </span>
-            </a>
-            <a
-              href="https://linkedin.com/in/yourusername"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface hover:bg-primary transition-all group shadow-sm"
-            >
-              <Linkedin className="w-4 h-4 text-text-secondary group-hover:text-white transition-colors" />
-              <span className="text-sm font-medium text-text-primary group-hover:text-white transition-colors">
-                LinkedIn
-              </span>
-            </a>
-            <a
-              href="mailto:defangninj@outlook.com"
-              className="flex items-center gap-2 px-4 py-2 rounded-xl bg-surface hover:bg-primary transition-all group shadow-sm"
-            >
-              <Mail className="w-4 h-4 text-text-secondary group-hover:text-white transition-colors" />
-              <span className="text-sm font-medium text-text-primary group-hover:text-white transition-colors">
-                Email
-              </span>
-            </a>
+            {/* Eyebrow label */}
+            <div className={styles.eyebrow}>
+              <span className={styles.eyebrowDot} aria-hidden />
+              Developer · Writer · Builder
+            </div>
+
+            {/* Heading */}
+            <h1 className="font-display font-black leading-[1.05] tracking-tight text-text-primary mb-5"
+              style={{ fontSize: 'clamp(2.75rem, 6vw, 4.5rem)' }}>
+              Hi, I&apos;m{' '}
+              <span className="text-primary">Defang.</span>
+            </h1>
+
+            {/* Tagline — one concise line, not two paragraphs */}
+            <p className="text-text-secondary leading-relaxed mb-8"
+              style={{ fontSize: 'clamp(1.05rem, 1.8vw, 1.25rem)', maxWidth: '38ch' }}>
+              I build beautiful web experiences and share everything I learn — from React patterns to indie hacking and creative coding with Three.js.
+            </p>
+
+            {/* CTA — right after the hook, not buried */}
+            <div className="mb-8">
+              <Link href="/blog" className={btn.btnPrimary}>
+                <span className={btn.btnLabel}>Read my articles</span>
+                <span className={btn.btnKnob} aria-hidden>
+                  <ChevronRight className={btn.btnKnobIcon} strokeWidth={2.25} />
+                </span>
+              </Link>
+            </div>
+
           </div>
 
-          {/* CTA */}
-          <Link
-            href="/blog"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-primary hover:bg-yellow-500 text-text-primary hover:text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-primary/30 transition-all group"
-          >
-            Read my articles
-            <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-          </Link>
-        </div>
+          {/* ── Right: 3D character + social icons ── */}
+          <div className="order-1 lg:order-2 flex flex-col items-center gap-8">
+            <HeroSceneLoader />
 
-        {/* Right: 3D Character */}
-        <div className="order-1 lg:order-2 flex justify-center">
-          <HeroSceneLoader />
+            {/* Neumorphic social icons */}
+            <div className="flex items-center gap-4">
+              {SOCIAL.map(({ label, href, icon: Icon, color }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target={href.startsWith('mailto') ? undefined : '_blank'}
+                  rel={href.startsWith('mailto') ? undefined : 'noopener noreferrer'}
+                  aria-label={label}
+                  className={styles.neuBtn}
+                >
+                  <Icon size={22} style={{ color }} aria-hidden />
+                </a>
+              ))}
+            </div>
+          </div>
+
         </div>
       </div>
     </section>

@@ -4,6 +4,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { ChevronRight, Mail } from 'lucide-react';
 import styles from './HeroTypewriter.module.css';
+import btn from '@/styles/buttons.module.css';
 
 const PHASE1 = "Hi, I'm Defang";
 const DEFANG_START = PHASE1.indexOf('Defang'); // 8
@@ -82,15 +83,15 @@ export function HeroTypewriter() {
         </div>
 
         <div className={styles.buttons}>
-          <Link href="/blog" className={styles.btnPrimary}>
-            <span className={styles.btnLabel}>Read my articles</span>
-            <span className={styles.btnKnob} aria-hidden>
-              <ChevronRight className={styles.btnKnobIcon} strokeWidth={2.25} />
+          <Link href="/blog" className={btn.btnPrimary}>
+            <span className={btn.btnLabel}>Read my articles</span>
+            <span className={btn.btnKnob} aria-hidden>
+              <ChevronRight className={btn.btnKnobIcon} strokeWidth={2.25} />
             </span>
           </Link>
-          <a href="mailto:defangninj@outlook.com" className={styles.btnSecondary}>
-            <Mail className={styles.btnSecondaryIcon} strokeWidth={2} aria-hidden />
-            <span className={styles.btnLabel}>Say hello</span>
+          <a href="mailto:defangninj@outlook.com" className={btn.btnSecondary}>
+            <Mail className={btn.btnSecondaryIcon} strokeWidth={2} aria-hidden />
+            <span className={btn.btnLabel}>Say hello</span>
           </a>
         </div>
       </div>

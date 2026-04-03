@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
+import btn from '@/styles/buttons.module.css';
 
 export default function NotFound() {
   return (
@@ -13,12 +14,9 @@ export default function NotFound() {
       <p className="text-text-secondary mb-8 max-w-sm">
         This page doesn&apos;t exist or was moved.
       </p>
-      <Link
-        href="/"
-        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-surface hover:bg-primary/10 border border-border hover:border-primary/30 text-text-primary transition-all group"
-      >
-        <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
-        Back to home
+      <Link href="/" className={btn.btnSecondary}>
+        <ArrowLeft className={btn.btnSecondaryIcon} aria-hidden />
+        <span className={btn.btnLabel}>Back to home</span>
       </Link>
     </div>
   );

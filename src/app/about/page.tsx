@@ -3,6 +3,7 @@ import { Github, Twitter, Mail } from 'lucide-react';
 import { HeroTypewriterLoader } from '@/components/about/HeroTypewriterLoader';
 import { TimelineTapeLoader } from '@/components/about/TimelineTapeLoader';
 import { FadeIn } from '@/components/animations/FadeIn';
+import btn from '@/styles/buttons.module.css';
 
 export const metadata: Metadata = {
   title: 'About — Defang',
@@ -161,68 +162,29 @@ export default function AboutPage() {
             I&apos;m always open to interesting projects, collabs, or just a chat.
           </p>
           <div className="flex flex-wrap justify-center gap-3">
-            <a
-              href="mailto:defangninj@outlook.com"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                padding: '12px 28px',
-                borderRadius: '980px',
-                background: 'var(--primary)',
-                color: '#000',
-                fontWeight: 700,
-                fontSize: '15px',
-                fontFamily: FONT,
-                textDecoration: 'none',
-              }}
-            >
-              <Mail size={16} />
-              defangninj@outlook.com
+            <a href="mailto:defangninj@outlook.com" className={btn.btnPrimary}>
+              <span className={btn.btnLabel}>defangninj@outlook.com</span>
+              <span className={btn.btnKnob} aria-hidden>
+                <Mail className={btn.btnKnobIcon} strokeWidth={2} />
+              </span>
             </a>
             <a
               href="https://github.com/yourusername"
               target="_blank"
               rel="noopener noreferrer"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                padding: '12px 24px',
-                borderRadius: '980px',
-                background: 'var(--surface)',
-                border: '1px solid var(--border)',
-                color: 'var(--text-primary)',
-                fontWeight: 600,
-                fontSize: '15px',
-                fontFamily: FONT,
-                textDecoration: 'none',
-              }}
+              className={btn.btnSecondary}
             >
-              <Github size={16} />
-              GitHub
+              <Github className={btn.btnSecondaryIcon} size={16} aria-hidden />
+              <span className={btn.btnLabel}>GitHub</span>
             </a>
             <a
               href="https://twitter.com/yourusername"
               target="_blank"
               rel="noopener noreferrer"
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '8px',
-                padding: '12px 24px',
-                borderRadius: '980px',
-                background: 'var(--surface)',
-                border: '1px solid var(--border)',
-                color: 'var(--text-primary)',
-                fontWeight: 600,
-                fontSize: '15px',
-                fontFamily: FONT,
-                textDecoration: 'none',
-              }}
+              className={btn.btnSecondary}
             >
-              <Twitter size={16} />
-              Twitter
+              <Twitter className={btn.btnSecondaryIcon} size={16} aria-hidden />
+              <span className={btn.btnLabel}>Twitter</span>
             </a>
           </div>
         </FadeIn>

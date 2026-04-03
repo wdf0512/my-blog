@@ -1,0 +1,123 @@
+/* Eyebrow label */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.eyebrowDot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--primary);
+  flex-shrink: 0;
+  box-shadow: 0 0 0 3px rgba(242, 201, 76, 0.2);
+}
+
+/* Tech stack tags */
+.tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: var(--text-secondary);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  transition: color 0.18s ease, border-color 0.18s ease;
+}
+
+.tag:hover {
+  color: var(--text-primary);
+  border-color: var(--primary);
+}
+
+/* Neumorphic social icon buttons */
+.neuBtn {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  background: var(--background);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  flex-shrink: 0;
+  color: var(--text-secondary);
+  /* Light mode: warm off-white bg (#F4F2EB) → dark shadow #D7D5CF, light highlight #FFFFFF */
+  box-shadow:
+    7px 7px 14px #d7d5cf,
+    -7px -7px 14px #ffffff;
+  transition:
+    box-shadow 0.22s ease,
+    transform 0.22s ease,
+    color 0.18s ease;
+}
+
+.neuBtn:hover {
+  transform: translateY(-3px);
+  color: var(--text-primary);
+  box-shadow:
+    10px 10px 20px #d7d5cf,
+    -10px -10px 20px #ffffff;
+}
+
+.neuBtn:active {
+  transform: translateY(0);
+  box-shadow:
+    inset 4px 4px 10px #d7d5cf,
+    inset -4px -4px 10px #ffffff;
+}
+
+.neuBtn:focus-visible {
+  outline: none;
+  box-shadow:
+    7px 7px 14px #d7d5cf,
+    -7px -7px 14px #ffffff,
+    0 0 0 3px var(--primary);
+}
+
+/* Dark mode: dark bg (#1C1B19) → darker #0E0D0C, lighter #2A2926 */
+:global(.dark) .neuBtn {
+  box-shadow:
+    7px 7px 14px #0e0d0c,
+    -7px -7px 14px #2a2926;
+  color: var(--text-secondary);
+}
+
+:global(.dark) .neuBtn:hover {
+  box-shadow:
+    10px 10px 20px #0e0d0c,
+    -10px -10px 20px #2a2926;
+  color: var(--text-primary);
+}
+
+:global(.dark) .neuBtn:active {
+  box-shadow:
+    inset 4px 4px 10px #0e0d0c,
+    inset -4px -4px 10px #2a2926;
+}
+
+:global(.dark) .neuBtn:focus-visible {
+  box-shadow:
+    7px 7px 14px #0e0d0c,
+    -7px -7px 14px #2a2926,
+    0 0 0 3px var(--primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .neuBtn {
+    transition-duration: 0.01ms;
+  }
+  .neuBtn:hover {
+    transform: none;
+  }
+}
