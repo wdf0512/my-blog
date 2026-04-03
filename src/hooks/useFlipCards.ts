@@ -8,9 +8,9 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 export function useFlipCards(gridRef: RefObject<HTMLElement | null>) {
   useGSAP(
     () => {
-      gsap.registerPlugin(ScrollTrigger);
+      if (!gridRef.current) return;
 
-      const cards = gsap.utils.toArray<HTMLElement>('[data-post-slug]', gridRef.current!);
+      const cards = gsap.utils.toArray<HTMLElement>('[data-post-slug]', gridRef.current);
       if (cards.length === 0) return;
 
       gsap.from(cards, {

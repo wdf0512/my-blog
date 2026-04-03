@@ -26,11 +26,12 @@ export function useFilterMorph(
       const matches = tags.includes(activeTag);
 
       if (matches) {
-        gsap.to(card, { opacity: 1, scale: 1.02, duration: 0.2, ease: 'power2.out' });
-        gsap.to(card, { scale: 1, duration: 0.3, ease: 'elastic.out(1, 0.5)', delay: 0.2 });
+        const tl = gsap.timeline();
+        tl.to(card, { opacity: 1, scale: 1.02, duration: 0.2, ease: 'power2.out' })
+          .to(card, { scale: 1, duration: 0.3, ease: 'elastic.out(1, 0.5)' });
       } else {
         gsap.to(card, { scale: 0.92, opacity: 0.25, duration: 0.25, ease: 'power2.out' });
       }
     });
-  }, [activeTag, gridRef]);
+  }, [activeTag]); // gridRef is a stable ref object, not a reactive dependency
 }
