@@ -35,13 +35,15 @@ export function useParallaxHero() {
           const { left, top, width, height } = section.getBoundingClientRect();
           const x = (e.clientX - left - width / 2) / (width / 2);
           const y = (e.clientY - top - height / 2) / (height / 2);
-          gsap.to(textRef.current, { x: x * 8, y: y * 8, duration: 0.5, ease: 'power1.out' });
-          gsap.to(asciiRef.current, { x: -x * 18, y: -y * 18, duration: 0.7, ease: 'power1.out' });
+          gsap.to(textRef.current, { x: x * 8, y: y * 8, duration: 0.5, ease: 'power1.out', overwrite: 'auto' });
+          gsap.to(asciiRef.current, { x: -x * 18, y: -y * 18, duration: 0.7, ease: 'power1.out', overwrite: 'auto' });
         };
 
         section.addEventListener('mousemove', onMouseMove);
         return () => section.removeEventListener('mousemove', onMouseMove);
       });
+
+      return () => mm.revert();
     },
     { scope: sectionRef }
   );
