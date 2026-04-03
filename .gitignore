@@ -65,3 +65,4 @@ public/static
 
 # Use bun.lock instead of package-lock.json
 package-lock.json
+.superpowers/
