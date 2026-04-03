@@ -3,6 +3,7 @@ import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
 import localFont from 'next/font/local';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
+import { GSAPProvider } from '@/components/providers/GSAPProvider';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import './globals.css';
@@ -49,11 +50,13 @@ export default function RootLayout({
     >
       <body className="font-sans" suppressHydrationWarning>
         <ThemeProvider>
-          <div className="flex min-h-screen flex-col">
-            <Header />
-            <main className="flex-1">{children}</main>
-            <Footer />
-          </div>
+          <GSAPProvider>
+            <div className="flex min-h-screen flex-col">
+              <Header />
+              <main className="flex-1">{children}</main>
+              <Footer />
+            </div>
+          </GSAPProvider>
         </ThemeProvider>
       </body>
     </html>
