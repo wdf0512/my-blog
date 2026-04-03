@@ -4,6 +4,7 @@ import { useRef } from 'react';
 import { Github, Mail, Twitter } from 'lucide-react';
 import btn from '@/styles/buttons.module.css';
 import { useSectionStagger } from '@/hooks/useSectionStagger';
+import { useLineReveal } from '@/hooks/useLineReveal';
 
 const FONT =
   "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif";
@@ -39,10 +40,12 @@ export function AboutSections() {
   const storyRef = useRef<HTMLElement>(null);
   const nowRef = useRef<HTMLElement>(null);
   const contactRef = useRef<HTMLElement>(null);
+  const quoteRef = useRef<HTMLDivElement>(null);
 
   useSectionStagger(storyRef);
   useSectionStagger(nowRef, { springCards: true });
   useSectionStagger(contactRef);
+  useLineReveal(quoteRef);
 
   return (
     <>
@@ -60,7 +63,7 @@ export function AboutSections() {
           <p data-stagger className="mb-8" style={SECTION_LABEL}>My Story</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
             {/* quote-block intentionally has no data-stagger — handled by useLineReveal in Task 7 */}
-            <div className="quote-block">
+            <div ref={quoteRef} className="quote-block">
               <p
                 style={{
                   fontFamily: FONT,
