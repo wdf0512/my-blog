@@ -107,7 +107,7 @@ export function BlogFilter({ posts, allTags }: Props) {
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         style={{ perspective: '1200px' }}
       >
-        {filtered.map((post, i) => {
+        {posts.map((post, i) => {
           const theme = THEMES[i % THEMES.length];
           const date = new Date(post.date).toLocaleDateString('en-US', {
             month: 'short',
