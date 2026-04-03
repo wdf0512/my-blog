@@ -3,7 +3,6 @@
 import { RefObject } from 'react';
 import { useGSAP } from '@gsap/react';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 export function useFlipCards(gridRef: RefObject<HTMLElement | null>) {
   useGSAP(
