@@ -15,7 +15,7 @@ const SOCIAL = [
 
 export function HeroSection() {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden min-h-screen flex flex-col justify-center">
       {/* Radial glow — gives glass buttons their blur target */}
       <div
         className="pointer-events-none absolute inset-0"
@@ -23,7 +23,7 @@ export function HeroSection() {
         aria-hidden
       />
 
-      <div className="relative container mx-auto px-4 py-14 md:py-24 max-w-6xl">
+      <div className="relative container mx-auto px-4 py-16 max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
 
           {/* ── Left: text + CTA ── */}
