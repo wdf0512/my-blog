@@ -1,7 +1,9 @@
 'use client';
 
+import { useRef } from 'react';
 import { Github, Mail, Twitter } from 'lucide-react';
 import btn from '@/styles/buttons.module.css';
+import { useSectionStagger } from '@/hooks/useSectionStagger';
 
 const FONT =
   "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif";
@@ -34,26 +36,30 @@ const NOW_ITEMS = [
 ];
 
 export function AboutSections() {
+  const storyRef = useRef<HTMLElement>(null);
+  const nowRef = useRef<HTMLElement>(null);
+  const contactRef = useRef<HTMLElement>(null);
+
+  useSectionStagger(storyRef);
+  useSectionStagger(nowRef, { springCards: true });
+  useSectionStagger(contactRef);
+
   return (
     <>
       {/* Section: My Story */}
       <section
+        ref={storyRef}
         className="px-4 md:px-8 py-12 md:py-20"
         style={{ background: 'var(--surface)' }}
       >
-        {/* SVG divider — replaces border-top, will be animated in Task 6 */}
-        <svg
-          className="section-divider w-full mb-12"
-          height="2"
-          aria-hidden
-        >
+        <svg className="section-divider w-full mb-12" height="2" aria-hidden>
           <line x1="0" y1="1" x2="100%" y2="1" stroke="var(--border)" strokeWidth="1" />
         </svg>
 
         <div className="max-w-[960px] mx-auto">
-          <p className="mb-8" style={SECTION_LABEL}>My Story</p>
+          <p data-stagger className="mb-8" style={SECTION_LABEL}>My Story</p>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
-            {/* quote-block — no data-stagger, handled by useLineReveal in Task 7 */}
+            {/* quote-block intentionally has no data-stagger — handled by useLineReveal in Task 7 */}
             <div className="quote-block">
               <p
                 style={{
@@ -79,6 +85,7 @@ export function AboutSections() {
               </p>
             </div>
             <div
+              data-stagger
               className="flex flex-col gap-4"
               style={{ fontFamily: FONT, fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.75 }}
             >
@@ -102,6 +109,7 @@ export function AboutSections() {
 
       {/* Section: What I'm Doing Now */}
       <section
+        ref={nowRef}
         className="px-4 md:px-8 py-12 md:py-20"
         style={{ background: 'var(--surface)' }}
       >
@@ -110,11 +118,12 @@ export function AboutSections() {
         </svg>
 
         <div className="max-w-[960px] mx-auto">
-          <p className="mb-8" style={SECTION_LABEL}>What I&apos;m Doing Now</p>
+          <p data-stagger className="mb-8" style={SECTION_LABEL}>What I&apos;m Doing Now</p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {NOW_ITEMS.map((item) => (
               <div
                 key={item.label}
+                data-stagger
                 style={{
                   background: 'var(--background)',
                   border: '1px solid var(--border)',
@@ -145,6 +154,7 @@ export function AboutSections() {
 
       {/* Section: Contact */}
       <section
+        ref={contactRef}
         className="px-4 md:px-8 py-12 md:py-20 text-center"
         style={{ background: 'var(--background)' }}
       >
@@ -153,8 +163,9 @@ export function AboutSections() {
         </svg>
 
         <div className="max-w-[960px] mx-auto">
-          <p className="mb-4" style={SECTION_LABEL}>Let&apos;s Talk</p>
+          <p data-stagger className="mb-4" style={SECTION_LABEL}>Let&apos;s Talk</p>
           <p
+            data-stagger
             className="mb-3"
             style={{
               fontFamily: FONT,
@@ -167,12 +178,13 @@ export function AboutSections() {
             Want to work together?
           </p>
           <p
+            data-stagger
             className="mb-8"
             style={{ fontFamily: FONT, fontSize: '15px', color: 'var(--text-secondary)' }}
           >
             I&apos;m always open to interesting projects, collabs, or just a chat.
           </p>
-          <div className="flex flex-wrap justify-center gap-3">
+          <div data-stagger className="flex flex-wrap justify-center gap-3">
             <a href="mailto:defangninj@outlook.com" className={btn.btnPrimary}>
               <span className={btn.btnLabel}>defangninj@outlook.com</span>
               <span className={btn.btnKnob} aria-hidden>
