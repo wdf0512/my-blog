@@ -1,7 +1,6 @@
 'use client';
 
-import { useRef } from 'react';
-import { motion, useScroll, useTransform, useSpring } from 'framer-motion';
+import { useEffect, useRef, useState } from 'react';
 
 type Props = {
   children: React.ReactNode;
@@ -10,30 +9,38 @@ type Props = {
 
 export function ScrollReveal({ children, className }: Props) {
   const ref = useRef<HTMLDivElement>(null);
+  const [isVisible, setIsVisible] = useState(false);
 
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    // start: element bottom touches viewport bottom
-    // end: element top touches viewport top
-    offset: ['start end', 'end start'],
-  });
+  useEffect(() => {
+    const node = ref.current;
+    if (!node || isVisible) return;
 
-  // Smooth the raw scroll value to avoid jitter
-  const smoothProgress = useSpring(scrollYProgress, {
-    stiffness: 80,
-    damping: 20,
-    restDelta: 0.001,
-  });
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting) return;
+        setIsVisible(true);
+        observer.disconnect();
+      },
+      {
+        threshold: 0.15,
+      }
+    );
 
-  // Fade in during [0 → 0.15], hold [0.15 → 0.8], fade out [0.8 → 1]
-  const opacity = useTransform(smoothProgress, [0, 0.15, 0.8, 1], [0, 1, 1, 0]);
-
-  // Slide up on entry [0 → 0.15], hold, drift up slightly on exit [0.8 → 1]
-  const y = useTransform(smoothProgress, [0, 0.15, 0.8, 1], [56, 0, 0, -24]);
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, [isVisible]);
 
   return (
-    <motion.div ref={ref} style={{ opacity, y }} className={className}>
+    <div
+      ref={ref}
+      className={className}
+      style={{
+        opacity: isVisible ? 1 : 0,
+        transform: isVisible ? 'translateY(0)' : 'translateY(40px)',
+        transition: 'opacity 500ms ease-out, transform 500ms ease-out',
+      }}
+    >
       {children}
-    </motion.div>
+    </div>
   );
 }
