@@ -142,7 +142,7 @@ export default async function PostPage({ params }: Props) {
                 </p>
                 <div className="flex gap-3">
                   <a
-                    href="https://twitter.com/yourusername"
+                    href="https://x.com/De991025"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-primary hover:underline"
@@ -151,7 +151,7 @@ export default async function PostPage({ params }: Props) {
                   </a>
                   <span className="text-text-muted">•</span>
                   <a
-                    href="https://github.com/yourusername"
+                    href="https://github.com/wdf0512"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-sm text-primary hover:underline"

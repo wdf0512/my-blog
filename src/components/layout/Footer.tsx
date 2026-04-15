@@ -62,7 +62,7 @@ export function Footer() {
             <h3 className="font-semibold text-text-primary mb-4">Connect</h3>
             <div className="flex flex-col gap-3">
               <a
-                href="https://github.com/yourusername"
+                href="https://github.com/wdf0512"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-text-secondary hover:text-primary transition-colors"
@@ -71,7 +71,7 @@ export function Footer() {
                 GitHub
               </a>
               <a
-                href="https://twitter.com/yourusername"
+                href="https://x.com/De991025"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-text-secondary hover:text-primary transition-colors"
@@ -80,7 +80,7 @@ export function Footer() {
                 Twitter
               </a>
               <a
-                href="https://linkedin.com/in/yourusername"
+                href="https://www.linkedin.com/in/defang-weng-169591226/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-text-secondary hover:text-primary transition-colors"

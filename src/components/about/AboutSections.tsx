@@ -194,11 +194,11 @@ export function AboutSections() {
                 <Mail className={btn.btnKnobIcon} strokeWidth={2} />
               </span>
             </a>
-            <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className={btn.btnSecondary}>
+            <a href="https://github.com/wdf0512" target="_blank" rel="noopener noreferrer" className={btn.btnSecondary}>
               <Github className={btn.btnSecondaryIcon} size={16} aria-hidden />
               <span className={btn.btnLabel}>GitHub</span>
             </a>
-            <a href="https://twitter.com/yourusername" target="_blank" rel="noopener noreferrer" className={btn.btnSecondary}>
+            <a href="https://x.com/De991025" target="_blank" rel="noopener noreferrer" className={btn.btnSecondary}>
               <Twitter className={btn.btnSecondaryIcon} size={16} aria-hidden />
               <span className={btn.btnLabel}>Twitter</span>
             </a>

@@ -8,9 +8,9 @@ import styles from './HeroSection.module.css';
 import { useParallaxHero } from '@/hooks/useParallaxHero';
 
 const SOCIAL = [
-  { label: 'GitHub', href: 'https://github.com/yourusername', icon: Github, color: 'var(--text-primary)' },
-  { label: 'Twitter', href: 'https://twitter.com/yourusername', icon: Twitter, color: '#1DA1F2' },
-  { label: 'LinkedIn', href: 'https://linkedin.com/in/yourusername', icon: Linkedin, color: '#0A66C2' },
+  { label: 'GitHub', href: 'https://github.com/wdf0512', icon: Github, color: 'var(--text-primary)' },
+  { label: 'Twitter', href: 'https://x.com/De991025', icon: Twitter, color: '#1DA1F2' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/defang-weng-169591226/', icon: Linkedin, color: '#0A66C2' },
   { label: 'Email', href: 'mailto:defangninj@outlook.com', icon: Mail, color: 'var(--primary)' },
 ] as const;
 
