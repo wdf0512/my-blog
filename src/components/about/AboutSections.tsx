@@ -132,7 +132,7 @@ export function AboutSections() {
         </svg>
 
         <div className="max-w-[960px] mx-auto">
-          <p data-stagger className={`mb-8 ${now.nowLabel}`}>
+          <p data-stagger className={now.nowLabel}>
             <span className={now.pulseDot} aria-hidden="true" />
             What I&apos;m Doing Now
           </p>
