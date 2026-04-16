@@ -33,7 +33,7 @@ export function HeroSection() {
           <div ref={textRef} className="order-2 lg:order-1 flex flex-col items-start gap-5">
             <div data-hero-item className={styles.eyebrow}>
               <span className={styles.eyebrowDot} aria-hidden />
-              Developer · Writer · Builder
+              AI Engineer · Full-Stack Dev · Builder
             </div>
 
             <h1
@@ -50,7 +50,7 @@ export function HeroSection() {
               className="text-text-secondary leading-relaxed mb-8"
               style={{ fontSize: 'clamp(1.05rem, 1.8vw, 1.25rem)', maxWidth: '38ch' }}
             >
-              I build beautiful web experiences and share everything I learn — from React patterns to indie hacking and creative coding with Three.js.
+              Full-stack AI engineer. I love programming, obsess over intelligent systems, and write about everything AI — what&apos;s shipping, what&apos;s breaking, and what actually matters.
             </p>
 
             <div data-hero-item className="mb-8">

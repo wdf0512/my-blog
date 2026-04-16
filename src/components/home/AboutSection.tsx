@@ -29,15 +29,11 @@ const stats = [
   },
 ];
 
-const skills = [
-  'React & Next.js',
-  'TypeScript',
-  'Node.js',
-  'Three.js & WebGL',
-  'Tailwind CSS',
-  'PostgreSQL',
-  'AI/ML Integration',
-  'Cloud Deployment',
+const beliefs = [
+  { heading: 'Ship, then learn', body: 'Real feedback from production beats any amount of planning. I ship early and iterate fast.' },
+  { heading: 'Build end-to-end', body: 'I own the whole stack — backend, API, frontend. Context collapse across layers is where the real problems live.' },
+  { heading: 'Learn in public', body: 'Writing forces clarity. If I can\'t explain what I built, I don\'t fully understand it yet.' },
+  { heading: 'AI is the craft', body: 'Not a tool I use — the thing I think about most. The models, the patterns, the failures, and where it\'s all going.' },
 ];
 
 export function AboutSection() {
@@ -74,38 +70,34 @@ export function AboutSection() {
             </h2>
             <div className="space-y-4 text-text-secondary leading-relaxed">
               <p>
-                I'm a self-taught developer who fell in love with coding back in 2019.
-                What started as a curiosity turned into a career building web applications
-                and exploring creative technology.
+                I&apos;m a full-stack developer turned AI engineer, with experience
+                shipping production LLM systems and complex enterprise web apps.
+                I specialize in the full chain — from multi-agent backends with
+                LangGraph to generative UI frontends in React.
               </p>
               <p>
-                When I'm not coding, you'll find me experimenting with 3D graphics,
-                writing about my experiences, or working on my next side project.
-                I believe in learning in public and sharing knowledge with the community.
+                When I&apos;m not shipping code, I&apos;m exploring new AI frameworks,
+                writing about what I&apos;ve learned, or working on a side project.
+                I believe in learning in public and sharing knowledge freely.
               </p>
               <p>
-                Currently focused on building AI-powered web tools and exploring the
-                intersection of design and development.
+                Currently building an AI-driven Agentic ERP system at Nuobinteng,
+                architecting multi-agent workflows and Generative UI with SSE streaming.
               </p>
             </div>
           </div>
 
-          {/* Skills */}
+          {/* Beliefs */}
           <div>
-            <h2 className="font-display text-3xl font-black mb-4 text-text-primary">
-              Tech Stack
+            <h2 className="font-display text-3xl font-black mb-6 text-text-primary">
+              What I believe
             </h2>
-            <p className="text-text-secondary mb-6">
-              Technologies and tools I work with regularly:
-            </p>
-            <div className="flex flex-wrap gap-3">
-              {skills.map((skill) => (
-                <span
-                  key={skill}
-                  className="px-4 py-2 bg-background rounded-xl border border-border text-sm font-medium text-text-primary hover:border-primary hover:bg-primary/5 transition-all"
-                >
-                  {skill}
-                </span>
+            <div className="flex flex-col gap-5">
+              {beliefs.map((item) => (
+                <div key={item.heading}>
+                  <p className="text-sm font-semibold text-primary mb-1">{item.heading}</p>
+                  <p className="text-text-secondary text-sm leading-relaxed">{item.body}</p>
+                </div>
               ))}
             </div>
           </div>
