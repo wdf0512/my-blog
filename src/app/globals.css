@@ -256,3 +256,9 @@ a:hover {
 .prose .anchor:hover {
   color: var(--primary);
 }
+
+/* Custom cursor — hides native cursor when CursorTrail is active */
+[data-custom-cursor],
+[data-custom-cursor] * {
+  cursor: none !important;
+}

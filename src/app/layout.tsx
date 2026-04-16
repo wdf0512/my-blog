@@ -4,6 +4,7 @@ import { GeistMono } from 'geist/font/mono';
 import localFont from 'next/font/local';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
 import { GSAPProvider } from '@/components/providers/GSAPProvider';
+import { CursorTrail } from '@/components/ui/CursorTrail';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import './globals.css';
@@ -62,6 +63,7 @@ export default function RootLayout({
       <body className="font-sans" suppressHydrationWarning>
         <ThemeProvider>
           <GSAPProvider>
+            <CursorTrail />
             <div className="flex min-h-screen flex-col">
               <Header />
               <main className="flex-1">{children}</main>
