@@ -16,6 +16,9 @@ export function CursorTrail() {
     mm.add('(min-width: 769px) and (pointer: fine)', () => {
       document.documentElement.setAttribute('data-custom-cursor', '');
 
+      gsap.set(dot, { xPercent: -50, yPercent: -50 });
+      gsap.set(ring, { xPercent: -50, yPercent: -50 });
+
       const moveX = gsap.quickTo(dot, 'x', { duration: 0.1, ease: 'none' });
       const moveY = gsap.quickTo(dot, 'y', { duration: 0.1, ease: 'none' });
       const ringX = gsap.quickTo(ring, 'x', { duration: 0.35, ease: 'power2.out' });
@@ -74,7 +77,6 @@ export function CursorTrail() {
           background: 'var(--primary)',
           pointerEvents: 'none',
           zIndex: 9999,
-          transform: 'translate(-50%, -50%)',
           willChange: 'transform',
         }}
       />
@@ -91,7 +93,6 @@ export function CursorTrail() {
           border: '2px solid var(--primary)',
           pointerEvents: 'none',
           zIndex: 9998,
-          transform: 'translate(-50%, -50%)',
           willChange: 'transform',
         }}
       />
