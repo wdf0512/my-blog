@@ -6,6 +6,7 @@ import btn from '@/styles/buttons.module.css';
 import now from './AboutSections.module.css';
 import { useSectionStagger } from '@/hooks/useSectionStagger';
 import { useLineReveal } from '@/hooks/useLineReveal';
+import { ScrambleText } from '@/components/ui/ScrambleText';
 
 const FONT =
   "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif";
@@ -134,7 +135,9 @@ export function AboutSections() {
                 data-stagger
                 className={now.nowCard}
               >
-                <div className={now.badge}>{item.glyph}</div>
+                <div className={now.badge}>
+                  <ScrambleText trigger duration={400}>{item.glyph}</ScrambleText>
+                </div>
                 <div className={now.cardLabel}>{item.label}</div>
                 <div className={now.cardDesc}>{item.desc}</div>
               </div>

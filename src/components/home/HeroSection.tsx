@@ -1,5 +1,6 @@
 'use client';
 
+import { useRef } from 'react';
 import { HeroSceneLoader } from '@/components/3d/HeroSceneLoader';
 import { Github, Twitter, Linkedin, Mail, ChevronRight } from 'lucide-react';
 import Link from 'next/link';
@@ -7,6 +8,8 @@ import btn from '@/styles/buttons.module.css';
 import styles from './HeroSection.module.css';
 import { useParallaxHero } from '@/hooks/useParallaxHero';
 import { usePlaneScroll } from '@/hooks/usePlaneScroll';
+import { useTextScramble } from '@/hooks/useTextScramble';
+import { useMagneticButton } from '@/hooks/useMagneticButton';
 
 const SOCIAL = [
   { label: 'GitHub',   href: 'https://github.com/wdf0512',                             icon: Github,   color: 'var(--text-primary)' },
@@ -18,6 +21,11 @@ const SOCIAL = [
 export function HeroSection() {
   const { sectionRef, textRef, asciiRef } = useParallaxHero();
   const { planeRef } = usePlaneScroll(sectionRef);
+
+  const nameRef = useRef<HTMLSpanElement>(null);
+  useTextScramble(nameRef, { trigger: false, duration: 800 });
+
+  const ctaRef = useMagneticButton<HTMLAnchorElement>(0.4);
 
   return (
     <section ref={sectionRef} className="relative overflow-hidden min-h-screen flex flex-col justify-center">
@@ -69,7 +77,7 @@ export function HeroSection() {
               style={{ fontSize: 'clamp(2.75rem, 6vw, 4.5rem)' }}
             >
               Hi, I&apos;m{' '}
-              <span className="text-primary">Defang.</span>
+              <span ref={nameRef} className="text-primary">Defang.</span>
             </h1>
 
             <p
@@ -83,7 +91,7 @@ export function HeroSection() {
             </p>
 
             <div data-hero-item className="mb-8">
-              <Link href="/blog" className={btn.btnPrimary}>
+              <Link ref={ctaRef} href="/blog" className={btn.btnPrimary}>
                 <span className={btn.btnLabel}>Read my articles</span>
                 <span className={btn.btnKnob} aria-hidden>
                   <ChevronRight className={btn.btnKnobIcon} strokeWidth={2.25} />

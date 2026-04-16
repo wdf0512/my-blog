@@ -1,5 +1,6 @@
 import { posts } from '#/.velite';
 import { BlogFilter } from '@/components/blog/BlogFilter';
+import { ScrambleText } from '@/components/ui/ScrambleText';
 
 export const metadata = {
   title: 'Blog - All Articles',
@@ -19,7 +20,7 @@ export default function BlogPage() {
     <div className="container mx-auto px-4 py-12 md:py-16 max-w-6xl">
       <div className="mb-12">
         <h1 className="font-display text-5xl md:text-6xl font-black mb-4 text-text-primary">
-          All Articles
+          <ScrambleText trigger={false} duration={700}>All Articles</ScrambleText>
         </h1>
         <p className="text-text-secondary text-xl max-w-2xl">
           {publishedPosts.length} articles about web development, indie hacking,
