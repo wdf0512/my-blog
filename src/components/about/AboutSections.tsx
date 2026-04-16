@@ -24,25 +24,16 @@ const NOW_ITEMS = [
     glyph: '>_',
     label: 'Building',
     desc: 'An Agentic ERP system with multi-agent LLM orchestration (LangGraph) and Generative UI via SSE streaming.',
-    cardCls: now.amber,
-    badgeCls: now.badgeAmber,
-    labelCls: now.labelAmber,
   },
   {
     glyph: 'λ',
     label: 'Learning',
     desc: 'Advanced RAG architectures, prompt engineering, and LangGraph patterns for reliable agentic workflows.',
-    cardCls: now.orange,
-    badgeCls: now.badgeOrange,
-    labelCls: now.labelOrange,
   },
   {
     glyph: '//',
     label: 'Writing',
     desc: 'Articles on AI engineering, agent design, full-stack development, and lessons from real production systems.',
-    cardCls: now.red,
-    badgeCls: now.badgeRed,
-    labelCls: now.labelRed,
   },
 ];
 
@@ -141,10 +132,10 @@ export function AboutSections() {
               <div
                 key={item.label}
                 data-stagger
-                className={`${now.nowCard} ${item.cardCls}`}
+                className={now.nowCard}
               >
-                <div className={`${now.badge} ${item.badgeCls}`}>{item.glyph}</div>
-                <div className={`${now.cardLabel} ${item.labelCls}`}>{item.label}</div>
+                <div className={now.badge}>{item.glyph}</div>
+                <div className={now.cardLabel}>{item.label}</div>
                 <div className={now.cardDesc}>{item.desc}</div>
               </div>
             ))}
