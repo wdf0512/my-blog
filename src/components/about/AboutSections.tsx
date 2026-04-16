@@ -3,6 +3,7 @@
 import { useRef } from 'react';
 import { Github, Mail, Twitter } from 'lucide-react';
 import btn from '@/styles/buttons.module.css';
+import now from './AboutSections.module.css';
 import { useSectionStagger } from '@/hooks/useSectionStagger';
 import { useLineReveal } from '@/hooks/useLineReveal';
 
@@ -20,19 +21,28 @@ const SECTION_LABEL: React.CSSProperties = {
 
 const NOW_ITEMS = [
   {
-    icon: '🔨',
+    glyph: '>_',
     label: 'Building',
-    desc: "AI-powered writing tools and exploring the boundaries of what's possible with LLMs.",
+    desc: 'An Agentic ERP system with multi-agent LLM orchestration (LangGraph) and Generative UI via SSE streaming.',
+    cardCls: now.amber,
+    badgeCls: now.badgeAmber,
+    labelCls: now.labelAmber,
   },
   {
-    icon: '📖',
+    glyph: 'λ',
     label: 'Learning',
-    desc: 'Going deeper on WebGL shaders and advanced Three.js techniques.',
+    desc: 'Advanced RAG architectures, prompt engineering, and LangGraph patterns for reliable agentic workflows.',
+    cardCls: now.orange,
+    badgeCls: now.badgeOrange,
+    labelCls: now.labelOrange,
   },
   {
-    icon: '✍️',
+    glyph: '//',
     label: 'Writing',
-    desc: 'Regular articles on React patterns, indie hacking, and creative coding.',
+    desc: 'Articles on AI engineering, agent design, full-stack development, and lessons from real production systems.',
+    cardCls: now.red,
+    badgeCls: now.badgeRed,
+    labelCls: now.labelRed,
   },
 ];
 
@@ -77,12 +87,12 @@ export function AboutSections() {
               >
                 <span className="line-outer" style={{ overflow: 'hidden', display: 'block' }}>
                   <span className="line-inner" style={{ display: 'block' }}>
-                    &ldquo;I fell in love with coding in 2019
+                    &ldquo;Building with AI is the most
                   </span>
                 </span>
                 <span className="line-outer" style={{ overflow: 'hidden', display: 'block' }}>
                   <span className="line-inner" style={{ display: 'block' }}>
-                    and never looked back.&rdquo;
+                    exciting thing I&apos;ve done.&rdquo;
                   </span>
                 </span>
               </p>
@@ -93,17 +103,18 @@ export function AboutSections() {
               style={{ fontFamily: FONT, fontSize: '15px', color: 'var(--text-secondary)', lineHeight: 1.75 }}
             >
               <p style={{ margin: 0 }}>
-                What started as curiosity turned into a full career. I&apos;m self-taught,
-                which means I&apos;ve always had to learn by building — and that&apos;s
-                exactly how I like it.
+                I started as a frontend developer and gradually moved into full-stack and
+                AI engineering. Working across China and Australia sharpened my ability to
+                deliver production systems under real business pressure.
               </p>
               <p style={{ margin: 0 }}>
-                When I&apos;m not shipping code, I&apos;m experimenting with 3D graphics,
-                writing about my experiences, or working on my next side project.
+                Today I work on multi-agent LLM systems — designing the orchestration
+                layer, building the API, and wiring up the React UI. I love owning the
+                whole stack end-to-end.
               </p>
               <p style={{ margin: 0 }}>
-                I believe in learning in public and sharing everything freely with the
-                community.
+                I believe in learning in public and sharing what I&apos;ve built, broken,
+                and fixed along the way.
               </p>
             </div>
           </div>
@@ -121,34 +132,20 @@ export function AboutSections() {
         </svg>
 
         <div className="max-w-[960px] mx-auto">
-          <p data-stagger className="mb-8" style={SECTION_LABEL}>What I&apos;m Doing Now</p>
+          <p data-stagger className={`mb-8 ${now.nowLabel}`}>
+            <span className={now.pulseDot} aria-hidden="true" />
+            What I&apos;m Doing Now
+          </p>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
             {NOW_ITEMS.map((item) => (
               <div
                 key={item.label}
                 data-stagger
-                style={{
-                  background: 'var(--background)',
-                  border: '1px solid var(--border)',
-                  borderRadius: '12px',
-                  padding: '24px 20px',
-                }}
+                className={`${now.nowCard} ${item.cardCls}`}
               >
-                <div style={{ fontSize: '24px', marginBottom: '12px' }}>{item.icon}</div>
-                <div
-                  style={{
-                    fontFamily: FONT,
-                    fontSize: '15px',
-                    fontWeight: 600,
-                    color: 'var(--text-primary)',
-                    marginBottom: '8px',
-                  }}
-                >
-                  {item.label}
-                </div>
-                <div style={{ fontFamily: FONT, fontSize: '13px', color: 'var(--text-secondary)', lineHeight: 1.65 }}>
-                  {item.desc}
-                </div>
+                <div className={`${now.badge} ${item.badgeCls}`}>{item.glyph}</div>
+                <div className={`${now.cardLabel} ${item.labelCls}`}>{item.label}</div>
+                <div className={now.cardDesc}>{item.desc}</div>
               </div>
             ))}
           </div>
