@@ -24,38 +24,41 @@ export function CursorTrail() {
       const ringX = gsap.quickTo(ring, 'x', { duration: 0.35, ease: 'power2.out' });
       const ringY = gsap.quickTo(ring, 'y', { duration: 0.35, ease: 'power2.out' });
 
+      let revealed = false;
       const onMouseMove = (e: MouseEvent) => {
+        if (!revealed) {
+          gsap.set([dot, ring], { opacity: 1 });
+          revealed = true;
+        }
         moveX(e.clientX);
         moveY(e.clientY);
         ringX(e.clientX);
         ringY(e.clientY);
       };
 
-      const onEnterInteractive = () => {
-        gsap.to(dot, { scale: 0, duration: 0.2, overwrite: 'auto' });
-        gsap.to(ring, { scale: 1.8, opacity: 0.4, duration: 0.3, overwrite: 'auto' });
+      const onEnterInteractive = (e: MouseEvent) => {
+        if ((e.target as Element).closest('a, button')) {
+          gsap.to(dot, { scale: 0, duration: 0.2, overwrite: 'auto' });
+          gsap.to(ring, { scale: 1.8, opacity: 0.4, duration: 0.3, overwrite: 'auto' });
+        }
       };
 
-      const onLeaveInteractive = () => {
-        gsap.to(dot, { scale: 1, duration: 0.2, overwrite: 'auto' });
-        gsap.to(ring, { scale: 1, opacity: 1, duration: 0.3, overwrite: 'auto' });
+      const onLeaveInteractive = (e: MouseEvent) => {
+        if ((e.target as Element).closest('a, button')) {
+          gsap.to(dot, { scale: 1, duration: 0.2, overwrite: 'auto' });
+          gsap.to(ring, { scale: 1, opacity: 1, duration: 0.3, overwrite: 'auto' });
+        }
       };
 
       window.addEventListener('mousemove', onMouseMove);
-
-      const interactiveEls = document.querySelectorAll('a, button');
-      interactiveEls.forEach((el) => {
-        el.addEventListener('mouseenter', onEnterInteractive);
-        el.addEventListener('mouseleave', onLeaveInteractive);
-      });
+      document.addEventListener('mouseover', onEnterInteractive);
+      document.addEventListener('mouseout', onLeaveInteractive);
 
       return () => {
         document.documentElement.removeAttribute('data-custom-cursor');
         window.removeEventListener('mousemove', onMouseMove);
-        interactiveEls.forEach((el) => {
-          el.removeEventListener('mouseenter', onEnterInteractive);
-          el.removeEventListener('mouseleave', onLeaveInteractive);
-        });
+        document.removeEventListener('mouseover', onEnterInteractive);
+        document.removeEventListener('mouseout', onLeaveInteractive);
       };
     });
 
@@ -77,6 +80,7 @@ export function CursorTrail() {
           background: 'var(--primary)',
           pointerEvents: 'none',
           zIndex: 9999,
+          opacity: 0,
           willChange: 'transform',
         }}
       />
@@ -93,6 +97,7 @@ export function CursorTrail() {
           border: '2px solid var(--primary)',
           pointerEvents: 'none',
           zIndex: 9998,
+          opacity: 0,
           willChange: 'transform',
         }}
       />

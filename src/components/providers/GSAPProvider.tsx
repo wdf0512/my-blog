@@ -12,6 +12,9 @@ export function GSAPProvider({ children }: { children: React.ReactNode }) {
     const mm = gsap.matchMedia();
     mm.add('(prefers-reduced-motion: reduce)', () => {
       gsap.defaults({ duration: 0, delay: 0 });
+      return () => {
+        gsap.defaults({ duration: 0.5, delay: 0 });
+      };
     });
 
     return () => mm.revert();
