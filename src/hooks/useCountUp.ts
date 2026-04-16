@@ -26,19 +26,24 @@ export function useCountUp(ref: RefObject<HTMLElement | null>, target: string) {
     const parsed = parse(target);
     if (!parsed) return;
 
-    const obj = { val: 0 };
-    gsap.to(obj, {
-      val: parsed.value,
-      duration: 1.5,
-      ease: 'power2.out',
-      onUpdate() {
-        if (el) el.textContent = format(obj.val, parsed.suffix);
-      },
-      scrollTrigger: {
-        trigger: el,
-        start: 'top 85%',
-        once: true,
-      },
+    const mm = gsap.matchMedia();
+    mm.add('(prefers-reduced-motion: no-preference)', () => {
+      const obj = { val: 0 };
+      gsap.to(obj, {
+        val: parsed.value,
+        duration: 1.5,
+        ease: 'power2.out',
+        onUpdate() {
+          if (el) el.textContent = format(obj.val, parsed.suffix);
+        },
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 85%',
+          once: true,
+        },
+      });
     });
+
+    return () => mm.revert();
   }, [target]);
 }
