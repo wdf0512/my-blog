@@ -6,16 +6,18 @@ import Link from 'next/link';
 import btn from '@/styles/buttons.module.css';
 import styles from './HeroSection.module.css';
 import { useParallaxHero } from '@/hooks/useParallaxHero';
+import { usePlaneScroll } from '@/hooks/usePlaneScroll';
 
 const SOCIAL = [
-  { label: 'GitHub', href: 'https://github.com/wdf0512', icon: Github, color: 'var(--text-primary)' },
-  { label: 'Twitter', href: 'https://x.com/De991025', icon: Twitter, color: '#1DA1F2' },
-  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/defang-weng-169591226/', icon: Linkedin, color: '#0A66C2' },
-  { label: 'Email', href: 'mailto:defangninj@outlook.com', icon: Mail, color: 'var(--primary)' },
+  { label: 'GitHub',   href: 'https://github.com/wdf0512',                             icon: Github,   color: 'var(--text-primary)' },
+  { label: 'Twitter',  href: 'https://x.com/De991025',                                icon: Twitter,  color: '#1DA1F2' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/in/defang-weng-169591226/',     icon: Linkedin, color: '#0A66C2' },
+  { label: 'Email',    href: 'mailto:defangninj@outlook.com',                          icon: Mail,     color: 'var(--primary)' },
 ] as const;
 
 export function HeroSection() {
   const { sectionRef, textRef, asciiRef } = useParallaxHero();
+  const { planeRef } = usePlaneScroll(sectionRef);
 
   return (
     <section ref={sectionRef} className="relative overflow-hidden min-h-screen flex flex-col justify-center">
@@ -25,6 +27,31 @@ export function HeroSection() {
         style={{ backgroundImage: 'radial-gradient(ellipse 55% 60% at 20% 50%, rgba(242,201,76,0.07) 0%, transparent 70%)' }}
         aria-hidden
       />
+
+      {/* Paper airplane — follows #plane-path on scroll */}
+      <svg
+        aria-hidden="true"
+        className="absolute inset-0 w-full h-full pointer-events-none"
+        style={{ overflow: 'visible' }}
+      >
+        <path
+          id="plane-path"
+          d="M 80,520 C 220,380 480,220 1160,60"
+          fill="none"
+          stroke="none"
+        />
+        <g ref={planeRef} style={{ opacity: 0.9 }}>
+          {/* Paper airplane shape */}
+          <polygon
+            points="0,-5 -14,6 0,1"
+            fill="var(--primary)"
+          />
+          <polygon
+            points="-14,6 -9,1 0,1"
+            fill="rgba(242,201,76,0.45)"
+          />
+        </g>
+      </svg>
 
       <div className="relative container mx-auto px-4 py-16 max-w-6xl">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -50,7 +77,9 @@ export function HeroSection() {
               className="text-text-secondary leading-relaxed mb-8"
               style={{ fontSize: 'clamp(1.05rem, 1.8vw, 1.25rem)', maxWidth: '38ch' }}
             >
-              Full-stack AI engineer. I love programming, obsess over intelligent systems, and write about everything AI — what&apos;s shipping, what&apos;s breaking, and what actually matters.
+              Full-stack AI engineer. I love programming, obsess over intelligent systems,
+              and write about everything AI — what&apos;s shipping, what&apos;s breaking,
+              and what actually matters.
             </p>
 
             <div data-hero-item className="mb-8">
