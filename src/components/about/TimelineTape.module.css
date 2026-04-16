@@ -6,10 +6,6 @@
   border-bottom: 1px solid var(--border);
 }
 
-.wrapper:hover .track {
-  animation-play-state: paused;
-}
-
 .fadeLeft {
   position: absolute;
   left: 0;
@@ -35,7 +31,7 @@
 .track {
   display: flex;
   width: max-content;
-  animation: tapeScroll 18s linear infinite;
+  /* No animation — GSAP ScrollTrigger drives horizontal movement */
 }
 
 .slice {
@@ -73,8 +69,8 @@
 }
 
 .cardNow {
-  background: rgba(242,201,76,0.03);
-  box-shadow: inset 0 0 0 1px rgba(242,201,76,0.2), 0 0 24px rgba(242,201,76,0.08);
+  background: rgba(242, 201, 76, 0.03);
+  box-shadow: inset 0 0 0 1px rgba(242, 201, 76, 0.2), 0 0 24px rgba(242, 201, 76, 0.08);
 }
 
 .year {
@@ -94,9 +90,4 @@
   font-size: 12px;
   color: var(--text-secondary);
   line-height: 1.6;
-}
-
-@keyframes tapeScroll {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
 }
