@@ -28,12 +28,12 @@ const NOW_ITEMS = [
   {
     glyph: 'λ',
     label: 'Learning',
-    desc: 'Advanced RAG architectures, prompt engineering, and LangGraph patterns for reliable agentic workflows.',
+    desc: 'Cutting-edge AI research — foundation models, reasoning systems, and agent architectures — while sharpening technical English to communicate ideas with precision.',
   },
   {
     glyph: '//',
     label: 'Writing',
-    desc: 'Articles on AI engineering, agent design, full-stack development, and lessons from real production systems.',
+    desc: 'Documenting what I build and what the field is shipping — agentic patterns, model releases, tooling shifts, and the hard lessons that don\'t make it into the papers.',
   },
 ];
 
