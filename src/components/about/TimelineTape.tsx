@@ -3,11 +3,11 @@
 import styles from './TimelineTape.module.css';
 
 const MILESTONES = [
-  { year: '2019', desc: 'First line of code' },
-  { year: '2020', desc: 'First freelance project' },
-  { year: '2022', desc: 'Launched this blog' },
-  { year: '2024', desc: 'First SaaS shipped' },
-  { year: 'Now', desc: 'AI tools & Three.js', isNow: true },
+  { year: '2020', desc: 'First line of code' },
+  { year: '2022', desc: 'First dev projects (Creatify.ai)' },
+  { year: '2023', desc: 'First full-time dev role — Shanghai & Sydney' },
+  { year: '2024', desc: 'Pivoted to AI engineering — LangGraph & LLMs' },
+  { year: 'Now', desc: 'Agentic ERP & multi-agent systems', isNow: true },
 ];
 
 // Duplicate for seamless infinite loop (animation goes -50%)
