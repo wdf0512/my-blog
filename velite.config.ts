@@ -38,6 +38,7 @@ const digests = defineCollection({
       description: s.string().max(999).optional(),
       item_count: s.number().default(0),
       total_fetched: s.number().default(0),
+      cover_image: s.string().optional(),
       body: s.mdx(),
     })
     .transform((data) => ({ ...data, ...computedFields(data) })),

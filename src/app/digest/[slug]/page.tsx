@@ -1,6 +1,6 @@
 import { digests } from '#/.velite';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, Clock, Database } from 'lucide-react';
+import { ArrowLeft, Clock, Database, Layers } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { MDXContent } from '@/components/mdx/MDXContent';
@@ -20,8 +20,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const digest = digests.find((d) => d.slug === slug);
   if (!digest) return { title: 'Not Found' };
   return {
-    title: `${digest.title}`,
+    title: digest.title,
     description: digest.description,
+    openGraph: digest.cover_image
+      ? { images: [{ url: digest.cover_image }] }
+      : undefined,
   };
 }
 
@@ -51,6 +54,18 @@ export default async function DigestDetailPage({ params }: Props) {
         返回情报列表
       </Link>
 
+      {/* Hero Image */}
+      {digest.cover_image && (
+        <div className="relative w-full aspect-video rounded-2xl overflow-hidden mb-10 shadow-2xl">
+          <img
+            src={digest.cover_image}
+            alt={digest.title}
+            className="w-full h-full object-cover"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background via-background/10 to-transparent" />
+        </div>
+      )}
+
       {/* Header */}
       <header className="mb-10 pb-8 border-b border-border">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wide mb-4">
@@ -77,7 +92,8 @@ export default async function DigestDetailPage({ params }: Props) {
             </span>
           )}
           {digest.item_count > 0 && (
-            <span className="px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-semibold">
+            <span className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-semibold">
+              <Layers className="h-3.5 w-3.5" />
               {digest.item_count} 条精选
             </span>
           )}
