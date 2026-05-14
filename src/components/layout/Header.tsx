@@ -61,6 +61,16 @@ export function Header() {
             Blog
           </Link>
           <Link
+            href="/digest"
+            className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
+              isActive('/digest')
+                ? 'bg-primary/10 text-primary'
+                : 'text-text-secondary hover:text-text-primary hover:bg-surface'
+            }`}
+          >
+            Daily
+          </Link>
+          <Link
             href="/about"
             className={`px-4 py-2 rounded-lg text-sm font-semibold transition-all ${
               isActive('/about')
