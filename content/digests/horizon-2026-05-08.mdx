@@ -34,13 +34,13 @@ telegram · zaihuapd · May 6, 14:39
 
 **背景**: RDMA（远程直接内存访问）技术允许服务器间进行高速数据传输而无需 CPU 介入，这对分布式 AI 训练至关重要。传统以太网在处理海量 AI 工作负载时容易遭遇拥塞和丢包，从而导致 GPU 利用率低下。数据包喷射与多路径路由是先进的负载均衡技术，旨在复杂数据中心拓扑中最大化带宽并确保网络可靠性。
 
-<details><summary>参考链接</summary>
-<ul>
-<li><a href="https://www.nvidia.com/en-us/networking/spectrumx/">NVIDIA Spectrum-X Ethernet Platform for Giga-Scale AI</a></li>
-<li><a href="https://arxiv.org/html/2412.08540v1">Orderly Management of Packets in RDMA by Eunomia</a></li>
-<li><a href="https://www.cisco.com/c/en/us/solutions/collateral/silicon-one/g300-wp.html">Solutions - Cisco G300 Intelligent Collective Networking</a></li>
-</ul>
-</details>
+
+**参考链接**:
+
+- [NVIDIA Spectrum-X Ethernet Platform for Giga-Scale AI](https://www.nvidia.com/en-us/networking/spectrumx/)
+- [Orderly Management of Packets in RDMA by Eunomia](https://arxiv.org/html/2412.08540v1)
+- [Solutions - Cisco G300 Intelligent Collective Networking](https://www.cisco.com/c/en/us/solutions/collateral/silicon-one/g300-wp.html)
+
 
 **标签**: `#AI Infrastructure`, `#High-Performance Networking`, `#RDMA`, `#Distributed Systems`, `#Open Standards`
 
@@ -81,12 +81,12 @@ rss · Simon Willison · May 6, 14:24 · [社区讨论](https://news.ycombinator
 
 **背景**: 氛围编程由 Andrej Karpathy 于 2025 年初提出，指的是一种 AI 辅助开发模式：用户通过提示词让大语言模型生成代码，并依赖迭代测试而非人工审查。相比之下，智能体工程指专业开发者将 AI 智能体作为协作工具，同时严格遵循安全性、可维护性和性能标准。
 
-<details><summary>参考链接</summary>
-<ul>
-<li><a href="https://en.wikipedia.org/wiki/Vibe_coding">Vibe coding</a></li>
-<li><a href="https://simonwillison.net/guides/agentic-engineering-patterns/what-is-agentic-engineering/">What is agentic engineering? - Agentic Engineering Patterns</a></li>
-</ul>
-</details>
+
+**参考链接**:
+
+- [Vibe coding](https://en.wikipedia.org/wiki/Vibe_coding)
+- [What is agentic engineering? - Agentic Engineering Patterns](https://simonwillison.net/guides/agentic-engineering-patterns/what-is-agentic-engineering/)
+
 
 **社区讨论**: 社区反应褒贬不一，部分人认为氛围编程只是暴露了原本就存在的松散工程标准。另一些人则对 Willison 的乐观态度提出质疑，指出 AI 在架构决策上仍有局限，开发者真正的价值已转向提供业务上下文和严格测试，而非编写具体语法。
 
@@ -103,13 +103,13 @@ hackernews · stevekrouse · May 6, 17:19 · [社区讨论](https://news.ycombin
 
 **背景**: 身份验证负责处理用户身份、登录会话和安全合规，这些功能从零开始正确实现通常非常困难。Supabase 提供带有集成数据库和身份验证功能的开源后端即服务，而 Clerk 则提供专注于开发者友好型 SDK 和预构建 UI 的托管 SaaS 平台。Better Auth 是一个开源且框架无关的 TypeScript 库，允许团队直接在自有代码库中实现身份验证逻辑。
 
-<details><summary>参考链接</summary>
-<ul>
-<li><a href="https://github.com/better-auth/better-auth">better-auth/better-auth</a></li>
-<li><a href="https://clerk.com/">Clerk | Authentication and User Management</a></li>
-<li><a href="https://supabase.com/">Supabase | The Postgres Development Platform</a></li>
-</ul>
-</details>
+
+**参考链接**:
+
+- [better-auth/better-auth](https://github.com/better-auth/better-auth)
+- [Clerk | Authentication and User Management](https://clerk.com/)
+- [Supabase | The Postgres Development Platform](https://supabase.com/)
+
 
 **社区讨论**: 社区成员积极探讨了自托管用户数据与依赖第三方提供商的优劣，部分开发者主张通过自研方案来保持完全的控制权。Better Auth 的创始人也直接参与讨论以收集对该开源项目的反馈。
 
@@ -126,12 +126,12 @@ hackernews · unforgivenpasta · May 6, 17:59 · [社区讨论](https://news.yco
 
 **背景**: 传统的 reCAPTCHA 长期以来依赖识别交通灯或公交车等视觉谜题来区分人类和机器人，但这些方法在面对现代 AI 时已日益失效，且给合法用户带来了极大的困扰。新方法转向分析行为遥测数据、设备完整性和上下文信号来评估风险。
 
-<details><summary>参考链接</summary>
-<ul>
-<li><a href="https://cloud.google.com/security/products/fraud-defense">Google Cloud Fraud Defense</a></li>
-<li><a href="https://www.heise.de/en/news/Instead-of-picture-puzzles-Google-introduces-QR-code-challenge-against-AI-bots-11273871.html">Instead of picture puzzles: Google introduces QR code challenge</a></li>
-</ul>
-</details>
+
+**参考链接**:
+
+- [Google Cloud Fraud Defense](https://cloud.google.com/security/products/fraud-defense)
+- [Instead of picture puzzles: Google introduces QR code challenge](https://www.heise.de/en/news/Instead-of-picture-puzzles-Google-introduces-QR-code-challenge-against-AI-bots-11273871.html)
+
 
 **社区讨论**: 社区成员对强制要求使用移动设备以及潜在的去匿名化风险表达了强烈担忧，同时批评了扫描二维码带来的安全隐患，并对 Linux 桌面用户受到的负面影响表示遗憾。
 
@@ -148,12 +148,12 @@ rss · Simon Willison · May 6, 15:58
 
 **背景**: Anthropic 的 Claude Code 是一款直接在终端中运行的智能体开发工具，能够自主理解代码库、编辑文件并执行命令。与传统的自动补全功能不同，智能体工具可以委派大量工程任务并处理复杂的多步骤工作流。
 
-<details><summary>参考链接</summary>
-<ul>
-<li><a href="https://claude.com/product/claude-code">Claude Code by Anthropic | AI Coding Agent, Terminal, IDE</a></li>
-<li><a href="https://github.com/anthropics/claude-code/releases">Releases · anthropics/claude-code</a></li>
-</ul>
-</details>
+
+**参考链接**:
+
+- [Claude Code by Anthropic | AI Coding Agent, Terminal, IDE](https://claude.com/product/claude-code)
+- [Releases · anthropics/claude-code](https://github.com/anthropics/claude-code/releases)
+
 
 **标签**: `#AI Development`, `#Generative AI`, `#Developer Tools`, `#Anthropic`, `#LLMs`
 
@@ -168,12 +168,12 @@ telegram · zaihuapd · May 6, 16:35
 
 **背景**: 大语言模型的训练与实时推理需要庞大的计算能力，因此获取高性能 GPU 已成为 AI 行业竞争的核心优势。SpaceX 旗下的 Colossus 1 数据中心最初为支持 xAI 的 Grok 模型而建，目前已迅速扩展为全球最大的 AI 超算集群之一。
 
-<details><summary>参考链接</summary>
-<ul>
-<li><a href="https://www.aol.com/articles/anthropic-rent-ai-capacity-spacexs-180327894.html">Anthropic to rent all AI capacity at SpaceX's Colossus data center</a></li>
-<li><a href="https://www.datacenterdynamics.com/en/news/anthropic-to-use-all-of-spacex-xais-colossus-1-data-center-compute/">Anthropic to use all of SpaceX-xAI's Colossus 1 data center compute</a></li>
-</ul>
-</details>
+
+**参考链接**:
+
+- [Anthropic to rent all AI capacity at SpaceX's Colossus data center](https://www.aol.com/articles/anthropic-rent-ai-capacity-spacexs-180327894.html)
+- [Anthropic to use all of SpaceX-xAI's Colossus 1 data center compute](https://www.datacenterdynamics.com/en/news/anthropic-to-use-all-of-spacex-xais-colossus-1-data-center-compute/)
+
 
 **标签**: `#AI Infrastructure`, `#Large Language Models`, `#Cloud Computing`, `#API Development`, `#Tech Partnerships`
 
@@ -188,11 +188,11 @@ telegram · zaihuapd · May 7, 00:30
 
 **背景**: 大语言模型初创公司通常需要依赖巨额风险投资来支付高昂的 GPU 训练和基础设施成本。像 OpenRouter 这样的 API 聚合平台充当了关键中间件，允许开发者通过单一统一接口访问多种人工智能模型。本轮融资反映了投资者对能够成功从研发转向规模化创收产品的初创企业的信心。
 
-<details><summary>参考链接</summary>
-<ul>
-<li><a href="https://alternativeto.net/software/openrouter/about/">OpenRouter: An AI model aggregator service</a></li>
-</ul>
-</details>
+
+**参考链接**:
+
+- [OpenRouter: An AI model aggregator service](https://alternativeto.net/software/openrouter/about/)
+
 
 **标签**: `#AI Commercialization`, `#Venture Capital`, `#LLM Industry`, `#Chinese Tech`, `#Startup Funding`
 
