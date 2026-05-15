@@ -17,7 +17,7 @@ export function DailyBrief() {
     day: 'numeric',
   });
 
-  const isToday = new Date(featured.date).toDateString() === new Date().toDateString();
+  const isToday = featured.date.slice(0, 10) === new Date().toISOString().slice(0, 10);
 
   return (
     <section className="container mx-auto px-4 py-16 md:py-20 max-w-6xl">
@@ -31,7 +31,7 @@ export function DailyBrief() {
           className="hidden md:inline-flex items-center gap-2 text-text-secondary hover:text-primary transition-colors group"
         >
           View archive
-          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+          <ArrowRight aria-hidden="true" className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </Link>
       </div>
 
@@ -65,14 +65,14 @@ export function DailyBrief() {
         <div className="md:col-span-2 flex flex-col gap-3">
           {recents.map((digest) => {
             const d = new Date(digest.date);
-            const day = String(d.getDate()).padStart(2, '0');
-            const month = d.toLocaleDateString('en-US', { month: 'short' });
+            const day = String(d.getUTCDate()).padStart(2, '0');
+            const month = d.toLocaleDateString('en-US', { month: 'short', timeZone: 'UTC' });
 
             return (
               <Link
                 key={digest.slug}
                 href={`/digest/${digest.slug}`}
-                className="group flex items-center gap-4 rounded-2xl bg-surface border border-border hover:border-primary/30 hover:bg-primary/5 px-4 py-3.5 transition-all duration-200 flex-1"
+                className="group flex items-center gap-4 rounded-2xl bg-surface border border-border hover:border-primary/30 hover:bg-primary/5 px-4 py-3.5 transition-all duration-200"
               >
                 <div className="flex-shrink-0 text-center w-10">
                   <span className="font-display text-2xl font-black text-primary/60 group-hover:text-primary transition-colors leading-none block">
@@ -88,7 +88,7 @@ export function DailyBrief() {
                   </p>
                   <p className="text-xs text-text-muted mt-0.5">{digest.item_count} picks</p>
                 </div>
-                <ArrowRight className="w-3.5 h-3.5 text-text-muted group-hover:text-primary group-hover:translate-x-0.5 transition-all flex-shrink-0" />
+                <ArrowRight aria-hidden="true" className="w-3.5 h-3.5 text-text-muted group-hover:text-primary group-hover:translate-x-0.5 transition-all flex-shrink-0" />
               </Link>
             );
           })}
@@ -102,7 +102,7 @@ export function DailyBrief() {
           className="inline-flex items-center gap-2 px-6 py-3 bg-surface rounded-xl text-text-primary hover:bg-primary/10 transition-all"
         >
           View archive
-          <ArrowRight className="w-4 h-4" />
+          <ArrowRight aria-hidden="true" className="w-4 h-4" />
         </Link>
       </div>
     </section>

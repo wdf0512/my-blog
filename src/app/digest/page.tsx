@@ -60,7 +60,7 @@ type DigestCardProps = {
 
 function FeaturedCard({ digest }: DigestCardProps) {
   const d = new Date(digest.date);
-  const isToday = d.toDateString() === new Date().toDateString();
+  const isToday = digest.date.slice(0, 10) === new Date().toISOString().slice(0, 10);
   const dateLabel = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 
   return (
