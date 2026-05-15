@@ -60,6 +60,7 @@ type DigestCardProps = {
 
 function FeaturedCard({ digest }: DigestCardProps) {
   const d = new Date(digest.date);
+  const isToday = d.toDateString() === new Date().toDateString();
   const dateLabel = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
 
   return (
@@ -73,7 +74,7 @@ function FeaturedCard({ digest }: DigestCardProps) {
         style={{ background: 'linear-gradient(135deg, #1a3a5c 0%, #0d2035 60%, #0d251a 100%)' }}
       >
         <span className="absolute top-4 left-5 px-3 py-1 rounded-lg bg-primary text-background text-xs font-black tracking-wide">
-          TODAY'S PICKS
+          {isToday ? "TODAY'S PICKS" : 'LATEST ISSUE'}
         </span>
         <span className="absolute top-4 right-5 text-white/30 text-xs font-medium">
           {dateLabel}
