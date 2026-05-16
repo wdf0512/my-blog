@@ -1,6 +1,6 @@
 import { digests } from '#/.velite';
 import { notFound } from 'next/navigation';
-import { ArrowLeft, Clock, Database, Layers } from 'lucide-react';
+import { ArrowLeft, Clock } from 'lucide-react';
 import Link from 'next/link';
 import type { Metadata } from 'next';
 import { MDXContent } from '@/components/mdx/MDXContent';
@@ -20,7 +20,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const digest = digests.find((d) => d.slug === slug);
   if (!digest) return { title: 'Not Found' };
   return {
-    title: digest.title,
+    title: `${digest.title} — Daily Brief`,
     description: digest.description,
     openGraph: digest.cover_image
       ? { images: [{ url: digest.cover_image }] }
@@ -36,11 +36,12 @@ export default async function DigestDetailPage({ params }: Props) {
     notFound();
   }
 
-  const dateStr = new Date(digest.date).toLocaleDateString('zh-CN', {
+  const dateStr = new Date(digest.date).toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'long',
     day: 'numeric',
     weekday: 'long',
+    timeZone: 'UTC',
   });
 
   return (
@@ -50,8 +51,8 @@ export default async function DigestDetailPage({ params }: Props) {
         href="/digest"
         className="inline-flex items-center gap-2 px-4 py-2 rounded-xl hover:bg-surface text-text-secondary hover:text-text-primary transition-all mb-8 group"
       >
-        <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" />
-        返回情报列表
+        <ArrowLeft className="h-4 w-4 group-hover:-translate-x-1 transition-transform" aria-hidden="true" />
+        Daily Brief
       </Link>
 
       {/* Hero Image */}
@@ -68,35 +69,22 @@ export default async function DigestDetailPage({ params }: Props) {
 
       {/* Header */}
       <header className="mb-10 pb-8 border-b border-border">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-semibold uppercase tracking-wide mb-4">
-          ⚡ Horizon Daily Digest
-        </div>
+        {/* TODAY'S PICKS badge */}
+        {digest.item_count > 0 && (
+          <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 text-primary text-xs font-bold uppercase tracking-wide mb-4">
+            Today's Picks · {digest.item_count} items
+          </div>
+        )}
 
-        <h1 className="font-display text-4xl md:text-5xl font-black mb-4 leading-tight text-text-primary">
+        <h1 className="font-display text-4xl md:text-5xl font-black mb-6 leading-tight text-text-primary">
           {digest.title}
         </h1>
 
-        {digest.description && (
-          <p className="text-xl text-text-secondary mb-6">{digest.description}</p>
-        )}
-
         <div className="flex flex-wrap items-center gap-4 text-sm text-text-secondary">
           <time dateTime={digest.date} className="flex items-center gap-1.5">
-            <Clock className="h-4 w-4" />
+            <Clock className="h-4 w-4" aria-hidden="true" />
             {dateStr}
           </time>
-          {digest.total_fetched > 0 && (
-            <span className="flex items-center gap-1.5">
-              <Database className="h-4 w-4" />
-              从 {digest.total_fetched} 条内容中筛选
-            </span>
-          )}
-          {digest.item_count > 0 && (
-            <span className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-primary/10 text-primary font-semibold">
-              <Layers className="h-3.5 w-3.5" />
-              {digest.item_count} 条精选
-            </span>
-          )}
         </div>
       </header>
 
@@ -104,30 +92,6 @@ export default async function DigestDetailPage({ params }: Props) {
       <div className="prose prose-lg max-w-none">
         <MDXContent code={digest.body} />
       </div>
-
-      {/* Footer */}
-      <footer className="mt-16 pt-8 border-t border-border">
-        <div className="bg-surface rounded-2xl p-6 flex items-start gap-4">
-          <div className="text-3xl flex-shrink-0">🤖</div>
-          <div>
-            <h3 className="font-display text-base font-bold mb-1 text-text-primary">
-              由 Horizon 自动生成
-            </h3>
-            <p className="text-text-secondary text-sm leading-relaxed">
-              本情报由{' '}
-              <a
-                href="https://github.com/wdf0512/Horizon"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-primary hover:underline"
-              >
-                Horizon
-              </a>{' '}
-              自动聚合分析，每日 09:00 从 GitHub、HackerNews、RSS 等多个信源中抓取，经 AI 评分筛选后生成。
-            </p>
-          </div>
-        </div>
-      </footer>
     </article>
   );
 }
