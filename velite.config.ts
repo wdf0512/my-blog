@@ -74,6 +74,10 @@ export default defineConfig({
           properties: {
             className: ['anchor'],
           },
+          // Skip headings that already contain an <a>: wrapping them would
+          // produce nested anchors (e.g. `## [text](url)`) and cause hydration errors.
+          test: (node: { children?: Array<{ tagName?: string }> }) =>
+            !node.children?.some((c) => c.tagName === 'a'),
         },
       ],
     ],
