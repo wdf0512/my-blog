@@ -1,22 +1,21 @@
 'use client';
 
 import * as runtime from 'react/jsx-runtime';
-import { useMemo } from 'react';
+import { useMemo, type ComponentType } from 'react';
+
+type MDXComponents = Record<string, ComponentType<Record<string, unknown>>>;
 
 type MDXContentProps = {
   code: string;
+  components?: MDXComponents;
 };
 
-export function MDXContent({ code }: MDXContentProps) {
+export function MDXContent({ code, components }: MDXContentProps) {
   const Component = useMemo(() => {
-    // The serialized MDX code is a function that:
-    // 1. Takes runtime (jsx, jsxs, Fragment) as arguments[0]
-    // 2. Returns an object with a 'default' property containing the component
     const fn = new Function(code);
     const result = fn(runtime);
-    return result.default;
+    return result.default as ComponentType<{ components?: MDXComponents }>;
   }, [code]);
 
-  // Render the component
-  return <Component />;
+  return <Component components={components} />;
 }

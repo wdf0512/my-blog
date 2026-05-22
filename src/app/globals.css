@@ -262,3 +262,143 @@ a:hover {
 [data-custom-cursor] * {
   cursor: none !important;
 }
+/* ─── Digest pages — Maximalist editorial utilities ──────────────────────── */
+
+/* Paper grain — subtle SVG noise overlay, mixed via multiply for ink-spec look */
+.paper-grain {
+  position: relative;
+}
+.paper-grain::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('/textures/paper-grain.svg');
+  background-size: 240px 240px;
+  mix-blend-mode: multiply;
+  opacity: 0.06;
+  pointer-events: none;
+  z-index: 1;
+}
+.dark .paper-grain::before {
+  mix-blend-mode: screen;
+  opacity: 0.045;
+}
+
+/* Drop cap on the first paragraph after each digest item heading.
+   Uses adjacent-sibling selector — pure CSS, hydration-safe by construction. */
+.digest-prose .digest-item-heading + p::first-letter {
+  font-family: var(--font-clash-display), sans-serif;
+  font-weight: 900;
+  float: left;
+  font-size: 4.5rem;
+  line-height: 0.85;
+  padding: 0.35rem 0.6rem 0 0;
+  color: #965D36;
+  letter-spacing: -0.02em;
+}
+.dark .digest-prose .digest-item-heading + p::first-letter {
+  color: var(--primary);
+}
+
+/* Pull-quote — replaces `.prose blockquote` default on digest pages */
+.digest-pull-quote {
+  position: relative;
+  margin: 2.5rem auto;
+  padding: 1.5rem 2rem;
+  max-width: 56ch;
+  text-align: center;
+  font-family: var(--font-clash-display), sans-serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.5rem;
+  line-height: 1.35;
+  color: var(--text-primary);
+}
+.digest-pull-quote::before,
+.digest-pull-quote::after {
+  font-family: var(--font-clash-display), sans-serif;
+  font-style: normal;
+  font-size: 4rem;
+  line-height: 0;
+  color: var(--primary);
+  opacity: 0.5;
+  position: absolute;
+}
+.digest-pull-quote::before {
+  content: '\201C';
+  top: 1.5rem;
+  left: 0;
+}
+.digest-pull-quote::after {
+  content: '\201D';
+  bottom: 0.4rem;
+  right: 0;
+}
+
+/* Decorative ornament divider — replaces `.prose hr` for digest pages */
+.digest-ornament {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 3rem 0;
+  color: var(--primary);
+  font-size: 1.25rem;
+}
+.digest-ornament::before,
+.digest-ornament::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.4;
+  max-width: 10rem;
+}
+
+/* Scroll-progress rail — CSS scroll-driven animation, JS fallback for non-supporting browsers */
+@supports (animation-timeline: scroll()) {
+  .digest-scroll-progress {
+    animation: digest-progress linear;
+    animation-timeline: scroll(root);
+    transform-origin: left center;
+  }
+  @keyframes digest-progress {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+  }
+}
+
+/* Print-bleed numeral — clipped at viewport edge, low opacity */
+.digest-numeral {
+  font-family: var(--font-clash-display), sans-serif;
+  font-weight: 900;
+  line-height: 0.78;
+  letter-spacing: -0.06em;
+  color: rgba(150, 93, 54, 0.08);
+  user-select: none;
+  pointer-events: none;
+  font-variant-numeric: tabular-nums;
+}
+.dark .digest-numeral {
+  color: rgba(242, 201, 76, 0.08);
+}
+
+/* Mono curation stat label — used heavily across digest pages */
+.digest-mono-eyebrow {
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+/* Item-heading id offset so anchor scroll lands below the sticky progress rail */
+.digest-prose [id] {
+  scroll-margin-top: 5rem;
+}
+
+/* Reduced motion fallbacks already handled by the global @media query above:
+   transition/animation-duration is collapsed to 0.01ms, so scroll-driven
+   animations stop animating; parallax via framer-motion checks the same
+   media query in JS. */
+

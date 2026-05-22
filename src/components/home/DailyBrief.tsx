@@ -1,33 +1,24 @@
-import { digests } from '#/.velite';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import {
+  getPublishedDigests,
+  getIssueNumberMap,
+  formatShortDate,
+  formatMonoDate,
+  isToday,
+} from '@/lib/digests';
 
 export function DailyBrief() {
-  const published = digests
-    .filter((d) => d.published && d.item_count > 0)
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-
+  const published = getPublishedDigests();
   if (published.length === 0) return null;
 
-  const issueBySlug = new Map(
-    [...published]
-      .sort((a, b) => new Date(a.date).getTime() - new Date(b.date).getTime())
-      .map((d, i) => [d.slug, i + 1] as const),
-  );
-
+  const issueBySlug = getIssueNumberMap(published);
   const featured = published[0];
   const recents = published.slice(1, 4);
 
   const featuredIssue = issueBySlug.get(featured.slug) ?? published.length;
-  const featuredDateLong = new Date(featured.date).toLocaleDateString('en-US', {
-    year: 'numeric',
-    month: 'short',
-    day: 'numeric',
-    timeZone: 'UTC',
-  });
-
-  const isToday =
-    featured.date.slice(0, 10) === new Date().toISOString().slice(0, 10);
+  const featuredDateLong = formatShortDate(featured.date);
+  const featuredIsToday = isToday(featured.date);
 
   return (
     <section className="container mx-auto px-4 py-16 md:py-20 max-w-6xl">
@@ -74,7 +65,7 @@ export function DailyBrief() {
             <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-text-secondary">
               Issue {featuredIssue} · {featuredDateLong}
             </span>
-            {isToday && (
+            {featuredIsToday && (
               <span className="font-mono text-[10px] uppercase tracking-wider bg-primary text-background px-2 py-0.5 rounded-md font-bold">
                 Today
               </span>
@@ -115,12 +106,7 @@ export function DailyBrief() {
         <div className="md:col-span-2 flex flex-col gap-3">
           {recents.map((digest) => {
             const issueNo = issueBySlug.get(digest.slug) ?? 0;
-            const d = new Date(digest.date);
-            const month = d.toLocaleDateString('en-US', {
-              month: 'short',
-              timeZone: 'UTC',
-            });
-            const day = String(d.getUTCDate()).padStart(2, '0');
+            const monoDate = formatMonoDate(digest.date);
 
             return (
               <Link
@@ -133,7 +119,7 @@ export function DailyBrief() {
                     {issueNo}
                   </span>
                   <span className="font-mono text-[10px] uppercase tracking-wide text-text-muted mt-1.5 block">
-                    {month} {day}
+                    {monoDate}
                   </span>
                 </div>
                 <div className="flex-1 min-w-0">

@@ -1,124 +1,216 @@
-import { digests } from '#/.velite';
 import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
+import {
+  getPublishedDigests,
+  getIssueNumberMap,
+  formatShortDate,
+  formatMonoDate,
+  isToday,
+} from '@/lib/digests';
+import { Masthead } from '@/components/digest/Masthead';
+import { IssueNumeral } from '@/components/digest/IssueNumeral';
 
 export const metadata = {
-  title: 'Daily Brief',
+  title: 'Daily Brief — Archive',
   description: 'Auto-curated daily digest of what matters in AI, updated every morning.',
 };
 
-export default function DigestPage() {
-  const published = digests
-    .filter((d) => d.published && d.item_count > 0)
-    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+export default function DigestArchivePage() {
+  const published = getPublishedDigests();
+  const issueBySlug = getIssueNumberMap(published);
 
   const featured = published[0];
   const archive = published.slice(1);
 
   return (
-    <div className="container mx-auto px-4 py-12 md:py-16 max-w-6xl">
-      {/* Header */}
-      <div className="mb-12">
-        <h1 className="font-display text-5xl md:text-6xl font-black mb-3 text-text-primary">
-          Daily Brief
-        </h1>
-        <p className="text-text-secondary text-xl">
-          Auto-curated, updated every morning
-        </p>
-      </div>
+    <div className="container mx-auto px-4 pt-12 pb-20 md:pt-16 md:pb-28 max-w-6xl">
+      <Masthead variant="archive" issueCount={published.length} />
 
       {published.length === 0 ? (
-        <div className="text-center py-20">
-          <p className="text-text-secondary text-lg">No issues yet — check back tomorrow.</p>
+        <div className="mt-24 text-center">
+          <p className="digest-mono-eyebrow text-text-muted">No issues on file</p>
+          <p className="font-display text-2xl mt-3 text-text-primary">
+            Check back tomorrow.
+          </p>
         </div>
       ) : (
-        <div className="space-y-6">
-          {/* Featured — latest issue */}
-          {featured && <FeaturedCard digest={featured} />}
-
-          {/* Archive grid */}
-          {archive.length > 0 && (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {archive.map((digest) => (
-                <ArchiveCard key={digest.slug} digest={digest} />
-              ))}
-            </div>
+        <>
+          {/* Latest-issue feature card */}
+          {featured && (
+            <FeatureCard
+              digest={featured}
+              issueNumber={issueBySlug.get(featured.slug) ?? published.length}
+            />
           )}
-        </div>
+
+          {/* Tear-sheet archive grid */}
+          {archive.length > 0 && (
+            <>
+              <h2 className="digest-mono-eyebrow text-text-secondary mt-20 mb-6">
+                The Archive · Older Issues
+              </h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                {archive.map((digest) => (
+                  <TearSheet
+                    key={digest.slug}
+                    digest={digest}
+                    issueNumber={issueBySlug.get(digest.slug) ?? 0}
+                  />
+                ))}
+              </div>
+            </>
+          )}
+
+          {/* Colophon */}
+          <div className="mt-24">
+            <div className="digest-ornament" aria-hidden="true">
+              ✦
+            </div>
+            <p className="digest-mono-eyebrow text-center text-text-muted">
+              Briefs are auto-curated each morning from ~50 sources
+              <span className="mx-2 opacity-50">·</span>
+              Issue №{String(published.length).padStart(2, '0')} is the latest
+            </p>
+          </div>
+        </>
       )}
     </div>
   );
 }
 
-type DigestCardProps = {
+type CardProps = {
   digest: {
     slug: string;
     title: string;
     date: string;
     item_count: number;
+    total_fetched: number;
+    description?: string;
+    cover_image?: string;
   };
+  issueNumber: number;
 };
 
-function FeaturedCard({ digest }: DigestCardProps) {
-  const d = new Date(digest.date);
-  const isToday = digest.date.slice(0, 10) === new Date().toISOString().slice(0, 10);
-  const dateLabel = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+function FeatureCard({ digest, issueNumber }: CardProps) {
+  const todayFlag = isToday(digest.date);
 
   return (
     <Link
       href={`/digest/${digest.slug}`}
-      className="group block rounded-3xl overflow-hidden bg-[#1C1B19] border border-white/5 hover:border-primary/30 hover:-translate-y-1 hover:shadow-2xl transition-all duration-300"
+      className="group relative mt-12 block overflow-hidden rounded-3xl bg-[#0d0c0b] shadow-lg hover:shadow-2xl transition-shadow duration-500 isolate min-h-[460px] md:min-h-[520px] md:aspect-[16/9]"
     >
-      {/* Gradient pocket */}
+      {/* Background — cover image or tonal gradient fallback */}
+      {digest.cover_image ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={digest.cover_image}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.03]"
+        />
+      ) : (
+        <div className="absolute inset-0 bg-gradient-to-br from-[#22170f] via-[#0d0c0b] to-[#0a0d10]" />
+      )}
+
+      {/* Warm tonal wash to unify any cover with the brand palette */}
       <div
-        className="relative h-36 md:h-44 flex items-end p-5"
-        style={{ background: 'linear-gradient(135deg, #1a3a5c 0%, #0d2035 60%, #0d251a 100%)' }}
+        aria-hidden="true"
+        className="absolute inset-0 bg-gradient-to-br from-[#0d0c0b]/0 via-[#0d0c0b]/0 to-[#0d0c0b]/35 mix-blend-multiply"
+      />
+
+      {/* Paper-grain noise */}
+      <div className="paper-grain absolute inset-0" aria-hidden="true" />
+
+      {/* Big print-bleed numeral, ghosted into the image */}
+      <span
+        aria-hidden="true"
+        className="absolute -top-6 right-2 md:right-6 font-display font-black tracking-tighter leading-none text-white/[0.08] text-[12rem] md:text-[18rem] select-none pointer-events-none"
       >
-        <span className="absolute top-4 left-5 px-3 py-1 rounded-lg bg-primary text-background text-xs font-black tracking-wide">
-          {isToday ? "TODAY'S PICKS" : 'LATEST ISSUE'}
+        {String(issueNumber).padStart(2, '0')}
+      </span>
+
+      {/* Top-left badge */}
+      <div className="absolute top-6 left-6 md:top-7 md:left-7 z-10 flex items-center gap-2">
+        <span className="font-mono uppercase text-[10px] tracking-[0.2em] bg-primary text-[#0d0c0b] px-2.5 py-1 rounded-md font-bold">
+          {todayFlag ? "Today's Issue" : 'Latest Issue'}
         </span>
-        <span className="absolute top-4 right-5 text-white/30 text-xs font-medium">
-          {dateLabel}
+        <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/60">
+          № {String(issueNumber).padStart(2, '0')}
         </span>
-        <h2 className="font-display text-2xl md:text-3xl font-black text-white leading-snug line-clamp-2 group-hover:text-primary/90 transition-colors">
-          {digest.title}
-        </h2>
       </div>
 
-      {/* Body */}
-      <div className="px-5 py-4 flex items-center justify-between">
-        <span className="text-primary text-sm font-bold">
-          {digest.item_count} picks
-        </span>
-        <span className="text-white/40 text-sm font-semibold group-hover:text-primary group-hover:translate-x-1 transition-all">
-          Read →
-        </span>
+      {/* Bottom mask — gradient from deep ink up to transparent, holding the type */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 bottom-0 h-[72%] bg-gradient-to-t from-[#0a0908] via-[#0a0908]/85 via-45% to-transparent"
+      />
+
+      {/* Type stack at the bottom */}
+      <div className="absolute inset-x-0 bottom-0 z-10 p-6 md:p-9">
+        <p className="font-mono uppercase text-[11px] tracking-[0.22em] text-white/65 mb-3">
+          Issue Nº{String(issueNumber).padStart(2, '0')}
+          <span className="mx-2 opacity-50">·</span>
+          {formatShortDate(digest.date)}
+        </p>
+
+        <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-black text-white leading-[0.98] tracking-tight max-w-[22ch] group-hover:text-primary transition-colors duration-300">
+          {digest.title}
+        </h2>
+
+        {digest.description && (
+          <p className="mt-4 text-white/70 text-sm md:text-base italic leading-relaxed line-clamp-2 max-w-prose">
+            {digest.description}
+          </p>
+        )}
+
+        <div className="mt-6 md:mt-8 pt-4 border-t border-white/15 flex items-center justify-between gap-4">
+          <span className="font-mono text-[11px] md:text-xs text-white/60">
+            {digest.item_count} picks · curated from {digest.total_fetched}
+          </span>
+          <span className="inline-flex items-center gap-1.5 text-primary font-bold text-sm">
+            Read the issue
+            <ArrowRight
+              aria-hidden="true"
+              className="w-4 h-4 group-hover:translate-x-1.5 transition-transform"
+            />
+          </span>
+        </div>
       </div>
     </Link>
   );
 }
 
-function ArchiveCard({ digest }: DigestCardProps) {
-  const d = new Date(digest.date);
-  const day = String(d.getDate()).padStart(2, '0');
-  const dateLabel = d.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
-
+function TearSheet({ digest, issueNumber }: CardProps) {
   return (
     <Link
       href={`/digest/${digest.slug}`}
-      className="group flex items-center gap-4 rounded-2xl overflow-hidden bg-[#1C1B19] border border-white/5 hover:border-primary/20 hover:-translate-y-0.5 hover:shadow-lg transition-all duration-200 px-5 py-4"
+      className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-surface hover:border-primary/40 hover:-translate-y-1 hover:rotate-[-0.3deg] hover:shadow-xl transition-all duration-300 p-6 md:p-7 min-h-[210px]"
     >
-      <span className="font-display text-4xl font-black text-white/10 group-hover:text-primary/20 transition-colors flex-shrink-0 leading-none w-12 text-center">
-        {day}
-      </span>
-      <div className="flex-1 min-w-0">
-        <p className="text-xs text-white/40 mb-1">{dateLabel}</p>
-        <h3 className="font-display text-sm font-black text-white line-clamp-1 group-hover:text-primary/90 transition-colors leading-snug">
+      <IssueNumeral
+        number={issueNumber}
+        className="absolute -top-4 -right-3 text-[9rem] md:text-[10rem] group-hover:text-[#965D36]/14 dark:group-hover:text-[#F2C94C]/14 transition-colors"
+      />
+
+      <div className="relative">
+        <p className="digest-mono-eyebrow text-text-secondary">
+          № {String(issueNumber).padStart(2, '0')}
+          <span className="mx-2 opacity-50">·</span>
+          {formatMonoDate(digest.date)}
+        </p>
+
+        <h3 className="mt-3 font-display text-xl md:text-2xl font-black text-text-primary leading-snug line-clamp-2 group-hover:text-primary transition-colors max-w-[26ch]">
           {digest.title}
         </h3>
       </div>
-      <span className="text-white/30 text-xs font-semibold flex-shrink-0">
-        {digest.item_count} picks
-      </span>
+
+      <div className="relative mt-auto pt-4 flex items-center justify-between gap-4">
+        <span className="font-mono text-[11px] text-text-muted">
+          {digest.item_count} picks · from {digest.total_fetched}
+        </span>
+        <ArrowRight
+          aria-hidden="true"
+          className="w-4 h-4 text-text-muted group-hover:text-primary group-hover:translate-x-1 transition-all"
+        />
+      </div>
     </Link>
   );
 }
