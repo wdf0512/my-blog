@@ -4,11 +4,9 @@ import {
   getPublishedDigests,
   getIssueNumberMap,
   formatShortDate,
-  formatMonoDate,
   isToday,
 } from '@/lib/digests';
 import { Masthead } from '@/components/digest/Masthead';
-import { IssueNumeral } from '@/components/digest/IssueNumeral';
 
 export const metadata = {
   title: 'Daily Brief — Archive',
@@ -180,36 +178,81 @@ function FeatureCard({ digest, issueNumber }: CardProps) {
 }
 
 function TearSheet({ digest, issueNumber }: CardProps) {
+  const todayFlag = isToday(digest.date);
+
   return (
     <Link
       href={`/digest/${digest.slug}`}
-      className="group relative flex flex-col overflow-hidden rounded-2xl border border-border bg-surface hover:border-primary/40 hover:-translate-y-1 hover:rotate-[-0.3deg] hover:shadow-xl transition-all duration-300 p-6 md:p-7 min-h-[210px]"
+      className="group relative block overflow-hidden rounded-2xl bg-[#0d0c0b] shadow-md hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-500 isolate min-h-[280px] md:min-h-[300px] aspect-[4/3] md:aspect-[5/4]"
     >
-      <IssueNumeral
-        number={issueNumber}
-        className="absolute -top-4 -right-3 text-[9rem] md:text-[10rem] group-hover:text-[#965D36]/14 dark:group-hover:text-[#F2C94C]/14 transition-colors"
+      {/* Background — cover image or tonal gradient fallback */}
+      {digest.cover_image ? (
+        // eslint-disable-next-line @next/next/no-img-element
+        <img
+          src={digest.cover_image}
+          alt=""
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
+        />
+      ) : (
+        <div className="absolute inset-0 bg-gradient-to-br from-[#1c1208] via-[#0d0c0b] to-[#0a0d10]" />
+      )}
+
+      {/* Warm tonal wash */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-0 bg-gradient-to-br from-[#0d0c0b]/0 via-[#0d0c0b]/0 to-[#0d0c0b]/40 mix-blend-multiply"
       />
 
-      <div className="relative">
-        <p className="digest-mono-eyebrow text-text-secondary">
-          № {String(issueNumber).padStart(2, '0')}
-          <span className="mx-2 opacity-50">·</span>
-          {formatMonoDate(digest.date)}
-        </p>
+      {/* Paper-grain noise */}
+      <div className="paper-grain absolute inset-0" aria-hidden="true" />
 
-        <h3 className="mt-3 font-display text-xl md:text-2xl font-black text-text-primary leading-snug line-clamp-2 group-hover:text-primary transition-colors max-w-[26ch]">
-          {digest.title}
-        </h3>
+      {/* Ghost issue numeral, scaled smaller than feature */}
+      <span
+        aria-hidden="true"
+        className="absolute -top-3 right-1 md:right-3 font-display font-black tracking-tighter leading-none text-white/[0.07] text-[7rem] md:text-[9rem] select-none pointer-events-none"
+      >
+        {String(issueNumber).padStart(2, '0')}
+      </span>
+
+      {/* Top-left badge — smaller than feature */}
+      <div className="absolute top-4 left-4 md:top-5 md:left-5 z-10 flex items-center gap-2">
+        {todayFlag && (
+          <span className="font-mono uppercase text-[9px] tracking-[0.2em] bg-primary text-[#0d0c0b] px-2 py-0.5 rounded-md font-bold">
+            Today
+          </span>
+        )}
+        <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/55">
+          № {String(issueNumber).padStart(2, '0')}
+        </span>
       </div>
 
-      <div className="relative mt-auto pt-4 flex items-center justify-between gap-4">
-        <span className="font-mono text-[11px] text-text-muted">
-          {digest.item_count} picks · from {digest.total_fetched}
-        </span>
-        <ArrowRight
-          aria-hidden="true"
-          className="w-4 h-4 text-text-muted group-hover:text-primary group-hover:translate-x-1 transition-all"
-        />
+      {/* Bottom mask */}
+      <div
+        aria-hidden="true"
+        className="absolute inset-x-0 bottom-0 h-[68%] bg-gradient-to-t from-[#0a0908] via-[#0a0908]/82 via-45% to-transparent"
+      />
+
+      {/* Type stack at the bottom */}
+      <div className="absolute inset-x-0 bottom-0 z-10 p-5 md:p-6">
+        <p className="font-mono uppercase text-[10px] tracking-[0.22em] text-white/65 mb-2">
+          Issue Nº{String(issueNumber).padStart(2, '0')}
+          <span className="mx-2 opacity-50">·</span>
+          {formatShortDate(digest.date)}
+        </p>
+
+        <h3 className="font-display text-lg md:text-2xl font-black text-white leading-[1.05] tracking-tight line-clamp-2 max-w-[22ch] group-hover:text-primary transition-colors duration-300">
+          {digest.title}
+        </h3>
+
+        <div className="mt-4 pt-3 border-t border-white/12 flex items-center justify-between gap-3">
+          <span className="font-mono text-[10px] md:text-[11px] text-white/55">
+            {digest.item_count} picks · from {digest.total_fetched}
+          </span>
+          <ArrowRight
+            aria-hidden="true"
+            className="w-3.5 h-3.5 text-white/70 group-hover:text-primary group-hover:translate-x-1 transition-all"
+          />
+        </div>
       </div>
     </Link>
   );
