@@ -1,0 +1,196 @@
+---
+title: "Daily Brief · 2026-05-22"
+slug: horizon-2026-05-22-en
+date: 2026-05-22
+lang: en
+issue_id: 2026-05-22
+published: true
+description: "SpaceX's S-1 reveals Anthropic is paying $1.25B/month for Colossus compute, Nvidia exits the China AI chip market, Waymo pauses Atlanta robotaxis after flood incidents, and Codex gains remote Mac control while locked — plus 5 more stories from today's research."
+item_count: 9
+total_fetched: 53
+cover_image: /digests/cover-2026-05-22.png
+---
+
+> From 53 items, 9 important content pieces were selected
+
+---
+
+1. [SpaceX S-1 Reveals $1.25B/Month Anthropic Cloud Deal for AI Compute](#item-1) ⭐️ 10.0/10
+2. [Nvidia largely abandons China AI chip market, cedes ground to Huawei](#item-2) ⭐️ 9.0/10
+3. [Project Hail Mary Interactive Star Chart Using GAIA's 1.8 Billion Stars](#item-3) ⭐️ 8.0/10
+4. [Waymo Pauses Atlanta Robotaxis After Repeated Flood Incidents](#item-4) ⭐️ 8.0/10
+5. [Seattle Shield Intel-Sharing Network Exposed in Investigative Report](#item-5) ⭐️ 8.0/10
+6. [Over 340 Local News Outlets Restrict Internet Archive's Access to Journalism](#item-6) ⭐️ 8.0/10
+7. [Google Tests AI-Powered Personalized Ads in Search, Expanding Direct Offers Pilot](#item-7) ⭐️ 8.0/10
+8. [Datasette Agent: A Conversational AI Assistant for Data Exploration](#item-8) ⭐️ 8.0/10
+9. [Codex now supports remote Mac operation while screen is locked](#item-9) ⭐️ 8.0/10
+
+---
+
+<a id="item-1"></a>
+## [SpaceX S-1 Reveals $1.25B/Month Anthropic Cloud Deal for AI Compute](https://simonwillison.net/2026/May/20/spacex-s1/#atom-everything) ⭐️ 10.0/10
+
+SpaceX's SEC S-1 filing disclosed that Anthropic will pay $1.25 billion monthly for AI compute on its Colossus and Colossus II supercomputers, marking a dramatic entry into the cloud services market. This deal reshapes the AI computing landscape by positioning SpaceX as a formidable competitor to established cloud providers, and it underscores the immense financial scale required to train frontier AI models. The agreement allows termination with 90 days' notice, and capacity ramps in May and June 2026 at a reduced fee. Colossus II is currently training xAI's Grok 5 model, and the combined data centers exceed one gigawatt of power.
+
+rss · Simon Willison · May 20, 22:26
+
+**Background**: Colossus is the world's largest AI supercomputer, operational since July 2024 and originally built to train the Grok chatbot. SpaceX's S-1 filing for its IPO reveals that it is now utilizing this massive infrastructure—including the newer Colossus II—not only for its own AI models but also to sell compute capacity to external customers like Anthropic.
+
+**References**:
+
+- [Colossus (supercomputer) - Wikipedia](https://en.wikipedia.org/wiki/Colossus_(supercomputer))
+- [SpaceX IPO Filing Reveals Anthropic Is Paying $15 Billion a Year to Access Its Data Centers | WIRED](https://www.wired.com/story/spacex-ipo-anthropic-compute-finances-risks/)
+- [Anthropic Signs $1.25B-per-Month Colossus Compute Deal | Let's Data Science](https://letsdatascience.com/news/anthropic-signs-125b-per-month-colossus-compute-deal-c892b829)
+
+**Tags**: `#AI` `#SpaceX` `#cloud-computing` `#infrastructure` `#Anthropic`
+
+---
+
+<a id="item-2"></a>
+## [Nvidia largely abandons China AI chip market, cedes ground to Huawei](https://www.cnbc.com/2026/05/21/nvidia-jensen-huang-china-ai-chip-market-huawei.html) ⭐️ 9.0/10
+
+Nvidia CEO Jensen Huang stated that due to U.S. export controls, the company has 'largely given up' the Chinese AI chip market, effectively conceding it to domestic players like Huawei. He also revealed that Nvidia told investors to hold 'zero expectation' of receiving licenses to sell advanced chips in China. This marks a major shift in the global AI chip supply chain; China was once at least a fifth of Nvidia's data center revenue, and its exit will accelerate the rise of domestic alternatives like Huawei's Ascend chips, directly impacting hardware choices for engineers and AI developers in the region. The strategic withdrawal follows an April 2026 Trump administration mandate requiring licenses for chip exports to China, effectively blocking Nvidia. Huang noted the company is instead directing capital toward supply chain expansion and a new $80 billion stock buyback program.
+
+telegram · zaihuapd · May 21, 05:52
+
+**Background**: The U.S. has imposed escalating export controls on advanced AI semiconductors to China since 2022, initially preventing the sale of Nvidia's top-tier A100 and H100 GPUs. Nvidia responded by designing bandwidth-limited variants like the A800 and H800 specifically for the Chinese market, but subsequent rule updates later blocked those as well. Meanwhile, Huawei has been aggressively developing its Ascend series of AI chips, emerging as the primary domestic alternative capable of training large AI models.
+
+**Tags**: `#ai-chips` `#export-controls` `#china-market`
+
+---
+
+<a id="item-3"></a>
+## [Project Hail Mary Interactive Star Chart Using GAIA's 1.8 Billion Stars](https://valhovey.github.io/gaia-mary/) ⭐️ 8.0/10
+
+A developer created an interactive 3D stellar navigation chart for the sci-fi novel "Project Hail Mary" using ESA's GAIA DR3 dataset, rendering all 1.8+ billion stars with accurate positions and colors into custom skybox images. The project demonstrates how open scientific data can be repurposed for creative and educational experiences, bringing complex astronomy to a broader audience through a popular sci-fi narrative and sparking discussions on scale and data fidelity. Star positions and colors are directly from GAIA DR3, with a few missing bright stars added manually; planet sizes and orbits are deliberately not to scale, and the skybox is generated by a custom Python script.
+
+hackernews · speleo · May 21, 16:23 · [Discussion](https://news.ycombinator.com/item?id=48225297)
+
+**Background**: ESA's GAIA satellite maps the Milky Way in 3D with high precision. Its third data release (DR3) from June 2022 provides data on over 1.8 billion stars, including positions, motions, and physical parameters. "Project Hail Mary" is a 2021 hard sci-fi novel by Andy Weir about an astronaut's interstellar journey to save humanity.
+
+**References**:
+
+- [Gaia Data Release 3 contents summary - Gaia - Cosmos](https://www.cosmos.esa.int/web/gaia/dr3)
+
+**Discussion**: The creator (Val) shared rendering details, while one commenter illustrated the vast emptiness of space by comparing orbital scales. Others expressed enthusiasm for the novel and similar books, and a few recommended the game Elite Dangerous for its realistic 1:1 galaxy simulation. Overall, the community praised the project's creativity and scientific foundation.
+
+**Tags**: `#astrophysics` `#data-visualization` `#open-data` `#web-development` `#science-fiction`
+
+---
+
+<a id="item-4"></a>
+## [Waymo Pauses Atlanta Robotaxis After Repeated Flood Incidents](https://techcrunch.com/2026/05/21/waymo-pauses-atlanta-service-as-its-robotaxis-keep-driving-into-floods/) ⭐️ 8.0/10
+
+Waymo temporarily halted its robotaxi service in Atlanta after multiple incidents in which the autonomous vehicles drove into flooded streets, exposing flaws in handling severe weather and perception. This incident highlights that even leading autonomous driving systems struggle with edge cases like flooding, casting doubt on the near-term viability of fully driverless operation in all conditions and potentially affecting public trust and regulatory timelines. The Atlanta service was paused without a specified restart date, and the vehicles repeatedly misjudged water depths. A former Waymo employee noted the problem is known and simulated, but the system remains imperfect, and the company operates only in validated domains where safety confidence is high.
+
+hackernews · mattas · May 21, 16:30 · [Discussion](https://news.ycombinator.com/item?id=48225426)
+
+**Background**: Autonomous vehicles use sensors like cameras, lidar, and radar to perceive the environment. Edge cases are rare, unexpected scenarios—such as flooded roads—that system training often lacks, making them disproportionately responsible for serious failures. Waymo typically deploys only in areas where it has extensively tested and validated safety, but expanding to cities like Atlanta introduces novel weather challenges that existing solutions may not fully cover.
+
+**References**:
+
+- [Edge Cases in Autonomous Driving : Detection and Handling Guide](https://www.kognic.com/articles/edge-cases-autonomous-driving)
+- [Autonomous vehicle perception: The technology of today and ...](https://www.sciencedirect.com/science/article/pii/S0968090X18302134)
+
+**Discussion**: Discussion was mixed: some considered this a normal operational learning step that can be fixed, while others voiced skepticism about the broader AI progress, noting that after years of investment, autonomous cars still fail in basic weather conditions. An insider acknowledged the problem is well-known and simulated, but highlighted that Waymo's safety is maintained by limiting deployments to validated domains, implying that edge cases will persist.
+
+**Tags**: `#autonomous-vehicles` `#ai-safety` `#edge-cases` `#Waymo` `#robotics`
+
+---
+
+<a id="item-5"></a>
+## [Seattle Shield Intel-Sharing Network Exposed in Investigative Report](https://prismreports.org/2026/05/20/seattle-shield-private-companies-surveillance/) ⭐️ 8.0/10
+
+An investigative report by Prism revealed the existence and operations of Seattle Shield, a police-private intelligence-sharing network that includes Amazon, Facebook, the FBI, and other entities, focusing on monitoring protests and suspicious activities. The report highlights the lack of transparency in corporate–government surveillance partnerships, raising serious concerns about privacy, protest monitoring, and the erosion of civil liberties for residents and activists. The network requests behavior-based suspicious activity reports from member companies and circulates them among law enforcement and federal agencies. Some former participants, such as the Church of Scientology and the U.S. Navy, have since disengaged.
+
+hackernews · root-parent · May 21, 17:55 · [Discussion](https://news.ycombinator.com/item?id=48226588)
+
+**Background**: Intelligence-sharing networks like Seattle Shield are public-private partnerships designed to identify and mitigate potential threats, but they often operate with minimal oversight. Critics compare them to a 'panopticon', where pervasive surveillance chills lawful behavior. Such programs expanded after 9/11 but remain controversial due to their potential for abuse.
+
+**References**:
+
+- [Amazon, Facebook, FBI have access to a private intelligence - sharing ...](https://security-zone.info/cybersecurity/amazon-facebook-fbi-have-access-to-a-private-intelligence-sharing-network/)
+- [Amazon, Facebook, and ICE access Seattle police ... | Flipso](https://flipso.com/p/sx1z7sgox)
+
+**Discussion**: Community reaction was mixed: some users criticized the article's title as sensationalist, noting that Amazon and Facebook were barely mentioned; others were surprised by the eclectic list of member groups; and a few shared personal anecdotes of police harassment for photography. The debate centered on whether the network is a benign neighborhood watch or a threat to democracy.
+
+**Tags**: `#surveillance` `#privacy` `#law-enforcement` `#seattle` `#investigative-journalism`
+
+---
+
+<a id="item-6"></a>
+## [Over 340 Local News Outlets Restrict Internet Archive's Access to Journalism](https://www.niemanlab.org/2026/05/more-than-340-local-news-outlets-are-limiting-the-internet-archives-access-to-their-journalism/) ⭐️ 8.0/10
+
+More than 340 local news outlets have started blocking the Internet Archive's web crawlers, preventing the Wayback Machine from capturing and preserving their journalism for long-term access. This move threatens the historical record of local journalism, potentially erasing public access to news archives and undermining fact-checking, research, and cultural memory that depend on those records. The restriction is likely enforced through robots.txt or paywall mechanisms, and no widely adopted technical compromise, such as delayed access, has emerged. Over 340 outlets are affected, highlighting the growing conflict between news monetization and digital preservation.
+
+hackernews · jaredwiener · May 21, 16:59 · [Discussion](https://news.ycombinator.com/item?id=48225838)
+
+**Background**: The Internet Archive is a non-profit digital library founded in 1996 that runs the Wayback Machine, a web archive capturing periodic snapshots of websites. It serves as a vital tool for journalists, researchers, and the public to access historical web content that might otherwise disappear. Web archiving is a recognized practice for preserving digital heritage, with many national libraries and archives also engaging in it.
+
+**References**:
+
+- [Internet Archive](https://en.wikipedia.org/wiki/Internet_Archive)
+- [Web archiving](https://en.wikipedia.org/wiki/Web_archiving)
+
+**Discussion**: Commenters voiced disappointment and concern over the potential permanent loss of information. Some suggested practical fixes like a one-week delay before archiving or micropayment systems, while others emphasized the importance of archives for fact-checking, tracking article changes, and preserving public records that were once freely available.
+
+**Tags**: `#web-archiving` `#journalism` `#digital-preservation` `#paywalls` `#internet-archive`
+
+---
+
+<a id="item-7"></a>
+## [Google Tests AI-Powered Personalized Ads in Search, Expanding Direct Offers Pilot](https://blog.google/products/ads-commerce/google-marketing-live-search-ads/) ⭐️ 8.0/10
+
+Google is rolling out AI-generated ad formats in Search that use Gemini to dynamically write custom product explainers tailored to each user, while simultaneously expanding its Direct Offers pilot, which lets advertisers present exclusive promotional deals like discounts directly within AI Mode. This integration of persuasive conversational AI into core search results blurs the line between organic information and paid influence, raising urgent ethical concerns about user manipulation and the long-term erosion of search quality. The new formats leverage Gemini to pull relevant advertiser products and instantly generate personalized justifications for why a product suits the searcher. The Direct Offers pilot is an early example of agentic commerce, where Google's AI acts as a sales agent to bridge product research and purchase with exclusives like 20% off deals.
+
+hackernews · sofumel · May 21, 09:49 · [Discussion](https://news.ycombinator.com/item?id=48220105)
+
+**Background**: AI-generated ads are made possible by large language models like Gemini, which can interpret search intent and create context-aware copy. The Direct Offers pilot is part of Google's broader agentic commerce push, where AI automates the path from discovery to transaction. This announcement follows the gradual infusion of generative AI into Google Search, a shift that has already sparked debates over the distinction between useful results and paid promotions in the evolving AI Mode.
+
+**References**:
+
+- [Agentic Commerce: Google's "Direct Offers" Pilot is Bringing Paid Ads...](https://www.accelerateddigitalmedia.com/insights/agentic-commerce-googles-direct-offers-pilot-is-bringing-paid-ads-to-ai-mode/)
+- [Direct Offers: Google's First Agentic Ad Format – Luzern](https://www.luzern.co/direct-offers-googles-first-agentic-ad-format/)
+
+**Discussion**: The community reaction is overwhelmingly negative, with many decrying the move as the 'essence of the evil of AI ads.' Commenters argue it trains AI to manipulate people even when they are aware of being influenced, and some predict Google Search will become useless. A minority viewpoint suggests Google could have waited for competitors to move first to gain market share, but no one defends the ethical implications.
+
+**Tags**: `#ai-ads` `#google-search` `#advertising-ethics` `#user-manipulation` `#search-quality`
+
+---
+
+<a id="item-8"></a>
+## [Datasette Agent: A Conversational AI Assistant for Data Exploration](https://simonwillison.net/2026/May/21/datasette-agent/#atom-everything) ⭐️ 8.0/10
+
+Datasette Agent, a new extensible AI assistant, has been released, bringing conversational querying and chart generation to the Datasette data exploration platform by integrating the LLM Python library. It makes data exploration more accessible by allowing natural language questions, and its plugin system enables custom capabilities like charting and image generation, benefiting anyone who works with data in Datasette. The live demo runs on Gemini 3.1 Flash-Lite for fast and cost-effective SQL generation; three plugins have been shipped, including datasette-agent-charts (powered by Observable Plot) and datasette-agent-openai-imagegen (using ChatGPT Images 2.0).
+
+rss · Simon Willison · May 21, 19:52
+
+**Background**: Datasette is an open-source tool by Simon Willison for exploring and publishing data as interactive websites and APIs. The LLM Python library is a utility to interact with large language models via command-line or code. Datasette Agent merges them to let users ask questions in plain English, which the assistant translates into SQL queries against the underlying databases, with optional plugins for extra features.
+
+**References**:
+
+- [Datasette for exploratory analysis](https://datasette.io/for/exploratory-analysis)
+- [GitHub - simonw/datasette: An open source multi-tool for exploring ...](https://github.com/simonw/datasette)
+- [awesome-ml/llm-tools.md at master · underlines/awesome-ml · GitHub](https://github.com/underlines/awesome-ml/blob/master/llm-tools.md)
+
+**Tags**: `#datasette` `#ai-assistant` `#llm` `#open-source` `#data-exploration`
+
+---
+
+<a id="item-9"></a>
+## [Codex now supports remote Mac operation while screen is locked](https://x.com/OpenAIDevs/status/2057536706778378692) ⭐️ 8.0/10
+
+OpenAI announced that Codex can now continue performing actions on a Mac even when the screen is locked, allowing users to remotely control approved applications from a connected device like a phone. This new "lock screen usage" capability extends the Computer Use feature to scenarios where the Mac is unattended. This eliminates a key limitation where AI-driven desktop automation halted when the Mac locked, enabling unattended workflows that can run overnight or while the user is away. It makes Codex more practical for developers building automated engineering tasks that require long-running, continuous computer interaction. The feature requires installing a plugin and granting screen recording and accessibility permissions. The temporary unlock is only valid for the current task and the system re-locks if local input is detected; initial availability excludes the European Economic Area, the United Kingdom, and Switzerland.
+
+telegram · zaihuapd · May 22, 00:58
+
+**Background**: OpenAI Codex is a suite of AI coding agents that extends beyond code generation to include Computer Use — the ability to control desktop applications by clicking, typing, and navigating like a human. Traditionally, this automation stopped when a Mac was locked or the screen turned off. The new lock-screen support removes that barrier, allowing Codex to act as a persistent automated assistant, and builds on OpenAI's broader push toward agentic systems that can perform real-world tasks with minimal supervision.
+
+**References**:
+
+- [Codex | AI Coding Partner from OpenAI](https://openai.com/codex/)
+- [OpenAI Codex](https://grokipedia.com/page/OpenAI_Codex)
+
+**Tags**: `#Codex` `#macOS` `#remote-control` `#desktop-automation` `#OpenAI`
+
+---

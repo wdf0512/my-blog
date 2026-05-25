@@ -34,6 +34,8 @@ const digests = defineCollection({
       title: s.string().max(99),
       slug: s.slug('digests'),
       date: s.isodate(),
+      lang: s.enum(['en', 'zh']).default('zh'),
+      issue_id: s.string().optional(),
       published: s.boolean().default(true),
       description: s.string().max(999).optional(),
       item_count: s.number().default(0),
@@ -41,7 +43,11 @@ const digests = defineCollection({
       cover_image: s.string().optional(),
       body: s.mdx(),
     })
-    .transform((data) => ({ ...data, ...computedFields(data) })),
+    .transform((data) => ({
+      ...data,
+      issue_id: data.issue_id ?? data.date.slice(0, 10),
+      ...computedFields(data),
+    })),
 });
 
 export default defineConfig({

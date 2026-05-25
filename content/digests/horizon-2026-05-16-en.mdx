@@ -1,0 +1,373 @@
+---
+title: "Daily Brief · 2026-05-16"
+slug: horizon-2026-05-16-en
+date: 2026-05-16
+lang: en
+issue_id: 2026-05-16
+published: true
+description: "vLLM v0.21 forces a transformers v5 + C++20 upgrade, Project Zero discloses a Pixel 10 zero-click chain, Zulip transfers ownership to a nonprofit foundation, the first public Apple M5 kernel exploit drops — and 13 more stories from today's research."
+item_count: 17
+total_fetched: 44
+cover_image: /digests/cover-2026-05-16.png
+---
+
+> From 44 items, 17 important content pieces were selected
+
+---
+
+1. [vLLM v0.21.0 released with breaking transformers v5 and C++20 requirements](#item-1) ⭐️ 9.0/10
+2. [LiteLLM v1.84.0 released with undocumented breaking changes](#item-2) ⭐️ 9.0/10
+3. [Project Zero discloses 0-click exploit chain for Pixel 10](#item-3) ⭐️ 9.0/10
+4. [Zulip Transfers Ownership to Independent Nonprofit Foundation](#item-4) ⭐️ 9.0/10
+5. [Jason Scott's ASCII.textfiles.com: A Landmark Digital Preservation Initiative](#item-5) ⭐️ 9.0/10
+6. [IBM and Hugging Face release Granite Embedding Multilingual R2](#item-6) ⭐️ 9.0/10
+7. [First public Apple M5 kernel exploit bypassing MIE memory protection](#item-7) ⭐️ 9.0/10
+8. [arXiv Imposes 1-Year Submission Ban for Unverified LLM-Generated Content](#item-8) ⭐️ 9.0/10
+9. [Mitchell Hashimoto coins 'AI psychosis' to describe organizational overreliance on AI](#item-9) ⭐️ 8.0/10
+10. [California bill mandates patches or refunds for shutting down online games](#item-10) ⭐️ 8.0/10
+11. [The Sigmoid Fallacy in AI Forecasting](#item-11) ⭐️ 8.0/10
+12. [Satirical npm post highlights recurring supply chain attacks](#item-12) ⭐️ 8.0/10
+13. [U.S. DOJ subpoenas Apple and Google for 100,000+ users of EZ Lynk Auto Agent app](#item-13) ⭐️ 8.0/10
+14. [Waymo issues software recall for 3,800 robotaxis after standing water driving incident](#item-14) ⭐️ 8.0/10
+15. [ABC News permanently removes all FiveThirtyEight articles](#item-15) ⭐️ 8.0/10
+16. [Radicle launches sovereign, Git-native decentralized code forge](#item-16) ⭐️ 8.0/10
+17. [Anima: Open-source 2-billion-parameter anime-style text-to-image model](#item-17) ⭐️ 8.0/10
+
+---
+
+<a id="item-1"></a>
+## [vLLM v0.21.0 released with breaking transformers v5 and C++20 requirements](https://github.com/vllm-project/vllm/releases/tag/v0.21.0) ⭐️ 9.0/10
+
+vLLM v0.21.0 was released on GitHub, deprecating transformers v4 support and requiring a C++20-compatible compiler for building from source; it also introduces KV offloading integrated with the Hybrid Memory Allocator (HMA), speculative decoding with thinking budget, and TOKENSPEED_MLA backend for Blackwell GPUs. These breaking changes affect all users building vLLM from source or depending on transformers v4, requiring immediate CI/CD and dependency updates; the new HMA and KV offloading features significantly improve throughput and memory efficiency for large-scale LLM serving in production. The C++20 requirement stems from PyTorch 2.4+ compatibility needs and affects build environments without modern compilers (e.g., GCC &lt;11 or Clang &lt;13); transformers v5 migration is mandatory — v4 will no longer receive fixes or security patches in future vLLM releases.
+
+github · khluu · May 15, 08:44
+
+**Background**: vLLM is an open-source high-throughput LLM inference engine known for PagedAttention and efficient memory management. KV offloading moves key-value caches from GPU to CPU/disk to serve larger models or more concurrent requests. The Hybrid Memory Allocator (HMA) unifies memory management across heterogeneous devices (GPU/CPU) and model components (e.g., attention, Mamba layers) to reduce fragmentation and improve cache hit rates.
+
+**References**:
+
+- [kv_offload — vLLM](https://docs.vllm.ai/en/latest/api/vllm/v1/kv_offload/)
+- [Inside vLLM's New KV Offloading Connector — vLLM Blog](https://vllm.ai/blog/kv-offloading-connector)
+- [Maximizing Performance with vLLM's Hybrid Memory Allocator](https://www.franksworld.com/2025/08/15/how-to-maximizing-performance-with-vllms-hybrid-memory-allocator-architecture/)
+
+**Tags**: `#breaking-change` `#deprecation`
+
+---
+
+<a id="item-2"></a>
+## [LiteLLM v1.84.0 released with undocumented breaking changes](https://github.com/BerriAI/litellm/releases/tag/v1.84.0) ⭐️ 9.0/10
+
+BerriAI released LiteLLM v1.84.0 on GitHub, explicitly warning that it contains breaking changes — but the release notes and changelog omit specific details about which APIs, interfaces, or behaviors were altered. This forces all production users to conduct thorough compatibility testing before upgrading, as silent breaking changes risk runtime failures, incorrect logging, misconfigured caching, or proxy health-check regressions — especially in automated CI/CD or containerized deployments. The release includes Docker image signing via Cosign using a pinned, cryptographically immutable commit hash (0112e53) for key verification; however, no breaking change is listed in the 'What's Changed' section — only minor fixes, feature additions, and internal refactors are enumerated.
+
+github · github-actions[bot] · May 14, 06:12
+
+**Background**: LiteLLM is an open-source LLM abstraction and routing library that standardizes calls across 100+ LLM providers (e.g., OpenAI, Anthropic, Vertex AI). It is widely used in AI gateways, cost-tracking proxies, and enterprise LLM orchestration stacks. Breaking changes in such libraries can cascade across dependent services due to tight coupling on request/response schemas, caching logic, or CLI flags.
+
+**References**:
+
+- [Sigstore Quickstart with Cosign](https://docs.sigstore.dev/quickstart/quickstart-cosign/)
+- [sigstore/cosign — Code signing and transparency](https://github.com/sigstore/cosign)
+- [Code signing | Docker Docs](https://docs.docker.com/dhi/core-concepts/signatures/)
+
+**Tags**: `#breaking-change`
+
+---
+
+<a id="item-3"></a>
+## [Project Zero discloses 0-click exploit chain for Pixel 10](https://projectzero.google/2026/05/pixel-10-exploit.html) ⭐️ 9.0/10
+
+Google Project Zero disclosed a novel 0-click exploit chain for the Google Pixel 10, leveraging CVE-2025-54957 — a critical flaw in the Dolby Unified Decoder (UDC) — combined with expanded AI-powered message processing as an initial attack vector. This represents a high-severity, remotely exploitable vulnerability in a flagship Android device that requires no user interaction, undermining core trust assumptions in mobile platform security and highlighting systemic risks from AI feature integration. The exploit chain reuses and extends the Dolby UDC vulnerability previously exploited on Pixel 9; it relies on pre-decoding of message media (e.g., images, audio) by AI services before user opening — a design choice that expands the 0-click attack surface. Patching occurred within 90 days of vendor notification.
+
+hackernews · happyhardcore · May 15, 13:39 · [Discussion](https://news.ycombinator.com/item?id=48148460)
+
+**Background**: Zero-click exploits require no user interaction (e.g., no tap or click), making them especially dangerous for mobile devices. The Dolby Unified Decoder (UDC) is a system-level Android component used for audio/video decoding across messaging and media apps. Recent Android versions increasingly integrate AI features — such as Gemini-powered message analysis — that automatically process unopened message content, thereby expanding privileged code execution surfaces outside traditional app sandboxes.
+
+**References**:
+
+- [A 0-click exploit chain for the Pixel 10 — Project Zero](https://projectzero.google/2026/05/pixel-10-exploit.html)
+- [Google Project Zero Reveals Zero-Click Exploit Chain for Pixel 10](https://cyberpress.org/zero-click-exploit-chain-for-pixel-10/)
+- [No thanks: Google lets its Gemini AI access your apps, including messages](https://www.malwarebytes.com/blog/news/2025/07/no-thanks-google-lets-its-gemini-ai-access-your-apps-including-messages)
+
+**Discussion**: Commenters express concern over the growing 0-click attack surface due to AI-driven message processing, praise Google's relatively fast patch timeline (90 days), question Apple's response speed, and debate whether rising exploit disclosures reflect genuine escalation or increased media attention around AI security.
+
+**Tags**: `#android` `#zero-click` `#project-zero` `#mobile-security` `#exploit-chain`
+
+---
+
+<a id="item-4"></a>
+## [Zulip Transfers Ownership to Independent Nonprofit Foundation](https://blog.zulip.com/2026/05/15/announcing-zulip-foundation/) ⭐️ 9.0/10
+
+On May 15, 2026, Zulip's core team announced they are stepping back from full-time leadership and donating the company to the newly established, independent, nonprofit Zulip Foundation to ensure long-term public-good stewardship. This transition strengthens trust in Zulip as a privacy-respecting, community-aligned open-source platform amid growing concerns about corporate acquisition, data monetization, and governance instability in developer tools. The Zulip Foundation is structured as an independent nonprofit with a mission-focused governance model; it assumes formal stewardship of the Zulip project, codebase, trademarks, and infrastructure, while the founding team — including Tim Abbott — joins Anthropic.
+
+hackernews · boramalper · May 15, 18:37 · [Discussion](https://news.ycombinator.com/item?id=48152168)
+
+**Background**: Zulip is an open-source team chat application known for its threaded, topic-based messaging model, widely adopted by technical communities including Rust, Lean, and NixOS. It has long emphasized transparency, self-hosting, and user control — values now formally enshrined in its new nonprofit stewardship structure.
+
+**References**:
+
+- [Announcing the Zulip Foundation](https://blog.zulip.com/2026/05/15/announcing-zulip-foundation/)
+
+**Discussion**: Comments reflect deep personal investment and nuanced perspectives: users praise the move as a trust-preserving antidote to corporate drift (e.g., Bun/Rust concerns), express bittersweet feelings about the core team's departure, and raise thoughtful questions about timing and optics — indicating broad validation and engaged scrutiny.
+
+**Tags**: `#open-source` `#nonprofit` `#software-governance` `#privacy` `#community-stewardship`
+
+---
+
+<a id="item-5"></a>
+## [Jason Scott's ASCII.textfiles.com: A Landmark Digital Preservation Initiative](https://ascii.textfiles.com/) ⭐️ 9.0/10
+
+Jason Scott continues to expand his long-running digital preservation project ASCII.textfiles.com, archiving over 13,000 technical manuals and 1,300+ magnetic tapes — including NYC slice-of-life recordings and obscure music — hosted publicly via the Internet Archive and celebrated through live community engagement such as Twitch streams. This initiative safeguards irreplaceable computing heritage that would otherwise be lost to obsolescence and decay, ensuring open, free access to primary sources for historians, educators, retrocomputing enthusiasts, and future generations. It exemplifies grassroots, community-driven digital stewardship at scale. The collection includes materials digitized from personal archives (e.g., Mark Pines' 1,300+ tapes), with ~3.5 manuals added daily over a decade; all content is freely accessible without paywalls or DRM, and actively maintained — evidenced by real-time corrections of archive links and concurrent live streaming on Twitch.
+
+hackernews · bookofjoe · May 15, 14:02 · [Discussion](https://news.ycombinator.com/item?id=48148726)
+
+**Background**: ASCII.textfiles.com is part of Jason Scott's broader textfiles.com ecosystem — a pioneering early-web archive launched in the 1990s focused on plain-text files, BBS culture, and digital ephemera. Scott, a co-founder of Archive Team and staff archivist at the Internet Archive, combines documentary filmmaking (e.g., 'GET LAMP', 'BBS Documentary') with hands-on preservation work. The site reflects a philosophy that digital history must be saved in its native, accessible formats — not just as metadata or screenshots.
+
+**References**:
+
+- [ASCII by Jason Scott](https://ascii.textfiles.com/)
+- [ASCII art — TEXTFILES](http://artscene.textfiles.com/asciiart/)
+- [Jason Scott (@textfiles) on X](https://x.com/textfiles)
+
+**Discussion**: Commenters express deep admiration for Scott's prolific output and ethos of open access, highlight specific collections (e.g., 13,000 manuals, Mark Pines tapes), correct outdated links in real time, and note his ongoing Twitch livestreams — demonstrating active, knowledgeable, and appreciative community participation.
+
+**Tags**: `#digital-preservation` `#internet-archive` `#retrocomputing` `#open-access` `#cultural-heritage`
+
+---
+
+<a id="item-6"></a>
+## [IBM and Hugging Face release Granite Embedding Multilingual R2](https://huggingface.co/blog/ibm-granite/granite-embedding-multilingual-r2) ⭐️ 9.0/10
+
+IBM and Hugging Face jointly released Granite Embedding Multilingual R2, an open-source Apache 2.0 licensed embedding model supporting over 100 languages, 32,768-token context length, and achieving state-of-the-art retrieval quality among sub-100M parameter models. This release significantly advances open-source multilingual RAG systems by providing a high-quality, production-ready, permissively licensed embedding model — enabling better cross-lingual search, long-context retrieval, and accessible AI for low-resource languages and global enterprises. The R2 model comes in two variants: a 97M-parameter version (granite-embedding-97m-multilingual-r2) and a 311M-parameter version (granite-embedding-311m-multilingual-r2), both built on a ModernBERT-base architecture with 22 layers, 768-dimensional embeddings, and GeLU activation; it achieves top performance on MTEB multilingual benchmarks and supports code retrieval and conversational multi-turn tasks.
+
+rss · Hugging Face Blog · May 14, 18:55
+
+**Background**: Embedding models convert text into fixed-length vectors to enable semantic similarity search and retrieval — a core component of Retrieval-Augmented Generation (RAG) systems. Retrieval quality directly determines RAG effectiveness, as poor embeddings lead to irrelevant context being fed to LLMs. Context length (e.g., 32K tokens) allows processing longer documents without truncation or chunking, improving fidelity in long-document search. Multilingual support ensures non-English queries retrieve relevant content across diverse language corpora.
+
+**References**:
+
+- [ibm-granite/granite-embedding-97m-multilingual-r2 · Hugging Face](https://huggingface.co/ibm-granite/granite-embedding-97m-multilingual-r2)
+- [Granite Embedding Multilingual R2 Models](https://arxiv.org/pdf/2605.13521)
+- [Granite Embedding — IBM Granite](https://www.ibm.com/granite/docs/models/embedding)
+- [Open Apache 2.0 Multilingual Embeddings with 32K Context — Hugging Face](https://huggingface.co/blog/ibm-granite/granite-embedding-multilingual-r2)
+
+**Discussion**: The Hugging Face blog post received strong community engagement, with developers praising its Apache 2.0 license, multilingual coverage, and competitive retrieval scores — especially given its sub-100M size. Some users noted the practical advantage of 32K context for enterprise document search, while others highlighted its potential to replace proprietary alternatives like Voyage AI in cost-sensitive deployments.
+
+**Tags**: `#multilingual` `#embeddings` `#RAG` `#open-source` `#NLP`
+
+---
+
+<a id="item-7"></a>
+## [First public Apple M5 kernel exploit bypassing MIE memory protection](https://blog.calif.io/p/first-public-kernel-memory-corruption) ⭐️ 9.0/10
+
+Calif and Anthropic's Mythos Preview AI collaboratively developed the first publicly disclosed local kernel memory corruption exploit for macOS on Apple M5 hardware (macOS 26.4.1) between April 25 and May 1, 2024 — achieving privilege escalation from unprivileged user to root without bypassing system call restrictions. This demonstrates that AI-human collaboration can rapidly defeat cutting-edge hardware-enforced memory safety — a paradigm shift for offensive security research and a wake-up call for hardware-assisted security assumptions in next-generation silicon. The exploit chain targets data-type kernel memory corruption (not control-flow), bypasses Memory Integrity Enforcement (MIE) — Apple's ARM MTE-based hardware memory tagging system — and relies on two distinct vulnerabilities plus novel exploitation techniques; full technical report (55 pages) will be released after Apple patches the issue.
+
+telegram · zaihuapd · May 15, 02:15
+
+**Background**: Apple's MIE (Memory Integrity Enforcement) is a hardware-assisted memory safety feature introduced with the M5 and A19 chips, built upon ARM's Memory Tagging Extension (MTE) to detect and prevent memory corruption bugs at runtime. It represents Apple's five-year effort to harden kernel memory against exploitation by assigning and validating memory tags on every allocation. Unlike software-only mitigations, MIE operates at the silicon level and was marketed as a foundational defense against kernel memory corruption.
+
+**References**:
+
+- [First public macOS kernel memory corruption exploit on Apple M5](https://blog.calif.io/p/first-public-kernel-memory-corruption)
+- [First Public macOS Kernel Memory Corruption Exploit on Apple M5](https://sesamedisk.com/macos-m5-kernel-memory-exploit-ai-breakthrough/)
+- [First public macOS kernel memory corruption exploit on Apple M5](https://techtrendtrove.com/networking/first-public-macos-kernel-memory-corruption-exploit-on-apple-m5/)
+
+**Tags**: `#macos-security` `#ai-assisted-exploit` `#m5-chip`
+
+---
+
+<a id="item-8"></a>
+## [arXiv Imposes 1-Year Submission Ban for Unverified LLM-Generated Content](https://x.com/tdietterich/status/2055000956144935055) ⭐️ 9.0/10
+
+arXiv has formally announced a strict enforcement policy: authors who submit papers containing unverified LLM-generated content — such as hallucinated citations, residual meta-comments, or placeholder text (e.g., 'replace with real data') — will face a 1-year ban from submitting to arXiv. After the ban, any new submission must first be accepted by a reputable peer-reviewed venue. This is arXiv's first explicit, enforceable penalty targeting unchecked LLM use in scholarly communication, directly shaping how AI/ML researchers prepare and verify manuscripts — and signaling that authorial responsibility extends fully to AI-assisted content, with real consequences for academic integrity and reproducibility. The policy applies only when evidence of negligence is clear — e.g., hallucinated references or visible LLM artifacts — not merely for using LLMs. It reinforces arXiv's longstanding principle that authorship implies full responsibility for all content, regardless of generation method.
+
+telegram · zaihuapd · May 15, 04:30
+
+**Background**: arXiv is a preprint server widely used in physics, mathematics, computer science, and related fields; it does not conduct peer review but relies on moderation to ensure submissions are refereeable and scientifically sound. LLM hallucinations — fabricated facts, citations, or data presented as true — are increasingly documented risks in AI-assisted writing, with real-world consequences including legal sanctions and eroded trust in scientific literature.
+
+**References**:
+
+- [Content Moderation — arXiv info](https://info.arxiv.org/help/moderation/index.html)
+- [Hallucination (artificial intelligence) — Wikipedia](https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence))
+- [LLM hallucinations in the wild](https://arxiv.org/pdf/2605.07723)
+
+**Tags**: `#academic-norms` `#llm-governance` `#arxiv-policy`
+
+---
+
+<a id="item-9"></a>
+## [Mitchell Hashimoto coins 'AI psychosis' to describe organizational overreliance on AI](https://twitter.com/mitchellh/status/2055380239711457578) ⭐️ 8.0/10
+
+Mitchell Hashimoto, creator of Vagrant and Terraform, used the term 'AI psychosis' in a May 2024 social media post to describe organizations that outsource critical thinking, decision-making, and engineering judgment entirely to AI — without human oversight, verification, or domain understanding. This critique highlights a growing systemic risk in AI adoption: when organizations treat AI as an oracle rather than a tool, they erode accountability, degrade engineering rigor, and increase fragility in production systems — potentially leading to cascading failures and loss of institutional knowledge. 'AI psychosis' is not about using AI for coding or automation per se, but about abdicating human responsibility — e.g., accepting AI-generated financial analysis or infrastructure changes without validation, or building systems so complex that no human can comprehend or debug them.
+
+hackernews · reasonableklout · May 15, 20:26 · [Discussion](https://news.ycombinator.com/item?id=48153379)
+
+**Background**: Mitchell Hashimoto is a prominent infrastructure engineer known for foundational DevOps tools like Vagrant and Terraform, which emphasize declarative configuration, reproducibility, and human-in-the-loop control. His critique draws on decades of experience with system reliability, where human judgment, observability, and incremental change are central to resilience.
+
+**Discussion**: Commenters broadly agree that 'AI psychosis' reflects real-world drift toward uncritical AI reliance, especially in finance and early-stage tech; some foresee emergent instability in fully AI-maintained systems, while others note ironic advantages for traditionally slow-moving enterprises that avoid premature AI integration.
+
+**Tags**: `#ai-ethics` `#software-engineering` `#ai-adoption` `#human-ai-collaboration` `#technology-risk`
+
+---
+
+<a id="item-10"></a>
+## [California bill mandates patches or refunds for shutting down online games](https://arstechnica.com/gaming/2026/05/bill-to-keep-online-games-playable-clears-key-hurdle-in-california/) ⭐️ 8.0/10
+
+California Assembly Bill AB-2421, which cleared a key legislative hurdle in May 2026, would require publishers to either release patches enabling continued local or community-run play — or offer full refunds — when discontinuing online multiplayer games, alongside a mandatory 60-day public notice period. This bill represents one of the first U.S. legislative efforts to codify game preservation and consumer rights in digital services, potentially setting a precedent for other states and influencing global platform accountability standards for live-service games. The bill applies specifically to online games requiring persistent server infrastructure; it exempts subscription-only or ad-supported titles unless they charge direct purchase fees, and does not mandate open-sourcing — but advocates like georgeecollins argue that doing so is the fairest compliance path.
+
+hackernews · Lihh27 · May 15, 19:48 · [Discussion](https://news.ycombinator.com/item?id=48152994)
+
+**Background**: Online game shutdowns — such as those of 'Star Wars: The Old Republic' servers in niche regions or 'Disney Infinity' — have long raised concerns about lost access, player investment, and cultural heritage. Game preservation refers to efforts to maintain playable access to historically significant software, distinct from wildlife conservation (a common term confusion). Organizations like the Video Game History Foundation actively archive code, assets, and documentation to prevent digital obsolescence.
+
+**References**:
+
+- [Video Game History Foundation](https://gamehistory.org/)
+- [Game preservation](https://en.wikipedia.org/wiki/Game_preservation)
+
+**Discussion**: Commenters express nuanced views: georgeecollins champions open-sourcing server code as the fairest solution; tyleo warns the bill could disincentivize development due to heightened operational risk and cost; and mrandish cautions against regulatory overreach, citing loopholes that may accelerate the decline of non-subscription models.
+
+**Tags**: `#game-preservation` `#consumer-protection` `#gaming-policy` `#open-source` `#platform-regulation`
+
+---
+
+<a id="item-11"></a>
+## [The Sigmoid Fallacy in AI Forecasting](https://www.astralcodexten.com/p/the-sigmoids-wont-save-you) ⭐️ 8.0/10
+
+The article argues that modeling AI progress as a sigmoid (S-curve) is misleading, because historical technological advancement — such as in aviation — has proceeded via discontinuous paradigm shifts (e.g., propellers → turbojets → ramjets), not smooth saturation and plateauing. This challenges widely used forecasting heuristics in AI policy, investment, and safety planning, urging greater humility about extrapolative models and highlighting the risk of underestimating disruptive breakthroughs or premature assumptions of stagnation. The article contrasts sigmoidal thinking with Lindy's Law — the idea that non-perishable entities like technologies tend to persist for durations proportional to their current age — and notes that economic, regulatory, and physical limits — not mathematical curves — often determine when paradigms shift.
+
+hackernews · Tomte · May 15, 10:51 · [Discussion](https://news.ycombinator.com/item?id=48147021)
+
+**Background**: S-curves describe growth patterns where adoption or performance rises slowly, accelerates, then slows as it approaches a natural limit — common in diffusion-of-innovation models. Lindy's Law, by contrast, applies to non-perishable things (e.g., ideas, technologies) and posits that longevity implies resilience and longer expected future lifespan. The 'S-curve fallacy' refers to misapplying sigmoid logic to domains where discontinuous innovation dominates.
+
+**References**:
+
+- [Lindy effect — Wikipedia](https://en.wikipedia.org/wiki/Lindy_effect)
+- [Lindy's Law](https://en.wikipedia.org/wiki/Lindy's_Law)
+
+**Discussion**: Commenters debate the validity of Lindy's Law for AI trends, question the author's personal stake in near-term AGI predictions, and emphasize epistemic humility — agreeing that forecasting AI progress remains fundamentally uncertain due to paradigm shifts and external constraints.
+
+**Tags**: `#ai-forecasting` `#technological-progress` `#lindys-law` `#s-curve-fallacy` `#innovation-dynamics`
+
+---
+
+<a id="item-12"></a>
+## [Satirical npm post highlights recurring supply chain attacks](https://kevinpatel.xyz/posts/no-way-to-prevent-this/) ⭐️ 8.0/10
+
+Kevin Patel's satirical blog post titled 'No way to prevent this' mocks npm's repeated, high-impact supply chain compromises — including recent mass attacks on TanStack, Axios, and 170+ packages — while Hacker News comments pivot to cross-ecosystem analysis and propose release cooldowns as a practical mitigation. This critique exposes systemic weaknesses shared across major package managers (npm, PyPI, RubyGems, XZ), pushing the industry toward standardized, proactive defenses like release cooldowns — potentially reducing zero-day exploitation windows and shifting responsibility from developers to infrastructure. Release cooldowns — e.g., ignoring packages published less than 1–3 days ago — would have blocked recent npm attacks like TanStack and axios, as malicious versions were typically taken down within hours; tools like StepSecurity's NPM Package Cooldown Check and Homebrew's minimumReleaseAge policy formalize this approach.
+
+hackernews · alligatorplum · May 16, 00:36 · [Discussion](https://news.ycombinator.com/item?id=48155690)
+
+**Background**: Package managers like npm, PyPI, and RubyGems host millions of open-source dependencies used in production software. Their open publishing models — while enabling rapid innovation — also create fertile ground for supply chain attacks, where attackers hijack maintainer accounts or publish malicious packages under typosquatted or compromised names. The 2024 XZ Utils backdoor incident demonstrated that even core Linux infrastructure is vulnerable to similar compromise vectors.
+
+**References**:
+
+- [Mass npm Supply Chain Attack Hits TanStack and 170+ Packages](https://www.reddit.com/r/programming/comments/1tapmvi/mass_npm_supply_chain_attack_hits_tanstack/)
+- [Yet another npm supply-chain attack — is Cargo any safer?](https://users.rust-lang.org/t/yet-another-npm-supply-chain-attack-is-cargo-any-safer/133766)
+- [Introducing the NPM Package Cooldown Check — StepSecurity](https://www.stepsecurity.io/blog/introducing-the-npm-package-cooldown-check)
+
+**Discussion**: Commenters challenge npm-specific blame, citing parallel incidents in PyPI, RubyGems, and XZ; debate centers on whether language ecosystems differ in security guarantees or merely in target attractiveness, while advocating for pragmatic mitigations like cooldowns and sandboxing (e.g., via Nix).
+
+**Tags**: `#supply-chain-security` `#npm` `#package-managers` `#software-ecosystem` `#security-mitigation`
+
+---
+
+<a id="item-13"></a>
+## [U.S. DOJ subpoenas Apple and Google for 100,000+ users of EZ Lynk Auto Agent app](https://macdailynews.com/2026/05/15/u-s-doj-demands-apple-and-google-unmask-over-100000-users-of-popular-car-tinkering-app-in-emissions-crackdown/) ⭐️ 8.0/10
+
+The U.S. Department of Justice has issued legal demands to Apple and Google requiring them to disclose personal data — including names, email addresses, and device identifiers — for over 100,000 users of the EZ Lynk Auto Agent app, a tool allegedly used to disable diesel vehicle emissions controls. The subpoena was served in May 2026 as part of an ongoing federal emissions enforcement investigation. This sets a dangerous precedent for mass user surveillance by government agencies targeting software tools used for device modification, threatening digital privacy, platform accountability, and the right to tinker with legally owned hardware. It also intensifies scrutiny on how app stores govern third-party tools that intersect with regulatory compliance and environmental law. The targeted app is EZ Lynk Auto Agent, which connects via OBD-II to reprogram diesel engine control units (ECUs), primarily to delete AdBlue/SCR systems and disable EGR valves. Apple and Google have not publicly confirmed compliance, but their legal guidelines indicate they typically comply with valid court orders — raising concerns about lack of judicial oversight for administrative subpoenas.
+
+hackernews · tencentshill · May 15, 17:28 · [Discussion](https://news.ycombinator.com/item?id=48151383)
+
+**Background**: Modern diesel vehicles rely on complex emissions control software — including AdBlue injection and EGR systems — to meet EPA standards. 'Car-tinkering' apps like EZ Lynk Auto Agent enable users to access and modify factory ECU firmware, often bypassing these controls to improve performance or reduce maintenance — though such modifications violate the U.S. Clean Air Act. App stores like Apple's App Store and Google Play enforce strict policies against apps facilitating illegal vehicle tampering, yet EZ Lynk was distributed via third-party channels (e.g., direct download, F-Droid), not mainstream stores.
+
+**References**:
+
+- [U.S. DOJ demands Apple and Google unmask over 100,000 users — Mac Daily News](https://macdailynews.com/2026/05/15/u-s-doj-demands-apple-and-google-unmask-over-100000-users-of-popular-car-tinkering-app-in-emissions-crackdown/)
+- [EFF — Open Letter to Tech Companies on Lawless DHS Subpoenas](https://www.eff.org/deeplinks/2026/02/open-letter-tech-companies-protect-your-users-lawless-dhs-subpoenas)
+
+**Discussion**: Commenters express skepticism about the DOJ's investigative rationale (embedding-shape), moral ambivalence toward emissions-cheating users (midtake), fears of mission creep enabling manufacturer-led surveillance (AdmiralAsshat), advocacy for decentralized app distribution (curt15), and emphasis on anonymity-preserving alternatives (codedokode). The discussion reflects broad concern over proportionality, due process, and long-term implications for digital autonomy.
+
+**Tags**: `#privacy` `#surveillance` `#automotive-software` `#platform-governance` `#digital-rights`
+
+---
+
+<a id="item-14"></a>
+## [Waymo issues software recall for 3,800 robotaxis after standing water driving incident](https://www.cnbc.com/2026/05/12/waymo-recalls-3800-robotaxis-after-able-drive-into-standing-water.html) ⭐️ 8.0/10
+
+Waymo issued a voluntary software update to approximately 3,800 of its autonomous vehicles after a perception glitch allowed some to drive into standing water on roadways; the fix was deployed remotely without physical recalls. This incident highlights a critical edge-case challenge in real-world AV deployment — distinguishing shallow puddles from hazardous floodwater — and underscores how rapid over-the-air updates enable continuous safety improvement across fleets, reinforcing the scalability advantage of autonomous systems over human-driven ones. The issue involved limitations in sensor fusion and visual inference for water depth estimation — not a hardware failure — but prompted discussion about augmenting perception with dedicated water sensors or leveraging crowd-sourced map data (e.g., Google Maps) for pre-trip flood awareness.
+
+hackernews · drob518 · May 15, 18:00 · [Discussion](https://news.ycombinator.com/item?id=48151767)
+
+**Background**: Autonomous vehicles like Waymo's rely on multi-sensor perception stacks — including lidar, cameras, and radar — to interpret surroundings. Detecting standing water is especially difficult because it often lacks distinct texture, reflectivity, or elevation cues that traditional computer vision or lidar can reliably capture. Safety-by-design principles require AV developers to anticipate such edge cases and build layered safeguards, including fallback behaviors and continuous learning from real-world fleet data.
+
+**References**:
+
+- [3,800 Waymos recalled for driving into standing water](https://www.youtube.com/watch?v=jfhQm3M3PYM)
+- [About — Waymo Open Dataset](https://waymo.com/open/about/)
+- [Waymo Is Fixing All of Its Self-Driving Taxis to Avoid Floods](https://www.nytimes.com/2026/05/12/us/waymo-recall-robotaxis-flood-water.html)
+
+**Discussion**: Commenters debated technical trade-offs: one DARPA Grand Challenge veteran advocated for physical water sensors, while others emphasized inference-based solutions using motion behavior and map data; several highlighted how this incident reflects both the fragility of current perception models and the unique advantage of fleet-wide OTA updates in rapidly closing safety gaps.
+
+**Tags**: `#autonomous-vehicles` `#robotics` `#computer-vision` `#safety-critical-systems` `#edge-cases`
+
+---
+
+<a id="item-15"></a>
+## [ABC News permanently removes all FiveThirtyEight articles](https://twitter.com/baseballot/status/2055309076209492208) ⭐️ 8.0/10
+
+ABC News has permanently taken down all FiveThirtyEight articles and interactive content from its website, effectively shuttering the data journalism brand as of late 2023 or early 2024. The shutdown includes removal of archived stories, visualizations, and associated educational resources. FiveThirtyEight was a landmark platform for public-facing data literacy, election forecasting, and interactive data journalism — its disappearance represents a major loss for educators, journalists, researchers, and the broader data science community. The shutdown also raises urgent concerns about corporate stewardship of digital public goods and long-term archiving of influential online journalism. The GitHub repository (github.com/fivethirtyeight/data) remains publicly accessible as of June 2023, but sports forecasts ceased updating then; ABC has refused to sell the IP — even to founder Nate Silver — citing criticism of management as grounds for rejection. No official archive or migration plan has been announced.
+
+hackernews · cmsparks · May 15, 19:07 · [Discussion](https://news.ycombinator.com/item?id=48152553)
+
+**Background**: FiveThirtyEight was founded by statistician Nate Silver in 2008 as an independent blog focused on polling analysis and statistical modeling, especially in politics and sports. It was acquired by ESPN in 2013 and later transferred to ABC News (a Disney subsidiary) in 2018. Known for transparent methodology, open data releases, and award-winning interactive visualizations, it became a model for data-driven storytelling in journalism.
+
+**References**:
+
+- [fivethirtyeight/data — code &amp; data behind the articles](https://github.com/fivethirtyeight/data)
+- [Data, data visualization and interactives within news](https://onlinejournalismblog.com/2026/01/06/data-data-visualization-and-interactives-within-news-bloggers-cut/)
+- [Using visualizations to tell stories — DataJournalism.com](https://datajournalism.com/read/handbook/one/delivering-data/using-visualizations-to-tell-stories)
+
+**Discussion**: Commenters express grief over lost educational resources and visualizations, criticize ABC's strategic short-sightedness, and warn about GitHub repos being deleted next. Nate Silver confirmed ABC refused his IP buyback offer due to personal criticism, while others note the site's declining profitability outside election years.
+
+**Tags**: `#data-journalism` `#digital-archiving` `#media-studies` `#data-visualization` `#corporate-strategy`
+
+---
+
+<a id="item-16"></a>
+## [Radicle launches sovereign, Git-native decentralized code forge](https://radicle.dev/) ⭐️ 8.0/10
+
+Radicle has matured into a production-ready, decentralized code forge built natively on Git, emphasizing local-first operation, cryptographic identity, and user sovereignty over code and collaboration data. It offers a credible open infrastructure alternative to centralized forges like GitHub, advancing software sovereignty and enabling new paradigms such as agentic workflows and distributed issue tracking — critical for resilient, censorship-resistant open-source ecosystems. Radicle uses a gossip-based peer-to-peer network layered atop Git, with cryptographic identities (via Ed25519 keys) for signing artifacts; private repositories retain full history locally but suppress public broadcast of updates, and the project is licensed under MPL-2.0 — not AGPL — drawing criticism over SaaS reuse potential.
+
+hackernews · KolmogorovComp · May 15, 12:07 · [Discussion](https://news.ycombinator.com/item?id=48147603)
+
+**Background**: Radicle extends Git — a distributed version control system — with decentralized identity, social features (e.g., forks, issues, comments), and peer-to-peer synchronization, avoiding reliance on central servers. 'Local-first software' means users own and control their data locally by default, syncing only when needed — contrasting cloud-centric models where servers hold authoritative state. The Radicle protocol is designed to be extensible without requiring core protocol changes.
+
+**References**:
+
+- [Radicle Protocol Guide](https://radicle.dev/guides/protocol)
+- [Radicle — the sovereign forge](https://radicle.xyz/?ref=30daysofweb3)
+- [Local-first software](https://en.wikipedia.org/wiki/Local-first_software)
+
+**Discussion**: Developers praise Radicle's local-first design and cryptographic identity model, especially for agentic workflows, but debate licensing (MPL vs. AGPL), privacy semantics of private repos, and long-term sustainability amid Radworks' planned service offerings.
+
+**Tags**: `#decentralized-systems` `#git` `#open-source-infrastructure` `#software-sovereignty` `#distributed-collaboration`
+
+---
+
+<a id="item-17"></a>
+## [Anima: Open-source 2-billion-parameter anime-style text-to-image model](https://civitai.com/models/2458426/anima) ⭐️ 8.0/10
+
+CircleStone Labs and Comfy Org jointly released Anima, a 2-billion-parameter open-source text-to-image model trained exclusively on real-world anime and non-photorealistic art data (no synthetic data), available under a non-commercial license. Anima fills a critical gap in the open-source AIGC ecosystem by offering a high-parameter, domain-specialized model for anime and stylized art generation — enabling better LoRA fine-tuning, controllable style transfer, and accessible tooling for doujin, character design, and indie animation workflows. The model is trained on ~millions of anime images and ~800k non-anime artistic images; it supports both Civitai and Hugging Face platforms and integrates natively with ComfyUI for modular, node-based inference and customization.
+
+telegram · zaihuapd · May 15, 03:00
+
+**Background**: Text-to-image models like Stable Diffusion rely on large-scale image-text datasets to learn visual concepts. While many open models prioritize photorealism or general-purpose generation, specialized models targeting anime aesthetics are rare — especially those with >1B parameters and transparent, real-data-only training. ComfyUI is a popular open-source, node-based interface for running diffusion models locally, widely adopted for its flexibility in workflow composition.
+
+**References**:
+
+- [circlestone-labs/Anima · Hugging Face](https://huggingface.co/circlestone-labs/Anima)
+- [ai-models/circlestone-labs/Anima — Cloud Native Build](https://cnb.cool/ai-models/circlestone-labs/Anima)
+- [Comfy-Org/ComfyUI](https://github.com/Comfy-Org/ComfyUI)
+
+**Tags**: `#text-to-image` `#anime-generation` `#open-source-model`
+
+---

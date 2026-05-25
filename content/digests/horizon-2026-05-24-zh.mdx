@@ -1,0 +1,211 @@
+---
+title: "每日简报 · 2026-05-24"
+slug: horizon-2026-05-24-zh
+date: 2026-05-24
+lang: zh
+issue_id: 2026-05-24
+published: true
+description: "Pydantic v2.14.0a1 放弃 Python 3.9、英伟达 Nemotron-Labs 推出扩散语言模型、苹果开源 corecrypto 并提供量子安全形式化验证、微软开源最早的 DOS 源代码——以及今日另外六篇精选研究。"
+item_count: 10
+total_fetched: 39
+cover_image: /digests/cover-2026-05-24.png
+---
+
+> From 39 items, 10 important content pieces were selected
+
+---
+
+1. [Pydantic v2.14.0a1 放弃 Python 3.9 支持并移除 eval_type_backport()](#item-1) ⭐️ 9.0/10
+2. [英伟达 Nemotron-Labs 推出扩散语言模型，实现极速文本生成](#item-2) ⭐️ 9.0/10
+3. [苹果开源 corecrypto 密码库及量子安全算法形式化验证](#item-3) ⭐️ 9.0/10
+4. [微软开源最早 DOS 源代码 86-DOS v0.1-C](#item-4) ⭐️ 8.0/10
+5. [AMD Vivado 2026.1 取消免费版 Linux 支持](#item-5) ⭐️ 8.0/10
+6. [Wake up! 16b：仅 16 字节的视听盛宴](#item-6) ⭐️ 8.0/10
+7. [诈骗者滥用微软内部账户发送垃圾邮件链接](#item-7) ⭐️ 8.0/10
+8. [开发者工作四年后离开 AWS，批评支持退步与 AI 方向失误](#item-8) ⭐️ 8.0/10
+9. [80386 微代码反汇编完成，详尽揭示内部运作](#item-9) ⭐️ 8.0/10
+10. [Google Docs 推出 Docs Live，语音对话即可生成文档](#item-10) ⭐️ 8.0/10
+
+---
+
+<a id="item-1"></a>
+## [Pydantic v2.14.0a1 放弃 Python 3.9 支持并移除 eval_type_backport()](https://github.com/pydantic/pydantic/releases/tag/v2.14.0a1) ⭐️ 9.0/10
+
+Pydantic v2.14.0a1 是一个 Alpha 版本，移除了对 Python 3.9 的支持和 eval_type_backport() 工具函数，属于重要变更。同时，它为基于 Pyodide 的 Python 环境添加了实验性的 PyEmscripten 平台标签支持。 放弃 Python 3.9 和 eval_type_backport() 使 pydantic 与已终止支持的 Python 3.9 保持一致，并解决了在 Python 3.14 中出现的 TypeError，确保向前兼容。新的 Emscripten wheel 为在 Pyodide 等浏览器 Python 环境中使用 pydantic 提供了实验性支持，扩展了其应用场景。 eval_type_backport() 的移除解决了与 Python 3.14 的兼容性问题，在该版本中，其内部 _eval_type 函数收到意外关键字参数导致模式生成中断。新的 Emscripten wheel 面向 Pyodide 314.0+，但被标记为实验性，建议等待 Pyodide 正式发布。另外，model_copy() 现在仅对未变更字段进行浅拷贝以提升性能。
+
+github · Viicos · May 22, 13:46
+
+**背景**: Pydantic 是一个基于 Python 类型提示的数据验证库。eval_type_backport() 曾被用于在旧版 Python 上评估使用新语法的类型注解，但在 Python 3.14 中会出错。Pyodide 是一个通过 WebAssembly 在浏览器中运行的 Python 发行版，新的 pydantic wheel 使用了由 Pyodide 和 auditwheel-emscripten 工具定义的 pyemscripten 平台标签（PEP 776 描述了 Emscripten 支持）。
+
+**参考链接**:
+
+- [Pyodide — Version 0.29.4](https://pyodide.org/)
+- [PEP 776 - Emscripten Support - peps.python.org](https://peps.python.org/pep-0776/)
+- [Pydantic And Python 3.14: Ignoring Eval _ type _ backport](https://bijuhanta.web.id/blog/pydantic-and-python-3-14)
+
+**标签**: `#breaking-change`
+
+---
+
+<a id="item-2"></a>
+## [英伟达 Nemotron-Labs 推出扩散语言模型，实现极速文本生成](https://huggingface.co/blog/nvidia/nemotron-labs-diffusion) ⭐️ 9.0/10
+
+英伟达的 Nemotron-Labs 提出了扩散语言模型，该模型通过并行地逐步去噪整个序列来生成文本，相比传统的自回归模型有望实现推理速度的飞跃。 如果得到验证，这一方法可能标志着高效大语言模型推理的范式转变，使面向低延迟应用的实时文本生成变得更快、更可扩展，例如聊天机器人和代码助手。 该模型利用了针对离散数据的连续扩散过程，但训练稳定性、相比自回归方法的文本质量以及具体硬件需求等关键细节仍有待披露。
+
+rss · Hugging Face Blog · May 23, 00:02
+
+**背景**: 扩散语言模型从随机噪声开始，对整个序列进行同步迭代去噪来生成文本，这与逐个生成令牌的自回归模型截然不同。英伟达的 Nemotron 系列包含多种架构的开源语言模型；这项基于扩散的提议标志着与他们此前密集模型和专家混合模型设计的显著不同。
+
+**参考链接**:
+
+- [Large Language Diffusion Models . Google text diffusion ... | Medium](https://ranko-mosic.medium.com/large-language-diffusion-models-82d09602f7c9)
+- [Nemotron - Wikipedia](https://en.wikipedia.org/wiki/Nemotron)
+
+**标签**: `#diffusion models`, `#text generation`, `#NVIDIA`, `#language modeling`, `#efficient inference`
+
+---
+
+<a id="item-3"></a>
+## [苹果开源 corecrypto 密码库及量子安全算法形式化验证](https://security.apple.com/blog/formal-verification-corecrypto/) ⭐️ 9.0/10
+
+苹果公开了其核心密码库 corecrypto 的源代码，内含后量子算法 ML-KEM 和 ML-DSA 的实现，并首次提供了端到端的形式化验证数学证明，确保 C 代码和手工优化的 ARM64 汇编严格符合 NIST 标准。 corecrypto 为超过 25 亿台活跃设备提供基础加密，涵盖 iMessage、VPN 等场景，此次开源对大规模部署实用抗量子安全意义重大，同时为关键软件基础设施的透明度和可验证性树立了新标杆。 此次开源包含手工优化的 ARM64 汇编代码、定制的验证工具以及 Isabelle 理论库，供独立专家评估。形式化证明覆盖了从高层数学规范到编译生成的硬件指令的完整链条。
+
+telegram · zaihuapd · May 23, 04:49
+
+**背景**: ML-KEM（原 Kyber）和 ML-DSA（Dilithium）是 NIST 为抵御未来量子计算机攻击而标准化的后量子密码算法。形式化验证是一种数学方法，用于证明程序实现与规范严格一致，可消除整个类别的错误。苹果使用 Isabelle 证明助手构建了机器可检验的证明，确保 corecrypto 代码忠实实现了 NIST 算法。
+
+**参考链接**:
+
+- [RFC 9936: Use of ML - KEM in the Cryptographic Message Syntax (CMS)](https://www.rfc-editor.org/rfc/rfc9936.pdf)
+- [Formal verification](https://en.wikipedia.org/wiki/Formal_verification)
+
+**标签**: `#安全`, `#量子计算`, `#形式化验证`, `#开源`, `#加密`
+
+---
+
+<a id="item-4"></a>
+## [微软开源最早 DOS 源代码 86-DOS v0.1-C](https://arstechnica.com/gadgets/2026/04/microsoft-open-sources-the-earliest-dos-source-code-discovered-to-date/) ⭐️ 8.0/10
+
+微软发布了 86-DOS 0.1-C 版本的源代码，这是已知最早的 DOS 版本，由保存者团队通过 OCR 从数十年前的纸质打印件中艰难恢复。 该发布保存了计算机历史上的重要文物，它直接催生了 MS-DOS 和 IBM PC 革命，为审视主流 PC 操作系统谱系的起源提供了前所未有的视角。 代码写于 1980 年前后，采用 8086 汇编语言，最初来自西雅图计算机产品公司。恢复工作由 DOS 反汇编小组从模糊的打印件转录完成，现代 OCR 软件因纸张质量不佳而难以处理。
+
+hackernews · DamnInteresting · May 24, 01:21 · [社区讨论](https://news.ycombinator.com/item?id=48253386)
+
+**背景**: 86-DOS 内部代号为 QDOS（Quick and Dirty Operating System），由西雅图计算机产品公司为 Intel 8086 系统开发。它与 CP/M 的命令相似，便于移植软件。微软授权并随后收购了 86-DOS，将其发展为 MS-DOS 和 IBM PC DOS，奠定了个人计算机产业的基础。0.1-C 版本是现存已知最早的源代码。
+
+**参考链接**:
+
+- [86 - DOS - Wikipedia](https://en.wikipedia.org/wiki/86-DOS)
+- [86 DOS Version 0 . 1 C Serial # 11 ( ORIGINAL DISK)... : Internet Archive](https://archive.org/details/86-dos-version-0.1-c-serial-11-original-disk)
+
+**社区讨论**: 评论者感谢微软的举动，对 OCR 恢复的难度惊叹不已，并指出已有更早的二进制版本留存（例如 v0.34）。一些人强调了微软同期开源早期 BASIC 解释器的意义，整体氛围怀念那个几千行汇编就能开创软件帝国的时代。
+
+**标签**: `#open-source`, `#retrocomputing`, `#microsoft`, `#dos`, `#computing-history`
+
+---
+
+<a id="item-5"></a>
+## [AMD Vivado 2026.1 取消免费版 Linux 支持](https://adaptivesupport.amd.com/s/question/0D5Pd00001YQLdMKAX/why-is-vivado-20261-dropping-linux-support-for-free-tier-?language=en_US) ⭐️ 8.0/10
+
+AMD 将从 Vivado 2026.1 版本起取消免费 Basic 版的 Linux 支持，免费用户将只能使用 Windows 版本。 此举疏远了依赖 Linux 进行 FPGA 开发的学生、教育者和爱好者，可能减缓生态发展，并表明公司策略向成本削减而非社区友好方向转变。 该变更仅影响免费版，付费许可用户仍可使用 Linux。AMD 尚未公开说明原因，社区推测是为减少支持负担。免费用户将无法获得面向新器件的原生 Linux 工具链。
+
+hackernews · zdw · May 24, 04:14 · [社区讨论](https://news.ycombinator.com/item?id=48254309)
+
+**背景**: Vivado Design Suite 是 AMD（前身为 Xilinx）用于 FPGA 综合、实现与调试的集成开发环境。免费 Basic 版支持部分器件，是学习和原型开发的重要工具。Linux 因其灵活性和可脚本化构建流程，一直是硬件设计及开源社区的主流平台。
+
+**参考链接**:
+
+- [Vivado](https://en.wikipedia.org/wiki/Vivado)
+- [FPGA](https://en.wikipedia.org/wiki/FPGA)
+
+**社区讨论**: 社区反应强烈负面。用户认为 Linux 对 FPGA 开发与教育至关重要，并将此举视为 AMD 背离工程导向的又一迹象。Lattice 等替代方案因更友好的许可模式受到赞扬，许多人还表达了对许可证管理麻烦的不满。
+
+**标签**: `#FPGA`, `#Vivado`, `#Linux`, `#AMD`, `#tools`
+
+---
+
+<a id="item-6"></a>
+## [Wake up! 16b：仅 16 字节的视听盛宴](https://hellmood.111mb.de/wake_up_16b_writeup.html) ⭐️ 8.0/10
+
+一个名为"Wake up! 16b"的 16 字节计算机程序生成了复杂的生成图形和同步声音，展示了大小编码与演示场景艺术的巅峰。 这种极致压缩证明了用最少代码可获得何等丰富的视听效果，激励程序员并突破创意计算的可能性边界。 该演示可能采用 x86 实模式汇编编写，直接操作显存和 PC 扬声器，所有代码与数据压缩在正好 16 字节内。
+
+hackernews · MaximilianEmel · May 24, 00:30 · [社区讨论](https://news.ycombinator.com/item?id=48253060)
+
+**背景**: 演示场景（demoscene）是一个国际计算机艺术亚文化，专注于制作能实时生成视听效果的独立演示程序。大小编码（sizecoding）是其中追求最小化程序的领域，程序员通常使用汇编语言利用硬件特性来缩减体积。
+
+**参考链接**:
+
+- [Demoscene](https://en.wikipedia.org/wiki/Demoscene)
+- [SizeCoding.org](http://www.sizecoding.org/wiki/Main_Page)
+
+**社区讨论**: 社区对此惊叹不已，分享了"rainbow surf"和用 PowerPoint 递归绘制谢尔宾斯基三角形等相关作品。有用户指出这个 16 字节杰作超越了此前无声音的 32 字节演示，另一位则幽默地将"16b"误解为 160 亿参数的大语言模型。
+
+**标签**: `#demoscene`, `#sizecoding`, `#assembly`, `#low-level`, `#optimization`
+
+---
+
+<a id="item-7"></a>
+## [诈骗者滥用微软内部账户发送垃圾邮件链接](https://techcrunch.com/2026/05/21/scammers-are-abusing-an-internal-microsoft-account-to-send-spam/) ⭐️ 8.0/10
+
+诈骗者利用一个微软内部账户发送看似来自微软合法域名的垃圾链接，成功绕过了邮件过滤器。 该事件表明，受信任的内部通道也可能被武器化，使用户和自动化防御难以区分真实邮件与恶意邮件，有可能导致大规模钓鱼攻击。 被滥用的账户位于微软基础设施内部，使得这些邮件能通过认证检查；熟悉 microsoftonline.com 等域名的用户可能尤其容易上当。
+
+hackernews · spike021 · May 24, 00:51 · [社区讨论](https://news.ycombinator.com/item?id=48253186)
+
+**背景**: 邮件欺骗是一种伪造发件人地址以冒充可信来源的技术。SPF、DKIM 和 DMARC 等协议用于验证发件人域名，但当邮件确实来自合法的内部账户时，它们无法检测到滥用。微软为不同服务使用了大量域名，这使用户难以维护一份明确的合法发件人列表。
+
+**参考链接**:
+
+- [Email spoofing](https://en.wikipedia.org/wiki/Email_spoofing)
+
+**社区讨论**: 评论者对微软混乱的域名管理表示不满，指出连 microsoftonline.com 是否合法都很难判断。一些人分享了从谷歌和 Booking.com 等可信域名收到垃圾邮件的相似经历，另一些人则庆幸问题源于微软账号被入侵，而非自己的密码泄漏。
+
+**标签**: `#security`, `#phishing`, `#Microsoft`, `#spam`, `#vulnerability`
+
+---
+
+<a id="item-8"></a>
+## [开发者工作四年后离开 AWS，批评支持退步与 AI 方向失误](https://www.adventuresinoss.com/aws-four-years/) ⭐️ 8.0/10
+
+一篇详细的个人经历讲述了一位开发者在 AWS 工作四年后离职，指出客户支持恶化、计费复杂化，以及公司强行推广不成熟的生成式 AI 功能，却无法提供真正价值。 这一批评引发了大量长期用户的共鸣，他们认为 AWS 正从可靠的基础设施转向炒作驱动的 AI，这可能会削弱其竞争优势和企业客户的信任。 工单一周无人处理，计费问题连查阅相同文档的支持人员也答不上来，拼写错误的 AI 生成幻灯片内容被当作'足够好'来推动，而非以客户为中心。
+
+hackernews · RyeCombinator · May 24, 04:51 · [社区讨论](https://news.ycombinator.com/item?id=48254475)
+
+**背景**: AWS 于 2006 年开创云计算，让企业可以租用计算和存储资源，无需购买物理服务器。多年来，它凭借丰富的服务阵容主导市场。近些年，来自微软 Azure 和谷歌云的竞争，加上生成式 AI 热潮，迫使 AWS 快速集成 AI 功能，有时却牺牲了核心运营质量。
+
+**社区讨论**: 评论普遍表示认同，用户分享了类似的支持噩梦（如工单七天无人处理），并将 AWS 比作衰退期的 IBM。许多人认为客户至上已被削减成本和半生不熟的 AI 强制要求所取代，这使老员工感到疏离。
+
+**标签**: `#AWS`, `#cloud-computing`, `#customer-support`, `#developer-experience`, `#AI-critique`
+
+---
+
+<a id="item-9"></a>
+## [80386 微代码反汇编完成，详尽揭示内部运作](https://www.reenigne.org/blog/80386-microcode-disassembled/) ⭐️ 8.0/10
+
+Reenigne 博客作者通过大量手动工作，完成了 Intel 80386 处理器微代码 ROM 的完整反汇编，揭示了执行 x86 指令的内部控制逻辑。在之前成功反汇编 8086 微代码的基础上，这项工作进一步深入剖析了更复杂的 386 架构。 这份微代码清单为深入理解早期 32 位 x86 处理器的内部设计提供了难得的资料，对硬件史研究人员、模拟器开发者和微架构爱好者具有重要参考价值。同时，这项工作也证明了即使没有完整官方文档，通过公开信息与碎片化资料也能逆向工程出复杂的 CPU 微代码。 该反汇编覆盖了整个微代码 ROM，以助记符形式呈现每条微指令的操作，对应的反汇编器源代码已在 GitHub 上公开。这项工作通过手动破译控制字格式、参照 Intel 公开的 386 手册，并艰辛重建两级微代码结构，完整展现了 80386 执行 x86 指令、保护模式及分页等特性的内部逻辑。
+
+hackernews · nand2mario · May 23, 12:11 · [社区讨论](https://news.ycombinator.com/item?id=48247004)
+
+**背景**: 微代码是许多 CPU 内部的一层，它将复杂的机器指令分解为一系列更简单的微操作，直接控制硬件执行。Intel 80386 于 1985 年推出，是 x86 体系从 16 位向 32 位演进的关键产品，引入了保护模式和分页等特性。由于其专有属性，微代码反汇编十分罕见，作者此前在 2021 年已成功反汇编了 8086 的微代码，证明了通过公开文档与已知指令行为进行此类分析是可行的。
+
+**参考链接**:
+
+- [Microcode - Wikipedia](https://en.wikipedia.org/wiki/Microcode)
+- [8086 microcode disassembled « Reenigne blog](https://www.reenigne.org/blog/8086-microcode-disassembled/)
+
+**社区讨论**: 评论者对这项工作所付出的巨大人工努力和剖析深度给予了高度赞赏。有人探讨了如何从高分辨率芯片裸片图像中提取微代码的方法，也有人提到了相关的开源 386 项目，并推荐了经典的微程序设计教材。
+
+**标签**: `#microcode`, `#reverse-engineering`, `#80386`, `#hardware`, `#historical-computing`
+
+---
+
+<a id="item-10"></a>
+## [Google Docs 推出 Docs Live，语音对话即可生成文档](https://www.wsj.com/tech/personal-tech/google-docs-live-test-e4473e07) ⭐️ 8.0/10
+
+Google 推出了 Docs Live 功能，用户可以通过语音对话直接生成文档草稿，由 Gemini AI 将口述的零散想法转化为结构化文本，并能调用 Google Drive 中的文件和网络搜索结果充实内容。 它直接缓解了创作者常遇到的"白纸焦虑"，降低了文档创作的门槛，展示了生成式 AI 在生产力工作流中的实际落地，有望加速 AI 辅助写作的用户接受度。 该功能将首先面向 iOS 和 Android 端的付费 AI 订阅用户开放，之后逐步覆盖网页端和更多用户。它遵循 Google Workspace 隐私规则，用户输入数据不会被用于模型训练。
+
+telegram · zaihuapd · May 24, 09:39
+
+**背景**: Gemini 是 Google 的一系列 AI 模型，用于理解语音和生成文本。"白纸焦虑"指创作者面对空白文档时难以开始的心理障碍。Google Workspace 隐私规则规定其企业及教育版账户的用户数据不会被用于训练 AI 模型，以保障隐私。
+
+**标签**: `#Google Docs`, `#AI 写作`, `#语音交互`, `#Gemini`
+
+---

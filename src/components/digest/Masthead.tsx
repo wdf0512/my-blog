@@ -1,14 +1,34 @@
-import { toRoman } from '@/lib/digests';
+import { toRoman, type DigestLang } from '@/lib/digests';
 
 type MastheadProps = {
   variant?: 'archive' | 'detail';
+  locale?: DigestLang;
   issueCount?: number;
   rightSlot?: React.ReactNode;
 };
 
-export function Masthead({ variant = 'archive', issueCount, rightSlot }: MastheadProps) {
+const COPY = {
+  en: {
+    wordmark: 'Daily Brief',
+    subhead: (vol: string) => `Vol. ${vol} · Auto-curated · Updated every morning`,
+    issuesOnFile: (n: number) => `${n} ${n === 1 ? 'issue' : 'issues'} on file`,
+  },
+  zh: {
+    wordmark: '每日简报',
+    subhead: (vol: string) => `第 ${vol} 卷 · 自动精选 · 每日清晨更新`,
+    issuesOnFile: (n: number) => `共 ${n} 期归档`,
+  },
+} as const;
+
+export function Masthead({
+  variant = 'archive',
+  locale = 'en',
+  issueCount,
+  rightSlot,
+}: MastheadProps) {
   const year = new Date().getFullYear();
   const isArchive = variant === 'archive';
+  const copy = COPY[locale];
 
   return (
     <header className="relative">
@@ -19,12 +39,10 @@ export function Masthead({ variant = 'archive', issueCount, rightSlot }: Masthea
               isArchive ? 'text-6xl md:text-8xl lg:text-9xl' : 'text-3xl md:text-5xl'
             }`}
           >
-            Daily Brief
+            {copy.wordmark}
           </h1>
           {isArchive && (
-            <p className="digest-mono-eyebrow mt-4">
-              Vol. {toRoman(year)} · Auto-curated · Updated every morning
-            </p>
+            <p className="digest-mono-eyebrow mt-4">{copy.subhead(toRoman(year))}</p>
           )}
         </div>
         {rightSlot && (
@@ -38,9 +56,7 @@ export function Masthead({ variant = 'archive', issueCount, rightSlot }: Masthea
         <div className="h-px flex-1 bg-primary/60" />
         {issueCount !== undefined && (
           <>
-            <span className="digest-mono-eyebrow shrink-0">
-              {issueCount} {issueCount === 1 ? 'issue' : 'issues'} on file
-            </span>
+            <span className="digest-mono-eyebrow shrink-0">{copy.issuesOnFile(issueCount)}</span>
             <div className="h-px w-8 bg-primary/40" />
           </>
         )}

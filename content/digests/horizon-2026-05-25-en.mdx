@@ -1,0 +1,134 @@
+---
+title: "Daily Brief · 2026-05-25"
+slug: horizon-2026-05-25-en
+date: 2026-05-25
+lang: en
+issue_id: 2026-05-25
+published: true
+description: "APKPure's Telegram 12.6.5 is trojanized with a spy backdoor, memory now accounts for two-thirds of AI chip component costs, Microsoft open-sources the earliest DOS source recovered from paper printouts, Vivado 2026.1 drops Linux from its free tier — and 2 more stories from today's research."
+item_count: 6
+total_fetched: 37
+cover_image: /digests/cover-2026-05-25.png
+---
+
+> From 37 items, 6 important content pieces were selected
+
+---
+
+1. [APKPure Telegram 12.6.5 Injected with Spy Backdoor Stealing Chat Data](#item-1) ⭐️ 9.0/10
+2. [Memory Now Two-Thirds of AI Chip Component Costs, Hinting at 3x Reduction](#item-2) ⭐️ 8.0/10
+3. [Constraint Decay: The Fragility of LLM Agents in Back End Code Generation](#item-3) ⭐️ 8.0/10
+4. [Microsoft Open-Sources Earliest DOS Source Code from Paper Printouts](#item-4) ⭐️ 8.0/10
+5. [Vivado 2026.1 Free Tier Dropping Linux Support Sparks Outcry](#item-5) ⭐️ 8.0/10
+6. [Armin Ronacher Criticizes AI-Generated GitHub Issues, Calls for Human-Written Reports](#item-6) ⭐️ 8.0/10
+
+---
+
+<a id="item-1"></a>
+## [APKPure Telegram 12.6.5 Injected with Spy Backdoor Stealing Chat Data](https://x.com/EricParker/status/2058411298195661221) ⭐️ 9.0/10
+
+A re-signed version of Telegram 12.6.5 on APKPure was found containing the DataCollector spy framework. It exfiltrates full chat histories, contacts, photos, GPS location, and SIM information, encrypting the data with AES-GCM and sending it to a C2 server at 38.190.225.166. This supply-chain attack demonstrates the severe risks of downloading trusted apps from third-party stores. As a widely used private messaging tool, a compromised Telegram build could expose millions of users' most sensitive data to remote attackers. The backdoor resides in a 3000+-line classes3.dex file within the repackaged APK. It collects a wide range of data categories and uses AES-GCM encryption to protect the stolen information during transmission to the C2 server.
+
+telegram · zaihuapd · May 24, 11:38
+
+**Background**: APKPure is a popular third-party platform for downloading Android APK files outside the official Google Play Store. Third-party stores lack the rigorous security checks of official markets, making them susceptible to supply-chain attacks where legitimate apps are altered with malicious code. A C2 (command and control) server is an attacker-controlled machine used to receive exfiltrated data and issue commands. AES-GCM is a widely adopted encryption standard that the malware employed to hide the stolen information in transit.
+
+**References**:
+
+- [APKPure: Download APK on Android with Free APK Downloader](https://apkpure.com/)
+- [AES - GCM 加密简介 - CV肉饼王 - Medium](https://medium.com/@wangbinxp/aes-gcm-加密简介-b4b5f539c7d6)
+- [攻击技术：命令和控制服务器（C2）是什么意思_c2服务器-CSDN博客](https://blog.csdn.net/qq_29607687/article/details/136520825)
+
+**Tags**: `#安全威胁` `#恶意软件分析` `#供应链攻击` `#移动安全`
+
+---
+
+<a id="item-2"></a>
+## [Memory Now Two-Thirds of AI Chip Component Costs, Hinting at 3x Reduction](https://epoch.ai/data-insights/ai-chip-component-cost-shares) ⭐️ 8.0/10
+
+A new analysis from Epoch AI reveals that memory (primarily HBM) now accounts for roughly 63% of AI chip component costs, up significantly, while logic die costs have stayed constant around 13–14%. This shift means that once DRAM supply catches up with demand, hardware costs could drop by a factor of about three without any technical innovation. The dominance of memory in AI chip costs underscores how heavily the industry depends on a concentrated DRAM market. A normalization of supply could slash AI accelerator costs by ~3x, making training and inference far more accessible and accelerating AI adoption across sectors, while also highlighting supply chain vulnerabilities. HBM (High Bandwidth Memory) spending is the main driver, with a 3:1 wafer capacity conversion ratio relative to DDR5, which squeezes commodity DRAM supply. Meanwhile, packaging costs fell from 19% to 15% and auxiliary components from 15% to 9%, cementing memory's cost dominance.
+
+hackernews · intelkishan · May 24, 16:31 · [Discussion](https://news.ycombinator.com/item?id=48258684)
+
+**Background**: DRAM is the volatile main memory used in computers and AI accelerators; its high-performance stacked variant, HBM, is essential for the massive data throughput of modern AI chips. The global DRAM market is controlled by three manufacturers—Samsung, SK Hynix, and Micron—and the AI-driven demand surge has caused severe price hikes, with some modules rising over 200% since early 2025 as HBM production crowds out standard memory.
+
+**References**:
+
+- [AI Chip Component Costs: Memory at 63% | Epoch AI](https://epoch.ai/data-insights/ai-chip-component-cost-shares)
+- [DRAM](https://en.wikipedia.org/wiki/DRAM)
+
+**Discussion**: Hackernews commenters largely confirm the analysis with anecdotes: 96GB of RAM that cost $250 a few years ago now sells for $1200. Many gamers and PC enthusiasts are postponing upgrades until prices normalize, and some doubt that the current 20-25% annual capacity growth can meet AI's insatiable demand. The idea of a 3x cost reduction from supply catching up is widely seen as plausible but timing remains uncertain.
+
+**Tags**: `#AI-hardware` `#memory-costs` `#DRAM-prices` `#supply-chain` `#hackernews-discussion`
+
+---
+
+<a id="item-3"></a>
+## [Constraint Decay: The Fragility of LLM Agents in Back End Code Generation](https://arxiv.org/abs/2605.06445) ⭐️ 8.0/10
+
+A systematic study reveals that LLM coding agents experience 'constraint decay': their code generation performance drops dramatically when required to follow explicit architectural rules, losing 30 points on average in assertion pass rates compared to unconstrained generation. This exposes a critical reliability gap for production backend development, where architectural compliance is essential. While LLM agents excel at rapid prototyping, 'constraint decay' limits their trustworthiness for enterprise-grade systems, potentially hindering adoption in real-world software engineering. The study measured assertion pass rates under progressively stricter constraints, finding a 30-percentage-point average decline. Notably, the experiments did not include latest frontier models (e.g., GPT-4 class) due to cost, so results may not fully capture top-tier model behavior.
+
+hackernews · wek · May 24, 12:55 · [Discussion](https://news.ycombinator.com/item?id=48256912)
+
+**Background**: LLM agents are AI systems that use large language models to reason, plan, and execute tasks, often with tool use. Backend code generation involves creating server-side logic that must follow strict architectural patterns (e.g., layered design, data access rules) for maintainability and security. 'Constraint decay' describes the phenomenon where agent performance collapses when forced to comply with such rules, contrasting with high success in unconstrained scenarios.
+
+**References**:
+
+- [[2605.06445] Constraint Decay: The Fragility of LLM Agents in Backend Code Generation](https://arxiv.org/abs/2605.06445)
+- [Constraint decay: The Fragility of LLM Agents in Backend Code Generation](https://arxiv.org/html/2605.06445)
+- [Introduction to LLM Agents | NVIDIA Technical Blog](https://developer.nvidia.com/blog/introduction-to-llm-agents/)
+
+**Discussion**: Comments widely validate the finding, with developers sharing similar experiences of degradation under architectural constraints. One commenter introduced 'calcification'—agents over-applying patterns—as a related side-effect. Another mentioned that external orchestrators help enforce constraints but require many review-fix rounds. The lack of frontier model testing was acknowledged as a study limitation.
+
+**Tags**: `#LLM-agents` `#code-generation` `#constraint-decay` `#software-engineering` `#AI-reliability`
+
+---
+
+<a id="item-4"></a>
+## [Microsoft Open-Sources Earliest DOS Source Code from Paper Printouts](https://arstechnica.com/gadgets/2026/04/microsoft-open-sources-the-earliest-dos-source-code-discovered-to-date/) ⭐️ 8.0/10
+
+Microsoft has open-sourced the earliest known version of the DOS operating system's source code, which was painstakingly recovered from decades-old paper printouts using OCR and manual transcription. This release is a landmark in software preservation, offering a rare and direct look at the humble origins of the operating system that fueled the PC revolution and Microsoft's rise. The source code was transcribed by the 'DOS Disassembly Group,' led by Yufeng Gao and Rich Cini, who struggled with modern OCR tools due to the poor quality of the ancient printouts. It is primarily written in assembly language and consists of only a few thousand lines.
+
+hackernews · DamnInteresting · May 24, 01:21 · [Discussion](https://news.ycombinator.com/item?id=48253386)
+
+**Background**: DOS (Disk Operating System) was the text-based operating system that dominated early IBM-compatible PCs in the 1980s. Microsoft's version, MS-DOS, began as an adaptation of 86-DOS (also called QDOS) created by Tim Paterson, and it became the foundation of Microsoft's empire after the pivotal deal with IBM. This newly released source code likely represents that early, pre-MS-DOS stage.
+
+**Discussion**: Commenters expressed gratitude and nostalgia, with some noting that Microsoft also recently open-sourced its early BASIC interpreter. Many marveled at how the entire OS fit in a few thousand lines of assembly, while others voiced hope that early Windows source code might also be released. The challenging OCR transcription process from paper was widely appreciated.
+
+**Tags**: `#open-source` `#computer-history` `#DOS` `#retrocomputing` `#software-preservation`
+
+---
+
+<a id="item-5"></a>
+## [Vivado 2026.1 Free Tier Dropping Linux Support Sparks Outcry](https://adaptivesupport.amd.com/s/question/0D5Pd00001YQLdMKAX/why-is-vivado-20261-dropping-linux-support-for-free-tier-?language=en_US) ⭐️ 8.0/10
+
+AMD is removing Linux support from the free Basic tier of Vivado 2026.1, while Windows support will continue. This change has provoked strong criticism from the FPGA developer community. Linux is widely used in education, open-source development, and among hobbyists; dropping support risks alienating these groups and may push users toward competitors like Lattice Semiconductor. The free tier previously supported both operating systems; the restriction applies only to the Basic license and does not affect paid node-locked or floating licenses. AMD has not publicly stated the reason, but speculation points to reduced maintenance costs.
+
+hackernews · zdw · May 24, 04:14 · [Discussion](https://news.ycombinator.com/item?id=48254309)
+
+**Background**: Vivado is the primary design suite for AMD (formerly Xilinx) FPGAs and adaptive SoCs, offering synthesis, place-and-route, and simulation. The free tier, often called Vivado Standard or WebPack, supports a limited set of devices and has been essential for learning and prototyping. Linux has long been a first-class platform for FPGA development due to its strong command-line and scripting ecosystem.
+
+**References**:
+
+- [Vivado - Wikipedia](https://en.wikipedia.org/wiki/Vivado)
+- [Vivado Overview - AMD](https://www.amd.com/en/products/software/adaptive-socs-and-fpgas/vivado.html)
+- [Lattice Semiconductor - Wikipedia](https://en.wikipedia.org/wiki/Lattice_Semiconductor)
+
+**Discussion**: Community reaction is largely negative. Longtime users criticize the move as short-sighted, noting that Linux support is crucial for students, hobbyists, and CI/CD pipelines. Some report spending heavily on Xilinx hardware but still facing license friction, and several say they will switch to Lattice devices and tools. Educators also plan to adopt alternative vendors. Many see this as a sign of AMD's post-acquisition shift away from engineering-driven decisions.
+
+**Tags**: `#fpga` `#vivado` `#amd` `#licensing` `#linux`
+
+---
+
+<a id="item-6"></a>
+## [Armin Ronacher Criticizes AI-Generated GitHub Issues, Calls for Human-Written Reports](https://simonwillison.net/2026/May/24/armin-ronacher/#atom-everything) ⭐️ 8.0/10
+
+Armin Ronacher, creator of Flask and Pi, published a blog post expressing frustration with AI-generated GitHub issues filed against his project Pi. He observed that users run observed problems through AI tools, which then produce verbose, confident but inaccurate reports full of guesswork and false root causes. This highlights a growing friction in open source maintenance: AI can generate plausible but misleading issue reports, increasing the burden on maintainers who must sift through noise. It underscores the need for clear human communication to efficiently triage bugs. Ronacher specifically criticizes the 'clanker' (AI) failure mode where rewording leads to confident wrong conclusions, fake minimal reproductions, and irrelevant code analogies. He proposes a minimal template: command run, expected outcome, actual outcome, and exact error log.
+
+rss · Simon Willison · May 24, 18:46
+
+**Background**: Armin Ronacher is a prominent software developer known for creating Flask, Jinja2, and the Pi Python package installer. 'Clanker' is a colloquial term for an AI text generator, often referring to LLM-powered assistants. Recently, some users have started using AI to automatically draft GitHub issues, but models often produce inaccurate content due to hallucination and lack of codebase understanding.
+
+**Tags**: `#open-source` `#AI` `#software-development` `#bug-reports` `#LLM-usage`
+
+---

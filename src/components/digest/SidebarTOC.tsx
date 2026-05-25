@@ -2,6 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react';
 import { ListOrdered, X } from 'lucide-react';
+import type { DigestLang } from '@/lib/digests';
 
 type TocItem = {
   id: string;
@@ -9,10 +10,18 @@ type TocItem = {
   ordinal: number;
 };
 
+const COPY = {
+  en: { inThisIssue: 'In this issue', close: 'Close', open: 'Open table of contents' },
+  zh: { inThisIssue: '本期内容', close: '关闭', open: '打开目录' },
+} as const;
+
+type Props = { locale?: DigestLang };
+
 /** Sticky animated TOC for digest detail page.
  *  Desktop (≥lg): right-side rail.
  *  Mobile: floating chip → slide-in drawer. */
-export function SidebarTOC() {
+export function SidebarTOC({ locale = 'en' }: Props) {
+  const copy = COPY[locale];
   const [items, setItems] = useState<TocItem[]>([]);
   const [activeId, setActiveId] = useState<string | null>(null);
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -82,7 +91,7 @@ export function SidebarTOC() {
         className="hidden lg:block sticky top-24 self-start max-h-[calc(100vh-7rem)] overflow-y-auto pl-6 border-l border-border"
       >
         <p className="digest-mono-eyebrow mb-4 text-text-muted">
-          In this issue · {items.length}
+          {copy.inThisIssue} · {items.length}
         </p>
         <ul className="space-y-3.5">
           {items.map((item) => {
@@ -126,7 +135,7 @@ export function SidebarTOC() {
 
       {/* Mobile chip */}
       <button
-        aria-label="Open table of contents"
+        aria-label={copy.open}
         onClick={() => setDrawerOpen(true)}
         className="lg:hidden fixed right-4 bottom-6 z-30 inline-flex items-center gap-2 px-3.5 py-2 rounded-full bg-text-primary text-background shadow-lg font-mono text-xs tabular-nums hover:scale-105 active:scale-95 transition-transform"
       >
@@ -140,7 +149,7 @@ export function SidebarTOC() {
       {drawerOpen && (
         <div className="lg:hidden fixed inset-0 z-[60]">
           <button
-            aria-label="Close"
+            aria-label={copy.close}
             onClick={() => setDrawerOpen(false)}
             className="absolute inset-0 bg-text-primary/40 backdrop-blur-sm"
           />

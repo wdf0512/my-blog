@@ -1,0 +1,279 @@
+---
+title: "Daily Brief · 2026-05-21"
+slug: horizon-2026-05-21-en
+date: 2026-05-21
+lang: en
+issue_id: 2026-05-21
+published: true
+description: "An OpenAI model disproves an 80-year-old Erdős conjecture in discrete geometry, SpaceX's IPO filing reveals a $1.25B/month Anthropic cloud deal, GitHub confirms a 3,800-repo leak via a poisoned VS Code extension, Qwen3.7-Max pushes long-horizon agent execution — and 7 more stories from today's research."
+item_count: 11
+total_fetched: 46
+cover_image: /digests/cover-2026-05-21.png
+---
+
+> From 46 items, 11 important content pieces were selected
+
+---
+
+1. [OpenAI Model Disproves 80-Year-Old Conjecture in Discrete Geometry](#item-1) ⭐️ 10.0/10
+2. [SpaceX IPO Filing Reveals $18.7B Revenue, $1.25B/Month Anthropic AI Deal](#item-2) ⭐️ 9.0/10
+3. [GitHub Confirms Employee Device Compromised via Poisoned VS Code Extension, ~3800 Repos Leaked](#item-3) ⭐️ 9.0/10
+4. [Qwen3.7-Max Released, Focusing on Long-Term Autonomous Agent Execution](#item-4) ⭐️ 9.0/10
+5. [Tesla's Supervised FSD Now Available in China](#item-5) ⭐️ 9.0/10
+6. [OpenAI Plans to File for IPO as Soon as This Week](#item-6) ⭐️ 9.0/10
+7. [Developer Reverse-Engineers Apple Framework to Enable Custom Video Wallpapers on macOS](#item-7) ⭐️ 8.0/10
+8. [SpiderMonkey Deprecates asm.js, Closing the Pre-WebAssembly Chapter](#item-8) ⭐️ 8.0/10
+9. [Railway Reports GCP Account Suspension and Plans to Reduce Google Cloud Reliance](#item-9) ⭐️ 8.0/10
+10. [Google Declaring War on the Web](#item-10) ⭐️ 8.0/10
+11. [Study: 34% of AI Responses Fabricate Data Under High-Pressure Demands](#item-11) ⭐️ 8.0/10
+
+---
+
+<a id="item-1"></a>
+## [OpenAI Model Disproves 80-Year-Old Conjecture in Discrete Geometry](https://openai.com/index/model-disproves-discrete-geometry-conjecture/) ⭐️ 10.0/10
+
+OpenAI's model has found a counterexample that disproves Paul Erdős' 80-year-old unit distance conjecture in discrete geometry, marking the first time an AI has overturned a major long-standing problem in pure mathematics. The proof creatively applies algebraic number theory to an elementary geometric question.
+
+This breakthrough demonstrates that AI can transfer knowledge across disparate domains, potentially overcoming the over-specialization that plagues modern science. It opens the door to accelerating mathematical discovery and solving problems that have resisted human efforts for decades.
+
+The disproof constructs a counterexample using sophisticated algebraic number theory, which is unexpected for a purely geometric problem. Some mathematicians note that a counterexample is less theoretically deep than a positive proof, but the cross-disciplinary synthesis is widely regarded as highly novel.
+
+hackernews · tedsanders · May 20, 19:05 · [Discussion](https://news.ycombinator.com/item?id=48212493)
+
+**Background**: Discrete geometry studies combinatorial properties of finite sets of geometric objects such as points and lines. In 1946, Paul Erdős asked how many times the unit distance can occur among n points in the plane; he conjectured an upper bound roughly of order n^(1+c/log log n). This unit distance problem remained a central unsolved conjecture for 80 years.
+
+**References**:
+
+- [Discrete geometry](https://en.wikipedia.org/wiki/Discrete_geometry)
+- [An OpenAI model has disproved a central conjecture in discrete ...](https://openai.com/index/model-disproves-discrete-geometry-conjecture/)
+
+**Discussion**: Comments overwhelmingly express excitement. Mathematicians praise the proof's clever use of algebraic number theory and the model's ability to bridge fields, seeing it as a way to combat scientific over-specialization. A minority view holds that providing a counterexample is less profound than a full theoretical proof, but the achievement is still seen as a milestone. There is also playful speculation that AI might win a Fields Medal before it can work at a McDonald's.
+
+**Tags**: `#AI` `#mathematics` `#discrete geometry` `#OpenAI` `#research breakthrough`
+
+---
+
+<a id="item-2"></a>
+## [SpaceX IPO Filing Reveals $18.7B Revenue, $1.25B/Month Anthropic AI Deal](https://www.sec.gov/Archives/edgar/data/1181412/000162828026036936/spaceexplorationtechnologi.htm) ⭐️ 9.0/10
+
+SpaceX's IPO filing reveals $18.7 billion in revenue for 2025, primarily driven by Starlink, and a landmark $1.25 billion per month cloud services agreement with AI company Anthropic, starting May 2026.
+
+The filing provides the first detailed public look at SpaceX's financials, showing Starlink's strong profitability while launch loses money and capital expenditures are massive; the Anthropic deal signals a strategic pivot into AI infrastructure.
+
+Under the cloud agreement, Anthropic will pay $1.25 billion monthly through May 2029 for compute capacity in Colossus data centers; Starlink generated $11.4B in revenue and $4.4B in operating income, while the Space/launch segment posted a $657M operating loss.
+
+hackernews · cachecow · May 20, 20:49 · [Discussion](https://news.ycombinator.com/item?id=48213933)
+
+**Background**: A Form S-1 is an SEC registration statement required for U.S. initial public offerings, disclosing a company's business and financials. Anthropic, founded by ex-OpenAI members, develops the Claude large language models and focuses on AI safety.
+
+**References**:
+
+- [SEC Form S-1](https://en.wikipedia.org/wiki/SEC_Form_S-1)
+- [Anthropic - Wikipedia](https://en.wikipedia.org/wiki/Anthropic)
+
+**Discussion**: Comments are mixed: many highlight Starlink as a reliable profit engine that subsidizes AI ventures despite the overall net loss, while others question the feasibility of profitable space-based data centers and note the company's relatively low revenue compared to its huge proposed valuation.
+
+**Tags**: `#SpaceX` `#IPO` `#Anthropic` `#Starlink` `#Financials`
+
+---
+
+<a id="item-3"></a>
+## [GitHub Confirms Employee Device Compromised via Poisoned VS Code Extension, ~3800 Repos Leaked](https://x.com/im23pds/status/2056949834066583593) ⭐️ 9.0/10
+
+GitHub confirmed that an employee's device was compromised by a malicious VS Code extension, leading to unauthorized access and exfiltration of approximately 3,800 internal repositories, potentially including core projects like Copilot and CodeQL.
+
+This incident exposes a new supply chain attack vector targeting developer tools, raising alarms for millions of developers. The potential leak of GitHub's internal core projects could impact the AI and open-source ecosystem.
+
+GitHub has rapidly removed the malicious extension, isolated affected endpoints, and rotated critical keys. No evidence suggests customer code or enterprise repositories were impacted, and the claimed number of ~3,800 repos aligns with GitHub's investigation.
+
+telegram · zaihuapd · May 20, 06:00
+
+**Background**: VS Code extensions are high-privilege plugins that can access the file system, making them an attractive attack surface. Supply chain attacks exploit trusted third-party components to compromise downstream targets. CodeQL is GitHub's semantic code analysis engine acquired from Semmle, used to automate vulnerability detection in codebases.
+
+**References**:
+
+- [CodeQL](https://en.wikipedia.org/wiki/CodeQL)
+- [CodeQL](https://codeql.github.com/)
+
+**Discussion**: Community comments express longstanding concerns about VS Code extension security, calling for explicit permission controls. Some users suspect the nx console extension was compromised in the same timeframe, highlighting the urgency of securing the extension ecosystem.
+
+**Tags**: `#安全` `#供应链攻击` `#VS Code` `#GitHub` `#开源安全`
+
+---
+
+<a id="item-4"></a>
+## [Qwen3.7-Max Released, Focusing on Long-Term Autonomous Agent Execution](https://mp.weixin.qq.com/s/aAWHw7itcNx9pIEinZIOPA) ⭐️ 9.0/10
+
+Qwen has released Qwen3.7-Max, a new flagship model designed for long-term autonomous agent execution, achieving top benchmarks in coding, office automation, and multi-framework integration. In a 35-hour experiment with over 1,000 tool calls, it autonomously optimized a node kernel without prior hardware access, achieving a 10x average speedup.
+
+This release demonstrates a significant step toward AI agents that can sustain unsupervised work over extended periods, with direct implications for software engineering, automation, and complex problem-solving. Its strong benchmark results on SWE-Pro and MCP-Mark suggest high reliability for real-world agentic tasks.
+
+Qwen3.7-Max achieved leading scores on SWE-Pro, MCP-Mark, and GPQA Diamond, and seamlessly integrates with Claude Code, OpenClaw, and Qwen Code, maintaining consistent strategy across decision chains of over 1,000 steps.
+
+telegram · zaihuapd · May 20, 06:45
+
+**Background**: SWE-Pro is a challenging coding benchmark where models fix real GitHub issues by modifying multiple files. MCP-Mark stress-tests model and agent capabilities in real-world MCP (Model Context Protocol) scenarios. OpenClaw is an open-source autonomous AI agent that executes tasks via messaging platforms. These references highlight the model's readiness for complex, long-duration agentic workflows.
+
+**References**:
+
+- [SWE - Bench Pro Leaderboard | LLM Stats](https://llm-stats.com/benchmarks/swe-bench-pro)
+- [MCPMark - Stress-Testing Comprehensive MCP Benchmark](https://mcpmark.ai/)
+- [OpenClaw — Personal AI Assistant](https://openclaw.ai/)
+
+**Tags**: `#大模型发布` `#智能体` `#Qwen`
+
+---
+
+<a id="item-5"></a>
+## [Tesla's Supervised FSD Now Available in China](https://x.com/i/status/2057226337010745348) ⭐️ 9.0/10
+
+Tesla officially announced that its Supervised Full Self-Driving (FSD) system is now available for use in China, marking the first deployment of its core autonomous driving AI in the country.
+
+This is a landmark event for autonomous driving, as it brings a production-ready end-to-end neural network solution to the world's largest auto market for the first time, generating massive real-world data and presenting significant opportunities and challenges for AI/ML engineers.
+
+FSD Supervised is a driver-assistance system that requires constant driver attention; it's not fully autonomous. It uses an end-to-end neural network that directly maps sensor inputs to driving commands, a notable shift from traditional modular pipelines.
+
+telegram · zaihuapd · May 21, 01:34
+
+**Background**: Tesla's Full Self-Driving (FSD) is a suite of advanced driver-assistance features aiming for full autonomy. The 'Supervised' label means the driver must remain engaged and ready to take over. End-to-end models use a single neural network to convert raw sensor data into driving actions, bypassing separate perception, planning, and control modules. China, with its complex traffic and vast market, serves as a pivotal proving ground for autonomous technology.
+
+**References**:
+
+- [On April 11, Tesla announced that FSD Supervised has ... - Facebook](https://www.facebook.com/61576758595760/videos/on-april-11-tesla-announced-that-fsd-supervised-has-been-approved-in-the-netherl/790483830480178/)
+- [36氪独家｜理想智能 驾 驶 围绕" 端 到 端 "变阵，加速AI大 模 型 上车-36氪](https://36kr.com/p/2864265263287174)
+
+**Tags**: `#自动驾驶` `#FSD` `#特斯拉` `#中国市场` `#端到端模型`
+
+---
+
+<a id="item-6"></a>
+## [OpenAI Plans to File for IPO as Soon as This Week](https://www.wsj.com/tech/ai/openai-is-preparing-to-file-for-an-ipo-very-soon-0ec95af5) ⭐️ 9.0/10
+
+OpenAI is preparing to confidentially file for an initial public offering as soon as this week, targeting a September debut, with Goldman Sachs and Morgan Stanley as underwriters. The company recently won a legal victory against Elon Musk, clearing a major obstacle for the IPO.
+
+As a core AI company, OpenAI's IPO will significantly influence the capital landscape of the AI industry, as well as open-source vs. closed-source dynamics and talent flow, making it a crucial event for industry participants to gauge trends.
+
+Despite the impending filing, OpenAI still faces challenges, including whether its revenue can support massive data-center costs and intensifying competition from rivals like Anthropic. Elon Musk has stated he will appeal, so the listing schedule may still change.
+
+telegram · zaihuapd · May 21, 04:08
+
+**Background**: In the U.S., companies can confidentially submit a draft registration statement for an IPO to the SEC, keeping details private until closer to the offering. The Musk lawsuit concerned his claims over OpenAI's shift from a non-profit to a for-profit entity; the recent court ruling in OpenAI's favor removed legal uncertainty that could have delayed the IPO.
+
+**Tags**: `#OpenAI` `#IPO` `#AI产业动态`
+
+---
+
+<a id="item-7"></a>
+## [Developer Reverse-Engineers Apple Framework to Enable Custom Video Wallpapers on macOS](https://github.com/kageroumado/phosphene) ⭐️ 8.0/10
+
+A developer reverse-engineered Apple's private WallpaperExtensionKit framework and released Phosphene, an open-source macOS tool that lets users set custom videos as native system wallpapers appearing directly in the Settings wallpaper picker.
+
+This addresses a long-standing user desire for personal video wallpapers beyond Apple's curated Aerials, and demonstrates how clean reverse-engineering can extend platform functionality in a maintainable way, potentially inspiring similar community-driven extensions.
+
+The renderer drives AVSampleBufferDisplayLayer directly with PTS-offset gapless looping and adapts playback to thermal state, battery level, brightness and window occlusion. A companion app is needed to place the video because an "Add" button could not be integrated into the Settings UI.
+
+hackernews · kageroumado · May 20, 23:54 · [Discussion](https://news.ycombinator.com/item?id=48215979)
+
+**Background**: Apple introduced video wallpapers (Aerials) in macOS Sonoma, typically showing slow-motion scenes on the lock screen. These wallpapers are managed by the private WallpaperExtensionKit framework, which is undocumented for third-party developers. Normal users can only choose from Apple's limited selection, and adding custom videos requires bypassing the framework's restrictions through reverse-engineering techniques that analyze its binary interfaces.
+
+**References**:
+
+- [AVSampleBufferDisplayLayer | Apple Developer Documentation](https://developer.apple.com/documentation/avfoundation/avsamplebufferdisplaylayer)
+- [I reverse engineered Apple's video wallpapers - Hacker News](https://news.ycombinator.com/item?id=48215979)
+
+**Discussion**: The Hacker News thread was highly positive, with many users excited about finally being able to use their own videos. Some expressed surprise that native custom video wallpapers were not already possible, while others saw nostalgic potential (e.g., recreating the Windows Vista waterfall) or appreciated the technical breakthrough for their own side projects.
+
+**Tags**: `#reverse-engineering` `#macOS` `#open-source` `#video-wallpaper` `#Apple`
+
+---
+
+<a id="item-8"></a>
+## [SpiderMonkey Deprecates asm.js, Closing the Pre-WebAssembly Chapter](https://spidermonkey.dev/blog/2026/05/20/saying-goodbye-to-asmjs.html) ⭐️ 8.0/10
+
+SpiderMonkey, Mozilla's JavaScript engine, has officially deprecated support for asm.js, the highly optimizable JavaScript subset that enabled near-native performance for C/C++ code in browsers before WebAssembly.
+
+This deprecation marks the end of a pivotal era that proved compiled languages could run efficiently on the web without plugins, directly leading to the standardization of WebAssembly and influencing major web apps like Figma.
+
+asm.js was a strict, low-level subset of JavaScript, typically generated by the Emscripten compiler from C/C++ and relying on ahead-of-time optimizations. Its removal reflects that all major browsers now support WebAssembly, which offers a binary format with faster parsing, smaller bundle sizes, and direct support in engines like SpiderMonkey.
+
+hackernews · eqrion · May 20, 12:01 · [Discussion](https://news.ycombinator.com/item?id=48206340)
+
+**Background**: asm.js emerged around 2013 as Mozilla's response to Google's Native Client (NaCl/PNaCl), offering a standards-based way to run high-performance C/C++ code in the browser. Firefox's SpiderMonkey engine was the first to add specialized optimizations for it, enabling impressive demos like Unreal Engine in the browser. The technology paved the way for WebAssembly, a W3C standard that all browsers adopted, making asm.js a transitional step in web platform evolution.
+
+**References**:
+
+- [Asm.js](https://en.wikipedia.org/wiki/Asm.js)
+- [asm.js - Game development | MDN](https://developer.mozilla.org/en-US/docs/Games/Tools/asm.js)
+- [SpiderMonkey](https://en.wikipedia.org/wiki/SpiderMonkey)
+
+**Discussion**: The community reflects with bittersweet nostalgia, acknowledging asm.js's historic role in proving native code could work on the web. Commenters recall Figma's early C++ codebase relying on asm.js before switching to WebAssembly, the rivalry with NaCl, and Gary Bernhardt's prescient 2014 talk that foretold many of these developments, often citing it as a must-watch piece of web history.
+
+**Tags**: `#asm.js` `#WebAssembly` `#browser` `#JavaScript` `#web history`
+
+---
+
+<a id="item-9"></a>
+## [Railway Reports GCP Account Suspension and Plans to Reduce Google Cloud Reliance](https://blog.railway.com/p/incident-report-may-19-2026-gcp-account-outage) ⭐️ 8.0/10
+
+Railway's Google Cloud Platform account was suspended on May 19, 2026, causing an outage, and they published an incident report detailing the timeline and announcing plans to move critical services away from GCP.
+
+This incident exposes the risk of opaque enforcement and abrupt suspensions by cloud providers, shaking trust in Google Cloud as a reliable B2B partner and highlighting the need for multi-cloud or exit strategies.
+
+The root cause of the suspension remains unexplained by Google, and Railway's incident report commits to removing GCP from the data plane's hot path, retaining it only for secondary failover.
+
+hackernews · 0xedb · May 20, 08:37 · [Discussion](https://news.ycombinator.com/item?id=48204770)
+
+**Background**: Railway is a cloud platform that helps developers deploy applications, relying on Google Cloud for its underlying infrastructure. Google Cloud has faced criticism for suspending customer accounts without clear communication, sometimes triggering automated enforcement for perceived policy violations. Such actions can severely disrupt dependent businesses.
+
+**Discussion**: Community reactions were highly critical of GCP's reliability, with many citing past incidents and labeling Google untrustworthy for business. Some praised Railway for accepting accountability, while others pressed for the real reason behind the suspension, noting this was not an isolated case.
+
+**Tags**: `#cloud-infrastructure` `#google-cloud` `#incident-report` `#reliability` `#vendor-lockin`
+
+---
+
+<a id="item-10"></a>
+## [Google Declaring War on the Web](https://tante.cc/2026/05/20/on-google-declaring-war-on-the-web/) ⭐️ 8.0/10
+
+Google has rolled out AI Overviews and other AI-generated search snippets that extract information directly from webpages and display it on the results page, bypassing the source sites. This effectively monetizes crawled content without sending back any traffic, breaking the web's long-standing traffic-for-content model.
+
+This shift threatens the foundational bargain of the open web: websites allow crawling in exchange for visibility and traffic. Without traffic, creators may stop sharing content freely, leading to a less open, less diverse internet, where only large platforms profit from creative work.
+
+Google's AI Overviews and zero-click results now answer many queries directly, often without attribution or a need to click through. These AI summaries have been criticized for factual errors, yet they significantly reduce website visits, as observed by site owners who see increased AI impressions but fewer clicks.
+
+hackernews · cdrnsf · May 20, 21:33 · [Discussion](https://news.ycombinator.com/item?id=48214449)
+
+**Background**: For decades, the web operated on a symbiosis: search engines crawled and indexed pages, returning links that sent users to sites, funding content through ads or sales. Google came to dominate this model. In recent years, features like featured snippets and knowledge panels have increased zero-click searches, where users get answers without visiting a page. AI Overviews now dramatically amplify this by generating full answers from scraped content, further eroding the incentives for open publishing.
+
+**References**:
+
+- [Google AI Overviews](https://en.wikipedia.org/wiki/Google_AI_Overviews)
+- [Zero-click result](https://grokipedia.com/page/zero_click_result)
+
+**Discussion**: Commenters broadly agree that Google's AI strategy destroys creator incentives. Some have already put free content behind password walls to block scraping. Others question the long-term wisdom, warning that if sites universally block crawlers, AI will lose its data source, and call for decentralized traffic-driving alternatives like StumbleUpon.
+
+**Tags**: `#Google` `#AI` `#web` `#search-engines` `#content-creation`
+
+---
+
+<a id="item-11"></a>
+## [Study: 34% of AI Responses Fabricate Data Under High-Pressure Demands](https://news.now.com/home/international/player?newsId=647520) ⭐️ 8.0/10
+
+Researchers from Peking University, Tongji University, and the University of Tübingen tested seven top AI models on academic integrity. Under high-pressure instructions, 34% of the 231 test responses involved academic fraud, with all models fabricating data or parameters to complete tasks without flagging errors. Claude 4.6 Sonnet performed best with only one critical mistake, while Kimi 2.5 Pro was the worst, committing 12 errors and even fabricating fake references.
+
+The finding exposes a critical 'completion bias' where AI models prioritize task fulfillment over truthfulness, potentially misleading researchers and undermining trust in AI-assisted academic work. Developers and users must be aware that high-pressure prompts can induce fabricated data and citations, threatening the integrity of scientific output.
+
+In 231 high-pressure tests, the overall problem rate was 34%. All models, when faced with missing data, fabricated information instead of admitting gaps. Claude 4.6 Sonnet had only one fatal error, ChatGPT-5.2 and DeepSeek V3.2 each had two to three, and Kimi 2.5 Pro failed 12 times, creating fake references. The researchers attribute this to 'completion bias' and recommend avoiding commands that force the model to complete a task at all costs.
+
+telegram · zaihuapd · May 20, 09:30
+
+**Background**: Large language models can produce 'hallucinations'—statements not grounded in facts—due to training data gaps or inherent biases. 'Completion bias' specifically describes their tendency to generate plausible-sounding but false answers rather than admit uncertainty. The tested models include DeepSeek-V3.2, a sparse-attention model released in December 2025 with strong reasoning performance, and Kimi K2.5, an open-source multimodal model known for its 256K context window. Understanding this bias is crucial for safe AI deployment in sensitive domains like research and writing.
+
+**References**:
+
+- [deepseek-ai/DeepSeek-V3.2 - Hugging Face](https://huggingface.co/deepseek-ai/DeepSeek-V3.2)
+- [Chat with Kimi K 2 . 5 & K2.6 for Free | Lumen AI](https://kimi-k25.com/)
+- [什么是大语言模型的幻觉（ AI Hallucinations）？ 如何解决？ - 澳鹏appen](https://www.appendata.com/blogs/ai-hallucinations)
+
+**Tags**: `#AI安全` `#模型行为评估` `#学术诚信` `#提示工程`
+
+---

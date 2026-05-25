@@ -1,0 +1,373 @@
+---
+title: "每日简报 · 2026-05-16"
+slug: horizon-2026-05-16-zh
+date: 2026-05-16
+lang: zh
+issue_id: 2026-05-16
+published: true
+description: "vLLM v0.21 强制升级 transformers v5 与 C++20、Project Zero 披露 Pixel 10 零点击漏洞、Zulip 移交独立非营利基金会、首个公开的 Apple M5 内核漏洞利用——以及今日精选的另外 13 条研究动态。"
+item_count: 17
+total_fetched: 44
+cover_image: /digests/cover-2026-05-16.png
+---
+
+> 从 44 条内容中精选出 17 条重要动态
+
+---
+
+1. [vLLM v0.21.0 发布：强制升级 transformers v5 并要求 C++20 编译器](#item-1) ⭐️ 9.0/10
+2. [LiteLLM v1.84.0 发布，含未明确说明的破坏性变更](#item-2) ⭐️ 9.0/10
+3. [Project Zero 披露 Pixel 10 零点击漏洞利用链](#item-3) ⭐️ 9.0/10
+4. [Zulip 将所有权移交至独立非营利基金会](#item-4) ⭐️ 9.0/10
+5. [杰森·斯科特的 ASCII.textfiles.com：标志性的数字保存倡议](#item-5) ⭐️ 9.0/10
+6. [IBM 与 Hugging Face 发布 Granite 多语言嵌入模型 R2](#item-6) ⭐️ 9.0/10
+7. [首个公开的绕过 Apple M5 MIE 内存保护的内核漏洞利用](#item-7) ⭐️ 9.0/10
+8. [arXiv 对未核查的 LLM 生成内容实施 1 年禁投处罚](#item-8) ⭐️ 9.0/10
+9. [米切尔·哈希莫托提出"AI 精神病"概念，批判企业对 AI 的盲目依赖](#item-9) ⭐️ 8.0/10
+10. [加州法案要求关停在线游戏时提供补丁或退款](#item-10) ⭐️ 8.0/10
+11. [AI 预测中的 S 形曲线谬误](#item-11) ⭐️ 8.0/10
+12. [讽刺性 npm 文章揭示供应链攻击屡禁不止](#item-12) ⭐️ 8.0/10
+13. [美国司法部传唤苹果和谷歌披露 EZ Lynk Auto Agent 应用超 10 万名用户信息](#item-13) ⭐️ 8.0/10
+14. [Waymo 因车辆驶入积水问题对 3800 辆自动驾驶出租车实施软件召回](#item-14) ⭐️ 8.0/10
+15. [ABC 新闻永久下线全部 FiveThirtyEight 文章](#item-15) ⭐️ 8.0/10
+16. [Radicle 推出基于 Git 的去中心化、主权代码协作平台](#item-16) ⭐️ 8.0/10
+17. [Anima：开源的 20 亿参数动漫风格文生图模型](#item-17) ⭐️ 8.0/10
+
+---
+
+<a id="item-1"></a>
+## [vLLM v0.21.0 发布：强制升级 transformers v5 并要求 C++20 编译器](https://github.com/vllm-project/vllm/releases/tag/v0.21.0) ⭐️ 9.0/10
+
+vLLM v0.21.0 已在 GitHub 发布，正式弃用 transformers v4 支持，并强制要求使用兼容 C++20 的编译器构建源码；同时新增 KV 缓存卸载与混合内存分配器（HMA）深度集成、支持推理预算的推测解码，以及面向 Blackwell GPU 的 TOKENSPEED_MLA 注意力后端。 这两项破坏性变更影响所有从源码构建 vLLM 或依赖 transformers v4 的用户，需立即更新 CI/CD 流程与依赖配置；而新引入的 HMA 与 KV 卸载功能可显著提升大规模语言模型服务在生产环境中的吞吐量和内存利用效率。 C++20 要求源于对 PyTorch 2.4+ 的兼容性需求，会影响未配备现代编译器（如 GCC &lt;11 或 Clang &lt;13）的构建环境；transformers v5 迁移为强制性操作——未来 vLLM 版本将不再为 v4 提供修复或安全补丁。
+
+github · khluu · May 15, 08:44
+
+**背景**: vLLM 是一个开源高性能大语言模型推理引擎，以 PagedAttention 和高效内存管理著称。KV 缓存卸载将键值缓存从 GPU 移至 CPU 或磁盘，从而支持更大模型或更高并发请求。混合内存分配器（HMA）统一管理异构设备（GPU/CPU）及不同模型组件（如注意力层、Mamba 层）的内存，以减少碎片并提升缓存命中率。
+
+**参考链接**:
+
+- [kv_offload — vLLM](https://docs.vllm.ai/en/latest/api/vllm/v1/kv_offload/)
+- [Inside vLLM's New KV Offloading Connector — vLLM Blog](https://vllm.ai/blog/kv-offloading-connector)
+- [Maximizing Performance with vLLM's Hybrid Memory Allocator](https://www.franksworld.com/2025/08/15/how-to-maximizing-performance-with-vllms-hybrid-memory-allocator-architecture/)
+
+**标签**: `#breaking-change` `#deprecation`
+
+---
+
+<a id="item-2"></a>
+## [LiteLLM v1.84.0 发布，含未明确说明的破坏性变更](https://github.com/BerriAI/litellm/releases/tag/v1.84.0) ⭐️ 9.0/10
+
+BerriAI 在 GitHub 上发布了 LiteLLM v1.84.0，明确警告该版本包含破坏性变更，但发布说明和变更日志中未具体说明哪些 API、接口或行为发生了变更。 这迫使所有生产环境用户在升级前必须进行彻底的兼容性测试，因为隐式破坏性变更可能导致运行时崩溃、日志错误、缓存配置失效或代理健康检查异常——尤其在自动化 CI/CD 或容器化部署中风险更高。 该版本通过 Cosign 对 Docker 镜像进行签名，并推荐使用不可变的提交哈希（0112e53）验证公钥；但"变更内容"列表中未列出任何破坏性变更，仅包含次要修复、功能新增和内部重构。
+
+github · github-actions[bot] · May 14, 06:12
+
+**背景**: LiteLLM 是一个开源的大语言模型抽象与路由库，统一了对 100 多个大语言模型提供商（如 OpenAI、Anthropic、Vertex AI）的调用接口。它被广泛应用于 AI 网关、成本追踪代理和企业级大模型编排系统中。此类库中的破坏性变更可能因请求/响应结构、缓存逻辑或命令行参数等强耦合点而波及大量依赖服务。
+
+**参考链接**:
+
+- [Sigstore Quickstart with Cosign](https://docs.sigstore.dev/quickstart/quickstart-cosign/)
+- [sigstore/cosign — Code signing and transparency](https://github.com/sigstore/cosign)
+- [Code signing | Docker Docs](https://docs.docker.com/dhi/core-concepts/signatures/)
+
+**标签**: `#breaking-change`
+
+---
+
+<a id="item-3"></a>
+## [Project Zero 披露 Pixel 10 零点击漏洞利用链](https://projectzero.google/2026/05/pixel-10-exploit.html) ⭐️ 9.0/10
+
+Google Project Zero 披露了针对 Google Pixel 10 的新型零点击漏洞利用链，利用 CVE-2025-54957（杜比统一解码器 UDC 中的严重缺陷）并结合 AI 驱动的短信媒体预处理功能作为初始攻击入口。 这是旗舰 Android 设备中一个高危、可远程利用的漏洞，无需用户交互，动摇了移动平台安全性的核心信任基础，并凸显了 AI 功能集成带来的系统性安全风险。 该利用链复用并扩展了此前在 Pixel 9 上被利用的杜比 UDC 漏洞；其依赖 AI 服务在用户打开消息前即对消息媒体（如图片、音频）进行预解码——这一设计决策扩大了零点击攻击面。补丁在厂商收到通知后 90 天内发布。
+
+hackernews · happyhardcore · May 15, 13:39 · [社区讨论](https://news.ycombinator.com/item?id=48148460)
+
+**背景**: 零点击漏洞利用无需任何用户交互（例如无需点击或打开），对移动设备构成极高威胁。杜比统一解码器（UDC）是 Android 系统级组件，广泛用于短信和媒体应用中的音视频解码。近期 Android 版本持续集成 AI 功能——例如由 Gemini 驱动的短信内容分析——这些功能会在用户未打开消息时即自动处理其内容，从而在传统应用沙箱之外扩展了特权代码执行面。
+
+**参考链接**:
+
+- [A 0-click exploit chain for the Pixel 10 — Project Zero](https://projectzero.google/2026/05/pixel-10-exploit.html)
+- [Google Project Zero Reveals Zero-Click Exploit Chain for Pixel 10](https://cyberpress.org/zero-click-exploit-chain-for-pixel-10/)
+- [No thanks: Google lets its Gemini AI access your apps, including messages](https://www.malwarebytes.com/blog/news/2025/07/no-thanks-google-lets-its-gemini-ai-access-your-apps-including-messages)
+
+**社区讨论**: 评论者普遍担忧 AI 驱动的短信处理正持续扩大零点击攻击面；肯定谷歌 90 天内完成修复的响应速度，同时质疑苹果的漏洞响应时效；并就近期漏洞披露激增现象展开讨论——这究竟是真实威胁升级，还是因 AI 安全话题受热捧而引发的媒体聚焦效应？
+
+**标签**: `#android` `#zero-click` `#project-zero` `#mobile-security` `#exploit-chain`
+
+---
+
+<a id="item-4"></a>
+## [Zulip 将所有权移交至独立非营利基金会](https://blog.zulip.com/2026/05/15/announcing-zulip-foundation/) ⭐️ 9.0/10
+
+2026 年 5 月 15 日，Zulip 核心团队宣布将退出全职领导岗位，并将公司捐赠给新成立的、独立的非营利性 Zulip 基金会，以确保项目长期服务于公共利益。 此次转型在开发者工具领域日益担忧企业收购、数据商业化和治理不稳的背景下，强化了用户对 Zulip 作为注重隐私、社区导向的开源平台的信任。 Zulip 基金会采用独立非营利架构，以使命为导向设计治理模式；它正式接管 Zulip 项目的代码库、商标、基础设施等全部资产，而创始团队（包括 Tim Abbott）则加入 Anthropic。
+
+hackernews · boramalper · May 15, 18:37 · [社区讨论](https://news.ycombinator.com/item?id=48152168)
+
+**背景**: Zulip 是一款开源团队聊天应用，以基于主题的线程化消息模型著称，被 Rust、Lean 和 NixOS 等技术社区广泛采用。它长期强调透明度、自托管和用户控制——这些价值观如今已通过新的非营利治理结构得到正式确立。
+
+**参考链接**:
+
+- [Announcing the Zulip Foundation](https://blog.zulip.com/2026/05/15/announcing-zulip-foundation/)
+
+**社区讨论**: 评论体现出用户深厚的情感投入与审慎思考：有人称赞此举是对抗企业化倾向（如 Bun/Rust 事件引发的担忧）的可信保障；有人为核心团队离开感到不舍；也有人就发布时机和传播策略提出合理质疑——整体反映出社区的高度认可与建设性监督。
+
+**标签**: `#open-source` `#nonprofit` `#software-governance` `#privacy` `#community-stewardship`
+
+---
+
+<a id="item-5"></a>
+## [杰森·斯科特的 ASCII.textfiles.com：标志性的数字保存倡议](https://ascii.textfiles.com/) ⭐️ 9.0/10
+
+杰森·斯科特持续扩展其长期运行的数字保存项目 ASCII.textfiles.com，已在互联网档案馆（Internet Archive）上公开存档超过 13,000 本技术手册和 1300 多盘磁带，内容涵盖纽约市生活实录与冷门音乐，并通过 Twitch 直播等形式开展实时社区互动。 该项目保护了因设备淘汰和物理衰变而濒临消失的不可替代的计算史遗产，确保历史学者、教育工作者、复古计算爱好者及后代能免费、开放地获取一手资料。它代表了大规模、自下而上的社区驱动型数字守护典范。 馆藏包含来自个人档案（如马克·派恩斯收藏的 1300 多盘磁带）的数字化资料，十年间平均每天新增约 3.5 本手册；所有内容均免付费、无数字版权管理（DRM）限制，且持续维护——例如评论区实时修正存档链接、同步在 Twitch 平台进行直播。
+
+hackernews · bookofjoe · May 15, 14:02 · [社区讨论](https://news.ycombinator.com/item?id=48148726)
+
+**背景**: ASCII.textfiles.com 是杰森·斯科特更广泛的 textfiles.com 网络的一部分，该网站诞生于 20 世纪 90 年代，是早期互联网上以纯文本文件、BBS 文化和数字零散资料为核心的开创性档案库。斯科特是 Archive Team 联合创始人，也是互联网档案馆的驻站档案员，将纪录片制作（如《GET LAMP》《BBS Documentary》）与一线保存实践相结合。该网站体现了一种核心理念：数字历史必须以其原生、可访问的格式保存，而非仅作为元数据或截图存在。
+
+**参考链接**:
+
+- [ASCII by Jason Scott](https://ascii.textfiles.com/)
+- [ASCII art — TEXTFILES](http://artscene.textfiles.com/asciiart/)
+- [Jason Scott (@textfiles) on X](https://x.com/textfiles)
+
+**社区讨论**: 评论者高度赞扬斯科特高产的工作成果与开放获取精神，具体提及 13000 本手册、马克·派恩斯磁带等馆藏，并实时修正过期链接，还指出他正在 Twitch 平台进行直播——体现出活跃、专业且充满敬意的社区参与。
+
+**标签**: `#digital-preservation` `#internet-archive` `#retrocomputing` `#open-access` `#cultural-heritage`
+
+---
+
+<a id="item-6"></a>
+## [IBM 与 Hugging Face 发布 Granite 多语言嵌入模型 R2](https://huggingface.co/blog/ibm-granite/granite-embedding-multilingual-r2) ⭐️ 9.0/10
+
+IBM 与 Hugging Face 联合发布了 Granite Embedding Multilingual R2，这是一款开源、采用 Apache 2.0 许可证的嵌入模型，支持 100 多种语言、32768 词元上下文长度，并在参数量低于 1 亿的模型中实现了当前最优的检索质量。 该发布显著推动了开源多语言 RAG 系统的发展，提供了一个高质量、可直接投入生产的宽松许可嵌入模型，从而提升跨语言搜索、长上下文检索能力，并为低资源语言和全球企业带来更普惠的人工智能能力。 R2 模型包含两个版本：9700 万参数版（granite-embedding-97m-multilingual-r2）和 3.11 亿参数版（granite-embedding-311m-multilingual-r2），均基于 ModernBERT-base 架构，含 22 层、768 维向量输出及 GeLU 激活函数；其在 MTEB 多语言基准测试中表现领先，并支持代码检索与多轮对话检索任务。
+
+rss · Hugging Face Blog · May 14, 18:55
+
+**背景**: 嵌入模型将文本转换为固定长度向量，以实现语义相似性搜索与检索——这是检索增强生成（RAG）系统的核心组件。检索质量直接决定 RAG 效果，因为低质量嵌入会导致大语言模型接收到无关上下文。上下文长度（如 32K 词元）使模型能处理更长文档而无需截断或分块，从而提升长文档检索的准确性。多语言支持确保非英语查询也能在多样化语言语料库中检索到相关内容。
+
+**参考链接**:
+
+- [ibm-granite/granite-embedding-97m-multilingual-r2 · Hugging Face](https://huggingface.co/ibm-granite/granite-embedding-97m-multilingual-r2)
+- [Granite Embedding Multilingual R2 Models](https://arxiv.org/pdf/2605.13521)
+- [Granite Embedding — IBM Granite](https://www.ibm.com/granite/docs/models/embedding)
+- [Open Apache 2.0 Multilingual Embeddings with 32K Context](https://huggingface.co/blog/ibm-granite/granite-embedding-multilingual-r2)
+
+**社区讨论**: Hugging Face 博客文章获得开发者社区高度关注，用户普遍赞赏其 Apache 2.0 许可证、广泛的多语言覆盖以及在亚亿级参数规模下具备竞争力的检索分数。部分用户指出 32K 上下文长度对企业的长文档检索具有显著实用价值，另有用户强调其有望在成本敏感型部署中替代 Voyage AI 等专有嵌入模型。
+
+**标签**: `#multilingual` `#embeddings` `#RAG` `#open-source` `#NLP`
+
+---
+
+<a id="item-7"></a>
+## [首个公开的绕过 Apple M5 MIE 内存保护的内核漏洞利用](https://blog.calif.io/p/first-public-kernel-memory-corruption) ⭐️ 9.0/10
+
+Calif 与 Anthropic 推出的 AI 系统 Mythos Preview 协作，在 2024 年 4 月 25 日至 5 月 1 日间，针对搭载 Apple M5 芯片的 macOS 26.4.1 系统，完成了首个公开披露的本地内核内存破坏漏洞利用链，从非特权用户出发仅通过正常系统调用即获取 root 权限。 这证明 AI 与人类专家协同可快速突破前沿硬件级内存安全机制，标志着进攻型安全研究范式的根本转变，并对下一代芯片中硬件辅助安全机制的实际有效性提出了严峻质疑。 该利用链属于数据型内核内存破坏（非控制流劫持），成功绕过 Apple 基于 ARM MTE 的硬件内存标记系统 MIE（Memory Integrity Enforcement），依赖两个独立漏洞及多项创新利用技术；完整技术报告（55 页）将在 Apple 发布修复补丁后公开。
+
+telegram · zaihuapd · May 15, 02:15
+
+**背景**: Apple 的 MIE（Memory Integrity Enforcement，内存完整性强制）是随 M5 和 A19 芯片推出的硬件辅助内存安全特性，基于 ARM 的内存标记扩展（MTE），在运行时检测并阻止内存破坏类漏洞。这是苹果历时五年构建的核心内核防护机制，通过为每次内存分配附加并校验标签来实现硬隔离。与纯软件缓解措施不同，MIE 运行在芯片层，被官方定位为抵御内核内存破坏攻击的基础防线。
+
+**参考链接**:
+
+- [First public macOS kernel memory corruption exploit on Apple M5](https://blog.calif.io/p/first-public-kernel-memory-corruption)
+- [First Public macOS Kernel Memory Corruption Exploit on Apple M5](https://sesamedisk.com/macos-m5-kernel-memory-exploit-ai-breakthrough/)
+- [First public macOS kernel memory corruption exploit on Apple M5](https://techtrendtrove.com/networking/first-public-macos-kernel-memory-corruption-exploit-on-apple-m5/)
+
+**标签**: `#macOS安全` `#AI辅助漏洞利用` `#M5芯片`
+
+---
+
+<a id="item-8"></a>
+## [arXiv 对未核查的 LLM 生成内容实施 1 年禁投处罚](https://x.com/tdietterich/status/2055000956144935055) ⭐️ 9.0/10
+
+arXiv 正式宣布一项严格执行政策：若投稿论文中包含未经核查的 LLM 生成内容（例如幻觉引用、残留元注释或占位符文本，如"请替换为真实实验数据"），作者将被禁止向 arXiv 投稿 1 年；解禁后，所有新投稿须先被可信的同行评审期刊或会议接收，方可提交至 arXiv。 这是 arXiv 首次针对未经核查的 LLM 使用行为出台明确且可执行的处罚措施，直接影响 AI/ML 研究者撰写与验证论文的方式；同时表明作者对 AI 辅助生成内容负有完全责任，对学术诚信与科研可复现性具有实质性警示意义。 该政策仅在存在明显失职证据时触发（例如幻觉引用或可见的 LLM 残留痕迹），而非单纯因使用 LLM 即受罚；它重申了 arXiv 长期坚持的原则：署名即代表作者对论文全部内容负全责，无论内容由何种方式生成。
+
+telegram · zaihuapd · May 15, 04:30
+
+**背景**: arXiv 是物理学、数学、计算机科学等领域广泛使用的预印本平台，不进行同行评审，而是依靠人工审核确保投稿具备可审阅性与科学严谨性。LLM 幻觉——即 AI 生成并以事实形式呈现的虚假信息（如伪造参考文献或数据）——已成为 AI 辅助写作中的已知高风险问题，已在现实中导致法律制裁并削弱学术文献的公信力。
+
+**参考链接**:
+
+- [Content Moderation — arXiv info](https://info.arxiv.org/help/moderation/index.html)
+- [Hallucination (artificial intelligence) — Wikipedia](https://en.wikipedia.org/wiki/Hallucination_(artificial_intelligence))
+- [LLM hallucinations in the wild](https://arxiv.org/pdf/2605.07723)
+
+**标签**: `#学术规范` `#LLM治理` `#arXiv政策`
+
+---
+
+<a id="item-9"></a>
+## [米切尔·哈希莫托提出"AI 精神病"概念，批判企业对 AI 的盲目依赖](https://twitter.com/mitchellh/status/2055380239711457578) ⭐️ 8.0/10
+
+Vagrant 和 Terraform 的作者米切尔·哈希莫托于 2024 年 5 月在社交媒体发帖，首创"AI 精神病"一词，用以描述那些将关键思考、决策与工程判断完全外包给 AI、却缺乏人工监督、验证或领域理解的企业行为。 这一批判揭示了 AI 应用中日益加剧的系统性风险：当企业将 AI 视作神谕而非工具时，问责机制被削弱、工程严谨性下降、生产系统脆弱性上升，可能导致级联故障并加速机构知识流失。 "AI 精神病"并非反对使用 AI 编写代码或实现自动化，而是批判人类责任的主动放弃——例如不经验证即采纳 AI 生成的财务分析或基础设施变更，或构建出复杂到无人能理解、调试的系统。
+
+hackernews · reasonableklout · May 15, 20:26 · [社区讨论](https://news.ycombinator.com/item?id=48153379)
+
+**背景**: 米切尔·哈希莫托是知名基础设施工程师，开发了 Vagrant 和 Terraform 等基础 DevOps 工具，强调声明式配置、可复现性及人在环中的控制机制。他的批判植根于数十年系统可靠性工程经验——其中人类判断、可观测性与渐进式变更始终是韧性的核心。
+
+**社区讨论**: 评论者普遍认同"AI 精神病"精准刻画了金融与早期科技领域中不加批判依赖 AI 的现实趋势；部分人预见到全 AI 维护系统可能出现的涌现式失稳，另一些人则指出，传统上行动迟缓的企业反而可能因避免过早 AI 集成而获得意外优势。
+
+**标签**: `#AI伦理` `#软件工程` `#AI应用` `#人机协作` `#技术风险`
+
+---
+
+<a id="item-10"></a>
+## [加州法案要求关停在线游戏时提供补丁或退款](https://arstechnica.com/gaming/2026/05/bill-to-keep-online-games-playable-clears-key-hurdle-in-california/) ⭐️ 8.0/10
+
+2026 年 5 月，加州议会第 2421 号法案（AB-2421）通过关键立法关卡，要求游戏发行商在关停在线多人游戏时，必须提供可支持本地或社区自主运行的补丁，或向玩家全额退款，并提前 60 天公开通知。 该法案是美国首次尝试以法律形式确立数字服务中的游戏保存与消费者权益保障，可能为其他州乃至全球直播服务类游戏的平台责任标准树立先例。 该法案仅适用于依赖持续服务器架构的在线游戏；豁免纯订阅制或广告支持型游戏（除非收取直接购买费用），且未强制要求开源——但倡导者如 georgeecollins 认为开源才是最公平的合规路径。
+
+hackernews · Lihh27 · May 15, 19:48 · [社区讨论](https://news.ycombinator.com/item?id=48152994)
+
+**背景**: 在线游戏关停事件（例如《星球大战：旧共和国》特定区域服务器或《迪士尼无限》的停运）长期引发玩家访问权丧失、虚拟资产损失及电子文化遗产权益受损等担忧。游戏保存（game preservation）指为保障历史重要性电子游戏可持续游玩而开展的技术存档与维护工作，与野生动物保护无关（该词易被误译混淆）。视频游戏历史基金会（Video Game History Foundation）等非营利组织正积极归档源代码、游戏资源和开发文档，以防止数字内容过时失效。
+
+**参考链接**:
+
+- [Video Game History Foundation](https://gamehistory.org/)
+- [Game preservation](https://en.wikipedia.org/wiki/Game_preservation)
+
+**社区讨论**: 评论者观点多元：georgeecollins 主张开源服务器代码是最公平的解决方案；tyleo 警告该法案可能因加剧运营风险与成本而抑制游戏开发意愿；mrandish 则提醒监管过度风险，指出法案漏洞或将加速非订阅制游戏模式的消亡。
+
+**标签**: `#game-preservation` `#consumer-protection` `#gaming-policy` `#open-source` `#platform-regulation`
+
+---
+
+<a id="item-11"></a>
+## [AI 预测中的 S 形曲线谬误](https://www.astralcodexten.com/p/the-sigmoids-wont-save-you) ⭐️ 8.0/10
+
+本文指出，将人工智能进步建模为 S 形曲线（sigmoid）具有误导性，因为历史上技术进步（如航空动力发展）往往通过不连续的范式更替（例如螺旋桨→涡喷→冲压发动机）实现，而非平滑增长后趋于饱和。 这挑战了人工智能政策制定、投资决策和安全规划中广泛使用的预测启发法，呼吁对推断性模型保持更大谦逊，并警示低估颠覆性突破或过早假定技术停滞的风险。 文章将 S 形曲线思维与林迪法则（Lindy's Law）对比：后者认为书籍、技术等非易腐事物的剩余寿命往往与其当前存续时间成正比；并指出决定范式更替的通常是经济、监管与物理限制，而非数学曲线。
+
+hackernews · Tomte · May 15, 10:51 · [社区讨论](https://news.ycombinator.com/item?id=48147021)
+
+**背景**: S 形曲线描述一种增长模式：采用率或性能起初缓慢上升，随后加速，最终因接近自然极限而放缓，常见于创新扩散模型。林迪法则则适用于书籍、技术等非易腐事物，认为存续时间越长，其未来预期寿命往往也越长。"S 形曲线谬误"指在以不连续创新为主导的领域中错误套用 S 形逻辑。
+
+**参考链接**:
+
+- [Lindy effect — Wikipedia](https://en.wikipedia.org/wiki/Lindy_effect)
+- [Lindy's Law](https://en.wikipedia.org/wiki/Lindy's_Law)
+
+**社区讨论**: 评论者就林迪法则是否适用于 AI 趋势展开辩论，质疑作者因个人押注近期通用人工智能（AGI）而存在立场偏差，并强调认知谦逊——共识是由于范式跃迁及经济、监管等外部约束，AI 进展预测本质上仍高度不确定。
+
+**标签**: `#AI预测` `#技术进步` `#林迪法则` `#S曲线谬误` `#创新动力学`
+
+---
+
+<a id="item-12"></a>
+## [讽刺性 npm 文章揭示供应链攻击屡禁不止](https://kevinpatel.xyz/posts/no-way-to-prevent-this/) ⭐️ 8.0/10
+
+凯文·帕特尔（Kevin Patel）发表的讽刺性博客文章《无法阻止此事》（"No way to prevent this"）调侃 npm 反复发生的高影响供应链攻击——包括近期针对 TanStack、Axios 及 170 多个包的大规模攻击；与此同时，Hacker News 评论转向跨生态系统的分析，并提出"发布冷却期"作为一项实用缓解措施。 这一批评揭示了 npm、PyPI、RubyGems 和 XZ 等主流包管理器共有的系统性弱点，推动业界采用标准化的主动防御措施（如发布冷却期），有望缩短零日漏洞利用窗口，并将安全责任从开发者逐步转向基础设施层。 发布冷却期（例如忽略发布不足 1–3 天的包）本可拦截 TanStack 和 Axios 等近期 npm 攻击，因为恶意版本通常在数小时内即被下架；StepSecurity 的 NPM 包冷却检查工具及 Homebrew 的 minimumReleaseAge 策略已将该方法工程化。
+
+hackernews · alligatorplum · May 16, 00:36 · [社区讨论](https://news.ycombinator.com/item?id=48155690)
+
+**背景**: npm、PyPI 和 RubyGems 等包管理器托管数以百万计的开源依赖项，广泛用于生产软件。其开放发布模式虽促进快速创新，却也为供应链攻击提供了温床——攻击者常通过劫持维护者账户或发布拼写错误/已被入侵的恶意包实施攻击。2024 年 XZ Utils 后门事件表明，即便是 Linux 核心基础设施也面临同类攻击向量的威胁。
+
+**参考链接**:
+
+- [Mass npm Supply Chain Attack Hits TanStack and 170+ Packages](https://www.reddit.com/r/programming/comments/1tapmvi/mass_npm_supply_chain_attack_hits_tanstack/)
+- [Yet another npm supply-chain attack — is Cargo any safer?](https://users.rust-lang.org/t/yet-another-npm-supply-chain-attack-is-cargo-any-safer/133766)
+- [Introducing the NPM Package Cooldown Check — StepSecurity](https://www.stepsecurity.io/blog/introducing-the-npm-package-cooldown-check)
+
+**社区讨论**: 评论者质疑对 npm 的单独指责，指出 PyPI、RubyGems 和 XZ 均发生过类似事件；讨论焦点在于不同语言生态的安全保障是否存在本质差异，抑或仅因目标吸引力不同；同时倡导采用冷却期、沙箱（如 Nix）等务实防护手段。
+
+**标签**: `#供应链安全` `#npm` `#包管理器` `#软件生态` `#安全缓解`
+
+---
+
+<a id="item-13"></a>
+## [美国司法部传唤苹果和谷歌披露 EZ Lynk Auto Agent 应用超 10 万名用户信息](https://macdailynews.com/2026/05/15/u-s-doj-demands-apple-and-google-unmask-over-100000-users-of-popular-car-tinkering-app-in-emissions-crackdown/) ⭐️ 8.0/10
+
+美国司法部于 2026 年 5 月向苹果和谷歌发出法律要求，强制其披露 EZ Lynk Auto Agent 应用逾 10 万名用户的个人信息，包括姓名、电子邮件地址和设备标识符；该应用被指用于禁用柴油车的原厂排放控制系统，此举属于联邦政府正在进行的排放执法调查的一部分。 此举为政府机构大规模监控修改设备软件的用户树立了危险先例，严重威胁数字隐私权、平台责任机制以及用户合法拥有硬件后的自主改装权。同时，它也加剧了公众对应用商店如何监管涉及环保法规与合规要求的第三方工具的关注。 被针对的应用是 EZ Lynk Auto Agent，它通过 OBD-II 接口连接并重新编程柴油发动机控制单元（ECU），主要用于删除 AdBlue/选择性催化还原（SCR）系统及禁用废气再循环（EGR）阀。苹果和谷歌尚未公开确认是否配合，但其官方法律流程指南显示，二者通常会遵守有效的法院命令——这也引发了人们对行政传票缺乏司法审查的担忧。
+
+hackernews · tencentshill · May 15, 17:28 · [社区讨论](https://news.ycombinator.com/item?id=48151383)
+
+**背景**: 现代柴油车依赖复杂的排放控制软件（如 AdBlue 喷射与废气再循环系统）以满足美国环保署（EPA）标准。类似 EZ Lynk Auto Agent 的"汽车改装"应用允许用户访问并修改原厂发动机控制单元（ECU）固件，常被用于绕过上述控制以提升性能或降低维护成本——但此类改装违反《美国清洁空气法》。苹果 App Store 和谷歌 Play 等应用商店严禁上架协助非法车辆篡改的应用，而 EZ Lynk 主要通过第三方渠道（如直接下载、F-Droid）分发，并未上架主流应用商店。
+
+**参考链接**:
+
+- [U.S. DOJ demands Apple and Google unmask 100,000 users — Mac Daily News](https://macdailynews.com/2026/05/15/u-s-doj-demands-apple-and-google-unmask-over-100000-users-of-popular-car-tinkering-app-in-emissions-crackdown/)
+- [EFF — Open Letter to Tech Companies on Lawless DHS Subpoenas](https://www.eff.org/deeplinks/2026/02/open-letter-tech-companies-protect-your-users-lawless-dhs-subpoenas)
+
+**社区讨论**: 评论者对司法部的调查逻辑提出质疑（embedding-shape），对排放作弊用户持道德矛盾态度（midtake），担忧执法先例可能被滥用、进而被车企用于监控 GPS 禁用等合法改装行为（AdmiralAsshat），呼吁去中心化应用分发模式（curt15），并强调应采用匿名保护型替代方案（codedokode）。整体讨论反映出公众对执法比例原则、正当程序及数字自主权长期影响的深切关注。
+
+**标签**: `#隐私` `#监控` `#汽车软件` `#平台治理` `#数字权利`
+
+---
+
+<a id="item-14"></a>
+## [Waymo 因车辆驶入积水问题对 3800 辆自动驾驶出租车实施软件召回](https://www.cnbc.com/2026/05/12/waymo-recalls-3800-robotaxis-after-able-drive-into-standing-water.html) ⭐️ 8.0/10
+
+Waymo 针对一项感知系统缺陷，向约 3800 辆自动驾驶汽车远程推送了软件更新；该缺陷曾导致部分车辆误驶入路面积水区域，此次修复为纯软件召回，无需车辆返厂。 该事件揭示了自动驾驶在真实道路中面临的关键边缘案例挑战——如何区分浅层积水与危险深水；同时凸显了空中下载（OTA）软件更新机制如何实现全车队即时安全升级，印证了自动驾驶系统相较人类驾驶在规模化安全迭代上的根本优势。 该问题源于传感器融合与视觉推理在积水深度估计方面的局限性，并非硬件故障；社区讨论延伸至是否应加装专用涉水传感器，或利用众包地图数据（如 Google Maps）在行程前识别潜在积水路段。
+
+hackernews · drob518 · May 15, 18:00 · [社区讨论](https://news.ycombinator.com/item?id=48151767)
+
+**背景**: Waymo 等自动驾驶车辆依赖激光雷达、摄像头和毫米波雷达组成的多传感器感知系统来理解周围环境。识别路面积水尤为困难，因其通常缺乏纹理、反射率或高程等传统计算机视觉或激光雷达可稳定识别的特征。"以安全为设计核心"原则要求开发者预先识别此类边缘场景，并构建多层防护机制，包括降级响应策略及基于真实车队数据的持续学习能力。
+
+**参考链接**:
+
+- [3,800 Waymos recalled for driving into standing water](https://www.youtube.com/watch?v=jfhQm3M3PYM)
+- [About — Waymo Open Dataset](https://waymo.com/open/about/)
+- [Waymo Is Fixing All of Its Self-Driving Taxis to Avoid Floods](https://www.nytimes.com/2026/05/12/us/waymo-recall-robotaxis-flood-water.html)
+
+**社区讨论**: 评论者就技术权衡展开讨论：一位 DARPA 大挑战赛资深参与者主张加装物理涉水传感器，而另一些人则强调利用车辆运动行为与地图数据进行推理判断；多人指出，该事件既暴露了当前感知模型的脆弱性，也凸显了全车队空中下载（OTA）更新在快速填补安全漏洞方面的独特优势。
+
+**标签**: `#自动驾驶` `#机器人` `#计算机视觉` `#安全关键系统` `#边缘案例`
+
+---
+
+<a id="item-15"></a>
+## [ABC 新闻永久下线全部 FiveThirtyEight 文章](https://twitter.com/baseballot/status/2055309076209492208) ⭐️ 8.0/10
+
+ABC 新闻已永久下线其网站上全部 FiveThirtyEight 文章及交互式内容，实质上于 2023 年末或 2024 年初终止了这一数据新闻品牌。下线范围包括存档文章、可视化作品及相关教育资料。 FiveThirtyEight 曾是面向公众的数据素养、选举预测与交互式数据新闻的标志性平台，其消失对教育工作者、记者、研究人员及更广泛的数据科学社群构成重大损失。此次关停还引发了关于企业对数字公共产品管理责任及重要网络新闻长期存档的紧迫担忧。 截至 2023 年 6 月，GitHub 代码库（github.com/fivethirtyeight/data）仍公开可访问，但彼时已停止更新体育预测；ABC 拒绝向创始人内特·西尔弗出售该知识产权，理由竟是他曾批评其品牌管理。目前尚未公布任何官方归档或迁移方案。
+
+hackernews · cmsparks · May 15, 19:07 · [社区讨论](https://news.ycombinator.com/item?id=48152553)
+
+**背景**: FiveThirtyEight 由统计学家内特·西尔弗于 2008 年创立，最初是一个独立博客，专注于政治与体育领域的民调分析和统计建模。2013 年被 ESPN 收购，2018 年随迪士尼收购 ESPN 而转至 ABC 新闻旗下。该平台以方法论透明、开放数据发布及屡获殊荣的交互式可视化著称，成为新闻业数据驱动叙事的典范。
+
+**参考链接**:
+
+- [fivethirtyeight/data — code &amp; data](https://github.com/fivethirtyeight/data)
+- [Data, data visualization and interactives within news](https://onlinejournalismblog.com/2026/01/06/data-data-visualization-and-interactives-within-news-bloggers-cut/)
+- [Using visualizations to tell stories — DataJournalism.com](https://datajournalism.com/read/handbook/one/delivering-data/using-visualizations-to-tell-stories)
+
+**社区讨论**: 评论者为失去的教育资源与可视化作品深感痛惜，批评 ABC 战略短视，并警告 GitHub 代码库可能成为下一个被删除目标。内特·西尔弗证实 ABC 因其曾批评管理层而拒绝其低价回购知识产权的提议；另有用户指出该网站仅在总统大选年具备盈利能力，其余时间难以为继。
+
+**标签**: `#数据新闻` `#数字归档` `#媒体研究` `#数据可视化` `#企业战略`
+
+---
+
+<a id="item-16"></a>
+## [Radicle 推出基于 Git 的去中心化、主权代码协作平台](https://radicle.dev/) ⭐️ 8.0/10
+
+Radicle 已发展为一个生产就绪的去中心化代码协作平台，原生构建于 Git 之上，强调本地优先运行、密码学身份认证以及用户对代码和协作数据的完全主权。 它为 GitHub 等中心化代码平台提供了可信的开源基础设施替代方案，推动软件主权发展，并支持智能体（agentic）工作流、分布式问题追踪等新范式，对构建弹性、抗审查的开源生态至关重要。 Radicle 在 Git 基础上构建了基于八卦协议（gossip）的点对点网络，使用 Ed25519 密钥实现密码学身份认证以签署代码工件；私有仓库完整历史保留在本地，但禁止向公共网络广播更新；项目采用 MPL-2.0 许可证而非 AGPL，引发社区对其可能被 SaaS 公司商用而规避共享义务的担忧。
+
+hackernews · KolmogorovComp · May 15, 12:07 · [社区讨论](https://news.ycombinator.com/item?id=48147603)
+
+**背景**: Radicle 在分布式版本控制系统 Git 的基础上，扩展了去中心化身份、社交功能（如派生、议题、评论）及点对点同步能力，无需依赖中心化服务器。"本地优先软件"指用户默认在本地拥有并控制自身数据，仅在网络可用时异步同步，与云中心化模型（服务器持有权威状态）形成鲜明对比。Radicle 协议设计为高度可扩展，核心协议无需修改即可支持多样化用例。
+
+**参考链接**:
+
+- [Radicle Protocol Guide](https://radicle.dev/guides/protocol)
+- [Radicle — the sovereign forge](https://radicle.xyz/?ref=30daysofweb3)
+- [Local-first software](https://en.wikipedia.org/wiki/Local-first_software)
+
+**社区讨论**: 开发者赞赏 Radicle 的本地优先设计和密码学身份模型（尤其适用于智能体工作流），但也围绕许可证选择（MPL 对比 AGPL）、私有仓库的隐私语义，以及 Radworks 计划推出托管服务所带来的长期可持续性问题展开讨论。
+
+**标签**: `#去中心化系统` `#git` `#开源基础设施` `#软件主权` `#分布式协作`
+
+---
+
+<a id="item-17"></a>
+## [Anima：开源的 20 亿参数动漫风格文生图模型](https://civitai.com/models/2458426/anima) ⭐️ 8.0/10
+
+CircleStone Labs 与 Comfy Org 联合发布了 Anima，这是一款参数量达 20 亿的开源文生图模型，完全基于真实动漫图像和非写实艺术图像（无合成数据）训练，仅允许非商业用途。 Anima 填补了开源 AIGC 生态中高参数量、垂直领域专用模型的关键空白，专为动漫与风格化艺术生成优化，显著提升 LoRA 微调效果、可控风格迁移能力，并为同人创作、角色设计及独立动画工作流提供易用工具支持。 该模型使用数百万张动漫图像和约 80 万张非动漫艺术图像训练；同时支持 Civitai 和 Hugging Face 平台，并原生兼容 ComfyUI，便于通过模块化节点流程进行推理与定制化开发。
+
+telegram · zaihuapd · May 15, 03:00
+
+**背景**: 文生图模型（如 Stable Diffusion）依赖大规模图文数据集学习视觉概念。尽管许多开源模型侧重于写实风格或通用生成，但专注动漫美学的专用模型却十分稀缺——尤其是参数量超 10 亿、且明确采用纯真实数据训练的模型。ComfyUI 是一款流行的开源、基于节点的本地扩散模型运行界面，因其在工作流编排上的高度灵活性而被广泛采用。
+
+**参考链接**:
+
+- [circlestone-labs/Anima · Hugging Face](https://huggingface.co/circlestone-labs/Anima)
+- [ai-models/circlestone-labs/Anima — Cloud Native Build](https://cnb.cool/ai-models/circlestone-labs/Anima)
+- [Comfy-Org/ComfyUI](https://github.com/Comfy-Org/ComfyUI)
+
+**标签**: `#文生图` `#动漫生成` `#开源模型`
+
+---

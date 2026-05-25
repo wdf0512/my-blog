@@ -8,16 +8,18 @@ import {
   isToday,
 } from '@/lib/digests';
 
+const HOME_LOCALE = 'en' as const;
+
 export function DailyBrief() {
-  const published = getPublishedDigests();
+  const published = getPublishedDigests(HOME_LOCALE);
   if (published.length === 0) return null;
 
-  const issueBySlug = getIssueNumberMap(published);
+  const issueBySlug = getIssueNumberMap(getPublishedDigests());
   const featured = published[0];
   const recents = published.slice(1, 4);
 
-  const featuredIssue = issueBySlug.get(featured.slug) ?? published.length;
-  const featuredDateLong = formatShortDate(featured.date);
+  const featuredIssue = issueBySlug.get(featured.slug) ?? 0;
+  const featuredDateLong = formatShortDate(featured.date, HOME_LOCALE);
   const featuredIsToday = isToday(featured.date);
 
   return (
@@ -34,7 +36,7 @@ export function DailyBrief() {
           </p>
         </div>
         <Link
-          href="/digest"
+          href={`/digest/${HOME_LOCALE}`}
           className="hidden md:inline-flex items-center gap-2 text-text-secondary hover:text-primary transition-colors group shrink-0 pb-1"
         >
           View archive
@@ -49,7 +51,7 @@ export function DailyBrief() {
       <div className="grid grid-cols-1 md:grid-cols-5 gap-4">
         {/* Left: featured */}
         <Link
-          href={`/digest/${featured.slug}`}
+          href={`/digest/${HOME_LOCALE}/${featured.slug}`}
           className="md:col-span-3 group relative flex flex-col rounded-3xl bg-surface border border-border hover:border-primary/40 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 p-7 md:p-8 min-h-[260px] overflow-hidden"
         >
           {/* Ghost numeral */}
@@ -106,12 +108,12 @@ export function DailyBrief() {
         <div className="md:col-span-2 flex flex-col gap-3">
           {recents.map((digest) => {
             const issueNo = issueBySlug.get(digest.slug) ?? 0;
-            const monoDate = formatMonoDate(digest.date);
+            const monoDate = formatMonoDate(digest.date, HOME_LOCALE);
 
             return (
               <Link
                 key={digest.slug}
-                href={`/digest/${digest.slug}`}
+                href={`/digest/${HOME_LOCALE}/${digest.slug}`}
                 className="group flex items-center gap-4 rounded-2xl bg-surface border border-border hover:border-primary/30 hover:bg-primary/5 hover:-translate-y-0.5 px-4 py-3.5 transition-all duration-200"
               >
                 <div className="flex-shrink-0 w-12 leading-none">
@@ -143,7 +145,7 @@ export function DailyBrief() {
       {/* Mobile: View archive */}
       <div className="mt-6 text-center md:hidden">
         <Link
-          href="/digest"
+          href={`/digest/${HOME_LOCALE}`}
           className="inline-flex items-center gap-2 px-6 py-3 bg-surface rounded-xl text-text-primary hover:bg-primary/10 transition-all"
         >
           View archive

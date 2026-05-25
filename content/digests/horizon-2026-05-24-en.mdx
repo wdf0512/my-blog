@@ -1,0 +1,211 @@
+---
+title: "Daily Brief · 2026-05-24"
+slug: horizon-2026-05-24-en
+date: 2026-05-24
+lang: en
+issue_id: 2026-05-24
+published: true
+description: "Pydantic v2.14.0a1 drops Python 3.9, NVIDIA Nemotron-Labs proposes diffusion language models, Apple open-sources corecrypto with quantum-safe formal verification, Microsoft releases the earliest known DOS source — and six more stories from today's research."
+item_count: 10
+total_fetched: 39
+cover_image: /digests/cover-2026-05-24.png
+---
+
+> From 39 items, 10 important content pieces were selected
+
+---
+
+1. [Pydantic v2.14.0a1 drops Python 3.9 support and eval_type_backport()](#item-1) ⭐️ 9.0/10
+2. [NVIDIA Nemotron-Labs Introduces Diffusion Language Models for Ultra-Fast Text Generation](#item-2) ⭐️ 9.0/10
+3. [Apple Open-Sources corecrypto with Formal Verification for Quantum-Safe Algorithms](#item-3) ⭐️ 9.0/10
+4. [Microsoft Open-Sources Earliest DOS Source Code, 86-DOS v0.1-C](#item-4) ⭐️ 8.0/10
+5. [AMD's Vivado 2026.1 Drops Linux Support for Free Tier](#item-5) ⭐️ 8.0/10
+6. [Wake up! 16b: A 16-Byte Audiovisual Demo Masterpiece](#item-6) ⭐️ 8.0/10
+7. [Scammers Abuse Internal Microsoft Account to Send Spam Links](#item-7) ⭐️ 8.0/10
+8. [Developer Leaves AWS After Four Years, Cites Deteriorating Support and AI Missteps](#item-8) ⭐️ 8.0/10
+9. [80386 Microcode Disassembled in Remarkable Reverse Engineering Effort](#item-9) ⭐️ 8.0/10
+10. [Google Docs Launches Docs Live for Voice-Driven Document Drafting with Gemini AI](#item-10) ⭐️ 8.0/10
+
+---
+
+<a id="item-1"></a>
+## [Pydantic v2.14.0a1 drops Python 3.9 support and eval_type_backport()](https://github.com/pydantic/pydantic/releases/tag/v2.14.0a1) ⭐️ 9.0/10
+
+Pydantic v2.14.0a1 is an alpha release that drops support for Python 3.9 and removes the eval_type_backport() utility, marking breaking changes. It also introduces experimental PyEmscripten platform tag support for Pyodide-based Python environments. Dropping Python 3.9 and eval_type_backport() aligns pydantic with the end-of-life Python 3.9 and resolves a TypeError that occurs with Python 3.14, ensuring forward compatibility. The new Emscripten wheel experimentally enables pydantic validation in browser-based Python runtimes like Pyodide, expanding its reach. eval_type_backport() removal addresses an incompatibility with Python 3.14 where its internal _eval_type function received an unexpected keyword argument, halting schema generation. The new PyEmscripten wheel targets Pyodide 314.0+ but is experimental; users are advised to wait for the final Pyodide release. Additionally, model_copy() now performs a shallow copy on unchanged fields for performance.
+
+github · Viicos · May 22, 13:46
+
+**Background**: Pydantic is a data validation library using Python type hints. The eval_type_backport() function was used to evaluate newer type annotation syntax on older Python versions, but it breaks on Python 3.14. Pyodide is a Python distribution that runs in the browser via WebAssembly, and the new pydantic wheel uses the pyemscripten platform tag defined by Pyodide and tools like auditwheel-emscripten (PEP 776 outlines Emscripten support).
+
+**References**:
+
+- [Pyodide — Version 0.29.4](https://pyodide.org/)
+- [PEP 776 - Emscripten Support - peps.python.org](https://peps.python.org/pep-0776/)
+- [Pydantic And Python 3.14: Ignoring Eval _ type _ backport](https://bijuhanta.web.id/blog/pydantic-and-python-3-14)
+
+**Tags**: `#breaking-change`
+
+---
+
+<a id="item-2"></a>
+## [NVIDIA Nemotron-Labs Introduces Diffusion Language Models for Ultra-Fast Text Generation](https://huggingface.co/blog/nvidia/nemotron-labs-diffusion) ⭐️ 9.0/10
+
+NVIDIA's Nemotron-Labs has proposed diffusion language models that generate text by iteratively denoising the full sequence in parallel, promising a dramatic leap in inference speed compared to traditional autoregressive models. If validated, this approach could represent a paradigm shift in efficient LLM inference, enabling much faster and more scalable real-time text generation for low-latency applications like chatbots and code assistants. The model leverages continuous diffusion processes for categorical data, but critical details such as training stability, text quality relative to autoregressive methods, and specific hardware requirements are still forthcoming.
+
+rss · Hugging Face Blog · May 23, 00:02
+
+**Background**: Diffusion language models generate text by starting from random noise and iteratively refining the entire sequence all at once, as opposed to autoregressive models that generate tokens one by one. NVIDIA's Nemotron family includes several open-source language models with diverse architectures; this diffusion-based proposal marks a notable departure from their previous dense and mixture-of-experts designs.
+
+**References**:
+
+- [Large Language Diffusion Models . Google text diffusion ... | Medium](https://ranko-mosic.medium.com/large-language-diffusion-models-82d09602f7c9)
+- [Nemotron - Wikipedia](https://en.wikipedia.org/wiki/Nemotron)
+
+**Tags**: `#diffusion models`, `#text generation`, `#NVIDIA`, `#language modeling`, `#efficient inference`
+
+---
+
+<a id="item-3"></a>
+## [Apple Open-Sources corecrypto with Formal Verification for Quantum-Safe Algorithms](https://security.apple.com/blog/formal-verification-corecrypto/) ⭐️ 9.0/10
+
+Apple released the source code of corecrypto, its fundamental cryptographic library, including implementations of the post-quantum algorithms ML-KEM and ML-DSA, along with the first end-to-end formal verification proofs. The proofs guarantee that the C code and hand-optimized ARM64 assembly strictly conform to NIST standards. corecrypto underpins encryption for over 2.5 billion active devices, including iMessage and VPN services, making this release a significant step toward practical quantum-resistant security at massive scale. It also sets a new bar for transparency and verification in critical software infrastructure. The release includes hand-optimized ARM64 assembly, custom verification tools, and an Isabelle theory library for independent review. The formal proofs cover the full chain from high-level mathematical specification down to the compiled hardware instructions.
+
+telegram · zaihuapd · May 23, 04:49
+
+**Background**: NIST standardized ML-KEM (formerly Kyber) and ML-DSA (Dilithium) as post-quantum cryptographic schemes resistant to future quantum computers. Formal verification is a mathematical technique that proves a program's implementation exactly matches its specification, eliminating entire classes of bugs. Apple leveraged the Isabelle proof assistant to create machine-checkable proofs that corecrypto faithfully implements the NIST algorithms.
+
+**References**:
+
+- [RFC 9936: Use of ML - KEM in the Cryptographic Message Syntax (CMS)](https://www.rfc-editor.org/rfc/rfc9936.pdf)
+- [Formal verification](https://en.wikipedia.org/wiki/Formal_verification)
+
+**Tags**: `#安全`, `#量子计算`, `#形式化验证`, `#开源`, `#加密`
+
+---
+
+<a id="item-4"></a>
+## [Microsoft Open-Sources Earliest DOS Source Code, 86-DOS v0.1-C](https://arstechnica.com/gadgets/2026/04/microsoft-open-sources-the-earliest-dos-source-code-discovered-to-date/) ⭐️ 8.0/10
+
+Microsoft released the source code of 86-DOS version 0.1-C, the earliest known version of DOS, painstakingly recovered from decades-old paper printouts via OCR by a team of preservationists. This release preserves a foundational artifact of computing history that directly led to MS-DOS and the IBM PC revolution, offering an unprecedented look at the origins of the dominant PC operating system lineage. The code, written in 8086 assembly around 1980, was originally from Seattle Computer Products. Recovery required the DOS Disassembly Group to transcribe degraded printouts, as modern OCR software struggled with the paper quality.
+
+hackernews · DamnInteresting · May 24, 01:21 · [Discussion](https://news.ycombinator.com/item?id=48253386)
+
+**Background**: 86-DOS, internally called QDOS (Quick and Dirty Operating System), was developed by Seattle Computer Products for Intel 8086 systems. It shared command similarities with CP/M, making it easy to port software. Microsoft licensed and later purchased 86-DOS, evolving it into MS-DOS and IBM PC DOS, the foundation of the personal computer industry. Version 0.1-C is the oldest source code known to survive.
+
+**References**:
+
+- [86 - DOS - Wikipedia](https://en.wikipedia.org/wiki/86-DOS)
+- [86 DOS Version 0 . 1 C Serial # 11 ( ORIGINAL DISK)... : Internet Archive](https://archive.org/details/86-dos-version-0.1-c-serial-11-original-disk)
+
+**Discussion**: Commenters expressed gratitude to Microsoft and marveled at the OCR recovery effort, noting that even earlier binary copies exist (e.g., v0.34). Several highlighted Microsoft's parallel open-sourcing of the early BASIC interpreter, and the overall sentiment was nostalgic appreciation for a time when a few thousand lines of assembly could launch a software empire.
+
+**Tags**: `#open-source`, `#retrocomputing`, `#microsoft`, `#dos`, `#computing-history`
+
+---
+
+<a id="item-5"></a>
+## [AMD's Vivado 2026.1 Drops Linux Support for Free Tier](https://adaptivesupport.amd.com/s/question/0D5Pd00001YQLdMKAX/why-is-vivado-20261-dropping-linux-support-for-free-tier-?language=en_US) ⭐️ 8.0/10
+
+AMD is removing Linux support from the free Basic edition of Vivado starting with version 2026.1, leaving only Windows for no-cost users. This decision alienates students, educators, and hobbyists who rely on Linux for FPGA development, potentially slowing ecosystem growth and signaling a shift toward cost-cutting over community-friendly practices. The change applies only to the free tier; paid licenses still retain Linux support. AMD has not publicly explained the rationale, but community speculation points to reducing support overhead. Free users are left without a Linux-native toolchain for newer devices.
+
+hackernews · zdw · May 24, 04:14 · [Discussion](https://news.ycombinator.com/item?id=48254309)
+
+**Background**: Vivado Design Suite is AMD's (formerly Xilinx) IDE for FPGA synthesis, implementation, and debugging. The free Basic edition supports a subset of devices and is essential for learning and prototyping. Linux is the dominant platform in hardware design and open-source communities due to its flexibility and scriptable build flows.
+
+**References**:
+
+- [Vivado](https://en.wikipedia.org/wiki/Vivado)
+- [FPGA](https://en.wikipedia.org/wiki/FPGA)
+
+**Discussion**: Response is overwhelmingly negative. Users argue Linux is critical for FPGA development and education; some saw it as another sign of AMD losing its engineering focus. Alternatives like Lattice were praised for more developer-friendly licensing, and frustration was voiced over ongoing license management hassles.
+
+**Tags**: `#FPGA`, `#Vivado`, `#Linux`, `#AMD`, `#tools`
+
+---
+
+<a id="item-6"></a>
+## [Wake up! 16b: A 16-Byte Audiovisual Demo Masterpiece](https://hellmood.111mb.de/wake_up_16b_writeup.html) ⭐️ 8.0/10
+
+A 16-byte computer program, 'Wake up! 16b', generates complex generative graphics and synchronized sound, demonstrating the pinnacle of size coding and demoscene artistry. This extreme compression proves how much audiovisual richness can be achieved with minimal code, inspiring programmers and pushing the boundaries of what is possible in creative computing. The demo is likely written in x86 real-mode assembly, directly manipulating video memory and the PC speaker, with all code and data condensed into exactly 16 bytes.
+
+hackernews · MaximilianEmel · May 24, 00:30 · [Discussion](https://news.ycombinator.com/item?id=48253060)
+
+**Background**: The demoscene is an international computer art subculture focused on creating demos: self-contained programs that generate real-time audiovisual presentations. Size coding is a niche within it where programmers craft the smallest possible functional programs, often using assembly language to exploit hardware quirks.
+
+**References**:
+
+- [Demoscene](https://en.wikipedia.org/wiki/Demoscene)
+- [SizeCoding.org](http://www.sizecoding.org/wiki/Main_Page)
+
+**Discussion**: The community reacted with awe, sharing related demoscene gems like 'rainbow surf' and a recursive PowerPoint Sierpinski triangle. One user noted this 16-byte masterpiece surpasses a previous 32-byte demo that lacked sound, and another humorously confused '16b' with a 16-billion-parameter LLM.
+
+**Tags**: `#demoscene`, `#sizecoding`, `#assembly`, `#low-level`, `#optimization`
+
+---
+
+<a id="item-7"></a>
+## [Scammers Abuse Internal Microsoft Account to Send Spam Links](https://techcrunch.com/2026/05/21/scammers-are-abusing-an-internal-microsoft-account-to-send-spam/) ⭐️ 8.0/10
+
+Scammers have been exploiting an internal Microsoft account to send spam links that appear to originate from a legitimate Microsoft domain, successfully bypassing email filters. This incident reveals that even trusted internal channels can be weaponized, leaving users and automated defenses unable to distinguish genuine messages from malicious ones, which could lead to widespread phishing. The abuse involves a real account within Microsoft's infrastructure, making the emails pass authentication checks; subscribers who recognize domains like microsoftonline.com may be especially susceptible.
+
+hackernews · spike021 · May 24, 00:51 · [Discussion](https://news.ycombinator.com/item?id=48253186)
+
+**Background**: Email spoofing is a technique where the sender address is forged to appear from a trusted source. Protocols like SPF, DKIM, and DMARC are designed to verify a sender's domain, but they cannot detect abuse when the email genuinely originates from a legitimate internal account. Microsoft uses a complex array of domains for different services, making it difficult for users to maintain a definitive list of legitimate senders.
+
+**References**:
+
+- [Email spoofing](https://en.wikipedia.org/wiki/Email_spoofing)
+
+**Discussion**: Commenters expressed frustration with Microsoft's messy domain management, noting that it's hard to tell if microsoftonline.com is even legitimate. Some shared similar experiences of spam arriving from trusted domains like Google and Booking.com, while others were relieved to learn that the issue was a compromised Microsoft account rather than their own password leak.
+
+**Tags**: `#security`, `#phishing`, `#Microsoft`, `#spam`, `#vulnerability`
+
+---
+
+<a id="item-8"></a>
+## [Developer Leaves AWS After Four Years, Cites Deteriorating Support and AI Missteps](https://www.adventuresinoss.com/aws-four-years/) ⭐️ 8.0/10
+
+A detailed personal account describes a developer's departure from AWS after four years, pointing to worsening customer support, complex billing, and forced adoption of immature generative AI features that fail to deliver real value. The critique resonates with a growing base of long-term users who see AWS shifting focus from reliable infrastructure to hype-driven AI, potentially eroding its competitive advantage and trust among enterprise customers. Support cases went unassigned for a week, billing questions could not be answered even by staff reading the same docs, and AI-generated slide content with misspellings was pushed as 'good enough' rather than customer-obsessed.
+
+hackernews · RyeCombinator · May 24, 04:51 · [Discussion](https://news.ycombinator.com/item?id=48254475)
+
+**Background**: AWS pioneered cloud computing in 2006, enabling companies to rent compute and storage instead of buying physical servers. For years, it dominated the market with a vast array of services. Recently, competition from Microsoft Azure and Google Cloud, along with the generative AI boom, has pressured AWS to integrate AI rapidly, sometimes at the expense of core operational excellence.
+
+**Discussion**: Comments broadly agree, with users sharing support horror stories (like a 7-day unassigned case) and likening AWS to IBM in its decline. Many feel customer obsession has been replaced by cost-cutting and half-baked AI mandates that alienate experienced staff.
+
+**Tags**: `#AWS`, `#cloud-computing`, `#customer-support`, `#developer-experience`, `#AI-critique`
+
+---
+
+<a id="item-9"></a>
+## [80386 Microcode Disassembled in Remarkable Reverse Engineering Effort](https://www.reenigne.org/blog/80386-microcode-disassembled/) ⭐️ 8.0/10
+
+Reenigne has manually disassembled the Intel 80386 processor's microcode ROM, producing a detailed listing of the control words that drive instruction execution. This follows their previous disassembly of the 8086 microcode and provides unprecedented insight into the 386's internal operation. This detailed microcode listing offers a unique window into the internal workings of a pioneering 32-bit x86 processor, aiding hardware historians, emulator developers, and microarchitecture researchers. It also demonstrates the feasibility of reverse-engineering complex CPU internals from publicly available information and original documentation fragments. The disassembly covers the entire microcode ROM, producing a human-readable listing that details each micro-instruction's operation, with the disassembler source code available on GitHub. The work involved manually deciphering control word formats, cross-referencing Intel's public 386 manuals, and painstakingly reconstructing the two-level microcode structure that orchestrates x86 execution, including protected mode and paging.
+
+hackernews · nand2mario · May 23, 12:11 · [Discussion](https://news.ycombinator.com/item?id=48247004)
+
+**Background**: Microcode is a layer inside many CPUs that breaks down complex machine instructions into simpler hardware control steps. The Intel 80386, launched in 1985, was a milestone x86 CPU that extended the architecture to 32 bits and introduced features like protected mode and paging. Reverse-engineering microcode is rare due to its proprietary nature; the author previously disassembled the older 8086's microcode in 2021, demonstrating that such analysis is possible from available documentation and known opcode behaviors.
+
+**References**:
+
+- [Microcode - Wikipedia](https://en.wikipedia.org/wiki/Microcode)
+- [8086 microcode disassembled « Reenigne blog](https://www.reenigne.org/blog/8086-microcode-disassembled/)
+
+**Discussion**: Commenters expressed admiration for the sheer manual effort and depth of the disassembly. Some discussed how microcode could be extracted from high-resolution die images, while others linked to related open-source 386 projects and recommended classic textbooks on microprogramming.
+
+**Tags**: `#microcode`, `#reverse-engineering`, `#80386`, `#hardware`, `#historical-computing`
+
+---
+
+<a id="item-10"></a>
+## [Google Docs Launches Docs Live for Voice-Driven Document Drafting with Gemini AI](https://www.wsj.com/tech/personal-tech/google-docs-live-test-e4473e07) ⭐️ 8.0/10
+
+Google introduced Docs Live, a new feature in Google Docs that lets users create document drafts through voice conversations, with Gemini AI transforming spoken thoughts into structured text and integrating files from Google Drive and web search results. This directly tackles the common 'blank page anxiety' by lowering the barrier to starting documents, demonstrating a practical integration of generative AI into productivity workflows and potentially accelerating user adoption of AI-assisted writing. The feature is rolling out first to paid AI subscribers on iOS and Android, with plans to expand to web and more users later. It operates under Google Workspace privacy rules, meaning user input is not used for model training.
+
+telegram · zaihuapd · May 24, 09:39
+
+**Background**: Gemini is Google's family of AI models that powers various applications with text understanding and generation. 'Blank page anxiety' refers to the common psychological hurdle of starting with an empty document. Google Workspace privacy rules ensure that data in business and education accounts is not utilized to train AI models, preserving confidentiality.
+
+**Tags**: `#Google Docs`, `#AI 写作`, `#语音交互`, `#Gemini`
+
+---

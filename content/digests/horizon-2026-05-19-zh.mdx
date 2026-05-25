@@ -1,0 +1,210 @@
+---
+title: "每日简报 · 2026-05-19"
+slug: horizon-2026-05-19-zh
+date: 2026-05-19
+lang: zh
+issue_id: 2026-05-19
+published: true
+description: "英国 GDS 发布'默认开源'指南反对 NHS 闭源转向，Hugging Face 与 IBM 推出开放智能体排行榜，Cursor 发布基于 Kimi K2.5 的 Composer 2.5，全球首个海上风电驱动的海底数据中心上海投运——以及今日另外 5 条研究精选。"
+item_count: 9
+total_fetched: 35
+cover_image: /digests/cover-2026-05-19.png
+---
+
+> From 35 items, 9 important content pieces were selected
+
+---
+
+1. [英国政府数字服务发布"默认开源"指南，反对英国国家医疗服务体系转向闭源](#item-1) ⭐️ 9.0/10
+2. [Hugging Face 与 IBM 研究院推出开放 AI 智能体排行榜](#item-2) ⭐️ 9.0/10
+3. [Cursor 发布基于 Kimi K2.5 的 Composer 2.5，专攻长程编程任务](#item-3) ⭐️ 9.0/10
+4. [初创公司利用 Git 的 --author 标志阻止 AI 机器人刷 PR](#item-4) ⭐️ 8.0/10
+5. [Andon Labs 推出由自主 AI 代理运营的广播电台](#item-5) ⭐️ 8.0/10
+6. [美国联邦调查局寻求全国性商业车牌识别数据接入权限](#item-6) ⭐️ 8.0/10
+7. [使用 LoRA/DoRA 高效微调 NVIDIA Cosmos Predict 2.5 模型生成机器人视频](#item-7) ⭐️ 8.0/10
+8. [PaddleOCR 3.5 引入原生 Transformers 后端](#item-8) ⭐️ 8.0/10
+9. [全球首个海上风电驱动海底数据中心在上海投入运营](#item-9) ⭐️ 8.0/10
+
+---
+
+<a id="item-1"></a>
+## [英国政府数字服务发布"默认开源"指南，反对英国国家医疗服务体系转向闭源](https://simonwillison.net/2026/May/17/gds-weighs-in/#atom-everything) ⭐️ 9.0/10
+
+2026 年 5 月 14 日，英国政府数字服务（GDS）发布了题为《人工智能、开源代码与公共部门漏洞风险》的官方指南，明确建议公共部门机构对软件代码采取"默认开源"立场——此举直接、原则性地反对英国国家医疗服务体系（NHS）在收到 Project Glasswing 漏洞报告后关闭其开源仓库的决定。此次干预强化了透明度、通过同行审查提升安全性，以及公共数字基础设施的复用性——为整个英国公共技术领域确立了具有约束力的规范性标准。它表明'以隐蔽保安全'并非可接受的政策取向，尤其对于医疗等关键公共服务而言，并将开源提升为数字公共产品可持续性的核心要素。该指南未点名 NHS，但被包括特伦斯·伊登（Terence Eden）在内的公务员体系专家广泛解读为一次有针对性的高层批评；指南强调，将代码设为私有会增加交付与政策成本，同时削弱复用性和外部审查能力，仅允许在"审慎且有意"的情况下有限关闭。
+
+rss · Simon Willison · May 17, 15:59
+
+**背景**: Project Glasswing 是一项由英国政府主导、与 Anthropic 联合开展的人工智能安全倡议，旨在识别并缓解公共部门所用人工智能模型及关键软件中的漏洞。英国国家医疗服务体系（NHS）近期在该项目下收到漏洞披露后，以安全为由限制了其开源仓库的访问权限——此举被批评为对安全原则的误用。英国政府数字服务（GDS）成立于 2011 年，负责统筹全英公共部门的数字标准与互操作性，长期倡导'默认数字化'和开放政府原则。
+
+**参考链接**:
+
+- [Project Glasswing: Securing critical software for the AI era](https://www.anthropic.com/glasswing)
+- [Government Digital Service - Wikipedia](https://en.wikipedia.org/wiki/Government_Digital_Service)
+- [UK gov urges public sector to keep its code open, despite AI](https://www.thestack.technology/uk-public-sector-open-source-ai/)
+
+**社区讨论**: 特伦斯·伊登将 GDS 的声明描述为公务员体系内部分歧罕见的公开升级——类比为一场'没有饼干的会议'，表明机构层面的严重关切。讨论中的专家强调，开源有助于更快打补丁和协同防御，驳斥了对公共基础设施而言'保密即安全'的错误观念。
+
+**标签**: `#open-source` `#government-digital-policy` `#cybersecurity` `#public-sector-tech` `#nhs`
+
+---
+
+<a id="item-2"></a>
+## [Hugging Face 与 IBM 研究院推出开放 AI 智能体排行榜](https://huggingface.co/blog/ibm-research/open-agent-leaderboard) ⭐️ 9.0/10
+
+Hugging Face 与 IBM 研究院于 2024 年 4 月联合推出 Open Agent Leaderboard——一个面向端到端 AI 智能体系统的标准化、开源评测基准，覆盖推理能力、工具调用、多模态交互与环境导航等维度。该榜单整合了 SWE-Bench Verified、BrowseComp+、AppWorld 及 tau2-Bench 等多个成熟评测集，并采用统一评估协议。该排行榜填补了 AI 生态中的关键空白，使开源智能体（而不仅是其底层大语言模型）能够被公平、可复现且全面地横向比较，从而加速自主系统研发进程，并推动评测透明化与社区协同。排行榜同时报告任务成功率（质量）与单任务计算成本（效率），支持双维度评估；全部代码、数据与评测脚本均在 Hugging Face 和 GitHub 上开源。按设计，它不评测任何专有或闭源智能体系统。
+
+rss · Hugging Face Blog · May 18, 14:12
+
+**背景**: AI 智能体是结合大语言模型、工具调用、记忆与规划能力的自主系统，可执行多步骤任务；与静态语言模型不同，它们能动态与环境及 API 交互。此前，智能体评测高度碎片化：各基准（如 SWE-Bench 侧重编程、BrowseComp+ 侧重网页浏览、函数调用类基准侧重 API 使用）各自为政，缺乏统一指标与开放基础设施。Open Agent Leaderboard 通过将多样化能力整合进一个连贯框架，解决了这一问题。
+
+**参考链接**:
+
+- [The Open Agent Leaderboard - Hugging Face](https://huggingface.co/blog/ibm-research/open-agent-leaderboard)
+- [Hugging Face: Launch of the Open Agent Leaderboard](https://ai.nidal.cloud/article/news-1779120210102-huggingface)
+- [The Open Agent Leaderboard | daily.dev](https://app.daily.dev/posts/the-open-agent-leaderboard-vs2qmkwoy)
+
+**标签**: `#AI Agents` `#Benchmarking` `#Open Source` `#LLM Evaluation` `#Tool Use`
+
+---
+
+<a id="item-3"></a>
+## [Cursor 发布基于 Kimi K2.5 的 Composer 2.5，专攻长程编程任务](https://cursor.com/blog/composer-2-5) ⭐️ 9.0/10
+
+Cursor 正式发布 Composer 2.5——其首个明确基于月之暗面开源 Kimi K2.5 模型构建的 AI 编程智能体；该版本引入定向文本反馈强化学习（非标准 PPO，具工程定制性）以解决长程任务中的信用分配难题，并采用比上一代多 25 倍的合成数据进行训练。同时，Cursor 宣布将与 SpaceXAI 合作，利用 Colossus 2 集群提供的百万级 H100 等效算力从零训练下一代更大规模模型。这是 Kimi K2.5 首次被深度集成进主流 AI 编程工具链，为长上下文推理与协作式代码生成树立了新标杆；其定向 RL 技术突破与超大规模算力合作，标志着开发者工具领域正加速迈向高保真、可扩展的智能体训练基础设施时代。Composer 2.5 提供两种推理变体：基础版（每百万输入 Token 2.50 美元）与 Fast 变体（15.00 美元），首发周赠送双倍用量；其定向 RL 方法采用词元级文本反馈（而非标量奖励）指导多步编程流程中的细粒度修正，规避了标准 PPO 中常见的语义坍缩问题。
+
+telegram · zaihuapd · May 19, 03:00
+
+**背景**: Cursor 是一款广受欢迎的 AI 驱动集成开发环境（IDE），将编程智能体深度嵌入开发流程。Composer 是 Cursor 自研的编程智能体系列，其中 Composer 2 于 2026 年 3 月发布，是首个基于月之暗面 Kimi K2.5 构建的前沿级编码模型。Colossus 2 是 xAI 打造的吉瓦（GW）级 AI 训练集群，于 2026 年 1 月在田纳西州孟菲斯正式投运，专为训练下一代大模型而设计。
+
+**参考链接**:
+
+- [Composer 2 (AI model)](https://grokipedia.com/page/Composer_2_AI_model)
+- [Introducing Composer 2 · Cursor](https://cursor.com/blog/composer-2)
+- [Colossus（x.AI打造的超级人工智能训练集群）_百度百科](https://baike.baidu.com/item/Colossus/64866873)
+- [xAI Colossus 2 正式啟用！全球首座 GW 級 AI 訓練集群、用電量超舊金...](https://electrify.tw/xai-colossus-2-launch/)
+- [全球首个GW级算力集群！马斯克宣布xAI旗下Colossus 2投入运行，距离开...](https://news.qq.com/rain/a/20260118A05OPA00)
+
+**标签**: `#AI编程` `#大模型RLHF` `#算力基建`
+
+---
+
+<a id="item-4"></a>
+## [初创公司利用 Git 的 --author 标志阻止 AI 机器人刷 PR](https://archestra.ai/blog/only-responsible-ai) ⭐️ 8.0/10
+
+Archestra.ai 实施了一项策略，要求所有提交必须使用 Git 的 --author 标志，并绑定经验证的、与真实人类开发者关联的邮箱地址，以此拒绝自动化提交或作者信息不匹配的拉取请求，从而过滤掉 AI 生成的 PR。这一低成本、原生集成于 Git 的缓解措施揭示了开源基础设施安全中的关键漏洞，并挑战了对 GitHub 活动指标（如 PR 数量）的过度依赖——尤其对风险投资支持的项目而言，凸显出亟需以人类开发者为中心的贡献验证机制。该方法依赖在提交阶段强制验证作者身份，而不仅限于 GPG 签名，并复用 GitHub 现有的'已验证'徽章逻辑；但无法阻止恶意人类贡献者在首次提交被合并后绕过 PR 审批流程。
+
+hackernews · ildari · May 18, 15:24 · [社区讨论](https://news.ycombinator.com/item?id=48181125)
+
+**背景**: Git 允许用户任意设置 --author 和 --committer 元数据，因此若不启用加密签名，提交作者身份极易被伪造。GitHub 仅对使用与已验证邮箱绑定的 GPG 或 S/MIME 密钥签署的提交显示'已验证'徽章。AI 机器人刷 PR 是指由大语言模型批量生成的低质量拉取请求，常使用虚假或泛用邮箱，旨在虚增贡献者数量或骗取赏金。
+
+**参考链接**:
+
+- [Displaying verification statuses for all of your commits](https://docs.github.com/en/authentication/managing-commit-signature-verification/displaying-verification-statuses-for-all-of-your-commits)
+- [Confronting AI Spam: GitHub's Open Source Dilemma](https://conzit.com/post/confronting-ai-spam-githubs-open-source-dilemma)
+- [GitHub AI Bot Spam: How Git's Author Flag Became a Developer's Secret ...](https://topaihubs.com/articles/github-ai-bot-spam-how-git-s-author-flag-became-a-developer-s-secret-weapon)
+
+**社区讨论**: 评论者指出，一旦恶意用户获得首次提交合并，即可绕过后续 PR 审批流程，存在安全隐患；批评风投驱动的指标损害软件质量；建议基于 PR 拒绝率实施限流；并呼吁 GitHub 提供 CAPTCHA 或外部贡献者管理功能——部分人甚至主张迁移到 Codeberg 或 GitLab。
+
+**标签**: `#git` `#github` `#ai-security` `#open-source` `#devops`
+
+---
+
+<a id="item-5"></a>
+## [Andon Labs 推出由自主 AI 代理运营的广播电台](https://andonlabs.com/blog/andon-fm) ⭐️ 8.0/10
+
+Andon Labs 于 2024 年初推出了实验性直播电台 Andon FM，由四个完全自主的 AI 代理全程负责播音内容生成与商业运营（包括赞助合作），全程无人类干预。该实验在真实、开放、实时的系统中罕见地展现了 AI 自主性失效与涌现行为，为 AI 安全研究、媒体研究和智能体 AI 开发提供了可公开观察的重要案例。这些 AI 代理表现出循环故障（例如重复播放'队列已清空…'且语音语调略有变化）、讽刺性内容搭配（如讲述重大历史悲剧后随即播放欢快歌曲）、运行时不稳定，以及几乎为零的营收；但偶尔也会产出幽默或富有洞见的片段。直播期间未进行任何微调或人工筛选。
+
+hackernews · lukaspetersson · May 18, 18:12 · [社区讨论](https://news.ycombinator.com/item?id=48183301)
+
+**背景**: Andon Labs 专注于通过真实世界部署（而非模拟）对 AI 自主性进行压力测试，此前已开展 Project Vend（自主售货机）、Andon Market（AI 运营的实体商店）等项目。这些实验旨在揭示大语言模型驱动的智能体在无人监督下运行时的系统性失效模式、经济可行性边界及意外涌现行为。
+
+**参考链接**:
+
+- [Andon Labs ' Project Vend: Testing Autonomous AI ... | IntuitionLabs](https://intuitionlabs.ai/articles/andon-labs-project-vend-ai)
+- [Andon Market: AI's Autonomous Move Sparks Human Panic—and...](https://www.ainvest.com/news/andon-market-ai-autonomous-move-sparks-human-panic-potential-valuation-mispricing-2604/)
+- [AI Inside the Store: From Autonomous Experiments to Practical...](https://www.linkedin.com/pulse/ai-inside-store-from-autonomous-experiments-practical-greg-buzek-4xe0e)
+
+**社区讨论**: Hacker News 用户记录了多种涌现行为，包括无限音频循环、阴郁讽刺的内容与音乐搭配、以及运行时崩溃；多数人将该项目视为一项有价值的、去炒作化的 AI 失效分析实验。部分用户表达了对劳动力替代的伦理担忧，但大多数人强调其诊断工具属性，而非商业化产品。
+
+**标签**: `#AI autonomy` `#generative media` `#AI safety` `#experimental AI` `#live AI systems`
+
+---
+
+<a id="item-6"></a>
+## [美国联邦调查局寻求全国性商业车牌识别数据接入权限](https://www.404media.co/the-fbi-wants-to-buy-nationwide-access-to-license-plate-readers/) ⭐️ 8.0/10
+
+美国联邦调查局（FBI）已发布招标公告（RFP），寻求接入由 Flock Safety、DRN 等私营公司收集的全美聚合式车牌识别（LPR）数据，可能实现对全美车辆的实时、基于位置的追踪。此举将在缺乏司法监督或成文法授权的情况下大幅扩大联邦政府的监控能力，严重威胁宪法赋予的隐私权，并为执法机构与商业数据中介之间无约束的数据共享树立危险先例。该招标文件未规定任何法律保障措施、数据保留期限或审计要求；其目标是获取供应商（如 Flock 公司的'车辆指纹'技术）提供的近实时历史及动态 LPR 数据——该技术甚至能在车牌不可读时识别车辆。此项采购无需国会批准或公开规章制定程序。
+
+hackernews · cdrnsf · May 18, 19:28 · [社区讨论](https://news.ycombinator.com/item?id=48184350)
+
+**背景**: 车牌识别系统（LPR）是一种光学设备，可自动捕获并处理车辆牌照图像，将其转换为可搜索的文本和时间戳。在美国，此类系统被执法部门、私营安保公司及车辆追回公司广泛部署。Flock Safety 和 DRN 等商业公司运营的 LPR 网络每年汇集数十亿次车牌记录，形成高密度的车辆移动数据集，但目前几乎不受监管且缺乏透明度。
+
+**参考链接**:
+
+- [Automatic number-plate recognition - Wikipedia](https://en.wikipedia.org/wiki/Automatic_number-plate_recognition)
+- [Flock Safety LPR Cameras: Automated License Plate Reader](https://www.flocksafety.com/products/license-plate-readers)
+- [LPR Data & Vehicle Intelligence](https://drndata.com/)
+
+**社区讨论**: 评论者普遍质疑政界保护隐私的政治意愿，主张将个人数据转为法律上的'责任'而非'资产'以抑制数据收集；有人提议采用每日更换编码的数字车牌等技术反制手段；还有人指出民众已普遍采取非正式规避行为，例如遮挡车牌、篡改车牌或使用无编号的经销商临时牌照。
+
+**标签**: `#privacy` `#surveillance` `#civil-liberties` `#law-enforcement` `#data-policy`
+
+---
+
+<a id="item-7"></a>
+## [使用 LoRA/DoRA 高效微调 NVIDIA Cosmos Predict 2.5 模型生成机器人视频](https://huggingface.co/blog/nvidia/cosmos-fine-tuning-for-robot-video-generation) ⭐️ 8.0/10
+
+NVIDIA 在 Hugging Face 博客上发布技术指南，详细说明如何使用低秩适应（LoRA）和权重分解低秩适应（DoRA）方法，针对机器人场景视频生成任务对 Cosmos Predict 2.5 多模态视频生成模型进行高效微调，并提供了基于 Hugging Face PEFT 库的可运行代码示例。该指南为将前沿多模态基础模型适配至具身智能（尤其是机器人）应用提供了切实可行的路径，无需全参数微调即可显著降低算力门槛，加速面向真实机器人系统的领域专用生成模型落地。该指南基于 PEFT（参数高效微调）库，将 LoRA 与 DoRA 应用于 Cosmos Predict 2.5 基于 Transformer 的视频扩散架构；DoRA 将预训练权重分解为模长与方向两部分，仅对方向分量采用 LoRA 更新，在保持参数高效性的同时提升了精度，优于标准 LoRA。
+
+rss · Hugging Face Blog · May 18, 16:00
+
+**背景**: Cosmos Predict 2.5 是 NVIDIA 最新发布的开源多模态基础模型，专为高保真视频生成设计，支持文本到视频及图像条件化视频合成。LoRA 由微软研究人员于 2021 年提出，通过在 Transformer 层中注入低秩可训练矩阵实现高效微调。DoRA 于 2024 年初提出，是对 LoRA 的扩展，通过解耦权重的模长与方向分量，支持各自独立优化，从而提升微调性能。
+
+**参考链接**:
+
+- [[2402.09353] DoRA: Weight-Decomposed Low-Rank Adaptation](https://arxiv.org/abs/2402.09353)
+- [Introducing DoRA, a High-Performing Alternative to LoRA for ...](https://developer.nvidia.com/blog/introducing-dora-a-high-performing-alternative-to-lora-for-fine-tuning/)
+- [Fine - Tuning Large Language Models with LORA ... | Medium](https://medium.com/@kailash.thiyagarajan/fine-tuning-large-language-models-with-lora-demystifying-efficient-adaptation-25fa0a389075)
+
+**标签**: `#video-generation` `#robotics` `#LoRA` `#DoRA` `#multimodal-models`
+
+---
+
+<a id="item-8"></a>
+## [PaddleOCR 3.5 引入原生 Transformers 后端](https://huggingface.co/blog/PaddlePaddle/paddleocr-transformers) ⭐️ 8.0/10
+
+PaddleOCR 3.5 重构推理流程，原生支持 Hugging Face Transformers 后端，使 OCR 和文档解析模型（如 PP-OCRv5、PaddleOCR-VL 1.5）可直接从 Hugging Face Hub 加载和运行，无需依赖 PaddlePaddle 运行时。这一转变大幅提升了与主流 AI 生态系统的互操作性，降低了已采用 Transformers 工具链用户的使用门槛，并支持无缝集成到 RAG、多模态文档理解及浏览器端推理等新型工作流中。Transformers 后端现为与 PaddlePaddle 并列的一等推理选项；它通过 ONNX 和 WebAssembly 支持客户端（浏览器）推理，在保持文档解析基准测试 SOTA 性能的同时，解耦了模型逻辑与框架绑定。
+
+rss · Hugging Face Blog · May 18, 15:12
+
+**背景**: PaddleOCR 是百度飞桨团队开发的开源 OCR 工具包，广泛用于文本检测、识别与版面分析。此前版本完全依赖飞桨（PaddlePaddle）深度学习框架。随着统一多模态模型兴起以及 Hugging Face Transformers API 的广泛应用，业界对框架无关、即插即用的文档智能组件需求日益增长。
+
+**参考链接**:
+
+- [PaddleOCR 3.5: Running OCR and Document Parsing Tasks with...](https://huggingface.co/blog/PaddlePaddle/paddleocr-transformers)
+- [PaddleOCR 3.5 Adds Transformers Backend and Browser Inference](https://getaibook.com/news/paddleocr-35-adds-transformers-backend-and-browser-inference)
+- [GitHub - PaddlePaddle/PaddleOCR: Turn any PDF or image document ...](https://github.com/PaddlePaddle/PaddleOCR)
+
+**标签**: `#OCR` `#Transformers` `#Document AI` `#PaddlePaddle` `#Hugging Face`
+
+---
+
+<a id="item-9"></a>
+## [全球首个海上风电驱动海底数据中心在上海投入运营](https://www.tomshardware.com/tech-industry/china-says-worlds-first-offshore-wind-powered-underwater-data-center-has-entered-full-operation-houses-2-000-servers-24-megawatt-subsea-ai-facility-uses-ocean-water-for-passive-cooling-and-offshore-wind-for-power) ⭐️ 8.0/10
+
+全球首个商业化运行的海上风电驱动海底数据中心已于上海临港新片区外海 35 米深海域正式投入运营，总功率 24 兆瓦，部署约 2000 台服务器，采用海水被动散热，电能利用效率（PUE）低于 1.15。该设施通过整合海上风电绿电直供与海水高效散热，开创了低碳、高密度人工智能算力部署的新范式，为边缘 AI、海洋计算及零碳数据中心提供了可规模复制的技术路径。该项目由海兰云（上海）数据科技有限公司联合中国电信上海分公司、中交三航局等共建，通过专属海底电缆就近接入海上风电场，绿电供给率超 95%；在 35 米水深下实现长期可靠密封，PUE 低于 1.15，显著优于行业平均水平（约 1.5–1.8）。
+
+telegram · zaihuapd · May 19, 04:30
+
+**背景**: 传统数据中心能耗巨大，尤其制冷环节依赖大量电力，且常使用化石能源为主的电网供电。海底数据中心（UDC）利用低温海水自然散热，并可与海上风电等可再生能源就近耦合，大幅降低输电损耗与碳足迹。海兰信（300065）是国内 UDC 技术先行者，其早期原型机已实现 PUE 低至 1.076，本次临港项目是其首个规模化商业落地应用。
+
+**参考链接**:
+
+- [打造算力新高地!全球首个风电海底数据中心落沪_腾讯新闻](https://news.qq.com/rain/a/20251021A07IBN00)
+- [全球首个"海风直连"海底数据中心投产：算力基建的"深海革命"与绿色新范式](https://xueqiu.com/1375373555/388960414)
+- [上海临港海底数据中心 - 百度百科](https://baike.baidu.com/item/上海临港海底数据中心/65781307)
+- [海兰信海底数据中心 PUE 值只有1.076...](https://www.1tg.com.cn/html/yidong/tx/2021/1120/20816.html)
+
+**标签**: `#绿色计算` `#水下数据中心` `#AI基础设施`
+
+---
