@@ -27,7 +27,8 @@ export function useHorizontalScroll(
             start: 'top top',
             end: () => `+=${Math.abs(getScrollAmount())}`,
             pin: true,
-            scrub: 1,
+            scrub: 1.5,
+            anticipatePin: 1,
             invalidateOnRefresh: true,
           },
         });

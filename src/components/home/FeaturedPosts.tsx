@@ -36,10 +36,10 @@ export function FeaturedPosts() {
       <div className="flex items-center justify-between mb-12">
         <div>
           <h2 className="font-display text-4xl md:text-5xl font-black mb-3 text-text-primary">
-            Latest Articles
+            Editor&apos;s Picks
           </h2>
           <p className="text-text-secondary text-lg">
-            Thoughts, tutorials, and insights from my journey
+            Long-form deep dives I&apos;m proudest of
           </p>
         </div>
         <Link

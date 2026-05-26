@@ -4,7 +4,7 @@ import { GeistMono } from 'geist/font/mono';
 import localFont from 'next/font/local';
 import { ThemeProvider } from '@/components/providers/ThemeProvider';
 import { GSAPProvider } from '@/components/providers/GSAPProvider';
-import { CursorTrail } from '@/components/ui/CursorTrail';
+import { CursorTrailMount } from '@/components/ui/CursorTrailMount';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import './globals.css';
@@ -57,13 +57,12 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${GeistSans.variable} ${GeistMono.variable} ${clashDisplay.variable}`}
-      data-scroll-behavior="smooth"
       suppressHydrationWarning
     >
       <body className="font-sans" suppressHydrationWarning>
         <ThemeProvider>
           <GSAPProvider>
-            <CursorTrail />
+            <CursorTrailMount />
             <div className="flex min-h-screen flex-col">
               <Header />
               <main className="flex-1">{children}</main>

@@ -1,0 +1,87 @@
+/* HorizontalFeatures cards
+   关键点:
+   - 用 CSS hover 而不是 React inline onMouseEnter 写 style:
+     避免 React 跨越 commit 路径触发 style 更新。
+   - hover 时只 animate `transform`(GPU 合成),`box-shadow` 走 opacity 切换的伪元素,
+     比直接 transition box-shadow 便宜得多。
+*/
+
+.card {
+  position: relative;
+  flex-shrink: 0;
+  width: 340px;
+  min-height: 240px;
+  border-radius: 16px;
+  background: var(--background);
+  border: 1px solid var(--border);
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-decoration: none;
+  isolation: isolate;
+  transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+}
+
+/* 阴影放在伪元素上,通过 opacity 过渡 — 远比 transition box-shadow 便宜 */
+.card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transition: opacity 200ms ease;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+}
+
+.card:hover::after {
+  opacity: 1;
+}
+
+.eyebrow {
+  font-family: var(--font-geist-mono);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.desc {
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif;
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.read {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-top: 16px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card::after {
+    transition: none;
+  }
+  .card:hover {
+    transform: none;
+  }
+}

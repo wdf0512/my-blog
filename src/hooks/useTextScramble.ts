@@ -24,20 +24,21 @@ export function useTextScramble(
     const run = () => {
       cancelAnimationFrame(rafId);
       let frame = 0;
+      // Pre-allocated buffer; avoids per-frame O(n²) string concatenation.
+      const buf = new Array<string>(original.length);
 
       const tick = () => {
-        let out = '';
         const resolved = (frame / totalFrames) * original.length;
         for (let i = 0; i < original.length; i++) {
           if (i < resolved) {
-            out += original[i];
+            buf[i] = original[i];
           } else if (original[i] === ' ') {
-            out += ' ';
+            buf[i] = ' ';
           } else {
-            out += CHARS[Math.floor(Math.random() * CHARS.length)];
+            buf[i] = CHARS[Math.floor(Math.random() * CHARS.length)];
           }
         }
-        el.textContent = out;
+        el.textContent = buf.join('');
         frame++;
         if (frame <= totalFrames) {
           rafId = requestAnimationFrame(tick);

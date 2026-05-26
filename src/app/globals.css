@@ -57,9 +57,10 @@
   margin: 0;
 }
 
-html {
-  scroll-behavior: smooth;
-}
+/* 不再设置 html { scroll-behavior: smooth }:它会和 GSAP ScrollTrigger pin
+   (HorizontalFeatures / 飞机 motionPath)冲突,导致 scrub 动画在原生平滑
+   滚动期间被反复重算,产生明显吞顿。仅在用户没有强制要求降低动画时
+   通过 JS / 按钮触发平滑滚动。 */
 
 html,
 body {
@@ -262,6 +263,30 @@ a:hover {
 [data-custom-cursor] * {
   cursor: none !important;
 }
+
+/* ─── ASCII banana (Character.tsx) ──────────────────────────────────────
+   每个字符只在三种 class 之间切换,浏览器可以批量样式计算,
+   不需要每帧 parse innerHTML / 重新计算 inline style。
+*/
+.banana-pre {
+  color: #F2C94C;
+  /* 把全局发光放到 GPU layer,避免每次字符变化都触发 filter 重新合成 */
+  text-shadow: 0 0 12px rgba(242, 201, 76, 0.32);
+  will-change: contents;
+  contain: layout paint;
+}
+.banana-pre .banana-dim {
+  color: #F2C94C;
+}
+.banana-pre .banana-glow {
+  color: #FDE68A;
+  text-shadow: 0 0 6px #F2C94C;
+}
+.banana-pre .banana-core {
+  color: #FFFFFF;
+  text-shadow: 0 0 10px #FFFFFF, 0 0 20px #F2C94C;
+}
+
 /* ─── Digest pages — Maximalist editorial utilities ──────────────────────── */
 
 /* Paper grain — subtle SVG noise overlay, mixed via multiply for ink-spec look */

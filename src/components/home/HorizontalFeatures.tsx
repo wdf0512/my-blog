@@ -6,6 +6,7 @@ import { ArrowRight } from 'lucide-react';
 import { posts } from '#/.velite';
 import { useHorizontalScroll } from '@/hooks/useHorizontalScroll';
 import { ScrambleText } from '@/components/ui/ScrambleText';
+import styles from './HorizontalFeatures.module.css';
 
 const FONT =
   "-apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Helvetica Neue', Arial, sans-serif";
@@ -49,7 +50,6 @@ export function HorizontalFeatures() {
         </p>
       </div>
 
-      {/* Horizontal track */}
       <div
         ref={trackRef}
         style={{
@@ -59,6 +59,8 @@ export function HorizontalFeatures() {
           paddingRight: '4rem',
           paddingBottom: '3rem',
           width: 'max-content',
+          willChange: 'transform',
+          transform: 'translateZ(0)',
         }}
       >
         {featuredPosts.map((post) => {
@@ -70,42 +72,10 @@ export function HorizontalFeatures() {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              style={{
-                flexShrink: 0,
-                width: 340,
-                minHeight: 240,
-                borderRadius: 16,
-                background: 'var(--background)',
-                border: '1px solid var(--border)',
-                padding: '24px',
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'space-between',
-                textDecoration: 'none',
-                transition: 'box-shadow 200ms ease, transform 200ms ease',
-              }}
-              onMouseEnter={(e) => {
-                (e.currentTarget as HTMLElement).style.boxShadow =
-                  '0 8px 24px rgba(0,0,0,0.1)';
-                (e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)';
-              }}
-              onMouseLeave={(e) => {
-                (e.currentTarget as HTMLElement).style.boxShadow = 'none';
-                (e.currentTarget as HTMLElement).style.transform = 'translateY(0)';
-              }}
+              className={styles.card}
             >
               <div>
-                <p
-                  style={{
-                    fontFamily: 'var(--font-geist-mono)',
-                    fontSize: 9,
-                    fontWeight: 700,
-                    letterSpacing: '0.14em',
-                    textTransform: 'uppercase',
-                    color: 'var(--primary)',
-                    marginBottom: 10,
-                  }}
-                >
+                <p className={styles.eyebrow}>
                   {date} · {post.readingTime}
                 </p>
                 <h3
@@ -116,32 +86,9 @@ export function HorizontalFeatures() {
                 </h3>
               </div>
               {post.description && (
-                <p
-                  style={{
-                    fontFamily: FONT,
-                    fontSize: 13,
-                    color: 'var(--text-secondary)',
-                    lineHeight: 1.7,
-                    display: '-webkit-box',
-                    WebkitLineClamp: 3,
-                    WebkitBoxOrient: 'vertical',
-                    overflow: 'hidden',
-                  }}
-                >
-                  {post.description}
-                </p>
+                <p className={styles.desc}>{post.description}</p>
               )}
-              <div
-                style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  gap: 6,
-                  marginTop: 16,
-                  fontSize: 12,
-                  fontWeight: 600,
-                  color: 'var(--primary)',
-                }}
-              >
+              <div className={styles.read}>
                 Read article <ArrowRight size={12} />
               </div>
             </Link>
