@@ -2,121 +2,107 @@
 title: "AI 技术情报 · 2026-05-26"
 slug: horizon-2026-05-26
 date: 2026-05-26
-lang: zh
-issue_id: 2026-05-26
 published: true
-description: "从 33 条内容中精选 5 条 AI/ML 重要动态"
-item_count: 5
-total_fetched: 33
-cover_image: /digests/cover-2026-05-26.png
+description: "从 35 条内容中精选 4 条 AI/ML 重要动态"
+item_count: 4
+total_fetched: 35
 ---
 
-> From 33 items, 5 important content pieces were selected
+> From 35 items, 4 important content pieces were selected
 
 ---
 
-1. [教宗良十四世通谕《Magnifica Humanitas》为 AI 伦理提供框架](#item-1) ⭐️ 9.0/10
-2. [APKPure 上的 Telegram 官方版被植入间谍后门](#item-2) ⭐️ 9.0/10
-3. [加州拟豁免 Linux 遵守年龄验证法规 此前遭广泛反对](#item-3) ⭐️ 8.0/10
-4. [Armin Ronacher 批评 LLM 改写的缺陷报告，呼吁简洁的人工汇报](#item-4) ⭐️ 8.0/10
-5. [Google Docs 推出 Live 功能：语音对话生成文档](#item-5) ⭐️ 8.0/10
+1. [使用 AI 慢工出细活地编写更优质代码](#item-1) ⭐️ 8.0/10
+2. [挪威用 2PB 华为闪存和 HPE Cray 训练主权大语言模型](#item-2) ⭐️ 8.0/10
+3. [Armin Ronacher 抨击 AI “slop”问题，要求回归简洁的人工报告](#item-3) ⭐️ 8.0/10
+4. [华为发表“韬定律”：以时间缩微替代几何缩微，探索半导体新路径](#item-4) ⭐️ 8.0/10
 
 ---
 
 <a id="item-1"></a>
-## [教宗良十四世通谕《Magnifica Humanitas》为 AI 伦理提供框架](https://www.vatican.va/content/leo-xiv/en/encyclicals/documents/20260515-magnifica-humanitas.html) ⭐️ 9.0/10
+## [使用 AI 慢工出细活地编写更优质代码](https://nolanlawson.com/2026/05/25/using-ai-to-write-better-code-more-slowly/) ⭐️ 8.0/10
 
-教宗良十四世发布了题为《Magnifica Humanitas》的通谕，为人工智能提供了一个深刻的伦理框架，在技术界和哲学界引发了广泛讨论。 这标志着宗教高层罕见地介入 AI 治理，提供了可能影响技术发展与监管的道德原则，为通常由硅谷主导的讨论带来了缺失的声音。 该通谕被誉为极其深思熟虑的审查框架；一位社区成员创建了 encyclical.ai 网站，帮助团队将其用作评估 AI 项目的评分标准。
+文章提出了一种慎重的多模型 AI 工作流：开发者分别使用不同的大语言模型（如 Claude 进行设计，GPT-5.5 进行审查）来迭代设计、实现和评审，以追求更高的代码质量，而非仅仅追求速度。 该方法挑战了“AI 编码只能快速产出低质量代码”的看法，展示了通过精心编排，大语言模型可以成为严谨的工程合作伙伴，从而可能以更可持续的方式提升软件可靠性和开发者生产力。 描述的工作流使用 Claude 4.7 Max 进行实现，Codex GPT-5.5 xhigh fast 用于快速发现边界情况，然后反复修复。评审循环有时耗时甚至超过手工编写，但最终代码质量显著更高。
 
-hackernews · theletterf · May 25, 10:11 · [社区讨论](https://news.ycombinator.com/item?id=48265206)
+hackernews · signa11 · May 25, 23:16 · [社区讨论](https://news.ycombinator.com/item?id=48272984)
 
-**背景**: 通谕是教宗就教义或道德问题向全球教会发布的正式信函。前任教宗方济各曾警告技术可能导致权力集中，这份文件延续了梵蒂冈对当代社会变革的关注与参与。
+**背景**: 大语言模型（LLM）正越来越多地用于代码审查，以检测错误并提出改进建议。迭代式 AI 开发是一种新范式，开发者与 AI 助手反复交流，通过多个循环逐步优化产出。这种多模型技术利用不同模型的各自优势，模拟全面的人工审查过程。
 
-**社区讨论**: 评论者普遍赞赏该框架的深度，并指出一位宗教领袖理解 AI 即将带来的社会剧变意义重大。一些人探讨了历史上技术能否真正为公共利益所驯服，另一些人则认同教宗对科技权力集中的关切。
 
-**标签**: `#AI ethics`, `#technology and society`, `#spirituality`, `#papal encyclical`, `#AI review`
+**参考链接**:
+
+- [Large Language Models for Code Review](https://grokipedia.com/page/Large_Language_Models_for_Code_Review)
+- [LLMs as Code Review Agents: A Rapid Review and Experimental ... - Springer](https://link.springer.com/chapter/10.1007/978-3-032-09318-9_24)
+- [The New AI Iterative Development Paradigm (and Why AI == IA)](https://www.linkedin.com/pulse/new-ai-iterative-development-paradigm-why-ia-darren-broemmer)
+
+
+**社区讨论**: 社区普遍认可多模型方法。一位评论者详细描述了使用 Claude 进行设计/实现、Codex 进行审查的流程，并指出 Claude 在修复错误上更胜一筹。其他人则认为大多数开发者并非以低质量为目标，AI 常常能产出高质量代码。少数人指出这种方法有时比手工编码更耗时，但都认同审查循环能带来更好的结果。一些人认为多模型相互评审令人信服，且不太可能导致人类技能退化。
+
+**标签**: `#AI-assisted coding`, `#code quality`, `#software engineering`, `#LLM code review`, `#developer tools`
 
 ---
 
 <a id="item-2"></a>
-## [APKPure 上的 Telegram 官方版被植入间谍后门](https://x.com/EricParker/status/2058411298195661221) ⭐️ 9.0/10
+## [挪威用 2PB 华为闪存和 HPE Cray 训练主权大语言模型](https://www.blocksandfiles.com/flash/2026/05/22/norways-2-petabytes-of-huawei-flash-storage-and-llm-training/5244910) ⭐️ 8.0/10
 
-从 APKPure 下载的 Telegram 12.6.5 版本遭重新签名打包，被注入名为 DataCollector 的间谍框架（恶意文件为 classes3.dex，代码超过 3000 行），可窃取聊天记录、通讯录、照片、位置等敏感数据，并通过 AES-GCM 加密后发送至 C2 服务器 38.190.225.166。 该事件凸显了非官方第三方应用商店的巨大风险，看似官方的版本也可能被植入先进间谍软件。这对移动生态系统的所有参与方——尤其是用户和开发者——构成了严重的供应链攻击警示。 恶意 DEX 文件 classes3.dex 实现了 DataCollector 间谍框架，拥有 3000 多行代码；窃取的数据使用 AES-GCM 加密后传送到硬编码的 C2 服务器 IP 38.190.225.166。攻击者通过重新签名 APK（使用不同证书）来绕过可能的签名验证。
+挪威国家图书馆正在使用 2PB 华为闪存和一台配备 448 块 GPU、64512 个 CPU 核心的 HPE Cray 超级计算机（Olivia 系统），训练一个主权挪威语大语言模型，这一消息在 2026 年巴黎华为 ID 论坛上公布。 该计划突显了全球对主权 AI 的追求，以确保语言和文化代表性，引发了关于从头训练模型与微调现有模型必要性的争论，并引发了依赖华为硬件的地缘政治问题。 该图书馆的 HPE Cray 'Olivia'超级计算机配备 448 块 GPU 和 64512 个 CPU 核心，一些专家认为这不足以训练完整规模的大语言模型，引发了对项目可行性的怀疑；图书馆 IT 负责人辩称没有商业供应商开发挪威语大模型，因此必须自行构建。
 
-telegram · zaihuapd · May 24, 11:38
+hackernews · rbanffy · May 25, 19:37 · [社区讨论](https://news.ycombinator.com/item?id=48270770)
 
-**背景**: APKPure 是一个流行的第三方安卓 APK 下载网站，提供 Google Play 之外的应用获取途径。与官方商店不同，此类平台上的 APK 文件未经过安全审查，任何人都可以修改并重新签名后分发。Telegram 是一款广泛使用的加密即时通讯应用，其官方版本通常通过 Google Play 或官网发布。DataCollector 是一个此前未公开的针对安卓设备的间谍框架，其注入行为利用了用户对第三方应用仓库的信任。
+**背景**: 主权 AI 倡议旨在构建国家 AI 基础设施，以确保数据主权和文化包容性，英国设立的 5 亿英镑主权 AI 基金便是一例。从头训练大语言模型需要大规模并行计算和高速存储；HPE Cray 超级计算机（如 Olivia 系统）正是为此类工作负载设计，而像华为闪存这样的高性能存储则能缓解数据瓶颈。挪威国家图书馆拥有完整的挪威语文本数字化馆藏，是语言保护的关键机构。
 
 
 **参考链接**:
 
-- [APKPure](https://grokipedia.com/page/APKPure)
-- [APKPure: Download APK on Android with Free APK Downloader](https://apkpure.com/)
+- [Sovereign AI Fund](https://en.wikipedia.org/wiki/Sovereign_AI_Fund)
+- [Sovereign AI](https://grokipedia.com/page/Sovereign_AI)
+- [Cray - Wikipedia](https://en.wikipedia.org/wiki/Cray)
 
 
-**标签**: `#移动安全`, `#恶意软件分析`, `#供应链攻击`, `#Telegram`, `#间谍软件`
+**社区讨论**: 评论者意见不一：有人赞扬该图书馆出色的文本搜索界面，并支持训练主权挪威语大模型的必要性；其他人则质疑该项目的可行性，认为 448 块 GPU 的配置过于薄弱，微调现有模型可能更具成本效益。关于全球模型缺乏本地语言知识的说法也遭到反驳，有人指出主流供应商已使用多语言数据进行训练。
+
+**标签**: `#sovereign-ai`, `#llm-training`, `#storage-infrastructure`, `#national-library`, `#norwegian-language`
 
 ---
 
 <a id="item-3"></a>
-## [加州拟豁免 Linux 遵守年龄验证法规 此前遭广泛反对](https://www.tomshardware.com/software/linux/california-moves-to-exempt-linux-from-its-upcoming-age-verification-law-after-backlash-over-forcing-operating-systems-to-collect-users-ages-amendment-proposed-by-the-same-lawmaker-who-wrote-the-original-law) ⭐️ 8.0/10
+## [Armin Ronacher 抨击 AI “slop”问题，要求回归简洁的人工报告](https://simonwillison.net/2026/May/24/armin-ronacher/#atom-everything) ⭐️ 8.0/10
 
-加州最初撰写年龄验证法的议员本人提出修正案，在科技界和隐私倡导者的广泛批评下，豁免 Linux 操作系统需要收集和验证用户年龄的要求。 此次豁免承认了 Linux 及开源项目独特的分散性，表明强制在操作系统层面进行年龄验证对社区驱动的系统来说不切实际，可能为过于宽泛的法规开创先例。同时也凸显了儿童安全法规与开放互联网基础设施之间日益紧张的矛盾。 许多 Linux 发行版和开源操作系统此前已选择不实施年龄验证，部分项目在受影响的地区限制访问。该法规文本极其宽泛，理论上可适用于任何带有操作系统的设备，包括计算器和智能手表。
+Flask 的创建者 Armin Ronacher 批评 AI 生成的问题报告冗长、不准确且自信过度，并倡导开发者提交精简的人工观察缺陷报告，给出了一个四步模板。 这一批评指出了开源社区日益严重的问题：AI 生成的“slop”问题浪费维护者时间，削弱信任。作为知名开发者，Ronacher 的呼吁可能影响社区规范和工具，鼓励更有价值的人工贡献。 Ronacher 详细描述了 AI 改写后如何产生充满信心的不准确结论，包括虚假的最小复现、错误根因猜测。他提出的格式：说明运行的命令、预期与实际结果、准确错误或日志。
 
-hackernews · rbanffy · May 25, 18:19 · [社区讨论](https://news.ycombinator.com/item?id=48269961)
+rss · Simon Willison · May 24, 18:46
 
-**背景**: 2022 年签署的《加州适龄设计规范法案》（CAADCA）旨在要求企业估算用户年龄，并为未成年人默认应用隐私保护。近来，美国多个州提议或通过了将年龄验证义务扩展到操作系统层面的法律，促使 Linux 发行版等开源项目考虑如何合规。此次 Linux 豁免修正案是对社区开发软件难以承担此类要求的直接回应。
+**背景**: Armin Ronacher 是 Flask 框架和 Pi 包安装器的创建者，在开源社区中有影响力。“Clanker” 是对 AI 的贬义俚语，源自《星球大战》中的战斗机器人，用于批评 AI 输出。“Slop” 指低质量、垃圾般的 AI 内容。
 
 
 **参考链接**:
 
-- [Age Verification Laws Are Coming for Your OS. Here's ... - PCMag](https://www.pcmag.com/explainers/age-verification-laws-are-coming-for-your-os-heres-what-you-need-to-know)
-- [How Linux and BSD Distros Are Responding to the New Age ...](https://itsfoss.com/news/distros-response-age-verification-laws/)
-- [The California Age-Appropriate Design Code Act Ninth Circuit Issues Mixed Ruling on California Age ... Attorney General Bonta Continues Defense of California’s Age ... California The California Age-Appropriate Design Code Act ... California Civil Code section 1798.99.28 (2025) U.S.: The Ninth Circuit’s Latest CAADCA Ruling: Navigating an ...](https://calawyers.org/privacy-law/the-california-age-appropriate-design-code-act/)
+- [Clanker - Wikipedia](https://en.wikipedia.org/wiki/Clanker)
+- [What is a Clanker and why are people on social media using it as an anti-AI slang? | Euronews](https://www.euronews.com/next/2025/09/02/what-is-a-clanker-and-why-are-people-on-social-media-using-it-as-an-anti-ai-slang)
 
 
-**社区讨论**: 社区整体持怀疑和批评态度。许多评论者认为该法规过于宽泛且技术上不切实际，建议在浏览器层面实施家长控制。也有人担忧这次豁免只是权宜之计，加州日后可能试图将该要求重新强加给 Linux。
-
-**标签**: `#age-verification`, `#Linux`, `#regulation`, `#privacy`, `#software-law`
+**标签**: `#open-source`, `#software-development`, `#ai`, `#debugging`, `#bug-reports`
 
 ---
 
 <a id="item-4"></a>
-## [Armin Ronacher 批评 LLM 改写的缺陷报告，呼吁简洁的人工汇报](https://simonwillison.net/2026/May/24/armin-ronacher/#atom-everything) ⭐️ 8.0/10
+## [华为发表“韬定律”：以时间缩微替代几何缩微，探索半导体新路径](https://www.peopleapp.com/column/30052220655-500007509895) ⭐️ 8.0/10
 
-Armin Ronacher 公开表达了对用户提交经 LLM 改写后缺陷报告这一趋势的不满，这些报告常扭曲实际观察到的问题，并得出错误但听起来自信的结论。他倡导回归简洁的人工汇报，结构为：执行的命令、预期结果、实际结果、以及确切的错误或日志。 这突显了开源维护者面临的一个严重摩擦点——他们有限的时间被问题追踪器中 AI 生成的‘垃圾’所消耗，降低缺陷报告质量并最终损害项目健康。Ronacher 的呼吁是直接向开发者发出的信号，要求保持沟通中的人类清晰度。 Ronacher 将 AI 工具贬称为‘clanker’（对 AI 的蔑称），并指出改写后的报告虽‘永远充满自信’，却包含对根本原因的猜测、虚假的最小复现示例或无关的错误清单。他要求报告仅限四个直接观察要点。
+在 2026 年国际电路与系统研讨会（ISCAS）上，华为董事、半导体业务部总裁何庭波正式提出“韬（τ）定律”，以“时间缩微”替代传统“几何缩微”，通过系统性降低时间常数实现从器件到系统的多层级协同优化。基于该定律，华为六年内已设计量产 381 款芯片，今年秋季将推出采用“逻辑折叠”技术的新麒麟手机芯片。 这是中国首次在全球半导体领域提出指导产业发展的原创原则，为挑战摩尔定律物理极限提供了全新范式。它不仅标志着华为从依赖先进制程转向系统级创新，更有望影响全球芯片设计思路，为人工智能等爆发式算力需求提供可持续的演进方案。 该定律以降低信号传播时延为核心，采用逻辑折叠等创新技术，通过多层协同优化，目标到 2031 年使高端芯片晶体管密度达到 1.4 纳米制程同等水平。目前公开的具体技术细节较少，但核心是持续压缩系统时间常数（τ），提升等效晶体管密度。
 
-rss · Simon Willison · May 24, 18:46
+telegram · zaihuapd · May 25, 01:35
 
-**背景**: Armin Ronacher 是 Flask、Jinja2 的创建者，知名开源维护者；博文提及的是针对其新项目 Pi 提交的问题。‘clanker’是对 AI 或机器人的贬义俚语，反映对产出的轻视。软件开发中，缺陷报告的‘最小可复现示例’（MRE）原则广为人知，Ronacher 要求的格式正是回归原始人工观察，与该原则一脉相承。
-
-
-**参考链接**:
-
-- [CLANKER Slang Meaning | Merriam-Webster](https://www.merriam-webster.com/slang/clanker)
-- [Creating a Minimum Reproducible Example for Bug Reports](https://docs.ultralytics.com/help/minimum-reproducible-example/)
-
-
-**标签**: `#open-source`, `#ai`, `#llms`, `#issue-tracking`, `#software-maintenance`
-
----
-
-<a id="item-5"></a>
-## [Google Docs 推出 Live 功能：语音对话生成文档](https://www.wsj.com/tech/personal-tech/google-docs-live-test-e4473e07) ⭐️ 8.0/10
-
-Google 推出 Docs Live 功能，通过 Gemini AI 将语音口述转化为结构化文档草稿，并能调用 Google Drive 中的文件或搜索网络信息来充实内容。 该功能通过语音头脑风暴降低了文档创作门槛，有效缓解“白纸焦虑”，标志着 AI 进一步融入日常生产力工具。 该功能首先面向 iOS 和 Android 端的付费 AI 订阅用户开放，后续将扩展至网页端和更多用户；根据 Google Workspace 隐私政策，输入数据不会用于模型训练。
-
-telegram · zaihuapd · May 24, 09:39
-
-**背景**: Gemini 是 Google 的多模态大语言模型系列，于 2024 年初取代了 Bard 聊天机器人和 Duet AI，并整合进 Google Workspace。它能同时处理文本、音频、代码和图像，为 Docs Live 的语音转文档功能提供了底层技术支持。
+**背景**: 摩尔定律长期依赖几何缩微（不断缩小晶体管尺寸）来提升芯片集成度，现已迫近物理极限且成本高昂。时间缩微则另辟蹊径，通过架构与电路创新压缩信号延迟、提升等效密度，不再单纯追求更小制程。在 AI 大模型和自动驾驶等算力需求指数级攀升、先进制程获取受限的背景下，这一新思路对半导体行业意义重大。
 
 
 **参考链接**:
 
-- [Gemini AI](https://en.wikipedia.org/wiki/Gemini_AI)
+- [心智观察所| 芯片发展的中国方案：华为提出的“韬定律”到底是什么？](https://www.guancha.cn/xinzhiguanchasuo/2026_05_25_818270.shtml)
+- [华为发布"韬定律"半导体新理论 提出以时间缩微替代几何缩微](https://www.huxiu.com/article/4861142.html)
+- [华为“韬(τ)定律”论文全文！ - 半导体/EDA - -EETOP-创芯网](https://www.eetop.cn/semi/6965611.html)
 
 
-**标签**: `#AI工具`, `#语音转文本`, `#Google Workspace`, `#生产力`
+**标签**: `#半导体`, `#芯片设计`, `#摩尔定律`
 
 ---
 
