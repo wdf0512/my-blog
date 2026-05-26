@@ -35,6 +35,7 @@ const DATES: Spec[] = [
   '2026-05-23',
   '2026-05-24',
   '2026-05-25',
+  '2026-05-26',
 ].map((d) => ({ date: d }));
 
 type ArchetypeFn = () => string;
@@ -151,7 +152,7 @@ async function buildSvg(spec: Spec, grainDataUrl: string): Promise<string> {
 }
 
 async function main() {
-  const projectRoot = join(import.meta.dir, '..');
+  const projectRoot = join(import.meta.dirname ?? process.cwd(), '..');
   const grainPath = join(projectRoot, 'public/textures/paper-grain.svg');
   const grainBuf = await fs.readFile(grainPath);
   const grainDataUrl = `data:image/svg+xml;base64,${grainBuf.toString('base64')}`;
