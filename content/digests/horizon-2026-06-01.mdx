@@ -3,63 +3,169 @@ title: "AI 技术情报 · 2026-06-01"
 slug: horizon-2026-06-01
 date: 2026-06-01
 published: true
-description: "从 39 条内容中精选 2 条 AI/ML 重要动态"
-item_count: 2
-total_fetched: 39
+description: "从 44 条内容中精选 7 条 AI/ML 重要动态"
+item_count: 7
+total_fetched: 44
 ---
 
-> From 39 items, 2 important content pieces were selected
+> From 44 items, 7 important content pieces were selected
 
 ---
 
-1. [Cloudflare Turnstile 强制使用 WebGL 以进行浏览器指纹识别](#item-1) ⭐️ 8.0/10
-2. [Dav2d 开源 AV2 解码器发布，面临重大性能挑战](#item-2) ⭐️ 8.0/10
+1. [NVIDIA Cosmos 3：首个面向物理 AI 推理与行动的开源全模态模型](#item-1) ⭐️ 9.0/10
+2. [MiniMax 发布 M3：100 万 Token 上下文、原生多模态、编程领先开源模型](#item-2) ⭐️ 9.0/10
+3. [Cloudflare Turnstile 使用 WebGL 指纹，引发隐私担忧](#item-3) ⭐️ 8.0/10
+4. [ChatGPT for Sheets 数据外泄漏洞迫使 OpenAI 禁用脚本生成](#item-4) ⭐️ 8.0/10
+5. [VideoLAN 发布开源 AV2 解码器 dav2d](#item-5) ⭐️ 8.0/10
+6. [Meta 为 Instagram、Facebook 和 WhatsApp 推出订阅服务](#item-6) ⭐️ 8.0/10
+7. [重启序列：Linux 上的无锁临界区机制](#item-7) ⭐️ 8.0/10
 
 ---
 
 <a id="item-1"></a>
-## [Cloudflare Turnstile 强制使用 WebGL 以进行浏览器指纹识别](https://hacktivis.me/articles/cloudflare-turnstile-webgl-fingerprinting) ⭐️ 8.0/10
+## [NVIDIA Cosmos 3：首个面向物理 AI 推理与行动的开源全模态模型](https://huggingface.co/blog/nvidia/cosmos-3-for-physical-ai) ⭐️ 9.0/10
 
-Cloudflare 的 Turnstile 验证码替代方案现强制要求启用 WebGL。这使得该服务能够采集 GPU 与图形渲染信息，用于浏览器指纹识别。 这一做法削弱了隐私保护，使 Cloudflare 能够在无 Cookie 的情况下追踪用户，加剧反追踪难度，并可能将不支持或伪装 WebGL 的浏览器拒之门外。 WebGL 指纹识别利用 GPU 硬件、驱动和渲染结果的细微差异。该要求导致 Konqueror、Vanadium、Cromite 等注重隐私的浏览器无法通过验证，而启用 Firefox 的 resistfingerprinting 设置同样会失败。
+NVIDIA 发布了 Cosmos 3，这是首个用于物理 AI 的开源全模态模型，将推理与行动能力整合到一个统一系统中，用于具身应用。 这一发布标志着物理 AI 民主化的重要一步，使研究人员和开发者能够构建具有高级感知和推理能力的自主系统（如机器人和自动驾驶汽车），而无需依赖专有模型。 Cosmos 3 作为一个开源全模态模型发布，在一个框架中融合了推理与行动；关于模型架构和训练数据等具体技术细节尚未完全公开。
 
-hackernews · HypnoticOcelot · May 31, 14:13 · [社区讨论](https://news.ycombinator.com/item?id=48345840)
+rss · Hugging Face Blog · Jun 1, 04:44
 
-**背景**: Cloudflare Turnstile 被宣传为一种隐私友好的隐形验证方案，用于替代传统验证码。WebGL 是一种用于硬件加速 3D 图形的 JavaScript API，会被利用来暴露显卡型号、驱动版本等独特标识。浏览器指纹识别即通过组合此类设备属性来持续识别用户。尽管 Turnstile 旨在减少用户干扰，但强制要求 WebGL 带来了明显的隐私权衡。
+**背景**: 物理 AI 是指与现实世界交互的 AI 系统，如机器人和自动驾驶汽车，这需要感知、推理和行动能力。全模态模型（omni-model）是一种单一模型，能够处理多种模态（如文本、图像、视频）并跨模态进行推理，Google 的 Gemini Omni 就是典型例子。NVIDIA 的 Cosmos 3 将全模态方法扩展到物理领域，旨在为具身 AI 任务提供统一解决方案。
 
 
 **参考链接**:
 
-- [Cloudflare Turnstile - Easy CAPTCHA Alternative](https://www.cloudflare.com/products/turnstile/)
-- [WebGL](https://en.wikipedia.org/wiki/WebGL)
-- [Browser fingerprinting](https://en.wikipedia.org/wiki/Browser_fingerprinting)
+- [What is Physical AI? | NVIDIA Glossary](https://www.nvidia.com/en-us/glossary/generative-physical-ai/)
+- [Gemini Omni — Google DeepMind](https://deepmind.google/models/gemini-omni/)
 
 
-**社区讨论**: 社区意见两极分化。有人认为指纹识别是反机器人的必要手段，另一些人则批评其破坏了小众浏览器，推动互联网走向围墙花园。技术讨论指出，虽然可以伪造 WebGL 信息，但操作复杂，且 Firefox 的 resistfingerprinting 设置常导致其他网站功能异常。
-
-**标签**: `#privacy`, `#fingerprinting`, `#cloudflare`, `#webgl`, `#bot-detection`
+**标签**: `#NVIDIA`, `#Cosmos`, `#physical AI`, `#omni-model`, `#open-source`
 
 ---
 
 <a id="item-2"></a>
-## [Dav2d 开源 AV2 解码器发布，面临重大性能挑战](https://jbkempf.com/blog/2026/dav2d/) ⭐️ 8.0/10
+## [MiniMax 发布 M3：100 万 Token 上下文、原生多模态、编程领先开源模型](https://www.minimaxi.com/blog/minimax-m3) ⭐️ 9.0/10
 
-由 dav1d 作者开发的全新开源 AV2 视频解码器 Dav2d 已发布。但由于 AV2 解码复杂度约为 AV1 的五倍，若不经深度优化，现有硬件将难以实现实时软件播放。 作为已广泛应用的 AV1 的继任者，AV2 能提升约 30% 的压缩效率，对流媒体和节省带宽至关重要。软件解码的可行性直接影响其生态普及速度，尤其是在缺乏专用硬件解码器的设备上；Dav2d 的性能困境可能延缓这一进程。 AV2 规范已于 2026 年 5 月 28 日正式发布，硬件解码器预计年内面世。Dav2d 被描述为小巧、便携且在所有平台上最快的 AV2 CPU 解码器，但相较于本就计算密集的 AV1，其五倍的复杂度提升给当前处理器的实时解码带来巨大障碍。
+MiniMax 发布了 M3 模型，采用全新的 MSA 稀疏注意力架构，支持最高 100 万 token 上下文窗口，原生处理图像、视频和桌面操作，并在 SWE-Bench Pro 编程评测中得分 59%，超越 GPT-5.5 和 Gemini 3.1 Pro。同时推出 MiniMax Code Agent 和每月 49 元提供 6 亿 token 的低价订阅计划。 这是国内首个同时具备超长上下文、前沿编程与原生多模态能力的开源模型，其编程评测得分远超当前顶级模型（通常约 23%）。低价的 Token 订阅和 Agent 产品降低了开发者构建复杂 AI 应用的门槛。 M3 采用记忆稀疏注意力（MSA）机制，仅加载最相关的 K/V 向量进行注意力计算，实现高效长上下文处理。模型权重和技术报告将在 10 天内发布，API 已开放。49 元 Plus 档的 Token 容量约为海外同类服务的 15 倍。
 
-hackernews · captain_bender · May 31, 11:44 · [社区讨论](https://news.ycombinator.com/item?id=48344961)
+telegram · zaihuapd · Jun 1, 01:55
 
-**背景**: AV2 是开放媒体联盟（AOMedia）推出的新一代开放、免版税视频编码格式，通过扩展递归分割、改进帧内/帧间预测等工具实现比 AV1 更优秀的压缩性能。dav1d 解码器曾通过极致优化在低功耗设备上实现流畅的 AV1 播放。Dav2d 试图复制这一成功，但 AV2 相比 AV1 解码复杂度的增幅远超以往代际跳跃，构成更严峻的工程挑战。
+**背景**: 记忆稀疏注意力（MSA）是一种端到端可训练的潜在记忆框架，通过选择性加载最相关的键值对解决长序列的二次复杂度问题，类似于内部检索系统。SWE-Bench Pro 是一个极具难度的软件工程基准，此前最佳模型得分仅约 23%，M3 的 59%标志着巨大突破。MiniMax 是中国领先的 AI 公司，此前已发布 M2.5 等模型。
 
 
 **参考链接**:
 
-- [AV 2 v1.0 Specification Released For Next-Gen Video Coding - Phoronix](https://www.phoronix.com/news/AV2-1.0-Specification-Released)
-- [VideoLAN Publishes Dav2d For Open-Source AV2 Decoder - Phoronix](https://www.phoronix.com/news/Dav2d-Open-Source-AV2-Decode)
+- [[2603.23516] MSA: Memory Sparse Attention for Efficient End-to-End Memory Model Scaling to 100M Tokens](https://arxiv.org/abs/2603.23516)
+- [SWE-Bench Pro Leaderboard AI Coding Benchmark (Public Dataset) | Scale](https://labs.scale.com/leaderboard/swe_bench_pro_public)
+- [GitHub - EverMind-AI/MSA: Memory Sparse Attention - A scalable, end-to-end trainable latent-memory framework for 100M-token contexts. · GitHub](https://github.com/EverMind-AI/MSA)
+
+
+**标签**: `#多模态大模型`, `#开源模型`, `#AI代理`, `#编程辅助`
+
+---
+
+<a id="item-3"></a>
+## [Cloudflare Turnstile 使用 WebGL 指纹，引发隐私担忧](https://hacktivis.me/articles/cloudflare-turnstile-webgl-fingerprinting) ⭐️ 8.0/10
+
+Cloudflare 的 Turnstile 验证系统被发现利用 WebGL 指纹技术，在后台静默收集用户 GPU 和图形信息来追踪用户并识别机器人，即使浏览器启用了 resistFingerprinting 等隐私保护设置也无法完全避免。 该技术削弱了浏览器重要的隐私防御，可能使注重匿名的用户无法访问大量依赖 Cloudflare 的网站。它加剧了反机器人服务与隐私用户之间的对抗，对开放网络构成威胁。 WebGL 指纹通过渲染隐藏的 3D 场景，分析 GPU 输出的细微差异来生成唯一标识符，整个过程无需用户交互。伪造该指纹常需要借助 CycleTLS 等复杂工具来篡改 JA3/TLS 指纹，而且即便启用严格的隐私模式仍可能被检测到。
+
+hackernews · HypnoticOcelot · May 31, 14:13 · [社区讨论](https://news.ycombinator.com/item?id=48345840)
+
+**背景**: WebGL 是一种允许网站使用设备 GPU 渲染 3D 图形的 JavaScript API，由于 GPU 硬件和驱动组合的差异，渲染结果可被用来生成独特的“指纹”，从而跨站追踪用户。Cloudflare Turnstile 是 Cloudflare 推出的替代验证码方案，旨在无需弹出挑战即可区分人机，但其对指纹技术的使用与用户隐私期待相悖。常见的防御手段包括 Firefox 的 privacy.resistFingerprinting 设置，它试图标准化各项指纹数值，但 Turnstile 的做法可能绕过该防护。
+
+
+**参考链接**:
+
+- [WebGL Browser Report - WebGL Fingerprinting - BrowserLeaks](https://browserleaks.com/webgl)
+- [What is WebGL Fingerprinting? How It Works & Tips | Medium](https://medium.com/@datajournal/what-is-webgl-fingerprinting-and-how-to-bypass-it-60893a9ca382)
+- [Overview · Cloudflare Turnstile docs](https://developers.cloudflare.com/turnstile/)
+
+
+**社区讨论**: 评论者指出，为有效检测机器人，指纹技术是现实需要，有人提到 Cloudflare 已在使用 JA3/TLS 指纹。另一些人对隐私浏览器的抗指纹功能导致网站异常表示不满，警告反机器人措施升级可能将互联网变成封闭花园，而小众浏览器开发者报告用户受到影响，正在寻求缓解方案。
+
+**标签**: `#privacy`, `#web-fingerprinting`, `#cloudflare`, `#web-api`, `#anti-bot`
+
+---
+
+<a id="item-4"></a>
+## [ChatGPT for Sheets 数据外泄漏洞迫使 OpenAI 禁用脚本生成](https://www.promptarmor.com/resources/gpt-for-google-sheets-data-exfiltration) ⭐️ 8.0/10
+
+安全研究人员发现 ChatGPT for Google Sheets 可被利用来窃取工作簿数据，OpenAI 已移除模型生成 Google Apps Script 代码的能力作为回应。 该漏洞表明 AI 与生产力工具的集成可能无意中制造数据盗窃途径，此事件凸显了在 LLM 驱动的应用中建立安全披露流程和严格防护措施的紧迫性。 攻击通过诱骗模型生成能访问并传输表格内容的恶意 Apps Script 代码实现；OpenAI 承认其披露渠道存在疏漏，并快速移除了代码生成功能以保护用户。
+
+hackernews · hackerBanana · May 31, 20:35 · [社区讨论](https://news.ycombinator.com/item?id=48349487)
+
+**背景**: Google Apps Script 是一个基于云的 JavaScript 平台，用于在 Google Sheets 等 Google Workspace 应用中实现自动化和定制。数据外泄是指未经授权的数据传输，通常由恶意行为者执行。ChatGPT for Google Sheets 扩展使用户能在电子表格中直接与 AI 模型交互。
+
+
+**参考链接**:
+
+- [Google Apps Script](https://en.wikipedia.org/wiki/Google_Apps_Script)
+- [Data exfiltration](https://en.wikipedia.org/wiki/Data_exfiltration)
+
+
+**社区讨论**: OpenAI 安全团队承认了此项研究并对披露延迟表示歉意，同时移除了 Apps Script 生成功能。部分评论者批评了首次披露时未获回应的做法。更广泛的担忧指向 LLM 工具集成的安全性，评论者呼吁在部署处理敏感数据的 AI 代理之前，应采用本地执行、容器化和恰当的应用层安全防护。
+
+**标签**: `#security`, `#data-exfiltration`, `#LLM`, `#Google-Sheets`, `#vulnerability`
+
+---
+
+<a id="item-5"></a>
+## [VideoLAN 发布开源 AV2 解码器 dav2d](https://jbkempf.com/blog/2026/dav2d/) ⭐️ 8.0/10
+
+VideoLAN 发布了 dav2d，这是一个基于 dav1d 的开源 CPU AV2 解码器，旨在为下一代 AV2 编码格式提供快速、正确的软件解码。 AV2 承诺比 AV1 提升约 30% 的压缩效率，但解码复杂度约是其 5 倍，因此像 dav2d 这样的高效软件解码器对推动早期采用、保障硬件兼容性以及充当影响标准演进的参考实现至关重要。 AV2 解码的计算需求是 AV1 的 5 倍，实现实时软件播放需要大量针对特定架构的优化；dav2d 仍处于早期开发阶段，尚未准备好用于生产环境，且 AV2 规范刚刚于 2026 年 5 月定稿。
+
+hackernews · captain_bender · May 31, 11:44 · [社区讨论](https://news.ycombinator.com/item?id=48344961)
+
+**背景**: AV1 是由开放媒体联盟开发的开放、免版税视频编码格式，现已被流媒体平台广泛采用。其继任者 AV2 于 2026 年 5 月 28 日发布，采用相似框架但引入了多项重大创新以提升压缩效率。VideoLAN 的 dav1d 是一款突破性的软件解码器，使许多设备可流畅播放 AV1，dav2d 旨在重现这一成功。然而，新编码极高的复杂度引发了对没有专用硬件加速时纯软件解码可行性的担忧。
+
+
+**参考链接**:
+
 - [AV2 (video coding format)](https://en.wikipedia.org/wiki/AV2_(video_coding_format))
+- [AV 2 v1.0 Specification Released For Next-Gen Video Coding - Phoronix](https://www.phoronix.com/news/AV2-1.0-Specification-Released)
+- [dav2d - VideoLAN](https://www-test.videolan.org/projects/dav2d/)
 
 
-**社区讨论**: 社区评论中期待与担忧并存：有人调侃网站被挤爆，也有人强调像 dav2d 这样的落地解码器是事实标准的关键。多位用户质疑约 25% 的体积缩减是否值得让现有 AV1 硬件解码器过时，而对真实世界基准测试的急切呼声则凸显了社区对 AV2 实际性能的焦虑。
+**社区讨论**: Hacker News 评论中，部分用户对 AV2 体积仅缩减约 25% 却可能让现有 AV1 硬件解码器过时表示怀疑，许多人对高解码消耗表示担忧。也有人强调像 dav2d 这样的现场解码器对完善规范不可或缺——引用“规范若无现场实现则不算完成”的观点，同时呼吁不要对 dav2d 项目过度苛责，让其自然发展。
 
-**标签**: `#av2`, `#video-codec`, `#dav2d`, `#open-source`, `#performance`
+**标签**: `#AV2`, `#video codec`, `#software decoding`, `#dav2d`, `#performance`
+
+---
+
+<a id="item-6"></a>
+## [Meta 为 Instagram、Facebook 和 WhatsApp 推出订阅服务](https://techcrunch.com/2026/05/27/meta-officially-launches-instagram-facebook-and-whatsapp-subscriptions-with-more-to-come-including-ai-plans/) ⭐️ 8.0/10
+
+2026 年 5 月 27 日，Meta 正式为 Instagram、Facebook 和 WhatsApp 推出订阅计划，用户支付月费即可获得无广告体验和精选社交信息流，并预告后续将推出 AI 增强版套餐。 这标志着 Meta 从纯广告商业模式的一次重大转变，通过提供隐私优先、无广告的替代方案，可能重塑社交媒体格局，并挑战'免费即产品'的旧有模式。 订阅起步价为每月 5 美元，高级套餐最高可达 49.99 美元，提供无限无广告访问和仅限好友动态；Meta 还计划推出 AI 增强订阅层级，但具体细节尚未公布。
+
+hackernews · tambourine_man · May 31, 17:02 · [社区讨论](https://news.ycombinator.com/item?id=48347354)
+
+**背景**: 长久以来，Meta 旗下的平台均免费使用，收入来自定向广告，这引发了隐私担忧。'不付费你就是产品'成为常见批评。订阅模式提供了直接付费的路径，契合了用户对控制权和隐私的需求，正如其他服务转向付费层级所见。
+
+**社区讨论**: 社区反应不一。部分用户乐于为无广告、仅好友动态的信息流付费，视其为对抗多巴胺驱动信息流的更健康选择。其他人则认为直接离开 Meta 平台更简单，或认为新的隐私优先社交网络会更具竞争力。亦有担忧订阅可能演变成身份象征。
+
+**标签**: `#Meta`, `#subscriptions`, `#social media`, `#business model`, `#privacy`
+
+---
+
+<a id="item-7"></a>
+## [重启序列：Linux 上的无锁临界区机制](https://justine.lol/rseq/) ⭐️ 8.0/10
+
+justine.lol 上的一篇文章详细解释了 Linux 的重启序列（rseq）机制如何通过让内核在线程被抢占时重启一段简短的指令序列，从而实现无需锁和原子操作的临界区，提供了比互斥锁和原子操作更高效的替代方案。 这项技术显著降低了同步开销，使高并发应用能在多核系统上更好地扩展，无需传统锁的复杂性，可能重塑性能关键型软件中访问每 CPU 数据的方式。 程序需向内核注册一个 rseq 结构体来定义临界区域；序列在最终指令之前不能使状态变化对其他线程可见。内核会在抢占或信号送达时重启序列。限制包括不支持嵌套以及不能调用离开该区域的函数。
+
+hackernews · grappler · May 31, 14:38 · [社区讨论](https://news.ycombinator.com/item?id=48346019)
+
+**背景**: 重启序列是一种操作系统辅助的无锁原语。传统并发常依赖互斥锁或原子比较交换操作，这限制了可扩展性。自省窗口的概念在操作系统研究中可追溯到约 25 年前。Linux 在 4.18 内核中加入了 rseq 支持，使得用户态能在不禁用抢占的情况下安全访问每 CPU 数据结构。
+
+
+**参考链接**:
+
+- [Restartable Sequences](https://justine.lol/rseq/)
+- [Restartable sequences in glibc [LWN.net]](https://lwn.net/Articles/883104/)
+- [Restartable Sequences - DynamoRIO Restartable sequences in glibc [LWN.net] Restartable Sequences — The Linux Kernel documentation What are RSEQs (Restartable Sequences) and how to use them? What Are RSEQs (Restartable Sequences)? A Guide to Using the ... Restartable Sequences - CRIU](https://dynamorio.org/page_rseq.html)
+
+
+**社区讨论**: 评论者普遍赞赏文章的技术深度，但部分人对文章开头的精英主义措辞提出批评。多位评论者提供了有价值的背景，包括 librseq 辅助库的链接、自省窗口的历史背景，以及关于利用 rseq 实现 LL/SC 原语的讨论。
+
+**标签**: `#Linux`, `#concurrency`, `#synchronization`, `#rseq`, `#systems-programming`
 
 ---
 
