@@ -66,3 +66,8 @@ public/static
 # Use bun.lock instead of package-lock.json
 package-lock.json
 .superpowers/
+
+# Claude Code / MCP tooling artifacts
+.claude/
+.mcp.json
+.playwright-mcp/
