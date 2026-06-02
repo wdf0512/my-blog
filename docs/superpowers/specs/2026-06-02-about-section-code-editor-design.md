@@ -55,18 +55,17 @@ A renderer maps each `type` → a Catppuccin CSS variable and applies emphasis. 
  *  Shipping production LLM systems & enterprise web apps. */
 const developer = {
   name: "Defang",
-  role: "AI Engineer",
-  company: "Nuobinteng",
+  role: "AI Engineer | Full Stack Developer",
+  sex: "male",          // ♂  (paired glyph, Catppuccin blue)
+  age: 0x1A,            // 26, because hex is cooler
   focus: ["multi-agent backends", "generative UI"],
-  stack: {
-    backend: "LangGraph",
-    frontend: "React",
-    streaming: "SSE",
-  },
 } satisfies Developer;
 
 export function currentlyBuilding() {
-  return "AI-driven Agentic ERP — multi-agent workflows + Generative UI";
+  return [
+    "AI-driven Agentic ERP — multi-agent workflows + Generative UI",
+    "Info Radar — AI news, distilled into a daily digest",
+  ];
 }
 ```
 
@@ -152,7 +151,7 @@ Until the user drops the woff2 files into `public/fonts/`, the editor falls back
 - **Tabs**: clickable buttons; crossfade content; re-run a fast reveal on switch (instant if that file was already revealed once). Real `<button>`s with `focus-visible` rings.
 - **Hover**:
   - Line hover → subtle highlight bar (surface0 low-alpha) + brighter line number.
-  - Interactive identifiers (e.g. `LangGraph`, `role`, `currentlyBuilding`, `beliefs`) → underline + themed tooltip popover (surface0 bg, fade/scale in).
+  - Interactive identifiers (author-picked: `role`, `age` (tooltip decodes `0x1A` → 26), `currentlyBuilding`, `Info Radar`, `beliefs`) → underline + themed tooltip popover (surface0 bg, fade/scale in).
   - Activity-bar / tab icons → bg tint + color shift on hover.
   - Traffic lights → reveal `× − +` glyphs on hover.
 - **Selection**: scoped `.code-editor ::selection` themed with Catppuccin surface2/overlay (no browser-blue inside the editor).
