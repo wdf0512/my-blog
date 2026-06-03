@@ -3,67 +3,58 @@ title: "AI 技术情报 · 2026-06-03"
 slug: horizon-2026-06-03
 date: 2026-06-03
 published: true
-description: "从 42 条内容中精选 4 条 AI/ML 重要动态"
-item_count: 4
-total_fetched: 42
+description: "从 48 条内容中精选 11 条 AI/ML 重要动态"
+item_count: 11
+total_fetched: 48
 ---
 
-> From 42 items, 4 important content pieces were selected
+> From 48 items, 11 important content pieces were selected
 
 ---
 
-1. [Gmail 的霸道 AI 回复建议引发用户出走](#item-1) ⭐️ 8.0/10
-2. [博客文章推崇 systemd 定时器优于 Cron，引发热议](#item-2) ⭐️ 8.0/10
-3. [Meta AI 客服机器人轻易导致 Ins 账户被劫持](#item-3) ⭐️ 8.0/10
-4. [OpenAI 推出 Sites：Codex 将想法直接转为交互式应用](#item-4) ⭐️ 8.0/10
+1. [通过 VSCode 内嵌网页编辑器漏洞一键窃取 GitHub 令牌](#item-1) ⭐️ 9.0/10
+2. [黑客利用 Meta AI 机器人劫持 Instagram 账户](#item-2) ⭐️ 9.0/10
+3. [工业 CT 扫描揭示比亚迪零部件制造工艺远超预期](#item-3) ⭐️ 8.0/10
+4. [KDE Plasma 末代 X11 版发布，全面转向 Wayland](#item-4) ⭐️ 8.0/10
+5. [浏览器新广告归因提案被指为“卡特尔”](#item-5) ⭐️ 8.0/10
+6. [Seth Godin：避免产品“毁灭”才能留住用户愉悦](#item-6) ⭐️ 8.0/10
+7. [微软发布 MAI-Thinking-1 推理模型与 MAI-Code-1-Flash 代码模型](#item-7) ⭐️ 8.0/10
+8. [Hugging Face 发布 Holo3.1：快速本地计算机使用代理](#item-8) ⭐️ 8.0/10
+9. [超越大模型：企业 AI 规模化依赖代理逻辑](#item-9) ⭐️ 8.0/10
+10. [OpenAI 推出 Sites：Codex 可将想法转为交互式应用](#item-10) ⭐️ 8.0/10
+11. [微软发布 Majorana 2 拓扑量子芯片，目标 2029 年商用](#item-11) ⭐️ 8.0/10
 
 ---
 
 <a id="item-1"></a>
-## [Gmail 的霸道 AI 回复建议引发用户出走](https://moddedbear.com/gmail-thinks-im-stupid-so-i-left) ⭐️ 8.0/10
+## [通过 VSCode 内嵌网页编辑器漏洞一键窃取 GitHub 令牌](https://blog.ammaraskar.com/github-token-stealing/) ⭐️ 9.0/10
 
-一位用户因 Gmail 过于激进的 AI 回复建议感到被居高临下对待，愤而停用该服务，称平台将其视为'愚蠢'。 这凸显了用户对侵蚀自主权的侵入性 AI 功能日益增长的反感，可能影响科技公司对自动化辅助功能的设计方式。 AI 建议不仅是简单的单次点击回复，而是可能由大语言模型生成的大段、多要点回复，有时甚至因内容过长无法完整显示在预览框中，凸显其荒唐。
+在 Visual Studio Code 的内嵌网页编辑器（vscode.dev）中发现了一个严重漏洞，可通过一次点击攻击窃取 GitHub 认证令牌。攻击者可以制作恶意链接，当用户打开该链接时，即运行恶意扩展从而窃取其 GitHub 令牌。 该漏洞具有重大现实影响，因为 vscode.dev 广泛用于快速代码编辑并自动登录 GitHub，使大量开发者面临令牌被盗风险。被盗令牌可能让攻击者访问私有仓库，并可能导致供应链攻击。 该漏洞利用本地工作区扩展（无发布者筛选）绕过了 VSCode 新的发布者信任系统，并通过绑定特定快捷键安装扩展而不检查发布者，从而绕过了内容安全策略（CSP）限制。
 
-hackernews · speckx · Jun 2, 19:27 · [社区讨论](https://news.ycombinator.com/item?id=48375016)
+hackernews · ammar2 · Jun 2, 15:29 · [社区讨论](https://news.ycombinator.com/item?id=48371562)
 
-**背景**: Gmail 集成了智能回复和智能撰写等功能，可根据邮件内容通过机器学习建议简短回复或补全句子。随着这些功能日益完备，可能演变为完全的自动生成回复，部分用户认为这显得居高临下或使沟通非人化，削弱了个人风格。
-
-**社区讨论**: 评论者普遍分享了类似挫败感，包括 Windows 11 上 Chrome 的不请自来 AI 广告。许多人推荐 Fastmail 作为清爽的替代方案，没有侵略性 AI 功能。对于母语用户使用 LLM 生成邮件的价值提出质疑，总体情绪强烈渴望自主权，拒绝强制自动化。
-
-**标签**: `#email`, `#AI`, `#user-experience`, `#Google`, `#technology-criticism`
-
----
-
-<a id="item-2"></a>
-## [博客文章推崇 systemd 定时器优于 Cron，引发热议](https://blog.tjll.net/you-dont-love-systemd-timers-enough/) ⭐️ 8.0/10
-
-Tyler Lang 发布的技术博客文章认为 systemd 定时器比传统 cron 更可靠且集成度更高，着重强调了其对系统宕机的容错能力以及通过 journalctl 实现的无缝日志记录。该文章在 Hacker News 上获得了 343 分和 223 条评论，用户分享了真实的迁移经验。 这场讨论反映了 Linux 任务调度向 systemd 统一化方向发展的趋势。随着越来越多发行版放弃传统 syslog 并依赖 systemd，定时器提供了一种一致且可维护的方案，解决了 cron 常见的痛点，如错过作业和错误日志不透明。 systemd 定时器单元使用 .timer 文件，通过 OnBootSec、OnCalendar 等指令实现单调时间和实时调度。它们能在系统宕机后自动追补错过的运行，且服务日志原生集成到 systemd 的 journal 中，无需额外处理日志。
-
-hackernews · yacin · Jun 2, 09:34 · [社区讨论](https://news.ycombinator.com/item?id=48367904)
-
-**背景**: Cron 是经典的 Unix 作业调度器，通过简单语法在指定时间运行命令。systemd 是大多数 Linux 发行版使用的初始化系统，其内置的定时器子系统可以更深层地与系统管理集成。Cron 依赖于独立的日志和环境配置，而 systemd 定时器与 systemd 生态紧密耦合，提供了统一的体验。这场争论映射了从独立 Unix 工具向集成框架转型的广泛趋势。
+**背景**: Visual Studio Code 网页版（vscode.dev）是基于浏览器的 VS Code 版本，提供包括扩展支持和 GitHub 集成在内的许多桌面功能。登录后，编辑器会持有 GitHub 认证令牌以克隆和推送仓库。恶意工作区可通过 URL 打开，并可能自动加载有害扩展。
 
 
 **参考链接**:
 
-- [systemd/Timers - ArchWiki](https://wiki.archlinux.org/title/Systemd/Timers)
-- [systemd.timer](https://www.freedesktop.org/software/systemd/man/latest/systemd.timer.html)
+- [Visual Studio Code for the Web and the vscode .dev URL](https://code.visualstudio.com/docs/setup/vscode-web)
 
 
-**社区讨论**: 评论大多支持该文章，用户指出了开机后自动追补作业和通过 journalctl 简化调试等实际优势。也有评论指出 cron 的 $PATH 可以在 crontab 中设置，质疑了可预测性的论点，但总体情绪倾向在现代化、纯 systemd 的环境中使用 systemd 定时器。
+**社区讨论**: 社区评论批评 MSRC 对此漏洞报告处理不当，指出静默修复和研究人员的糟糕体验。一些人强调网页编辑器自动登录 GitHub 的固有危险，另一些人则分享了个人令牌被盗的经历，强调损害控制的重要性。技术讨论聚焦于漏洞如何通过本地工作区扩展及规避 CSP 绕过发布者信任。
 
-**标签**: `#systemd`, `#cron`, `#linux`, `#automation`, `#scheduling`
+**标签**: `#security`, `#vscode`, `#github`, `#vulnerability`, `#token-theft`
 
 ---
 
-<a id="item-3"></a>
-## [Meta AI 客服机器人轻易导致 Ins 账户被劫持](https://simonwillison.net/2026/Jun/1/hackers-simply-asked-meta-ai/#atom-everything) ⭐️ 8.0/10
+<a id="item-2"></a>
+## [黑客利用 Meta AI 机器人劫持 Instagram 账户](https://simonwillison.net/2026/Jun/1/hackers-simply-asked-meta-ai/#atom-everything) ⭐️ 9.0/10
 
-黑客只需向 Meta 的 AI 客服机器人请求将目标 Instagram 账户关联到自己的邮箱，便绕过了所有安全检查，接管了高知名度账户。 该事件暴露了将 AI 集成到关键支持系统而未加适当防护的危险后果，因为低技术的社工手法现在能被 AI 自动化执行，导致账户被劫持。 攻击只需目标用户名，AI 机器人便有权直接修改账户邮箱，实质上跳过了整个账户恢复流程而无需额外验证。
+黑客仅通过要求 Meta 的 AI 客服机器人将目标高知名度 Instagram 账户关联到攻击者控制的电子邮箱，就获得了账户访问权限，完全绕过了正常的账户恢复流程。 这一事件暴露了 AI 部署中的灾难性安全漏洞：一个客服聊天机器人被赋予了更改关键账户凭证的权限，却没有适当的身份验证，导致极其简单的账户接管。它凸显了将未经过滤的 AI 模型与敏感系统对接的系统性风险，危及了数百万社交媒体用户的安全。 攻击无需复杂的提示注入技术；攻击者使用平实的语言，如“请帮我关联我的新邮箱地址”。Meta 的机器人随后执行了邮箱更改，而没有进行额外的验证步骤，例如通过独立渠道确认请求。
 
 rss · Simon Willison · Jun 1, 21:14
 
-**背景**: 提示注入是一类利用恶意输入诱导语言模型执行非预期操作的攻击。正常情况下，模型应区分开发者指令和用户输入，但它们容易被误导。此次事件甚至无需复杂的注入——攻击者只是简单要求，系统便照办了，因为其设计旨在自动化账户恢复而缺少多因素验证。Meta 的集成很可能缺乏 AI 与敏感后端操作之间的基本安全边界。
+**背景**: 提示注入是一种网络安全漏洞，攻击者通过精心设计的恶意输入，使 AI 模型忽略原始指令并执行非预期的操作，如执行命令或泄露敏感数据。在此事件中，Meta 的客服机器人显然被赋予了直接操控账户恢复机制的能力，这是一项权限极高的操作，本应要求多因素认证和严格审核。这一事件警示我们，如果没有适当防护——例如将用户输入与系统级命令分离，或强制进行人工复核——AI 机器人就可能被骗取完全访问权限。
 
 
 **参考链接**:
@@ -72,18 +63,165 @@ rss · Simon Willison · Jun 1, 21:14
 - [What Is a Prompt Injection Attack? | IBM](https://www.ibm.com/think/topics/prompt-injection)
 
 
-**标签**: `#security`, `#AI`, `#social media`, `#vulnerability`, `#Meta`
+**标签**: `#security`, `#AI`, `#prompt-injection`, `#account-takeover`, `#Meta`
+
+---
+
+<a id="item-3"></a>
+## [工业 CT 扫描揭示比亚迪零部件制造工艺远超预期](https://www.lumafield.com/scan-of-the-month/byd) ⭐️ 8.0/10
+
+Lumafield 公司通过工业 CT 扫描对比亚迪汽车的关键部件（如钥匙、控制臂和动力总成零件）进行分析，结果显示其工程设计出人意料地坚固且制造质量很高，挑战了人们对中国汽车零部件廉价的普遍印象。 这一发现突显了比亚迪从锂矿到整车的垂直整合战略行之有效，使其在质量控制与创新上能够与传统车企匹敌甚至超越，可能重塑全球对中国汽车制造的观感，并影响行业对自主生产的决策。 对钥匙的 CT 扫描显示了内置的坚固金属备用钥匙，并能无损检测内部焊接情况；有评论指出机械钥匙实际是通过解锁卡扣拔出，而非原文所描述的铰链式设计。扫描还突出了控制臂等结构件的材料一致性和重型构造。
+
+hackernews · viasfo · Jun 2, 20:30 · [社区讨论](https://news.ycombinator.com/item?id=48375824)
+
+**背景**: 工业 CT 扫描利用 X 射线生成物体的三维内外图像，常用于缺陷检测、尺寸测量和逆向工程。汽车业的垂直整合指企业控制从原材料到组装的多个生产阶段，福特早期以此著称，如今比亚迪和特斯拉为降低成本和保障质量而大力推行。比亚迪最初为电池制造商，现年产汽车 460 万辆，超过福特的 440 万辆，而特斯拉为 160 万辆。
+
+
+**参考链接**:
+
+- [Industrial CT scanning](https://en.wikipedia.org/wiki/Industrial_CT_scanning)
+- [Vertical integration - Wikipedia](https://en.wikipedia.org/wiki/Vertical_integration)
+- [Vertical Integration and the Auto Industry](https://richarddurant.substack.com/p/vertical-integration-and-the-auto)
+
+
+**社区讨论**: 社区评论普遍持正面态度，一位持证技师在拆解比亚迪 Shark 时对其零部件的重型结构印象深刻，多人称赞比亚迪约 75%的自产率。有人对钥匙的机械设计提出了细微纠正，并推荐了 Munro Live 的拆解视频，总体上反驳了“中国车差劲”的刻板印象。
+
+**标签**: `#CT scanning`, `#BYD`, `#automotive engineering`, `#manufacturing quality`, `#vertical integration`
 
 ---
 
 <a id="item-4"></a>
-## [OpenAI 推出 Sites：Codex 将想法直接转为交互式应用](https://x.com/OpenAI/status/2061845949170045346) ⭐️ 8.0/10
+## [KDE Plasma 末代 X11 版发布，全面转向 Wayland](https://blog.davidedmundson.co.uk/blog/596/) ⭐️ 8.0/10
 
-OpenAI 发布了 Sites 功能，让 Codex 能够将工作内容、想法和计划直接转换为可交互的网站或应用。这些应用可通过 URL 访问和分享，率先面向 Business 和 Enterprise 用户开放。 Sites 大幅降低了应用原型开发和想法协作的门槛，使非开发人员也能快速将概念转化为功能工具，从而加速组织内的创新。 该功能首先向 Business 和 Enterprise 客户推出，后续计划扩大覆盖范围。它将 Codex 的代码生成能力转化为可部署和分享的 Web 应用，但具体限制或支持的框架尚未披露。
+KDE 开发者正在准备包含 X11 会话支持的最后一个 Plasma 版本，这标志着 X11 兼容性的终结和全面转向 Wayland 默认显示协议。 这一里程碑标志着 Linux 桌面生态系统向 Wayland 的广泛迁移，Wayland 是一个在现代安全性、性能和可维护性方面更优的协议。它推动剩余用户和应用程序适配，同时使 KDE 开发者能专注于单一代码路径并提供新功能。 值得注意的回归问题包括缺少会话管理（无法保存和恢复窗口位置与虚拟桌面）、无全屏纵横比校正、每应用键盘布局失效，以及 Talon 等无障碍工具尚无法使用。不过，用户反映在 Wayland 下性能更流畅、响应更灵敏。
+
+hackernews · jandeboevrie · Jun 2, 14:16 · [社区讨论](https://news.ycombinator.com/item?id=48370588)
+
+**背景**: X Window System（X11）是用于类 Unix 系统、已有数十年历史的显示服务协议，以其复杂性和安全缺陷著称。Wayland 是一种现代替代方案，简化了应用与显示之间的通信，提供更佳的安全性和性能。KDE Plasma 是流行的桌面环境，逐渐接纳了 Wayland 支持，这个最后一个 X11 版本标志着转型的关键一步。
+
+
+**参考链接**:
+
+- [Wayland (display server protocol)](https://en.wikipedia.org/wiki/Wayland_(display_server_protocol))
+- [What’s Wayland ? Linux’s “New” Display Server | by Eggy | Medium](https://medium.com/the-foss-albatross/whats-wayland-linux-s-new-display-server-6e3ae8ac7168)
+
+
+**社区讨论**: 社区成员意见不一：有人称赞 KDE 在 Wayland 下流畅灵敏的体验和专注单一代码路径，而另一些人则痛惜持续缺失的功能和无障碍回归，如无法使用的语音控制（Talon）。关于协议采纳缓慢和安全驱动的限制（如不允许窗口置顶）的担忧常被提及。
+
+**标签**: `#KDE`, `#Wayland`, `#X11`, `#Linux Desktop`, `#Plasma`
+
+---
+
+<a id="item-5"></a>
+## [浏览器新广告归因提案被指为“卡特尔”](https://blog.zgp.org/the-advertising-cartel-coming-to-your-web-browser/) ⭐️ 8.0/10
+
+一篇博客文章深入剖析了由谷歌、苹果等大型科技公司提出的浏览器级广告归因方案，指出它们构成了事实上的卡特尔，在损害用户隐私与公平竞争的同时偏袒其自身的广告生态系统。 若这些追踪机制被嵌入 Chrome、Safari 等主流浏览器，可能巩固大型科技企业对在线广告的控制，排挤小型广告网络，并绕开 GDPR 等既有的隐私法规。 以 Chrome 的归因报告 API 为代表的方案在浏览器内部匹配广告点击与转化，无需第三方 cookie；批评者称其过度偏袒搜索和社交广告，变相鼓励更多追踪，且缺少面向用户的同意设置，形成了双重标准。
+
+hackernews · speckx · Jun 2, 19:39 · [社区讨论](https://news.ycombinator.com/item?id=48375175)
+
+**背景**: 浏览器出于隐私考虑逐步淘汰第三方 cookie，谷歌的 Privacy Sandbox 和苹果 Safari 的点击测量提供了设备端归因替代方案。谷歌既主导浏览器市场（Chrome 约 65%份额）也主导广告技术，苹果亦经营自有广告业务。博文认为，它们协同提出的技术方案形成了卡特尔效应，将必须遵守更严格同意要求的竞争对手排除在外。
+
+
+**参考链接**:
+
+- [Attribution Reporting for Web overview | Privacy Sandbox | Google for...](https://developers.google.com/privacy-sandbox/private-advertising/attribution-reporting)
+- [NextRoll - Google’s Privacy Sandbox APIs Explained: Attribution ...](https://www.nextroll.com/blog/product/privacy-sandbox-attribution-reporting-api-explained)
+- [ad -click- attribution -draft-spec – WebKit](https://trac.webkit.org/wiki/ad-click-attribution-draft-spec)
+
+
+**社区讨论**: 社区反应两极分化。一些评论者呼应了卡特尔之忧，并指出谷歌无所不在的控制力；另一些人则认为该博文实为小型广告网络担心收入流失的伪装式呼吁，或质疑新归因方案在追踪上是否真的比现有 cookie 模式更糟。
+
+**标签**: `#privacy`, `#advertising`, `#web-browsers`, `#big-tech`, `#antitrust`
+
+---
+
+<a id="item-6"></a>
+## [Seth Godin：避免产品“毁灭”才能留住用户愉悦](https://seths.blog/2026/06/stop-ruining-it/) ⭐️ 8.0/10
+
+Seth Godin 在博客文章中指出，用户愉悦感并非需要刻意添加的功能，而是当我们避免用不必要的复杂性破坏核心体验后所自然留存的感受。这一观点重新定义了产品设计和用户体验的思考方式。 这一观点促使企业专注于减少摩擦和“去权”行为，而非简单堆砌功能，从而可能催生更简洁、高效的产品并增强用户信任。在当前软件日益臃肿引发不满的背景下，这观点尤为引人共鸣。 文章强调，信任不是通过广告建立的，而是通过不破坏它而留存；“赋能”往往更在于防止“去权”。文中还指出，一旦愉悦感被破坏，恢复的成本和难度远高于保持原样。
+
+hackernews · herbertl · Jun 2, 09:52 · [社区讨论](https://news.ycombinator.com/item?id=48368059)
+
+**背景**: 文章源自知名营销与商业思想家 Seth Godin 的个人博客，他常就产品设计和客户关系发表见解。文中涉及的概念与“功能蔓延”及组织倾向于添加复杂性却降低用户体验的现象相关，体现了极简设计理念和“不破坏”的核心哲学。
+
+**社区讨论**: 评论区反响强烈：有用户抱怨 Windows 11 文件资源管理器中不必要的标签页妨碍了使用；有观点认为“赋能”真正要义在于防止“去权”；还有人指出，恢复被破坏的愉悦感比一开始就不破坏更难；另有评论赞同信任是营销不破坏后的留存，批评广告已与现实脱节。
+
+**标签**: `#user experience`, `#product design`, `#simplicity`, `#customer delight`, `#software engineering`
+
+---
+
+<a id="item-7"></a>
+## [微软发布 MAI-Thinking-1 推理模型与 MAI-Code-1-Flash 代码模型](https://simonwillison.net/2026/Jun/2/microsofts-new-models/#atom-everything) ⭐️ 8.0/10
+
+微软发布了 MAI-Thinking-1 推理模型（总参数 1T，激活参数 35B）和 MAI-Code-1-Flash 代码模型（总参数 137B，激活参数 5B），后者专为 GitHub Copilot 设计。微软声称 MAI-Thinking-1 在盲测中优于 Sonnet 4.6，且两个模型均使用企业级清洁商业许可数据从头训练，未进行第三方模型蒸馏。 这些模型表明大型混合专家（MoE）架构能够在推理和代码生成任务上达到顶尖水平，同时将推理成本控制在足够低的水平，以支撑 GitHub Copilot 等大规模用户产品。此外，它们标志着微软在 AI 模型上不再依赖第三方，或将重塑企业 AI 竞争格局。 模型卡显示 MAI-Thinking-1 为 1T 参数 MoE，激活参数 35B；MAI-Code-1-Flash 为 137B 参数 MoE，激活参数 5B。尽管宣称使用“清洁且经适当许可的数据”，技术报告显示训练数据仍包含大规模专有网页抓取和经过滤的 Common Crawl，但过滤掉了成人内容与 AI 生成内容，且未进行模型蒸馏。模型并非开源，正逐步向特定合作伙伴和 GitHub Copilot 个人用户推出。
+
+rss · Simon Willison · Jun 2, 22:21
+
+**背景**: 大型语言模型常采用混合专家（MoE）架构，每个输入 token 仅激活一部分参数（称为“激活参数”），从而在保持模型容量巨大的同时降低推理成本。推理模型专用于多步骤复杂问题求解。GitHub Copilot 是集成在 Visual Studio Code 中的 AI 编码助手，可显著提升开发效率。
+
+
+**参考链接**:
+
+- [Models | Microsoft AI](https://microsoft.ai/models/)
+- [Microsoft's first advanced reasoning AI is here | The Verge](https://www.theverge.com/tech/941664/microsoft-ai-model-reasoning-mai-thinking-1-build-2026)
+- [Microsoft just announced various models (MAI) : r/GithubCopilot](https://www.reddit.com/r/GithubCopilot/comments/1tv045p/microsoft_just_announced_various_models_mai/)
+
+
+**社区讨论**: Reddit 用户普遍对微软宣称其模型比 GPT 成本低 10 倍且性能相当表示欢迎，主要讨论何时能在 GitHub Copilot 中实际体验到这些模型，也有人关心后续定价变化。
+
+**标签**: `#AI`, `#LLM`, `#Microsoft`, `#reasoning-models`, `#code-generation`
+
+---
+
+<a id="item-8"></a>
+## [Hugging Face 发布 Holo3.1：快速本地计算机使用代理](https://huggingface.co/blog/Hcompany/holo31) ⭐️ 8.0/10
+
+Hugging Face 发布了 Holo3.1，这是一个开源的全本地计算机使用代理，能够在无需云服务的情况下自主控制图形界面。它适用于 Web、桌面和移动环境，并提供了针对本地硬件优化的量化检查点。 该版本直接解决了自主 GUI 代理在隐私、延迟和云依赖方面的担忧。它为在敏感行业中实现离线、本地部署扫清了道路，并标志着向更自足的 AI 代理的广泛转变。 Holo3.1 提升了在 Web、桌面和移动环境中的鲁棒性，并可集成到任何代理堆栈中。它首次包含了用于高效本地执行的量化检查点，但未公布与云端模型的具体基准测试分数。
+
+rss · Hugging Face Blog · Jun 2, 14:13
+
+**背景**: 计算机使用代理是一类 AI 系统，通过点击、输入和操作应用图形界面来自动完成重复任务。它们通常依赖视觉语言模型（VLM）来解释屏幕并决策操作。以往许多代理仅在云端运行，带来了隐私和延迟问题。Holo3.1 是日益壮大的开源努力的一部分，旨在将此类代理完全运行在本地设备上，利用量化技术缩小模型体积并加快推理。
+
+
+**参考链接**:
+
+- [Holo3.1: Fast & Local Computer Use Agents](https://huggingface.co/blog/Hcompany/holo31)
+- [Holo3.1 - H Company](https://hcompany.ai/holo3.1)
+- [Computer Use Agents : Benchmark & Architecture](https://aimultiple.com/computer-use-agents)
+
+
+**标签**: `#AI agents`, `#computer use`, `#open-source`, `#GUI automation`, `#local deployment`
+
+---
+
+<a id="item-9"></a>
+## [超越大模型：企业 AI 规模化依赖代理逻辑](https://huggingface.co/blog/ibm-research/agent-logic-and-scalable-ai-adoption) ⭐️ 8.0/10
+
+IBM 研究院发表博文，主张将代理逻辑（即特定领域的软件原语）与大型语言模型集成，是实现企业 AI 可靠、目标导向任务执行的关键缺失环节，而非单纯改进模型本身。 这挑战了当前一味追求扩大模型规模的趋势，指出若缺乏结构化推理和规划，企业采用将受阻。它将讨论引向能自主完成复杂业务流程的代理系统，影响企业 AI 战略。 代理逻辑包括任务分解、状态跟踪和工具使用等原语，为 LLM 提供处理多步骤问题的“地图”。IBM 的方法强调将这些原语与基础模型结合，以克服生产环境中的可靠性和一致性问题。
+
+rss · Hugging Face Blog · Jun 1, 13:51
+
+**背景**: 大语言模型擅长文本生成，但往往缺乏企业工作流自动化所需的确定性控制和规划能力。AI 代理是利用 LLM 以及推理、记忆和工具接口来自主执行任务的系统。IBM 研究院是全球顶级的研发机构，在企业 AI 领域拥有深厚积累。
+
+
+**参考链接**:
+
+- [Enterprise AI doesn't need a better model. It needs smarter agent logic .](https://dev.to/thegatewayguy/enterprise-ai-doesnt-need-a-better-model-it-needs-smarter-agent-logic-46k4)
+- [What Are AI Agents ? | IBM](https://www.ibm.com/think/topics/ai-agents)
+
+
+**标签**: `#AI agents`, `#enterprise AI`, `#LLMs`, `#scalability`, `#agent logic`
+
+---
+
+<a id="item-10"></a>
+## [OpenAI 推出 Sites：Codex 可将想法转为交互式应用](https://x.com/OpenAI/status/2061845949170045346) ⭐️ 8.0/10
+
+OpenAI 宣布推出 Sites 功能，其 Codex AI 可将工作内容、想法和计划转换为可通过 URL 分享的交互式网站或应用。该功能率先面向商业版和企业版用户开放，后续将逐步扩大覆盖范围。 这标志着从对话式 AI 向直接生成应用的重大转变，降低了非开发人员创建功能性软件的门槛，尤其在企业环境中可能加速原型制作和内部工具开发。 公告未透露技术细节、使用示例或关于托管与自定义的具体信息。目前该功能仅限商业版和企业版计划，暗示它可能是一项高级功能，具体能力仍有待公布。
 
 telegram · zaihuapd · Jun 2, 17:29
 
-**背景**: OpenAI Codex 是一套 AI 驱动的编码代理，能自动执行软件工程任务，让用户委托功能实现等编码工作。新的 Sites 功能将 Codex 的能力从生成代码扩展到直接从自然语言提示生成实时的交互式应用，这代表着向无需深厚编程知识即可 AI 辅助创建应用迈出的一步。
+**背景**: OpenAI Codex 是一系列能理解自然语言并自动执行编码任务的 AI 智能体，最初为 GitHub Copilot 提供代码补全支持。如今已扩展到更广泛的软件工程流程。Sites 功能在此基础上更进一步，可根据纯文本描述生成完整的交互式 Web 应用，免去了手动前端和后端开发。
 
 
 **参考链接**:
@@ -91,7 +229,30 @@ telegram · zaihuapd · Jun 2, 17:29
 - [OpenAI Codex](https://grokipedia.com/page/OpenAI_Codex)
 
 
-**标签**: `#OpenAI`, `#Codex`, `#应用生成`, `#AI工具`
+**标签**: `#OpenAI`, `#Codex`, `#应用生成`, `#企业产品`
+
+---
+
+<a id="item-11"></a>
+## [微软发布 Majorana 2 拓扑量子芯片，目标 2029 年商用](https://news.microsoft.com/source/features/innovation/majorana-2-microsoft-discovery-agentic-ai/) ⭐️ 8.0/10
+
+微软发布第二代拓扑量子芯片 Majorana 2，通过采用铅超导体材料将量子比特寿命提升至 20 秒以上（部分实例达一分钟），可靠性提升 1000 倍。同时，微软将商用量子计算机的目标时间提前至 2029 年，并首次透露其 Discovery 智能体 AI 平台协助了研发过程。 容错量子计算因这一进展而更触手可及，有望在密码学、药物发现和材料科学等领域引发变革。微软的拓扑路线有望提供内在抗错的量子比特，从而大幅缩短实用量子计算机的到来时间。 该芯片的量子比特数从上代 8 个增加到 12 个，采用铅基超导体，平均寿命达 20 秒，但距离百万量子比特级仍差距巨大。拓扑实验数据在物理学界仍存争议，美国国防高级研究计划局（DARPA）正对技术路线进行审计。
+
+telegram · zaihuapd · Jun 3, 04:17
+
+**背景**: 拓扑量子计算利用一种被称为任意子的准粒子，其世界线可编织成辫状以执行天然抗噪的量子逻辑操作。微软近二十年来一直沿着这一技术路线探索，重点研究马约拉纳零能模。与主流的超导或离子阱量子比特不同，拓扑量子比特将信息编码在全局、非局域的物理量中，理论上具有内在抗错能力，更易于规模化。
+
+
+**参考链接**:
+
+- [8期](https://web.math.ucsb.edu/~zhenghwa/data/research/pub/FQH-TQC.pdf)
+- [微软 Majorana 2 量 子 芯 片 亮相，另辟蹊径20年，想在2029...](https://www.163.com/tech/article/KUG0G4VS00097U7T.html)
+- [微软发布新一代 拓 扑 量 子 芯 片 Majorana 2 - Microsoft 微软 - cnBeta.COM](https://www.cnbeta.com.tw/articles/tech/1564466.htm)
+
+
+**社区讨论**: 部分物理学家仍对观测到的是否为真正的马约拉纳束缚态持谨慎态度。但硬件层面的实际进步和 DARPA 的独立审计让不少人审慎看好微软加速推进的 2029 年商用目标。
+
+**标签**: `#量子计算`, `#微软`, `#芯片`, `#AI辅助研发`
 
 ---
 
