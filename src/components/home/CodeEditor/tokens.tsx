@@ -13,7 +13,12 @@ export function TokenSpan({ token }: { token: Token }) {
 
   if (token.tip) {
     return (
-      <span className={className} data-tip={token.tip} tabIndex={0}>
+      <span
+        className={className}
+        data-tip={token.tip}
+        aria-label={`${token.text}, ${token.tip}`}
+        tabIndex={0}
+      >
         {token.text}
       </span>
     );

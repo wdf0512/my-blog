@@ -180,6 +180,7 @@ export function CodeEditor() {
           <span className={styles.statusItem}>TypeScript</span>
           <span className={styles.statusItem}>UTF-8</span>
           <span className={styles.statusItem}>LF</span>
+          <span className={styles.statusItem}>Ln {file.lines.length}, Col 1</span>
         </div>
       </div>
     </div>
