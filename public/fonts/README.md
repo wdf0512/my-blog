@@ -1,23 +1,17 @@
-# Clash Display Fonts
+# Fonts
 
-**Required Files:**
-- `ClashDisplay-Regular.woff2`
-- `ClashDisplay-Semibold.woff2`
-- `ClashDisplay-Bold.woff2`
+## Clash Display (committed)
+`ClashDisplay-{Regular,Semibold,Bold}.woff2` — loaded via `next/font/local` in `src/app/layout.tsx`.
 
-**Download from:**
-- Fontshare (Free): https://www.fontshare.com/fonts/clash-display
-- Indian Type Foundry (~$60): https://www.indiantypefoundry.com/fonts/clash
+## MonacoLigaturized (you supply)
+The About-section code editor uses `MonacoLigaturized Nerd Font` via plain `@font-face`
+in `src/app/globals.css`. Drop these four woff2 files here to activate it:
 
-**Instructions:**
-1. Visit the Fontshare link above
-2. Click "Download" button
-3. Extract the ZIP file
-4. Copy the WOFF2 files from the `fonts/` folder to this directory
-5. You should have:
-   - public/fonts/ClashDisplay-Regular.woff2
-   - public/fonts/ClashDisplay-Semibold.woff2
-   - public/fonts/ClashDisplay-Bold.woff2
+- `MonacoLigaturized-Regular.woff2`
+- `MonacoLigaturized-Italic.woff2`
+- `MonacoLigaturized-Bold.woff2`
+- `MonacoLigaturized-BoldItalic.woff2`
 
-**Alternative (if budget constrained):**
-Use Satoshi from Fontshare as a free geometric alternative with similar style.
+Until they exist the editor falls back to `ui-monospace` / Geist Mono (ligatures
+appear automatically once the files are present). Convert your `.ttf`/`.otf` with
+`woff2_compress` or https://transfonter.org (enable WOFF2 only).
