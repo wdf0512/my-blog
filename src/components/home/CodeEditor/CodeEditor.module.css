@@ -344,7 +344,7 @@
   color: var(--ctp-overlay2);
 }
 .comment {
-  color: var(--ctp-overlay1);
+  color: var(--ctp-comment);
   font-style: italic;
 }
 .bold {
@@ -379,7 +379,7 @@
   transform: translateY(4px) scale(0.96);
   transform-origin: bottom left;
   pointer-events: none;
-  transition: opacity 0.18s ease, transform 0.18s ease;
+  transition: opacity 0.18s ease-out, transform 0.18s ease-out;
   z-index: 5;
 }
 .interactive:hover::after,
@@ -388,7 +388,9 @@
   transform: translateY(0) scale(1);
 }
 .interactive:focus-visible {
-  outline: none;
+  outline: 2px solid var(--ctp-blue);
+  outline-offset: 2px;
+  border-radius: 3px;
 }
 
 /* Status bar */

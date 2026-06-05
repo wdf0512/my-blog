@@ -445,6 +445,8 @@ a:hover {
   --ctp-yellow: #df8e1d;
   --ctp-peach: #fe640b;
   --ctp-sky: #04a5e5;
+  /* Comments use a higher-contrast subtext (AA 4.5:1 on base; overlay1 was 2.83:1). */
+  --ctp-comment: #5c5f77;
 
   --font-code: 'MonacoLigaturized', ui-monospace, var(--font-geist-mono),
     'SFMono-Regular', Menlo, Consolas, monospace;
@@ -467,6 +469,8 @@ a:hover {
   --ctp-yellow: #f9e2af;
   --ctp-peach: #fab387;
   --ctp-sky: #89dceb;
+  /* Comments use a higher-contrast overlay (AA 5.81:1 on base; overlay1 was 4.44:1). */
+  --ctp-comment: #9399b2;
 }
 
 /* MonacoLigaturized — user supplies the woff2 files (see public/fonts/README.md).
