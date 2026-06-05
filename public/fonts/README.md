@@ -7,17 +7,16 @@
 The About-section code editor uses these via plain `@font-face` in `src/app/globals.css`
 (family alias `MonacoLigaturized`):
 
-- `MonacoLigaturizedNerdFontMono-Regular.ttf` — 400 normal
-- `MonacoLigaturizedNerdFontMono-Italic.ttf` — 400 italic
-- `MonacoLigaturizedNerdFontMono-Bold.ttf` — 700 normal
-- `MonacoLigaturizedNerdFontMono-BoldItalic.ttf` — 700 italic
+- `MonacoLigaturizedNerdFontMono-Regular.woff2` — 400 normal
+- `MonacoLigaturizedNerdFontMono-Italic.woff2` — 400 italic
+- `MonacoLigaturizedNerdFontMono-Bold.woff2` — 700 normal
+- `MonacoLigaturizedNerdFontMono-BoldItalic.woff2` — 700 italic
 
 The editor enables ligatures via `font-variant-ligatures: contextual` +
 `font-feature-settings: "calt","liga"`. If a file is missing, the editor falls back
 to `ui-monospace` / Geist Mono.
 
-> **Performance note:** these are `.ttf` (~2.5 MB each, ~10 MB total). Converting to
-> `.woff2` roughly halves each file (and the git footprint). To switch later: convert
-> with `fonttools` (`fonttools ttLib.woff2 compress <file>.ttf`) or
-> https://transfonter.org (enable WOFF2 only), drop the `.woff2` files here, and change
-> each `src: url('…').ttf format('truetype')` to `…woff2 format('woff2')` in `globals.css`.
+> Converted from the upstream `.ttf` (~2.35 MB each) to `.woff2` (~1.08 MB each, ~46%)
+> with `fonttools` (`TTFont(src); f.flavor='woff2'; f.save(dst)`, needs `brotli`).
+> To regenerate from a new `.ttf`: convert, drop the `.woff2` here, keep the
+> `format('woff2')` `src` in `globals.css`.
