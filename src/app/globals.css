@@ -473,33 +473,33 @@ a:hover {
   --ctp-comment: #9399b2;
 }
 
-/* MonacoLigaturized — user supplies the woff2 files (see public/fonts/README.md).
-   Plain @font-face (not next/font) keeps the build green before the files exist;
-   the editor falls back to ui-monospace / Geist Mono until they land. */
+/* MonacoLigaturized Nerd Font Mono (TrueType files in public/fonts/).
+   Plain @font-face (not next/font) keeps the build green even if a file is
+   missing; the editor falls back to ui-monospace / Geist Mono in that case. */
 @font-face {
   font-family: 'MonacoLigaturized';
-  src: url('/fonts/MonacoLigaturized-Regular.woff2') format('woff2');
+  src: url('/fonts/MonacoLigaturizedNerdFontMono-Regular.ttf') format('truetype');
   font-weight: 400;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'MonacoLigaturized';
-  src: url('/fonts/MonacoLigaturized-Italic.woff2') format('woff2');
+  src: url('/fonts/MonacoLigaturizedNerdFontMono-Italic.ttf') format('truetype');
   font-weight: 400;
   font-style: italic;
   font-display: swap;
 }
 @font-face {
   font-family: 'MonacoLigaturized';
-  src: url('/fonts/MonacoLigaturized-Bold.woff2') format('woff2');
+  src: url('/fonts/MonacoLigaturizedNerdFontMono-Bold.ttf') format('truetype');
   font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: 'MonacoLigaturized';
-  src: url('/fonts/MonacoLigaturized-BoldItalic.woff2') format('woff2');
+  src: url('/fonts/MonacoLigaturizedNerdFontMono-BoldItalic.ttf') format('truetype');
   font-weight: 700;
   font-style: italic;
   font-display: swap;
