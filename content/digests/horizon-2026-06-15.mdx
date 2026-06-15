@@ -1,0 +1,257 @@
+---
+title: "AI 技术情报 · 2026-06-15"
+slug: horizon-2026-06-15
+date: 2026-06-15
+published: true
+description: "从 22 条内容中精选 11 条 AI/ML 重要动态"
+item_count: 11
+total_fetched: 22
+---
+
+> 从 22 条内容中筛选出 11 条重要资讯。
+
+---
+
+1. [里约“本土”大语言模型被曝光为现有模型加权合并](#item-1) ⭐️ 8.0/10
+2. [形式化方法的实践：从历史到 AI 时代的未来编程](#item-2) ⭐️ 8.0/10
+3. [为何 AI 没有取代软件工程师，也不会取代](#item-3) ⭐️ 8.0/10
+4. [Pyodide 314.0 允许包维护者直接向 PyPI 发布 WASM wheel](#item-4) ⭐️ 8.0/10
+5. [连贯上下文可悄然改变大模型内部处理状态，使现有安全措施失效](#item-5) ⭐️ 8.0/10
+6. [Kage 将整个网站打包成单一可执行文件以供离线浏览](#item-6) ⭐️ 7.0/10
+7. [开源知识图谱流水线结合混合检索，解决大模型的“中间信息丢失”问题](#item-7) ⭐️ 7.0/10
+8. [验证者税揭示工具使用型 LLM 智能体安全与成功的权衡](#item-8) ⭐️ 7.0/10
+9. [PaddleOCR v3 至 v6 版本用 ncnn 框架实现的 C++ 轻量部署方案](#item-9) ⭐️ 7.0/10
+10. [为何有效的 ePub 文件在 Kobo 阅读器上会出错](#item-10) ⭐️ 6.0/10
+11. [Zeroserve 通过兼容 Caddy 实现 3 倍吞吐量和 70% 延迟降低](#item-11) ⭐️ 6.0/10
+
+---
+
+<a id="item-1"></a>
+## [里约“本土”大语言模型被曝光为现有模型加权合并](https://github.com/nex-agi/Nex-N2/issues/4) ⭐️ 8.0/10
+
+一项开源调查发现，里约热内卢市政 IT 公司宣布为“本土”微调模型的 Rio-3.5-Open-397B，实际上是大约 60% Nex-N2 Pro 与 40% Qwen3.5-397B 的线性组合，且未披露进行了新的训练。 该事件凸显了随着模型合并技术让无需训练即可创建高性能大语言模型变得容易，围绕模型署名的伦理问题日益突出，这可能误导公众并掩盖原始开发者的贡献。 取证分析显示，Rio 模型的每个权重张量在所有 60 个网络层中都与 Nex-N2 Pro 和 Qwen3.5 的 0.6/0.4 混合体在数千个标准差内完全匹配。模型创建者后来承认这只是一个合并，没有进行策略蒸馏。
+
+hackernews · unrvl22 · 6月14日 15:37 · [社区讨论](https://news.ycombinator.com/item?id=48528371)
+
+**背景**: 模型合并是一种将共享相同基础架构的两个或多个大语言模型的权重进行组合的技术，无需昂贵的 GPU 训练即可创建新模型，其方法包括线性插值（加权平均）。Nex-N2 Pro 是一个具有强大编码能力的开源智能体模型，大约在 Rio 模型发布前一周推出。Qwen3.5 则是阿里巴巴推出的基础大语言模型系列，许多专业模型都基于此构建。
+
+
+**参考链接**:
+
+- [nex-agi/Nex-N2-Pro · Hugging Face](https://huggingface.co/nex-agi/Nex-N2-Pro)
+- [The 4 Model Merging Techniques : How to Combine AI... | Towards AI](https://pub.towardsai.net/the-4-model-merging-techniques-how-to-combine-ai-models-without-training-1f5a4621cd0e)
+- [Merge Large Language Models with mergekit](https://huggingface.co/blog/mlabonne/merge-models)
+
+
+**社区讨论**: 社区讨论集中在合并模型的鲁棒性上，有评论者惊讶于简单的线性混合不仅没有降低反而提升了性能。其他人则就未公开合并的伦理问题展开辩论，认为创建者可能计划但未能加入额外的蒸馏训练，以支持其“本土开发”的说法。
+
+**标签**: `#AI`, `#LLM`, `#open-source`, `#model-merging`, `#ethics`
+
+---
+
+<a id="item-2"></a>
+## [形式化方法的实践：从历史到 AI 时代的未来编程](https://blog.janestreet.com/formal-methods-at-jane-street-index/?from_theconsensus=1) ⭐️ 8.0/10
+
+由 Jane Street 引发的一场讨论探讨了形式化方法的实际应用，将历史上的 Boyer-Moore 证明器等自动化验证技术与当前趋势（如验证 AI 生成代码、使用 Scala 3 等语言的先进类型系统在编译期保证正确性）联系了起来。 这预示着开发者的角色可能从编写原始代码转向编写规格并验证 AI 生成内容，以应对审查海量机器生成代码的挑战，并在架构复杂度超越人类直觉时确保软件可靠性。 历史经验表明，自动化证明需要大量人工干预来提供引理。一位现代从业者指出，在 Scala 3 中不使用宏、仅通过富有表现力的类型即可创建编译期证明，这有助于防止 AI 编程助手滑向低质量模式。
+
+hackernews · eatonphil · 6月14日 12:35 · [社区讨论](https://news.ycombinator.com/item?id=48526633)
+
+**背景**: 形式化方法指运用逻辑演算、类型系统和程序语义等数学技术，对软件和硬件进行严格的规约、开发和验证。自动化定理证明是其子领域，早期系统包括用于简单任务的 Oppen-Nelson 化简器和依赖启发式与用户提供引理来处理复杂证明的 Boyer-Moore 证明器。
+
+
+**参考链接**:
+
+- [Formal methods](https://en.wikipedia.org/wiki/Formal_methods)
+- [Proof automation](https://en.wikipedia.org/wiki/Proof_automation)
+
+
+**社区讨论**: 评论者普遍认同形式化验证在 AI 时代的重要性。一个核心争论在于：形式化规约是否只是另一种重复造轮子，还是像另一种观点认为的那样，随着架构复杂度和 AI 生成代码量远超人工审查极限，它将变得至关重要。
+
+**标签**: `#formal-methods`, `#verification`, `#programming-languages`, `#ai-code-generation`, `#type-systems`
+
+---
+
+<a id="item-3"></a>
+## [为何 AI 没有取代软件工程师，也不会取代](https://simonwillison.net/2026/Jun/14/why-ai-hasnt-replaced-software-engineers/#atom-everything) ⭐️ 8.0/10
+
+Arvind Narayanan 和 Sayash Kapoor 发表了一篇基于证据的文章，认为 AI 并未导致软件工程师大规模失业，并引用了纽约 WARN 法案的早期数据，显示在该法案生效的第一年里，没有一家公司将裁员归因于 AI。他们认为决策制定和深层次的人类理解等关键瓶颈抵抗自动化。 该分析直接挑战了 AI 将很快取代大多数专业人士的普遍预测，并提供了早期实证数据，表明即便在极易受冲击的领域，大规模岗位替代也并未发生。它将公众叙事从害怕工作岗位消失，转向理解人类在复杂协调和责任承担中的价值。 2025 年 3 月，纽约成为美国首个要求在 WARN 法案文件中增加 AI 披露复选框的州，第一年有 160 多家公司提交了通知，但无一勾选 AI 选项。文章指出了三个真正抵抗自动化的瓶颈：决定要构建什么、验证交付物，以及对代码库、业务和环境的深层次人类理解。
+
+rss · Simon Willison · 6月14日 23:54
+
+**背景**: WARN 法案是美国一项 1988 年的劳动法，要求大型雇主在大规模裁员或工厂关闭前提前 60 天发出通知。2025 年 7 月，纽约州 WARN 法案进行了修订，增加了强制性的复选框，要求雇主披露 AI 是否影响了裁员决定，使其成为首个直接追踪 AI 相关工作岗位流失的州。
+
+
+**参考链接**:
+
+- [New York State WARN Act Now Requires Disclosure on AI Use in Layoffs - HR Works](https://hrworks-inc.com/industry-update/new-york-state-warn-act-now-requires-disclosure-on-ai-use-in-layoffs/)
+
+
+**标签**: `#AI`, `#software engineering`, `#labor economics`, `#technology policy`, `#data analysis`
+
+---
+
+<a id="item-4"></a>
+## [Pyodide 314.0 允许包维护者直接向 PyPI 发布 WASM wheel](https://simonwillison.net/2026/Jun/13/publishing-wasm-wheels/#atom-everything) ⭐️ 8.0/10
+
+Pyodide 314.0 现在支持将编译为 WebAssembly (WASM) 的包直接发布到 PyPI，不再需要维护者手动构建和托管超过 300 个包。包作者可以直接为 PyEmscripten 平台构建并上传 WASM wheel，就像为其他操作系统构建原生 wheel 一样。 这一变化消除了 Pyodide 生态系统中的重大维护瓶颈，无需人工审核即可实现社区驱动的浏览器中 Python 包分发。它从根本上实现了分发的去中心化，使平台能够更好地适应不断增长的 WebAssembly 和 Pyodide 用户群。 WASM wheel 使用 cp314-pyemscripten_2026_0_wasm32 平台标签，可在运行时通过 micropip 安装。该功能遵循 PEP 783 中定义的 PyEmscripten ABI，并需要对 PyPI 的 warehouse（已于 4 月 21 日合并）进行修改。
+
+rss · Simon Willison · 6月13日 23:55
+
+**背景**: Pyodide 是一个编译为 WebAssembly 的 Python 运行时，可在浏览器中运行，允许 Python 代码和编译后的 C/Rust 扩展在 Web 环境中执行。此前，Pyodide 维护者不得不手动编译并维护一个包含 300 多个预构建包的仓库，这既耗时又阻碍了社区贡献。PEP 783 定义了 PyEmscripten 平台 ABI，这是基于 Emscripten 的 Python 运行时加载共享库的标准二进制接口。
+
+
+**参考链接**:
+
+- [Pyodide 314.0 Release | Pyodide blog](https://blog.pyodide.org/posts/314-release/)
+- [PEP 783 – Emscripten Packaging | peps .python.org](https://peps.python.org/pep-0783/)
+
+
+**标签**: `#python`, `#webassembly`, `#pyodide`, `#pypi`, `#devtools`
+
+---
+
+<a id="item-5"></a>
+## [连贯上下文可悄然改变大模型内部处理状态，使现有安全措施失效](https://www.reddit.com/r/MachineLearning/comments/1u5xnxg/coherent_context_can_silently_shift_llms_into_a/) ⭐️ 8.0/10
+
+一位独立研究者证明，一段连贯的目标文本可以在大模型生成最终输出之前，将其转变到不同的内部处理状态，即使没有使用明确的越狱提示。这种状态转变发生在模型隐藏状态和残差流轨迹的深层，而模型表面看起来仍然行为正常。 这暴露了 RLHF 和输出分类器等当前 AI 安全方法的一个根本性盲点，因为它们仅监控最终输出。如果上下文可以悄悄改变模型理解和应用自身安全规则的方式，则表明当前的“对齐”方法只是表层修补，并非稳健的解决方案。 该研究主要使用开放权重模型 Gemma-3-12B-IT，测量了隐藏状态几何、残差流轨迹，并应用了稀疏自编码器读取和 KL 散度分析等技术。所使用的目标文本是密集、连贯的段落，确立了特定的论述模式，而非直接的“忽略你的规则”指令。
+
+reddit · r/MachineLearning · /u/PresentSituation8736 · 6月14日 21:42
+
+**背景**: 机械可解释性是一个旨在逆向工程神经网络内部计算的研究领域。残差流是 Transformer 架构的核心组件，充当各层之间信息累积的通信通道。RLHF（基于人类反馈的强化学习）是一种主流的对齐技术，通过训练模型使其偏好人类评分高的输出。稀疏自编码器（SAE）是一种用于将模型内部激活分解为可解释特征的工具。
+
+
+**参考链接**:
+
+- [Mechanistic interpretability](https://en.wikipedia.org/wiki/Mechanistic_interpretability)
+- [RLHF](https://en.wikipedia.org/wiki/RLHF)
+
+
+**标签**: `#AI safety`, `#mechanistic interpretability`, `#alignment`, `#LLMs`, `#adversarial context`
+
+---
+
+<a id="item-6"></a>
+## [Kage 将整个网站打包成单一可执行文件以供离线浏览](https://github.com/tamnd/kage) ⭐️ 7.0/10
+
+Kage 是一个使用 Go 语言开发的新开源工具，能够下载整个网站并将其打包成一个独立的二进制文件，从而可在任何机器上离线运行和访问。 该工具解决了在网络连接受限或完全无网的环境下（如偏远现场或教室）可靠访问文档和网页内容的需求，并将复杂的网站归档流程简化为一个易于分发的文件。 Kage 生成的是一个静态网站，需要使用其自带的 'serve' 命令来托管内容，因为它不能生成一个可直接用浏览器打开的单一 HTML 文件。该项目的演示动图是作者使用自己开发的另一个工具 'ascii-gif' 制作的。
+
+hackernews · tamnd · 6月14日 17:25 · [社区讨论](https://news.ycombinator.com/item?id=48529990)
+
+**背景**: 由于网站由 HTML、CSS、JavaScript、图片和字体等复杂文件构成，将其打包以供离线使用在技术上颇具挑战。现有工具通常会生成一个需要用本地服务器打开的文件夹，或是存在自身局限性的单一 HTML 文件（如 SingleFile）。而一个自包含的二进制文件则提供了折中方案，将内嵌文件系统与内置服务器结合，便于分发。
+
+**社区讨论**: 社区讨论极具建设性。用户们称赞了该工具在离线公司维基方面的实用性，并认可了单一二进制文件解决方案的价值。关键建议包括创建一个无需单独服务器即可运行的单体 HTML 文件，同时也有用户将其与 SingleFile 等现有工具进行对比，并指出二进制格式的独特便携性优势。
+
+**标签**: `#offline-first`, `#archiving`, `#dev-tools`, `#Go`, `#web-scraping`
+
+---
+
+<a id="item-7"></a>
+## [开源知识图谱流水线结合混合检索，解决大模型的“中间信息丢失”问题](https://www.reddit.com/r/MachineLearning/comments/1u5yyyl/i_built_an_opensource_knowledge_graph_pipeline/) ⭐️ 7.0/10
+
+一个名为 GraphRAG-Studio 的全栈开源流水线发布，它能够从原始文本构建知识图谱、进行社区检测，并采用结合稠密向量搜索与 BM25 关键词搜索的混合检索策略。该方法专门针对“中间信息丢失”问题，旨在提升大语言模型在多项跳推理任务上的表现。 通过将图遍历与混合检索相结合，该系统能够有效连接分散的信息，弥补了标准向量搜索在处理复杂的多步查询时的不足。这为开发者构建更精确、更具上下文感知能力的检索增强生成应用提供了一种实用的工程化解决方案。 该流水线使用 spaCy 进行命名实体识别，用 NetworkX 构建加权共现图，并采用 greedy_modularity_communities 算法进行社区检测。它还通过互惠排名融合合并本地与全局信息，并使用 Cross-Encoder 对候选项重新评分，从而进一步优化结果。
+
+reddit · r/MachineLearning · /u/Future_Caregiver_643 · 6月14日 22:38
+
+**背景**: “中间信息丢失”现象是指大语言模型倾向于忽略位于长文本上下文中间位置的信息，导致在需要综合多个不连续文本块的任务中表现不佳。知识图谱将信息构建为实体及其关系的网络，能够进行显式的多跳遍历来寻找联系。BM25 是一种经典的、基于关键词的检索函数，它与捕捉语义意义但可能遗漏精确关键词匹配的稠密向量搜索形成互补。
+
+
+**参考链接**:
+
+- [Solving the 'Lost in the Middle' Problem: Advanced RAG Techniques for Long-Context LLMs](https://www.getmaxim.ai/articles/solving-the-lost-in-the-middle-problem-advanced-rag-techniques-for-long-context-llms/)
+- [Hybrid Retrieval : Combining BERT and BM 25 for Enhanced... | Medium](https://medium.com/@bormotovk/hybrid-retrieval-combining-bert-and-bm25-for-enhanced-performance-4f6f80881c13)
+- [GreedyModularityAlgorithm (JGraphT : a free Java graph library)](https://jgrapht.org/javadoc/org.jgrapht.core/org/jgrapht/alg/clustering/GreedyModularityAlgorithm.html)
+
+
+**标签**: `#knowledge-graphs`, `#hybrid-retrieval`, `#large-language-models`, `#information-retrieval`, `#open-source`
+
+---
+
+<a id="item-8"></a>
+## [验证者税揭示工具使用型 LLM 智能体安全与成功的权衡](https://www.reddit.com/r/MachineLearning/comments/1u58mkq/the_verifier_tax_horizondependent_safetysuccess/) ⭐️ 7.0/10
+
+一篇发表于 ACM CAIS 2026 会议的论文提出了“验证者税”概念，表明在工具使用型 LLM 智能体中添加安全验证会减少不安全成功，但随着任务周期增长，对任务完成率的损害会日益加剧。 该框架揭示了自主 LLM 智能体在安全性与能力之间一个此前未被量化的关键权衡，促使开发者采用比简单任务成功率更细致的评估指标。 该研究在τ-bench 场景下使用双层验证架构，先进行确定性策略检查，再由基于 LLM 的验证器处理，并将结果分为安全成功、不安全成功和失败三类。
+
+reddit · r/MachineLearning · /u/AccomplishedLeg1508 · 6月14日 02:09
+
+**背景**: LLM 智能体如今可以使用计算器或 API 等外部工具来执行任务。τ-bench 是一个在零售或机票预订等领域模拟用户与此类智能体对话的基准测试。随着智能体变得更加自主，验证其行为不违反安全或政策约束（如泄露隐私数据或进行未授权购买）成为 AI 安全的核心挑战。
+
+
+**参考链接**:
+
+- [sierra-research/tau-bench: Code and Data for Tau-Bench · GitHub](https://github.com/sierra-research/tau-bench)
+- [𝜏-Bench: Benchmarking AI agents for the real-world | Sierra](https://sierra.ai/blog/benchmarking-ai-agents)
+- [The Verifier Problem: Why AI Agents Keep Hallucinating... | Medium](https://medium.com/@rickoshade1891/the-verifier-problem-why-ai-agents-keep-hallucinating-and-how-we-fix-it-1ef60785f9ff)
+
+
+**社区讨论**: 作者向社区提出了一个开放性问题，即智能体评估应如何对不安全成功进行分类——是算作失败、成功，还是独立类别——这表明在评估标准上存在持续的讨论。
+
+**标签**: `#LLM Agents`, `#AI Safety`, `#Tool Use`, `#Evaluation`, `#Verification`
+
+---
+
+<a id="item-9"></a>
+## [PaddleOCR v3 至 v6 版本用 ncnn 框架实现的 C++ 轻量部署方案](https://www.reddit.com/r/MachineLearning/comments/1u4hy2x/paddleocr_v3v4v5v6_implemented_in_c_with_ncnn_p/) ⭐️ 7.0/10
+
+一位开发者发布了一个经过改进的 C++ 版 PaddleOCR 实现，现已支持 PP-OCR 模型的 v3 至 v6 版本，并使用轻量级的 ncnn 推理框架替代了依赖复杂、部署繁琐的官方 Paddle C++ 运行时。 该项目显著降低了在资源受限或嵌入式环境中部署主流 PaddleOCR 模型的难度。通过消除繁重的依赖项，它为那些注重简洁和效率的生产系统提供了更顺畅的集成路径。 该实现使用了腾讯专为 CPU 和移动端优化的 ncnn 框架，作者提到在其特定任务中运行速度更快。潜在限制在于原帖中缺少详细的性能基准测试或社区验证。
+
+reddit · r/MachineLearning · /u/Knok0932 · 6月13日 05:06
+
+**背景**: PaddleOCR 是 PaddlePaddle 开发的一个流行开源光学字符识别工具包。其官方 C++ 部署方式需依赖复杂的 Paddle 推理库。ncnn 是腾讯开发的高性能神经网络推理框架，专为移动和嵌入式平台设计，完全无第三方依赖，是简化模型部署的常见选择。
+
+
+**参考链接**:
+
+- [Tencent/ ncnn : ncnn is a high-performance neural network inference ...](https://github.com/Tencent/ncnn)
+- [GitHub - PaddlePaddle/ PaddleOCR : Turn any PDF or image document...](https://github.com/PaddlePaddle/PaddleOCR)
+
+
+**标签**: `#ocr`, `#cpp`, `#model-deployment`, `#ncnn`, `#paddleocr`
+
+---
+
+<a id="item-10"></a>
+## [为何有效的 ePub 文件在 Kobo 阅读器上会出错](https://andreklein.net/your-epub-is-fine-kobo-disagrees-blame-adobe/) ⭐️ 6.0/10
+
+一项调查揭示，许多有效的 ePub 文件无法在 Kobo 电子阅读器上正确显示，其根本原因在于 Adobe 过时的 RMSDK 渲染引擎，而非 ePub 文件本身有误。 该问题凸显了电子书生态系统长期存在的不兼容问题，迫使独立作者和出版商必须采用 kepub 格式等特定变通方案，才能在流行设备上保证一致的阅读体验。 Kobo 设备对标准 ePub 文件使用 Adobe 传统的 RMSDK 引擎，但通过使用 kepubify 等工具将文件转换为 kepub 格式，可以调用更先进的渲染引擎。Adobe 的 RMSDK 难以获取，且不支持非 Adobe 的 DRM 方案。
+
+hackernews · sohkamyung · 6月14日 22:54 · [社区讨论](https://news.ycombinator.com/item?id=48533848)
+
+**背景**: Kobo 是一个主要的电子阅读器品牌，其主要采用 ePub 标准。Adobe 的 RMSDK（阅读器移动软件开发工具包）是一个较旧的渲染引擎，广泛部署于各类电子阅读器上，用于显示 ePub 文件。kepub 格式是 Kobo 专有的 ePub 变体，能够启用 Kobo 特有的功能和现代渲染引擎，通常能提供更好的性能和兼容性。
+
+
+**参考链接**:
+
+- [Online EPUB to KEPUB converter - Kepubify - Patrick Gaskin](https://pgaskin.net/kepubify/try/)
+- [Using Readium mixed with Adobe RMSDK | International Digital...](https://idpf.org/forum/topic-1780)
+- [Kepub vs EPUB : r/kobo - Reddit](https://www.reddit.com/r/kobo/comments/vz3nx6/kepub_vs_epub/)
+
+
+**社区讨论**: 社区普遍对 Adobe 的软件质量感到失望，并引用了如 Flash 等历史案例。许多用户分享了实用的解决方案，比如通过 kepubify 工具将文件转换为 kepub 格式，他们发现这能有效解决问题。开发者们也表示，很难直接使用或获取 RMSDK 引擎。
+
+**标签**: `#epub`, `#kobo`, `#adobe`, `#ebook-formats`, `#digital-publishing`
+
+---
+
+<a id="item-11"></a>
+## [Zeroserve 通过兼容 Caddy 实现 3 倍吞吐量和 70% 延迟降低](https://su3.io/posts/zeroserve-caddy-compat) ⭐️ 6.0/10
+
+零配置 Web 服务器 Zeroserve 新增了对 Caddy 的兼容性，据报告与之前相比，其吞吐量提升了 3 倍，延迟降低了 70%。 这一性能突破表明，利用 io_uring 的服务器可以显著超越传统架构，这可能会改变那些对毫秒级延迟极为敏感的高性能 Web 服务领域的格局。 所报告的提升伴随着显著的取舍：当前的 Caddy 兼容性缺乏对 ACME 证书自动化协议和插件系统的支持，并且使用 io_uring 会引入潜在的安全问题。
+
+hackernews · losfair · 6月14日 13:43 · [社区讨论](https://news.ycombinator.com/item?id=48527145)
+
+**背景**: Zeroserve 是一个紧凑的零配置 HTTPS 服务器，可通过 HTTP/2 和 TLS 1.3 提供静态网站服务。Caddy 是一款流行的 Web 服务器，以其通过 ACME 自动配置 HTTPS 而闻名。实现 Caddy 兼容性让 Zeroserve 能够使用 Caddy 的配置格式，同时其后端利用高性能的 Linux 内核 I/O 接口 io_uring 来提升速度。
+
+
+**参考链接**:
+
+- [Zeroserve : An eBPF-Powered Web Server Without... - Sesame Disk](https://sesamedisk.com/zeroserve-ebpf-web-server-infrastructure/)
+- [zeroserve : a zero -config web server you can script with eBPF](https://su3.io/posts/introducing-zeroserve)
+- [Automatic Certificate Management Environment - Wikipedia](https://en.wikipedia.org/wiki/Automatic_Certificate_Management_Environment)
+
+
+**社区讨论**: 社区反响不一；虽然性能提升被认可，但许多评论者认为缺乏 ACME 支持是一个致命缺陷。其他人则对将 io_uring 用于 Web 服务器的安全性表示担忧，质疑像 libuv 这样的库是否是更安全的选择。
+
+**标签**: `#web-server`, `#performance`, `#iouring`, `#caddy`, `#networking`
+
+---
+
