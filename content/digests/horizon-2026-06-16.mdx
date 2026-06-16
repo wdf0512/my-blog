@@ -1,0 +1,474 @@
+---
+title: "AI 技术情报 · 2026-06-16"
+slug: horizon-2026-06-16
+date: 2026-06-16
+published: true
+description: "从 40 条内容中精选 21 条 AI/ML 重要动态"
+item_count: 21
+total_fetched: 40
+---
+
+> 从 40 条内容中筛选出 21 条重要资讯。
+
+---
+
+1. [Iroh 1.0 发布：面向应用层的 P2P 网络库](#item-1) ⭐️ 9.0/10
+2. [虚假 LinkedIn 招聘骗局利用 npm prepare 钩子植入后门](#item-2) ⭐️ 8.0/10
+3. [开发者分享用本地大模型代替 Claude/GPT 作为日常编程助手的实践](#item-3) ⭐️ 8.0/10
+4. [福克斯拟以 220 亿美元收购 Roku](#item-4) ⭐️ 8.0/10
+5. [内部冲突致 Anthropic 模型因出口管制下线](#item-5) ⭐️ 8.0/10
+6. [基于时间导数的误差驱动预测学习：一种生物可行的反向传播替代方案](#item-6) ⭐️ 8.0/10
+7. [禁书图书馆藏身于 Wi-Fi 智能灯泡之中](#item-7) ⭐️ 7.0/10
+8. [《我爱电脑》一文激起编程怀旧与 AI 守门人辩论](#item-8) ⭐️ 7.0/10
+9. [Hetzner 云服务器价格最高上涨 3 倍，AI 硬件稀缺是主因](#item-9) ⭐️ 7.0/10
+10. [技术白皮书深度解析《指挥官基恩》的革命性游戏引擎](#item-10) ⭐️ 7.0/10
+11. [Salesforce 以 36 亿美元收购 AI 客服公司 Fin](#item-11) ⭐️ 7.0/10
+12. [铜转运药物在阿尔茨海默病小鼠模型中恢复记忆并清除毒性蛋白](#item-12) ⭐️ 7.0/10
+13. [数据表明 AI 尚未也难导致软件工程师大规模失业](#item-13) ⭐️ 7.0/10
+14. [大语言模型展现出偏爱的关联角色名组合，可用于模型指纹识别](#item-14) ⭐️ 7.0/10
+15. [Cleo：将完整分析师行为压缩至 2B 模型](#item-15) ⭐️ 7.0/10
+16. [TinyWind：有真实风物理的像素航海游戏，玩家已航行 38 万多公里](#item-16) ⭐️ 6.0/10
+17. [在家搭建自托管 AI 开发平台](#item-17) ⭐️ 6.0/10
+18. [TimescaleDB 如何利用混合行列压缩技术处理时序数据](#item-18) ⭐️ 6.0/10
+19. [开放训练框架如 FeynRL 对于 ML 研究的重要性远超开放权重](#item-19) ⭐️ 6.0/10
+20. [顶尖 AI 实验室为何大量派员工参加学术会议？](#item-20) ⭐️ 6.0/10
+21. [博士研究招募 UX 与 AI 从业者测试 LLM 聊天机器人信任设计方法](#item-21) ⭐️ 6.0/10
+
+---
+
+<a id="item-1"></a>
+## [Iroh 1.0 发布：面向应用层的 P2P 网络库](https://www.iroh.computer/blog/v1) ⭐️ 9.0/10
+
+Iroh 正式发布 1.0 版本，作为一个应用层 P2P 网络库，它允许应用开发者无需管理网络基础设施即可实现设备间的直连。 该版本通过在应用层抽象化网络复杂性，使构建去中心化应用变得更容易，类似于 Tailscale 在网络层所做的工作，可能会加速 P2P 功能在主流应用中的普及。 Iroh 基于 P2P QUIC 协议，使用中继和打洞技术，节点通过 NodeId 和拨号密钥（Dial Key）进行身份验证。1.0 版本还新增了自定义传输层支持，开发者可以将其扩展到 WebRTC 或 BLE 等协议。
+
+hackernews · chadfowler · 6月15日 15:13 · [社区讨论](https://news.ycombinator.com/item?id=48542480)
+
+**背景**: P2P 网络允许设备直连，但应用开发者通常需要自行处理 NAT 穿透、连接建立和安全等问题。Iroh 和 libp2p 等库在应用层提供这些能力，而 Tailscale 等工具则在网络层运作。Iroh 使用 Rust 构建，注重可靠性和简洁性。
+
+
+**参考链接**:
+
+- [A high-level description of what iroh is](https://www.iroh.computer/docs/overview)
+- [Brendan O'Brien - n0, Iroh and the Future of Peer to Peer - YouTube](https://www.youtube.com/watch?v=b2iX5vKIN-k)
+
+
+**社区讨论**: 社区参与度极高，许多人将 Iroh 比作应用层的 Tailscale。部分用户质疑在已有 IPv6 和 DNS 的情况下是否需要新的网络方案，另一些则对去中心化充满热情。核心开发者回应了功能请求，并解释了自定义传输层的设计。
+
+**标签**: `#networking`, `#p2p`, `#open-source`, `#rust`, `#distributed-systems`
+
+---
+
+<a id="item-2"></a>
+## [虚假 LinkedIn 招聘骗局利用 npm prepare 钩子植入后门](https://roman.pt/posts/linkedin-backdoor/) ⭐️ 8.0/10
+
+一名假冒的 LinkedIn 招聘者通过伪装成技术面试任务，诱骗开发者安装恶意 GitHub 仓库，利用 npm 的'prepare'生命周期钩子在运行'npm install'后自动执行后门负载。 这次攻击突显了针对求职开发者的社交工程威胁正在增长，LinkedIn 和 GitHub 等可信平台被武器化用于分发供应链恶意软件。它强调了开发者即便在看似合法的场景下也需严格审查第三方代码。 恶意代码隐藏在 GitHub 仓库中被注释掉的测试之间，npm 的 prepare 脚本在'npm install'后自动运行，被用于执行来自攻击者控制的服务器的远程命令。该仓库在被举报后仍在 GitHub 上保持活跃。
+
+hackernews · lwhsiao · 6月15日 20:00 · [社区讨论](https://news.ycombinator.com/item?id=48546294)
+
+**背景**: npm 的'prepare'生命周期钩子是 package.json 中定义的一个脚本，会在'npm install'之后或'npm publish'之前自动运行，通常被 Husky 等合法工具用来配置 Git 钩子。开源生态中的供应链攻击利用这种自动化执行恶意代码，依赖于开发者对包管理器和默认行为的信任。
+
+
+**参考链接**:
+
+- [How npm handles the "scripts" field](https://docs.npmjs.com/cli/v11/using-npm/scripts/)
+- [What is supply chain security? | IBM](https://www.ibm.com/think/topics/supply-chain-security)
+- [Husky v5 and NPM prepare | SonSpring](https://sonspring.com/journal/husky-v5-and-npm-prepare/)
+
+
+**社区讨论**: 评论者分享了类似的亲身经历，怀疑有朝鲜等国家行为体参与，并批评缺乏有效的网络犯罪举报渠道。许多人指出该攻击与普通技术面试任务十分相似，使得疲惫或求职中的开发者极易中招。
+
+**标签**: `#supply-chain-security`, `#npm`, `#social-engineering`, `#malware`, `#cybersecurity`
+
+---
+
+<a id="item-3"></a>
+## [开发者分享用本地大模型代替 Claude/GPT 作为日常编程助手的实践](https://news.ycombinator.com/item?id=48542100) ⭐️ 8.0/10
+
+一条 Hacker News 讨论汇集了多位开发者的详细报告，他们已成功用本地运行的模型（如 Qwen3.6-35B 和 Gemma-4-26B）替代 Claude 与 GPT 等云端 AI 编程助手来完成日常工作，并分享了具体硬件配置和性能数据。 这标志着性价比高、保护隐私的 AI 编程工具正变得切实可用，可能颠覆基于订阅的云服务模式，并让注重数据安全或在意持续开销的开发者有了新的可靠选择。 在双 RTX 3090 显卡上，使用仅激活 3B 参数的量化 MoE 模型（如 Qwen3.6-35B），可实现 150 token/秒的速度，其能力被形容为相当于 8 至 12 个月前的云端前沿模型。部分用户指出本地模型仍不如 Claude 或 Codex 聪明，遇到复杂任务时偶尔会回退到云服务。
+
+hackernews · cloudking · 6月15日 14:46
+
+**背景**: 本地大语言模型指的是直接在用户自己硬件上而非公司服务器上运行的大模型。Qwen3.6-35B 和 Gemma-4-26B 等混合专家（MoE）架构每次推理只激活总参数量的一小部分，大幅提升了推理速度并降低了显存需求。OpenCode、Pi coding harness 和 llama.cpp 等工具负责连接开发者 IDE 与这些本地模型，提供了 GitHub Copilot 和 ChatGPT 等商业工具的替代方案。
+
+**社区讨论**: 整体看法是谨慎乐观的，用户们认可本地模型现在可以胜任 80-90%的日常编程工作。拥护者强调摆脱月费和数据隐私问题带来的自由感，而怀疑者则认为与 Claude/GPT 的性能差距依然明显，会影响工作效率。普遍共识是本地模型的质量正在迅速提升，相关配置对许多人来说已经实用，但尚未能完全替代云端模型。
+
+**标签**: `#local-llm`, `#coding-assistant`, `#llm-practical`, `#privacy`, `#cost-optimization`
+
+---
+
+<a id="item-4"></a>
+## [福克斯拟以 220 亿美元收购 Roku](https://www.wsj.com/business/deals/fox-roku-deal-f6e564f9) ⭐️ 8.0/10
+
+福克斯公司计划收购 Roku 这一覆盖 30%至 50%美国家庭的主流流媒体硬件平台，引发外界对平台中立性受损和广告增加的担忧。该交易由《华尔街日报》报道，估值约 220 亿美元，已遭到投资者质疑。 此次收购将使一家大型媒体集团直接控制广泛使用的内容分发入口，可能破坏其服务无关的中立模式，并加速电视硬件领域的媒体整合。这可能重塑数千万用户发现和访问流媒体内容的方式，对竞争和消费者选择产生深远影响。 福克斯入主带来了平台偏见的切实风险，可能导致流媒体合作伙伴减少投入甚至退出 Roku。该交易被视为出价过高，或将损害 Roku 的增长；社区情绪强烈倾向于转向 Nvidia Shield 等替代方案，并使用自定义启动器来规避强制广告。
+
+hackernews · thm · 6月15日 12:50 · [社区讨论](https://news.ycombinator.com/item?id=48540499)
+
+**背景**: Roku 是美国领先的流媒体设备和智能电视平台，以汇聚多家内容商而不偏袒任意一方的“平台中立性”著称。然而，Roku 长期因扩张自家广告支持的 Roku 频道和增加屏幕广告而受到批评，中立形象已受侵蚀。福克斯公司是一家拥有 Fox News、Fox Sports 等电视资产的大型媒体集团，此交易属于内容方向上游整合分发平台的垂直整合案例。
+
+
+**参考链接**:
+
+- [Fox stock: why investors seem to dislike the $22 billion Roku deal](https://invezz.com/news/2026/06/15/fox-stock-why-investors-seem-to-dislike-the-22b-roku-deal/)
+- [Why Does Roku Still Insist It’s ‘Neutral’? | Next TV](https://www.nexttv.com/news/why-does-roku-still-insists-its-neutral)
+
+
+**社区讨论**: 用户普遍表示极度悲观，担心福克斯将损害 Roku 的中立性，植入党派内容和更多广告。许多人主张监管部门阻止该交易，理由是担忧一家公司同时掌控主流新闻媒体和数千万美国人的硬件入口。部分用户已开始迁移至 Nvidia Shield 等替代设备，以自定义界面并逃避侵入性广告。
+
+**标签**: `#acquisition`, `#streaming-media`, `#hardware`, `#media-consolidation`, `#platform-neutrality`
+
+---
+
+<a id="item-5"></a>
+## [内部冲突致 Anthropic 模型因出口管制下线](https://simonwillison.net/2026/Jun/15/axios-clashes-anthropics/#atom-everything) ⭐️ 8.0/10
+
+Axios 报道称，Anthropic 公司内部的人际冲突导致其 Fable 5 和 Mythos 5 模型在美国政府出口管制指令后下线，包括 Logan Graham、Dave Orr 和 Nicholas Carlini 在内的安全团队领导人将与美国商务部官员会面。 此事件揭示了企业内部组织动态能直接左右关键 AI 政策结果，影响一家重要 AI 公司服务客户的能力，并预示着 AI 快速进步与国家安全关切之间更深层的紧张关系。 美国政府指令禁止任何外国公民访问 Fable 5 和 Mythos 5，迫使 Anthropic 对所有客户关闭这些模型。该公司将触发事件的越狱攻击归类为'潜在的狭窄非通用越狱'，而其宪法分类器工作旨在防止类似的通用攻击。
+
+rss · Simon Willison · 6月15日 14:57
+
+**背景**: Fable 5 和 Mythos 5 是 Anthropic 最先进的 AI 模型，据报道在软件工程、视觉和科研领域达到顶尖水平。美国政府在一次越狱演示显示这些模型可能被操纵从而引发国家安全风险后，发布了出口管制命令。Anthropic 的前线红队是专门评估前沿 AI 模型如何影响国家安全的单位。
+
+
+**参考链接**:
+
+- [Anthropic to Disable Fable 5, Mythos 5 After US Export-Control Order - Business Insider](https://www.businessinsider.com/anthropic-disable-mythos-fable-us-export-control-national-security-2026-6)
+- [Claude Fable 5 and Claude Mythos 5 \ Anthropic](https://www.anthropic.com/news/claude-fable-5-mythos-5)
+- [Progress from our Frontier Red Team \ Anthropic](https://www.anthropic.com/news/strategic-warning-for-ai-risk-progress-and-insights-from-our-frontier-red-team)
+
+
+**标签**: `#AI-policy`, `#Anthropic`, `#export-control`, `#AI-safety`, `#government-relations`
+
+---
+
+<a id="item-6"></a>
+## [基于时间导数的误差驱动预测学习：一种生物可行的反向传播替代方案](https://www.reddit.com/r/MachineLearning/comments/1u6x8al/how_the_brains_learn_r/) ⭐️ 8.0/10
+
+一篇预印本论文提出了一个名为“基于时间导数的误差驱动预测学习”的统一学习框架，声称这是目前唯一同时在计算、算法和神经化学实现三个层面满足新皮层学习判据的框架。该框架已在 Axon 神经模拟器中使用脉冲神经元实现，并在一系列高难度认知任务上进行了验证。 这项研究提供了一个全面的反向传播替代方案，在根本上更符合大脑的真实学习方式，有望催生更高效、更类脑的 AI 系统，并推动计算神经科学的发展。 该框架依赖皮层-丘脑回路进行误差信号传递，并利用竞争性激酶机制实现突触可塑性，这使其有别于标准的预测编码模型。其性能已在脉冲神经网络模拟器上得到验证，但尚未提供与当前最先进深度学习模型的独立对比基准测试。
+
+reddit · r/MachineLearning · /u/Terminator857 · 6月15日 23:39
+
+**背景**: 反向传播是大多数现代 AI 背后的核心算法，但由于依赖非局部的误差信号和权重对称性，被认为在生物学上是不现实的。长期以来，神经科学家和 AI 研究者一直在寻找符合大脑物理约束的学习规则，例如脉冲神经网络和局部突触可塑性。预测编码和时间差分学习是重要的理论，但一个能够完整解决计算、算法和实现三个分析层面的统一框架此前一直缺失。
+
+
+**参考链接**:
+
+- [(PDF) Predictive Coding in the Visual Cortex: a Functional...](https://www.researchgate.net/publication/13103385_Predictive_Coding_in_the_Visual_Cortex_a_Functional_Interpretation_of_Some_Extra-classical_Receptive-field_Effects)
+- [Spiking Neural Models of Neurons and Networks for Perception, Learning, Cognition, and Navigation: A Review - PMC](https://pmc.ncbi.nlm.nih.gov/articles/PMC12384768/)
+
+
+**社区讨论**: Reddit 上的讨论表现出健康的怀疑态度，评论者们就该工作的真正新颖性及其在生物学真实性的主张进行了辩论。一些人质疑所提出的机制是否确实与现有的预测编码框架存在本质区别，而另一些人则认为，能够全面解决三个层次判据的工作本身就值得关注。
+
+**标签**: `#neuroscience`, `#biologically-plausible-learning`, `#spiking-neural-networks`, `#cognitive-science`, `#alternative-to-backpropagation`
+
+---
+
+<a id="item-7"></a>
+## [禁书图书馆藏身于 Wi-Fi 智能灯泡之中](https://www.richardosgood.com/posts/banned-book-library/) ⭐️ 7.0/10
+
+一位创意技术专家详细记录了一个项目，将精选的所谓“禁书”图书馆植入到一个支持 Wi-Fi 的智能灯泡中，创建一个匿名的、仅限本地访问的无线接入点，供人们下载这些文本。整个图书馆通过强制门户网站提供，存储在灯泡的内部闪存上。 该项目代表了一种新颖的数字公民自由行动主义形式，利用易于获取的物联网硬件，以难以察觉的方式保存和分发有争议的文学作品。它为应对日益严重的网络审查、年龄验证法规和制度性图书禁令提供了一种潜在对策。 该灯泡通过强制门户网站作为一个 Wi-Fi 接入点来提供文件，但其存储空间有限，且可以通过切断电源的简单方法被物理定位。它基于 ESP32 微控制器，使用 SPIFFS 文件系统进行存储，该项目的灵感来源于 PirateBox 和 LibraryBox 等早期项目。
+
+hackernews · sohkamyung · 6月15日 22:37 · [社区讨论](https://news.ycombinator.com/item?id=48547985)
+
+**背景**: 强制门户网站（Captive Portal）是连接公共 Wi-Fi 时常看到的网页，需要同意条款才能上网。ESP32 是一种低成本的微控制器芯片，内置 Wi-Fi 和蓝牙，在物联网项目中很受欢迎。SPIFFS（SPI 闪存文件系统）允许这类微型设备直接从闪存中存储和提供 HTML 等网站文件，充当一个微型网络服务器。
+
+
+**参考链接**:
+
+- [ESP32 SPIFFS Tutorial: Storing Files and Building a Web Server](https://www.teachmemicro.com/esp32-spiffs-tutorial-storing-files-and-building-a-web-server/)
+- [GitHub - CDFER/ Captive - Portal - ESP 32 : A ESP 32 Captive Portal ...](https://github.com/CDFER/Captive-Portal-ESP32)
+
+
+**社区讨论**: 社区广泛赞扬了该项目的创造性和黑客行动主义精神，但也有人对“禁书”标签的准确性提出质疑，认为这可能有些夸张。评论者将讨论延伸至 PirateBox 和 Meshtastic 网状网络节点等相关项目，并指出灯泡形式的设备容易被物理定位和关停的实用漏洞。
+
+**标签**: `#diy`, `#digital-rights`, `#censorship-circumvention`, `#embedded-systems`, `#mesh-networks`
+
+---
+
+<a id="item-8"></a>
+## [《我爱电脑》一文激起编程怀旧与 AI 守门人辩论](https://michaelenger.com/blog/i-love-the-computer/) ⭐️ 7.0/10
+
+一篇题为《我爱电脑》的个人文章回顾了通过拆解和修复电脑学习编程的乐趣，并将其与当今 AI 辅助开发进行对比。该文章在 Hacker News 上引发了 81 条评论，讨论怀旧、守门人观念以及 AI 工具的角色。 这场讨论反映了传统动手学习与 AI 辅助编码之间日益加剧的张力，这对新开发者如何培养技能以及行业如何定义专业能力有深远影响。它也呼应了关于自动化对工匠精神的影响以及技术知识守门人现象的广泛辩论。 作者将修复故障电脑的试错过程与 AI 代码生成的便捷性进行对比，而 tptacek 指出文章暗示只有经历过早期艰辛的人才与计算机有真正的关系。另一位评论者则认为 LLM 是探索计算机图形学或数值分析等陌生领域的合法工具，并非‘蛇油’。
+
+hackernews · speckx · 6月15日 20:14 · [社区讨论](https://news.ycombinator.com/item?id=48546441)
+
+**背景**: 编程文化长期推崇自学成才的黑客形象，他们通过拆解和修复系统来学习。随着 GPT-4 和 Claude 等大型语言模型的出现，开发者现在可以用自然语言提示生成代码，减少了对底层试错的需求。这一转变引发了人们对计算机‘黄金时代’的怀旧情绪，以及关于 AI 工具是否妨碍深度技术理解能力培养的争论。
+
+**社区讨论**: 社区反应不一。一些评论者认同作者对动手修修补补的怀旧之情，但指出当今的软件行业缺乏吸引力。另一些人则反对，认为文章带有守门人色彩，且 AI 工具并非‘蛇油’，而是真正有用的工具。一位评论者提到为已停产的家用电脑编写 6502 汇编代码很快乐，但现代就业也算合理取舍。tptacek 的批评尤为尖锐，指出作者无意中暗示自己有资格决定他人如何使用计算机。
+
+**标签**: `#programming-culture`, `#nostalgia`, `#AI-assisted-development`, `#gatekeeping`, `#software-engineering`
+
+---
+
+<a id="item-9"></a>
+## [Hetzner 云服务器价格最高上涨 3 倍，AI 硬件稀缺是主因](https://docs.hetzner.com/general/infrastructure-and-availability/price-adjustment/#cloud-servers) ⭐️ 7.0/10
+
+Hetzner 宣布对其云服务器产品进行重大价格调整，部分实例的价格上涨至原来的 3 倍。该公司表示，持续的硬件稀缺（尤其是由 AI 热潮推动的）是此次调价的原因。 作为以有竞争力定价著称的欧洲主要云服务商，Hetzner 此次大幅提价预示着更广泛的基础设施成本压力，可能影响整个行业。依赖经济实惠云服务的开发者和初创公司将面临更高的运营成本。 此次涨价影响 Hetzner 的云服务器，部分配置的价格上涨了约 3 倍，远超常规的通胀调整幅度。该公司将此决定直接与当前市场中内存和磁盘驱动器的稀缺联系起来。
+
+hackernews · tuhtah · 6月15日 13:19 · [社区讨论](https://news.ycombinator.com/item?id=48540844)
+
+**背景**: Hetzner 是一家德国的主机和云服务提供商，因其价格实惠、功能精简的基础设施而受到开发者和中小企业的欢迎。全球 AI 热潮引发了对 GPU、CPU、内存和存储等高性能计算硬件的巨大需求，导致供应链紧张，推高了所有服务器提供商的组件成本，而不仅仅是 AWS 或 Azure 这样的超大规模云厂商。
+
+**社区讨论**: 社区对此次涨价的幅度表达了严重关切，称其“离谱”，并质疑上涨 3 倍的充分理由。评论者们就此次涨价进行了更广泛的讨论，将其与 AI 驱动的财富不平等联系起来，也有人认为与过去的创新不同，AI 是在增加成本而不是降低成本。
+
+**标签**: `#cloud-computing`, `#pricing`, `#AI-boom`, `#hardware-shortage`, `#infrastructure`
+
+---
+
+<a id="item-10"></a>
+## [技术白皮书深度解析《指挥官基恩》的革命性游戏引擎](https://forgottenbytes.net/commander_keen.html) ⭐️ 7.0/10
+
+网站 forgottenbytes.net 发布了一份详细的技术白皮书，深入解析了 1990 年经典横版游戏《指挥官基恩》的游戏引擎，重点剖析了它如何在 PC 硬件上实现突破性的平滑滚动效果。 这份分析突显了游戏开发史上的一个关键转折点，解释了 id Software 如何克服了 PC 硬件的严重限制，得以与 SNES 等专用游戏主机抗衡，为现代 PC 游戏产业奠定了基础。 该引擎的核心创新是“自适应图块刷新”（adaptive tile refresh）技术，由约翰·卡马克（John Carmack）闻名遐迩，它仅重绘屏幕在帧与帧之间发生变化的部分。在《基恩》4 至 6 代中使用的更精进方法，则只平移并重绘画面的一侧边缘，以实现更流畅的效果。
+
+hackernews · mfiguiere · 6月15日 17:52 · [社区讨论](https://news.ycombinator.com/item?id=48544781)
+
+**背景**: 在 1990 年代初，PC 缺乏像超级任天堂（SNES）等游戏机常见的、可快速实现平滑滚动的专用图形硬件。约翰·卡马克以程序员为中心的解决方案，利用巧妙的软件算法在 PC 的 EGA 图形适配器上模拟出平滑滚动，这在当时被普遍认为是不可能的壮举。
+
+
+**参考链接**:
+
+- [Adaptive tile refresh - Wikipedia](https://en.wikipedia.org/wiki/Adaptive_tile_refresh)
+- [Commander Keen's Adaptive Tile Refresh](https://fabiensanglard.net/ega/)
+- [Commander Keen’s adaptive tile refresh – OSnews](https://www.osnews.com/story/136524/commander-keens-adaptive-tile-refresh/)
+
+
+**社区讨论**: 评论者提供了关键的历史背景，引用了讲述 id Software 起源的《Masters of Doom》一书，并将 PC 的原始算力与 SNES 高效的活动块（sprite）渲染能力进行了对比。其他读者则关联了 Fabien Sanglard 的网站和 Cosmodoc 等相关资源，还有人分享了直接游玩该游戏的链接。
+
+**标签**: `#game-development`, `#graphics-programming`, `#computer-history`, `#id-software`, `#retro-computing`
+
+---
+
+<a id="item-11"></a>
+## [Salesforce 以 36 亿美元收购 AI 客服公司 Fin](https://www.salesforce.com/news/press-releases/2026/06/15/salesforce-signs-definitive-agreement-to-acquire-fin/?bc=HL) ⭐️ 7.0/10
+
+Salesforce 宣布已达成最终协议，将以 36 亿美元收购 AI 客服平台 Fin（前身为 Intercom）。这笔交易距离该公司从 Intercom 更名为 Fin 仅过去一个月，标志着 AI 客服领域的整合正在快速加剧。 此次收购加剧了高速增长的 AI Agent 市场的竞争，使 Salesforce CEO Marc Benioff 与其前任联席 CEO Bret Taylor 正面交锋，后者创立的竞争对手 Sierra 目前估值已达 158 亿美元。这也是一项战略举措，旨在防止独立 AI 客服代理变成脱离 Salesforce CRM 生态系统的控制节点。 Fin 的 36 亿美元收购价使其在融资竞争中落后于 Sierra 和 Decagon（估值 45 亿美元）等对手。此次收购发生在 Fin 从以企业通讯工具闻名的 Intercom 更名后不久，凸显了 Salesforce 急于将 AI 更深入地嵌入其 Service Cloud 产品中的诉求。
+
+hackernews · colesantiago · 6月15日 12:08 · [社区讨论](https://news.ycombinator.com/item?id=48540126)
+
+**背景**: Fin（原名 Intercom）是一个客户沟通平台，近年来一直向 AI 自动化支持方向转型。由 Salesforce 前高管创立的 Sierra 为企业提供对话式 AI Agent。当前 AI Agent 赛道既有老牌厂商，也有像 Decagon 这样的新锐公司以及一些开源替代方案，这些都对传统的 SaaS 客服工单解决方案构成了威胁。
+
+
+**参考链接**:
+
+- [Sierra AI](https://sierra.ai/)
+- [Decagon (company) - Wikipedia](https://en.wikipedia.org/wiki/Decagon_(company))
+
+
+**社区讨论**: 社区对于此类 AI 客服收购案的长期可行性意见严重分歧。不少用户对执行到位的 AI 客服印象深刻（如 Starlink），而另一些人则认为，企业将很快绕过传统 SaaS 工具，直接部署本地运行、具备长期记忆的 Agent。评论的共识认为，像收购 Fin 这类交易的价值，完全取决于那些在采用定制化 AI 解决方案方面相对滞后的企业。
+
+**标签**: `#ai-agents`, `#customer-service`, `#acquisitions`, `#saas`, `#salesforce`
+
+---
+
+<a id="item-12"></a>
+## [铜转运药物在阿尔茨海默病小鼠模型中恢复记忆并清除毒性蛋白](https://www.monash.edu/news/articles/copper-drug-restores-memory-and-clears-toxic-alzheimers-proteins) ⭐️ 7.0/10
+
+莫纳什大学的研究人员开发出一种铜转运药物，在阿尔茨海默病小鼠模型中成功恢复了记忆功能并清除了β-淀粉样蛋白斑块。该化合物此前已针对其他疾病完成了安全性评估，有望加速进入人体临床试验的进程。 阿尔茨海默病影响着全球数千万人且尚无治愈方法，该研究提供了一种全新机制——靶向大脑铜分布——不同于此前屡屡失败的淀粉样蛋白靶向方案。若在人体中取得成功，这将开启一条超越传统抗淀粉样蛋白策略的新治疗途径。 该药物通过纠正大脑中异常的铜分布发挥作用——铜在淀粉样蛋白斑块中积累，但周围细胞却存在铜缺乏。该化合物此前已在其他疾病背景下进行了安全性评估，这可能使其更快获得监管批准以启动阿尔茨海默病的人体试验。
+
+hackernews · bookofjoe · 6月15日 14:48 · [社区讨论](https://news.ycombinator.com/item?id=48542132)
+
+**背景**: 阿尔茨海默病是最常见的痴呆病因，其特征性病理包括细胞外的β-淀粉样蛋白斑块和细胞内的 tau 蛋白神经原纤维缠结。数十年来，“淀粉样蛋白假说”一直主导药物研发，认为β-淀粉样蛋白的积累会启动疾病级联反应，但众多靶向 Aβ的临床试验均告失败。已知铜等过渡金属会影响 Aβ的聚集和清除，且阿尔茨海默病患者大脑中存在铜稳态异常。
+
+
+**参考链接**:
+
+- [Amyloid beta - Wikipedia](https://en.wikipedia.org/wiki/Amyloid_beta)
+- [Alzheimer ' s disease - Wikipedia](https://en.wikipedia.org/wiki/Alzheimer's_disease)
+- [Copper transport drug restores memory and clears... | Hacker News](https://news.ycombinator.com/item?id=48542132)
+
+
+**社区讨论**: Hacker News 社区对淀粉样蛋白假说表达了强烈的怀疑态度，多位评论者引用了数十年失败的临床试验，并指出认知正常个体的大脑中同样存在斑块。然而，也有人认为即使斑块并非根本病因，清除斑块仍可能有益，将其比作症状而非疾病根源。多位评论者提醒该研究仅在小鼠模型中开展，而啮齿动物研究的结果常常无法转化为人体效果。
+
+**标签**: `#health`, `#neuroscience`, `#biology`, `#pharmaceuticals`, `#academic research`
+
+---
+
+<a id="item-13"></a>
+## [数据表明 AI 尚未也难导致软件工程师大规模失业](https://simonwillison.net/2026/Jun/14/why-ai-hasnt-replaced-software-engineers/#atom-everything) ⭐️ 7.0/10
+
+Arvind Narayanan 与 Sayash Kapoor 指出，软件工程作为几乎没有监管壁垒的行业，并未因 AI 出现大规模裁员，并引用纽约州 WARN 法案披露数据——在要求披露 AI 相关裁员的第一年中，没有一家公司将其裁员归因于 AI。Simon Willison 补充说，AI 可以辅助编码与验证，但深层的人类理解仍是开发者价值中不可替代的核心。 这一以数据为依据的论点挑战了“先进 AI 能力必然导致大规模失业”的主流叙事。如果在几乎没有监管保护的软件工程领域 AI 都无法取代工程师，则意味着对 AI 即将在其他行业造成大规模失业的恐慌很可能被严重夸大了。 该分析指出软件工程中 AI 无法解决的三个瓶颈：决定并明确要构建什么、验证产出并为其负责，以及对代码库、业务和环境的深层人类理解。纽约州在 2025 年 3 月成为美国首个在 WARN 法案申报中增加 AI 披露复选框的州，第一年有超 160 家公司提交通知，却无一家勾选 AI 相关裁员。
+
+rss · Simon Willison · 6月14日 23:54
+
+**背景**: WARN 法案是美国联邦法律，要求拥有 100 名及以上员工的企业在大规模裁员或工厂关闭前 60 天发出预先通知。多个州颁布了自己的“迷你 WARN 法案”，附加额外要求。纽约州的 WARN 法案现已包含 AI 披露复选框，要求企业在裁员时说明是否与 AI 有关，为追踪 AI 对就业的影响提供了直接途径。
+
+
+**参考链接**:
+
+- [WARN Act — definition and Georgian... | HourSquare HR Glossary](https://hoursquare.com/hr-glossary/warn-act/)
+
+
+**标签**: `#AI`, `#software engineering`, `#labor economics`, `#automation`, `#tech policy`
+
+---
+
+<a id="item-14"></a>
+## [大语言模型展现出偏爱的关联角色名组合，可用于模型指纹识别](https://www.reddit.com/r/MachineLearning/comments/1u6mn3q/ai_language_models_have_favorite_names_and_we/) ⭐️ 7.0/10
+
+研究人员发现，不同的大语言模型对某些虚构角色名有独特的、特定于模型和版本的偏好，这些名字会以关联组合的形式一同出现。这些姓名模式还出现在数百个 AI 生成网站上，为识别 AI 撰写内容提供了一种新方法。 该发现为检测 AI 生成内容提供了一种简单、可解释的指纹，对打击虚假信息和垃圾信息很有价值。它还揭示了此前未知的特定于模型的输出痕迹，有助于我们理解 LLM 的训练数据和过程如何创造出独特的输出特征。 例如，'Elena Vasquez'和'Marcus Chen'的名字经常一起出现在 Claude 的输出中，并且研究者在多个独立网站上发现了这组三人的名字与 AI 生成的图库照片同时出现。该发现源于对 CDD（模型差分）方法的研究，完整论文已以预印本形式发布。
+
+reddit · r/MachineLearning · /u/CebulkaZapiekana · 6月15日 17:07
+
+**背景**: GPT-4、Claude 等大语言模型通过从海量训练数据中学习的统计模式来预测下一个词元以生成文本。模型指纹识别是指识别出能将一个模型与另一个模型区分开的独特输出特征，可用于来源验证。在此语境下，'关联组合'一词描述了多个名字作为一个整体出现的行为，它们同时出现的频率远超随机概率。
+
+
+**参考链接**:
+
+- [Model Diffing : Techniques & Applications](https://www.emergentmind.com/topics/model-diffing)
+- [Model Diffing — LessWrong](https://www.lesswrong.com/w/model-diffing)
+
+
+**标签**: `#LLMs`, `#AI detection`, `#generated content`, `#model fingerprinting`, `#natural language processing`
+
+---
+
+<a id="item-15"></a>
+## [Cleo：将完整分析师行为压缩至 2B 模型](https://www.reddit.com/r/MachineLearning/comments/1u6udpb/cleo_trying_to_fit_full_analyst_behavior_in_a_2b/) ⭐️ 7.0/10
+
+Cleo 是一个基于 Qwen3.5-2B-Base 微调的 text-to-SQL 模型，其训练、推理和执行反馈被统一设计在一个紧密集成的开源框架中，支持实时执行反馈、SQL 方言处理等功能。 这项工作表明，通过将模型与结构化执行框架深度耦合，即使仅 2B 参数的小模型也能胜任复杂的分析任务，这为降低企业级 text-to-SQL 聊天机器人的部署成本和资源门槛提供了新思路。 模型采用“收集-修复-回答”合约，利用实时执行证据搜索候选查询，并内置 SQL 安全层、超时处理和方言适配。作者还推荐了 ECHO（一种用于测试时优化的强化学习方法），适合资源受限的 RL 实验。
+
+reddit · r/MachineLearning · /u/Dreeseaw · 6月15日 21:43
+
+**背景**: text-to-SQL 是将自然语言问题转换为 SQL 查询的技术，广泛应用于企业聊天机器人。Qwen3.5-2B 是阿里通义千问系列的一个小型开源模型（Apache 2.0 许可），可在消费级 GPU 上微调。项目将模型训练、推理与执行反馈进行一体化协同设计，使模型在训练时即适应后续部署中的精确约束，从而提升生成 SQL 的可靠性。
+
+
+**参考链接**:
+
+- [Elon Musk Exclaims Domestic 0.8 B Model 's Incredibly Powerful Open...](https://eu.36kr.com/en/p/3706848726643078)
+- [Gemini 2.5 Flash (Reasoning) vs Gemma 3 1B Instruct: Model ...](https://artificialanalysis.ai/models/comparisons/gemini-2-5-flash-reasoning-vs-gemma-3-1b)
+
+
+**标签**: `#text-to-sql`, `#small language models`, `#open-source`, `#structured output`, `#natural language processing`
+
+---
+
+<a id="item-16"></a>
+## [TinyWind：有真实风物理的像素航海游戏，玩家已航行 38 万多公里](https://tinywind.io/) ⭐️ 6.0/10
+
+独立开发者发布了 TinyWind，这是一款基于浏览器的像素风航海游戏，尝试模拟真实的风物理对船只移动和帆的调整的影响，其社区玩家已累计航行超过 38 万公里。 这款游戏探索了易上手的玩法与真实物理模拟之间难以平衡的交叉领域，这是许多航海游戏会回避的。它在水手和开发者中引发了关于如何将复杂的航海力学如实转化为有趣游戏体验的详细技术讨论。 游戏可在网页浏览器中免费游玩，包含两种模式，但社区反馈指出，风与帆角度的物理机制可能过于简化，有玩家称船只迎风航行过于容易，并且战斗中的敌人拥有百分百命中率，导致游戏难度极高。
+
+hackernews · tinywind · 6月15日 16:15 · [社区讨论](https://news.ycombinator.com/item?id=48543475)
+
+**背景**: 在航海中，船只的移动能力取决于风向和帆的角度。存在一个'死角'，船只无法直接迎风航行，必须通过'之'字形抢风航行才能前进。许多游戏为了易于上手会简化这些动力学，但基于物理的航海模拟器旨在模拟真实的空气动力学和流体动力学力，以提供更真实的体验。游戏物理引擎通常将风计算为一个力矢量，根据物体形状和表面积对其产生影响。
+
+
+**参考链接**:
+
+- [TinyWind: A pixel pirate sailing game with real wind physics ...](https://cccforgc.com/trending/tinywind-a-pixel-pirate-sailing-game-with-real-wind-physics-380k-kms-sailed)
+- [How to Simulate Realistic Wind Physics in a Game](https://www.linkedin.com/advice/0/how-can-you-realistically-implement-wind-physics-game-jg7oe)
+
+
+**社区讨论**: 社区情绪复杂但有建设性。水手们赞赏该概念，但批评其物理效果不真实，指出船只迎风航行过于容易，且帆的调整反应迟钝。其他玩家认为战斗不平衡且难度过高，有人将其比喻为'一个几乎零血量到处航行的模拟器'。
+
+**标签**: `#game-development`, `#physics-simulation`, `#indie-game`, `#sailing`, `#hackernews`
+
+---
+
+<a id="item-17"></a>
+## [在家搭建自托管 AI 开发平台](https://rsgm.dev/post/ai-dev-platform/) ⭐️ 6.0/10
+
+一位开发者分享了使用家庭实验室搭建自托管 AI 开发平台的详细指南，引发了社区对替代集成方案和自动化编码工作流程的热烈讨论。 这反映了开发者通过自托管方式重新掌控 AI 工具的趋势，解决了隐私问题并避免了对日常编码和自动化任务中外部 API 的依赖。 该指南概述了持久化 OpenCode 服务器的设置方法，而社区评论者分享了使用 Forgejo 操作运行器、n8n、Git 和 k3s 的替代实施方案，并强调了在 AI 交互的多轮对话中管理上下文的共同挑战。
+
+hackernews · rsgm · 6月15日 15:09 · [社区讨论](https://news.ycombinator.com/item?id=48542433)
+
+**背景**: 家庭实验室（Homelab）是个人在家中搭建的服务器和网络设备环境，用于学习和自托管服务。CI/CD（持续集成/持续交付）是一种将代码的构建、测试和部署过程自动化的软件工程实践。Forgejo 是一种自托管的 Git 服务，而操作运行器（Action Runners）则用于执行自动化的 CI/CD 任务。
+
+
+**参考链接**:
+
+- [reddit.com/r/ HomeLab](https://www.reddit.com/r/HomeLab/)
+- [CI/CD](https://en.wikipedia.org/wiki/CI/CD)
+- [Homelab](https://grokipedia.com/page/Homelab)
+
+
+**社区讨论**: 社区整体情绪积极且充满协作精神，用户 david-giesberg 等人分享了自己类似的 Forgejo 集成工作流程。CGamesPlay 指出了一个值得关注的挑战，即在讨论从 issue 转移到 pull request 时管理上下文和状态。其他多位评论者也提到，他们正在独立开发几乎相同的项目。
+
+**标签**: `#homelab`, `#devops`, `#ai-tools`, `#self-hosted`, `#automation`
+
+---
+
+<a id="item-18"></a>
+## [TimescaleDB 如何利用混合行列压缩技术处理时序数据](https://roszigit.com/en/blog/timescaledb-compression-hypercore) ⭐️ 6.0/10
+
+一篇文章深入探讨了 TimescaleDB 混合行列式压缩的技术实现，详细说明了它如何在 PostgreSQL 内将基于行的数据转换为压缩的列式数组，为时序数据工作负载实现高存储效率。 该分析对于管理大规模时序数据的开发者意义重大，因为它阐明了压缩率与查询性能之间的实际权衡，有助于他们在优化基于 PostgreSQL 的系统时做出明智决策。 该方法将类型感知压缩与每段的元数据（如最大/最小值、总和、不同值计数和布隆过滤器）相结合以加速分析查询，但字典编码有时会因解压缩开销而降低读取速度。
+
+hackernews · lkanwoqwp · 6月15日 17:29 · [社区讨论](https://news.ycombinator.com/item?id=48544451)
+
+**背景**: TimescaleDB 是一个专为时序数据设计的开源 PostgreSQL 扩展，利用超表按时间分区数据以提升性能。它采用名为 Hypercore 的混合存储引擎，将近期数据的行式存储与旧数据的列式压缩相结合。列式压缩按列对数据进行分组，相比行式方法能获得更高的压缩率，非常适合需要扫描大量行中少数几列的分析查询。
+
+
+**参考链接**:
+
+- [TimescaleDB](https://en.wikipedia.org/wiki/TimescaleDB)
+- [A Hybrid Row - Columnar Storage Engine | Tiger Data](https://www.tigerdata.com/blog/hypercore-a-hybrid-row-storage-engine-for-real-time-analytics)
+- [Strategies for Implementing Columnar Compression in... | HackerNoon](https://hackernoon.com/strategies-for-implementing-columnar-compression-in-large-postgresql-databases)
+
+
+**社区讨论**: 评论者们强调，压缩的真正价值在于通过更快的过滤拒绝来提升查询速度，而不仅仅是节省存储空间。一个名为 deltax 的竞争扩展的开发者详细介绍了额外的优化技巧，而其他人则提到了传统工业数据库中的旋转门压缩算法以及 Facebook 的 Gorilla 差值编码等现有技术。
+
+**标签**: `#databases`, `#time-series`, `#compression`, `#postgresql`, `#performance`
+
+---
+
+<a id="item-19"></a>
+## [开放训练框架如 FeynRL 对于 ML 研究的重要性远超开放权重](https://www.reddit.com/r/MachineLearning/comments/1u6p7k3/open_weights_are_not_enough_we_need_open_training/) ⭐️ 6.0/10
+
+一个名为 FeynRL 的新型开源框架已经推出，专门用于让大型语言模型、视觉语言模型和智能体的强化学习后训练过程对研究人员更加透明、可理解和可修改。 这一进展解决了开源 AI 研究中的一个关键瓶颈，即如果训练系统仍然不透明且难以修改，仅拥有模型权重并不能驱动算法创新。 FeynRL 使训练循环保持显式化，从数据加载和轨迹生成到奖励计算与优化，并支持在单 GPU、多 GPU 和集群配置下对 LLM 和 VLM 进行 SFT、DPO 和 RL 风格的后训练。
+
+reddit · r/MachineLearning · /u/summerday10 · 6月15日 18:37
+
+**背景**: 强化学习后训练是一个在初始训练之后微调大模型的复杂过程，涉及轨迹生成引擎、奖励计算和信用分配等组件。现有框架往往隐藏这些细节，使研究人员难以试验新算法。'开放权重'一词指在不提供创建所用的代码或数据的情况下发布模型的训练参数，这限制了可复现性和进一步的研究。
+
+
+**参考链接**:
+
+- [GitHub - FeynRL -project/ FeynRL : RL-first post-training framework for...](https://github.com/FeynRL-project/FeynRL)
+- [FeynRL - Don't let systems swallow the algorithm | Hacker News](https://news.ycombinator.com/item?id=48376613)
+- [(PDF) LlamaRL: A Distributed Asynchronous Reinforcement Learning...](https://www.researchgate.net/publication/392315662_LlamaRL_A_Distributed_Asynchronous_Reinforcement_Learning_Framework_for_Efficient_Large-scale_LLM_Trainin)
+
+
+**标签**: `#open-source`, `#reinforcement-learning`, `#large-language-models`, `#ml-training-frameworks`, `#research`
+
+---
+
+<a id="item-20"></a>
+## [顶尖 AI 实验室为何大量派员工参加学术会议？](https://www.reddit.com/r/MachineLearning/comments/1u67koz/why_do_frontier_ai_labs_send_so_many_people_to/) ⭐️ 6.0/10
+
+一位 Reddit 用户注意到，OpenAI 和 Anthropic 等前沿 AI 实验室会派大量员工参加 ICML、NeurIPS 等顶级机器学习会议，尽管它们在会上发表的研究成果相对较少。该帖质疑此举的主要目的是招募顶尖人才、侦察新兴研究方向，还是出于其他战略考虑。 这一观察揭示了 AI 行业人才与研究战略中一个重要但不透明的方面。理解这些动机有助于洞察顶尖实验室如何维持其竞争优势、产业界与学术界之间不断演变的关系，以及驱动创新的非正式知识渠道。 帖子中提到的 ICML 和 NeurIPS 是全球机器学习社区最重要的年度盛会。该用户特别指出，尽管能看到许多前沿实验室的员工，但很少有人发表论文，这使问题的焦点从研究成果传播转向了情报收集和社交网络的建立。
+
+reddit · r/MachineLearning · /u/snekslayer · 6月15日 05:33
+
+**背景**: ICML（国际机器学习大会）和 NeurIPS（神经信息处理系统大会）是人工智能和机器学习领域最负盛名的两个学术会议。它们每年吸引全球数千名研究人员、工程师和学生参加，进行论文宣讲、研讨会和社交交流。对于 OpenAI 和 Anthropic 这类处于开发大型语言模型最前沿的顶尖 AI 实验室而言，这些会议是招聘稀缺、高度专业化人才，以及紧跟尚未公开发表的最新研究的绝佳场所。
+
+
+**参考链接**:
+
+- [International Conference on Machine Learning - Wikipedia](https://en.wikipedia.org/wiki/International_Conference_on_Machine_Learning)
+- [Conference on Neural Information Processing Systems - Wikipedia](https://en.wikipedia.org/wiki/Conference_on_Neural_Information_Processing_Systems)
+
+
+**社区讨论**: 提供的内容不包含任何社区评论，因此没有可以总结的讨论观点。
+
+**标签**: `#AI industry`, `#research culture`, `#conferences`, `#talent acquisition`, `#AI labs`
+
+---
+
+<a id="item-21"></a>
+## [博士研究招募 UX 与 AI 从业者测试 LLM 聊天机器人信任设计方法](https://www.reddit.com/r/MachineLearning/comments/1u69kr1/phd_study_ux_designers_aiml_practitioners_to_test/) ⭐️ 6.0/10
+
+德国美因茨应用科学大学的一位博士研究员开发了一套结构化设计方法，旨在帮助设计师为基于 LLM 的聊天机器人建立校准后的用户信任，现正招募 UX 设计师和 AI/ML 从业者通过一项 20–30 分钟的匿名在线调查来评估该方法的清晰度、实用性和可应用性。 该研究针对 AI 领域中不恰当信任这一关键问题——用户往往要么盲目过度依赖 LLM 聊天机器人，要么完全否定其能力——旨在产出实用指南，可能影响整个行业对话式 AI 界面的设计方式。 该方法指导设计师根据具体使用场景选择和校准与信任相关的界面元素。调查完全匿名、自愿、无报酬，面向能够熟练使用英语的从业者；参与者需将该方法应用于一个案例示例，并提供评分和开放式反馈。
+
+reddit · r/MachineLearning · /u/pparker20 · 6月15日 07:24
+
+**背景**: 校准后的信任是指用户对 AI 系统的信心水平与其实际能力和局限性相匹配，既不过度依赖，也不因无根据的怀疑而弃用。基于 GPT-4 等大型语言模型构建的 LLM 聊天机器人与传统基于规则的聊天机器人不同，能提供更流畅、更接近人类的对话，但也带来了幻觉和不可预测输出等风险。目前业界缺乏标准化方法来设计能够培养这种平衡信任的聊天机器人界面，使得此类研究对 HCI 和 AI 社区而言恰逢其时。
+
+
+**参考链接**:
+
+- [(PDF) Practical Guidance for Evaluating Calibrated Trust](https://www.researchgate.net/publication/337416859_Practical_Guidance_for_Evaluating_Calibrated_Trust)
+- [Calibrated Trust in AI Products: Where Should Users Lean? | Medium](https://medium.com/@hamedsattarian/calibrated-trust-in-ai-products-where-should-users-lean-bf5ec1d8034a)
+- [LLM - Chatbots — An introduction to the new world of bots | Medium](https://sophiehundertmark.medium.com/llm-chatbots-an-introduction-to-the-new-world-of-bots-485db17da7b2)
+
+
+**标签**: `#HCI`, `#LLMs`, `#Chatbots`, `#Trust`, `#UX Research`
+
+---
+
