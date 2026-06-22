@@ -3,247 +3,310 @@ title: "AI 技术情报 · 2026-06-22"
 slug: horizon-2026-06-22
 date: 2026-06-22
 published: true
-description: "从 31 条内容中精选 18 条 AI/ML 重要动态"
-item_count: 18
-total_fetched: 31
+description: "从 35 条内容中精选 20 条 AI/ML 重要动态"
+item_count: 20
+total_fetched: 35
 ---
 
-> 从 31 条内容中筛选出 18 条重要资讯。
+> 从 35 条内容中筛选出 20 条重要资讯。
 
 ---
 
-1. [Claude 身份验证页面重新引发 AI 访问限制争论](#item-1) ⭐️ 8.0/10
-2. [AI 缩小可销售软件的最小可行单元](#item-2) ⭐️ 8.0/10
-3. [sqlite-utils 4.0rc1 发布：新增迁移和嵌套事务支持](#item-3) ⭐️ 8.0/10
-4. [时间序列建模需引入动力系统视角](#item-4) ⭐️ 8.0/10
-5. [无 Softmax 注意力模型在 GPT-2 规模发布，支持稀疏性与长上下文 VRAM 节省](#item-5) ⭐️ 8.0/10
-6. [Beyond All Reason：开源 RTS 技术惊艳，但社区毒性引热议](#item-6) ⭐️ 7.0/10
-7. [2016 年经典文章重提：宁重复勿用错误抽象](#item-7) ⭐️ 7.0/10
-8. [Cloudflare 推出无需账户的临时 Workers 部署](#item-8) ⭐️ 7.0/10
-9. [用代码和 Excel 从零构建 LLM 的 YouTube 工作坊，无需数学基础](#item-9) ⭐️ 7.0/10
-10. [DVD-JEPA：一个开源、可完整复现的 JEPA 世界模型](#item-10) ⭐️ 7.0/10
-11. [开源手册详解大规模 LLM 推理：GPU 内部机制、KV 缓存与框架对比](#item-11) ⭐️ 7.0/10
-12. [Apertus：面向主权 AI 的完全开放基础模型](#item-12) ⭐️ 6.0/10
-13. [软件工程师质疑其旧职是否仅因欺诈而存在](#item-13) ⭐️ 6.0/10
-14. [针对个人网站的 JSON-LD 教程引发 SEO 价值质疑](#item-14) ⭐️ 6.0/10
-15. [改进版 DVD-JEPA 演示加入环境噪声，凸显 JEPA 关键优势](#item-15) ⭐️ 6.0/10
-16. [WeightsLab：面向神经网络训练的数据中心调试开源工具](#item-16) ⭐️ 6.0/10
-17. [矩阵递归单元更新：稳定训练与扩展至更大数据集](#item-17) ⭐️ 6.0/10
-18. [没有顶会论文的机器学习博士生能否毕业？引发讨论](#item-18) ⭐️ 6.0/10
+1. [Apertus：面向主权 AI 的开源基础模型发布](#item-1) ⭐️ 8.0/10
+2. [切换至开放权重模型弊端极小](#item-2) ⭐️ 8.0/10
+3. [博客文章称对数是一种物理量，底数只是测量单位](#item-3) ⭐️ 8.0/10
+4. [宁可重复代码，也不要错误的抽象](#item-4) ⭐️ 8.0/10
+5. [ICML 2026 论文：时间序列建模需要动力系统视角](#item-5) ⭐️ 8.0/10
+6. [开发者创建 minFLUX：简化版 PyTorch FLUX 扩散模型实现](#item-6) ⭐️ 8.0/10
+7. [前员工反思：我的科技工作是否仅因欺诈而存在？](#item-7) ⭐️ 7.0/10
+8. [Anthropic 要求 Claude 身份验证引发 AI 准入与中立性争议](#item-8) ⭐️ 7.0/10
+9. [Show HN: 教孩子绝对音感的工具引发年龄限制讨论](#item-9) ⭐️ 7.0/10
+10. [sqlite-utils 4.0rc1 新增迁移系统与嵌套事务支持](#item-10) ⭐️ 7.0/10
+11. [Cloudflare 推出无需账户的临时 Workers 部署](#item-11) ⭐️ 7.0/10
+12. [零数学基础，用代码和 Excel 构建 LLM 的工作坊教程发布](#item-12) ⭐️ 7.0/10
+13. [DVD-JEPA：一个开源 JEPA 世界模型，学习弹跳 DVD 标志的潜在表征](#item-13) ⭐️ 7.0/10
+14. [开源 LLM 大规模推理手册发布](#item-14) ⭐️ 7.0/10
+15. [JSON-LD 在个人网站上的应用指南](#item-15) ⭐️ 6.0/10
+16. [Beyond All Reason：技术佳、社区差的开源 RTS](#item-16) ⭐️ 6.0/10
+17. [改进版 DVD-JEPA 演示增加环境噪声与基线对比](#item-17) ⭐️ 6.0/10
+18. [矩阵循环单元更新：通过新状态矩阵方法解决训练不稳定问题](#item-18) ⭐️ 6.0/10
+19. [WeightsLab：面向计算机视觉训练的 PyTorch 原生数据调试工具](#item-19) ⭐️ 6.0/10
+20. [ML 博士毕业是否需要顶会论文引发讨论](#item-20) ⭐️ 6.0/10
 
 ---
 
 <a id="item-1"></a>
-## [Claude 身份验证页面重新引发 AI 访问限制争论](https://support.claude.com/en/articles/14328960-identity-verification-on-claude) ⭐️ 8.0/10
+## [Apertus：面向主权 AI 的开源基础模型发布](https://apertvs.ai/) ⭐️ 8.0/10
 
-Anthropic 的 Claude 身份验证页面自 4 月就已上线，但近期因 AI 模型访问限制重新引发广泛讨论，非美国用户担心未来无法访问顶级模型。 这场争论凸显了 AI 安全与全球访问之间的紧张关系，身份验证可能导致非美国用户被永久禁止使用顶级模型，从而重塑国际 LLM 市场，加速向非美国替代品的转移。 验证由第三方服务 Persona 处理，Persona 可使用身份数据训练其欺诈检测模型，而 Anthropic 表示不会将该数据用于模型训练。若验证失败，用户可能被永久禁止使用高级模型，且没有明确的重新尝试途径。
+瑞士 AI 倡议于 2025 年 9 月 2 日发布了 Apertus，这是一个基于 Apache 2.0 许可的完全开源大语言模型，旨在为主权 AI 提供一个合规的多语言基础模型。 Apertus 回应了日益增长的数据主权和对外国 AI 供应商依赖的担忧，通过提供一个透明、开放且可自由适配和部署的替代方案，直接挑战了商业 AI 实验室的主导地位。 Apertus 由 EPFL、ETH Zurich 和瑞士国家超级计算中心联合开发，强调数据合规性和多语言表示，但社区反馈指出其在语言任务中可能出现幻觉，且开发速度相比竞品模型较慢。
 
-hackernews · bathory · 6月21日 12:44 · [社区讨论](https://news.ycombinator.com/item?id=48618455)
+hackernews · T-A · 6月21日 21:29 · [社区讨论](https://news.ycombinator.com/item?id=48622778)
 
-**背景**: Claude 等大型语言模型 (LLM) 由美国 Anthropic 公司开发，能生成类人文本。身份验证是某些 AI 提供商为遵守法规或防止滥用而采取的措施。近期对特定模型（如社区提到的 'Fable'）的访问限制加剧了人们对 AI 访问公平性和数字主权的担忧。
+**背景**: 主权 AI 是指国家为构建独立 AI 基础设施和模型、减少对外国技术依赖而制定的战略。基础模型是一种在大规模数据上训练、可适配多种任务的大规模机器学习模型。瑞士 AI 倡议是瑞士顶尖研究机构之间的合作，旨在开发开放的 AI 技术。
 
 
 **参考链接**:
 
-- [Claude (language model) - Wikipedia](https://en.wikipedia.org/wiki/Claude_(language_model))
-- [Anthropic - Wikipedia](https://en.wikipedia.org/wiki/Anthropic)
+- [Apertus (LLM) - Wikipedia](https://en.wikipedia.org/wiki/Apertus_(LLM))
+- [[2509.14233] Apertus: Democratizing Open and Compliant LLMs for Global Language Environments](https://arxiv.org/abs/2509.14233)
+- [Foundation model](https://en.wikipedia.org/wiki/Foundation_model)
 
 
-**社区讨论**: 社区反应不一：非美国用户对可能被封锁和转向非美国 AI 表示强烈不满，同时有人指出该页面并非新功能，但当前背景使其令人担忧。对 Persona 使用身份数据的隐私担忧，以及对类似网络中立性的 'AI 中立性' 的讨论也很突出，用户担心因使用方式不符合要求而被悄悄封禁。
+**社区讨论**: 社区反应褒贬不一：一些人将 Apertus 与其他完全开放的模型如 OLMo 3.1 和 K2 Think V2 进行比较，另一些则对其开发速度和竞争力表示怀疑。有人提出了语言幻觉问题，但也认识到像 Apertus 这样的开源模型对商业 AI 实验室构成了直接威胁。
 
-**标签**: `#Anthropic`, `#Claude`, `#identity verification`, `#AI regulation`, `#user privacy`
+**标签**: `#open-source`, `#AI`, `#foundation-models`, `#sovereignty`, `#LLM`
 
 ---
 
 <a id="item-2"></a>
-## [AI 缩小可销售软件的最小可行单元](https://brandur.org/minimum-viable-unit) ⭐️ 8.0/10
+## [切换至开放权重模型弊端极小](https://www.marble.onl/posts/cancel_claude.html) ⭐️ 8.0/10
 
-文章指出，人工智能驱动的软件开发成本降低正在缩小可商业化销售软件的最小可行单元。因此，只有高度复杂、专业或受监管的软件细分市场仍具商业可行性。 这一见解挑战了企业传统的“自建还是购买”决策，尤其对初创公司影响深远。它表明软件供应商必须专注于深度专业化或监管护城河才能生存，这将重塑软件行业格局。 “最小可行单元”概念指可作为独立商业产品的最小软件单元。作者指出，尽管人工智能降低了构建成本，但并未完全消除成本，而社区效应（如功能请求和生态系统锁定）仍可提供竞争优势。
+一篇博客文章指出，最新的开放权重语言模型已具备足够的竞争力，能够替代 Claude 和 GPT 等闭源 API，对大多数用户而言实际弊端极小。 如果开放权重模型确实能与闭源模型匹敌，这一转变将降低成本、支持本地部署以增强隐私，并减少供应商锁定，影响数百万开发者和企业。 实际反馈显示，编码任务仍偏爱 Claude 4.6 等闭源模型；即便基准测试性能相当，通过第三方提供商路由开放模型 API 调用可能会带来隐私风险。
 
-hackernews · brandur · 6月21日 16:41 · [社区讨论](https://news.ycombinator.com/item?id=48620342)
+hackernews · amarble · 6月21日 20:56 · [社区讨论](https://news.ycombinator.com/item?id=48622518)
 
-**社区讨论**: 评论者基本认同文章观点，但补充了细微差别：个人项目仍需要超越初期人工智能助力的持续努力，自建与购买的决策依然复杂。一些人指出，更低的进入门槛加剧了竞争，而社区功能和生态系统效应仍可构成护城河。还有人强调，人工智能工具本身常常依赖第三方软件包，这质疑了即时内部构建的设想。
+**背景**: 开放权重模型是指公开了训练后参数的 AI 模型，任何人都可运行或微调，但不提供训练数据和代码。与之相对的是 OpenAI 的 GPT-4 或 Anthropic 的 Claude 等闭源模型，仅通过付费 API 访问。随着 DeepSeek V4、GLM-5.1、Qwen3-Coder 等最新开放权重模型在编码和推理基准测试中表现出色，关于它们能否替代闭源模型的讨论日益激烈。
 
-**标签**: `#software economics`, `#AI`, `#build vs buy`, `#software development`, `#startup viability`
+
+**参考链接**:
+
+- [Open Weights: not quite what you’ve been told](https://opensource.org/ai/open-weights)
+- [Open Source LLMs vs Open Weight LLMs vs Proprietary LLMs - SolarWinds Blog](https://www.solarwinds.com/blog/open-source-llms-vs-open-weight-llms-vs-proprietary-llms)
+
+
+**社区讨论**: 社区讨论呈现多元观点：有人警告第三方开放模型 API 的隐私风险，另一些人认为几个月的性能滞后可以接受。反对者指出实际编码任务仍严重依赖 Claude 4.6 等闭源模型，也有用户对定价接近 OpenAI 的开放模型服务提出质疑。
+
+**标签**: `#open-source LLMs`, `#model comparison`, `#AI privacy`, `#community discussion`, `#open-weight models`
 
 ---
 
 <a id="item-3"></a>
-## [sqlite-utils 4.0rc1 发布：新增迁移和嵌套事务支持](https://simonwillison.net/2026/Jun/21/sqlite-utils-40rc1/#atom-everything) ⭐️ 8.0/10
+## [博客文章称对数是一种物理量，底数只是测量单位](https://alexkritchevsky.com/2026/05/25/everything-is-logarithms.html) ⭐️ 8.0/10
 
-sqlite-utils 4.0rc1 作为 4.0 版本的第一个候选版本，引入了从 sqlite-migrate 移植而来的数据库迁移系统，并通过 db.atomic() 方法支持嵌套事务，同时包含一些轻微的不向后兼容变更。 该版本为管理数据库模式演化和事务完整性提供了关键功能，使 sqlite-utils 更适合需要可靠模式迁移和安全部分回滚的生产应用。 迁移系统有意保持简洁，不支持反向迁移，错误应通过新增迁移来修复；嵌套事务通过 db.atomic() 上下文管理器实现；该版本为候选版本，鼓励用户测试以防稳定版出现破坏性变更。
+Alex Kritchevsky 的博客文章提出，对数是一种物理量，就像长度或信息一样，而对数的底数只是测量单位的选择，类似于米和英尺的区别。这重新定义了对数在数学和物理学中的作用。 这一观点统一了信息论（比特、纳特）和工程学（分贝）等不同领域中不同底数的对数处理，并与数学中挠子（torsor）的概念相联系，即绝对值是任意的但差异有意义。这可以简化对物理定律中对数标度的理解。 该博客文章引入了“无底对数”的概念，但社区指出这一说法有问题；然而，其核心思想——对数构成一个挠子（即主齐性空间），底数相当于平移，差异是根本——是得到公认的。不同底数之间的转换是对数乘以一个缩放因子，类似于单位换算。
 
-rss · Simon Willison · 6月21日 23:35
+hackernews · E-Reverance · 6月21日 21:10 · [社区讨论](https://news.ycombinator.com/item?id=48622626)
 
-**背景**: sqlite-utils 是 Simon Willison 创建的 Python 库和 CLI 工具，简化了 SQLite 数据库的操作，提供表转换、JSON 导入等高级功能。数据库迁移是一种对模式增量变更进行版本控制的常见模式。嵌套事务允许在已有事务内启动新事务，实现更细粒度的回滚控制而不影响外部事务。
+**背景**: 在数学中，对数是指数运算的逆运算：若 b^y = x，则 log_b(x) = y。底数 b 决定了缩放比例。挠子（torsor）是一个带有自由且传递的群作用的集合，意味着没有自然的原点，因此只有差异是明确定义的。例子包括仿射空间中的点（没有绝对原点）和日历日期（纪元变更）。这篇博客文章认为，一个数的对数是以“以 b 为底的对数单位”度量的量，底数的选择只是选择单位，就像在比特（log2）和纳特（log e）之间选择一样。
 
 
 **参考链接**:
 
-- [sqlite - utils](https://sqlite-utils.datasette.io/)
-- [Nested transaction](https://en.wikipedia.org/wiki/Nested_transaction)
-- [sqlite - utils · PyPI](https://pypi.org/project/sqlite-utils/)
+- [Torsor (algebraic geometry)](https://en.wikipedia.org/wiki/Torsor_(algebraic_geometry))
+- [Principal homogeneous space - Wikipedia](https://en.wikipedia.org/wiki/Principal_homogeneous_space)
 
 
-**标签**: `#sqlite`, `#python`, `#cli`, `#database`, `#migrations`
+**社区讨论**: 评论者普遍认同核心观点，将其与挠子以及历史上使用对数表将乘法降为加法的做法联系起来。一些人告诫“无底对数”这一说法毫无意义，但底数即单位的类比很受欢迎。还有人建议使用类型系统和李理论来进一步阐明这一概念。
+
+**标签**: `#mathematics`, `#logarithms`, `#torsors`, `#measurement`, `#information-theory`
 
 ---
 
 <a id="item-4"></a>
-## [时间序列建模需引入动力系统视角](https://www.reddit.com/r/MachineLearning/comments/1uark0u/time_series_modeling_needs_a_dynamical_systems/) ⭐️ 8.0/10
+## [宁可重复代码，也不要错误的抽象](https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction) ⭐️ 8.0/10
 
-一篇被 ICML 2026 接收的立场论文主张，时间序列模型应融入动力系统重构，以实现真正的分布外泛化与长期行为预测。论文提出了具体技术，如广义教师强制和基于混沌系统的预训练。 这一视角可能将范式从纯模式匹配转向理解底层动力学规律，从而构建更稳健的模型，能跨领域泛化并预测长期行为，对气候科学、金融、物理等领域产生深远影响。 论文建议从 Transformer 转向现代 RNN，因为 Transformer 通过粗粒化信号可能丢失关键动力学信息。它还指出，跨临界点的拓扑变化是时间序列预测的核心挑战，而适当的训练目标（如广义教师强制）比模型架构更为重要。
+一篇 2016 年由 Sandi Metz 撰写的经典博文《错误的抽象》再次引发关注，该文主张代码重复往往优于过早或错误的抽象，随文附有 310 条评论，深入探讨了现实中的工程权衡。 这一原则挑战了广为接受的 DRY（不要重复自己）教条，鼓励开发者抵制过早抽象，等待清晰模式的出现，从而打造更易维护的代码库。 Sandi Metz 举例说明，随着需求变化，过早共享的抽象会变成障碍，并强调修复重复代码的成本远低于修复错误的抽象。社区讨论补充了更多细节，如单一真相来源的重要性，以及函数式编程自然减少重复的特性。
 
-reddit · r/MachineLearning · /u/DangerousFunny1371 · 6月20日 08:47
+hackernews · rafaepta · 6月21日 16:08 · [社区讨论](https://news.ycombinator.com/item?id=48620090)
 
-**背景**: 自然界和工程中的大多数时间序列源自底层动力系统，且多为混沌系统，具有丰富的多时间尺度结构。动力系统重构（DSR）旨在从观测时间序列中推断底层的动力学规则，超越简单预测，捕捉长期行为和吸引子结构。教师强制是一种训练 RNN 的算法，每一步输入真实值；广义教师强制针对混沌系统进行了改进，以实现稳定训练。分布外泛化指模型在训练数据分布之外的数据上表现良好的能力，对于存在状态转移的时间序列尤其具有挑战性。
+**背景**: 在软件工程中，'抽象'是将通用逻辑提取为共享组件以减少代码重复的做法。DRY 原则（不要重复自己）鼓励避免重复，但过度应用可能导致僵化、过度设计的系统。Sandi Metz 提出的反对观点认为，最初复制代码可能更安全，因为它避免了锁定一个可能不适合未来需求的抽象。
 
+**社区讨论**: 社区普遍认同该文章，分享了过度工程化代码库比有重复代码的更难维护的亲身经历。一些人强调关键逻辑必须保持单一真相来源，另一些人则指出函数式编程和 TypeScript 的鸭子类型减少了因抽象问题而重复代码的需要。
 
-**参考链接**:
-
-- [Dynamical system reconstruction from partial observations using stochastic dynamics](https://arxiv.org/html/2510.01089v1)
-- [[2306.04406] Generalized Teacher Forcing for Learning Chaotic Dynamics](https://arxiv.org/abs/2306.04406)
-- [[2402.18377] Out-of-Domain Generalization in Dynamical Systems Reconstruction](https://arxiv.org/abs/2402.18377)
-
-
-**标签**: `#time-series`, `#dynamical-systems`, `#machine-learning`, `#forecasting`, `#position-paper`
+**标签**: `#software-engineering`, `#abstraction`, `#code-duplication`, `#best-practices`, `#programming`
 
 ---
 
 <a id="item-5"></a>
-## [无 Softmax 注意力模型在 GPT-2 规模发布，支持稀疏性与长上下文 VRAM 节省](https://www.reddit.com/r/MachineLearning/comments/1ubmybr/i_released_a_softmaxfree_attention_model_at_gpt2/) ⭐️ 8.0/10
+## [ICML 2026 论文：时间序列建模需要动力系统视角](https://www.reddit.com/r/MachineLearning/comments/1uark0u/time_series_modeling_needs_a_dynamical_systems/) ⭐️ 8.0/10
 
-一位开发者发布了一个无 Softmax 注意力机制的 Transformer 模型，规模达到 GPT-2 Medium 级别（3.54 亿参数，使用 115 亿词元训练）。该模型采用结构化稀疏性与自定义的 tile-skipping 内核，以减少长上下文场景下的 VRAM 占用，并提供了开放权重和自定义的 Triton 内核实现。 这表明无 Softmax 注意力机制可以在中等规模模型上实际应用，并实现显著的内存效率提升，使其在长上下文场景中具有实用性。该工作可能影响未来注重效率的 Transformer 设计，尤其在资源受限的环境下。 模型参数规模为 3.54 亿，训练数据为 115 亿词元，通过结构化稀疏性实现 tile-skipping，即跳过注意力矩阵中值为零的块，从而节省计算。自定义内核使用 Triton 语言编写，并已开源。
+一篇被 ICML 2026 录用的立场论文呼吁时间序列建模转向动力系统视角。该论文提出使用广义教师强制训练和混沌系统模拟预训练，以实现域外泛化和长期预测。 这一视角有望克服当前模型的根本性限制，实现可靠的长期预测、处理制度转变，并提供跨领域迁移的机理理解，从而显著推动科学和工程中的时间序列建模。 该论文主张使用现代 RNN 而非 Transformer，因为递归结构能更好地捕捉动力学规则；强调训练技巧（如广义教师强制）比模型架构更重要；并指出拓扑转变这一挑战，即系统动力学发生质变。
 
-reddit · r/MachineLearning · /u/NonGameCatharsis · 6月21日 10:46
+reddit · r/MachineLearning · /u/DangerousFunny1371 · 6月20日 08:47
 
-**背景**: 传统 Transformer 使用 softmax 将注意力分数转换为概率分布，计算成本较高。无 Softmax 注意力机制用更简单的归一化（如 L1 范数）替代 softmax，以实现线性复杂度。结构化稀疏性是指剪枝整个权重或激活块，硬件可高效利用这种稀疏性。tile-skipping 技术利用该稀疏性跳过注意力矩阵中的零值块，从而减少内存访问。该模型以 GPT-2 Medium（3.45 亿参数）规模发布，这是一个著名的基准模型，提供了有意义的比较。
+**背景**: 动力系统重构（DSR）旨在从时间序列数据中学习一个能再现底层动力学的生成模型。许多现实世界的时间序列（如天气或脑活动）源自混沌系统，微小的扰动会导致轨迹发散。广义教师强制是一种训练技术，通过间歇性地将预测拉回真实值来稳定梯度学习，从而训练混沌系统。当前的时间序列模型通常将预测视为模式匹配问题，而不建模底层动力学规则，这限制了其泛化能力。
 
 
 **参考链接**:
 
-- [Softmax - free Linear Transformers](https://arxiv.org/html/2207.03341v3)
-- [Structured sparsity regularization](https://en.wikipedia.org/wiki/Structured_sparsity_regularization)
-- [Softmax-free ~354M: tile - skip kernels for long-context... | Hacker News](https://news.ycombinator.com/item?id=48617387)
+- [214124 PDFs | Review articles in DYNAMICAL SYSTEMS](https://www.researchgate.net/topic/Dynamical-Systems~Reconstruction/publications)
+- [Generalized Teacher Forcing for Learning Chaotic Dynamics](https://arxiv.org/pdf/2306.04406)
+- [Dynamical Systems in Time Series Modeling](https://www.emergentmind.com/papers/2602.16864)
 
 
-**标签**: `#softmax-free attention`, `#structural sparsity`, `#Triton kernels`, `#efficiency`, `#transformer architecture`
+**标签**: `#time series modeling`, `#dynamical systems`, `#forecasting`, `#ICML`, `#machine learning`
 
 ---
 
 <a id="item-6"></a>
-## [Beyond All Reason：开源 RTS 技术惊艳，但社区毒性引热议](https://www.beyondallreason.info/) ⭐️ 7.0/10
+## [开发者创建 minFLUX：简化版 PyTorch FLUX 扩散模型实现](https://www.reddit.com/r/MachineLearning/comments/1ub1db3/studying_flux_in_diffusers_library_was_hard_so_i/) ⭐️ 8.0/10
 
-受 Total Annihilation 启发的开源 RTS Beyond All Reason 在 Hacker News 上引发热议（427 分，252 条评论），聚焦于其技术成就与玩家社区的严重毒性问题。 这场讨论揭示了开源多人游戏营造友好社区之难，毒性问题可能吓退新手，损害长期发展，即便技术再出色。 游戏支持 16 人对战、400 种独特单位及数千个单位实时模拟。但玩家反映，严格遵循主流打法一旦偏离会被队友投票踢出并接管单位，新手被建议在单机练习后再加入常规对战。
+一位开发者构建了 minFLUX，这是一个简化的开源 PyTorch 实现，专注于 FLUX.1 和 FLUX.2 扩散模型的核心架构与训练循环，并提供了与原始 HuggingFace diffusers 库的逐行映射。 它显著降低了研究和理解 FLUX 等现代扩散模型的门槛，因为官方 diffusers 库通常很复杂，这对研究人员、学生和从业者都有帮助。 该实现包含 VAE 和 Transformer 组件，使用速度均方误差的流匹配训练，欧拉常微分方程推理，以及共享工具如旋转位置编码(RoPE)。作者发现 FLUX.2 并非仅仅是 FLUX.1 的放大版，而是改进了 Transformer 块、调制、前馈网络、VAE 归一化和位置 ID 等。
 
-hackernews · mosiuerbarso · 6月21日 11:38 · [社区讨论](https://news.ycombinator.com/item?id=48617990)
+reddit · r/MachineLearning · /u/Other-Eye-8152 · 6月20日 16:50
 
-**背景**: Total Annihilation（1997）是 RTS 里程碑，以 3D 地形、物理战斗和庞大军队著称。Beyond All Reason 是一个基于 Spring 引擎的开源项目，延续该传统，提供现代画质和免费游玩，主打 16 人、数千单位的大规模战斗。
+**背景**: FLUX 是 Black Forest Labs 开发的最先进文本到图像扩散模型，融合了扩散 Transformer 架构与流匹配技术。流匹配是一种通过匹配向量场将噪声转换为数据来训练生成模型的方法，与传统扩散有所不同。旋转位置编码(RoPE)是一种向 Transformer 注入位置信息的方法，常用于大型语言模型，现在也被扩散模型用于处理图像中的空间关系。
 
 
 **参考链接**:
 
-- [Beyond All Reason RTS](https://www.beyondallreason.info/)
-- [Total Annihilation on Steam](https://store.steampowered.com/app/298030/Total_Annihilation/)
+- [black-forest-labs/ FLUX .1-schnell · Hugging Face](https://huggingface.co/black-forest-labs/FLUX.1-schnell)
+- [xdiffusion/docs/image/ flux .md at main · swookey-thinky/xdiffusion](https://github.com/swookey-thinky/xdiffusion/blob/main/docs/image/flux.md)
+- [Rotary positional embedding](https://en.wikipedia.org/wiki/Rotary_positional_embedding)
 
 
-**社区讨论**: 总体评价游戏技术出色、乐趣十足，但社区毒性是主要缺陷。用户反映因不遵循主流打法被踢，16 人局放大了遇到攻击性玩家的概率。有人建议通过单机练习和新手房间来缓解问题。
-
-**标签**: `#RTS`, `#open-source`, `#gaming`, `#community`, `#Total Annihilation`
+**标签**: `#diffusion models`, `#FLUX`, `#open-source`, `#pytorch`, `#educational`
 
 ---
 
 <a id="item-7"></a>
-## [2016 年经典文章重提：宁重复勿用错误抽象](https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction) ⭐️ 7.0/10
+## [前员工反思：我的科技工作是否仅因欺诈而存在？](https://david.newgas.net/did-my-old-job-only-exist-because-of-fraud/) ⭐️ 7.0/10
 
-Sandi Metz 于 2016 年发表的博文《错误的抽象》近日重新引起关注，该文主张在代码中重复（duplication）往往优于错误的抽象，引发了关于软件设计权衡的热烈讨论。 这一原则提醒开发者避免过早或错误的抽象，这类抽象可能导致代码难以维护。它鼓励在软件开发中更审慎地平衡 DRY 原则与代码清晰度。 文章指出，错误的抽象比代码重复带来更多的技术债务，而重复的代码更容易后续重构。Hacker News 上的讨论强调应遵循“单一事实来源”原则，但不应以错误的抽象为代价，同时函数式编程可以减少此类权衡问题。
+一位前科技公司员工发布了一篇博文，质疑其前一份工作是否仅仅因为公司存在欺诈行为而存在，引发了广泛讨论。 该帖子引发了许多科技从业者的共鸣，促使人们反思就业的道德基础，以及高增长公司中隐藏的欺诈行为，凸显了员工可能在不知情的情况下面临的道德困境。 帖子未指明公司，但社区评论分享了银行、政府 IT 合同和电信领域的类似欺诈故事，包括虚报工时、通过外包让同一承包商加价回归，以及风投资金支持的无实际产品增长。
 
-hackernews · rafaepta · 6月21日 16:08 · [社区讨论](https://news.ycombinator.com/item?id=48620090)
+hackernews · advisedwang · 6月21日 21:40 · [社区讨论](https://news.ycombinator.com/item?id=48622867)
 
-**背景**: DRY 原则（Don't Repeat Yourself，即不要重复你自己）是软件工程的核心原则，强调通过抽象减少重复代码。Sandi Metz 的 2016 年文章则提出相反观点：当抽象不正确时，它会比代码重复造成更大的危害，因为错误的抽象会将代码锁定在错误的架构中。这一见解已成为软件设计可维护性讨论中的重要参考。
+**背景**: 在科技行业，一些公司通过欺诈手段实现快速增长，例如虚报财务状况、夸大用户数量或滥用投资者资金。员工可能不知道自己的角色是由不可持续的做法资助的。这种反思是关于在类似环境中工作的道德问题更大讨论的一部分。
 
+**社区讨论**: 社区评论普遍认同，分享了银行、政府 IT 和电信领域欺诈的个人经历。他们指出，从虚报账单到风投分红，此类做法很常见，并建议识别像帝国构建者那样的管理预警信号，及早离开。
 
-**参考链接**:
-
-- [The Wrong Abstraction — Sandi Metz](https://sandimetz.com/blog/2016/1/20/the-wrong-abstraction)
-- [Don't repeat yourself - Wikipedia](https://en.wikipedia.org/wiki/Don't_repeat_yourself)
-
-
-**社区讨论**: Hacker News 上的讨论大多赞同文章观点，评论者指出保持单一事实来源很重要，但不应迫使形成错误的抽象。一些用户强调函数式编程可以减少重复和抽象问题，另一些分享了过度工程化导致代码更难维护的实际经验。
-
-**标签**: `#software engineering`, `#abstraction`, `#code duplication`, `#design principles`, `#best practices`
+**标签**: `#tech-industry`, `#fraud`, `#career`, `#personal-reflection`, `#discussion`
 
 ---
 
 <a id="item-8"></a>
-## [Cloudflare 推出无需账户的临时 Workers 部署](https://simonwillison.net/2026/Jun/21/temporary-cloudflare-accounts/#atom-everything) ⭐️ 7.0/10
+## [Anthropic 要求 Claude 身份验证引发 AI 准入与中立性争议](https://support.claude.com/en/articles/14328960-identity-verification-on-claude) ⭐️ 7.0/10
 
-Cloudflare 现在允许任何人通过 `npx wrangler deploy --temporary` 命令部署 Workers 项目，无需创建账户；部署有效期为 60 分钟，并可认领为永久项目。 这大大降低了快速测试、演示和分享无服务器函数的门槛，有利于开发者无需注册即可快速原型设计或分享临时应用。 部署输出包含一个 60 分钟后过期的认领链接；临时账户关联随机子域名，该功能虽以 AI 智能体为名义推出，但任何开发者均可使用。
+Anthropic 关于 Claude 身份验证的支持页面已上线数月，引发 Hacker News 热议，讨论其对 AI 准入、中立性及国际用户的影响。 该政策引发对 AI 中立性和公平准入的担忧，可能促使用户转向非美国模型，重塑全球 AI 竞争格局。 身份验证页面自 2025 年 4 月已上线；验证失败可能导致永久锁定，OpenAI 亦有类似检查。Anthropic 声称不将身份数据用于模型训练，但其合作伙伴 Persona 可能使用数据。
 
-rss · Simon Willison · 6月21日 22:01
+hackernews · bathory · 6月21日 12:44 · [社区讨论](https://news.ycombinator.com/item?id=48618455)
 
-**背景**: Cloudflare Workers 是一个在边缘网络上运行代码的无服务器平台。Wrangler CLI 是开发和部署 Workers 的官方工具。此前，部署 Worker 需要 Cloudflare 账户和身份验证。新的 `--temporary` 标志绕过此限制，创建一个临时预览账户，部署仅持续 60 分钟。
+**背景**: Claude 是 Anthropic（一家美国 AI 安全公司）开发的大型语言模型系列。与许多 AI 服务一样，Anthropic 实施身份验证以遵守法规或执行使用政策，但这引发了关于用户隐私和准入的问题。
 
 
 **参考链接**:
 
-- [Temporary Cloudflare Accounts for AI agents](https://blog.cloudflare.com/temporary-accounts/)
-- [Claim deployments (temporary accounts) · Cloudflare Workers docs](https://developers.cloudflare.com/workers/platform/claim-deployments/)
+- [Claude ( AI ) - Wikipedia](https://en.wikipedia.org/wiki/Claude_(language_model))
+- [Anthropic - Wikipedia](https://en.wikipedia.org/wiki/Anthropic)
 
 
-**标签**: `#cloudflare`, `#workers`, `#ephemeral`, `#serverless`, `#deployment`
+**社区讨论**: 讨论多持批评态度，用户认为强制身份验证损害了美国 AI 公司的全球竞争力，推动了对非美国替代品的需求。许多人将其与网络中立性担忧相提并论，部分人指出验证流程并非新事物但仍存在问题。关于 Persona 处理数据的隐私担忧也被提及。
+
+**标签**: `#AI policy`, `#identity verification`, `#Anthropic`, `#Claude`, `#AI accessibility`
 
 ---
 
 <a id="item-9"></a>
-## [用代码和 Excel 从零构建 LLM 的 YouTube 工作坊，无需数学基础](https://www.reddit.com/r/MachineLearning/comments/1uazlnd/hi_reddit_i_posted_my_build_your_own_llm_workshop/) ⭐️ 7.0/10
+## [Show HN: 教孩子绝对音感的工具引发年龄限制讨论](https://github.com/paytonjjones/bsharp) ⭐️ 7.0/10
 
-一个此前仅在旧金山线下举办的“从零构建 LLM”综合性工作坊，现已免费在 YouTube 上发布。该工作坊仅用代码和 Excel 示例，无需数学基础，教授机器学习、Transformer 架构和模型训练等全部内容。 该工作坊大幅降低了理解 LLM 内部机制的门槛，让没有正式数学训练的开发者、学生和爱好者也能掌握前沿 AI 知识。这种代码优先的教学方式填补了教育资源空白，有望加速更广泛的 AI 普及和创新。 课程内容涵盖 SwiGLU 激活函数、Kaiming 初始化、RoPE 位置编码、多种注意力机制（MHA, GQA, MQA, MLA）以及 PyTorch、Triton、CUDA 等 GPU 编程。学习者可自行安排进度，使用幻灯片、Excel 练习和代码，但明确不涉及模型扩展（Scaling）话题。
+GitHub 上新开源工具'bsharp'旨在教儿童绝对音感，引发了关于绝对音感是否只能在幼儿期获得的讨论，近期研究显示成人训练也可能实现。 这场辩论挑战了长期存在的关键期假说，若成人也能习得绝对音感，或将革新音乐教育并揭示大脑可塑性。工具对 A=440Hz 的依赖也凸显了年龄导致音高漂移的实际问题。 关键细节包括：用户报告绝对音感随年龄退化，科学文献（PMID 31550277、31686378）支持成人可塑性，以及 2025 年心理经济学会文章称绝对音感可在成年后完全发展。
 
-reddit · r/MachineLearning · /u/JustinAngel · 6月20日 15:36
+hackernews · paytonjjones · 6月21日 12:49 · [社区讨论](https://news.ycombinator.com/item?id=48618488)
 
-**背景**: 现代大语言模型（如 LLaMA）广泛采用 SwiGLU 激活函数以提升性能，Kaiming 初始化则用于缓解深层网络的梯度问题，而 Triton 作为类似 Python 的 GPU 编程语言，让非 CUDA 专家也能编写高效代码。该工作坊正是通过 Excel 和代码实操，将这些关键技术逐一拆解，使学习者无需数学背景也能理解其原理。
+**背景**: 绝对音感（AP）指无需参考音即可识别或再现音高的能力。关键期假说认为 AP 只能在 6 岁前获得，但近期研究挑战了这一观点，表明成人通过训练也能习得。音乐会音高 A=440Hz 是现代标准，但历史上调音标准各异，且人的音高感知可能随年龄漂移。
 
 
 **参考链接**:
 
-- [Exploring SwiGLU : The Activation Function Powering Modern LLMs | by Selssabil | Medium](https://medium.com/@s_boudefel/exploring-swiglu-the-activation-function-powering-modern-llms-9697f88221e7)
-- [Kaiming Initialization in Deep Learning - GeeksforGeeks](https://www.geeksforgeeks.org/deep-learning/kaiming-initialization-in-deep-learning/)
-- [Introducing Triton: Open-source GPU programming for neural networks | OpenAI](https://openai.com/index/triton/)
+- [Absolute pitch - Wikipedia](https://en.wikipedia.org/wiki/Absolute_pitch)
+- [From pitchy to pitch perfect: Training absolute pitch in adults – Psychonomic Society Featured Content](https://featuredcontent.psychonomic.org/from-pitchy-to-pitch-perfect-training-absolute-pitch-in-adults/)
 
 
-**标签**: `#LLM`, `#tutorial`, `#machine-learning`, `#deep-learning`, `#transformers`
+**社区讨论**: 评论中分享了获得和失去绝对音感的个人经历，围绕关键期展开科学辩论，并警告工具固定 A=440Hz 基准的局限性。总体而言，讨论通过学术引用和多元视角丰富了该帖子的价值。
+
+**标签**: `#perfect pitch`, `#music education`, `#audio`, `#hackernews`, `#show hn`
 
 ---
 
 <a id="item-10"></a>
-## [DVD-JEPA：一个开源、可完整复现的 JEPA 世界模型](https://www.reddit.com/r/MachineLearning/comments/1uatlzx/dvdjepa_an_opensource_fullyreproducible_jepa/) ⭐️ 7.0/10
+## [sqlite-utils 4.0rc1 新增迁移系统与嵌套事务支持](https://simonwillison.net/2026/Jun/21/sqlite-utils-40rc1/#atom-everything) ⭐️ 7.0/10
 
-DVD-JEPA 是一个开源、可完整复现的 JEPA 世界模型，它学习预测 16x16 像素框中弹跳 DVD 标志的未来潜在表示，而非像素重建。该模型展示了精确的位置编码、通过解码器进行帧预测以及异常检测能力。 这个玩具模型为联合嵌入预测架构（JEPA）提供了一个清晰、可访问的演示，而 JEPA 正是 I-JEPA、V-JEPA 等大型模型的基础。其完全可复现和浏览器端运行的特点，降低了理解与实验自监督世界模型的门槛。 该模型使用上下文编码器、EMA 目标编码器和预测器，映射到 32 维潜在空间。线性探针能以 0.73 像素的误差恢复标志位置，预测器可生成约 20 步的合理未来帧。通过预测误差进行异常检测时，注入瞬移事件会使误差信号骤增 88 倍。
+sqlite-utils 4.0 候选版本引入了一个从 sqlite-migrate 移植而来的内置迁移系统，并支持通过保存点实现的嵌套事务，同时包含一些小的向后不兼容变更。 sqlite-utils 是 Python 中广泛使用的 SQLite 工具，内置迁移系统简化了应用数据库模式的版本管理，嵌套事务则为多步骤操作提供了更安全的保证。该候选版本鼓励社区测试，确保 v4 正式版的稳定性。 迁移通过装饰器在 Python 文件中定义函数，可由 Python 或命令行执行，不支持向下迁移，错误通过新迁移修正。嵌套事务通过 SQLite 的保存点（savepoint）实现，可能以 `db.atomic()` 上下文管理器的方式提供。
+
+rss · Simon Willison · 6月21日 23:35
+
+**背景**: sqlite-utils 是 Simon Willison 开发的 Python 库和命令行工具，为 SQLite 提供了高级操作，比如从 JSON 数据自动建表和复杂表变换。数据库迁移是一组脚本，让开发者可以对数据库模式变更进行版本控制，逐步应用。SQLite 本身不支持真正的嵌套事务，但可以通过 SAVEPOINT 功能模拟嵌套事务行为，回滚部分变更而不影响外层事务。
+
+
+**参考链接**:
+
+- [sqlite-utils](https://sqlite-utils.datasette.io/)
+- [How to Handle Nested Transactions in SQLite - Sling Academy](https://www.slingacademy.com/article/how-to-handle-nested-transactions-in-sqlite/)
+
+
+**标签**: `#Python`, `#SQLite`, `#migrations`, `#CLI`, `#library`
+
+---
+
+<a id="item-11"></a>
+## [Cloudflare 推出无需账户的临时 Workers 部署](https://simonwillison.net/2026/Jun/21/temporary-cloudflare-accounts/#atom-everything) ⭐️ 7.0/10
+
+Cloudflare 现在允许通过 `npx wrangler deploy --temporary` 命令部署 Workers 项目，无需创建账户，部署的项目将运行 60 分钟，之后可被永久认领。 该功能大幅降低了快速测试、原型设计和 AI 代理工具集成的门槛，使开发者无需注册即可立即启动无服务器函数。 部署会生成一个随机子域名（如 educated-celery.workers.dev），60 分钟后提供一个带有倒计时的认领链接，以便接管临时账户及其资源。
+
+rss · Simon Willison · 6月21日 22:01
+
+**背景**: Cloudflare Workers 是一个无服务器边缘计算平台，Wrangler 是其官方 CLI 工具，用于构建和部署 Workers。新增的 `--temporary` 标志支持无需账户的临时部署，适用于测试和快速原型设计。
+
+
+**参考链接**:
+
+- [Temporary Cloudflare Accounts for AI agents](https://simonwillison.net/2026/Jun/21/temporary-cloudflare-accounts/)
+- [Wrangler · Cloudflare Workers docs](https://developers.cloudflare.com/workers/wrangler/)
+
+
+**标签**: `#Cloudflare`, `#Workers`, `#ephemeral`, `#deployment`, `#serverless`
+
+---
+
+<a id="item-12"></a>
+## [零数学基础，用代码和 Excel 构建 LLM 的工作坊教程发布](https://www.reddit.com/r/MachineLearning/comments/1uazlnd/hi_reddit_i_posted_my_build_your_own_llm_workshop/) ⭐️ 7.0/10
+
+一个录制好的工作坊视频已发布到 YouTube，它从零开始教授如何构建大语言模型，涵盖机器学习基础、Transformer 架构和训练过程，无需数学或机器学习先修知识，仅通过代码和 Excel 示例进行教学。 该工作坊降低了理解 LLM 内部机制的门槛，让没有数学背景的广大学习者也能通过动手实践学习现代大模型开发，对初学者和进阶者都具有很高的教育价值。 内容涵盖 SwiGLU 激活函数、RMSNorm 归一化、Kaiming 初始化等高级主题，提供幻灯片、Excel 练习和代码示例，并明确指出未涉及模型扩展性（Scaling）的内容。
+
+reddit · r/MachineLearning · /u/JustinAngel · 6月20日 15:36
+
+**背景**: SwiGLU 是一种结合 Swish 和门控线性单元的激活函数，能增强 Transformer 模型的表达能力；RMSNorm 是一种比层归一化更简单的归一化技术，可减少计算开销；Kaiming 初始化是为 ReLU 激活函数设计的权重初始化方法，有助于稳定训练。这些技术都是现代大语言模型的重要组成部分。
+
+
+**参考链接**:
+
+- [SwiGLU Activation Function . SwiGLU (Swish-Gated Linear... | Medium](https://abdulkaderhelwan.medium.com/swiglu-activation-function-77627e0b2b52)
+- [RMSNorm](https://en.wikipedia.org/wiki/RMSNorm)
+- [Weight initialization - Wikipedia](https://en.wikipedia.org/wiki/Weight_initialization)
+
+
+**标签**: `#LLM`, `#tutorial`, `#machine-learning`, `#transformers`, `#workshop`
+
+---
+
+<a id="item-13"></a>
+## [DVD-JEPA：一个开源 JEPA 世界模型，学习弹跳 DVD 标志的潜在表征](https://www.reddit.com/r/MachineLearning/comments/1uatlzx/dvdjepa_an_opensource_fullyreproducible_jepa/) ⭐️ 7.0/10
+
+DVD-JEPA 是一个开源、完全可复现的 JEPA 实现，它学习预测未来的潜在表征而非像素，并在一个简单的弹跳 DVD 标志模拟中进行了演示。它从学到的表征中精确恢复了标志的位置，并可通过添加解码器生成未来帧。 这项工作为 JEPA（一种有前景的自监督世界模型方向，避免了像素级预测的噪声）提供了一个清晰、最小且完全可复现的概念验证。它表明该架构能够学习结构化的世界状态，并可用于异常检测，为社区提供了有价值的参考。 模型使用上下文编码器、EMA 目标编码器和潜在预测器，无标签训练以预测 32 维表征。线性探针能以 0.73 像素误差恢复精确坐标，可选解码器可滚动生成约 20 步的正确未来帧；异常检测在传送事件上信号增强至基线的 88 倍。训练好的 MLP 用约 40 行 JavaScript 重写，可在浏览器中运行演示。
 
 reddit · r/MachineLearning · /u/NielsRogge · 6月20日 10:52
 
-**背景**: 联合嵌入预测架构（JEPA）是一种自监督学习方法，它预测未来观测的抽象潜在表示，而非重建原始像素，从而忽略不可预测的细节。世界模型从感官数据中学习环境动态，常采用类似 JEPA 的设置，包含上下文编码器、经指数移动平均（EMA）更新的目标编码器以及预测器。DVD-JEPA 使用一个 16×16 弹跳 DVD 标志作为最小化“世界”来演示这些原理。
+**背景**: 联合嵌入预测架构（JEPA）是 Yann LeCun 提出的一种自监督学习方法，它预测未来数据的抽象嵌入而非重建原始像素。它通常使用编码器生成潜在表征、预测器预测目标嵌入，以及指数移动平均（EMA）目标编码器来稳定训练。这避免了生成模型中像素级细节的不可预测性，专注于学习高级、可预测的特征。JEPA 已扩展到更大的视频模型（如 V-JEPA），但 DVD-JEPA 是该核心思想的一个最小、完全可复现的演示。
 
 
 **参考链接**:
 
 - [Joint Embedding Predictive Architecture](https://en.wikipedia.org/wiki/Joint_Embedding_Predictive_Architecture)
-- [World model (artificial intelligence) - Wikipedia](https://en.wikipedia.org/wiki/World_model_(artificial_intelligence))
+- [[2301.08243] Self-Supervised Learning from Images with a Joint-Embedding Predictive Architecture](https://arxiv.org/abs/2301.08243)
 
 
-**标签**: `#JEPA`, `#world model`, `#self-supervised learning`, `#representation learning`, `#anomaly detection`
+**标签**: `#JEPA`, `#world-model`, `#self-supervised-learning`, `#video-representation`, `#open-source`
 
 ---
 
-<a id="item-11"></a>
-## [开源手册详解大规模 LLM 推理：GPU 内部机制、KV 缓存与框架对比](https://www.reddit.com/r/MachineLearning/comments/1uavduv/an_open_handbook_on_llm_inference_at_scale_gpu/) ⭐️ 7.0/10
+<a id="item-14"></a>
+## [开源 LLM 大规模推理手册发布](https://www.reddit.com/r/MachineLearning/comments/1uavduv/an_open_handbook_on_llm_inference_at_scale_gpu/) ⭐️ 7.0/10
 
-一个正在开发中的开源手册在 GitHub 上发布，详细解释了 GPU 执行、内存瓶颈、KV 缓存和批处理策略，并比较了 vLLM、SGLang 和 TensorRT-LLM 等框架，配有 mermaid 流程图以便理解。 它为工程师优化大规模 LLM 推理提供了实用的深度资源，弥补了理论与生产框架之间的差距，并提供了应对内存瓶颈和吞吐量挑战的结构化指南。 该手册是个人学习项目，尚未经过生产验证；内容涵盖 GPU 空闲时间、内存层次结构，并包含 mermaid 图表；作者欢迎反馈和贡献。
+一位开发者在 GitHub 上分享了一份开源手册，讲解大规模 LLM 推理的内部机制，包括 GPU 内存层次结构、KV 缓存、批处理以及 vLLM、SGLang 等现代推理框架，最新章节通过 mermaid 流程图深入解析了 GPU 执行与内存瓶颈。 该手册填补了工程师在生产环境中部署 LLM 推理时的知识空白，将分散的 GPU 内存、KV 缓存和批处理优化知识系统化，有助于降低推理成本、提升性能，推动高效推理框架的普及。 该手册仍处于持续更新状态，目前重点在 GPU 执行和内存机制，未来将扩展更多章节。内容包含 mermaid 流程图，并具体介绍了 vLLM（PagedAttention）、SGLang（结构化生成）和 TensorRT-LLM 等框架。作者欢迎通过 GitHub Issues 和 PR 提供反馈和贡献。
 
 reddit · r/MachineLearning · /u/YouFirst295 · 6月20日 12:27
 
-**背景**: KV 缓存是一种在自回归文本生成中存储中间键值张量的技术，避免重复计算以加速推理。GPU 内存层次结构（HBM、SRAM）和计算利用率是关键因素，推理通常受内存带宽限制，导致 GPU 空闲。vLLM、SGLang 和 TensorRT-LLM 是开源框架，通过 PagedAttention、连续批处理和量化等技术优化 LLM 服务，提升吞吐量和内存效率。
+**背景**: 大规模语言模型推理需要为每个 token 维护注意力键值（KV）缓存，当上下文长度和批处理大小增加时，会消耗大量 GPU 内存。vLLM 框架通过 PagedAttention 技术高效管理 KV 缓存，SGLang 提供结构化生成语言和高吞吐量运行时，TensorRT-LLM 则是 NVIDIA 优化的推理库。GPU 内存层次结构（全局内存、L2 缓存、寄存器）以及执行调度（如连续批处理）对于最大化吞吐量和减少空闲时间至关重要。
 
 
 **参考链接**:
@@ -253,146 +316,120 @@ reddit · r/MachineLearning · /u/YouFirst295 · 6月20日 12:27
 - [SGLang](https://en.wikipedia.org/wiki/SGLang)
 
 
-**标签**: `#LLM inference`, `#GPU internals`, `#KV cache`, `#vLLM`, `#handbook`
+**标签**: `#LLM inference`, `#GPU internals`, `#serving frameworks`, `#handbook`, `#machine learning`
 
 ---
 
-<a id="item-12"></a>
-## [Apertus：面向主权 AI 的完全开放基础模型](https://apertvs.ai/) ⭐️ 6.0/10
+<a id="item-15"></a>
+## [JSON-LD 在个人网站上的应用指南](https://hawksley.dev/blog/json-ld-explained-for-personal-websites/) ⭐️ 6.0/10
 
-Apertus 发布了由学术和公共机构在 Alps 超级计算机上训练的全开放多语言基础模型，提供 8B 和 70B 参数版本，旨在支持主权 AI 发展。 它通过提供透明、开放的替代方案，回应了美国以外地区日益紧迫的技术主权需求，有助于减少对外国 AI 的依赖并促进道德数据治理。 该模型声称在同等规模下能与顶级开放模型竞争，但社区反馈指出其开发速度慢且多语言输出不可靠，同时其完整的训练流程和数据集已公开。
-
-hackernews · T-A · 6月21日 21:29 · [社区讨论](https://news.ycombinator.com/item?id=48622778)
-
-**背景**: 主权 AI 是指国家构建独立 AI 基础设施、减少对外国技术依赖的战略。Apertus 是一个完全开放的基础模型，其权重、训练数据和代码均可公开获取，由联盟使用瑞士 Alps 超级计算机训练，以促进透明度和本地自主权。
-
-
-**参考链接**:
-
-- [Swiss Foundation Model : Apertus - A Multilingual, Open... | LinkedIn](https://www.linkedin.com/posts/sarahdlevy_apertus-a-fully-open-transparent-multilingual-activity-7368644303755063297-FqMI)
-- [How Academia Trained a 70B Model Without Big Tech's Budget](https://articles.phantom-byte.com/how-academia-trained-70b-model-apertus.html)
-
-
-**社区讨论**: 社区评论对竞争力表示怀疑，列举了 OLMo 3.1 和 K2 Think V2 等开放模型。有人认为 Apertus 进展缓慢，在简单多语言任务上表现不佳，但也有人强调该项目在积累人才和从经验中学习方面的价值。
-
-**标签**: `#open-source AI`, `#sovereign AI`, `#foundation model`, `#multilingual LLM`, `#AI ethics`
-
----
-
-<a id="item-13"></a>
-## [软件工程师质疑其旧职是否仅因欺诈而存在](https://david.newgas.net/did-my-old-job-only-exist-because-of-fraud/) ⭐️ 6.0/10
-
-一名软件工程师的博客文章引发广泛讨论，探讨许多技术岗位是否靠欺诈性计费、预算滥用或公司欺诈才得以维持。作者的个人反思催生了大量评论，揭示了承包商加价转雇、虚报工时等模式。 这场讨论凸显了科技行业系统性的道德问题，浪费性支出和欺诈可能人为推高了就业。这引起了许多有过类似经历的员工的共鸣，质疑自己工作的价值以及企业行为的诚信。 该帖子收集了各种故事，包括承包商被解雇后通过外包公司加价重新雇回、经理为客户未实际工作的时间计费，以及一家机器人公司被怀疑作为税务亏损工具运营。文中未披露具体名称或数字，但此类模式在银行、政府及机器人等行业中均有出现。
-
-hackernews · advisedwang · 6月21日 21:40 · [社区讨论](https://news.ycombinator.com/item?id=48622867)
-
-**背景**: 科技行业中“僵尸项目”或“虚假工作”的概念通常涉及对未实际工作的时间进行计费，或仅为消耗预算而设立的岗位。在大型组织中，预算分配可能激励经理虚增成本或保留冗余人员以免失去资金。这一现象有时与大卫·格雷伯描述的“狗屁工作”相联系，但本文侧重于欺诈而非仅仅无意义的工作。
-
-**社区讨论**: 评论者分享了亲身经历的欺诈案例：一名承包商被解雇后通过外包公司加价重新雇回，一位经理修改考勤表以用完政府客户预算，还有一家机器人公司被怀疑作为税务亏损工具运营。整体情绪是这类做法比人们承认的更为普遍，许多员工感到失望。
-
-**标签**: `#fraud`, `#software-industry`, `#career`, `#ethics`, `#tech-culture`
-
----
-
-<a id="item-14"></a>
-## [针对个人网站的 JSON-LD 教程引发 SEO 价值质疑](https://hawksley.dev/blog/json-ld-explained-for-personal-websites/) ⭐️ 6.0/10
-
-一篇新教程介绍了如何使用 JSON-LD 丰富个人网站的元数据，以改善搜索引擎呈现效果。然而，社区讨论揭示了对其实效性的质疑，因为谷歌越来越多地提供 AI 生成摘要而非直接链接。 此事突显了传统 SEO 实践（如结构化数据标记）与新兴 AI 驱动搜索结果之间的张力，暗示网站开发者可能需要重新评估他们用于提升可见性的工具。 教程涵盖了 JSON-LD 在获得丰富链接预览和潜在排名提升方面的作用，但评论者指出，谷歌的 LLM 摘要可能占据主导，削弱了这些增强功能的影响。
+hawksley.dev 发布了一篇新指南，介绍如何在个人网站上实现 JSON-LD 结构化数据，以改善 SEO 并获得丰富的链接预览。 JSON-LD 有助于搜索引擎理解页面内容，从而可能获得丰富摘要。但部分社区成员指出，谷歌的 AI 生成摘要可能会降低实际链接的可见性。 该指南专注于个人网站，但评论者强调 JSON-LD 仅对特定内容类型（如食谱、活动）有用，而 OpenGraph 在链接预览方面支持更广泛。
 
 hackernews · ethanhawksley · 6月21日 18:51 · [社区讨论](https://news.ycombinator.com/item?id=48621517)
 
-**背景**: JSON-LD（用于链接数据的 JavaScript 对象表示法）是一种使用 JSON 编码链接数据的轻量级格式，它允许开发者向网站添加结构化数据，如文章详情、作者信息和面包屑，从而可能获得更丰富的搜索结果展示。谷歌长期推荐使用 JSON-LD 来提升搜索可见性。然而，近期搜索转向 AI 生成摘要置于自然结果之上的变化，可能削弱这些增强功能带来的点击率优势。
+**背景**: JSON-LD（用于链接数据的 JavaScript 对象表示法）是一种 W3C 标准，用于以 JSON 编码链接数据。它允许 Web 开发者使用 Schema.org 词汇表嵌入结构化数据，使其可被机器读取。Google 等搜索引擎使用这些数据生成丰富结果，如星级评分和面包屑导航。
 
 
 **参考链接**:
 
 - [JSON-LD](https://en.wikipedia.org/wiki/JSON-LD)
-- [JSON-LD - JSON for Linked Data](https://json-ld.org/)
+- [JSON - LD - JSON for Linked Data](https://json-ld.org/)
+- [Structured data](https://en.wikipedia.org/wiki/Structured_data)
 
 
-**社区讨论**: 社区普遍对 JSON-LD 目前的 SEO 价值持怀疑态度。评论者指出，谷歌的 AI 生成摘要常常盖过自然结果，使得丰富摘要效果减弱。有人欣赏教程，但强调需要跨元数据源保持一致性。
+**社区讨论**: 社区成员表示怀疑：谷歌的 AI 摘要可能掩盖直接链接，而 OpenGraph 通常足以满足链接预览需求。他们建议使用搜索引擎特定的文档，并指出 JSON-LD 只是 Schema.org 的一种语法。
 
-**标签**: `#JSON-LD`, `#SEO`, `#structured data`, `#web development`, `#personal websites`
+**标签**: `#JSON-LD`, `#SEO`, `#web development`, `#structured data`, `#personal websites`
 
 ---
 
-<a id="item-15"></a>
-## [改进版 DVD-JEPA 演示加入环境噪声，凸显 JEPA 关键优势](https://www.reddit.com/r/MachineLearning/comments/1ubtf09/a_slightly_improved_dvdjepa_demo_p/) ⭐️ 6.0/10
+<a id="item-16"></a>
+## [Beyond All Reason：技术佳、社区差的开源 RTS](https://www.beyondallreason.info/) ⭐️ 6.0/10
 
-作者在原 DVD-JEPA 演示中加入了环境噪声，并添加了与像素空间基线模型的公平对比（参数量和计算量相近），更清晰地展示了 JEPA 忽略无关细节的能力。 该演示更清晰地体现了 JEPA 抛弃不可预测环境细节的核心优势，这对于构建稳健的世界模型至关重要。它也为社区提供了一个更公平、更直观的示例来理解 JEPA 的潜力。 基线模型是一个参数量和计算量相近的像素空间模型，其中线性探针和解码器的计算量被视为独立于核心模型训练。这只是一个快速的午后项目，并使用 AI 辅助编码；原网页演示和异常检测功能被移除，以聚焦核心思想。
+受 1997 年经典游戏《横扫千军》启发的免费开源即时战略游戏《Beyond All Reason》因其技术卓越和大规模战斗在 Hacker News 上引起广泛关注，但其玩家社区因毒性遭广泛批评。 它展示了开源游戏开发能媲美 3A 大作的潜力，但社区毒性问题凸显了其主流推广的障碍。 游戏支持最多 16 人对战，拥有先进的单位物理效果和庞大军团，基于 Spring 引擎构建。社区对特定打法要求严格，不遵守者可能被踢出局，且游戏完全免费无付费获胜元素。
+
+hackernews · mosiuerbarso · 6月21日 11:38 · [社区讨论](https://news.ycombinator.com/item?id=48617990)
+
+**背景**: 《横扫千军》（1997 年）是一款开创性的即时战略游戏，以 3D 地形、物理战斗和大规模对战著称。游戏源码公布后，Spring 引擎项目成为 TA 风格游戏的开源平台，支持海量单位和物理模拟。《Beyond All Reason》正是基于该引擎的免费新作，延续了史诗级战争传统。
+
+**社区讨论**: 社区普遍赞赏游戏的技术打磨和性能，有人称其为史上最佳 RTS。但几乎所有评论者都指出玩家群体毒性强，攻击性行为、强制遵循打法和踢人现象普遍。许多玩家最终因恶劣环境而放弃，尽管游戏本身质量出众。
+
+**标签**: `#RTS`, `#open-source`, `#gaming`, `#Total Annihilation`, `#community`
+
+---
+
+<a id="item-17"></a>
+## [改进版 DVD-JEPA 演示增加环境噪声与基线对比](https://www.reddit.com/r/MachineLearning/comments/1ubtf09/a_slightly_improved_dvdjepa_demo_p/) ⭐️ 6.0/10
+
+开发者对原始 DVD-JEPA 演示进行了分支，并添加了环境噪声和公平的像素空间基线对比，更清晰地展示了 JEPA 忽略无关细节的能力。 该改进版演示有力地传达了 JEPA 的核心理念：通过学习关注可预测部分而忽略环境噪声，从而构建鲁棒的世界模型，这对自监督学习发展至关重要。 基线模型具有相近的参数量和计算预算，线性探测器和解码器的计算量被视为独立于核心训练。该演示移除了网页界面和异常检测功能，以聚焦于核心预测任务。
 
 reddit · r/MachineLearning · /u/Kirne · 6月21日 15:49
 
-**背景**: JEPA（联合嵌入预测架构）是一种自监督学习方法，它通过预测被遮蔽数据的潜在表示而非重建原始像素，从而能够忽略不可预测的噪声。原始的 DVD-JEPA 演示是一个在浏览器中运行的极简世界模型，用于预测弹跳的 DVD 标志轨迹。加入环境噪声是为了模拟那些模型应该忽略的无关视觉细节。
+**背景**: JEPA（联合嵌入预测架构）是由 Yann LeCun 提出的一种自监督学习方法，它通过预测未来状态的潜空间嵌入而非原始像素，使模型能忽略无关噪声。最初的 DVD-JEPA 是一个在浏览器中运行的微型演示，训练 JEPA 模型预测一个弹跳 DVD 标志的轨迹，作为该概念的教学工具。
 
 
 **参考链接**:
 
 - [DVD-JEPA — a world model that dreams a bouncing logo](https://dvd-jepa.vercel.app/)
-- [The Anatomy of JEPA: The Architecture Behind embedded Predictive Representation Learning | by Tyler Frink | Medium](https://medium.com/@frinktyler1445/the-anatomy-of-jepa-the-architecture-behind-embedded-predictive-representation-learning-994bfa0bffe0)
 - [Rohit Bandaru | Deep Dive into Yann LeCun’s JEPA](https://rohitbandaru.github.io/blog/JEPA-Deep-Dive/)
 
 
-**标签**: `#JEPA`, `#video-prediction`, `#self-supervised-learning`, `#demo`, `#computer-vision`
+**标签**: `#JEPA`, `#Self-Supervised Learning`, `#Computer Vision`, `#Demo`, `#Noise Robustness`
 
 ---
 
-<a id="item-16"></a>
-## [WeightsLab：面向神经网络训练的数据中心调试开源工具](https://www.reddit.com/r/MachineLearning/comments/1ubwcat/datacentric_debugging_for_teams_training_neural/) ⭐️ 6.0/10
+<a id="item-18"></a>
+## [矩阵循环单元更新：通过新状态矩阵方法解决训练不稳定问题](https://www.reddit.com/r/MachineLearning/comments/1ubz5o8/an_update_on_matrix_recurrent_units_an_attention/) ⭐️ 6.0/10
 
-WeightsLab 是一个开源的 PyTorch 原生工具，允许团队在训练过程中暂停并检查实时损失信号，以便及早发现数据错误、类别不平衡和异常值等问题。 数据质量问题是训练失败的常见原因，及早发现这些问题可以节省大量调试时间和计算资源，尤其对于使用 LiDAR 点云等复杂数据的计算机视觉团队而言。 该工具针对图像、视频和 LiDAR 点云数据设计，通过检查训练过程中的实时损失信号进行调试，但该帖子是一次推广性质的改版，尚无社区验证。
-
-reddit · r/MachineLearning · /u/taranpula39 · 6月21日 17:47
-
-**背景**: 机器学习中的数据中心调试侧重于识别和修复训练数据中的问题，而非模型架构。实时损失信号是指在训练过程中观察到的实时损失值，当某些样本或类别表现出异常高的损失时，可以指示数据异常。LiDAR 点云数据是通过激光扫描收集的三维空间数据，常用于自动驾驶和三维建图，其标注和数据质量存在独特挑战。
-
-
-**参考链接**:
-
-- [Data - Centric Debugging : mitigating model failures via targeted data...](https://arxiv.org/pdf/2211.09859)
-- [LiDAR Point Clouds: Basics for 3D Mapping by Yellowscan](https://www.yellowscan.com/knowledge/lidar-point-cloud-basics/)
-
-
-**标签**: `#machine learning`, `#data debugging`, `#computer vision`, `#open source`, `#PyTorch`
-
----
-
-<a id="item-17"></a>
-## [矩阵递归单元更新：稳定训练与扩展至更大数据集](https://www.reddit.com/r/MachineLearning/comments/1ubz5o8/an_update_on_matrix_recurrent_units_an_attention/) ⭐️ 6.0/10
-
-作者介绍了约束矩阵递归单元（MRU）中矩阵状态的新方法，包括使用斜对称矩阵、通过矩阵指数或 Cayley 映射生成正交矩阵、LDU 分解以及 QR 分解，以防止训练不稳定。在 TinyStories 数据集上的测试表明 MRU 仍不如 Transformer，且发现剪切变换对学习至关重要。 这项工作推进了线性时间复杂度序列模型的发展，这对于高效处理长序列至关重要，相比二次复杂度的注意力机制具有优势。关于剪切变换的见解为未来语言建模等任务的递归架构设计提供了指导。 使用 LDU 分解的 MRU 表现出最佳稳定性，而正交方法无法有效学习，表明仅凭旋转限制了信息保留。标量因子归一化导致结果更差，暗示模型在玩具数据集上利用了简单的衰减模式。
+作者重新审视了矩阵循环单元（MRU）算法，这是一种线性时间的注意力替代方案，并测试了多种构建输入状态矩阵的新方法，如斜对称矩阵、通过 Cayley 映射生成正交矩阵以及 LDU 分解，以解决训练不稳定问题。LDU 方法避免了损失尖峰，但 MRU 在 TinyStories 数据集上仍不如标准 Transformer 模型。 像 MRU 这样的线性时间序列模型旨在替代注意力机制的二次复杂度，从而更高效地处理长序列。正交矩阵严重损害学习能力而剪切变换至关重要的发现，为设计未来的循环架构提供了宝贵指导。 MRU 利用矩阵乘法的结合性实现并行扫描。在新方法中，LDU 分解并约束行列式的方法避免了损失尖峰，但通过 Cayley 映射或矩阵指数生成的正交初始化使模型无法学习，表明剪切能力至关重要。
 
 reddit · r/MachineLearning · /u/mikayahlevi · 6月21日 19:39
 
-**背景**: 矩阵递归单元（MRU）是一种新型递归架构，通过将嵌入转换为状态矩阵并在序列维度上累积矩阵乘法来处理序列。与使用注意力机制（复杂度为二次）的 Transformer 不同，MRU 旨在实现线性时间复杂度，使其高效处理长序列。并行扫描算法利用矩阵乘法的结合性在并行硬件上计算状态。线性递归单元（LRU）是相关概念，通过矩阵 A 和 B 进行线性状态更新，实现高效的并行扫描。
+**背景**: 矩阵循环单元（MRU）是一种序列建模架构，通过沿序列方向累积矩阵乘法替代自注意力，实现线性时间复杂度。MRU 将每个嵌入向量转换为输入状态矩阵，依次相乘，再将结果转换回向量。为了在 GPU 上高效并行化，MRU 利用矩阵乘法的结合性实现并行扫描（前缀和），线性循环单元（LRU）也使用了类似技术。矩阵构造方法的选择直接影响训练稳定性和模型捕捉复杂依赖关系的能力。
 
 
 **参考链接**:
 
 - [Linear Recurrent Units (LRUs)](https://www.emergentmind.com/topics/linear-recurrent-units-lrus)
+- [Chapter 39. Parallel Prefix Sum (Scan) with CUDA | NVIDIA Developer](https://developer.nvidia.com/gpugems/gpugems3/part-vi-gpu-computing/chapter-39-parallel-prefix-sum-scan-cuda)
 
 
-**标签**: `#Matrix Recurrent Units`, `#Recurrent Neural Networks`, `#Attention Alternative`, `#Sequence Modeling`, `#Deep Learning`
+**社区讨论**: 一年前，评论者指出原始 MRU 在更大数据集上训练不稳定，并询问了约束矩阵状态的方法。作者当前的实验直接回应了这些反馈，但社区现在看到 MRU 仍然落后于 Transformer，引发了关于模型局限性和剪切变换重要性的讨论。
+
+**标签**: `#matrix recurrent units`, `#attention alternative`, `#sequence modeling`, `#deep learning architectures`, `#linear-time`
 
 ---
 
-<a id="item-18"></a>
-## [没有顶会论文的机器学习博士生能否毕业？引发讨论](https://www.reddit.com/r/MachineLearning/comments/1uazlhg/would_you_let_an_ml_phd_student_graduate_without/) ⭐️ 6.0/10
+<a id="item-19"></a>
+## [WeightsLab：面向计算机视觉训练的 PyTorch 原生数据调试工具](https://www.reddit.com/r/MachineLearning/comments/1ubwcat/datacentric_debugging_for_teams_training_neural/) ⭐️ 6.0/10
 
-一位机器学习导师在 Reddit 上发帖，询问一位论文扎实但未在 NeurIPS、ICML 或 CVPR 等顶级会议发表论文的博士生是否应被允许毕业，引发了关于毕业标准的讨论。 该讨论凸显了机器学习学术界研究质量与发表指标之间的紧张关系，反映了更广泛的“不发表就灭亡”文化及其对学生福祉和科研诚信的影响。 该学生有三篇第一作者的“A 级”论文（非顶会），且论文方向连贯，但缺少常被视为竞争激烈的 ML 项目博士生毕业金标准的 A*会议论文。
+开源工具 WeightsLab 进行了重大更新，现在支持在训练过程中暂停并检查实时损失信号，以发现计算机视觉任务（包括图像、视频和 LiDAR 点云数据）中的错误标注、类别不平衡和异常值等数据问题。 数据质量问题是机器学习训练中常见且耗时的瓶颈。WeightsLab 能在训练循环中直接检测这些问题，为工程师节省大量调试时间并提升模型准确性。 WeightsLab 无需额外框架，原生支持 PyTorch，并兼容 LiDAR 点云数据。它允许在不重启训练的情况下实时检查损失信号。
+
+reddit · r/MachineLearning · /u/taranpula39 · 6月21日 17:47
+
+**背景**: 在神经网络训练中，损失信号衡量预测误差，其异常可能揭示错误标注或类别不平衡等问题。以数据为中心的调试方法更注重改善数据集质量而非调整模型架构。WeightsLab 将这种检查直接集成到 PyTorch 训练循环中，尤其适合处理图像、视频及三维点云数据的计算机视觉工程师。
+
+**标签**: `#debugging`, `#computer-vision`, `#pytorch`, `#data-quality`, `#mlops`
+
+---
+
+<a id="item-20"></a>
+## [ML 博士毕业是否需要顶会论文引发讨论](https://www.reddit.com/r/MachineLearning/comments/1uazlhg/would_you_let_an_ml_phd_student_graduate_without/) ⭐️ 6.0/10
+
+Reddit r/MachineLearning 上的一则帖子询问，一名博士生拥有扎实的论文和三篇第一作者 A 级论文，但没有在顶级会议发表，是否应该被允许毕业。 这场讨论凸显了发表指标与研究质量之间的张力，可能影响博士评价标准及研究生的心理健康。 帖子区分了 A*ML 顶级会议（如 NeurIPS、ICML、ICLR、CVPR）与 A 级论文，该学生有 3 篇第一作者 A 级论文和连贯的论文方向。
 
 reddit · r/MachineLearning · /u/Hope999991 · 6月20日 15:36
 
-**背景**: 顶级机器学习会议（A*级）包括 NeurIPS、ICML、ICLR 和 CVPR，这些会议选择性极高，常被视为学术职业发展的必要条件。CORE 或 Qualis 等会议排名系统将会议分类，其中“A*”为最高级别。该学生的“A 级”论文来自排名较低但仍有声誉的会议。
+**背景**: 在机器学习学术界，NeurIPS、ICML、ICLR、CVPR 等顶级会议被称为 A*ML 场所，声望极高。A 级论文虽然扎实但竞争力稍弱。许多博士项目非正式地要求学生至少有一篇顶会论文才能毕业，这引发了关于这些指标是否真正衡量研究质量的激烈争论。
 
 
 **参考链接**:
 
-- [Conference Ranks](http://www.conferenceranks.com/)
-- [How to Know the Rank of a Conference ?](https://globalconference.ca/how-to-know-the-rank-of-a-conference/)
+- [List of great ML/AI conferences! | Kaggle](https://www.kaggle.com/getting-started/115799)
+- [Beyond NeurIPS: A Student's Guide to ICML, ICLR, AAAI, and Other AI Conferences | Algoverse AI Research](https://algoverseairesearch.org/blog/icml-iclr-aaai-student-guide)
 
 
-**标签**: `#machine learning`, `#academia`, `#PhD`, `#publications`, `#research culture`
+**标签**: `#machine learning`, `#academia`, `#PhD`, `#publication norms`, `#discussion`
 
 ---
 
