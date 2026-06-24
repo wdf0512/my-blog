@@ -1,0 +1,287 @@
+---
+title: "AI 技术情报 · 2026-06-24"
+slug: horizon-2026-06-24
+date: 2026-06-24
+published: true
+description: "从 31 条内容中精选 13 条 AI/ML 重要动态"
+item_count: 13
+total_fetched: 31
+---
+
+> 从 31 条内容中筛选出 13 条重要资讯。
+
+---
+
+1. [Swift Package Index 被苹果收购，承诺保持开源](#item-1) ⭐️ 8.0/10
+2. [AI 辅助编码的迭代循环与清晰规格需求](#item-2) ⭐️ 8.0/10
+3. [维生素 D 并非万能药：益处限于严重缺乏者](#item-3) ⭐️ 8.0/10
+4. [百度无限 OCR：实现长文档的一键式长时程解析](#item-4) ⭐️ 8.0/10
+5. [提示注入即角色混淆：风格比标签更重要](#item-5) ⭐️ 8.0/10
+6. [FUTO 发布全新注重隐私的滑动输入模型](#item-6) ⭐️ 7.0/10
+7. [Show HN: 所见即所得的 TikZ 编辑器，支持源码实时同步](#item-7) ⭐️ 7.0/10
+8. [Datasette 1.0a35 新增创建/修改表格的界面和 JSON API](#item-8) ⭐️ 7.0/10
+9. [将 Moebius 0.2B 图像修复模型移植到浏览器中使用 WebGPU 运行](#item-9) ⭐️ 7.0/10
+10. [悼念为微软 Word 添加红色和绿色波浪线拼写检查的开发者](#item-10) ⭐️ 6.0/10
+11. [Reddit 用户分享 7 天计算机视觉实习面试准备清单](#item-11) ⭐️ 6.0/10
+12. [寻找用于扩散语言模型评估的句法鲁棒 NLI 方法](#item-12) ⭐️ 6.0/10
+13. [非确定性漏洞检测基准测试系统](#item-13) ⭐️ 6.0/10
+
+---
+
+<a id="item-1"></a>
+## [Swift Package Index 被苹果收购，承诺保持开源](https://swiftpackageindex.com/blog/swift-package-index-joins-apple) ⭐️ 8.0/10
+
+2026 年 6 月 23 日，社区运营的 Swift Package Index 宣布被苹果收购，该索引收录了超过 11,000 个 Swift 软件包，并承诺将继续作为开源项目运行。 这次收购表明苹果对 Swift 生态系统的进一步投入，并可能带来与 Swift Package Manager 更紧密的集成，但同时考虑到苹果在开源项目上的过往表现，也引发了社区驱动型工具未来走向的疑虑。 该索引将保持开源，但苹果未来的计划包括开发开发者身份功能，这被部分人解读为可能设置门槛。收购不会立即改变开发者使用该网站的方式，但由苹果掌控后的长期方向尚不明确。
+
+hackernews · JDevlieghere · 6月23日 18:00 · [社区讨论](https://news.ycombinator.com/item?id=48648779)
+
+**背景**: Swift Package Manager (SPM) 是苹果管理 Swift 代码依赖关系的工具，已集成到 Xcode 中。Swift Package Index (SPI) 旨在帮助开发者发现和评估 Swift 软件包，提供兼容性、测试覆盖率和社区活跃度等元数据。SPI 从 GitHub 索引软件包并提供搜索界面，与官方 Swift.org 软件包目录互为补充。此次收购正值苹果希望提升 Swift 开发者体验之际。
+
+
+**参考链接**:
+
+- [Swift Package Index joins Apple, pledges to remain open source](https://9to5mac.com/2026/06/23/swift-package-index-joins-apple-pledges-to-remain-open-source/)
+- [Swift Package Index](https://swiftpackageindex.com/)
+
+
+**社区讨论**: 社区反应不一：一部分人为此项目的成功感到高兴，并将其视为对项目价值的肯定；另一些人则对苹果的开源过往持怀疑态度，担心开发者身份功能可能导致围墙花园式的做法。少数开发者甚至已开始考虑构建替代索引，特别是为了支持非 GitHub 仓库。
+
+**标签**: `#swift`, `#apple`, `#package-manager`, `#open-source`, `#community`
+
+---
+
+<a id="item-2"></a>
+## [AI 辅助编码的迭代循环与清晰规格需求](https://lucumr.pocoo.org/2026/6/23/the-coming-loop/) ⭐️ 8.0/10
+
+文章《The Coming Loop》指出，AI 辅助编码的主要瓶颈在于编写清晰的规格说明，并倡导将软件视为无需理解代码即可交互的“生命体”的范式转变。 文章揭示了 AI 辅助编码中一个关键但常被忽视的局限，将讨论焦点从模型性能转向人类规范的质量，这可能促进开发者与 AI 工具之间更有效的协作。 文章指出，实现清晰往往需要 5-6 次失败的迭代，即使有了清晰的规格说明，LLM 仍可能产生包含过多空值检查的防御性代码。生命体软件范式提出设计像生物体一样交互的软件，无需理解其内部代码。
+
+hackernews · ingve · 6月23日 11:06 · [社区讨论](https://news.ycombinator.com/item?id=48643180)
+
+**背景**: LLM 智能体是一种利用大语言模型进行推理、规划和执行任务的 AI 系统，常用于 GitHub Copilot 和 Claude Code 等 AI 辅助编码工具。“编码循环”指编写代码、运行并修正错误的迭代过程，现在常由 AI 增强。文章讨论了编写清晰规格说明（即详细定义软件应完成的功能）的瓶颈，以及将软件视为无需理解代码即可交互的“生命体”的新颖想法，类似于与动植物互动。
+
+
+**参考链接**:
+
+- [LLM Agents | Prompt Engineering Guide](https://www.promptingguide.ai/research/llm-agents)
+- [Introduction to LLM Agents | NVIDIA Technical Blog](https://developer.nvidia.com/blog/introduction-to-llm-agents/)
+
+
+**社区讨论**: 社区评论普遍赞同文章观点，强调真正的瓶颈在于人类定义清晰规格说明的能力，LLM 常产生过度防御性代码。一些人认为将软件视为生命体交互的范式转变是关键洞见，另一些人分享了迭代循环中需要多次失败尝试才能获得清晰认识的实践经验。
+
+**标签**: `#AI-assisted coding`, `#software development`, `#LLM agents`, `#specifications`, `#iterative development`
+
+---
+
+<a id="item-3"></a>
+## [维生素 D 并非万能药：益处限于严重缺乏者](https://dynomight.net/vitamin-d/) ⭐️ 8.0/10
+
+一篇新分析审视了维生素 D 的研究，指出补充维生素 D 主要对严重缺乏者有益，而非对普通人群有广泛益处。 这一平衡的评估挑战了维生素 D 是万能健康助推器的普遍观念，可能重塑公共卫生指导和个人补充剂使用习惯。 文章指出许多显示益处的研究受到季节和纬度等因素混杂，适宜血浓度阈值仍存争议；社区评论补充官方推荐量可能基于错误统计，且维生素 K2 和补充后血浓度检测常被忽视。
+
+hackernews · surprisetalk · 6月23日 16:30 · [社区讨论](https://news.ycombinator.com/item?id=48647486)
+
+**背景**: 维生素 D 是一种脂溶性维生素，对钙吸收和骨骼健康至关重要。近年来，它被大力宣传具有免疫、疾病预防等广泛益处，但许多大规模临床试验未能证实这些益处适用于普通人群。该分析重新审视证据，认为炒作被夸大，真正的益处主要限于纠正严重缺乏。
+
+**社区讨论**: 评论者指出 NHANES 数据收集存在研究设计缺陷（季节/纬度分层），辩论了维生素 K2 在吸收中的作用，并指出许多补充剂试验未测量血液水平变化。有人强调官方推荐量中的统计错误，另有人质疑忽略了日晒变量。总体讨论反映了技术性、参与度高的读者群，支持文章的批判立场但增添了细节。
+
+**标签**: `#health`, `#vitamin-d`, `#evidence-based-medicine`, `#supplements`, `#research`
+
+---
+
+<a id="item-4"></a>
+## [百度无限 OCR：实现长文档的一键式长时程解析](https://github.com/baidu/Unlimited-OCR) ⭐️ 8.0/10
+
+百度开源了无限 OCR 模型，该模型基于 Deepseek-OCR 进行扩展，能够在单次推理中处理任意长度的文档、PDF 及多页图像，避免了传统 KV 缓存线性增长带来的内存问题。 这一突破消除了将文档按页分割的需求，使得整本书或长篇报告的高效端到端 OCR 成为可能，并降低了以往因内存限制而不得不妥协的实际应用门槛。 该方法通过流式处理机制阻止 KV 缓存随新词元累积，使内存占用与文档长度无关，保持恒定。模型基于 Deepseek-OCR 构建，并已在 Hugging Face 和 ModelScope 上发布。
+
+hackernews · ingve · 6月23日 11:35 · [社区讨论](https://news.ycombinator.com/item?id=48643426)
+
+**背景**: 基于大语言模型的 OCR 系统（如 Deepseek-OCR）使用解码器为每个生成的词元存储键值（KV）缓存。对于长文档，该缓存随输出长度线性增长，迅速耗尽 GPU 内存。常见的变通方案是将文档拆分为单页分别处理，但这会打断上下文并需要额外拼接。无限 OCR 通过改变模型推理流程，直接丢弃或重用过往上下文，从而实现对整份文档的连续处理。
+
+
+**参考链接**:
+
+- [[2606.23050] Unlimited OCR Works - arXiv.org](https://arxiv.org/abs/2606.23050)
+- [baidu/Unlimited-OCR · Hugging Face](https://huggingface.co/baidu/Unlimited-OCR)
+- [Baidu Unlimited-OCR: One-Shot Long-Horizon Document Parsing Explained ...](https://www.explainx.ai/blog/baidu-unlimited-ocr-one-shot-long-horizon-parsing-2026)
+
+
+**社区讨论**: 社区评论强调其巧妙的“架构技巧”避免了内存爆炸，指出在光学乐谱识别等领域的应用潜力，并对团队致谢前期工作的做法表示赞赏。用户还提及名称来源于《Fate/stay night》，并认为流式处理思路对于本地 OCR 设置也很自然。
+
+**标签**: `#OCR`, `#deep-learning`, `#memory-efficiency`, `#long-document-processing`, `#AI`
+
+---
+
+<a id="item-5"></a>
+## [提示注入即角色混淆：风格比标签更重要](https://simonwillison.net/2026/Jun/22/prompt-injection-as-role-confusion/#atom-everything) ⭐️ 8.0/10
+
+Charles Ye、Jasmine Cui 和 Dylan Hadfield-Menell 的研究表明，大语言模型根据文本风格相似度来判断出处，而非信任 <system> 或 <user> 等显式角色标签。这种“角色混淆”会催生 CoT Forgery 等新型提示注入攻击，轻松绕过安全防护。 这一发现暴露了当前大语言模型防御策略的根本缺陷，表明仅靠文本标签无法保障角色指令遵循。这意味着提示注入将长期存在，需要深入理解模型对作者身份的感知机制。 论文提出了 CoT Forgery 攻击，即向用户提示中注入伪造的推理链。关键发现是，“去风格化”（改写对抗文本使其不像模型内部格式）能将攻击成功率从 61% 降至 10%，证明风格是主导因素。
+
+rss · Simon Willison · 6月22日 23:59
+
+**背景**: 提示注入是一种网络安全攻击，攻击者将恶意指令隐藏在用户输入或外部数据中，诱使模型忽略开发人员设定的系统提示。大语言模型通常使用 <system>、<user> 和 <assistant> 等角色标签来区分可信与不可信文本。但本文表明，模型更依赖文本风格模式，而非标签本身。
+
+
+**参考链接**:
+
+- [Prompt Injection as Role Confusion](https://role-confusion.github.io/)
+- [Prompt Injection as Role Confusion - arXiv.org](https://arxiv.org/pdf/2603.12277)
+
+
+**标签**: `#prompt-injection`, `#ai-safety`, `#llm-security`, `#research`, `#vulnerability`
+
+---
+
+<a id="item-6"></a>
+## [FUTO 发布全新注重隐私的滑动输入模型](https://swipe.futo.tech/) ⭐️ 7.0/10
+
+FUTO 为其完全离线、注重隐私的 Android 键盘发布了一款新的滑动输入模型，该模型基于用户贡献的滑动数据训练，旨在提升准确率并确保所有处理均在本地运行。 该模型在保障隐私的同时实现了准确的离线滑动输入，弥补了尊重隐私的移动键盘生态中的关键空白，并可能为本地输入法树立新标准。 该模型采用 ExecuTorch 与 CTC 技术，滑动库使用 GPLv3 许可证，但模型权重使用限制性的 FUTO Model Weights License 1.0。早期用户反馈指出存在随机大写、缺乏上下文感知等不准确之处。
+
+hackernews · futohq · 6月23日 17:50 · [社区讨论](https://news.ycombinator.com/item?id=48648619)
+
+**背景**: FUTO Keyboard 是由 FUTO 开发的一款 Android 键盘应用，其以完全离线、无互联网连接的方式运行，注重隐私保护。滑动输入（也称手势输入或形状书写）允许用户通过在键盘上滑动手指来拼写单词，由算法预测目标词。尽管 Google 的 Gboard 等主流键盘也提供类似功能，但它们通常依赖云端处理，存在隐私风险。FUTO 的新模型基于用户贡献的滑动轨迹数据集训练，实现了高精度的本地识别，所有数据均不离机。
+
+
+**参考链接**:
+
+- [FUTO Swipe](https://swipe.futo.tech/)
+- [README.md · futo-org/futo-swipe at main - Hugging Face](https://huggingface.co/futo-org/futo-swipe/blob/main/README.md)
+- [FUTO Keyboard](https://keyboard.futo.org/)
+
+
+**社区讨论**: 社区反馈褒贬不一：部分用户反映基本单词输入准确率不佳，例如输入“hello”却得到“help”，并对缺少撇号和随机大写感到失望。另一些长期使用 FUTO 键盘的用户则表示，滑动输入体验显著改善，已可媲美 Gboard，因而决定彻底更换。一个值得关注的问题是许可证分裂：滑动库使用 GPLv3（自由许可），但模型权重采用 FUTO 专有许可，有些人认为这是一个缺点。
+
+**标签**: `#swipe typing`, `#keyboard`, `#privacy`, `#mobile`, `#input methods`
+
+---
+
+<a id="item-7"></a>
+## [Show HN: 所见即所得的 TikZ 编辑器，支持源码实时同步](https://tikz.dev/editor/) ⭐️ 7.0/10
+
+一个全新的开源编辑器为 TikZ 图形提供了所见即所得的界面，用户可以通过拖拽和缩放元素来可视化编辑，同时 LaTeX 源码会同步更新，反之亦然。 该工具消除了手动调整坐标并反复编译的繁琐过程，解决了学术写作中的一大痛点，使 TikZ 更易于使用，并有可能加快图形创建速度。 该编辑器几乎完全使用 OpenAI 的 Codex 构建，重新实现了 TikZ 的很大一部分功能以追踪每个对象的精确源代码位置，并内置了从 SVG、pptx 和 ipe 转换的工具，以及一个支持 LaTeX 颜色混合记法的自定义取色器。
+
+hackernews · DominikPeters · 6月23日 14:24 · [社区讨论](https://news.ycombinator.com/item?id=48645437)
+
+**背景**: TikZ 是一个强大的 LaTeX 宏包，用于通过编程方式创建矢量图形，广泛应用于学术论文和教材。它要求用户编写类似代码的图形描述，精度高但耗时。而 WYSIWYG（所见即所得）编辑器允许直接操作可视化元素，但因其代码为核心的性质，传统上未提供 TikZ 支持。该编辑器连接了这两种范式。
+
+
+**参考链接**:
+
+- [TikZ](https://en.wikipedia.org/wiki/TikZ)
+- [WYSIWYG](https://en.wikipedia.org/wiki/WYSIWYG)
+
+
+**社区讨论**: 社区反应总体积极，称赞了界面和概念。但有些用户批评生成的代码依赖绝对坐标，而非 TikZ 的相对定位功能，并指出存在类似专用工具（如 quiver.app）。另有用户表示希望推出 Typst/Cetz 版本。
+
+**标签**: `#latex`, `#tikz`, `#wysiwyg`, `#editor`, `#open-source`
+
+---
+
+<a id="item-8"></a>
+## [Datasette 1.0a35 新增创建/修改表格的界面和 JSON API](https://simonwillison.net/2026/Jun/23/datasette/#atom-everything) ⭐️ 7.0/10
+
+Datasette 1.0a35 版本新增了“创建表格”界面和相应的 JSON API 端点用于创建新表，以及“修改表格”界面和 API 用于变更现有表，支持列操作和表重命名，同时推出了稳定的模板上下文文档。 此次更新解决了 Datasette 长期以来的功能限制，用户现在可以直接在界面或通过 API 创建和修改数据库表，使 Datasette 成为更完善的自助数据管理工具，将其能力从只读探索扩展到支持动态模式变更。 创建表 API 支持定义列、主键、自定义列类型、NOT NULL 约束、字面量和表达式默认值以及单列外键。修改表 API 支持添加、重命名、重排序、删除列，更改列类型、默认值、约束、主键和外键，以及重命名表，并包含删除表按钮；新的模板上下文文档基于数据类定义生成，并通过测试验证与实际渲染的上下文一致。
+
+rss · Simon Willison · 6月23日 21:34
+
+**背景**: Datasette 是由 Simon Willison 开发的开源工具，可将 SQLite 数据库转化为交互式网站和 JSON API，用于数据探索和发布。此前它主要作为只读工具，缺乏内置的表格创建与修改功能。此次发布增加了写入能力，使其在数据管理任务中更加多用途。
+
+
+**参考链接**:
+
+- [Datasette: An open source multi-tool for exploring and ...](https://datasette.io/)
+
+
+**标签**: `#datasette`, `#SQLite`, `#JSON API`, `#data management`, `#release`
+
+---
+
+<a id="item-9"></a>
+## [将 Moebius 0.2B 图像修复模型移植到浏览器中使用 WebGPU 运行](https://simonwillison.net/2026/Jun/22/porting-moebius/#atom-everything) ⭐️ 7.0/10
+
+Simon Willison 使用 Claude Code 将 Moebius 0.2B 轻量级图像修复模型从 PyTorch 和 CUDA 移植到浏览器中，通过 WebGPU 运行，并提供了一个在线演示。 这展示了小型高效模型可以直接在浏览器中运行，无需服务器端依赖，降低了隐私敏感和本地优先的图像编辑应用的门槛；同时，也展现了像 Claude Code 这样的智能编码工具在加速复杂移植任务方面的潜力。 该模型使用 ONNX Runtime Web 并搭配 WebGPU 后端（而非 Transformers.js），这是 Claude 在前期调研中建议的。拥有 0.2B 参数量的 Moebius 模型以仅 2% 的大小可与 FLUX.1-Fill 相媲美，使其适合客户端执行。演示支持任意图像（非正方形图像会被填充为正方形），点击按钮即可进行修复。
+
+rss · Simon Willison · 6月22日 23:43
+
+**背景**: Moebius 是一个轻量级图像修复模型，利用深度学习来填充图像中缺失或被标记的区域。WebGPU 是一种现代 Web API，可为浏览器中的高性能图形和机器学习提供直接 GPU 访问。Claude Code 是 Anthropic 的智能编码工具，能够编辑文件、运行命令并自动化复杂的开发任务。
+
+
+**参考链接**:
+
+- [Porting the Moebius 0 . 2 B image inpainting model to run in the...](https://simonwillison.net/2026/Jun/22/porting-moebius/)
+- [Moebius Inpainting Model Runs Free in Your Browser](https://www.creativeainews.com/blog/moebius-inpainting-browser-webgpu-2026/)
+- [Why Moebius 0 . 2 B is Disrupting Generative Image Inpainting](https://www.mlhive.com/2026/06/why-moebius-0-2b-disrupts-generative-image-inpainting)
+
+
+**标签**: `#webgpu`, `#inpainting`, `#model-porting`, `#browser-ml`, `#claude-code`
+
+---
+
+<a id="item-10"></a>
+## [悼念为微软 Word 添加红色和绿色波浪线拼写检查的开发者](https://devblogs.microsoft.com/oldnewthing/20260622-00/?p=112451) ⭐️ 6.0/10
+
+微软开发者博客发布了一篇悼念文章，致敬实现 Word 中红色和绿色波浪线拼写与语法检查标志的开发者 Tony Krueger，他默默无闻地创造了这一被亿万人使用的功能。 这篇文章让人们关注到那些构建日常软件功能却常被忽视的幕后开发者，提醒我们即使是像波浪线这样的小 UI 元素背后也有人的故事。它体现了单个开发者对全球用户体验产生的深远影响。 这篇悼文发表在 Raymond Chen 的“The Old New Thing”博客上，文章引用维基百科来确认开发者身份，但正如一位评论者指出的那样，这形成了一个循环引用的幽默闭环。该功能最初出现在 Microsoft Word 95 中，而文章的资料来源也成为了关于历史记录的一个元评论。
+
+hackernews · saikatsg · 6月23日 18:10 · [社区讨论](https://news.ycombinator.com/item?id=48648959)
+
+**背景**: 红色和绿色波浪线是 Microsoft Word 中出现在拼写错误（红色）和潜在语法错误（绿色）下方的波浪形标记，于 Word 95 中引入，用于提供实时的行内反馈。Raymond Chen 的“The Old New Thing”博客是一位微软资深员工长期运营的系列，分享 Windows 和 Office 开发的历史轶事。开发者 Tony Krueger 因将拼写检查引擎移植为使用这些视觉标记而受到称道，尽管其确切来源现已形成循环引用。
+
+**社区讨论**: 评论者们分享了怀旧回忆，其中一人指出博客与维基百科之间的循环引用。另一位希望这样的悼念能在当事人还在世时发布。有人建议设计一个由 AI 驱动的快捷键来修复波浪线，还有人感叹经典文本格式多样性的消失，甚至开玩笑说应该为逻辑错误添加黄色波浪线。
+
+**标签**: `#spellcheck`, `#history`, `#microsoft`, `#software-development`, `#tribute`
+
+---
+
+<a id="item-11"></a>
+## [Reddit 用户分享 7 天计算机视觉实习面试准备清单](https://www.reddit.com/r/MachineLearning/comments/1ud8ovs/just_landed_a_computer_vision_internship_heres/) ⭐️ 6.0/10
+
+一位 Reddit 用户最近获得了计算机视觉实习机会，并分享了一份压缩到 7 天的准备清单，涵盖核心数学、机器学习基础以及专业计算机视觉主题。 这为其他准备机器学习/计算机视觉职位的人提供了实用、可操作的资源，尤其适合时间紧迫的求职者，并突出了面试中实际出现的重点主题。 该清单托管在 GitHub 上，可以个性化调整，作者欢迎反馈以改进内容。由于时间紧迫，该清单从更长的准备过程中压缩而来。
+
+reddit · r/MachineLearning · /u/PolarIceBear_ · 6月23日 05:53
+
+**背景**: 计算机视觉是人工智能的一个分支，旨在让机器能够处理和理解视觉数据。这类实习通常要求扎实掌握核心数学（线性代数、微积分）、机器学习基础以及 CNN 等深度学习架构。
+
+**标签**: `#machine-learning`, `#computer-vision`, `#interview-prep`, `#resources`, `#career`
+
+---
+
+<a id="item-12"></a>
+## [寻找用于扩散语言模型评估的句法鲁棒 NLI 方法](https://www.reddit.com/r/MachineLearning/comments/1ucy7p3/syntactically_robust_nli_for_semantics_of/) ⭐️ 6.0/10
+
+一位 Reddit 研究者指出了文献中的一个空白：缺乏专门设计用于处理扩散语言模型噪声、不完美输出的句法鲁棒自然语言推理（NLI）方法。 随着扩散语言模型成为自回归架构的替代方案，可靠评估其常含句法错误的输出变得至关重要。标准 NLI 系统可能被句法噪声误导，破坏自动化事实性检查，阻碍该领域的进步。 该用户指出，当前最先进的扩散 LLM（可能除 LLaDA 外）仍在句法正确性上挣扎。其假设是，这种句法噪声使基于蕴含的验证中 NLI 的使用变得复杂，因此发帖寻求当前句法鲁棒 NLI 的最佳方法。
+
+reddit · r/MachineLearning · /u/RepresentativeBee600 · 6月22日 21:51
+
+**背景**: 扩散语言模型通过并行迭代去噪生成文本，与自回归模型逐个 token 生成不同，这可能导致输出不够流畅、句法不完美。自然语言推理（NLI）是判断假设是否被前提逻辑蕴含的任务，广泛用于事实核查。现有研究表明，标准 NLI 模型常依赖浅层句法启发式，对词序扰动敏感，从而催生了通过数据增强等方法增强句法鲁棒性的研究。
+
+
+**参考链接**:
+
+- [Large Language Diffusion Models . Google text diffusion ... | Medium](https://ranko-mosic.medium.com/large-language-diffusion-models-82d09602f7c9)
+- [Syntactic Augmentation for NLI Robustness](https://www.scribd.com/document/477243682/2004-11999-pdf)
+- [Natural Language Inference: An Overview - Towards Data Science](https://towardsdatascience.com/natural-language-inference-an-overview-57c0eecf6517/)
+
+
+**标签**: `#NLI`, `#diffusion-LLMs`, `#syntactic-robustness`, `#LLM-evaluation`, `#natural-language-processing`
+
+---
+
+<a id="item-13"></a>
+## [非确定性漏洞检测基准测试系统](https://www.reddit.com/r/MachineLearning/comments/1ud0rft/nondeterministic_vulnerability_detection/) ⭐️ 6.0/10
+
+一位开发者创建了一个部分完成的基准测试，该测试通过混淆 Juliet 测试套件代码，使其看起来像真实代码库，以消除 LLM 的记忆优势，并注入注释来测试基于注释的操纵如何影响漏洞检测。该项目已公开征求社区反馈。 该基准测试解决了 LLM 依赖记忆已知漏洞而非真正理解这一重要问题，并测试了其对误导性注释等对抗性提示注入的鲁棒性。如果完成，它可以为 LLM 的安全分析能力提供更真实的评估。 该基准测试使用 Juliet 测试套件（一组合成的 CWE 示例），并将其转换为避免被识别为已知测试用例；它还使用 LLM 生成准确、误导或中性的注释。目前覆盖数百个 CWE，但仍需完善、对已发布 LLM 进行基准测试，以及修剪偶尔仍可被识别的 Juliet 测试用例。
+
+reddit · r/MachineLearning · /u/Psychological_Meat_6 · 6月22日 23:34
+
+**背景**: Juliet 测试套件是一个广泛使用的合成漏洞代码示例数据集，用于评估静态分析工具和机器学习模型。CWE（通用弱点枚举）是社区开发的常见软硬件弱点类型列表。众所周知，LLM 会记忆训练数据，这可能导致在使用相同测试用例的基准测试上性能虚高。作者提到的 Mythos 安全工具是 Anthropic 最近推出的一项 AI 安全计划，用于漏洞检测。
+
+
+**参考链接**:
+
+- [Test Case Examples | find-sec-bugs/juliet-test-suite | DeepWiki](https://deepwiki.com/find-sec-bugs/juliet-test-suite/8-test-case-examples)
+- [Common Weakness Enumeration](https://en.wikipedia.org/wiki/Common_Weakness_Enumeration)
+- [Claude Security Explained: Mythos , Glasswing, and What Opus...](https://medium.com/nginity/claude-security-explained-mythos-glasswing-and-what-opus-4-7-changed-8ab6b8247b32)
+
+
+**标签**: `#vulnerability detection`, `#benchmark`, `#LLM evaluation`, `#code analysis`, `#security`
+
+---
+
