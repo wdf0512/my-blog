@@ -3,518 +3,412 @@ title: "AI 技术情报 · 2026-06-25"
 slug: horizon-2026-06-25
 date: 2026-06-25
 published: true
-description: "从 42 条内容中精选 24 条 AI/ML 重要动态"
-item_count: 24
-total_fetched: 42
+description: "从 38 条内容中精选 19 条 AI/ML 重要动态"
+item_count: 19
+total_fetched: 38
 ---
 
-> 从 42 条内容中筛选出 24 条重要资讯。
+> 从 38 条内容中筛选出 19 条重要资讯。
 
 ---
 
-1. [OpenAI 联合博通推出首款定制 AI 推理芯片](#item-1) ⭐️ 9.0/10
-2. [Krea 2：最先进的开放权重 12B 图像模型](#item-2) ⭐️ 9.0/10
-3. [高通将以 40 亿美元收购 AI 初创公司 Modular](#item-3) ⭐️ 8.0/10
-4. [开源 PR 垃圾信息与 2000 年代初的电子邮件垃圾信息相像](#item-4) ⭐️ 8.0/10
-5. [GLM-5.2：开源权重模型挑战专有 AI，瞄准编码智能体](#item-5) ⭐️ 8.0/10
-6. [Xteink X4：微控制器驱动、开放可改造的电子墨水阅读器](#item-6) ⭐️ 8.0/10
-7. [约翰·卡马克反思 id Software 早期管理失误](#item-7) ⭐️ 8.0/10
-8. [用 JAX 和视觉 Transformer 的自博弈 RL 智能体登顶 Generals.io](#item-8) ⭐️ 8.0/10
-9. [DeepSWE：评估 AI 编码代理的无污染新基准](#item-9) ⭐️ 8.0/10
-10. [RubyLLM：一个支持多 AI 提供商的多功能 Ruby 框架](#item-10) ⭐️ 7.0/10
-11. [谷歌为 Gemini 3.5 Flash 引入计算机操控能力](#item-11) ⭐️ 7.0/10
-12. [NVIDIA 45°C 液冷设计将数据中心用水降至近零](#item-12) ⭐️ 7.0/10
-13. [Nub：一款为 Node.js 提供 Bun 式开发体验的全能工具包](#item-13) ⭐️ 7.0/10
-14. [Simon Willison 将 MDN 浏览器兼容数据转换为 SQLite 数据库](#item-14) ⭐️ 7.0/10
-15. [Tom MacWright：AI 生成简历造成“意外匿名”](#item-15) ⭐️ 7.0/10
-16. [Datasette 1.0a35 新增创建与修改表的界面和 API](#item-16) ⭐️ 7.0/10
-17. [高维动态旋转位置嵌入 HDD-RoPE 加速收敛](#item-17) ⭐️ 7.0/10
-18. [七家 LLM 推理定价对比：缓存价格差异巨大](#item-18) ⭐️ 7.0/10
-19. [Bunny.net 宣布 Bunny DNS 免费，无查询限制](#item-19) ⭐️ 6.0/10
-20. [Elastic 裁员 7%，以 AI 驱动重组为由](#item-20) ⭐️ 6.0/10
-21. [博客文章称抄袭设计是一项技能，引发伦理争议](#item-21) ⭐️ 6.0/10
-22. [Papers with Code 推出 OCR 基准概览，收录百度与 Mistral 新模型](#item-22) ⭐️ 6.0/10
-23. [MuJoFil：结合牛顿物理与 Filament 渲染的 GPU 原生视觉 RL 模拟器](#item-23) ⭐️ 6.0/10
-24. [生产环境 ML 模型普遍忽略抽取与投毒攻击的安全测试](#item-24) ⭐️ 6.0/10
+1. [OpenAI 发布首款定制 AI 芯片 Jalapeno，与 Broadcom 携手打造](#item-1) ⭐️ 10.0/10
+2. [Anthropic 指控阿里巴巴非法提取 Claude AI 模型能力](#item-2) ⭐️ 8.0/10
+3. [高通以 40 亿美元收购 AI 初创公司 Modular](#item-3) ⭐️ 8.0/10
+4. [NVIDIA 45°C 液冷设计大幅削减数据中心水耗](#item-4) ⭐️ 8.0/10
+5. [自博弈 RL+ViT 智能体 Generals.io 登顶](#item-5) ⭐️ 8.0/10
+6. [DeepSWE：一个无污染的前沿 AI 编码能力测试基准](#item-6) ⭐️ 8.0/10
+7. [LuaJIT 3.0 提案引入 C 风格语法扩展](#item-7) ⭐️ 7.0/10
+8. [RubyLLM：面向所有主流 AI 提供商的 Ruby 统一框架](#item-8) ⭐️ 7.0/10
+9. [谷歌 Gemini 3.5 Flash 推出计算机使用功能](#item-9) ⭐️ 7.0/10
+10. [新基金旨在终结呼吸道感染](#item-10) ⭐️ 7.0/10
+11. [Simon Willison 将 MDN 浏览器兼容性数据转换为支持 CORS 的 SQLite 数据库](#item-11) ⭐️ 7.0/10
+12. [Tom MacWright 警告：LLM 生成的求职申请抹去个人身份](#item-12) ⭐️ 7.0/10
+13. [7 家 LLM 推理提供商定价对比显示缓存成本惊人差异](#item-13) ⭐️ 7.0/10
+14. [写博客有时就是陈述显而易见之事](#item-14) ⭐️ 6.0/10
+15. [如今的开源 PR 垃圾信息与 2000 年代初的电子邮件垃圾信息如出一辙](#item-15) ⭐️ 6.0/10
+16. [Datasette 1.0a35 新增表创建与修改界面](#item-16) ⭐️ 6.0/10
+17. [Papers with Code 页面聚合顶级开源 OCR 模型，涵盖百度与 Mistral 新发布](#item-17) ⭐️ 6.0/10
+18. [MuJoFil：结合牛顿物理引擎与 Filament 的 GPU 原生高保真视觉 RL 模拟器](#item-18) ⭐️ 6.0/10
+19. [HDD-RoPE：高维动态旋转位置嵌入方法问世](#item-19) ⭐️ 6.0/10
 
 ---
 
 <a id="item-1"></a>
-## [OpenAI 联合博通推出首款定制 AI 推理芯片](https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/) ⭐️ 9.0/10
+## [OpenAI 发布首款定制 AI 芯片 Jalapeno，与 Broadcom 携手打造](https://techcrunch.com/2026/06/24/openai-unveils-its-first-custom-chip-built-by-broadcom/) ⭐️ 10.0/10
 
-OpenAI 发布了其首款定制 AI 推理芯片（代号 Jalapeno），该芯片与博通合作开发，并由台积电制造，专门针对 AI 推理任务设计。 此举减少了 OpenAI 在推理任务上对英伟达 GPU 的依赖，有望降低成本和提升效率，并标志着 AI 公司自研芯片的潮流，可能重塑 AI 硬件格局。 芯片从设计到量产仅用约九个月，OpenAI 声称其模型加速了部分设计与优化流程；芯片由台积电而非英特尔代工，但具体架构和性能指标尚未公布。
+OpenAI 发布了其首款定制 AI 推理芯片 Jalapeno，该芯片与 Broadcom 合作开发、由台积电制造，从设计到生产仅用时九个月，并借助 OpenAI 的模型加速了设计和优化流程。 此举标志着 OpenAI 向硬件垂直整合的战略转向，减少对外部 GPU 的依赖，有望降低其 AI 服务的推理成本和延迟，可能重塑 AI 硬件竞争格局。 该芯片从设计到生产仅耗时九个月，OpenAI 的模型被用于加速部分设计和优化流程。芯片由台积电制造，专门针对 AI 推理工作负载设计。
 
 hackernews · jamdesk · 6月24日 17:47 · [社区讨论](https://news.ycombinator.com/item?id=48663324)
 
-**背景**: AI 推理是训练好的模型处理新数据并生成结果的过程，专用推理芯片旨在以低延迟和高吞吐量高效完成这些计算。与通用 GPU 不同，推理芯片针对大规模部署模型时的高频、高吞吐需求进行了优化。OpenAI 的定制芯片效仿了谷歌 TPU 等云服务商自研硬件的路径，以降低对外部供应商的依赖。
+**背景**: AI 推理芯片是专门为运行已训练模型、对新数据进行预测而优化的处理器，能效比通用 GPU 更高。OpenAI 此前高度依赖英伟达 GPU，定制芯片可针对特定模型架构定制，降低成本。谷歌已通过 TPU 在推理芯片领域布局多年，Groq 等公司也率先推出了推理专用硬件。
 
 
 **参考链接**:
 
 - [Inference Chip Guide: The Foundation of Scalable AI Applications | by NADDOD | Medium](https://naddod.medium.com/inference-chip-guide-the-foundation-of-scalable-ai-applications-d18f2c22b36c)
-- [What is AI inference? How it works and examples | Google Cloud](https://cloud.google.com/discover/what-is-ai-inference)
+- [Groq is fast, low cost inference.](https://groq.com/)
 
 
-**社区讨论**: 部分评论对 OpenAI 模型加速芯片设计的说法表示怀疑，认为可能是营销噱头；有人指出由台积电代工，还有讨论将模型权重直接固化在硅片中的激进设计。社区普遍认为此举意义重大，但因技术细节有限而持谨慎态度。
+**社区讨论**: 评论者对 AI 加速芯片设计的说法持怀疑态度，认为可能只是营销噱头。部分讨论涉及将模型权重硬编码到硅片中实现极致效率，并提及 Taalas 等公司。总体上，此举被视为重大举措，与谷歌长期的 TPU 战略相提并论。
 
-**标签**: `#OpenAI`, `#custom chip`, `#AI inference`, `#Broadcom`, `#hardware`
+**标签**: `#AI`, `#hardware`, `#OpenAI`, `#Broadcom`, `#chips`
 
 ---
 
 <a id="item-2"></a>
-## [Krea 2：最先进的开放权重 12B 图像模型](https://www.krea.ai/blog/krea-2-technical-report) ⭐️ 9.0/10
+## [Anthropic 指控阿里巴巴非法提取 Claude AI 模型能力](https://www.reuters.com/world/china/anthropic-says-alibaba-illicitly-extracted-claude-ai-model-capabilities-2026-06-24/) ⭐️ 8.0/10
 
-Krea 发布了 Krea 2，一个拥有 120 亿参数的开放权重文本到图像模型，同时推出了一个经过蒸馏的快速 Turbo 版本，仅需 8 步即可生成图像，并附有详细的技术报告。 该模型在本地可部署的开放权重模型中达到了最先进的性能，可与较慢的专有系统相媲美，从而实现了高质量 AI 图像生成的民主化。 Turbo 模型同时进行了引导蒸馏和时间步蒸馏，支持 8 步生成；完整模型性能优于许多竞品，且速度远超 Ideogram 4。报告详细介绍了强化学习流程、提示词扩展和风格参考。
+Anthropic 声称阿里巴巴在 2026 年 4 月至 6 月期间使用虚假账户与 Claude 进行了超过 2880 万次交互，并随后蒸馏了该模型的能力，违反了服务条款。 这一争议凸显了 AI 知识产权日益紧张的局势，因为蒸馏是一种常见技术，但使用欺诈获取的数据则越过了道德和法律界限，可能影响国际 AI 监管和竞争格局。 该行动涉及近 25000 个虚假账户，提取的数据很可能被用于更精细的蒸馏方法（如 RLAIF），而非简单的黑箱模仿。中国中间商以大幅折扣出售 Claude 代币以换取用户日志的转售生态，使问题更加复杂。
 
-hackernews · mattnewton · 6月23日 15:31 · [社区讨论](https://news.ycombinator.com/item?id=48646659)
+hackernews · htrp · 6月24日 19:48 · [社区讨论](https://news.ycombinator.com/item?id=48664814)
 
-**背景**: 开放权重模型提供公开可访问的训练参数，允许任何人在本地运行和微调。模型蒸馏将大型教师模型的知识转移到更小、更快的学生模型，在减少推理时间的同时保持质量。Krea 2 的 120 亿参数使其属于大型图像模型类别，通常需要高端 GPU。
+**背景**: 知识蒸馏是一种机器学习技术，通过让较小的“学生”模型模仿较大“教师”模型的行为（通常通过训练教师模型的输出）来实现模型压缩和效率提升。它被广泛使用。但未经授权使用专有模型的输出，特别是通过欺诈手段获取，可能违反服务条款和知识产权。该技术本身并不违法，但获取训练数据的方式是本案的关键。
 
 
 **参考链接**:
 
-- [Open Weights : not quite what you’ve been told – Open Source Initiative](https://opensource.org/ai/open-weights)
-- [Model distillation](https://en.wikipedia.org/wiki/Model_distillation)
+- [Distillation (machine learning)](https://en.wikipedia.org/wiki/Distillation_(machine_learning))
+- [What is Knowledge distillation? | IBM](https://www.ibm.com/think/topics/knowledge-distillation)
 
 
-**社区讨论**: 社区赞扬了开放权重的发布和详实的技术报告，特别强调了 Turbo 模型的效率与竞争力。有评论指出，尽管该模型在风格多样性上表现优异，但可能被 Nano Banana 2 等较新的智能体组合模型所掩盖，且在部分测试提示词上表现不佳。总体反响非常积极。
+**社区讨论**: 社区讨论凸显了几个观点：一些人认为蒸馏是合法做法，另一些人则指出创建虚假账户和转售策略以补贴获取数据的行为。有人引用 Xerox 的类比，暗示 Anthropic 本身未经同意使用互联网数据训练，因此指控可能虚伪。还讨论了黑箱蒸馏与 RLAIF 之间的技术区别。
 
-**标签**: `#open-weights`, `#text-to-image`, `#generative-ai`, `#model-release`, `#deep-learning`
+**标签**: `#AI`, `#security`, `#distillation`, `#ethics`, `#geopolitics`
 
 ---
 
 <a id="item-3"></a>
-## [高通将以 40 亿美元收购 AI 初创公司 Modular](https://www.reuters.com/business/qualcomm-buy-ai-startup-modular-2026-06-24/) ⭐️ 8.0/10
+## [高通以 40 亿美元收购 AI 初创公司 Modular](https://www.reuters.com/business/qualcomm-buy-ai-startup-modular-2026-06-24/) ⭐️ 8.0/10
 
-2026 年 6 月 24 日，高通宣布将以约 40 亿美元的全股票交易收购 AI 基础设施初创公司 Modular，从而获得其 AI 引擎和 Mojo 编程语言，以增强其面向边缘和移动设备的软件栈。 此次收购将增强高通的 AI 软件能力，可能减少行业对 Nvidia CUDA 生态系统的依赖，并使移动和物联网设备上的 AI 推理更高效。这标志着高通在 AI 软件领域的重大举措，与现有玩家展开竞争。 Modular 以其 Modular AI 引擎（一种跨多种硬件运行 AI 模型的推理引擎）和 Mojo 编程语言（一种基于 Python、专为高性能 AI 设计、通过 MLIR 编译的语言）而闻名。该交易为全股票交易，Mojo 预计将在 2026 年晚些时候开源。
+高通宣布收购 AI 初创公司 Modular，交易价值约 40 亿美元。Modular 开发了 Mojo 编程语言和 MAX 平台，此次收购旨在提升高通的 AI 推理能力，并作为 NVIDIA CUDA 生态的替代方案。 此举可能通过提供能在高通 ARM 芯片上高效运行的跨平台 AI 软件栈，挑战 NVIDIA 在 AI 推理领域的主导地位，也标志着高通正从移动设备领域向 AI 基础设施全面扩张。 据报道交易金额为 40 亿美元；Mojo 语言基于 MLIR 支持异构硬件，MAX 平台则抽象硬件复杂性，无需修改代码即可加速生成式 AI 部署。
 
 hackernews · timmyd · 6月24日 13:49 · [社区讨论](https://news.ycombinator.com/item?id=48659798)
 
-**背景**: Modular 由 LLVM 和 Swift 的创建者 Chris Lattner 创立，旨在简化跨 CPU、GPU 和加速器的 AI 开发。Mojo 语言旨在将 Python 的易用性与系统级性能相结合，对 AI 工作负载具有吸引力。高通作为主要移动芯片制造商，一直在向 AI 和边缘计算领域扩张，此前收购了 Tenstorrent 等初创公司，并与 Ventana 和 Alphawave 合作。此次收购符合其提供全面 AI 软硬件解决方案的战略。
+**背景**: Mojo 是 Modular 开发的编程语言，旨在结合 Python 的易用性和 C++的性能，通过 MLIR 编译器框架支持 CPU、GPU 和 ASIC 等多种硬件。NVIDIA 的 CUDA 是当前主流的并行计算平台，但仅限 NVIDIA GPU。作为 ARM 芯片的主要设计者，高通一直在寻求增强其在数据中心和边缘设备的 AI 能力。
 
 
 **参考链接**:
 
-- [Qualcomm to buy startup Modular for $4 billion in AI software push](https://www.reuters.com/business/qualcomm-buy-ai-startup-modular-2026-06-24/)
-- [Qualcomm inks deal for AI startup Modular to bolster software stack - CNBC](https://www.cnbc.com/2026/06/24/qualcomm-ai-chip-modular-software.html)
 - [Mojo (programming language)](https://en.wikipedia.org/wiki/Mojo_(programming_language))
+- [GitHub - modular/modular: The Modular Platform (includes MAX ...](https://github.com/modular/modular)
 
 
-**社区讨论**: 社区反应不一。有人对收购感到意外，质疑高通在高端训练市场有限的情况下此举的战略逻辑。另一些人则认为这是高通更广泛布局的一部分，包括 RISC-V 和 AI，以便在移动领域之外竞争。也有人讽刺地指出，Modular 曾批评硬件公司的 AI 软件栈，如今却被一家硬件公司收购。
+**社区讨论**: 社区评论总体情绪复杂：有用户认为 Mojo 可能像 SYCL 等那样无法真正实现跨平台，对学习者的投入表示遗憾；也有人认为这是高通构建 ARM 推理生态、挑战 NVIDIA 的战略举措，并指出 40 亿美元的交易估值，以及高通正向 RISC-V 和 AI 基础设施扩展的组合拳。
 
-**标签**: `#AI`, `#acquisition`, `#Qualcomm`, `#Modular`, `#edge computing`
+**标签**: `#AI`, `#acquisition`, `#Qualcomm`, `#Modular`, `#Mojo`
 
 ---
 
 <a id="item-4"></a>
-## [开源 PR 垃圾信息与 2000 年代初的电子邮件垃圾信息相像](https://www.greptile.com/blog/prs-on-openclaw) ⭐️ 8.0/10
+## [NVIDIA 45°C 液冷设计大幅削减数据中心水耗](https://blogs.nvidia.com/blog/liquid-cooling-ai-factories/) ⭐️ 8.0/10
 
-开源仓库正面临大量垃圾 pull request 的冲击，其规模与 2000 年代初的电子邮件垃圾信息浪潮相似，引发了关于缓解策略和维护者负担的讨论。 PR 垃圾信息的泛滥消耗了维护者的精力，威胁到开源协作模式的可持续性，可能打击贡献者的积极性并拖慢正常开发进程。 GitHub 已为维护者新增了可配置的 PR 限制，但垃圾信息攻击面与电子邮件不同：GitHub 垃圾信息依赖的是个人用户账户而非 IP 或域名信誉，使得缓解措施更加复杂。一些项目已要求新贡献者在首次 PR 合并前通过非文本方式与维护者会面。
+NVIDIA 推出了一种直接芯片液冷设计，其冷却液运行温度高达 45°C（113°F），远高于传统冷却系统，可使数据中心在近乎零水耗的状态下运行，从而消除了蒸发冷却的需求。 这一突破解决了 AI 数据中心急剧增长的水资源和能源需求，每个设施每年可节省数百万升水，并使废热回收用于区域供暖更加可行，有望将数据中心转变为社区资产。 该设计是 NVIDIA Rubin 代参考架构的一部分，通过提高冷却液温度来减少冷水机能耗并避免水耗。其效果取决于外部气候条件，且 45°C 的出液温度仍处于现代服务器组件的安全范围内。
 
-hackernews · dakshgupta · 6月24日 14:32 · [社区讨论](https://news.ycombinator.com/item?id=48660579)
+hackernews · nitin_flanker · 6月24日 14:10 · [社区讨论](https://news.ycombinator.com/item?id=48660178)
 
-**背景**: Pull request 垃圾信息（PR spam）指的是向 GitHub 等平台上的开源仓库提交自动化、低质量或无关的拉取请求的行为。与 2000 年代初的电子邮件垃圾信息浪潮类似，这些垃圾 PR 通常旨在推广服务、获取贡献者徽章或注入恶意代码。大量涌入给维护者带来了沉重的审核负担，而此前他们缺乏内置的防御工具。这一对比凸显了平台级反垃圾措施和社区驱动解决方案的必要性。
+**背景**: 传统数据中心通常使用空调或耗水量极大的蒸发冷却，每年可能消耗数百万加仑水。液冷效率高得多，但通常要求冷却液温度低于 30°C。将运行温度提高到 45°C 降低了制冷所需的能耗，并让废热更容易被再利用，例如输入区域供暖网络为周边建筑供热。数据中心余热回收已在欧洲率先实践，多个项目将多余热量导入居民和商业供暖系统。
 
 
 **参考链接**:
 
-- [GitHub Clean-up Spam . by Garvita Sood, Anuj Bansal, Garima | Medium](https://garvitasood.medium.com/github-clean-up-spam-babc5e5b5ab0)
-- [GitHub - shitoberfest/ spam - pullrequests : Show the world how many...](https://github.com/shitoberfest/spam-pullrequests)
+- [Nvidia says its new data center design will fix AI’s water problem | Fortune](https://fortune.com/2026/06/22/nvidia-new-data-center-design-ai-water-problem-cooling/)
+- [NVIDIA Unveils 45°C Liquid Cooling Design for AI Data Centers](https://www.guru3d.com/story/nvidia-unveils-liquid-cooling-design-for-ai-data-centers)
+- [These companies are using data centres to heat cities | World Economic Forum](https://www.weforum.org/stories/2025/06/sustainable-data-centre-heating/)
 
 
-**社区讨论**: 社区成员分享了缓解策略：GitHub 可配置的 PR 限制、要求新贡献者非文本验证、以及向维护者捐赠代币信用。一个关键洞见是，与电子邮件不同，PR 垃圾信息针对的是个人用户账户而非服务器信誉，使得屏蔽更加困难。还有人将其与 2000 年代初的反垃圾邮件法律框架进行了类比。
+**社区讨论**: 评论者指出与区域供暖的协同潜力巨大，但夏季散热仍是挑战。部分人质疑其新颖性，提到 NASA 已有类似高温液冷设施，还有人指出泵体耐温等实际限制。总体情绪乐观，但认识到气候条件和当地基础设施对可行性影响很大。
 
-**标签**: `#open-source`, `#spam`, `#pull-requests`, `#maintainer-experience`, `#github`
+**标签**: `#data center`, `#liquid cooling`, `#sustainability`, `#NVIDIA`, `#HPC`
 
 ---
 
 <a id="item-5"></a>
-## [GLM-5.2：开源权重模型挑战专有 AI，瞄准编码智能体](https://www.interconnects.ai/p/glm-52-is-the-step-change-for-open) ⭐️ 8.0/10
+## [自博弈 RL+ViT 智能体 Generals.io 登顶](https://www.reddit.com/r/MachineLearning/comments/1uei2yg/i_made_a_superhuman_generalsio_agent_with/) ⭐️ 8.0/10
 
-Z.AI 发布了开源权重模型 GLM-5.2，它在 SWE-bench Pro（62.1%）和 Terminal-Bench 2.1（81.0%）等编码智能体基准测试中取得了具有竞争力的成绩，可与部分专有模型媲美。 该模型为构建自主编码智能体提供了低成本、可公开获取的替代方案，有望让全球买不起昂贵订阅服务的开发者都能用上先进的 AI 编码工具。 GLM-5.2 采用多令牌预测，在设计和智能体基准测试上表现强劲，但在 SWE-bench 和 NL2Repo 上仍落后于 Claude Opus 4.8。用户反映其令牌消耗量极大，数小时内即可耗尽每周配额，且服务计划限制较多，影响实际使用。
+一个使用 Vision Transformer 并在 JAX 中完全重新实现的自博弈强化学习智能体，在 Generals.io 1v1 排行榜上登顶，达到了超人类水平。该项目提供了开源的 JAX 模拟器和详细的技术指南。 这证明了通过 Transformer 架构和高效模拟器进行扩展可以超越领域特定启发式方法，为在不完美信息 RTS 游戏中构建超人类智能体提供了蓝图。开源代码和模拟器对强化学习社区是宝贵资源。 该智能体用 Vision Transformer 替换了 CNN，并将流程从 NumPy/PyTorch 重新实现为 JAX，专注于扩展而非人工先验。它最初来自硕士论文，通过行为克隆和强化学习微调起步，JAX 模拟器可处理不完美信息实时策略环境。
 
-hackernews · vantareed · 6月23日 03:23 · [社区讨论](https://news.ycombinator.com/item?id=48639840)
+reddit · r/MachineLearning · /u/shrekofspeed · 6月24日 16:18
 
-**背景**: 开源权重模型公开其训练好的参数，允许本地部署和定制。编码智能体是能自主编写、调试和部署软件的 AI 系统。GLM-5.2 由中国的 Z.AI 实验室开发，在快速发展的 AI 辅助编码领域与 Claude Opus、GPT-5.5、Gemini 3.1 Pro 等前沿模型展开竞争。
+**背景**: Generals.io 是一款快节奏多人策略游戏，玩家在战争迷雾中扩张领土、与敌人作战并试图俘虏对方将军。Vision Transformer (ViT) 将图像分割成图块并作为标记处理，相比 CNN 具有更高的容量和可扩展性。该项目利用 JAX 这一高性能数值计算库构建了高效的模拟器和训练流程。
 
 
 **参考链接**:
 
-- [r/technology on Reddit: What is GLM-5.2? Another open-source Chinese AI model has Silicon Valley's attention.](https://www.reddit.com/r/technology/comments/1uc5hjh/what_is_glm52_another_opensource_chinese_ai_model/)
-- [GLM-5.2 - Overview - Z.AI DEVELOPER DOCUMENT](https://docs.z.ai/guides/llm/glm-5.2)
-- [What Is GLM 5.2? The Open-Weight Model Beating GPT 5.5 on Design Benchmarks | MindStudio](https://www.mindstudio.ai/blog/what-is-glm-5-2-open-weight-model)
+- [Generals . io Windows, Mac, iOS, Android game - IndieDB](https://www.indiedb.com/games/generalsio)
+- [Vision transformer](https://en.wikipedia.org/wiki/Vision_transformer)
 
 
-**社区讨论**: 社区反馈褒贬不一：部分用户称赞 GLM-5.2 的性能和亲民价格，认为它为无力负担专有工具的人带来了质的飞跃；另一些用户批评其令牌消耗和服务计划，因配额迅速耗尽和频繁出现 429 错误，称其为骗局。
-
-**标签**: `#AI`, `#open-weight models`, `#GLM-5.2`, `#coding agents`, `#LLM evaluation`
+**标签**: `#reinforcement-learning`, `#self-play`, `#game-ai`, `#jax`, `#vision-transformer`
 
 ---
 
 <a id="item-6"></a>
-## [Xteink X4：微控制器驱动、开放可改造的电子墨水阅读器](https://blog.omgmog.net/post/xteink-x4-e-ink-reader/) ⭐️ 8.0/10
+## [DeepSWE：一个无污染的前沿 AI 编码能力测试基准](https://www.reddit.com/r/MachineLearning/comments/1ue0hlp/deepswe_new_benchmark_looking_at_how_well_todays/) ⭐️ 8.0/10
 
-Xteink X4 是一款新型极简电子阅读器，它采用微控制器而非完整操作系统，提供了一个开放、可改造的平台，并支持通过 WiFi 轻松传输书籍。 它挑战了 Kindle 等主流阅读器封闭的生态系统，证明简单的微控制器就足以提供无干扰的阅读体验，并可能激发更多开放硬件设计。 X4 配备 4.3 英寸 E Ink 屏幕、USB-C 充电、磁吸式手机贴合功能，以及用于拖放文件传输的 HTTP 服务器；它没有背光，且较小的屏幕尺寸对部分用户可能稍显不足。
+DeepSWE 是一个新基准，通过从头编写任务（而非改编现有提交）来评估编码代理的软件工程能力，覆盖 91 个代码库和 5 种语言，提示词长度仅为 SWE-bench Pro 的一半，但解决方案需要多 5.5 倍的代码量和约 2 倍的输出 token，并使用手工编写的验证器测试软件行为而非实现细节。 该基准解决了现有编码基准中的数据污染和过于简单的问题，为 AI 编码代理的真实软件工程能力提供了更可靠、更具挑战性的衡量标准，这对于推动该领域发展以及比较 GPT-5 和 Claude Opus 等前沿模型至关重要。 该基准完全开源，验证器由人工编写，测试软件行为而非代码细节。任务覆盖 91 个代码库，提示词长度约为 SWE-bench Pro 的一半，但解决方案所需代码量是其 5.5 倍，输出 token 数约为 2 倍，凸显了真实世界的复杂性。
 
-hackernews · felixdoerp · 6月24日 16:35 · [社区讨论](https://news.ycombinator.com/item?id=48662381)
+reddit · r/MachineLearning · /u/we_are_mammals · 6月24日 02:03
 
-**背景**: Kindle 或 Kobo 等传统电子阅读器运行 Linux 或 Android，提供了多任务和丰富的应用支持，但往往伴随着系统复杂性和封闭软件。而基于微控制器的阅读器则使用轻量级芯片，仅处理必要任务，从而实现了更长的电池寿命、更简洁的界面和更易于改造的特性。Xteink X4 属于这种日益兴起的开放、单一用途设备潮流，旨在突出专注的阅读体验。
+**背景**: SWE-bench Pro 是近期旨在通过引入更真实的企业级任务来提升 SWE-bench 的基准，但即使 GPT-5 等最先进模型也只有约 23% 的得分。数据污染，即测试内容出现在训练数据中，是 AI 评估中公认的问题，会人为抬高模型分数。DeepSWE 在此基础上，通过从零开始编写任务，彻底避免了污染。
 
 
 **参考链接**:
 
-- [Xteink X 4 Pocket eReader](https://www.xteink.com/products/xteink-x4)
-- [Open-Source, Flexible E-Reader | Hackaday](https://hackaday.com/2025/08/03/open-source-flexible-e-reader/)
-- [Xteink X4](https://grokipedia.com/page/Xteink_X4)
+- [SWE-Bench Pro Leaderboard AI Coding Benchmark (Public Dataset ...](https://labs.scale.com/leaderboard/swe_bench_pro_public)
+- [When AI Benchmarks Plateau: A Systematic Study of Benchmark Saturation](https://arxiv.org/html/2602.16763v1)
 
 
-**社区讨论**: 用户称赞 X4 和 X3 的简洁性、开放性以及基于 WiFi HTTP 服务器的便捷传书功能，有人甚至成功刷入 CrossPoint 进行改造。普遍的期望包括更大的屏幕、背光和更强的磁力，但多数人将其视为超便携的副机，而非主力阅读器。
-
-**标签**: `#e-ink`, `#ereader`, `#microcontroller`, `#hardware`, `#open-source`
+**标签**: `#benchmarks`, `#code-generation`, `#software-engineering`, `#large-language-models`, `#evaluation`
 
 ---
 
 <a id="item-7"></a>
-## [约翰·卡马克反思 id Software 早期管理失误](https://twitter.com/ID_AA_Carmack/status/2069799283369345247) ⭐️ 8.0/10
+## [LuaJIT 3.0 提案引入 C 风格语法扩展](https://github.com/LuaJIT/LuaJIT/issues/1475) ⭐️ 7.0/10
 
-约翰·卡马克在推特上公开分享了他对 id Software 早期管理失误的反思，承认自己过度压榨团队、未能调整管理风格，导致团队筋疲力尽。 卡马克的反思来自一位传奇人物的坦诚分享，为领导力提供了宝贵教训，揭示了创造划时代产品与维持健康可持续企业文化之间的权衡。 卡马克特别指出《雷神之锤》的开发过程几乎摧毁了 id Software，并承认自己未意识到成长中的公司需要比初创期更多的缓冲空间。桑迪·彼得森等人的评论提供了关于这种压力代价的不同视角。
+LuaJIT 3.0 提案建议为 Lua 语言新增 C 风格的三元运算符（? :）、逻辑运算符（&&、||）和复合赋值（如 +=、-=），旨在让语法更贴近 C 系列语言的开发者。 这一改动可能降低来自 C 类语言开发者的迁移门槛，但有可能破坏 Lua 的语言一致性，并对依赖 Lua 独特语法的现有工具和教学材料造成冲击。 该提案仍在 GitHub #1475 议题中讨论，涵盖新增中缀运算符和复合赋值。社区对可读性、向后兼容性以及同一操作存在两种写法可能造成的混淆表示担忧。
 
-hackernews · shadowtree · 6月24日 15:56 · [社区讨论](https://news.ycombinator.com/item?id=48661825)
+hackernews · phreddypharkus · 6月25日 00:41 · [社区讨论](https://news.ycombinator.com/item?id=48667336)
 
-**背景**: 约翰·卡马克是 id Software 的联合创始人，以开创《毁灭战士》和《雷神之锤》等标志性游戏背后的 3D 引擎而闻名。id Software 早期的企业文化以高强度、高负荷的开发著称，不断突破技术极限。公司从初创小团队发展为大型工作室的过程中，卡马克对技术创新的不懈追求与可持续管理需求之间产生了矛盾。
+**背景**: LuaJIT 是 Lua 的高性能即时编译器，广泛应用于游戏、嵌入式和服务器端。Lua 以极简语法著称，使用 'and'、'or'、'not' 等关键字。提议的 C 风格语法旨在为熟悉 C、JavaScript、Java 等语言的开发者提供替代方案，但偏离了 Lua 的传统设计理念。
 
-**社区讨论**: HN 社区的讨论丰富而细致：一些评论赞扬了卡马克的坦诚，另一些则争论创造《雷神之锤》的代价是否值得。桑迪·彼得森的第一手叙述提供了另一种视角，多位用户指出 id Software 在《毁灭战士 2》后衰落是因为过于侧重技术而轻视艺术设计。整体氛围尊重且多元，许多人承认在高压创意环境中领导力的复杂性。
 
-**标签**: `#game development`, `#leadership`, `#management`, `#software engineering`, `#tech history`
+**参考链接**:
+
+- [LuaJIT - Wikipedia](https://en.wikipedia.org/wiki/LuaJIT)
+
+
+**社区讨论**: 社区反应不一：部分评论者认为 C 风格的三元和逻辑运算符没必要，损害 Lua 的可读性，建议用 if-then-else 表达式替代；另有人担心增加复杂性和维护负担，少数人则认为可能改善开发体验。讨论凸显了对保持 Lua 简洁性的深切关注。
+
+**标签**: `#LuaJIT`, `#Lua`, `#programming-languages`, `#syntax`, `#language-design`
 
 ---
 
 <a id="item-8"></a>
-## [用 JAX 和视觉 Transformer 的自博弈 RL 智能体登顶 Generals.io](https://www.reddit.com/r/MachineLearning/comments/1uei2yg/i_made_a_superhuman_generalsio_agent_with/) ⭐️ 8.0/10
+## [RubyLLM：面向所有主流 AI 提供商的 Ruby 统一框架](https://rubyllm.com/) ⭐️ 7.0/10
 
-一位开发者训练了一个用于即时战略游戏 Generals.io 的自博弈强化学习智能体，在人类 1v1 排行榜上获得第一名。突破性的进展来自于将整个训练流程用 JAX 重写，并将 CNN 替换为视觉 Transformer（ViT）架构。 这表明现代机器学习基础设施（JAX）和可扩展架构（视觉 Transformer）无需依赖人工领域知识就能解决复杂的不完全信息游戏。开源发布和详尽的指南为构建类似智能体的强化学习从业者提供了实用的蓝图。 该智能体最初是硕士论文，使用行为克隆和 RL 微调，但被顶尖玩家持续击败。重新实现采用了 JAX 的高性能数组计算和视觉 Transformer，优先考虑扩展而非人工先验；完整流程，包括一个快速的 JAX 模拟器，均已开源。
+RubyLLM 1.0 于 2025 年 3 月发布，为 Ruby 开发者提供了一个统一接口，用于调用 OpenAI、Anthropic、Google 等公司的 AI 模型。该框架因其易用性和开发者友好的 API 设计而受到好评。 它简化了 Ruby 应用集成 AI 的复杂度，降低了 Ruby 社区采用 AI 功能的门槛，使 Ruby 在快速演变的 AI 领域中保持竞争力，填补了类似于 JavaScript 生态中 Vercel AI SDK 的空白。 值得注意的细节：某些提供商（如 xAI）的缓存不可靠、维护者对 PR 的响应迟缓、重试机制会清除模型历史，导致难以追踪 API 调用序列。最新版本已原生支持 responses API。
 
-reddit · r/MachineLearning · /u/shrekofspeed · 6月24日 16:18
+hackernews · doener · 6月24日 14:41 · [社区讨论](https://news.ycombinator.com/item?id=48660711)
 
-**背景**: Generals.io 是一款在线即时战略游戏，具有不完全信息（战争迷雾），玩家指挥军队争夺领土。JAX 是一个用于高性能数值计算和机器学习的 Python 库，以自动微分和即时编译著称。视觉 Transformer（ViT）是一种将图像分割成块并用 transformer 编码器处理的神经网络架构，在视觉任务中具有高容量。自博弈强化学习是一种让智能体通过对弈自身来学习的技术，曾被 AlphaGo 等著名系统使用。
+**背景**: Ruby 是一种流行的动态编程语言，广泛用于 Web 开发（尤其是 Ruby on Rails 框架）。OpenAI、Anthropic、Google 等公司的 LLM 各自提供不同的 API，使用方式各异。RubyLLM 抽象了这些差异，为 Ruby 开发者提供了一种统一、简洁的方式来调用多个 AI 模型，类似于 JavaScript 生态中的 Vercel AI SDK。
 
 
 **参考链接**:
 
-- [JAX (software) - Wikipedia](https://en.wikipedia.org/wiki/JAX_(software))
-- [Vision transformer](https://en.wikipedia.org/wiki/Vision_transformer)
+- [💎 RubyLLM: The Ruby Gem That Makes AI Feel Right at Home | by Ravi Prakash | Medium](https://medium.com/@raviskit2012/rubyllm-the-ruby-gem-that-makes-ai-feel-right-at-home-a34a1d18def4)
+- [Introducing RubyLLM 1.0: A Beautiful Way to Work with AI - DEV Community](https://dev.to/crmne/introducing-rubyllm-10-a-beautiful-way-to-work-with-ai-5p0)
 
 
-**标签**: `#reinforcement-learning`, `#self-play`, `#JAX`, `#vision-transformer`, `#game-ai`
+**社区讨论**: 社区普遍认为 RubyLLM 易于使用，堪比 Vercel 的 AI 框架，但也存在痛点：xAI 的缓存不可靠、维护者对 PR 响应不积极、重试机制会删除模型历史影响可观测性。维护者倾向于合并“vibe coded”PR 并重写他人提交的贡献，引发了代码质量的担忧。
+
+**标签**: `#ruby`, `#ai`, `#llm`, `#framework`, `#open-source`
 
 ---
 
 <a id="item-9"></a>
-## [DeepSWE：评估 AI 编码代理的无污染新基准](https://www.reddit.com/r/MachineLearning/comments/1ue0hlp/deepswe_new_benchmark_looking_at_how_well_todays/) ⭐️ 8.0/10
+## [谷歌 Gemini 3.5 Flash 推出计算机使用功能](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-computer-use-gemini-3-5-flash/) ⭐️ 7.0/10
 
-DeepSWE 是一个新的基准测试，使用手写验证器、真实世界复杂度和无污染设计来评估编码代理在软件工程任务上的表现。它覆盖 5 种语言的 91 个仓库，解决方案所需代码量是 SWE-bench Pro 的 5.5 倍。 它通过消除数据污染并专注于真实的多文件工程工作，解决了 SWE-bench 等现有基准的关键缺陷，能更准确地反映前沿 AI 编码代理的实际表现。 提示词长度约为 SWE-bench Pro 的一半，但解决方案需要约 2 倍的输出 token。验证器测试软件行为而非实现细节，即使对创造性解决方案也能保证评估可靠。
+谷歌宣布 Gemini 3.5 Flash 模型新增计算机使用能力，使其能够直接与图形用户界面交互，例如点击按钮和输入文字。 这一举措使谷歌在自主操控计算机的 AI 代理领域与 OpenAI 的 CUA 和 Anthropic 的 Claude 展开竞争，可能为开发者和用户带来工作流自动化。但早期可靠性问题以及缺乏 MCP 支持，可能限制其实际应用。 该功能基于轻量级的 Gemini 3.5 Flash 模型。早期用户测试发现它频繁出错，例如从 PDF 中提取表格时放弃任务，或错误执行 `git reset --hard` 等破坏性命令；同时，它不支持模型上下文协议（MCP）。
 
-reddit · r/MachineLearning · /u/we_are_mammals · 6月24日 02:03
+hackernews · swolpers · 6月24日 17:21 · [社区讨论](https://news.ycombinator.com/item?id=48662999)
 
-**背景**: 现有的软件工程基准（如 SWE-bench）使用真实的 GitHub 问题与拉取请求，若模型在训练中见过这些解决方案，就可能导致数据污染。像 LiveBench 这样的无污染基准通过创建全新问题来避免此问题。DeepSWE 进一步采用了从零编写任务并使用基于行为的手写验证器的方法，确保了对编码代理公正且真实的测试。
+**背景**: 计算机使用代理是一种 AI 模型，能够通过图形用户界面自主操作电脑，模拟人类的点击和打字操作。OpenAI 的计算机使用代理（CUA）和 Anthropic 的 Claude 此前已推出类似功能。模型上下文协议（MCP）是 Anthropic 于 2024 年 11 月推出的开放标准，用于连接 AI 模型与外部工具和数据源，Gemini 目前尚不支持。Gemini 3.5 Flash 是谷歌 Gemini 模型家族的轻量版本，以速度和效率优化著称。
 
 
 **参考链接**:
 
-- [SWE - bench Leaderboards](https://www.swebench.com/)
-- [GitHub - LiveBench/LiveBench: LiveBench: A Challenging, Contamination-Free LLM Benchmark · GitHub](https://github.com/LiveBench/LiveBench)
+- [Computer-Using Agent | OpenAI](https://openai.com/index/computer-using-agent/)
+- [Introducing the Model Context Protocol \ Anthropic](https://www.anthropic.com/news/model-context-protocol)
 
 
-**标签**: `#benchmarking`, `#code generation`, `#software engineering`, `#AI evaluation`, `#LLMs`
+**社区讨论**: 社区反馈普遍负面，用户报告 Gemini 3.5 Flash 在简单任务中频繁失败，缺少 MCP 集成，且在基准测试和实际编码辅助中均落后于 Claude 和 GPT 等竞争对手。许多人质疑谷歌为何未提供类似于 Codex 或 Claude Code 的编程代理。
+
+**标签**: `#AI`, `#Google`, `#Gemini`, `#computer-use`, `#LLM`
 
 ---
 
 <a id="item-10"></a>
-## [RubyLLM：一个支持多 AI 提供商的多功能 Ruby 框架](https://rubyllm.com/) ⭐️ 7.0/10
+## [新基金旨在终结呼吸道感染](https://blog.interceptfund.com/p/ending-respiratory-infections) ⭐️ 7.0/10
 
-RubyLLM 作为一个开源 Ruby 框架崭露头角，它简化了与 OpenAI、Anthropic、xAI 等多个 AI 提供商的集成，因其开发者友好的 API 而受到赞誉。 该框架填补了 Ruby 生态系统中 AI 集成工具的空白，使 Ruby 开发者能轻松切换不同 AI 提供商，有望加速基于 Ruby 的 AI 应用开发。 虽然易用性受好评，但该框架存在局限：由于 xAI 仅支持 completions API 且返回的 thought 签名有误，缓存功能无法正常工作；responses API 最初未得到原生支持，但近期可能已增加；重试机制会删除底层模型历史，使可观测性复杂化。
+一个名为 Intercept Fund 的慈善基金宣布成立，旨在通过投资空气净化技术和新型预防措施来终结呼吸道感染。 呼吸道感染如流感、新冠肺炎和普通感冒导致大量疾病、残疾和经济损失。该基金可能加速更有效预防措施的开发，减轻痛苦和死亡，尤其对免疫功能低下人群意义重大。 该基金初期预算为 5 亿美元，专注于空气净化技术和新型预防措施。不过，有观察者指出解决这一问题需要远比这更大的投入。
 
-hackernews · doener · 6月24日 14:41 · [社区讨论](https://news.ycombinator.com/item?id=48660711)
+hackernews · EthanFantl · 6月25日 01:14 · [社区讨论](https://news.ycombinator.com/item?id=48667588)
 
-**背景**: RubyLLM 是一个 Ruby gem，为与多个提供商的大语言模型交互提供通用接口。它旨在提供类似 Rails 的简洁开发体验，处理 API 细节并允许轻松切换后端。Ruby 生态系统在 AI/ML 库方面历来少于 Python，因此 RubyLLM 对构建 AI 应用的 Ruby 开发者而言是一个重要补充。
+**背景**: 呼吸道感染是全球主要致病和致死原因之一，新冠大流行凸显了加强预防的必要性。健康成年人每年约有 15-25 天因感冒、流感等感染而患病，约占生命的 5%。公共资金对预防的投入历来远低于治疗，此类慈善基金试图填补这一缺口。
 
-**社区讨论**: 社区反响非常积极，很多人称赞其易用性，并将其与 Vercel 的 AI 框架相提并论。但用户也指出了实际痛点：xAI 的缓存失效、缺少原生 responses API 支持（可能已修复），以及重试逻辑掩盖了可观测性。有人质疑它相比直接使用提供商 SDK 的价值，另一些人则热切期待 2.0 版本。
+**社区讨论**: 社区反应不一：有人表达希望和切身感受，如一位用户的女友因呼吸道病毒去世，另有因长新冠致残的网友；也有人批评依赖慈善，指出 5 亿美元远不及太空探索预算，并对每年 15-25 天患病的数据提出质疑。许多人支持基金对空气净化和口罩的重视。
 
-**标签**: `#ruby`, `#llm`, `#ai-framework`, `#developer-tools`, `#open-source`
+**标签**: `#public-health`, `#philanthropy`, `#respiratory-infections`, `#community-discussion`, `#prevention`
 
 ---
 
 <a id="item-11"></a>
-## [谷歌为 Gemini 3.5 Flash 引入计算机操控能力](https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-computer-use-gemini-3-5-flash/) ⭐️ 7.0/10
+## [Simon Willison 将 MDN 浏览器兼容性数据转换为支持 CORS 的 SQLite 数据库](https://simonwillison.net/2026/Jun/24/browser-compat-db/#atom-everything) ⭐️ 7.0/10
 
-谷歌宣布 Gemini 3.5 Flash 模型支持计算机操控功能，AI 可直接理解屏幕内容并执行点击、输入等操作以自动化任务。 这标志着谷歌正式进入 AI 智能体操控计算机赛道，与 OpenAI 的 Operator 和 Anthropic 的 Claude Computer Use 竞争，但社区反馈暴露出明显的可靠性问题和功能缺失，可能影响实际采用。 该功能随 Gemini 3.5 Flash 模型发布。谷歌博客宣称性能提升，但社区成员指出模型在简单数据提取任务中主动放弃，Gemini 应用缺少 MCP 支持，且没有类似 Codex 或 Claude Code 的编码智能体工具。
-
-hackernews · swolpers · 6月24日 17:21 · [社区讨论](https://news.ycombinator.com/item?id=48662999)
-
-**背景**: AI 计算机操控（Computer Use）指模型通过视觉理解屏幕内容，模拟鼠标和键盘输入来完成跨应用任务。OpenAI 的 Operator 使用计算机操控智能体（CUA）模型，Anthropic 的 Claude 也提供类似功能。Gemini 3.5 Flash 是谷歌 DeepMind 推出的快速、高性价比模型，属于 Gemini 多模态大语言模型家族。
-
-
-**参考链接**:
-
-- [Gemini 3 . 5 : frontier intelligence with action](https://blog.google/innovation-and-ai/models-and-research/gemini-models/gemini-3-5/)
-- [Computer-Using Agent | OpenAI](https://openai.com/index/computer-using-agent/)
-
-
-**社区讨论**: 社区评论普遍负面。用户反映 Gemini 在简单数据提取任务中报错并放弃，抱怨缺少 MCP 支持和编码智能体工具，并批评谷歌的基准图误导性地展示 Gemini 胜出。有评论直接称计算机操控是“糟糕的想法”——缓慢、不安全、易出错且昂贵。
-
-**标签**: `#gemini`, `#computer-use`, `#ai-agents`, `#google`, `#human-computer-interaction`
-
----
-
-<a id="item-12"></a>
-## [NVIDIA 45°C 液冷设计将数据中心用水降至近零](https://blogs.nvidia.com/blog/liquid-cooling-ai-factories/) ⭐️ 7.0/10
-
-NVIDIA 推出了一种运行在 45°C 进水温度下的液冷架构，与传统风冷或低温液冷系统相比，可大幅减少数据中心的用水量。该设计声称在有利气候条件下可完全消除水消耗，引发了对其实际可行性的讨论。 该方法可显著降低人工智能和高性能计算数据中心对环境的影响，这些中心正面临日益严格的用水和能源审查。若得到验证，还可实现与区域供热网络的废热整合，将数据中心转变为对社区有益的资产。 45°C 的进水温度高于典型液冷系统（通常约 24°C），允许使用干式冷却器而非消耗水的蒸发冷却塔。然而，其效果取决于周围气候，且“零水”声称存在争议，因为循环冷却液仍需初始填充和定期补水，尽管量极小。
-
-hackernews · nitin_flanker · 6月24日 14:10 · [社区讨论](https://news.ycombinator.com/item?id=48660178)
-
-**背景**: 传统数据中心通常使用空调或蒸发冷却为服务器散热，每年可能消耗数百万加仑水。液冷效率更高，因为水的传热能力优于空气。温水液冷（例如最高 75°F/24°C）已用于一些高性能计算设施以减少能耗，但 NVIDIA 的设计将温度提升至 45°C（113°F），从而无需蒸发水即可散热。区域供热是将工业源的废热集中分配至建筑物的系统，45°C 的温度对于某些低温区域供热网络是可行的。
-
-
-**参考链接**:
-
-- [District heating](https://en.wikipedia.org/wiki/District_heating)
-- [High-Performance Computing Data Center Warm-Water Liquid Cooling | Computational Science | NLR](https://www.nrel.gov/computational-science/warm-water-liquid-cooling)
-
-
-**社区讨论**: 评论者对“零水消耗”的说法表示怀疑，指出循环水仍来自某处并需补充。一些人强调了与区域供热的协同效应，另一些人则质疑缺少不同气候下性能的技术细节，并指出温水液冷并非全新（例如 NASA Ames 设施）。
-
-**标签**: `#liquid cooling`, `#data centers`, `#water conservation`, `#NVIDIA`, `#sustainability`
-
----
-
-<a id="item-13"></a>
-## [Nub：一款为 Node.js 提供 Bun 式开发体验的全能工具包](https://github.com/nubjs/nub) ⭐️ 7.0/10
-
-Nub 由 Zod 的创建者 Colin McDonnell 开发，是一个新的工具包，它通过预加载钩子为 Node.js 添加了基于 oxc 的快速转译器、模块解析钩子以及针对 Worker、Temporal 等 API 的 polyfill，在保持使用原生 Node.js 运行时的同时，提供了类似 Bun 的开发体验。 Nub 的重要性在于，它让 Node.js 开发者能够享受到类似 Bun 的速度和便利（如 TypeScript 转译和现代 API polyfill），而无需放弃成熟的 Node.js 生态，从而降低迁移风险并支持增量采用。 Nub 采用`--require`预加载钩子来注入转译器和钩子，这可能在 ESM 和顶级 await 方面存在边缘情况；其转译器由高性能的 Rust 工具 oxc 驱动，并打包为 Node-API 插件以实现高速运行。它按需注入`Worker`、`Temporal`等 API 的 polyfill，在不替换 Node 标准库的情况下增强兼容性。
-
-hackernews · colinmcd · 6月24日 14:14 · [社区讨论](https://news.ycombinator.com/item?id=48660267)
-
-**背景**: Bun 是一个快速的全能 JavaScript 运行时，内置了转译器、包管理器和测试运行器，提供了精简的开发体验。Node.js 作为最广泛使用的服务器端 JavaScript 运行时，传统上需要额外的工具如 ts-node 来处理 TypeScript。Nub 通过使用基于 oxc（一个高性能 Rust 工具链）的转译器以及 Node.js 的模块解析钩子，直接为 Node.js 添加这些能力，而无需更换运行时。
-
-
-**参考链接**:
-
-- [Bun (software) - Wikipedia](https://en.wikipedia.org/wiki/Bun_(software))
-- [GitHub - oven-sh/bun: Incredibly fast JavaScript runtime, bundler, test runner, and package manager – all in one](https://github.com/oven-sh/bun)
-- [Modules : ` node : module ` API | Node . js v26.3.0 Documentation](https://nodejs.org/api/module.html)
-
-
-**社区讨论**: 社区反应总体积极，许多人称赞这个想法和作者 Colin McDonnell（Zod 创始人）的背景。一些人提出了技术问题，质疑在 Node 已原生支持 TypeScript 的情况下为何需要转译器，以及为何使用`--require`钩子，这可能会影响 ESM 和顶级 await。一位用户报告称已将整个 monorepo 迁移到 Nub 且零问题，突显了其速度和可靠性。
-
-**标签**: `#Node.js`, `#TypeScript`, `#toolkit`, `#Bun`, `#oxc`
-
----
-
-<a id="item-14"></a>
-## [Simon Willison 将 MDN 浏览器兼容数据转换为 SQLite 数据库](https://simonwillison.net/2026/Jun/24/browser-compat-db/#atom-everything) ⭐️ 7.0/10
-
-Simon Willison 新建了一个 GitHub 仓库，利用 Claude Code 生成的脚本和 sqlite-utils 库，将 Mozilla 完整的浏览器兼容数据（JSON 格式）转换为约 66MB 的 SQLite 数据库。该数据库通过 GitHub 的原始内容 CDN 提供，并带有开放的 CORS 头，可直接通过 Datasette Lite 在网页中查询。 这为开发者提供了一个可离线查询、方便携带的浏览器兼容性数据库，便于集成到本地工具、CI/CD 流水线以及 Web 应用中。开放的 CORS 头消除了后端依赖，使得任何基于 Web 的工具都能直接查询数据，降低了构建浏览器兼容性相关功能的技术门槛。 数据库被强制推送到一个名为 'db' 的孤立分支，以确保 raw.githubusercontent.com 上提供 CORS 支持；GitHub 的发布资产不包含这些头。构建流程通过 GitHub Actions 自动化，初始脚本由 Claude Code（Opus 4.8）生成，而工作流则用 Codex Desktop（GPT-5.5）构建。
+Simon Willison 发布了一个新开源项目 simonw/browser-compat-db，将 Mozilla MDN 的浏览器兼容性数据转换为约 66MB 的便携式 SQLite 数据库。他使用 AI 辅助工具（Claude Code 和 Codex Desktop）生成了转换脚本和 GitHub Actions 工作流，将数据库推送到一个孤儿分支，从而通过 GitHub CDN 提供 CORS 支持。 这使得 MDN 的海量浏览器兼容性数据可以轻松离线查询并支持跨域访问，对 Web 应用、开发工具和 AI 助手大有裨益。它降低了将兼容性检查集成到开发流程中的门槛，并展示了 AI 辅助开发在数据工程任务中的实际应用。 该 66MB 的数据库基于 mdn/browser-compat-data 的 JSON 数据，使用 sqlite-utils 库构建。它托管在 GitHub CDN 上，带有开放的 CORS 头，可直接通过 Datasette Lite 在线探索。构建脚本由 Claude Code（Opus 4.8）生成，工作流由 Codex Desktop（GPT-5.5）生成。
 
 rss · Simon Willison · 6月24日 23:59
 
-**背景**: MDN 的 browser-compat-data 是一个社区维护的 JSON 数据集，涵盖 HTML、CSS、JavaScript 和 Web API 在各浏览器中的兼容性详情。sqlite-utils 是 Simon Willison 开发的 Python 命令行工具，可简化将 JSON 数据导入 SQLite 的过程。Claude Code 是 Anthropic 推出的 AI 编程助手，能够理解代码库并生成脚本。GitHub 仓库的原始文件访问（raw.githubusercontent.com）支持 CORS，但发布资产不支持；该项目利用孤立分支托管数据库文件，从而实现从 Web 端直接查询。
+**背景**: MDN 浏览器兼容性数据是 Mozilla 维护的开源 JSON 数据集，记录了各类 Web API 在不同浏览器中的支持情况。SQLite 是一种轻量级嵌入式数据库引擎，sqlite-utils 是 Simon Willison 编写的 Python 库，用于快速创建和操作 SQLite 数据库。CORS（跨域资源共享）头，如 Access-Control-Allow-Origin，允许 Web 应用从不同域名获取资源；GitHub 为普通仓库中的文件提供了这些头，从而支持跨域访问。
 
 
 **参考链接**:
 
 - [GitHub - simonw/sqlite-utils: Python CLI utility and library for manipulating SQLite databases · GitHub](https://github.com/simonw/sqlite-utils)
-- [MDN MCP server](https://developer.mozilla.org/en-US/mcp)
-- [Claude Code by Anthropic | AI Coding Agent, Terminal, IDE](https://claude.com/product/claude-code)
+- [How do Cross Origin Resource Sharing ( CORS ) Headers work?](https://bunny.net/academy/http/what-are-cross-origin-resource-sharing-cors-headers/)
 
 
-**标签**: `#browser-compat`, `#sqlite`, `#web-development`, `#mdn`, `#open-data`
+**标签**: `#sqlite`, `#browser-compatibility`, `#open-data`, `#ai-assisted-development`, `#developer-tools`
+
+---
+
+<a id="item-12"></a>
+## [Tom MacWright 警告：LLM 生成的求职申请抹去个人身份](https://simonwillison.net/2026/Jun/24/tom-macwright/#atom-everything) ⭐️ 7.0/10
+
+Tom MacWright 观察到，求职申请现在完全由大语言模型生成，包括简历、作品集网站和 GitHub 项目，导致候选人匿名且难以区分。 这一趋势削弱了招聘的真实性，使雇主难以评估真实的人类素质，并可能促使招聘过程更重视个人互动而非精美的 AI 生成材料。 MacWright 指出，整个申请链都是合成的：LLM 生成的作品集网站链接到 LLM 生成的 GitHub 项目，并带有 LLM 生成的提交信息，形成了所谓的“意外匿名”。
+
+rss · Simon Willison · 6月24日 18:13
+
+**标签**: `#ai`, `#careers`, `#llm`, `#hiring`, `#authenticity`
+
+---
+
+<a id="item-13"></a>
+## [7 家 LLM 推理提供商定价对比显示缓存成本惊人差异](https://www.reddit.com/r/MachineLearning/comments/1ueavxn/i_compiled_llm_inference_pricing_across_7/) ⭐️ 7.0/10
+
+一位 Reddit 用户整理了来自 OpenRouter、DeepSeek、Together AI 等七家 LLM 推理提供商的定价数据，发现缓存输入成本差异可达十倍以上，且缓存命中往往比未命中便宜得多。 这对于构建 AI 代理、RAG 流程和多轮对话的开发者意义重大，因为缓存策略能大幅降低成本，将优化重点从原始 token 价格转移到有效缓存利用上。 该表格涵盖了输入/输出 token 价格、上下文窗口、支持的模型及各提供商差异，但未包括延迟、吞吐量、冷启动时间或硬件精度（如 FP16 与 FP8）等指标。
+
+reddit · r/MachineLearning · /u/Technomadlyf · 6月24日 11:28
+
+**背景**: LLM 推理缓存通过重用之前计算的重复提示前缀来减少冗余计算，尤其适用于 RAG（检索增强生成）和多轮对话场景。不同提供商对缓存的支持程度和定价策略差异很大，影响实际使用成本。
+
+
+**参考链接**:
+
+- [The Complete Guide to Inference Caching in LLMs](https://machinelearningmastery.com/the-complete-guide-to-inference-caching-in-llms/)
+- [Optimize LLM response costs and latency with effective caching](https://aws.amazon.com/blogs/database/optimize-llm-response-costs-and-latency-with-effective-caching/)
+
+
+**标签**: `#LLM inference`, `#pricing`, `#caching`, `#API providers`, `#cost optimization`
+
+---
+
+<a id="item-14"></a>
+## [写博客有时就是陈述显而易见之事](https://blog.jim-nielsen.com/2026/blogging-stating-the-obvious/) ⭐️ 6.0/10
+
+Jim Nielsen 的博客文章认为，分享看似显而易见的见解是一种有效且有价值的博客形式，因为总有新读者首次接触这些信息，而相关的讨论则探讨了知识诅咒和重复的力量。 这一观点挑战了博主必须不断产出新颖思想的压力，反而鼓励更多人无惧冗余地分享知识，并突显了知识诅咒如何阻碍沟通与学习。 这篇发布于 2026 年 URL 的文章，是一篇没有外部引用的简洁论述；Hacker News 的讨论补充了丰富的背景，包括一位数学博士的个人经历，以及一个指向知识诅咒维基百科词条的直接链接。
+
+hackernews · Curiositry · 6月24日 23:46 · [社区讨论](https://news.ycombinator.com/item?id=48666927)
+
+**背景**: ‘知识诅咒’是一种认知偏差，指专家无形中假设他人也具备相同的背景知识，从而难以解释基础概念。在博客写作中，作者常担心缺乏原创性，但许多成功的博客本质上只是将已知概念重新包装给新一代学习者。该文章为关于重复在教育中的价值，以及‘新受众’在知识传播中作用的更广泛讨论增添了内容。
+
+**社区讨论**: 社区普遍认同，许多人用个人经历强化了这一观点。他们强调了知识诅咒、新学习者不断涌现的事实，以及粗糙而不完美博文的价值。有人指出，对‘不新鲜’内容的批评常来自目标读者之外的人，而点赞数则证明内容确实引起了目标读者的共鸣。
+
+**标签**: `#blogging`, `#writing`, `#knowledge-sharing`, `#curse-of-knowledge`, `#communication`
 
 ---
 
 <a id="item-15"></a>
-## [Tom MacWright：AI 生成简历造成“意外匿名”](https://simonwillison.net/2026/Jun/24/tom-macwright/#atom-everything) ⭐️ 7.0/10
+## [如今的开源 PR 垃圾信息与 2000 年代初的电子邮件垃圾信息如出一辙](https://www.greptile.com/blog/prs-on-openclaw) ⭐️ 6.0/10
 
-Tom MacWright 观察到，求职者的简历、作品集、GitHub 项目及提交信息全由 LLM 生成，导致候选人显得匿名，无法展现真实个性。 这一趋势可能破坏招聘流程，使雇主难以真实评估候选人，可能导致不良招聘决策，并削弱对申请材料的信任。 该观察发表于 2026 年 6 月，指出“完美、生成、提示驱动”的内容消除了个性，候选人除了使用特定工具外毫无区别。
+一篇近期博文将开源代码仓库中激增的垃圾拉取请求（PR）与 2000 年代初的电子邮件垃圾问题相提并论，引发了关于信誉系统和社区管理的讨论。GitHub 最近也为维护者引入了可配置的 PR 限制功能，以应对这一问题。 这一对比凸显了垃圾信息如何像在电子邮件中一样侵蚀开源社区的信任和生产力，并强调了在 AI 生成的垃圾信息日益增多的情况下，迫切需要强大的信誉机制来过滤恶意行为者。 这篇博文由 AI 代码审查工具 Greptile 发布，一些评论者认为它有推广性质。GitHub 新增的可配置 PR 限制功能让维护者可以限制新贡献者的提交，但与电子邮件垃圾防护依赖 IP 和域名信誉不同，GitHub 的 PR 垃圾信息与个人账户绑定，使得信誉体系更难建立。
 
-rss · Simon Willison · 6月24日 18:13
+hackernews · dakshgupta · 6月24日 14:32 · [社区讨论](https://news.ycombinator.com/item?id=48660579)
 
-**背景**: 大型语言模型（LLM）如 GPT-4 可根据提示生成连贯的文本、代码和整个网站。在技术招聘中，简历和作品集旨在展示独特的技能与个性；使用 AI 自动生成这些材料引发了真实性担忧。MacWright 提出的“意外匿名”一词，描述了 AI 工具如何无意中抹去雇主赖于评估候选人的人性化元素。
+**背景**: 2000 年代初，电子邮件垃圾信息泛滥，催生了基于 IP 信誉和内容分析的垃圾过滤技术。如今，GitHub 上的开源项目正面临垃圾拉取请求的激增，用户提交无关或低质量的贡献，有时是被教程引导或为推广工具。2024 年，Express.js 项目因一个 YouTube 教程而遭受大量垃圾 PR 攻击，凸显了问题的严重性。与电子邮件垃圾的类比表明，开源社区可能需要为 GitHub 账户建立类似的信誉体系。
 
-**标签**: `#careers`, `#ai`, `#llm`, `#hiring`, `#ethics`
+
+**参考链接**:
+
+- [Express.js Spam PRs Incident Highlights the Commoditization ...](https://socket.dev/blog/express-js-spam-prs-commoditization-of-open-source)
+- [What should I do about spam issues or pull requests ... - GitHub](https://github.com/orgs/community/discussions/53233)
+
+
+**社区讨论**: 评论者赞赏 GitHub 新增的 PR 限制功能，但指出邮件垃圾信息过滤依赖 IP 信誉而非个人用户身份，这与 GitHub 的模式不同，直接套用难度较大。部分用户认为该博文是 AI 工具的变相广告。社区普遍对为 GitHub 建立信誉体系感兴趣，有人建议采用类似 uBlock Origin 的‘取消订阅列表’。
+
+**标签**: `#open-source`, `#spam`, `#pull-requests`, `#reputation`, `#github`
 
 ---
 
 <a id="item-16"></a>
-## [Datasette 1.0a35 新增创建与修改表的界面和 API](https://simonwillison.net/2026/Jun/23/datasette/#atom-everything) ⭐️ 7.0/10
+## [Datasette 1.0a35 新增表创建与修改界面](https://simonwillison.net/2026/Jun/23/datasette/#atom-everything) ⭐️ 6.0/10
 
-Datasette 1.0a35（一个重要的 alpha 版本）新增了“创建表”界面和 JSON API，可定义列、约束与外键；同时新增“修改表”界面和 API，支持添加、重命名、删除列及更改列类型等操作。 此次更新将 Datasette 从只读探索工具转变为更完整的数据库管理界面，用户无需离开工具即可创建和修改数据库结构。这是让 SQLite 在数据管理任务中更易用的一步，也顺应了在开发者友好工具中嵌入更多管理功能的趋势。 新增端点支持自定义列类型、NOT NULL 约束、字面量和表达式默认值、主键及外键；修改表对话框中还包含“删除表”按钮。此外，模板上下文文档现在作为自定义模板的稳定 API，从数据类定义生成并通过测试验证。
+Datasette 1.0a35 引入了全新的“创建表”界面及对应的 JSON API，同时新增“修改表”操作，允许用户通过界面或 API 直接添加、重命名、调整顺序、删除列，以及修改约束、默认值和外键。 该版本大幅扩展了 Datasette 的架构管理能力，使其不再局限于只读探索，用户能交互式地构建和修改数据库结构，这对于数据整理、原型设计及自助数据管理工作流至关重要。 创建表界面支持定义列、主键、自定义列类型、NOT NULL 约束、字面量默认值和表达式默认值以及单列外键；修改表功能则涵盖重命名表、更改列类型、默认值和约束，并包含删除表按钮。此外，全新的模板上下文文档为自定义模板提供了稳定的 API，文档由视图代码旁的 dataclass 定义自动生成，并通过测试与实际渲染的上下文进行比对。
 
 rss · Simon Willison · 6月23日 21:34
 
-**背景**: Datasette 是 Simon Willison 开发的开源工具，为 SQLite 数据库提供 Web 界面和 JSON API，广泛用于数据新闻和快速数据探索。在此版本之前，Datasette 主要只读，缺乏内置的创建或修改表的功能，用户需借助 sqlite3 命令行等外部工具来管理数据库结构。
+**背景**: Datasette 是一个基于 SQLite 的开源数据探索与发布工具，提供 Web 界面和 JSON API 用于与数据库交互，被数据记者、开发者和研究人员广泛用于快速数据探索与共享。1.0a35 是一个走向稳定版 1.0 的预发布版本。
 
 
 **参考链接**:
 
-- [JSON API - Datasette documentation](https://docs.datasette.io/en/stable/json_api.html)
-- [JSON API - Datasette 文档](https://docs.datasette.cn/en/stable/json_api.html)
+- [Datasette: An open source multi-tool for exploring and publishing data](https://datasette.io/)
 
 
-**标签**: `#datasette`, `#sqlite`, `#data-exploration`, `#open-source`, `#api`
+**标签**: `#datasette`, `#release`, `#sqlite`, `#database-tools`, `#web-api`
 
 ---
 
 <a id="item-17"></a>
-## [高维动态旋转位置嵌入 HDD-RoPE 加速收敛](https://www.reddit.com/r/MachineLearning/comments/1uelcm9/high_dimensional_dynamic_rotary_positional/) ⭐️ 7.0/10
+## [Papers with Code 页面聚合顶级开源 OCR 模型，涵盖百度与 Mistral 新发布](https://www.reddit.com/r/MachineLearning/comments/1ueiam6/find_the_best_opensource_ocr_models_in_one_place/) ⭐️ 6.0/10
 
-HDD-RoPE 提出了一种新型位置嵌入，将旋转位置嵌入（RoPE）推广到更大的维度块（例如 4 个一组），并使旋转角度数据依赖，将令牌位置视为多维。在 TinyStories 数据集上，它比 xPos 收敛更快。 这一进展可能提升 Transformer 的训练效率和模型性能，因为位置嵌入对序列建模至关重要。通过实现多维位置学习，它可能让模型捕捉更丰富的结构信息（如段落或句子），从而提升语言理解能力。 该方法利用累积矩阵乘积处理旋转，块大小 4 对应 6 个旋转轴。测试架构为类 GPT-2 模型，有 4 个块和 768 维隐藏层，在 TinyStories 上训练，代码和数学细节已开源。
+新版 Papers with Code 页面汇总了顶尖开源 OCR 模型与基准，并重点介绍了本周发布的新模型：百度 Unlimited OCR（30 亿参数，采用参考滑动窗口注意力）和通过 API 提供的 Mistral OCR 4。 通过精编 OCR 基准与模型，该页面帮助开发者快速选择最适合 agentic RAG 等任务的开源 OCR 方案，加速企业文档数字化，赋能内部和外部客服聊天机器人。 百度 Unlimited OCR 引入了参考滑动窗口注意力（R-SWA），一种降低注意力复杂度的变体，并基于开源权重的 DeepSeek OCR 构建。推荐的基准套件为 OlmOCRBench（Ai2）和 OmniDocBench（上海人工智能实验室），当前最佳开源模型 Chandra OCR 2 可自行托管。
 
-reddit · r/MachineLearning · /u/mikayahlevi · 6月24日 18:16
+reddit · r/MachineLearning · /u/NielsRogge · 6月24日 16:26
 
-**背景**: 旋转位置嵌入（RoPE）是 Transformer 中广泛使用的方法，通过成对旋转查询和键向量来编码位置，使模型学习相对位置。xPos 是其改进版，旨在提升长度外推能力。HDD-RoPE 将其推广，将特征分成更大的块并让旋转量依赖数据，将位置视为多维概念，而非一维序列索引。
+**背景**: 光学字符识别（OCR）将扫描文档或 PDF 转换为机器可读的文本（如 Markdown）。检索增强生成（RAG）通过检索外部知识增强大语言模型，而 agentic RAG 则利用 AI 智能体使该流程更灵活。滑动窗口注意力是一种 Transformer 技术，将每个 token 的注意力限制在固定大小的邻近窗口内以降低计算开销；百度的参考滑动窗口注意力正是基于此概念的新变体。
 
 
 **参考链接**:
 
-- [Rotary positional embedding](https://en.wikipedia.org/wiki/Rotary_positional_embedding)
-- [Support for xPos positional embedding · Issue #441 · ggml-org/ggml](https://github.com/ggml-org/ggml/issues/441)
-- [GitHub - jploski/RotaryEmbedding: Comparison of RoPE and xPos positional embeddings used in LLMs](https://github.com/jploski/RotaryEmbedding)
+- [What is Sliding Window Attention? — Klu](https://klu.ai/glossary/sliding-window-attention)
+- [What is Agentic RAG? | IBM](https://www.ibm.com/think/topics/agentic-rag)
 
 
-**标签**: `#positional-embeddings`, `#transformers`, `#deep-learning`, `#NLP`, `#rotary-position-embedding`
+**标签**: `#OCR`, `#open-source`, `#benchmarks`, `#RAG`, `#machine-learning`
 
 ---
 
 <a id="item-18"></a>
-## [七家 LLM 推理定价对比：缓存价格差异巨大](https://www.reddit.com/r/MachineLearning/comments/1ueavxn/i_compiled_llm_inference_pricing_across_7/) ⭐️ 7.0/10
+## [MuJoFil：结合牛顿物理引擎与 Filament 的 GPU 原生高保真视觉 RL 模拟器](https://www.reddit.com/r/MachineLearning/comments/1uemrch/mujoco_derived_simulator_for_high_fidelity_vision/) ⭐️ 6.0/10
 
-一位 Reddit 用户整理了 7 家 LLM 推理服务商的公开定价数据，发现缓存输入 token 的成本在不同服务间差异可达数十倍。 这一对比表明，对于智能体、RAG 等成本敏感型应用，缓存策略往往比基础 token 价格更重要，有助于开发者做出更明智的服务商选择。 该电子表格追踪了输入/输出 token 价格、上下文窗口、缓存输入价格和模型支持情况；同一模型在不同服务商的价格可能相差数倍，且缓存文档往往不完整。
+一款名为 MuJoFil 的新模拟器正在开发中，它集成了 NVIDIA 的 GPU 原生牛顿物理引擎和 Google 的 Filament 渲染器，支持高保真视觉的强化学习训练，具备 PBR 纹理和外部 3D 环境支持，并提供 CPU 和 GPU（CUDA）两个版本。 MuJoFil 填补了 GPU 原生高保真视觉模拟器的空白，为 NVIDIA Isaac 等需要许可的工具提供了开源替代方案，有望降低机器人视觉策略训练的门槛，并加速大规模并行训练。 该模拟器仍处于早期开发阶段，存在明显 bug；GPU 版本基于 NVIDIA Warp 构建（当前名为 mujofil-warp，计划更名为 mujofil-cuda），CPU 版本为 mujofil。它修改了 Filament 以在 GPU 上并行渲染多个模拟，并支持从在线资源导入 GLB、OpenUSD 等格式的环境。
 
-reddit · r/MachineLearning · /u/Technomadlyf · 6月24日 11:28
+reddit · r/MachineLearning · /u/MT1699 · 6月24日 19:07
 
-**背景**: 在 LLM 推理中，缓存通过存储先前请求的中间计算结果（KV cache），避免对重复 token（如系统提示或对话历史）的重复计算，从而大幅降低延迟和成本。不同服务商对缓存 token 的折扣各异，形成了分层定价。
+**背景**: MuJoCo 是机器人领域广泛使用的物理引擎，但其 CPU 版本限制了并行化。MJX 虽然是 GPU 加速版本，但缺乏内置的高保真视觉渲染，不适合基于视觉的强化学习。NVIDIA 的牛顿引擎是基于 MuJoCo 构建的开源 GPU 原生物理引擎，由 NVIDIA、Google DeepMind 和迪士尼研究院合作开发；Google 的 Filament 是一个实时物理渲染引擎，可生成逼真图像。MuJoFil 整合两者，旨在为视觉强化学习提供优化的模拟器。
 
 
 **参考链接**:
 
-- [The Complete Guide to Inference Caching in LLMs - MachineLearningMastery.com](https://machinelearningmastery.com/the-complete-guide-to-inference-caching-in-llms/)
-- [Optimize LLM response costs and latency with effective caching | Amazon Web Services](https://aws.amazon.com/blogs/database/optimize-llm-response-costs-and-latency-with-effective-caching/)
+- [Newton Physics Engine | NVIDIA Developer](https://developer.nvidia.com/newton-physics)
+- [GitHub - google/filament: Filament is a real-time physically based rendering engine for Android, iOS, Windows, Linux, macOS, and WebGL2 · GitHub](https://github.com/google/filament)
+- [MuJoCo XLA (MJX) - MuJoCo Documentation](https://mujoco.readthedocs.io/en/stable/mjx.html)
 
 
-**标签**: `#LLM pricing`, `#inference`, `#caching`, `#cost comparison`, `#spreadsheet`
+**标签**: `#reinforcement-learning`, `#simulation`, `#GPU`, `#vision`, `#open-source`
 
 ---
 
 <a id="item-19"></a>
-## [Bunny.net 宣布 Bunny DNS 免费，无查询限制](https://bunny.net/blog/were-making-bunny-dns-free/) ⭐️ 6.0/10
+## [HDD-RoPE：高维动态旋转位置嵌入方法问世](https://www.reddit.com/r/MachineLearning/comments/1uelcm9/high_dimensional_dynamic_rotary_positional/) ⭐️ 6.0/10
 
-Bunny.net 取消了所有 DNS 查询费用，现在为每个账户免费提供最多 500 个域名的 DNS 托管服务，并包含智能记录和健康监测功能，且无查询次数限制。 此举使 Bunny 成为 Cloudflare 免费 DNS 服务的有力欧洲替代品，尤其吸引那些因地缘政治因素而寻求欧盟基础设施的用户。同时，它也降低了个人和小团队使用具有全球 Anycast 网络的可脚本化 DNS 平台的门槛。 免费套餐包含智能记录和健康监测功能，但社区指出，消费上限功能（例如账单达到一定金额后阻止请求）仅适用于 Bunny CDN，而 Bunny DNS 等其他产品则没有此功能，这引发了用户对流量激增导致意外费用的担忧。
+一种名为 HDD-RoPE 的新位置嵌入方法被提出，它通过累积矩阵乘积在更高维空间中动态旋转嵌入，并具有数据依赖的旋转速率。在 TinyStories 数据集上的初步实验显示，该方法比 xPos 方法收敛更快。 该方法通过让模型学习多维位置结构（如段落或句子边界）而非仅线性序列位置，有望提升 Transformer 模型的表示能力。更快的收敛速度也可能降低训练成本，并有助于处理复杂位置关系的场景。 HDD-RoPE 将查询/键向量分成任意大小的块（例如 4 维），对应多个旋转轴（4 维对应 6 个轴）。旋转量是数据依赖的，由当前层激活计算得出。测试使用了一个类似 GPT-2 的 33M 参数模型在 TinyStories 数据集上进行，但验证仅限于该小型合成语料库，且未经过同行评审。
 
-hackernews · dabinat · 6月24日 08:50 · [社区讨论](https://news.ycombinator.com/item?id=48657030)
+reddit · r/MachineLearning · /u/mikayahlevi · 6月24日 18:16
 
-**背景**: Bunny.net 是一家欧洲 CDN 和 DNS 提供商，以其可脚本化 DNS 平台和全球 Anycast 网络而闻名。它与 Cloudflare 等大型提供商竞争，后者也提供免费 DNS 服务。该公司在 2022 年获得了 600 万美元的小额融资，并依靠有机增长而非大规模补贴策略运营。此次公告使其 DNS 托管服务免费，类似于 Cloudflare 的模式，但基于欧洲基础设施。
-
-
-**参考链接**:
-
-- [Bunny DNS | The #1 Scriptable DNS Platform | bunny.net](https://bunny.net/dns/)
-
-
-**社区讨论**: Hacker News 社区反应不一。一些人称赞 Bunny 是在地缘政治紧张局势下，理想的欧盟替代 Cloudflare 的选择。另一些人指出该公司有机增长的模式，且缺乏烧钱换市场的功能。多位评论者对 DNS 服务缺乏消费上限表示担忧，担心自动化流量导致意外账单，并批评了公告页面上信息传达不清晰。
-
-**标签**: `#DNS`, `#free`, `#CDN`, `#infrastructure`, `#cloud`
-
----
-
-<a id="item-20"></a>
-## [Elastic 裁员 7%，以 AI 驱动重组为由](https://www.elastic.co/blog/ceo-ash-kulkarni-announcement-to-elastic-employees) ⭐️ 6.0/10
-
-Elastic 宣布裁员 7%，理由是人工智能和自动化的进步促使公司重组劳动力。公司计划简化结构，并增加面向市场岗位的招聘。 这反映了科技公司利用 AI 为裁员辩护的日益增长的趋势，引发了对就业稳定性和裁员常态化的担忧。讨论凸显了科技行业规范的变化，裁员不再被视为失败的标志。 CEO 的博客文章强调了未来增长和面向市场岗位的招聘，但没有提供遣散费细节。SEC 文件中提到面向市场岗位的人数将增加。
-
-hackernews · dakrone · 6月24日 21:57 · [社区讨论](https://news.ycombinator.com/item?id=48666100)
-
-**背景**: Elastic 是一家搜索软件公司，以其开源搜索和分析引擎 Elasticsearch 而闻名。AI 驱动的重组指公司利用自动化和 AI 精简运营的战略，这在整个科技行业都很常见。这种做法通常涉及减少可自动化的岗位，同时扩大面向客户的团队。此类裁员是科技公司调整人员配置以专注于 AI 和云服务的更广泛模式的一部分。
-
-**社区讨论**: 评论者对裁员常态化表示悲哀，指出裁员曾是公司失败的标志。一些人批评公司以 AI 驱动裁员为名，同时计划在其他领域招聘，并讨论了 AI 对大公司和小公司的不同影响。
-
-**标签**: `#layoffs`, `#tech-industry`, `#ai-impact`, `#business`, `#hackernews`
-
----
-
-<a id="item-21"></a>
-## [博客文章称抄袭设计是一项技能，引发伦理争议](https://ben-mini.com/2026/stealing-is-a-skill) ⭐️ 6.0/10
-
-一篇题为《抄袭是一项技能》的博客文章声称，有条理地复制他人设计是一种宝贵的创造性学习过程，在网页设计师和开发者中引发了激烈辩论。 这场讨论凸显了通过模仿学习与为商业目的复制之间的伦理界限，反映了网络行业对设计原创性和同质化的更广泛担忧。 社区反应不一：有人将其比作写作中的临摹练习，而另一些人则批评未经许可抄袭的伦理问题，并对现代网页设计的乏味表示遗憾。该帖子的论点属于观点，而非技术突破。
-
-hackernews · bewal416 · 6月24日 13:08 · [社区讨论](https://news.ycombinator.com/item?id=48659165)
-
-**背景**: 临摹是写作中的一种传统练习，学生通过抄写大师作品来内化风格和技巧。在设计领域，为了学习而重现现有作品的做法也很常见，但学习与抄袭之间的界限常常引发争议。现代网页设计出现了趋向极简、模板化的趋势，一些人认为这削弱了创造力。该帖子重新引发了关于原创性和当代网页美学“乏味”的讨论。
-
-**社区讨论**: 一些人将这种方法比作作家使用的‘临摹’，认为这是一种合法的学习方法。另一些人则强烈反对，认为复制成品设计并不能传达创作者的底层过程，并且未经许可的商业复制超越了伦理底线。辩论还触及了对乏味、模板化网页设计的普遍看法。
-
-**标签**: `#web design`, `#copying`, `#creativity`, `#ethics`, `#front-end development`
-
----
-
-<a id="item-22"></a>
-## [Papers with Code 推出 OCR 基准概览，收录百度与 Mistral 新模型](https://www.reddit.com/r/MachineLearning/comments/1ueiam6/find_the_best_opensource_ocr_models_in_one_place/) ⭐️ 6.0/10
-
-Papers with Code 发布了一个精选的开源 OCR 模型与基准概览，重点介绍了近期发布：百度的 Unlimited OCR（30 亿参数，采用参考滑动窗口注意力机制）和 Mistral OCR 4。 该资源帮助开发者和企业快速确定最佳 OCR 模型，以便将文档转换为机器可读格式，这对于驱动智能体 RAG 应用和 AI 智能体至关重要。 该页面推荐 OlmOCRBench 和 OmniDocBench 作为关键基准，并将 Chandra OCR 2 和 Mistral OCR v4 列为性能最佳；百度的模型在 DeepSeek OCR 基础上通过 R-SWA 进行了创新。
-
-reddit · r/MachineLearning · /u/NielsRogge · 6月24日 16:26
-
-**背景**: OCR（光学字符识别）是从图像或 PDF 中提取文本的任务。智能体 RAG（检索增强生成）利用 AI 智能体在非结构化数据中检索并生成答案，通常需要 Markdown 等标准化格式的文档。Papers with Code 是一个追踪机器学习基准和代码的平台。
+**背景**: RoPE 是一种相对位置编码，通过固定频率旋转查询和键向量，使 Transformer 能捕捉相对距离。xPos 在 RoPE 基础上引入衰减机制以改善长度外推。TinyStories 数据集由 GPT-3.5/4 生成的词汇受限的简短故事组成，用于在小语言模型上进行快速实验。
 
 
 **参考链接**:
 
-- [What is Agentic RAG? | IBM](https://www.ibm.com/think/topics/agentic-rag)
+- [[2104.09864] RoFormer: Enhanced Transformer with Rotary Position Embedding](https://arxiv.org/abs/2104.09864)
+- [[2212.10554] A Length-Extrapolatable Transformer - arXiv.org GitHub - lucidrains/rotary-embedding-torch: Implementation of ... Comparison of RoPE and xPos positional embeddings used in LLMs A Length-Extrapolatable Transformer - arXiv.org XPos Length Extrapolation | lucidrains/rotary-embedding-torch ... A Length-Extrapolatable Transformer - ACL Anthology](https://arxiv.org/abs/2212.10554)
+- [[2305.07759] TinyStories: How Small Can Language Models Be ... TinyStories · Datasets GitHub - xingvu/TinyStories: Creating a mini GPT-2 model from ... noanabeshima/TinyStoriesV2 · Datasets at Hugging Face GitHub - sri9s/tinystories-language-models: Exploring the ... raymond-van/gpt-tinystories | DeepWiki](https://arxiv.org/abs/2305.07759)
 
 
-**标签**: `#OCR`, `#benchmarks`, `#open-source`, `#document-ai`, `#paperswithcode`
-
----
-
-<a id="item-23"></a>
-## [MuJoFil：结合牛顿物理与 Filament 渲染的 GPU 原生视觉 RL 模拟器](https://www.reddit.com/r/MachineLearning/comments/1uemrch/mujoco_derived_simulator_for_high_fidelity_vision/) ⭐️ 6.0/10
-
-一位开发者推出了 MuJoFil，这是一个开源模拟器，将 Nvidia 基于 MuJoCo 的 GPU 原生牛顿物理引擎与经过修改的 Google Filament 渲染器相结合，可直接在 GPU 上实现高度并行化、高保真的视觉强化学习训练。 现有的 GPU 加速 MuJoCo 变体（如 MJX）缺乏对视觉 RL 流水线的良好支持，而 NVIDIA Isaac 等替代方案需要昂贵的硬件和许可证。MuJoFil 旨在填补这一空白，提供一个开源、易用的解决方案，能够利用任何在线 3D 环境，有望降低视觉机器人学习的门槛。 该模拟器提供两个版本：基于 CPU 的版本（pip install mujofil）和启用 CUDA 的 GPU 原生版本（pip install mujofil-warp）。它支持 PBR 纹理、GLB、OpenUSD 等环境格式，开发者正在积极寻求社区反馈，然后才会公开代码仓库。
-
-reddit · r/MachineLearning · /u/MT1699 · 6月24日 19:07
-
-**背景**: MuJoCo 是一个广泛用于机器人学和机器学习研究的开源物理引擎。MJX 是其 GPU 加速版本，但专注于物理计算，缺乏原生的视觉渲染。Google Filament 是一个实时的物理基础渲染引擎，而 Nvidia 的牛顿物理引擎是 MuJoCo 物理内核的 GPU 原生衍生版本。MuJoFil 将牛顿引擎与深度修改的 Filament 结合，在 GPU 上并行渲染多个模拟环境，专门用于视觉策略训练。
-
-
-**参考链接**:
-
-- [MuJoCo - Wikipedia](https://en.wikipedia.org/wiki/MuJoCo)
-- [MuJoCo XLA (MJX) - MuJoCo Documentation](https://mujoco.readthedocs.io/en/stable/mjx.html)
-- [GitHub - google/filament: Filament is a real-time physically based rendering engine for Android, iOS, Windows, Linux, macOS, and WebGL2 · GitHub](https://github.com/google/filament)
-
-
-**标签**: `#reinforcement learning`, `#simulation`, `#robotics`, `#GPU computing`, `#machine learning`
-
----
-
-<a id="item-24"></a>
-## [生产环境 ML 模型普遍忽略抽取与投毒攻击的安全测试](https://www.reddit.com/r/MachineLearning/comments/1uddtws/are_model_security_risks_extraction_poisoning/) ⭐️ 6.0/10
-
-一位 Reddit 用户指出，许多 ML 团队在部署模型时未进行针对模型抽取和投毒风险的对抗性测试，并询问业界是否在生产环境中实际执行此类安全审查。 这揭示了 MLOps 安全实践相较于传统软件安全审查的明显滞后，随着 ML 系统在关键领域的应用日益广泛，这一缺失可能导致模型被轻易窃取或被恶意数据操纵，造成严重风险。 该帖子明确提到了模型抽取（通过 API 查询窃取模型功能）和模型投毒（向训练过程注入恶意数据），并指出对抗性测试（即系统性地使用恶意输入评估模型）在部署前常常被完全跳过。
-
-reddit · r/MachineLearning · /u/Xorphian · 6月23日 10:52
-
-**背景**: 模型抽取攻击是指攻击者通过 API 反复查询目标模型，利用其输出构建一个功能相似的复制模型，从而窃取知识产权。模型投毒攻击则是在训练或再训练过程中注入恶意数据，以破坏模型的行为。对抗性测试是一种系统性地使用恶意输入评估模型安全性的方法，但在 MLOps 流程中尚未成为常规实践。
-
-
-**参考链接**:
-
-- [Stealing AI Models Through the API: A Practical Model Extraction Attack | Praetorian](https://www.praetorian.com/blog/stealing-ai-models-through-the-api-a-practical-model-extraction-attack/)
-- [Data Integrity & Model Poisoning | Tryhackme | by Aaron | Medium](https://medium.com/@AT24/data-integrity-model-poisoning-tryhackme-12859f52f8ae)
-- [Adversarial Testing for Generative AI | Machine Learning | Google for Developers](https://developers.google.com/machine-learning/guides/adv-testing)
-
-
-**标签**: `#machine learning security`, `#adversarial testing`, `#model extraction`, `#model poisoning`, `#production ML`
+**标签**: `#positional embeddings`, `#transformers`, `#RoPE`, `#deep learning`, `#LLMs`
 
 ---
 
