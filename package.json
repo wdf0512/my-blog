@@ -7,7 +7,8 @@
     "dev:clean": "pkill -f \"defang-blog-vibe/node_modules/.bin/velite --watch\" || true && pkill -f \"defang-blog-vibe/node_modules/.bin/next dev\" || true",
     "build": "velite && next build",
     "start": "next start",
-    "lint": "next lint",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "format": "prettier --write \"src/**/*.{ts,tsx,js,jsx,json,css,md}\""
   },
   "dependencies": {

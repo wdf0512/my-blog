@@ -33,8 +33,54 @@ const clashDisplay = localFont({
 });
 
 export const metadata: Metadata = {
-  title: "Defang's Secret",
-  description: 'Insights from a developer\'s journey - exploring tech, indie hacking, and web development',
+  metadataBase: new URL('https://defangweng.xyz'),
+  title: {
+    default: "Defang's Secret",
+    template: "%s | Defang's Secret",
+  },
+  description:
+    "Insights from a developer's journey - exploring tech, indie hacking, and web development",
+  keywords: ['Defang Weng', 'web development', 'React', 'Next.js', 'indie hacking', 'tech blog'],
+  authors: [{ name: 'Defang Weng', url: 'https://defangweng.xyz' }],
+  creator: 'Defang Weng',
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://defangweng.xyz',
+    siteName: "Defang's Secret",
+    title: "Defang's Secret",
+    description:
+      "Insights from a developer's journey - exploring tech, indie hacking, and web development",
+    images: [
+      {
+        url: '/icons/tree.png',
+        width: 512,
+        height: 512,
+        alt: "Defang's Secret",
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: "Defang's Secret",
+    description:
+      "Insights from a developer's journey - exploring tech, indie hacking, and web development",
+    images: ['/icons/tree.png'],
+  },
+  alternates: {
+    canonical: 'https://defangweng.xyz',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
   icons: {
     shortcut: '/icons/favicon.ico',
     icon: [
@@ -42,9 +88,7 @@ export const metadata: Metadata = {
       { url: '/icons/favicon-32x32.png', sizes: '32x32', type: 'image/png' },
       { url: '/icons/tree.png', sizes: '512x512', type: 'image/png' },
     ],
-    apple: [
-      { url: '/icons/tree.png', sizes: '180x180', type: 'image/png' },
-    ],
+    apple: [{ url: '/icons/tree.png', sizes: '180x180', type: 'image/png' }],
   },
 };
 

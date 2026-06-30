@@ -26,9 +26,40 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     };
   }
 
+  const postUrl = `https://defangweng.xyz/blog/${post.slug}`;
+
   return {
-    title: `${post.title} - Creative Coding & Conversations`,
+    title: post.title,
     description: post.description,
+    authors: [{ name: 'Defang Weng', url: 'https://defangweng.xyz' }],
+    openGraph: {
+      type: 'article',
+      url: postUrl,
+      siteName: "Defang's Secret",
+      title: post.title,
+      description: post.description,
+      locale: 'en_US',
+      publishedTime: post.date,
+      authors: ['Defang Weng'],
+      tags: post.tags,
+      images: [
+        {
+          url: '/icons/tree.png',
+          width: 512,
+          height: 512,
+          alt: post.title,
+        },
+      ],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: post.title,
+      description: post.description,
+      images: ['/icons/tree.png'],
+    },
+    alternates: {
+      canonical: postUrl,
+    },
   };
 }
 
@@ -50,8 +81,42 @@ export default async function PostPage({ params }: Props) {
     )
     .slice(0, 3);
 
+  const postUrl = `https://defangweng.xyz/blog/${post.slug}`;
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': postUrl,
+    },
+    headline: post.title,
+    description: post.description,
+    image: 'https://defangweng.xyz/icons/tree.png',
+    author: {
+      '@type': 'Person',
+      name: 'Defang Weng',
+      url: 'https://defangweng.xyz',
+    },
+    publisher: {
+      '@type': 'Organization',
+      name: "Defang's Secret",
+      logo: {
+        '@type': 'ImageObject',
+        url: 'https://defangweng.xyz/icons/tree.png',
+      },
+    },
+    datePublished: post.date,
+    dateModified: post.date,
+    keywords: post.tags?.join(', '),
+    url: postUrl,
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <article className="container mx-auto px-4 py-12 md:py-16 max-w-4xl">
         {/* Back button */}
         <Link

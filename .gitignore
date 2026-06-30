@@ -71,3 +71,4 @@ package-lock.json
 .claude/
 .mcp.json
 .playwright-mcp/
+.omo/
