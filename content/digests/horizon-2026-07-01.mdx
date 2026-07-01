@@ -3,428 +3,483 @@ title: "AI 技术情报 · 2026-07-01"
 slug: horizon-2026-07-01
 date: 2026-07-01
 published: true
-description: "从 31 条内容中精选 19 条 AI/ML 重要动态"
-item_count: 19
-total_fetched: 31
+description: "从 35 条内容中精选 21 条 AI/ML 重要动态"
+item_count: 21
+total_fetched: 35
 ---
 
-> 从 31 条内容中筛选出 19 条重要资讯。
+> 从 35 条内容中筛选出 21 条重要资讯。
 
 ---
 
-1. [Claude Sonnet 5 发布：Anthropic 最具代理能力的模型，具备规划与工具使用功能](#item-1) ⭐️ 9.0/10
-2. [美国商务部解除对 Claude Fable 5 和 Mythos 5 的出口管制](#item-2) ⭐️ 9.0/10
-3. [谷歌智能体 AI 同行评审处理 ICML/STOC 近万篇论文，正式论文发布](#item-3) ⭐️ 9.0/10
-4. [Claude Code 嵌入隐写标记以追踪模型蒸馏](#item-4) ⭐️ 8.0/10
-5. [Anthropic 推出面向科学家的 AI 工作台 Claude Science](#item-5) ⭐️ 8.0/10
-6. [Kubernetes 组件被移植到浏览器中用于教育](#item-6) ⭐️ 8.0/10
-7. [1100 万篇论文的语义相似度与时间切片探索地图](#item-7) ⭐️ 8.0/10
-8. [Meta 的 Brain2Qwerty：非侵入式脑电波打字新方案](#item-8) ⭐️ 7.0/10
-9. [Nano Banana 2 Lite：更快的 AI 图像生成与文本渲染](#item-9) ⭐️ 7.0/10
-10. [自制毫米波雷达未能检测石棉，但提供工程见解](#item-10) ⭐️ 7.0/10
-11. [CERN 启动长停机 3 期，全面升级 LHC 至 10 倍碰撞能力](#item-11) ⭐️ 7.0/10
-12. [shot-scraper 1.10 发布视频命令，通过故事板文件录制代理演示](#item-12) ⭐️ 7.0/10
-13. [Ornith-1.0 发布：面向自主编程的开源自搭建大语言模型](#item-13) ⭐️ 7.0/10
-14. [REAP：从实际编程交互中自动生成编码代理基准](#item-14) ⭐️ 7.0/10
-15. [EML 树被证明是通用逼近器](#item-15) ⭐️ 7.0/10
-16. [HEMA 爱好者提出开放数据集助力计算机视觉追踪剑术动作](#item-16) ⭐️ 7.0/10
-17. [HTML 表格提取工具将粘贴表格转换为多种格式](#item-17) ⭐️ 6.0/10
-18. [EACL 2027 改革 ARR 审稿流程：作者回复和讨论分阶段、延长时间](#item-18) ⭐️ 6.0/10
-19. [实例表示学习中为何用 NCE 而非直接近似 softmax 分母](#item-19) ⭐️ 6.0/10
+1. [谷歌 AI 审稿系统处理 ICML/STOC 上万篇论文，误差检测提升 34%](#item-1) ⭐️ 9.0/10
+2. [Claude Code 秘密嵌入隐写术标记引发透明性争议](#item-2) ⭐️ 8.0/10
+3. [美国商务部解除对 Claude Fable 5 和 Mythos 5 的出口管制](#item-3) ⭐️ 8.0/10
+4. [Anthropic 推出 Claude Science，为科学家打造的 AI 工作台](#item-4) ⭐️ 8.0/10
+5. [Anthropic 发布 Claude Sonnet 5，性能接近 Opus 4.8 且价格更低](#item-5) ⭐️ 8.0/10
+6. [REAP：从交互式生产使用中自动构建编码代理基准](#item-6) ⭐️ 8.0/10
+7. [Google 开源代码迁移工具 Copybara 引发开发者关注](#item-7) ⭐️ 7.0/10
+8. [谷歌 DeepMind 发布蒸馏版快速图像生成模型 Nano Banana 2 Lite](#item-8) ⭐️ 7.0/10
+9. [Mistral 发布 Leanstral 1.5，专为 Lean 4 自动定理证明设计](#item-9) ⭐️ 7.0/10
+10. [Meta AI 发布 Brain2Qwerty：非侵入式脑电转文字解码器，开源代码与数据集](#item-10) ⭐️ 7.0/10
+11. [CERN 启动 LHC 第三次长停机，升级至 HL-LHC](#item-11) ⭐️ 7.0/10
+12. [Kubernetes 通过 WebAssembly 移植到浏览器，实现交互式演示](#item-12) ⭐️ 7.0/10
+13. [shot-scraper video 命令：录制基于 Playwright 的代理演示](#item-13) ⭐️ 7.0/10
+14. [Ornith-1.0：MIT 许可的自脚手架编码智能体模型](#item-14) ⭐️ 7.0/10
+15. [80TB+天文数据集现可在笔记本电脑上交叉匹配](#item-15) ⭐️ 7.0/10
+16. [Cerebras 与 OpenAI 200 亿美元交易扼杀小公司 API 候补名单](#item-16) ⭐️ 7.0/10
+17. [Simon Willison 推出 HTML 表格提取工具，支持多种格式转换](#item-17) ⭐️ 6.0/10
+18. [千万篇论文语义相似度时间地图](#item-18) ⭐️ 6.0/10
+19. [CVIL 免费计算机视觉面试清单新增分割、OCR 与 VLM 专项](#item-19) ⭐️ 6.0/10
+20. [EML 树被证明为连续函数的通用逼近器](#item-20) ⭐️ 6.0/10
+21. [Reddit 用户询问递归自我改进作为博士课题的可行性](#item-21) ⭐️ 6.0/10
 
 ---
 
 <a id="item-1"></a>
-## [Claude Sonnet 5 发布：Anthropic 最具代理能力的模型，具备规划与工具使用功能](https://www.anthropic.com/news/claude-sonnet-5) ⭐️ 9.0/10
+## [谷歌 AI 审稿系统处理 ICML/STOC 上万篇论文，误差检测提升 34%](https://www.reddit.com/r/MachineLearning/comments/1uio9rb/googles_agentic_peerreviewer_handled_10k_papers/) ⭐️ 9.0/10
 
-Anthropic 发布了 Claude Sonnet 5，这是一款强调代理能力的新模型，支持规划和工具使用，能够自主执行多步骤任务。它是 Sonnet 系列的最新版本，旨在以比 Opus 模型更低的成本提供先进的代理功能。 该发布标志着向能够处理复杂工作流的代理 AI 模型的转变，可能改变开发者将 AI 集成到应用程序中的方式。围绕成本效益的争论凸显了性能与费用之间的权衡，这将影响代理驱动任务的模型选择。 Sonnet 5 的性能达到 GLM-5.2 水平，成本是后者的两倍，但速度也是两倍，且在高努力级别下其单次任务成本可能超过 Opus。其弱点包括常识问答、工具调用错误和谜题解决，并且可能出现过度的安全拒绝。
+谷歌在 ICML 和 STOC 两大顶会上部署了智能体 AI 审稿系统，审查了约 10,000 篇论文，平均每篇仅需 30 分钟，且正式论文显示其捕捉的数学错误比零样本提示多 34%。 这表明 AI 能够大规模辅助人类同行评审，提升科学出版的质量与效率。相比零样本提示，误差检测提升 34%说明智能体工作流显著优于简单 AI 方法，可能重塑学术同行评审流程。 该系统采用智能体 AI 工作流，而非单次提示，可以自主追求目标并使用工具。每篇论文 30 分钟的处理时间和数学错误检测率提升 34%是核心指标。论文已正式发布于 arXiv:2606.28277。
 
-hackernews · marinesebastian · 6月30日 17:59 · [社区讨论](https://news.ycombinator.com/item?id=48736605)
+reddit · r/MachineLearning · /u/Justgototheeffinmoon · 6月29日 10:05
 
-**背景**: 代理 AI 指能够自主追求目标、使用浏览器和终端等工具并执行多步骤计划的系统。像 Claude 这样的大型语言模型是此类代理的核心推理引擎。Sonnet 系列是 Anthropic 的中端产品线，在能力和成本之间取得平衡，而 Opus 则是高端模型。
+**背景**: 智能体 AI（AI agent）是指能够自主追求目标、使用工具并按不同自主程度采取行动的系统，通常受人类设定的约束。零样本提示是一种不提供任何示例、仅凭预训练知识直接执行任务的提示技术。ICML（国际机器学习大会）和 STOC（计算理论研讨会）是计算机科学领域的顶级会议，其同行评审流程对保证研究质量至关重要，但因投稿量大、审稿负担重而面临挑战。
 
 
 **参考链接**:
 
-- [Agentic AI](https://en.wikipedia.org/wiki/Agentic_AI)
-- [What is Agentic AI? | IBM](https://www.ibm.com/think/topics/agentic-ai)
+- [AI agent - Wikipedia](https://en.wikipedia.org/wiki/AI_agent)
+- [Zero-shot prompting](https://en.wikipedia.org/wiki/Zero-shot_prompting)
 
 
-**社区讨论**: 社区普遍质疑 Sonnet 5 的成本效益，指出 Opus 在每美元性能上往往更优，特别是在高努力级别下。部分用户认为其性能与竞品相当，但工具调用可靠性较差。还有人担心该模型对代理能力的侧重会降低其在辅助开发中的实用性，并对其安全拒绝机制干扰合法任务表示担忧。
-
-**标签**: `#AI`, `#LLM`, `#Anthropic`, `#Claude`, `#agentic`
+**标签**: `#AI`, `#peer review`, `#automation`, `#machine learning`, `#scientific publishing`
 
 ---
 
 <a id="item-2"></a>
-## [美国商务部解除对 Claude Fable 5 和 Mythos 5 的出口管制](https://twitter.com/AnthropicAI/status/2072106151890809341) ⭐️ 9.0/10
+## [Claude Code 秘密嵌入隐写术标记引发透明性争议](https://thereallo.dev/blog/claude-code-prompt-steganography) ⭐️ 8.0/10
 
-美国商务部已解除对 Anthropic 公司新发布的 Claude Fable 5 和 Mythos 5 模型的出口限制，此前该公司配合采取了一系列合规措施。这一决定撤销了 2026 年 6 月 9 日这些模型发布后短暂实施的管制。 这一变化标志着 AI 出口管制可能放宽，将加速先进 AI 模型的全球采用，并提升美国竞争力。它也让依赖 Anthropic 模型的企业松了口气，减少了监管不确定性，鼓励企业整合。 在 Anthropic 解决安全顾虑后，美国商务部于 2026 年 6 月 30 日致信首席计算官 Tom Brown，宣布解除出口管制。值得注意的是，Claude Mythos 5 专为软件漏洞检测设计，已由英国 AI 安全研究所测试，在前沿模型中排名最高。
-
-hackernews · Pragmata · 6月30日 23:55 · [社区讨论](https://news.ycombinator.com/item?id=48740771)
-
-**背景**: Anthropic 是一家以 Claude 系列大语言模型闻名的领先 AI 公司。AI 出口管制旨在限制可能被滥用于网络攻击等危害的强模型传播。对这两款模型解除管制，反映了监管方式的转变，可能受到中国 AI 模型快速进步和维持美国领先地位的影响。
-
-
-**参考链接**:
-
-- [Claude Fable 5 and Claude Mythos 5 \ Anthropic](https://www.anthropic.com/news/claude-fable-5-mythos-5)
-- [Introducing Claude Fable 5 and Claude Mythos 5 - Claude Platform Docs](https://platform.claude.com/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5)
-- [Claude Mythos - Wikipedia](https://en.wikipedia.org/wiki/Claude_Mythos)
-
-
-**社区讨论**: 社区评论情绪复杂：有人认为出口管制的损害已经造成，削弱了美国 AI 模型在关键业务中的信任；另有人指出中国模型证明资本效率不是一切，市场将自行修正。商务部信函确认了 Anthropic 的安全努力，部分用户考虑重新订阅，也有人强调信任是 AI 业务的核心货币。
-
-**标签**: `#AI regulation`, `#export controls`, `#Anthropic`, `#policy`, `#HN discussion`
-
----
-
-<a id="item-3"></a>
-## [谷歌智能体 AI 同行评审处理 ICML/STOC 近万篇论文，正式论文发布](https://www.reddit.com/r/MachineLearning/comments/1uio9rb/googles_agentic_peerreviewer_handled_10k_papers/) ⭐️ 9.0/10
-
-谷歌在 ICML 和 STOC 两大顶级会议上部署了智能体 AI 系统，评审了约一万篇论文，每篇耗时 30 分钟，新发表的正式论文显示其发现的数学错误比零样本提示多出 34%。 这为学术会议规模上的 AI 辅助科学评审树立了先例，可能通过减少人工负担和提高错误检测率来变革同行评审流程，加速并提升学术出版质量。 该系统采用智能体架构，能自主使用工具进行多步推理，而非一次性提示；30 分钟的评审时间和较零样本提示 34%的提升体现了智能体设计的优势。论文发表在 arXiv:2606.28277。
-
-reddit · r/MachineLearning · /u/Justgototheeffinmoon · 6月29日 10:05
-
-**背景**: 智能体 AI（Agentic AI）指能够自主使用工具、采取行动实现目标的 AI 系统，区别于简单的大语言模型单次提示。零样本提示（zero-shot prompting）仅给出任务描述而不提供示例。ICML 和 STOC 分别是机器学习与理论计算机科学领域的顶级会议，同行评审对论文质量至关重要。该研究表明智能体 AI 在复杂的专业任务上能超越简单提示方法。
-
-
-**参考链接**:
-
-- [Agentic AI](https://en.wikipedia.org/wiki/Agentic_AI)
-- [Zero-shot prompting](https://en.wikipedia.org/wiki/Zero-shot_prompting)
-
-
-**标签**: `#AI peer review`, `#agentic AI`, `#academic conferences`, `#error detection`, `#Google`
-
----
-
-<a id="item-4"></a>
-## [Claude Code 嵌入隐写标记以追踪模型蒸馏](https://thereallo.dev/blog/claude-code-prompt-steganography) ⭐️ 8.0/10
-
-Anthropic 的 Claude Code 工具被发现秘密在 API 请求中嵌入隐写标记，用于追踪中国公司的模型蒸馏行为，引发了严重的透明度问题。 这一发现揭示了 AI 工具隐藏的监控能力，削弱了用户信任，并凸显了服务提供商对工具行为进行诚实披露的伦理必要性。 该隐写实现技术粗糙、容易被检测到，但其设计初衷是在未向用户做出任何事先披露的情况下监控未经授权的模型蒸馏。
+Anthropic 的 Claude Code 工具被发现在其 API 请求中秘密嵌入隐写术标记，用以检测和防止滥用，例如中国公司未经授权的模型蒸馏。 这种不透明的行为引发了用户对信任和透明度的重大担忧，因为它涉及在未明确告知的情况下暗中监控用户活动，可能影响依赖该工具进行合法开发的用户。 据报道，隐写术的实现较为粗糙，容易被逆向工程检测到，暗示其部署仓促。这些标记旨在识别涉嫌模型蒸馏的中国公司的使用，但如何影响正常开发人员尚不明确。
 
 hackernews · kirushik · 6月30日 15:44 · [社区讨论](https://news.ycombinator.com/item?id=48734373)
 
-**背景**: 隐写术是一种将信息隐藏在普通数据（如文本、图像）中以避免被发现的技术。模型蒸馏是利用大模型的输出训练小模型，以降低成本和部署规模的技术。此次事件中，Claude Code 在请求中嵌入了隐藏标识符，用于追踪输出是否被用于蒸馏，尤其是针对中国实体。
+**背景**: 隐写术是一种将信息隐藏在另一条消息或文件中，使隐藏数据的存在不易被察觉的技术。Claude Code 是 Anthropic 开发的一款 AI 编码代理，能够读取代码库、编辑文件并运行命令。它被发现在请求中秘密嵌入隐写标记，这凸显了潜在的隐私和信任问题。
 
 
 **参考链接**:
 
 - [Steganography](https://en.wikipedia.org/wiki/Steganography)
-- [Model distillation](https://en.wikipedia.org/wiki/Model_distillation)
+- [Claude Code](https://en.wikipedia.org/wiki/Claude_Code)
 
 
-**社区讨论**: 社区评论意见分歧：有人批评 Anthropic 缺乏透明度且实现粗糙，认为这破坏了信任；另一些人则认为这是保护知识产权免受中国公司侵害的必要措施。许多人还对 AI 工具的整体可信度表达了担忧。
+**社区讨论**: 社区反应不一。一些人淡化其严重性，认为意图明确是为了对抗中国公司的模型蒸馏，不会伤害正常开发者。另一些人批评缺乏透明度，称这是对信任的背叛。有人指出实现粗糙，而另一些人则提倡使用 Codex CLI 等开源替代品以避免此类隐藏行为。
 
-**标签**: `#security`, `#steganography`, `#Anthropic`, `#AI`, `#transparency`
+**标签**: `#AI`, `#steganography`, `#transparency`, `#Anthropic`, `#security`
+
+---
+
+<a id="item-3"></a>
+## [美国商务部解除对 Claude Fable 5 和 Mythos 5 的出口管制](https://twitter.com/AnthropicAI/status/2072106151890809341) ⭐️ 8.0/10
+
+2026 年 6 月 30 日，美国商务部解除了对 Anthropic 的 Claude Fable 5 和 Mythos 5 的出口管制，但模型新增了安全分类器，会阻止网络安全任务并让编程任务回退至更旧的 Opus 4.8 模型。 这一解禁标志着重大政策转变，但针对网络安全和编程的限制削弱了人们对美国 AI 模型可预测性的信任，使得企业难以依赖其执行关键任务；同时也凸显了 AI 出口管制缺乏明确法律框架的问题。 Claude Fable 5 是 Anthropic 最强大的推理和智能体工作模型，Mythos 5 能力相同但仅通过 Project Glasswing 限量发布。新添加的分类器专门针对网络安全任务，编程任务则回退至 Opus 4.8。商务部致 Anthropic 首席计算官 Tom Brown 的信件（日期分别为 6 月 12 日、26 日和 30 日）表明政府在短时间内密集干预。
+
+hackernews · Pragmata · 6月30日 23:55 · [社区讨论](https://news.ycombinator.com/item?id=48740771)
+
+**背景**: Claude Fable 5 是 Anthropic 用于复杂推理和智能体自动化的前沿模型，Mythos 5 则是专为漏洞发现设计的模型，因安全考量仅以预览形式限量发布。美国政府此前以国家安全为由对这些模型实施出口管制，但由于缺乏明确法律框架，给 AI 行业带来了不确定性。
+
+
+**参考链接**:
+
+- [Claude Fable 5](https://en.wikipedia.org/wiki/Claude_Fable_5)
+- [Introducing Claude Fable 5 and Claude Mythos 5 - Claude Platform Docs](https://platform.claude.com/docs/en/about-claude/models/introducing-claude-fable-5-and-claude-mythos-5)
+
+
+**社区讨论**: 社区反应强烈，用户指出 Fable 5 因编程限制而无法用于实际开发，且政府不可预测的干预已严重损害了对美国 AI 公司的信任。许多人认为，在没有明确法律的情况下，企业无法安全地依赖这些模型，临时管制会阻碍投资。商务部信件发给首席计算官而非 CEO 也被视为不寻常。
+
+**标签**: `#AI`, `#export controls`, `#Anthropic`, `#regulation`, `#trust`
+
+---
+
+<a id="item-4"></a>
+## [Anthropic 推出 Claude Science，为科学家打造的 AI 工作台](https://claude.com/product/claude-science) ⭐️ 8.0/10
+
+Anthropic 于 2026 年 6 月 30 日推出 Claude Science，这是一款可定制的 AI 工作台，集成数据库和计算工具，通过本地服务器运行以实现安全数据访问，支持可审计、可复现的研究流程。 该产品旨在为制药、生物技术等领域的科学家提供统一的工作环境，减少在多工具间切换的麻烦；其本地服务器架构解决了机构严密安全环境中数据访问的难题，有望加速计算研究和数据科学工作流程。 Claude Science 是一个工作流导向的产品，而非新模型；它能生成可审计的分析产物，并支持灵活的计算资源访问，包括机构集群。其本地服务器和网页界面设计尤其适合高度管制、限制直接设备连接的制药环境。
+
+hackernews · lebovic · 6月30日 17:07 · [社区讨论](https://news.ycombinator.com/item?id=48735770)
+
+**背景**: Anthropic 是推出大语言模型 Claude 的 AI 公司，与 OpenAI 的 GPT 系列竞争。此前，Anthropic 发布了面向软件开发的 Claude Code 助手。Claude Science 将类似的 AI 辅助方法扩展到科研领域，提供一个连接数据库、计算流程和机构高性能计算（HPC）集群的工作台，使研究人员能在安全环境中进行数据分析、建模和可视化。
+
+
+**参考链接**:
+
+- [Claude Science, an AI workbench for scientists, is now available](https://www.anthropic.com/news/claude-science-ai-workbench)
+- [Claude Science is Anthropic’s newest flagship product | MIT Technology Review](https://www.technologyreview.com/2026/06/30/1139987/claude-science-is-anthropics-newest-flagship-product/)
+- [Anthropic’s Claude Science bets on workflow, not a new model, to win over scientists | TechCrunch](https://techcrunch.com/2026/06/30/anthropics-claude-science-bets-on-workflow-not-a-new-model-to-win-over-scientists/)
+
+
+**社区讨论**: 社区讨论中对本地服务器架构表现出高度兴趣，因为它能在高度管制的制药环境中使用，并整合了机构高性能计算集群。部分用户指出该产品更偏向数据科学而非广义的“科学”，早期测试显示其方法可行但较为初级。总体反响谨慎乐观，许多人看到了统一工作流和安全数据访问的价值。
+
+**标签**: `#AI`, `#data-science`, `#Anthropic`, `#Claude`, `#product-launch`
 
 ---
 
 <a id="item-5"></a>
-## [Anthropic 推出面向科学家的 AI 工作台 Claude Science](https://claude.com/product/claude-science) ⭐️ 8.0/10
+## [Anthropic 发布 Claude Sonnet 5，性能接近 Opus 4.8 且价格更低](https://simonwillison.net/2026/Jun/30/claude-sonnet-5/#atom-everything) ⭐️ 8.0/10
 
-Anthropic 推出了 Claude Science，一个集成机构 HPC 集群和数据库的 AI 驱动工作台，为计算研究提供统一环境。其显著特点是本地服务器架构和基于 Web 的 UI，使其能在制药实验室等高度安全的环境中运行。 该发布通过提供一个可连接机构数据和计算资源的安全统一工作空间，减少了在不同工具间切换的摩擦，有望显著加速制药、生物信息学等领域的科研进程。 Claude Science 通过本地服务器和 Web UI 运行，适合隔离网络，并集成了许多数据库和 HPC 工具。早期用户测试表明，它能处理 RNAi 设计等任务，但可能产生初级方案，且 AI 自身也承认其生产用途的局限性。
+Anthropic 发布了 Claude Sonnet 5，性能接近 Opus 4.8，但价格更低，采用了新分词器使 token 数量增加约 30%，并有意降低了网络攻击能力以避免美国政府阻止。 该模型以较低成本提供接近高端 LLM 的能力，可能使先进 AI 更易获取，而有意降低网络攻击能力则反映了应对政府监管的策略，可能影响其他 AI 实验室发布强大模型的方式。 Sonnet 5 拥有 100 万 token 上下文窗口、最大 12.8 万输出 token，默认开启自适应思考，单 token 价格与 Sonnet 4.6 相同，但因新分词器导致有效价格上涨约 30%；不再支持 temperature、top_p、top_k 等采样参数。
 
-hackernews · lebovic · 6月30日 17:07 · [社区讨论](https://news.ycombinator.com/item?id=48735770)
+rss · Simon Willison · 6月30日 21:23
 
-**背景**: 在制药等领域的科研中，机构 HPC 集群常被用于计算密集型任务，但这些环境出于数据安全考虑通常与外部网络隔离。数据科学家常需在 Jupyter Notebook、数据库和流程管理器等多个工具间切换来进行分析。Claude Science 旨在通过 AI 辅助统一这些工作流，提供一个可连接安全基础设施的单一工作台。
+**背景**: Claude Sonnet 5 是继 Opus 4.8 和 Mythos 5 之后的模型。Mythos 5 因其强大的网络能力曾被美国政府阻止，后经谈判部分解禁。Anthropic 降低了 Sonnet 5 的网络能力以避免类似限制，将其定位为在该领域弱于 Mythos 5。
 
 
 **参考链接**:
 
-- [Claude Science, an AI workbench for scientists \ Anthropic](https://www.anthropic.com/news/claude-science-ai-workbench)
-- [Anthropic releases Claude Science, a product aimed at researchers, the pharma industry](https://www.statnews.com/2026/06/30/anthropic-release-claude-science-ceo-dario-amodei/)
-- [Anthropic’s Claude Science bets on workflow, not a new model, to win over scientists | TechCrunch](https://techcrunch.com/2026/06/30/anthropics-claude-science-bets-on-workflow-not-a-new-model-to-win-over-scientists/)
+- [Anthropic Debuts Claude Fable 5 and Mythos 5](https://natural20.beehiiv.com/p/anthropic-debuts-claude-fable-5-and-mythos-5)
+- [Anthropic Relaunches Mythos 5](https://aichief.com/news/anthropic-relaunches-mythos-5/)
 
 
-**社区讨论**: 评论者赞赏了面向受限环境的本地服务器架构，但指出该工具主要面向数据科学（pandas、图表）而非更广泛的科学计算。早期测试显示，它在专业任务中能产生可用但初级的结果，且 AI 自身建议不要用于生产。整体上，社区认为这是工作流整合的有益尝试，但尚不能替代专家工作。
+**社区讨论**: 评论者质疑其价值主张：有人指出在中等或高难度任务中，Opus 4.8 成本效益更高；基准测试显示 Sonnet 5 性能与 GLM-5.2 相当但成本翻倍。还有人指出它在常识问答、工具调用和谜题解决方面表现不佳，并担心针对自主代理的优化可能损害开发者体验。
 
-**标签**: `#Anthropic`, `#Claude`, `#scientific-computing`, `#AI-tools`, `#data-science`
+**标签**: `#AI`, `#Claude`, `#Anthropic`, `#Model Release`, `#LLM`
 
 ---
 
 <a id="item-6"></a>
-## [Kubernetes 组件被移植到浏览器中用于教育](https://ngrok.com/blog/i-ported-kubernetes-to-the-browser) ⭐️ 8.0/10
+## [REAP：从交互式生产使用中自动构建编码代理基准](https://www.reddit.com/r/MachineLearning/comments/1uk713d/reap_automatic_curation_of_coding_agent/) ⭐️ 8.0/10
 
-一名开发者利用 WebAssembly 将 Kubernetes 组件移植到浏览器中运行，创建了名为 'webernetes' 的开源项目，可模拟集群行为并用于测试 AI 生成的代码。 这使得 Kubernetes 学习更加便捷，无需后端即可在浏览器中动手实验，并展示了一种验证 AI 生成代码是否符合真实 Kubernetes 行为的新颖工作流，这对 LLM 辅助工程越来越重要。 该项目名为 'webernetes'（已在 GitHub 开源），采用 WebAssembly 运行 Kubernetes 组件，但并非真正运行容器，而是模拟 API 服务器，服务需自定义连接器。其主要用途是概念和架构教学，而非生产部署。
+该论文提出了 REAP 流水线，通过基于 LLM 的过滤和执行审计，从真实的开发者与代理交互会话中自动构建可执行的编码代理基准。 这解决了编码代理评估中缺乏真实多样化任务的关键问题，因为现有静态基准常无法反映真实使用模式，可能推动 AI 编码助手更稳健和实用化。 REAP 采用多个过滤阶段，包括基于 LLM 的任务相关性检查与执行审计，以确保基准的可靠性。该论文发表于 2026 年 5 月。
 
-hackernews · peterdemin · 6月30日 20:48 · [社区讨论](https://news.ycombinator.com/item?id=48738985)
+reddit · r/MachineLearning · /u/julian88888888 · 7月1日 00:50
 
-**背景**: Kubernetes 是用于管理容器化应用的开源平台，通常需要服务器集群。WebAssembly 是一种可移植的二进制格式，能在浏览器中高效执行代码。将 Kubernetes 移植到浏览器意味着利用 WebAssembly 编译其组件，在浏览器中模拟集群环境，但由于浏览器限制，无法真正运行容器。
+**背景**: 编码代理是能交互式编写、调试和执行代码的 AI 系统。对其进行基准测试对衡量进展至关重要，但构建反映真实世界复杂性的基准颇具挑战。REAP 利用开发者已在生产环境中使用编码代理时产生的数据，捕捉真实任务和交互。
 
 
 **参考链接**:
 
-- [WebAssembly](https://en.wikipedia.org/wiki/WebAssembly)
+- [REAP: Automatic Curation of Coding Agent Benchmarks from Interactive Production Usage](https://arxiv.org/html/2604.01527)
 
 
-**社区讨论**: 社区称赞了该项目的教育价值，认为它可用于学习 Kubernetes 概念和验证 AI 生成代码。有评论者指出它并未真正运行容器，而是模拟 API，对“移植”的定义提出疑问。也有人对 LLM 辅助工作流和验证方式表示兴奋，同时有人指出其实际应用的限制。
-
-**标签**: `#kubernetes`, `#browser`, `#webassembly`, `#educational`, `#devtools`
+**标签**: `#benchmarks`, `#coding agents`, `#evaluation`, `#machine learning`, `#software engineering`
 
 ---
 
 <a id="item-7"></a>
-## [1100 万篇论文的语义相似度与时间切片探索地图](https://www.reddit.com/r/MachineLearning/comments/1ujn3u5/a_map_of_the_latest_11_million_papers_split_by/) ⭐️ 8.0/10
+## [Google 开源代码迁移工具 Copybara 引发开发者关注](https://github.com/google/copybara) ⭐️ 7.0/10
 
-发布了一个免费交互式地图，对 1100 万篇科学论文使用 SPECTER 2 嵌入和 UMAP 按语义相似度与时间切片聚类，可探索宏观研究趋势。 该工具帮助研究人员应对海量文献，可视化识别新兴趋势和跨学科联系，可能改变文献发现和文献计量学。 该地图基于 OpenAlex 和 Arxiv 的 1100 万篇论文，使用 SPECTER 2 编码标题和摘要，UMAP 投影到二维，并以高密度峰周围的 Voronoi 边界生成标签。支持关键词和语义搜索，有分析层对机构、作者和主题排名，还包含时间滑块和每日自动更新。
+Google 开源的 Copybara 工具旨在在代码仓库之间迁移和同步代码，近期在 Hacker News 上引发了关于其实际用途和替代方案的讨论。 它解决了团队在管理 monorepo 或跨多个仓库共享代码时常遇到的痛点，提供了一种无需完整库依赖管理的轻量级替代方案。 用户反映它最常用于简单的单向导出并保留历史记录，而双向同步则较为复杂且常被回避。该工具常与 Rust 使用的 Josh 和 Meta 已归档的 fbshipit 等工具进行比较。
 
-reddit · r/MachineLearning · /u/icannotchangethename · 6月30日 11:55
+hackernews · reconnecting · 6月30日 23:45 · [社区讨论](https://news.ycombinator.com/item?id=48740698)
 
-**背景**: SPECTER 2 是一种基于论文标题和摘要生成科学文献嵌入的语言模型，可捕捉语义相似度。UMAP（均匀流形近似与投影）是一种降维技术，将高维数据投影到二维，同时保留局部和全局结构，常用于可视化。该地图在二维空间的高密度峰周围应用 Voronoi 图，生成可读的聚类标签。
+**背景**: Monorepo 是一种将多个项目存储在单一仓库中的版本控制策略，被 Google 等公司用于管理大型代码库。Copybara 帮助将此类 monorepo 中的部分代码提取为独立仓库，或在仓库之间同步代码，这在子项目大到需要独立或代码需要无紧耦合共享时尤为重要。
 
 
 **参考链接**:
 
-- [UMAP: Uniform Manifold Approximation and Projection for Dimension Reduction — umap 0.5.8 documentation](https://umap-learn.readthedocs.io/)
+- [Monorepo](https://en.wikipedia.org/wiki/Monorepo)
+- [Monorepo Explained](https://monorepo.tools/)
 
 
-**标签**: `#literature-mapping`, `#semantic-embeddings`, `#visualization`, `#research-tools`, `#UMAP`
+**社区讨论**: 总体而言，用户认为 Copybara 在简单导出场景下很实用，但双向配置较为麻烦。讨论中提到了 Josh 和 fbshipit 等替代方案，也有开发者自行构建了定制解决方案。新用户则关心其潜在缺点和最佳实践。
+
+**标签**: `#code-migration`, `#monorepo`, `#version-control`, `#dev-tools`, `#google`
 
 ---
 
 <a id="item-8"></a>
-## [Meta 的 Brain2Qwerty：非侵入式脑电波打字新方案](https://ai.meta.com/blog/brain2qwerty-brain-ai-human-communication/?_fb_noscript=1) ⭐️ 7.0/10
+## [谷歌 DeepMind 发布蒸馏版快速图像生成模型 Nano Banana 2 Lite](https://deepmind.google/models/gemini-image/flash-lite/) ⭐️ 7.0/10
 
-Meta AI 发布了 Brain2Qwerty，一种利用 AI 将脑电波解码为打字文本的非侵入式脑机接口，并公开了代码和数据集，不过相较于现有方法的提升幅度有限。 这项研究推动了非侵入式脑机接口的发展，未来可能帮助沟通障碍人士无需手术植入即可交流，但也加剧了关于神经隐私的讨论。 该系统利用脑电图和深度学习将大脑信号转换为文本，相较以往非侵入式方法取得了统计上显著但有限的提升，公开代码和数据集是其重要贡献。
+2026 年 6 月 30 日，谷歌 DeepMind 发布了 Nano Banana 2 Lite，这是其图像生成模型的蒸馏版本。它提供显著更快的生成速度（不到 5 秒）和更好的文本渲染，但缺少程序化宽高比控制。 该模型让高质量 AI 图像生成变得更快速、更经济，有望推动实时应用和快速原型设计。相较于基础模型，它的速度提升可能促进在消费者应用和创意流程中的广泛采用。 该模型从 Nano Banana 2 蒸馏而来，文本渲染效果良好，但无法通过 API 强制设置宽高比。使用需要 Google One 账户，Workspace 用户无法使用，可通过 AI Studio 和 Gemini API 获取。
 
-hackernews · alok-g · 6月30日 21:29 · [社区讨论](https://news.ycombinator.com/item?id=48739466)
+hackernews · minimaxir · 6月30日 16:48 · [社区讨论](https://news.ycombinator.com/item?id=48735444)
 
-**背景**: 非侵入式脑机接口（如基于脑电图的）通过头皮测量大脑活动，无需手术，但信号质量通常低于植入式电极。研究人员长期尝试结合脑电图与机器学习来提高解码精度，Meta 早在 2017 年 F8 大会上就展示过脑机打字概念。Brain2Qwerty 在此基础上运用现代 AI 处理脑电图数据，并提供了公开可用的基准。
+**背景**: Nano Banana 是谷歌 DeepMind 为其基于 Gemini 的图像生成模型所设的品牌。模型蒸馏技术将大型模型的知识迁移到小型模型上，以极小的质量损失换取更快的推理速度。原版 Nano Banana 2 为全尺寸模型，而 Lite 是专为速度和成本优化的压缩版本。
 
 
 **参考链接**:
 
-- [From Brain Waves to Words: Brain2Qwerty Offers a New Path to Communication Without Surgery](https://ai.meta.com/blog/brain2qwerty-brain-ai-human-communication/)
-- [Brain2Qwerty, A System That Decodes Thoughts Using Brain Waves Without Surgery](https://www.deeplearning.ai/the-batch/brain2qwerty-a-system-that-decodes-thoughts-using-brain-waves-without-surgery)
+- [Google introduces a faster, cheaper image generator with Nano ...](https://techcrunch.com/2026/06/30/google-introduces-a-faster-cheaper-image-generator-with-nano-banana-2-lite/)
+- [Nano Banana 2 and Nano Banana Pro available for everyone | Google Cloud Blog](https://cloud.google.com/blog/products/ai-machine-learning/nano-banana-2-and-nano-banana-pro-are-generally-available)
+- [Model distillation](https://en.wikipedia.org/wiki/Model_distillation)
 
 
-**社区讨论**: 社区反应不一：有人称赞开源开放，但指出这只是小幅改进；也有人警告神经数据采集可能带来隐私风险，提及 Meta 早期的脑机打字演示以及结合大语言模型后可能被滥用的隐患。
+**社区讨论**: 社区反应不一：用户称赞其速度和文本渲染，但很多人对必须使用 Google One 账户的要求感到不满，这排除了 Workspace 用户。有人批评对比图中未包含 ChatGPT，另有人看好其在保持角色相似度的风格化插画等实际应用中的潜力。
 
-**标签**: `#BCI`, `#neural-interface`, `#AI`, `#neuroscience`, `#Meta`
+**标签**: `#image generation`, `#AI`, `#Google DeepMind`, `#model release`, `#distillation`
 
 ---
 
 <a id="item-9"></a>
-## [Nano Banana 2 Lite：更快的 AI 图像生成与文本渲染](https://deepmind.google/models/gemini-image/flash-lite/) ⭐️ 7.0/10
+## [Mistral 发布 Leanstral 1.5，专为 Lean 4 自动定理证明设计](https://docs.mistral.ai/models/model-cards/leanstral-1-5-26-06) ⭐️ 7.0/10
 
-Google DeepMind 推出基于 Gemini 3.1 Flash 的轻量级图像生成模型 Nano Banana 2 Lite，生成图像只需不到 5 秒，远快于基础版 Nano Banana 2，并提升了文本渲染效果。 速度提升使其适用于快速原型开发和消费者应用，更好的文本渲染解决了 AI 图像模型长期以来的不足。不过，绑定 Google One 账户的要求以及房地产领域的滥用风险引发担忧。 作为蒸馏版，它在处理高度细化提示时不及基础模型，且无法通过编程方式强制设定宽高比。该模型通过 Google AI Studio 访问，但需要 Google One 账户，而使用自定义域名的 Workspace 用户无法获得该资格。
+Mistral 发布了 Leanstral 1.5，这是一个专为 Lean 4 证明助手设计的专用模型，增强了自动定理证明能力。之前的 Leanstral 模型已于 5 月 22 日弃用，新版本可通过 Mistral 的 Labs 平台获取。 该版本推进了 AI 辅助的形式化验证，使得在 Lean 4 中进行更高效、可靠的定理证明成为可能，对软件、硬件和数学证明的验证至关重要。它可能推动 AI 在形式化方法领域的采用，并使形式化验证社区受益。 该模型针对 Lean 4 设计，Lean 4 是一个基于带有归纳类型的构造演算的证明助手。它通过 Mistral Labs 提供，但部分用户反馈账户设置和访问存在问题。开源工具 OpenATP 将支持 Leanstral 1.5，并利用 Mistral 的 Vibe 框架。
 
-hackernews · minimaxir · 6月30日 16:48 · [社区讨论](https://news.ycombinator.com/item?id=48735444)
+hackernews · vetronauta · 6月30日 20:44 · [社区讨论](https://news.ycombinator.com/item?id=48738938)
 
-**背景**: Nano Banana 2 是 Google DeepMind 基于 Gemini 3.1 Flash 的图像生成模型系列，基础版以快速生成和强角色一致性著称，Lite 版则是进一步优化的加速版本。AI 图像中的文本渲染历来是难题，因此该领域的改进值得关注。
+**背景**: Lean 4 是一种用于形式化验证的证明助手和函数式编程语言。自动定理证明（ATP）是人工智能的一个子领域，能自动证明数学定理。像 Leanstral 这样的大型语言模型经过微调，可在形式化语言中生成证明步骤，弥合自然语言与形式逻辑之间的鸿沟。这种方法可减轻人类数学家和工程师的负担。
 
 
 **参考链接**:
 
-- [Nano Banana 2 and Nano Banana Pro available for everyone | Google Cloud Blog](https://cloud.google.com/blog/products/ai-machine-learning/nano-banana-2-and-nano-banana-pro-are-generally-available)
-- [Nano Banana 2 API - Gemini 3.1 Flash 4K Image from $0.04 | Kie AI](https://kie.ai/nano-banana-2)
+- [Lean (proof assistant)](https://en.wikipedia.org/wiki/Lean_(proof_assistant))
+- [Automated theorem proving](https://en.wikipedia.org/wiki/Automated_theorem_proving)
+- [Lean Programming Language](https://lean-lang.org/)
 
 
-**社区讨论**: 评论普遍对 Google One 账户要求不满，尤其是 Workspace 用户；同时，对 AI 生成房产图片误导买家表示道德担忧。技术反馈称赞了速度（不到 5 秒）和文本渲染，但指出复杂提示下不如基础版。也有用户质疑为何未将 ChatGPT 纳入对比，暗示可能竞争力不足。
+**社区讨论**: 社区评论褒贬不一：一些用户对在 Mistral 平台上注册和访问时遇到的困难表示不满，而另一些用户则对与 OpenATP 的技术集成感到兴奋。有人指出 Leanstral 仅针对 Lean 4 进行了专业化，而未涵盖 Coq 等其他证明助手。人们普遍认为 Lean 4 和 Idris 2 非常适合基于 LLM 的代码生成。
 
-**标签**: `#AI`, `#image-generation`, `#Google`, `#DeepMind`, `#HackerNews`
+**标签**: `#AI`, `#theorem-proving`, `#Lean4`, `#Mistral`, `#formal-verification`
 
 ---
 
 <a id="item-10"></a>
-## [自制毫米波雷达未能检测石棉，但提供工程见解](https://gauthier-lechevalier.com/radar) ⭐️ 7.0/10
+## [Meta AI 发布 Brain2Qwerty：非侵入式脑电转文字解码器，开源代码与数据集](https://ai.meta.com/blog/brain2qwerty-brain-ai-human-communication/?_fb_noscript=1) ⭐️ 7.0/10
 
-一位开发者构建了一个用于材料分类的毫米波雷达概念验证系统，旨在检测石棉，但未能可靠地区分石棉与类似材料；该项目提供了宝贵的工程见解与经验教训。 该项目凸显了将毫米波雷达应用于区分石棉等危险材料的难度，而透明的失败分析为硬件和机器学习社区提供了宝贵的教育资源。 该系统使用毫米波雷达根据反射信号对材料进行分类，但缺乏足够的灵敏度来一致区分石棉与非石棉材料，尤其是在低浓度下。作者记录了关于雷达灵敏度、信号处理以及该方法局限性的经验教训。
+Meta AI 展示了 Brain2Qwerty，一种利用脑磁图（MEG）和脑电图（EEG）的非侵入式脑电转文字解码器，在现有方法上取得了虽小但统计显著的改进，并公开了代码和数据集。 该研究推进了无需手术植入的通信可能性，有望帮助重度语言或运动障碍患者，尽管该技术距离实际应用还很遥远。 该解码器采用卷积神经网络和语言模型，提升幅度虽小但经过验证，且当前设置需要大型屏蔽式脑磁图扫描仪，限制了实际部署。
 
-hackernews · GL26 · 6月30日 17:29 · [社区讨论](https://news.ycombinator.com/item?id=48736137)
+hackernews · alok-g · 6月30日 21:29 · [社区讨论](https://news.ycombinator.com/item?id=48739466)
 
-**背景**: 毫米波雷达工作在 30-300 GHz 频段，用于检测物体、运动和材料特性。研究人员已探索使用毫米波雷达结合机器学习进行材料分类。石棉是一种常见于旧建筑中的危险材料，其检测对于安全翻新和拆除至关重要。
+**背景**: 脑磁图（MEG）和脑电图（EEG）是分别测量大脑产生的磁场和电活动的非侵入式技术。它们具有高时间分辨率，适合解码实时大脑活动，但空间分辨率低于侵入式方法。从脑信号中解码语音一直是个难题，以往研究要么需要植入电极，要么用非侵入式传感器也只能达到有限的准确率。
 
 
 **参考链接**:
 
-- [mmWave sensing - Wikipedia](https://en.wikipedia.org/wiki/Mmwave_sensing)
-- [[2202.05169] Radar-based Materials Classification Using Deep Wavelet Scattering Transform: A Comparison of Centimeter vs. Millimeter Wave Units](https://arxiv.org/abs/2202.05169)
+- [Magnetoencephalography - Wikipedia](https://en.wikipedia.org/wiki/Magnetoencephalography)
+- [Magnetoencephalography (MEG): What It Is, Purpose & Uses](https://my.clevelandclinic.org/health/diagnostics/17218-magnetoencephalography-meg)
 
 
-**社区讨论**: 社区成员赞赏透明的失败分析和教育价值。一些人指出该概念验证未能充分解决区分石棉这一核心挑战，并提出了检测材料不连续性的替代思路。其他人分享了相关的雷达成像经验，还有评论澄清石棉仅在受到扰动时才有危险。
+**社区讨论**: 评论者指出核心思路并非全新，改进是渐进式的，但称赞了开源做法。隐私问题被强烈提出，担心神经追踪和数据滥用的可能。还有人回顾了 Facebook 在 2017 年的早期脑机接口项目，并推测将 EEG 与大型语言模型结合可能获得更好效果。
 
-**标签**: `#mmWave radar`, `#material classification`, `#asbestos detection`, `#hardware`, `#machine learning`
+**标签**: `#brain-computer-interface`, `#EEG`, `#MEG`, `#neuroscience`, `#machine-learning`
 
 ---
 
 <a id="item-11"></a>
-## [CERN 启动长停机 3 期，全面升级 LHC 至 10 倍碰撞能力](https://home.cern/cern-bids-farewell-to-the-lhc-and-enters-long-shutdown-3/) ⭐️ 7.0/10
+## [CERN 启动 LHC 第三次长停机，升级至 HL-LHC](https://home.cern/cern-bids-farewell-to-the-lhc-and-enters-long-shutdown-3/) ⭐️ 7.0/10
 
-CERN 已开始持续至 2030 年的长停机 3 期（LS3），将把大型强子对撞机升级为高亮度 LHC（HL-LHC），碰撞率提升 10 倍，每次束团交叉产生超过 140 次碰撞。数千名专家将为 ATLAS 和 CMS 探测器安装新设备，并对整个加速器综合体进行改造。 此次升级将使物理学家以前所未有的精度探索稀有粒子过程并寻找超出标准模型的新物理，同时目前已超过 1 艾字节的海量数据对先进计算和存储提出挑战，对更广泛的科学计算生态产生影响。 升级包括更换束流收集器、改进准直器和吸收体，以及安装更强的聚焦磁铁以缩小相互作用点的束斑尺寸；长停机 3 期计划于 2030 年完成，之后恢复物理实验。
+大型强子对撞机（LHC）已结束本轮物理运行，并进入为期四年的第三次长停机（LS3），将升级为高亮度 LHC（HL-LHC），目标是将碰撞能力提升十倍，计划于 2030 年重启运行。 此次升级将使科学家能够探测更稀有的粒子物理现象，有可能发现超出标准模型的新物理，同时通过为 ATLAS 和 CMS 等实验提供海量数据，影响全球粒子物理研究。 LS3 将涉及数千名专家，升级探测器，例如 ATLAS 的内部跟踪器（ITk）将从 800 万通道增至 50 亿通道；HL-LHC 将实现 14 TeV 的质子-质子对撞，为 ATLAS 和 CMS 提供 3 ab⁻¹的积分亮度。停机预计持续至 2030 年。
 
 hackernews · HelloUsername · 6月29日 18:52 · [社区讨论](https://news.ycombinator.com/item?id=48723484)
 
-**背景**: 大型强子对撞机（LHC）是位于 CERN 的世界最大粒子加速器，通过让质子以接近光速对撞重现大爆炸后的瞬间。高亮度 LHC（HL-LHC）升级旨在将每秒碰撞次数提高近 10 倍，以进行更精确测量和发现稀有现象。长停机 3 期是第三次重大维护升级期，此前停机为希格斯玻色子的发现等里程碑奠定了基础。
+**背景**: 大型强子对撞机（LHC）是位于 CERN 的世界最大粒子加速器，通过质子对撞研究基本粒子。亮度是衡量对撞机性能的关键指标，正比于单位时间内的碰撞次数；高亮度意味着更多数据，有助于观测罕见过程。高亮度 LHC（HL-LHC）升级将使总碰撞数据量提升十倍，推动对希格斯玻色子等粒子的精确测量，并寻找暗物质等新物理迹象。此前 LHC 已历经两次长停机，每次均升级了探测器与加速器。
 
 
 **参考链接**:
 
 - [CERN bids farewell to the LHC and enters Long Shutdown 3 – Home | CERN](https://home.cern/cern-bids-farewell-to-the-lhc-and-enters-long-shutdown-3/)
-- [HiLumi LHC – Home | CERN](https://home.cern/science/accelerators/hilumi-lhc/)
+- [Long Shutdown 3 – Home | CERN](https://home.cern/science/long-shutdown-3/)
+- [High Luminosity Large Hadron Collider](https://en.wikipedia.org/wiki/High_Luminosity_Large_Hadron_Collider)
 
 
-**社区讨论**: 评论者就 1993 年超导超级对撞机（SSC）的取消对科学是利是弊展开讨论，指出 SSC 可达 20 TeV 束流能量，而升级后的 HL-LHC 仅 7 TeV；有人强调 CERN 现存储超 1 艾字节的碰撞数据，并指出长停机期间是公众参观（包括下到隧道）的最佳时机。
+**社区讨论**: 社区讨论热烈。有人提及美国超导超级对撞机（SSC）被取消可能错失了更早发现希格斯粒子的机会；一位曾参与 ATLAS 升级的工程师对探测器通道数的巨大飞跃感到兴奋；还有人指出长停机期间是参观 CERN 地下隧道的最佳时机。整体情绪积极，但也对新闻标题的戏剧性表达略有微词，并夹杂着对历史选择的反思。
 
-**标签**: `#CERN`, `#LHC`, `#particle-physics`, `#big-data`, `#scientific-computing`
+**标签**: `#particle-physics`, `#CERN`, `#LHC`, `#scientific-research`, `#infrastructure`
 
 ---
 
 <a id="item-12"></a>
-## [shot-scraper 1.10 发布视频命令，通过故事板文件录制代理演示](https://simonwillison.net/2026/Jun/30/shot-scraper-video/#atom-everything) ⭐️ 7.0/10
+## [Kubernetes 通过 WebAssembly 移植到浏览器，实现交互式演示](https://ngrok.com/blog/i-ported-kubernetes-to-the-browser) ⭐️ 7.0/10
 
-shot-scraper 1.10 版本新增了 `video` 命令，该命令接受一个 `storyboard.yml` 文件来定义网页交互流程，并使用 Playwright 录制整个过程的视频，从而让编码代理能够自动生成其工作的视频演示。 该工具通过提供一种直观的方式来展示代码确实按预期工作，解决了验证代理辅助开发工作日益增长的需求，从而提高了自动化编码过程的透明度和信任度。 `storyboard.yml` 文件可以指定启动应用的服务器命令、视口尺寸、光标显示、用于覆盖剪贴板的自定义 JavaScript，以及包含点击和暂停等动作的场景。`--auth` 标志支持基于 Cookie 的身份验证，输出格式可以为 MP4。
+一位开发者成功将 Kubernetes 的一个子集通过 WebAssembly 移植到浏览器中运行，创建了名为 'webernetes' 的项目，该演示无需任何后端服务器即可模拟 Pod 生命周期等集群操作。 这为学习 Kubernetes 概念提供了无需安装的交互式教育环境，并可能启发在本地测试云原生应用及 AI 辅助代码生成的新方法。 webernetes 项目将 kubelet、调度器、控制器管理器等核心 Kubernetes 组件编译为 WebAssembly，但并未实际运行容器，而是模拟服务，且每个工作负载都需要自定义适配器。
+
+hackernews · peterdemin · 6月30日 20:48 · [社区讨论](https://news.ycombinator.com/item?id=48738985)
+
+**背景**: Kubernetes 是自动化容器化应用部署、扩展和管理的标准编排系统。WebAssembly 是一种可移植的二进制代码格式，允许多种语言编写的代码在浏览器中以接近原生速度运行。通过 WebAssembly 将 Kubernetes 移植到浏览器，意味着集群逻辑可在本地执行，无需远程服务器，非常适合沙盒式学习和演示。
+
+
+**参考链接**:
+
+- [I ported Kubernetes to the browser | ngrok blog](https://ngrok.com/blog/i-ported-kubernetes-to-the-browser)
+- [GitHub - ngrok/webernetes: Kubernetes in the browser . · GitHub](https://github.com/ngrok/webernetes)
+
+
+**社区讨论**: 社区反响热烈，称其为'即时经典'，并赞扬其在 Kubernetes 概念教育方面的潜力。有评论者强调了对模拟集群进行测试的工作流令人印象深刻，而另一些人则明确指出它并不运行真实容器，每个服务需要自定义连接器，从而降低了实际应用的预期。
+
+**标签**: `#kubernetes`, `#webassembly`, `#browser`, `#devops`, `#education`
+
+---
+
+<a id="item-13"></a>
+## [shot-scraper video 命令：录制基于 Playwright 的代理演示](https://simonwillison.net/2026/Jun/30/shot-scraper-video/#atom-everything) ⭐️ 7.0/10
+
+Simon Willison 发布了 shot-scraper 1.10，新增 'video' 命令，该命令利用 Playwright 录制 YAML 故事板中定义的浏览器交互，使编码代理能够自动生成其工作的视频演示。 该功能解决了编码代理构建成果自动可视化验证的需求，使验证、分享和展示代理工作变得更简单，并顺应了向 LLM 驱动开发工作流转变的广泛趋势。 该命令接受一个 storyboard.yml 文件，其中定义场景、操作和服务器命令，支持通过 cookie JSON 文件进行身份验证，并能输出 MP4 视频。它还允许注入 JavaScript 来模拟剪贴板等浏览器 API。
 
 rss · Simon Willison · 6月30日 16:54
 
-**背景**: shot-scraper 是一个基于 Playwright 的命令行工具，用于自动化截图和网页抓取。Playwright 是微软开发的开源浏览器自动化库，支持 Chromium、Firefox 和 WebKit。新增的 `video` 命令扩展了 shot-scraper 的功能，使其能够捕获完整的网页交互视频，这对于制作演示和测试非常有用。
+**背景**: shot-scraper 是 Simon Willison 开发的一个命令行工具，它基于微软的开源浏览器自动化库 Playwright，用于截图和网页抓取，常被用于自动化文档、测试和数据仪表板。新版 video 命令将其能力扩展到录制完整浏览器会话，特别适合编码代理在实现功能后自动生成演示视频。
 
 
 **参考链接**:
 
 - [shot-scraper](https://shot-scraper.datasette.io/)
 - [shot-scraper: automated screenshots for documentation, built on Playwright](https://simonwillison.net/2022/Mar/10/shot-scraper/)
-- [Playwright (software) - Wikipedia](https://en.wikipedia.org/wiki/Playwright_(software))
 
 
-**标签**: `#shot-scraper`, `#playwright`, `#video-demo`, `#coding-agents`, `#automation`
-
----
-
-<a id="item-13"></a>
-## [Ornith-1.0 发布：面向自主编程的开源自搭建大语言模型](https://simonwillison.net/2026/Jun/29/ornith/#atom-everything) ⭐️ 7.0/10
-
-DeepReinforce 发布了 Ornith-1.0，这是一个采用自搭建训练框架、面向自主编程的开源权重 LLM 系列。模型规模从 9B 到 397B 参数不等，基于 Gemma 4 和 Qwen 3.5 构建，在同规模开源模型中取得了最佳性能。 自主编程标志着 AI 向着能自主规划、编写和测试软件的方向转变，而像 Ornith-1.0 这样的开源模型降低了这类能力的门槛。该模型采用 MIT 许可证，并与主流基座模型兼容，可能加速自主编程工具在开发者社区中的普及。 Simon Willison 通过 LM Studio 加载了 35B 的 MoE 变体（GGUF 量化版），观察到模型能熟练地执行多步智能体工具调用，生成速度达到 103 tokens/秒。模型使用 MIT 许可证，底层的 Gemma 4 和 Qwen 3.5 均为 Apache 2.0，确保了许可证兼容。
-
-rss · Simon Willison · 6月29日 16:17
-
-**背景**: 自主编程（Agentic coding）指利用 AI 智能体在极少人工干预下自主规划、编写、调试和测试代码。自搭建（Self-scaffolding）是一种训练方法，让模型学习自行构建解决问题的支架，而非依赖固定模板。混合专家（Mixture of Experts, MoE）技术将输入路由到不同的专家子模型，从而更高效地训练大规模模型。Gemma 4 和 Qwen 3.5 分别是 Google DeepMind 和阿里巴巴发布的开源权重基座模型，均采用 Apache 2.0 许可证。
-
-
-**参考链接**:
-
-- [Ornith-1.0: Self-Scaffolding LLMs for Agentic Coding | DeepReinforce Blog | Jun. 2026](https://deep-reinforce.com/ornith_1_0.html)
-- [Agentic coding](https://en.wikipedia.org/wiki/Agentic_coding)
-- [Mixture of Experts Explained](https://huggingface.co/blog/moe)
-
-
-**标签**: `#LLM`, `#coding`, `#open-source`, `#agentic`, `#AI model`
+**标签**: `#shot-scraper`, `#Playwright`, `#browser automation`, `#video recording`, `#agent demos`
 
 ---
 
 <a id="item-14"></a>
-## [REAP：从实际编程交互中自动生成编码代理基准](https://www.reddit.com/r/MachineLearning/comments/1uk713d/reap_automatic_curation_of_coding_agent/) ⭐️ 7.0/10
+## [Ornith-1.0：MIT 许可的自脚手架编码智能体模型](https://simonwillison.net/2026/Jun/29/ornith/#atom-everything) ⭐️ 7.0/10
 
-该论文提出了 REAP（相关性与执行审计管道），一种通过处理实际开发者与编码代理的交互会话，利用基于 LLM 的过滤和执行审计自动生成可执行基准测试的方法，以确保可靠性。 该方法降低了创建编码代理基准的高成本和人工工作量，能够持续生成反映真实使用场景的评估，有助于推动更鲁棒的人工智能编程工具的开发。 REAP 应用多个过滤阶段：基于 LLM 的任务相关性评分、执行审计以验证生成代码可正确运行，并剔除模糊或无法执行的任务。基准测试从交互式会话中构建，捕捉了真实世界的复杂性。
+DeepReinforce 发布了 Ornith-1.0，这是一个基于 Gemma 4 和 Qwen 3.5 微调、采用 MIT 许可的开源 LLM 系列，拥有 9B、31B、35B MoE 和 397B MoE 四种规格，在开源模型中达到了同类规模的最佳编程性能。 该模型采用 MIT 许可，为智能体（agentic）工作流提供了高性能的编码能力，使开发者能够构建不受限制许可约束的自主编程智能体。其自脚手架训练策略让模型能内部管理工具调用和错误恢复，使其成为本地 agentic 编码应用的实用选择。 Simon Willison 测试的 35B MoE 版本（GGUF，20GB）展现了熟练的智能体工具调用能力，能处理多轮工具调用，并以 103 tokens/秒的速度生成图像。自脚手架通过强化学习实现，教会模型自行管理内存和工具编排，而非依赖外部硬编码的脚手架。
 
-reddit · r/MachineLearning · /u/julian88888888 · 7月1日 00:50
+rss · Simon Willison · 6月29日 16:17
 
-**背景**: 编码代理是能够自主规划、编写和修改代码的人工智能系统。评估它们需要编码任务基准，但手动策划的基准成本高昂且容易过时。REAP 通过从实际的开发者与代理交互中提取任务，实现了自动化，确保基准真实且可执行，类似于 BenchBuilder 管道从众包数据中自动创建基准。
+**背景**: 自脚手架（self-scaffolding）是指模型在强化学习过程中学习自身的智能体脚手架——如内存布局、重试逻辑和工具编排——而不是依赖外部硬编码的脚手架。Agentic coding 指能够以最少人工干预自主规划、编写、测试和修改代码的 AI 智能体。混合专家（MoE）是一种将计算拆分为多个专业子网络的神经网络架构，使更大规模的模型更高效。其基础模型 Gemma 4 和 Qwen 3.5 均采用 Apache 2.0 许可，与 Ornith-1.0 的 MIT 许可兼容。
 
 
 **参考链接**:
 
-- [REAP: Automatic Curation of Coding Agent Benchmarks from Interactive Production Usage](https://arxiv.org/html/2604.01527)
-- [From Crowdsourced Data to High-Quality Benchmarks: Arena-Hard and BenchBuilder Pipeline](https://arxiv.org/html/2406.11939)
+- [Ornith-1.0: Self-Scaffolding Open Models for Agentic Coding](https://www.explainx.ai/blog/ornith-1-0-self-scaffolding-agentic-coding-llm-2026)
+- [What is Agentic Coding? | IBM](https://www.ibm.com/think/topics/agentic-coding)
+- [Applying Mixture of Experts in LLM Architectures | NVIDIA Technical...](https://developer.nvidia.com/blog/applying-mixture-of-experts-in-llm-architectures/)
 
 
-**标签**: `#machine learning`, `#coding agents`, `#benchmarks`, `#automatic curation`, `#production data`
+**标签**: `#open-source`, `#LLM`, `#coding`, `#agentic`, `#DeepReinforce`
 
 ---
 
 <a id="item-15"></a>
-## [EML 树被证明是通用逼近器](https://www.reddit.com/r/MachineLearning/comments/1uipl1t/eml_trees_are_universal_approximators_r/) ⭐️ 7.0/10
+## [80TB+天文数据集现可在笔记本电脑上交叉匹配](https://www.reddit.com/r/MachineLearning/comments/1uk7ec6/80tb_of_astronomy_for_the_hddpoor_crossmatch_the/) ⭐️ 7.0/10
 
-一项新证明表明，引入可学习参数泛化后的 EML 树是连续函数的通用逼近器。该证明通过 EML 组合显式构造了二元运算、多项式、双曲正切及近似单位分解，进而组合出任意函数的逼近。 这一结果为基于 EML 的模型提供了理论保证，证明其能逼近任意连续函数，这正是神经网络架构所期望的特性。它可能启发利用函数组合与可学习构造块的新型逼近器设计。 证明通过符号分解和合适的仿射映射解决了自然对数对非正输入无定义的问题。泛化后的 EML(-type)树在原始 EML(x,y) = exp(x) − ln(y)基础上增加了可学习参数，使其更具灵活性。
+一个名为‘多模态宇宙’的新资源发布，提供了来自 30 多个天文巡天的超过 80TB 预交叉匹配数据，使用 HATS 格式和 LSDB 库仅需 4GB 内存即可访问。 这极大地降低了处理海量天文数据的门槛，使没有大型计算集群的机器学习研究人员和公民科学家能够在标准笔记本电脑上进行复杂的交叉匹配和分析。 该数据集使用分层自适应分块方案（HATS）和大型巡天数据库（LSDB）来高效分区和查询数据，使得传统上需要 TB 级存储和高性能计算的交叉匹配操作，能在仅 4GB 内存的机器上运行。
 
-reddit · r/MachineLearning · /u/JoeGermany · 6月29日 11:16
+reddit · r/MachineLearning · /u/Smith4242 · 7月1日 01:07
 
-**背景**: EML 运算符定义为 EML(x,y) = exp(x) − ln(y)，近期被提出并可通过组合表示所有初等函数（多项式、指数、三角函数等）。通用逼近定理是机器学习理论的基石，其指出一个函数类能在紧集上任意精度逼近任意连续函数。该工作将这一性质推广到了由 EML 运算构建的树结构上。
+**背景**: 交叉匹配是识别不同巡天中同一天体目标的过程，每个巡天捕捉不同波长或属性，从而构建更全面的图像。HATS 格式是一种现代、高效的大型天文星表存储和访问方式，LSDB 则是一个能在这些数据集上执行分布式查询的 Python 库。通常，如此大规模的交叉匹配需要大量基础设施，但多模态宇宙及其工具使其在消费级硬件上成为可能。
 
 
 **参考链接**:
 
-- [EML (mathematical function)](https://grokipedia.com/page/EML_mathematical_function)
-- [Elementary function - Wikipedia](https://en.wikipedia.org/wiki/Elementary_function)
+- [80TB+ of astronomy for the HDD-poor: crossmatch the Multimodal...](https://huggingface.co/blog/hugging-science/multimodal-universe-hats)
+- [Crossmatching JWST & HSC Data In LSDB: A Practical Guide](https://faqor.org/blog/crossmatching-jwst-and-hsc-data)
 
 
-**标签**: `#universal approximation`, `#EML trees`, `#machine learning theory`, `#functional approximation`, `#elementary functions`
+**标签**: `#astronomy`, `#dataset`, `#large-scale`, `#multimodal`, `#open-science`
 
 ---
 
 <a id="item-16"></a>
-## [HEMA 爱好者提出开放数据集助力计算机视觉追踪剑术动作](https://www.reddit.com/r/MachineLearning/comments/1uivddx/i_do_historical_swordfighting_and_noticed_ai/) ⭐️ 7.0/10
+## [Cerebras 与 OpenAI 200 亿美元交易扼杀小公司 API 候补名单](https://www.reddit.com/r/MachineLearning/comments/1uiqhiv/cerebras_openai_deal_capacity_has_effectively/) ⭐️ 7.0/10
 
-一位 HEMA 爱好者正在构建一个开放数据集，包含 100 段高速剑术视频，采用多视角 120/240fps 拍摄，标注了关键点、剑刃接触事件和视觉挑战标签，旨在帮助计算机视觉模型应对运动模糊、细薄物体追踪和遮挡下的人体姿态估计。 该数据集针对当前 AI 难以处理的极端运动、非线性身体动态和快速移动的细物体这一真实场景，为 Sim2Real 迁移、体育分析和机器人技术提供了有价值的基准测试。 数据集将包含 100 个精选片段，标注模式包括生物力学架式名称、遮挡评级以及手腕、头部和剑体各段的关键点坐标；项目托管在 Hugging Face 上，并寻求社区对元数据完整性的反馈。
+Cerebras 与 OpenAI 达成 200 亿美元交易，几乎预定了其全部近期推理产能，导致对小型公司而言 API 候补名单已形同虚设。 此交易将关键的 AI 推理算力集中到一家超大规模企业手中，可能扼杀创新，并让小型初创公司无法获取所需专用硬件，从而削弱竞争力。 Cerebras 的 WSE-3 芯片采用 5nm 制程，拥有 4 万亿晶体管和 90 万个 AI 核心，专为高吞吐 ASIC 推理优化；该初创公司需要 1-2k token/秒的吞吐量及严格的 p95 延迟，此类芯片本可满足，但产能现已全部预定给 OpenAI。
 
-reddit · r/MachineLearning · /u/fonssagrives · 6月29日 15:16
+reddit · r/MachineLearning · /u/Kortopi-98 · 6月29日 12:00
 
-**背景**: HEMA（历史欧洲武术）涉及高强度剑术，钢剑速度可达每小时 80 英里，导致运动模糊和亚像素分辨率挑战。Sim2Real 差距指由于视觉和物理差异，从仿真训练到真实环境迁移模型的困难。细薄物体追踪是计算机视觉领域的一个难题，因为像剑这样的物体占据像素极少且容易被遮挡。
+**背景**: Cerebras Systems 制造巨大的晶圆级 AI 芯片（WSE-3），其尺寸远超传统 GPU，并针对 AI 推理工作负载优化。这些芯片属于 ASIC（专用集成电路），专为高吞吐、低延迟推理设计，而非训练。P95 延迟衡量 95%请求完成的响应时间阈值，对于编码代理等实时应用至关重要。小型公司通常依赖云 API 访问此类专用硬件，无需自建数据中心。
 
 
 **参考链接**:
 
-- [[2405.10020] Natural Language Can Help Bridge the Sim2Real Gap](https://arxiv.org/abs/2405.10020)
-- [[2202.05659] Tiny Object Tracking: A Large-scale Dataset and A Baseline](https://arxiv.org/abs/2202.05659)
-- [Sub-pixel resolution - Wikipedia](https://en.wikipedia.org/wiki/Sub-pixel_resolution)
+- [Cerebras Systems Unveils World’s Fastest AI Chip with ...](https://www.cerebras.ai/press-release/cerebras-announces-third-generation-wafer-scale-engine)
+- [LLM ASICs and specialized inference chips (why they matter)](https://www.glukhov.org/llm-performance/hardware/llm-asics/)
+- [P95 Latency: What It Is & Why It Matters](https://redis.io/blog/p95-latency/)
 
 
-**标签**: `#computer vision`, `#dataset`, `#pose estimation`, `#object tracking`, `#sim2real`
+**标签**: `#Cerebras`, `#OpenAI`, `#inference`, `#compute capacity`, `#AI startups`
 
 ---
 
 <a id="item-17"></a>
-## [HTML 表格提取工具将粘贴表格转换为多种格式](https://simonwillison.net/2026/Jun/29/html-table-extractor/#atom-everything) ⭐️ 6.0/10
+## [Simon Willison 推出 HTML 表格提取工具，支持多种格式转换](https://simonwillison.net/2026/Jun/29/html-table-extractor/#atom-everything) ⭐️ 6.0/10
 
-Simon Willison 发布了一款新的粘贴转换网页工具，能从富文本中提取 HTML 表格，并将其转换为 HTML、Markdown、CSV、TSV 或 JSON 格式。该工具还集成了维基百科搜索功能，可自动导入并展示任何页面中的表格。 该工具解决了开发者和数据分析师经常遇到的痛点：需要从网页中快速提取表格数据而无需复杂解析。它支持多种输出格式，适用于文档编写、数据处理和电子表格工作流，用途广泛。 该工具通过接收包含 HTML 表格标记的富文本粘贴内容，解析所有检测到的表格。它还利用维基百科的开放 CORS API 获取页面的完整渲染 HTML，从而可直接从维基百科文章导入表格。
+Simon Willison 发布了一个 HTML 表格提取工具，可接收浏览器粘贴的富文本，并将检测到的表格转换为 HTML、Markdown、CSV、TSV 或 JSON。随后更新增加了维基百科搜索功能，能通过维基百科的 CORS API 自动导入页面中的表格。 该工具简化了从网页中提取表格数据的过程，为开发人员、研究人员和内容创作者节省了时间。它体现了无需安装的轻量级浏览器工具日益普及的趋势。 该工具位于 tools.simonwillison.net/html-table-extractor。维基百科搜索功能使用了开放的 CORS API，并通过 Codex AI 辅助实现。
 
 rss · Simon Willison · 6月29日 23:38
 
-**背景**: 粘贴转换工具是一类简单的网页实用程序，它们接收剪贴板内容并将其转换为另一种格式。浏览器中的富文本通常包含表格的 HTML 结构，但如果直接粘贴到纯文本编辑器，这些结构会丢失。CORS（跨源资源共享）API 允许跨域请求获取维基百科页面内容，从而实现自动化导入。
+**背景**: 制表符分隔值（TSV）是一种纯文本格式，用制表符分隔字段，广泛用于数据交换。Markdown 是一种轻量级标记语言，CSV 则使用逗号分隔值。Simon Willison 以其创建的一系列小型浏览器粘贴转换工具而闻名，这些工具利用剪贴板 API 和现代 Web API 在浏览器内处理数据，无需服务器。
 
-**标签**: `#html`, `#data-extraction`, `#tool`, `#web-development`, `#conversion`
+
+**参考链接**:
+
+- [Tab-separated values - Wikipedia](https://en.wikipedia.org/wiki/Tab-separated_values)
+- [What is a TSV File and How to Open It - GeeksforGeeks](https://www.geeksforgeeks.org/techtips/what-is-a-tsv-file/)
+
+
+**标签**: `#web development`, `#data conversion`, `#utilities`, `#HTML`, `#tools`
 
 ---
 
 <a id="item-18"></a>
-## [EACL 2027 改革 ARR 审稿流程：作者回复和讨论分阶段、延长时间](https://www.reddit.com/r/MachineLearning/comments/1ujj63g/eacl_2027_author_response_and_authorreviewer/) ⭐️ 6.0/10
+## [千万篇论文语义相似度时间地图](https://www.reddit.com/r/MachineLearning/comments/1ujn3u5/a_map_of_the_latest_11_million_papers_split_by/) ⭐️ 6.0/10
 
-EACL 2027 采用了新的 ARR 流程，将作者回复与审稿人讨论分为两个独立阶段，作者回复期为 2026 年 9 月 14 日至 19 日，审稿人参与及讨论期为 9 月 20 日至 24 日，相比过去单一的 5 天讨论期提供了更多时间。 这一变化解决了长期以来作者和审稿人都在仅有 5 天的紧凑窗口内同时完成回复和讨论的不足，特别是作者可能需要补充实验，有望提升论文评审质量，减轻 NLP 社区作者与审稿人的压力。 EACL 2027 的新时间表为作者回复分配了 6 天（9 月 14-19 日），为审稿人参与和讨论分配了 5 天（9 月 20-24 日），而此前如 2026 年 5 月 ARR 周期仅给合二为一的作者-审稿人讨论期 5 天。
+一个名为 The Global Research Space 的新型交互式可视化工具已发布，它使用 SPECTER 2 嵌入和 UMAP 将 1100 万篇科学论文按语义相似度进行映射，并允许用户通过时间切片滑动来观察趋势。 该工具帮助研究人员和公众快速把握科学文献的宏观趋势，更容易跟上各学科每日大量涌现的论文。 该工具使用 SPECTER 2 对标题和摘要进行编码，通过 UMAP 降维，并在高密度峰值周围使用 Voronoi 单元标记聚类；它还支持关键词和语义查询，并提供机构、作者和主题的排名分析。
 
-reddit · r/MachineLearning · /u/S4M22 · 6月30日 08:16
+reddit · r/MachineLearning · /u/icannotchangethename · 6月30日 11:55
 
-**背景**: ACL Rolling Review（ARR）是计算语言学协会（ACL）下属顶级自然语言处理会议（如 EACL、ACL、NAACL）使用的集中式同行评审平台。审稿流程包括提交、评审、作者回复和审稿人讨论等阶段。此前，作者回复和讨论被合并为一个极短的窗口，通常仅 5 天，导致作者难以提供充分的反驳并与审稿人进行有意义的交流。EACL 2027 的这一变化是对标准 ARR 时间线的改进，旨在改善评审体验。
+**背景**: SPECTER 2 是 Allen AI 开发的科学文档嵌入模型，通过引用三元组训练生成任务专用嵌入。UMAP（Uniform Manifold Approximation and Projection）是一种降维算法，能同时保留数据的局部和全局结构，常用于可视化。Voronoi 图根据与种子点的距离将平面划分为区域，在此用于围绕论文聚类创建非重叠标签。
 
 
 **参考链接**:
 
-- [How ARR works – ACL Rolling Review – A peer review platform for the Association for Computational Linguistics](http://aclrollingreview.org/reviewing)
-- [ACL Rolling Review – A peer review platform for the Association for Computational Linguistics](http://aclrollingreview.org/)
+- [SPECTER2: Adapting scientific document embeddings to ... - Medium](https://allenai.org/blog/specter2-adapting-scientific-document-embeddings-to-multiple-fields-and-task-formats-c95686c06567)
+- [[1802.03426] UMAP: Uniform Manifold Approximation and ... How to Use UMAP — umap 0.5.8 documentation UMAP Dimensionality Reduction - An Incredibly Robust Machine ... Understanding UMAP: A Comprehensive Guide to Dimensionality ... A Comparative Study of UMAP and Other Dimensionality ...](https://arxiv.org/abs/1802.03426)
+- [Voronoi diagram](https://en.wikipedia.org/wiki/Voronoi_diagram)
 
 
-**标签**: `#machine learning`, `#academic publishing`, `#peer review`, `#natural language processing`, `#conference`
+**标签**: `#literature-mapping`, `#visualization`, `#semantic-similarity`, `#UMAP`, `#research-tools`
 
 ---
 
 <a id="item-19"></a>
-## [实例表示学习中为何用 NCE 而非直接近似 softmax 分母](https://www.reddit.com/r/MachineLearning/comments/1uj8nse/loss_functions_in_instance_representation/) ⭐️ 6.0/10
+## [CVIL 免费计算机视觉面试清单新增分割、OCR 与 VLM 专项](https://www.reddit.com/r/MachineLearning/comments/1ujlmy2/update_on_cvil_the_free_cv_interview_prep/) ⭐️ 6.0/10
 
-一位 Reddit 用户提问，为何在实例表示学习中采用噪声对比估计（NCE）而非直接近似 softmax 分母，并试图理解原始 NCE 公式与此应用的联系。 澄清这一设计选择有助于从业者理解大规模表示学习中可扩展损失函数的原理，这是自监督学习的关键技术，支撑着许多现代视觉和语言模型。 直接用常数近似分母（如式 8）会得到配分函数的有偏估计，导致梯度不佳。NCE 将问题转化为真实样本与噪声样本的二分类，且随着噪声样本数增加，其梯度渐近趋近于完整 softmax 的梯度，从而完全避免了计算所有实例的无法处理的分母。
+由一位成功获得计算机视觉实习机会的开发者创建的社区驱动备考清单 CVIL，新增了三个专项学习路径：图像分割、光学字符识别（OCR）和视觉语言模型（VLM）。该仓库同时进行了结构调整，并添加了贡献指南，鼓励社区补充 3D 视觉、姿态估计等内容。 这个免费的阶段式学习路线图帮助求职者应对不断扩展的计算机视觉面试主题，如今面试中常涉及 VLM 等现代架构。它为缺乏结构化学习资源的候选人降低了门槛，并反映了行业对多模态技能日益增长的需求。 该清单按阶段组织，从数学基础到 CNN、ViT、检测和跟踪，并设有可选专项。现有专项包括行人重识别（ReID）与部署，新增的专项为分割、OCR 和 VLM。GitHub 仓库开放贡献，还有多个其他专项等待社区补充。
 
-reddit · r/MachineLearning · /u/No_Balance_9777 · 6月29日 23:34
+reddit · r/MachineLearning · /u/PolarIceBear_ · 6月30日 10:40
 
-**背景**: 在实例表示学习中，每张图像被当作一个独立的类别，softmax 的分母需要对数据集中所有图像求和，计算量巨大。噪声对比估计最初为未归一化的统计模型提出，它通过训练模型区分真实数据与人工生成的噪声样本来避免直接计算归一化常数。损失函数变为二分类逻辑回归损失，无需显式归一化。原始 NCE 理论表明，模型学习的是数据与噪声的对数密度比；在表示学习中，该方法无需计算完整配分函数，即可使学到的特征向量有效捕捉实例间相似性。
+**背景**: 计算机视觉（CV）是使机器理解视觉数据的人工智能领域。视觉 Transformer（ViT）将 Transformer 架构应用于图像块，在图像识别中取得了优异表现。视觉语言模型（VLM）是能够联合处理图像和文本的多模态模型，支撑着 GPT-4V、Gemini 等应用，代表了 CV 研究和行业需求的最新转变。
 
 
 **参考链接**:
 
-- [Noise-Contrastive Estimation of Unnormalized Statistical ...](https://www.jmlr.org/papers/volume13/gutmann12a/gutmann12a.pdf)
-- [Demystifying Neural Networks: Noise Contrastive Estimation (NCE) | by Dagang Wei | Medium](https://medium.com/@weidagang/demystifying-noise-contrastive-estimation-nce-in-machine-learning-32ded05401f4)
+- [Vision-language model (VLM)](https://en.wikipedia.org/wiki/Vision-language_model_(VLM))
+- [Vision transformer - Wikipedia](https://en.wikipedia.org/wiki/Vision_transformer)
 
 
-**标签**: `#representation learning`, `#loss functions`, `#NCE`, `#contrastive learning`, `#machine learning`
+**标签**: `#computer-vision`, `#interview-prep`, `#machine-learning`, `#resource`, `#github`
+
+---
+
+<a id="item-20"></a>
+## [EML 树被证明为连续函数的通用逼近器](https://www.reddit.com/r/MachineLearning/comments/1uipl1t/eml_trees_are_universal_approximators_r/) ⭐️ 6.0/10
+
+一项新证明表明，由带可学习参数的广义 EML 函数构成的树结构能够通用逼近任意连续函数，将经典通用逼近定理推广到了这种组合结构中。 这一理论结果证实了 EML 组合框架在原理上拥有与神经网络同等的表达能力，可能为基于初等函数组合的函数逼近器开辟新的研究方向，同时也为爆红的 EML“技巧”提供了严格的理论基础。 证明通过 EML 型树显式构造了二元运算、多项式、双曲正切和近似单位分解。针对自然对数在非正数上无定义等关键问题，通过基于符号的分解和仿射映射加以解决。原始的 EML 函数被扩展为带有可学习参数的广义形式。
+
+reddit · r/MachineLearning · /u/JoeGermany · 6月29日 11:16
+
+**背景**: EML 函数是一个单一的数学算子，通过组合可生成所有初等函数，类似于逻辑中的 NAND 门。通用逼近定理是机器学习理论的基石，指出特定结构（如带隐藏层的神经网络）能以任意精度逼近任何连续函数。本文证明，EML 树——即广义 EML 函数的树形组合——同样具备这种通用逼近性质。
+
+
+**参考链接**:
+
+- [GraphicMaths - A universal elementary function , EML](https://graphicmaths.com/pure/special-functions/universal-eml-function/)
+- [Universal approximation theorem](https://en.wikipedia.org/wiki/Universal_approximation_theorem)
+- [EML : The Single Operator That Generates All Math — Sameer Khan](https://monkfrom.earth/blogs/eml-operator-math-nand-gate)
+
+
+**标签**: `#universal approximation`, `#EML`, `#function composition`, `#machine learning theory`, `#mathematical foundations`
+
+---
+
+<a id="item-21"></a>
+## [Reddit 用户询问递归自我改进作为博士课题的可行性](https://www.reddit.com/r/MachineLearning/comments/1uip4yo/what_do_you_think_of_recursive_self_improvement_d/) ⭐️ 6.0/10
+
+一位 Reddit 用户在 r/MachineLearning 社区提问，询问递归自我改进（RSI）是否是一个值得研究的博士课题，并提到了最近在 ICLR 上举办的相关研讨会。 这个问题凸显了学术界对递归自我改进日益增长的兴趣，该概念是 AI 安全和智能爆炸潜在风险的核心，并在 ICLR 等顶级会议上被认可为正式研究领域。 该帖子提到了 ICLR 研讨会的网站（recursive-workshop.github.io），但未提供更多细节。递归自我改进是指 AI 系统能够重写自身代码，可能导致超级智能的出现。
+
+reddit · r/MachineLearning · /u/Successful_Bowl2564 · 6月29日 10:52
+
+**背景**: 递归自我改进（RSI）是一个理论过程，即 AI 系统迭代升级自身代码，导致能力快速提升和智能爆炸。这一概念与 AI 安全研究紧密相关，因为不受控制的 RSI 可能产生无法预见的行为。ICLR 上关于此主题的研讨会表明，学术界正开始正式探索该领域，超越以往的推测性讨论。
+
+
+**参考链接**:
+
+- [Recursive self-improvement](https://en.wikipedia.org/wiki/Recursive_self-improvement)
+- [When AI builds itself \ Anthropic](https://www.anthropic.com/institute/recursive-self-improvement)
+
+
+**标签**: `#recursive self improvement`, `#PhD`, `#ICLR`, `#AI safety`, `#machine learning`
 
 ---
 
