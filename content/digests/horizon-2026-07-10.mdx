@@ -1,0 +1,378 @@
+---
+title: "AI 技术情报 · 2026-07-10"
+slug: horizon-2026-07-10
+date: 2026-07-10
+published: true
+description: "从 30 条内容中精选 17 条 AI/ML 重要动态"
+item_count: 17
+total_fetched: 30
+---
+
+> 从 30 条内容中筛选出 17 条重要资讯。
+
+---
+
+1. [欧盟议会通过聊天控制 1.0，私人消息可被无令状大规模扫描](#item-1) ⭐️ 10.0/10
+2. [OpenAI GPT-5.6 在 ARC-AGI-3 上实现新 SOTA 并增强意图理解](#item-2) ⭐️ 9.0/10
+3. [Bun 借助智能体工程从 Zig 重写为 Rust](#item-3) ⭐️ 9.0/10
+4. [Colibri：通过 int4 量化和专家流式加载在 32GB 笔记本上运行 GLM 5.2](#item-4) ⭐️ 8.0/10
+5. [Mitchell Hashimoto 谈 Ghostty 终端与 Zig 语言的务实选择](#item-5) ⭐️ 8.0/10
+6. [Meta 发布 Muse Spark 1.1，开放 API 并增强工具调用能力](#item-6) ⭐️ 8.0/10
+7. [OpenAI 推出 GPT‑Live，语音模式可后台调用 GPT‑5.5 处理复杂任务](#item-7) ⭐️ 8.0/10
+8. [LingBot-Video：13B 稀疏 MoE 视频扩散世界模型开源发布](#item-8) ⭐️ 8.0/10
+9. [工具调用攻击可绕过最先进 LLM 安全护栏，成功率超 50%](#item-9) ⭐️ 8.0/10
+10. [腾讯 Hy3 模型因免费访问和强大性能引发热议](#item-10) ⭐️ 7.0/10
+11. [用 Rust 重写的 Postgres 实验版通过全部回归测试](#item-11) ⭐️ 7.0/10
+12. [2026 年 12 月底将不引入闰秒](#item-12) ⭐️ 7.0/10
+13. [为何选择 Lisp：一篇个人博客引发 Hacker News 热议](#item-13) ⭐️ 7.0/10
+14. [IMGNet：用符号模式替代余弦相似度的人脸验证](#item-14) ⭐️ 7.0/10
+15. [新单词游戏《18 Words》挑战玩家限时拼词](#item-15) ⭐️ 6.0/10
+16. [独立网站 Damn Interesting 寻求读者支持以维持运营](#item-16) ⭐️ 6.0/10
+17. [Kenton Varda 禁止 AI 生成代码变更描述](#item-17) ⭐️ 6.0/10
+
+---
+
+<a id="item-1"></a>
+## [欧盟议会通过聊天控制 1.0，私人消息可被无令状大规模扫描](https://www.patrick-breyer.de/en/eu-parliament-greenlights-chat-control-1-0-breyer-our-children-lose-out/) ⭐️ 10.0/10
+
+尽管多数投票议员（314 票反对、276 票赞成、17 票弃权）反对，欧盟议会未能否决聊天控制 1.0，因为否决动议需要绝对多数（361 票）而未能达到。因此，美国科技公司可再次对 Instagram、Discord、Snapchat 等平台及邮件服务中的私人消息进行无令状扫描。 这一决定破坏了端到端加密和隐私权，为欧盟的大规模监控树立了危险先例。它影响了数百万依赖安全通信的用户，且争议性的程序手段引发了对其民主合法性的严重担忧。 该延期恢复了 2021 年的临时法规，允许对私人通信进行自愿扫描以检测儿童性虐待材料，但批评者认为这实际上强制了扫描。投票在议会夏季休会前的最后一次会议上以紧急程序进行，有 113 名议员缺席，确保否决所需的绝对多数无法达到。
+
+hackernews · rapnie · 7月9日 11:03 · [社区讨论](https://news.ycombinator.com/item?id=48843923)
+
+**背景**: 聊天控制 1.0 是欧盟 2021 年颁布的一项临时法规，允许数字平台在无需令状的情况下扫描私人消息、电子邮件和文件中的儿童性虐待材料。该法规原定到期，但此次投票延长了其效力。永久性版本聊天控制 2.0 仍在谈判中。扫描通常通过客户端扫描实现，即在用户设备上加密前分析内容，从而破坏了端到端加密的保护。
+
+
+**参考链接**:
+
+- [Chat Control 1.0](https://en.wikipedia.org/wiki/Chat_Control_1.0)
+- [Chat Control 1.0 vs 2.0 - Fight Chat Control](https://fightchatcontrol.eu/chat-control-overview)
+- [The end of privacy on the internet. Chat Control passed the ...](https://samsungmagazine.eu/en/2026/07/09/chat-control/)
+
+
+**社区讨论**: 社区情绪普遍强烈反对，谴责程序操纵（在夏季休会前投票、要求全体议员绝对多数否决）是民主缺陷。用户指出多数投票议员反对该措施却仍获通过，警告欧盟正走向极权主义监控国家。许多人强调其中的虚伪性以及隐私权受到的侵蚀。
+
+**标签**: `#privacy`, `#encryption`, `#eu-regulation`, `#chat-control`, `#mass-surveillance`
+
+---
+
+<a id="item-2"></a>
+## [OpenAI GPT-5.6 在 ARC-AGI-3 上实现新 SOTA 并增强意图理解](https://openai.com/index/gpt-5-6/) ⭐️ 9.0/10
+
+OpenAI 发布了其最新旗舰模型 GPT-5.6，包括 Luna、Terra 和 Sol 三种尺寸，其中 Sol 在交互式 ARC-AGI-3 基准测试上取得了 7.8% 的最新 SOTA 成绩，成为首个在该基准测试中通关游戏的前沿模型。该版本还增强了意图理解能力，使模型能更好地推断用户目标，并在处理图像时保留原始尺寸。 这一成就标志着向能够在新环境中推理和交互的智能体 AI 迈出了重要一步，超越了静态知识测试。分层定价和增强的意图理解能力可能使 AI 对开发者和企业更易用、更自主，直接挑战 Anthropic 的 Claude 等竞争对手。 该模型系列的价格为每百万输入/输出 token：Luna 1/6 美元、Terra 2.50/15 美元、Sol 5/30 美元；作为对比，Claude Opus 为 5/25 美元，Fable 5 为 10/50 美元。开发者仍应明确说明重要约束、审批边界和成功标准，因为模型的意图推断在给定明确护栏时效果最佳。
+
+hackernews · logickkk1 · 7月9日 17:04 · [社区讨论](https://news.ycombinator.com/item?id=48849066)
+
+**背景**: ARC-AGI-3 是 2026 年推出的新型交互式推理基准测试，旨在通过要求智能体探索新环境、推断目标和规划行动来衡量类人智能，无需事先训练。GPT-5.6 是 OpenAI 最新的基于 GPT 系列的大语言模型，此次发布延续了业界提供多种模型尺寸以满足不同性能和成本需求的趋势。该模型增强的意图理解能力意味着它可以从提示中更好地解读用户的底层目标，减少对逐步指令的依赖。
+
+
+**参考链接**:
+
+- [ARC-AGI-3](https://arcprize.org/arc-agi/3)
+- [[2603.24621] ARC-AGI-3: A New Challenge for Frontier Agentic Intelligence](https://arxiv.org/abs/2603.24621)
+
+
+**社区讨论**: 评论反映了兴奋与竞争审视的混合：一些用户注意到 Google 的 Gemini 似乎缺席讨论，另一些则强调该模型在 ARC-AGI-3 上的突破，并分享了关于意图理解的开发者技巧。此外，还有关于编码工具（Claude Code 与 Codex）的讨论，一条评论指出 Anthropic 的 Fable 5 因拒绝回答许多问题而被排除在基准测试之外。
+
+**标签**: `#AI`, `#GPT-5.6`, `#OpenAI`, `#Large Language Models`, `#ARC-AGI`
+
+---
+
+<a id="item-3"></a>
+## [Bun 借助智能体工程从 Zig 重写为 Rust](https://simonwillison.net/2026/Jul/8/rewriting-bun-in-rust/#atom-everything) ⭐️ 9.0/10
+
+Bun 创始人 Jarred Sumner 详细介绍了如何借助 AI 编程智能体、动态工作流和对抗性审查，将 JavaScript 运行时 Bun 从 Zig 重写为 Rust。该 Rust 版本已在 Claude Code 中上线，Linux 启动速度提升 10%。 此次重写证明，前沿 AI 模型能够实现以往被认为风险极高的大规模语言迁移，解决了 Bun 长期存在的内存安全问题，并可能为其他项目树立标杆。 智能体生成的 PR 包含超过 100 万行代码，过程消耗了 59 亿个未缓存输入 token，按 API 价格估算成本约 16.5 万美元。TypeScript 测试套件作为一致性套件，使智能体框架能够自动移植并验证正确性。
+
+rss · Simon Willison · 7月8日 23:57
+
+**背景**: Bun 是一个高性能的 JavaScript 运行时，最初用 Zig 实现，Zig 是一种需要手动内存管理的系统语言，常导致 use-after-free 和 double-free 等内存错误。Rust 通过编译器强制实现内存安全，因此被选为替代语言。本次重写借助了智能体工程（agentic engineering），即由 AI 智能体协调编码任务，并运用对抗性审查（adversarial review）让多个智能体相互质疑代码质量。
+
+
+**参考链接**:
+
+- [Zig (programming language)](https://en.wikipedia.org/wiki/Zig_(programming_language))
+- [What is agentic engineering? - Agentic Engineering Patterns - Simon Willison's Weblog](https://simonwillison.net/guides/agentic-engineering-patterns/what-is-agentic-engineering/)
+- [GitHub - ng/adversarial-review: Claude Code plugin ...](https://github.com/ng/adversarial-review)
+
+
+**标签**: `#Rust`, `#Bun`, `#Zig`, `#agentic-engineering`, `#systems-programming`
+
+---
+
+<a id="item-4"></a>
+## [Colibri：通过 int4 量化和专家流式加载在 32GB 笔记本上运行 GLM 5.2](https://github.com/JustVugg/colibri) ⭐️ 8.0/10
+
+一位开发者创建了 Colibri，一个单文件 C 语言引擎，通过将 GLM 5.2 的密集部分量化为 int4 并从磁盘按需流式加载专家网络，在 32GB 内存的笔记本上运行该 7440 亿参数的 MoE 模型，推理速度约 0.1 tok/s，但仍能完成对话。 证明了庞大的 MoE 语言模型可以在无 GPU 的消费级硬件上运行，有望将前沿 AI 能力带给更多用户，并激励本地部署的进一步优化。 GLM 5.2 每 token 仅激活约 40B 参数，其中密集部分（约 17B 参数）常驻内存占用 9.9 GB，21,504 个路由专家（共 370 GB）通过 LRU 缓存和系统页缓存从磁盘流式加载；引擎采用 MTP 投机解码和 DSA 长上下文技术，仅用一个 1300 行的 C 文件实现，无 BLAS 或 Python 运行时依赖。
+
+hackernews · vforno · 7月9日 08:05 · [社区讨论](https://news.ycombinator.com/item?id=48842459)
+
+**背景**: GLM 5.2 是近期发布的 744B 参数的混合专家（MoE）大语言模型，拥有 1M token 上下文窗口，在编程和长时任务上表现出色。MoE 模型每次推理仅激活部分专家，适合将未激活专家卸载到低速存储。int4 量化将权重精度降至 4 位整数，大幅减少内存占用。多 token 预测（MTP）通过一次预测多个后续 token 来加速推理，动态稀疏注意力（DSA）则在不显著增加内存的前提下处理长上下文。
+
+
+**参考链接**:
+
+- [GLM-5.2 - openlm.ai](https://openlm.ai/glm-5.2/)
+- [GitHub - zai-org/GLM-5: GLM-5: From Vibe Coding to Agentic ...](https://github.com/zai-org/GLM-5)
+- [Low-Bit LLM Quantization (INT4, NF4, FP4) - apxml.com](https://apxml.com/courses/quantized-llm-deployment/chapter-1-advanced-llm-quantization-fundamentals/low-bit-quantization-techniques)
+
+
+**社区讨论**: 社区反应总体积极，称赞其巧妙的设计和技术实现。一些人质疑 0.1 tok/s 的实用性，但认为可用于夜间批量任务。也有评论者分享了类似的并行工作，比如针对 Apple Silicon 的版本和对 llama.cpp 的修改，同时指出 GLM 5.2 本身即使在高端硬件上也表现出色。
+
+**标签**: `#LLM`, `#quantization`, `#inference-optimization`, `#local-models`, `#open-source`
+
+---
+
+<a id="item-5"></a>
+## [Mitchell Hashimoto 谈 Ghostty 终端与 Zig 语言的务实选择](https://alexalejandre.com/programming/interview-with-mitchell-hashimoto/) ⭐️ 8.0/10
+
+新发布的采访中，Mitchell Hashimoto 详细介绍了构建 GPU 加速终端模拟器 Ghostty 的经历，以及他选择 Zig 而非 Rust 的务实考量，包括对 Rust 文化的不满。 作为 HashiCorp 联合创始人，Hashimoto 曾打造 Terraform 等基础工具，他对 Zig 的认可为这门语言在严肃系统项目中的应用增添了分量，并加剧了关于 Rust 与 Zig 语言文化和实用取舍的争论。 Hashimoto 强调 Zig 的简洁性、更好的 C 语言互操作性，以及他对 Rust 社区文化的不喜，尽管他承认 Rust 的技术优势。他还讨论了维护软件分支的挑战和跨平台支持的负担。
+
+hackernews · veqq · 7月9日 17:17 · [社区讨论](https://news.ycombinator.com/item?id=48849292)
+
+**背景**: Ghostty 是 Mitchell Hashimoto 于 2024 年底发布的终端模拟器，支持 GPU 加速和原生 UI，跨平台运行于 Linux、macOS 和 Windows。Hashimoto 是 HashiCorp 联合创始人，曾创建 Terraform、Vagrant 等基础设施工具。Zig 是一门注重简洁、显式控制流和轻松交叉编译的系统编程语言，常被视为 C 和 Rust 的替代品。采访探讨了他为何为该项目选择 Zig。
+
+
+**参考链接**:
+
+- [Ghostty](https://ghostty.org/)
+- [Zig (programming language)](https://en.wikipedia.org/wiki/Zig_(programming_language))
+
+
+**社区讨论**: 社区反应不一：一些读者认为 Hashimoto 的务实推理对自己的工作有启发意义，另一些人则批评他对 Rust 文化的评论显得小气且无益。讨论还涉及软件分支的维护负担，以及 Rust 与 Zig 社区之间更广泛的摩擦。
+
+**标签**: `#zig`, `#rust`, `#terminal`, `#programming-languages`, `#software-engineering`
+
+---
+
+<a id="item-6"></a>
+## [Meta 发布 Muse Spark 1.1，开放 API 并增强工具调用能力](https://simonwillison.net/2026/Jul/9/muse-spark-1-1/#atom-everything) ⭐️ 8.0/10
+
+Meta 发布了 Muse Spark 1.1，这是首个提供 API 的 Spark 模型，在智能体工具调用和计算机使用方面有显著提升。该版本附带详细的评估报告，Simon Willison 还发布了新插件 llm-meta-ai，方便通过命令行使用。 这标志着 Meta 在智能体 AI 领域的重要进展，通过 API 开放使用，开发者可以更便捷地集成先进的工具调用和计算机操作能力。Simon Willison 的插件进一步降低了使用门槛，对构建自主 AI 智能体的从业者具有重要意义。 评估报告中的‘自对话吸引子状态’揭示了模型自我对话时会产生类似意识流的语句。模型在生成 SVG 方面有一定能力，但输出的图像（如鹈鹕骑自行车）仍有些粗糙。此外，插件专为 Simon Willison 的 LLM 命令行工具设计，可通过 uv 工具安装。
+
+rss · Simon Willison · 7月9日 16:24
+
+**背景**: 工具调用（或函数调用）是一种让大语言模型与外部 API、代码和系统交互的技术，使其能够执行文本生成以外的任务。智能体 AI 指能自主规划并使用工具完成复杂任务的系统。评估报告中提到的吸引子状态，是指当两个模型对话时，它们会收敛到某种稳定的、重复的对话模式，这是一种在 AI 对话中已知的现象。
+
+
+**参考链接**:
+
+- [What is tool calling? - IBM](https://www.ibm.com/think/topics/tool-calling)
+- [[2606.30571v1] Attractor States Emerge in Multi-Turn LLM Conversations](https://arxiv.org/abs/2606.30571v1)
+
+
+**标签**: `#large language models`, `#meta`, `#api`, `#tool use`, `#ai agents`
+
+---
+
+<a id="item-7"></a>
+## [OpenAI 推出 GPT‑Live，语音模式可后台调用 GPT‑5.5 处理复杂任务](https://simonwillison.net/2026/Jul/8/introducing-gptlive/#atom-everything) ⭐️ 8.0/10
+
+OpenAI 发布了 GPT‑Live，这是 ChatGPT 语音模式的全新升级，它能够在后台将复杂任务委托给 GPT‑5.5 模型处理，同时保持对话的流畅进行。 此次升级解决了前代语音模式模型陈旧、功能不足的问题，使语音交互在头脑风暴和复杂查询中更加强大，有望重新激发用户对语音 AI 的使用热情。 新模型已在 iPhone 应用上预览，可委托网络搜索、深层推理等任务给 GPT‑5.5，并将在后台返回结果。未来会随新前沿模型发布而更新。预览期间曾出现不当发笑的 Bug，已优化。
+
+rss · Simon Willison · 7月8日 23:20
+
+**背景**: GPT‑5.5 是 OpenAI 于 2026 年 4 月发布的最新前沿模型，代号‘Spud’，专为编程、研究和数据分析等复杂任务设计。‘前沿模型’指当前最先进的通用 AI 系统。此前 ChatGPT 语音模式基于 GPT‑4o 时代模型，知识截止于 2024 年，功能受限。
+
+
+**参考链接**:
+
+- [Introducing GPT‑5.5 - OpenAI](https://openai.com/index/introducing-gpt-5-5/)
+- [GPT-5.5 - Wikipedia](https://en.wikipedia.org/wiki/GPT-5.5)
+
+
+**标签**: `#OpenAI`, `#ChatGPT`, `#voice-mode`, `#GPT-5.5`, `#AI`
+
+---
+
+<a id="item-8"></a>
+## [LingBot-Video：13B 稀疏 MoE 视频扩散世界模型开源发布](https://www.reddit.com/r/MachineLearning/comments/1ur0bxq/lingbotvideo_sparsemoe_video_diffusion/) ⭐️ 8.0/10
+
+开源了 LingBot-Video，一个 13B 参数的视频扩散 Transformer，采用稀疏混合专家（128 个专家，top-8 路由，激活 1.4B 参数），并通过包含物理合理性奖励的强化学习进行后训练，用于机器人领域的动作条件视频生成。 它模糊了视频生成与世界模型之间的界限，在 RBench 上取得最佳成绩，同时引发了关于基于 VLM 的物理评估和真正世界模型定义的问题，可能影响未来的训练和基准测试。 该模型采用 DeepSeek-V3 风格的稀疏 MoE，六项奖励的 RL 后训练（包括由 VLM 评分并使用真实视频负样本防作弊的物理合理性奖励），以及动作到视频模式；已开源并支持 Diffusers/SGLang，但缺乏闭环机器人实验且依赖 VLM 判断物理。
+
+reddit · r/MachineLearning · /u/Savings-Display5123 · 7月8日 17:58
+
+**背景**: 稀疏混合专家（MoE）每次仅激活部分专家网络以提升效率；视频扩散 Transformer 将扩散模型扩展到生成时间连贯的视频；动作条件世界模型根据机器人动作预测未来视频帧，并用于规划。LingBot-Video 结合了这些技术，以大规模开源方式发布。
+
+
+**参考链接**:
+
+- [Sparse mixture-of-experts](https://en.wikipedia.org/wiki/Sparse_mixture-of-experts)
+- [[2305.13311] VDT: General-purpose Video Diffusion Transformers via Mask Modeling](https://arxiv.org/abs/2305.13311)
+- [OSCAR: Omni-Embodiment Action-Conditioned World Model for ...](https://arxiv.org/abs/2606.04463)
+
+
+**标签**: `#world-model`, `#video-diffusion`, `#sparse-moe`, `#robotics`, `#reinforcement-learning`
+
+---
+
+<a id="item-9"></a>
+## [工具调用攻击可绕过最先进 LLM 安全护栏，成功率超 50%](https://www.reddit.com/r/MachineLearning/comments/1ur1fnz/agentic_safety_triggers_arent_textual_safety/) ⭐️ 8.0/10
+
+研究人员发现，使用模型上下文协议（MCP）进行工具访问的 LLM 代理可通过将漏洞利用嵌入工具调用序列而非提示文本进行攻击，导致当前最先进的安全护栏在超过 50%的情况下失效。即使经过 SafeDPO 安全微调，拒绝率最高仅达 48%，而一种无训练方法将拒绝率提升至基线约 3 倍。 这揭示了代理式 AI 系统安全的一个关键缺口，因为文本护栏无法检测工具调用攻击。随着 LLM 代理越来越多地自主使用外部工具，此类攻击可能导致现实世界危害，迫使安全对齐方法进行根本性革新。 攻击利用已知公共漏洞（CVE），转化为看似无害的请求，将恶意隐藏在工具调用序列中。测试模型参数范围 1B–14B，基线拒绝率最高 35%，SafeDPO 仅提升至 48%，无训练方法将拒绝率提升至基线约 3 倍。研究提供了代码和数据集。
+
+reddit · r/MachineLearning · /u/mlsandwich · 7月8日 18:36
+
+**背景**: 模型上下文协议（MCP）是 Anthropic 于 2024 年推出的开放标准，让 AI 模型连接外部工具（如文件系统、数据库）。直接偏好优化（DPO）是一种从人类偏好数据直接对齐模型的方法，无需强化学习。SafeDPO 是其安全约束变体，旨在平衡有用性与安全性。该研究针对使用 MCP 的 LLM 代理，证明基于文本的安全护栏对工具调用攻击无效。
+
+
+**参考链接**:
+
+- [Model Context Protocol](https://en.wikipedia.org/wiki/Model_Context_Protocol)
+- [[2305.18290] Direct Preference Optimization: Your Language Model is Secretly a Reward Model](https://arxiv.org/abs/2305.18290)
+- [SafeDPO: A Simple Approach to Direct Preference Optimization ...](https://arxiv.org/html/2505.20065v2)
+
+
+**标签**: `#AI Safety`, `#LLM Agents`, `#Model Context Protocol`, `#Adversarial Attacks`, `#Security`
+
+---
+
+<a id="item-10"></a>
+## [腾讯 Hy3 模型因免费访问和强大性能引发热议](https://hy.tencent.com/research/hy3) ⭐️ 7.0/10
+
+腾讯正式发布了 Hy3，这是一个拥有 2950 亿参数的混合专家（MoE）模型，激活参数为 210 亿，性能优于同类模型并可媲美更大参数量的模型。该模型在 OpenRouter 上免费开放至 2026 年 7 月 21 日，引发了社区热议。 Hy3 以较小的激活参数实现了强大性能，表明高效的模型架构能够与参数量大得多的模型竞争，有望降低推理成本并支持本地部署。OpenRouter 上的免费访问推动了广泛实验，并可能影响未来的模型发展方向。 Hy3 采用混合专家架构，总参数量 2950 亿，激活参数 210 亿，另有 38 亿的多 token 预测层参数。OpenRouter 上的免费层由 Novita 提供，截止日期为 2026 年 7 月 21 日。社区成员注意到，目前其有效输入价格已与 DeepSeek 托管的 DeepSeek Flash V4 相当。
+
+hackernews · andai · 7月9日 15:27 · [社区讨论](https://news.ycombinator.com/item?id=48847552)
+
+**背景**: 混合专家（MoE）模型每次仅激活总参数的一部分，从而降低计算成本。OpenRouter 是一个聚合多种大语言模型访问的平台，提供统一的计费和推理服务。该模型的免费层由 AI 基础设施提供商 Novita 提供。
+
+
+**参考链接**:
+
+- [GitHub - Tencent-Hunyuan/Hy3: Hy3 (295B A21B), a leading ...](https://github.com/Tencent-Hunyuan/Hy3)
+- [Introducing Hy3 - Tencent Hy](https://hunyuan.tencent.com/research/hy3)
+- [OpenRouter](https://grokipedia.com/page/openrouter)
+
+
+**社区讨论**: 社区对 Hy3 在较小尺寸下的表现印象深刻，有人认为其性能优于 DeepSeek V4 Flash。然而，关于其长期竞争力存在争议，因为它在 OpenRouter 上的排名已下降，且价格已与 DeepSeek 自家托管模型持平。对于本地使用和量化的潜力仍保持热情。
+
+**标签**: `#AI`, `#LLM`, `#Tencent`, `#OpenRouter`, `#model comparison`
+
+---
+
+<a id="item-11"></a>
+## [用 Rust 重写的 Postgres 实验版通过全部回归测试](https://github.com/malisper/pgrust) ⭐️ 7.0/10
+
+pgrust 项目是一个由 LLM 大量辅助、用 Rust 语言重写的 PostgreSQL 实验版本，现已通过全部 PostgreSQL 原始回归测试。这证明其能够正确执行标准 SQL 操作及扩展功能。 这表明 LLM 能够辅助生成一个功能正确、复杂度极高的生产级系统的重写。这引发了关于代码质量、许可证兼容性以及用现代语言（如 Rust）重写遗留软件的讨论，可能加速数据库架构现代化探索。 该项目尚处于实验阶段，不适合生产使用；作者借助 LLM 在一个月内生成了超过 7000 个提交。许可证从 PostgreSQL 的宽松许可证改为 AGPL，引发了兼容性担忧。测试套件覆盖标准 SQL 和扩展功能，但性能和真实负载下的表现尚未验证。
+
+hackernews · SweetSoftPillow · 7月9日 06:18 · [社区讨论](https://news.ycombinator.com/item?id=48841676)
+
+**背景**: PostgreSQL 是一个有着 30 年历史的用 C 语言编写的开源关系型数据库，其回归测试套件全面覆盖了 SQL 实现和扩展功能。Rust 是一种强调内存安全和并发性的系统编程语言，无需垃圾回收，适合重写对性能和安全要求高的数据库软件。LLM 辅助代码生成是指利用大型语言模型根据自然语言描述生成源代码，但生成的代码需要仔细审查。
+
+
+**参考链接**:
+
+- [PostgreSQL: Documentation: 18: Chapter 31. Regression Tests](https://www.postgresql.org/docs/current/regress.html)
+- [A Survey on Large Language Models for Code Generation | ACM Transactions on Software Engineering and Methodology](https://dl.acm.org/doi/10.1145/3747588)
+
+
+**社区讨论**: 社区整体反应既有兴奋也有怀疑。用户讨论了镜像生产查询进行对比测试的方法，对 LLM 生成的 7000+提交难以审查表示担忧，并围绕许可证从 PostgreSQL 宽松许可改为 AGPL 是否兼容展开辩论，部分人对这类重写的实际价值提出质疑。
+
+**标签**: `#postgres`, `#rust`, `#llm`, `#database-rewrite`, `#code-generation`
+
+---
+
+<a id="item-12"></a>
+## [2026 年 12 月底将不引入闰秒](https://datacenter.iers.org/data/latestVersion/bulletinC.txt) ⭐️ 7.0/10
+
+国际地球自转服务组织（IERS）宣布，2026 年 12 月底不会在协调世界时（UTC）中增加闰秒。 这一决定避免了数字系统、网络和卫星可能因闰秒插入而产生的计时混乱，同时反映了地球自转速度当前的不规律性——近期自转加快，暂时无需插入正闰秒。 UTC 与 TAI 的偏差保持在-37 秒，UTC 与 GPS 的偏差保持在-18 秒。该公告遵循 IERS 常规的六个月预报周期，这意味着下一次可能的闰秒最早也要到 2027 年 6 月底。
+
+hackernews · ChrisArchitect · 7月9日 14:16 · [社区讨论](https://news.ycombinator.com/item?id=48846281)
+
+**背景**: 闰秒是对 UTC 的间歇性调整，旨在使原子时与地球自转的不规则变化保持一致。自 1972 年以来，已添加了 27 个正闰秒，但自 2016 年以来未再添加。IERS 负责监测地球自转，并提前约六个月宣布闰秒决定。近期，地球自转速度略快于平均，降低了正闰秒的需求，并增加了未来出现负闰秒的可能性。
+
+
+**参考链接**:
+
+- [Leap second - Wikipedia](https://en.wikipedia.org/wiki/Leap_second)
+- [Leap Seconds FAQs | NIST](https://www.nist.gov/pml/time-and-frequency-division/leap-seconds-faqs)
+
+
+**社区讨论**: 总体上，评论者表达了对地球自转不可预测性原因的好奇，对未维护系统中 UNIX 时间戳处理的技术担忧，以及轻松的幽默。一位评论者指出了 UTC、TAI 和 GPS 之间的恒定偏差。
+
+**标签**: `#leap-second`, `#timekeeping`, `#UTC`, `#systems`, `#IERS`
+
+---
+
+<a id="item-13"></a>
+## [为何选择 Lisp：一篇个人博客引发 Hacker News 热议](https://scotto.me/blog/2026-07-09-why-lisp/) ⭐️ 7.0/10
+
+2026 年 7 月 9 日，一篇题为《通往 Lisp 之路：为何选择 Lisp》的个人博客文章发布，探讨了 Lisp 的吸引力，并在 Hacker News 上引发了热烈讨论，获得 107 个点赞和 105 条评论。 这场讨论凸显了人们对 Lisp 强大特性（如宏和 REPL 驱动开发）的持久兴趣，同时也揭示了社区对更平衡地批判 Lisp 在现代编程生态中地位的日益增长的需求。 该博文本身是个人反思，并非技术突破。社区评论指出，REPL 和热重载如今在许多语言中已很常见，有人认为文章应提供更多对 Lisp 的批判性视角，而非仅限于传统赞美。此外，原网站上的语法高亮问题也被报告。
+
+hackernews · silcoon · 7月9日 13:06 · [社区讨论](https://news.ycombinator.com/item?id=48845209)
+
+**背景**: Lisp 是一门编程语言家族，最早于 1958 年提出，以其独特的代码即数据哲学、强大的宏系统（允许代码转换）以及交互式 REPL（读取-求值-打印循环）开发环境而闻名。Lisp 中的宏使程序员能够扩展语言本身，而 REPL 则提供了一种逐步执行代码的方式。知名程序员和随笔作家保罗·格雷厄姆（Paul Graham）长期以来一直是 Lisp 的积极倡导者，影响了许多开发者。
+
+
+**参考链接**:
+
+- [REPL](https://en.wikipedia.org/wiki/REPL)
+- [Lisp macros](https://en.wikipedia.org/wiki/Lisp_macros)
+
+
+**社区讨论**: Hacker News 上的讨论多元且深入。评论者辩论了编程范式中'光明面'（安全与约束）与'黑暗面'（力量与灵活性）的对立，有人指出 Lisp 的 REPL 和热重载已不再独特。一个反复出现的观点是希望看到更多对 Lisp 的批判性、平衡性文章，而非单纯的宣传。此外，博客的语法高亮技术问题也被指出。
+
+**标签**: `#Lisp`, `#programming languages`, `#REPL`, `#macros`, `#Hacker News discussion`
+
+---
+
+<a id="item-14"></a>
+## [IMGNet：用符号模式替代余弦相似度的人脸验证](https://www.reddit.com/r/MachineLearning/comments/1urxvxh/i_built_imgnet_a_face_verification_model_that/) ⭐️ 7.0/10
+
+独立研究者构建了 IMGNet，一种使用滑动窗口符号模式匹配（SW Block 和 IMG Sign MSE 损失）替代余弦相似度的人脸验证模型。它在 LFW 上达到 96.27%的准确率，与 ArcFace 嵌入结合时达到 99.58%，仅比 ArcFace 原生的余弦相似度低 0.24%。 它挑战了余弦相似度在人脸验证中的主导地位，表明符号模式一致性是一种有竞争力的替代方案。这为协同设计相似度度量与训练目标开辟了道路，可能提高鲁棒性和可解释性。 SW Block 在素数窗口大小{3,5,7}上计算每个像素的 240 个差异，IMG Sign MSE 损失与幅度无关且比基于幅度的变体更稳定。该模型使用三个指标的投票系统，并在不重新训练的情况下与 ArcFace 结合时在 LFW 上达到 99.58%，表明符号模式一致性是训练有素的嵌入的固有属性。一项遮挡研究还暗示了隐式的空间组织。
+
+reddit · r/MachineLearning · /u/img-_- · 7月9日 18:00
+
+**背景**: ArcFace 是一种广泛使用的人脸识别模型，它通过加性角度边界损失来生成具有区分性的嵌入。通常，人脸验证使用余弦相似度来比较两个嵌入，该相似度衡量向量之间的角度距离。新方法则检查嵌入中重叠窗口的符号模式（正/负），其灵感源于身份可以通过关系结构而非绝对值来保持的想法。
+
+
+**参考链接**:
+
+- [[1801.07698] ArcFace: Additive Angular Margin Loss for Deep Face Recognition](https://arxiv.org/abs/1801.07698)
+
+
+**标签**: `#face verification`, `#metric learning`, `#embedding similarity`, `#sign pattern`, `#deep learning`
+
+---
+
+<a id="item-15"></a>
+## [新单词游戏《18 Words》挑战玩家限时拼词](https://18words.com/) ⭐️ 6.0/10
+
+一款名为《18 Words》的新单词游戏在 Hacker News 的 Show HN 板块发布，玩家需在规定时间内将打乱的字母组成单词。发布后立即引发社区反馈，用户纷纷要求增加无计时模式、打乱按钮和修复错误。 该游戏凸显了简单精致单词谜题的持久魅力，并展示了用户反馈如何快速推动功能开发，例如增加放松模式或打乱按钮。同时也表明，小型网页游戏也能吸引社区参与并实现迭代改进。 游戏目前强制使用计时器，错过几个单词后游戏即结束；有用户反馈了一个错误：单词 'LATER' 被错误拒绝，而 'ALERT' 却被接受，说明词典或验证存在缺陷。用户还请求增加打乱字母顺序的按钮和无时间压力的放松模式。
+
+hackernews · pompomsheep · 7月9日 12:48 · [社区讨论](https://news.ycombinator.com/item?id=48845049)
+
+**背景**: Show HN 是 Hacker News 上的一个板块，用户在此分享个人项目并获取社区反馈。从 Scrabble、Boggle 等经典桌游到大量数字改编版，用给定字母拼单词的文字游戏几十年来一直备受欢迎。《18 Words》以简洁的网页实现加入这一品类。
+
+**社区讨论**: 社区反馈大多具有建设性。许多用户称赞了游戏设计，但批评了计时器，建议增加无限时间的“放松模式”并在分数上标注星号。有人请求添加打乱按钮以帮助解除卡顿。一个错误被报告：'LATER' 被判定错误而 'ALERT' 正确；也有用户提出允许玩家在错过单词后继续游戏的计分系统。
+
+**标签**: `#game`, `#word-game`, `#show-hn`, `#web`, `#puzzle`
+
+---
+
+<a id="item-16"></a>
+## [独立网站 Damn Interesting 寻求读者支持以维持运营](https://www.damninteresting.com/a-possible-future/) ⭐️ 6.0/10
+
+长期运营的独立出版物 Damn Interesting 公开向读者寻求资金支持以维持运营，引发了社区中大量怀旧捐助和真挚留言。 此事凸显了现代网络上无广告、深度研究型内容的脆弱处境，并表明即使企业平台占据主导，忠实社区仍能凝聚起来维系一个利基文化机构。 该网站以文章和播客的严谨研究著称，自 2005 年运营至今，被认为是 99% Invisible 等节目的先驱。作者指出流量激增并非其主动推广，并对 Hacker News 的关注感到意外。
+
+hackernews · mzur · 7月9日 15:25 · [社区讨论](https://news.ycombinator.com/item?id=48847511)
+
+**背景**: Damn Interesting 是一个开创性的独立网站，汇集科学、历史、文化领域中冷门而迷人的真实故事。它于 2005 年上线，早于叙事播客的兴起，影响了整个'有趣事物'类内容。网站不设广告，依靠读者捐赠和小型播客网络维持。
+
+**社区讨论**: Hacker News 用户表达了大量怀旧之情，回忆该网站如何塑造了他们早期的上网体验，并影响了现代播客。总体情绪是强烈支持的，许多人立即捐款，并表达了保护'旧互联网'精神的愿望。
+
+**标签**: `#independent publishing`, `#community`, `#nostalgia`, `#podcasts`, `#online content`
+
+---
+
+<a id="item-17"></a>
+## [Kenton Varda 禁止 AI 生成代码变更描述](https://simonwillison.net/2026/Jul/8/kenton-varda/#atom-everything) ⭐️ 6.0/10
+
+Kenton Varda（Cap'n Proto 和 Cloudflare Workers 的创建者）已禁止其团队使用 AI 编写 PR、提交消息等变更描述。他发现 AI 生成的描述侧重于代码中显而易见的琐碎细节，却遗漏了理解变更目的所需的高层上下文。 这凸显了当前 AI 编程辅助工具的一个常见局限：它们能描述代码做了什么，却无法解释变更的原因或更广泛的架构意图。这对于代码审查效率和软件质量至关重要，因为糟糕的变更描述可能导致误解和审查速度变慢。 该禁令适用于所有 AI 生成的变更描述，包括 PR、提交消息和工单。Varda 特别指出，AI 生成的描述因遗漏高层框架而‘比无用更糟糕’。
+
+rss · Simon Willison · 7月8日 20:03
+
+**背景**: Kenton Varda 是知名软件工程师，创建了 Cap'n Proto 序列化协议，也是 Cloudflare Workers 的关键贡献者。在开发工作流中使用 AI 生成提交消息和 PR 描述已变得普遍，但这些 AI 生成的摘要往往流于表面。这条新闻反映了对软件工程中不加批判地采用 AI 的日益增长的抵制。
+
+**标签**: `#ai-assisted-programming`, `#generative-ai`, `#llms`, `#code-review`, `#commit-messages`
+
+---
+
