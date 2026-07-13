@@ -1,0 +1,132 @@
+---
+title: "AI 技术情报 · 2026-07-13"
+slug: horizon-2026-07-13
+date: 2026-07-13
+published: true
+description: "从 27 条内容中精选 5 条 AI/ML 重要动态"
+item_count: 5
+total_fetched: 27
+---
+
+> 从 27 条内容中筛选出 5 条重要资讯。
+
+---
+
+1. [Chromium 148 中 Math.tanh 可被用于操作系统指纹识别](#item-1) ⭐️ 8.0/10
+2. [菲尔兹奖得主陶哲轩用大模型编码智能体制作研究可视化](#item-2) ⭐️ 8.0/10
+3. [研究发现 Claude Code 在提示前消耗 3.3 万 token，OpenCode 仅 7 千](#item-3) ⭐️ 8.0/10
+4. [生产 AI 代理迁移至 GPT-5.6：速度提升 2.2 倍，成本降低 27%](#item-4) ⭐️ 7.0/10
+5. [Zer0Fit：将 Google TabFM 和 TimesFM 封装为本地零样本 ML 的 MCP 服务器](#item-5) ⭐️ 7.0/10
+
+---
+
+<a id="item-1"></a>
+## [Chromium 148 中 Math.tanh 可被用于操作系统指纹识别](https://scrapfly.dev/posts/browser-math-os-fingerprint/) ⭐️ 8.0/10
+
+从 Chromium 148 开始，JavaScript 的 Math.tanh 函数因底层 libm 库的差异在不同操作系统上产生不同输出，网站可通过单次 tanh 调用结果来识别用户操作系统。 这为浏览器指纹识别增加了隐蔽的新向量，使得隐匿操作系统身份更加困难，凸显了即使基础数学函数也可能泄露隐私，对反爬虫和隐私保护构成挑战。 该方法利用 IEEE 754 超越函数（如 tanh）因宿主系统 libm 实现不同而产生的舍入差异。精心选择的输入可产生区分 Windows、macOS 和 Linux 的签名，且社区指出可能随浏览器版本变化。
+
+hackernews · joahnn_s · 7月12日 21:12 · [社区讨论](https://news.ycombinator.com/item?id=48884853)
+
+**背景**: 浏览器指纹识别通过收集设备与浏览器属性来标识用户。Math.tanh 计算双曲正切，Chromium 将其委托给操作系统的数学库（libm）。由于不同操作系统对超越函数的舍入有细微差别，计算结果可泄露宿主操作系统。这属于浏览器难以标准化消除的指纹向量之一。
+
+
+**参考链接**:
+
+- [Your Browser Does Math Differently on Every OS , and Anti-Bot...](https://scrapfly.dev/posts/browser-math-os-fingerprint/)
+- [Browser fingerprinting](https://en.wikipedia.org/wiki/Browser_fingerprinting)
+
+
+**社区讨论**: 社区评论指出，该指纹可与 User-Agent 对比，并可能用于浏览器版本范围识别。有人批评文章背后的公司利用 AI 曝光指纹方法以促修复，从而利好其爬虫业务。另有人呼吁推动正确舍入的超越函数以根除此类向量，同时提到 Tor 浏览器已因大量类似泄露而放弃隐藏操作系统。
+
+**标签**: `#browser-fingerprinting`, `#privacy`, `#chromium`, `#javascript`, `#os-detection`
+
+---
+
+<a id="item-2"></a>
+## [菲尔兹奖得主陶哲轩用大模型编码智能体制作研究可视化](https://terrytao.wordpress.com/2026/07/11/old-and-new-apps-via-modern-coding-agents/) ⭐️ 8.0/10
+
+菲尔兹奖得主陶哲轩分享了他使用大模型编码智能体快速构建交互式可视化，作为其研究论文非关键性补充材料的经验。 这展示了传统科技领域之外对软件的庞大潜在需求，并表明人工智能工具即使在信任边界尚存的情况下，也能提升世界级数学家的研究效率。 陶哲轩强调这些可视化非关键任务，因此大模型出错的潜在风险可以接受，并且他采用了与智能体进行引导式交互，而非完全自主的代码生成。
+
+hackernews · subset · 7月12日 11:09 · [社区讨论](https://news.ycombinator.com/item?id=48880170)
+
+**背景**: 大模型编码智能体是将大型语言模型与工具使用能力相结合的人工智能系统，能使其在开发环境中编写、修改和执行代码。它们利用代码仓库上下文、迭代提示，有时还包括记忆功能来处理复杂的软件任务，超越简单的代码补全。
+
+
+**参考链接**:
+
+- [Components of A Coding Agent - by Sebastian Raschka, PhD](https://magazine.sebastianraschka.com/p/components-of-a-coding-agent)
+- [How coding agents work - Agentic Engineering Patterns - Simon Willison's Weblog](https://simonwillison.net/guides/agentic-engineering-patterns/how-coding-agents-work/)
+- [Using Local Coding Agents - by Sebastian Raschka, PhD](https://magazine.sebastianraschka.com/p/using-local-coding-agents)
+
+
+**社区讨论**: 社区反应总体积极且幽默。许多人分享了使用大模型构建教学可视化的类似经历，另一些人则指出了科技圈外对软件的庞大潜在需求。评论者赞赏陶哲轩对信任与风险的平衡观点，还有人开玩笑说，顶尖数学家如今也像普通开发者一样，要为大模型容器无法启动而抓狂。
+
+**标签**: `#AI`, `#coding-agents`, `#research`, `#visualization`, `#software-development`
+
+---
+
+<a id="item-3"></a>
+## [研究发现 Claude Code 在提示前消耗 3.3 万 token，OpenCode 仅 7 千](https://systima.ai/blog/claude-code-vs-opencode-token-overhead) ⭐️ 8.0/10
+
+一项对比分析截获了代理编码工具与 Anthropic 端点的所有请求，发现 Claude Code 在提示前会发送约 3.3 万个 token 的额外开销，而 OpenCode 仅发送 7 千个 token。该研究为 Claude Code 在框架和缓存策略上的高 token 低效提供了实证证据。 高 token 开销直接增加了开发者成本（尤其对按 token 付费的用户），并引发了对设计选择可能优先考虑收入而非效率的担忧。这种差异可能影响 AI 编程助手的采用，并促使人们更关注 token 效率更高的工具。 该研究通过记录工具与 Anthropic 端点之间的所有请求进行，并有一处未公开的注意事项。额外开销部分源于子代理（sub-agent）会启动多个并行进程，以及即使对简单请求也进行大量工具调用。作者计划增加更深入的任务和定性结果对比。
+
+hackernews · systima · 7月12日 18:25 · [社区讨论](https://news.ycombinator.com/item?id=48883275)
+
+**背景**: Claude Code 和 OpenCode 等 AI 编程代理依赖大语言模型（LLM），需要为系统提示、工具定义和对话历史发送 token。token 额外开销指在用户实际提示之前消耗的非必要 token，可通过缓存策略降低。主代理协调的子代理会通过并行任务成倍增加 token 消耗。
+
+
+**参考链接**:
+
+- [GitHub Copilot Agentic Harness : Token Efficiency Guide for... | NxCode](https://www.nxcode.io/resources/news/github-copilot-agentic-harness-token-efficiency-2026)
+- [Optimize LLM response costs and latency with effective caching | Amazon Web Services](https://aws.amazon.com/blogs/database/optimize-llm-response-costs-and-latency-with-effective-caching/)
+
+
+**社区讨论**: 评论指出子代理是 token 消耗的主要元凶，有用户称任务尚未完成预算就已耗尽。许多人怀疑 Anthropic 有膨胀 token 使用的商业动机，也有人质疑仅凭 token 数量是否是有意义的指标。作者将更新研究，增加更全面的任务和输出对比。
+
+**标签**: `#token-efficiency`, `#AI-coding-agents`, `#Claude-Code`, `#OpenCode`, `#cost-optimization`
+
+---
+
+<a id="item-4"></a>
+## [生产 AI 代理迁移至 GPT-5.6：速度提升 2.2 倍，成本降低 27%](https://ploy.ai/blog/migrating-a-production-ai-agent-to-gpt-5-6) ⭐️ 7.0/10
+
+Ploy 的 AI 智能体迁移至 GPT-5.6 Sol，实现了 2.2 倍执行速度提升和 27%的成本降低。 这次实际迁移表明，升级到 GPT-5.6 能立竿见影地提升生产 AI 智能体的速度并降低成本，且通常只需极少量代码变更，对企业极具吸引力。 使用了 Sol 变体；社区成员报告从 GPT-5.4-nano 和 mini 迁移后也获得了类似提升，且 Sol 擅长编排，Luna 可能更适合工具密集型任务。
+
+hackernews · brryant · 7月12日 17:13 · [社区讨论](https://news.ycombinator.com/item?id=48882716)
+
+**背景**: GPT-5.6 是 OpenAI 于 2026 年 7 月发布的大语言模型系列，包含 Luna、Terra 和 Sol 三个变体，其中 Sol 能力最强。Ploy 的 AI 智能体是一个生产系统，可自主规划、读取代码、编写组件、生成图像并判断网页何时完成。
+
+
+**参考链接**:
+
+- [GPT-5.6](https://en.wikipedia.org/wiki/GPT-5.6)
+- [Previewing GPT‑5.6 Sol: a next-generation model - OpenAI](https://openai.com/index/previewing-gpt-5-6-sol/)
+
+
+**社区讨论**: 社区成员大多证实了这些改进，有人报告从 GPT-5.4-nano 和 mini 迁移后也获得了类似的速度和成本提升。有评论指出 Sol 变体擅长编排，而 Luna 可能更适合工具密集型任务。少数人批评了文章的 LLM 写作风格，但技术结果得到了验证。
+
+**标签**: `#AI agents`, `#GPT-5.6`, `#migration`, `#cost reduction`, `#production`
+
+---
+
+<a id="item-5"></a>
+## [Zer0Fit：将 Google TabFM 和 TimesFM 封装为本地零样本 ML 的 MCP 服务器](https://www.reddit.com/r/MachineLearning/comments/1uue8cc/zer0fit_i_took_googles_new_tabfm_timesfm_ml/) ⭐️ 7.0/10
+
+一位研究生构建了 Zer0Fit MCP 服务器，在 Docker 容器中本地运行 Google 的 TabFM 和 TimesFM 基础模型，实现了零样本分类、回归和预测，在 Iris（94.7%准确率）和加州房价（R²=0.91）等标准数据集上取得高准确度。 该工具通过与本地 LLM 工具集成，省去模型训练、调参和云依赖，让缺乏专业经验的用户也能轻松运用先进的零样本机器学习，降低了表格数据和时间序列分析的门槛。 该服务器支持 CSV 输入（即将支持 XLS/XLSX/JSON/JSONL），需 CUDA 和 16GB 以上显存，已在 DGX Spark、3090、H100 上测试，并采用 5 分钟 TTL 动态加载卸载模型以节省 GPU 内存。
+
+reddit · r/MachineLearning · /u/Porespellar · 7月12日 12:32
+
+**背景**: TabFM 是 Google 推出的零样本表格数据基础模型，无需任务特定训练即可完成分类和回归。TimesFM 是 Google 开发的解码器式时间序列预测模型，基于 1000 亿个真实时间点预训练。MCP（Model Context Protocol）是一种开放标准，允许 AI 助手连接外部工具，便于与 Open WebUI、Claude Code 等本地 LLM 客户端集成。
+
+
+**参考链接**:
+
+- [Introducing TabFM : A zero-shot foundation model for tabular data](https://research.google/blog/introducing-tabfm-a-zero-shot-foundation-model-for-tabular-data/)
+- [GitHub - google-research/timesfm: TimesFM (Time Series Foundation Model ...](https://github.com/google-research/timesfm/)
+- [Model Context Protocol - Wikipedia](https://en.wikipedia.org/wiki/Model_Context_Protocol)
+
+
+**标签**: `#zero-shot ML`, `#MCP server`, `#TabFM`, `#TimesFM`, `#local inference`
+
+---
+
