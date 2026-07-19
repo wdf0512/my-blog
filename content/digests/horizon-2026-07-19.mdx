@@ -12,323 +12,311 @@ total_fetched: 32
 
 ---
 
-1. [LG 显示器未经同意通过 Windows Update 擅自安装软件](#item-1) ⭐️ 8.0/10
-2. [AI 垃圾内容赢得 DeepMind/Kaggle 25K 大奖引质疑](#item-2) ⭐️ 8.0/10
-3. [GPT-5.6 与人类合作攻克三十年凸优化猜想](#item-3) ⭐️ 7.0/10
-4. [纽约市长要求出租房源必须披露 AI 生成图片](#item-4) ⭐️ 7.0/10
-5. [Fable 5 与 GPT-5.6 Sol 在 NP-hard 问题上的对比：/goal 功能有效吗？](#item-5) ⭐️ 7.0/10
-6. [SQLite 查询解释器：在浏览器中解读查询计划的工具](#item-6) ⭐️ 7.0/10
-7. [Anthropic 因竞争压力将 Claude Fable 5 永久纳入高级订阅计划](#item-7) ⭐️ 7.0/10
-8. [GPT-2 Small 的嵌入几何：离散化与连续最近邻对比揭示“Trump”语义结构](#item-8) ⭐️ 7.0/10
-9. [Stereo2Spatial：开源 ML 模型将立体声转换为双耳空间音频](#item-9) ⭐️ 7.0/10
-10. [EU AI Act OpenRAG 数据集：933 个法律结构块与 BGE-M3 嵌入](#item-10) ⭐️ 7.0/10
-11. [你若建造，他们便会来](#item-11) ⭐️ 6.0/10
-12. [配置闲置 Mac 供 Claude Code 控制的逐步指南](#item-12) ⭐️ 6.0/10
-13. [观鸟而非高尔夫：讽刺性方案抵消超大规模数据中心用水](#item-13) ⭐️ 6.0/10
-14. [基于 t-SNE 与最小生成树的 GPT-2 词元嵌入交互地图](#item-14) ⭐️ 6.0/10
-15. [scRNA-seq 深度学习分析 25 种方法综述表格总结](#item-15) ⭐️ 6.0/10
+1. [Transcribe.cpp：开源本地语音转文本库，支持多种模型](#item-1) ⭐️ 8.0/10
+2. [GPT-5.6 在人类指导下攻克了 30 年未解的凸优化猜想](#item-2) ⭐️ 8.0/10
+3. [SQLite 查询解释器](#item-3) ⭐️ 8.0/10
+4. [文章：社群需主动建设，而非被动消费](#item-4) ⭐️ 7.0/10
+5. [硬核 IndieWeb：每天 0.01 美元独立运营网站](#item-5) ⭐️ 7.0/10
+6. [Fable 5 与 GPT-5.6 Sol 在 NP 难问题上的对决：/goal 命令是否有用？](#item-6) ⭐️ 7.0/10
+7. [Anthropic 逆转决定，将 Claude Fable 5 永久纳入订阅计划](#item-7) ⭐️ 7.0/10
+8. [AI 生成的垃圾内容被指赢得 DeepMind/Kaggle 2.5 万美元大奖](#item-8) ⭐️ 7.0/10
+9. [GPT-2 词元嵌入的交互式地图：t-SNE 与最小生成树可视化](#item-9) ⭐️ 7.0/10
+10. [Stereo2Spatial: 将立体声音乐转为空间化双耳混音](#item-10) ⭐️ 7.0/10
+11. [TabFM Studio：无需编程，点点选选即可在电子表格上使用表格基础模型预测](#item-11) ⭐️ 7.0/10
+12. [纽约市长要求房东公开 AI 生成图片用于租房广告](#item-12) ⭐️ 6.0/10
+13. [Reddit 用户分享 scRNA-seq 深度学习综述表格，涵盖 25 种方法](#item-13) ⭐️ 6.0/10
+14. [Prism 研究工具因漏洞泄露用户论文，网站迅速下线](#item-14) ⭐️ 6.0/10
+15. [EU AI Act OpenRAG：法律结构分块与 BGE-M3 嵌入数据集](#item-15) ⭐️ 6.0/10
 
 ---
 
 <a id="item-1"></a>
-## [LG 显示器未经同意通过 Windows Update 擅自安装软件](https://videocardz.com/newz/lg-monitors-silently-install-software-through-windows-update-without-user-consent) ⭐️ 8.0/10
+## [Transcribe.cpp：开源本地语音转文本库，支持多种模型](https://workshop.cjpais.com/projects/transcribe-cpp) ⭐️ 8.0/10
 
-当 LG 显示器连接到 Windows 电脑时，操作系统会通过 Windows Update 在后台自动下载并安装 LG 的 OnScreen Control 软件，全程无任何用户提示或交互。 这带来了严重的安全和隐私风险，因为安装的软件以完全系统权限运行、开机自启并可联网，可能被攻击者利用或未经授权收集数据。同时，它也损害了用户对操作系统更新机制的信任。 安装由 HDMI 连接触发，即使之前已连接过显示器也会发生。软件无沙箱隔离且拥有完全系统权限。用户可通过组策略（gpedit.msc）或设备安装设置的“否”选项阻止自动下载，但默认行为仍存在风险。
+开源库 transcribe.cpp 已发布，它基于 ggml 提供 C/C++ 的本地语音转文本推理，支持 GPU 加速和超过 16 种模型系列。 它使开发者能够在应用中直接构建私密、离线的转录功能，减少对云服务的依赖和延迟，同时支持多种开放模型。 该库通过系统性的词错误率（WER）扫描与参考实现进行验证，并提供 Python、Go、Rust 和 Swift 的官方维护语言绑定，Python 二进制 wheel 包计划于后续版本发布。
 
-hackernews · baranul · 7月18日 10:21 · [社区讨论](https://news.ycombinator.com/item?id=48956688)
+hackernews · sebjones · 7月19日 00:38 · [社区讨论](https://news.ycombinator.com/item?id=48963879)
 
-**背景**: Windows 有一项功能，可在检测到新硬件时从 Windows Update 自动下载设备特定的应用程序和驱动程序，旨在简化设置。但制造商可通过此渠道推送非必要的实用工具。LG 的 OnScreen Control 是一款显示器设置工具，未经同意静默安装，凸显了该功能被滥用的问题。
-
-**社区讨论**: 社区普遍谴责此为安全漏洞，将自动安装的软件比作恶意软件。许多人指责微软允许此功能，同时用户分享了通过组策略或设备设置阻止安装的变通方法。也有人希望企业压力能迫使微软修改驱动程序同意模型。
-
-**标签**: `#security`, `#privacy`, `#Windows`, `#LG`, `#drivers`
-
----
-
-<a id="item-2"></a>
-## [AI 垃圾内容赢得 DeepMind/Kaggle 25K 大奖引质疑](https://www.reddit.com/r/MachineLearning/comments/1uzyf66/did_blatant_ai_slop_just_win_a_25k_usd_deepmind/) ⭐️ 8.0/10
-
-Reddit 上的一项调查指控，一篇毫无意义、由 AI 生成的作品因审查不足，在 DeepMind 与 Kaggle 联合举办的“衡量 AGI 进展——认知能力”竞赛中赢得了 25000 美元大奖。 此事引发了对顶级 AI 基准竞赛可信度的质疑，暴露了评审流程的缺陷，以及 AI 生成内容可能破坏评估标准的风险。 该获奖作品的语言和方法论均被指缺乏连贯性，篇幅超出 10 页限制的十倍，而竞赛组织方称评审过程恰当，只是主观判断问题。
-
-reddit · r/MachineLearning · /u/TheWerkmeister · 7月18日 15:10
-
-**背景**: DeepMind（谷歌的 AI 研究实验室）与数据科学竞赛平台 Kaggle 联合发起了该挑战，旨在设计基于认知科学的基准，以衡量人工通用智能（AGI）的进展。'AI 垃圾'指由 AI 工具生成的低质量、无意义内容，通常缺乏准确性和连贯性。竞赛本意是建立严格的评估框架，但获奖作品所暴露的问题表明评审过程存在重大漏洞。
+**背景**: 语音转文本（STT）将口语转换为文字。在本地运行模型可将数据保留在设备上，提高隐私性并无需联网。ggml 是一个轻量级张量库，能够在消费级硬件上高效进行机器学习推理。transcribe.cpp 通过 Mozilla.ai 的 Builders in Residence 项目开发。
 
 
 **参考链接**:
 
-- [Artificial general intelligence - Wikipedia](https://en.wikipedia.org/wiki/Artificial_general_intelligence)
-- [AI slop - Wikipedia](https://en.wikipedia.org/wiki/AI_slop)
-- [How Google's New AGI Benchmark Measures Intelligence Across 10 Cognitive Dimensions | MindStudio](https://www.mindstudio.ai/blog/google-agi-benchmark-10-cognitive-dimensions)
+- [GitHub - handy-computer/transcribe.cpp: ggml speech-to-text inference for 16+ model families · GitHub](https://github.com/handy-computer/transcribe.cpp)
+- [Announcing transcribe.cpp](https://blog.mozilla.ai/announcing-transcribe-cpp/)
+- [Project - transcribe.cpp](https://workshop.cjpais.com/projects/transcribe-cpp)
 
 
-**标签**: `#Kaggle`, `#DeepMind`, `#AI Benchmarks`, `#Competition Integrity`, `#Machine Learning`
+**社区讨论**: 社区对本地 STT 表现出热情，用户比较了 whisper 和 parakeet 模型，请求添加说话人分离功能，并讨论了维护者的资金问题。Python 绑定尚未提供二进制 wheel 包，但已计划支持。
+
+**标签**: `#speech-to-text`, `#cpp`, `#open-source`, `#machine-learning`, `#audio-processing`
 
 ---
 
-<a id="item-3"></a>
-## [GPT-5.6 与人类合作攻克三十年凸优化猜想](https://old.reddit.com/r/math/comments/1uxj3cy/after_openais_cdc_proof_announcement_gpt56_used_a/) ⭐️ 7.0/10
+<a id="item-2"></a>
+## [GPT-5.6 在人类指导下攻克了 30 年未解的凸优化猜想](https://old.reddit.com/r/math/comments/1uxj3cy/after_openais_cdc_proof_announcement_gpt56_used_a/) ⭐️ 8.0/10
 
-研究人员使用 GPT-5.6 解决了一个三十年的凸优化猜想。该成就并非完全自主，而是建立在一年来与早期模型迭代以及提示中包含解题技术的人类协作基础上。 这一案例展示了 AI 在数学研究中的辅助潜力，但也表明当前系统仍需大量人类专业知识与努力。它预示了 AI 增强而非取代数学家的未来。 该猜想涉及在 Lipschitz 函数上对凸优化时间复杂度进行界定。解决方案来自包含解题技巧的提示，此前已用 GPT-5.4 和 GPT-5.5 尝试了一年。
+一位研究者将长达一年的前期探索和关键技术思路输入 GPT-5.6（Sol Pro），最终证明了球面上利普希茨凸函数优化迭代复杂度的 30 年猜想。 这一成果表明，在资深专家引导下，大语言模型能够加速解决小众但重要的数学猜想，可能改变研究者处理中低难度开放问题的方式。 该证明并非完全自主完成；研究者此前已用 GPT-5.4 和 5.5 尝试了一年，最终提示词中包含了具体技术方案。所用模型为 Sol Pro 而非更强的 Ultra，所称的“148 分钟”仅指最后一轮交互，不含全年积累。
 
 hackernews · mbustamanter · 7月18日 13:00 · [社区讨论](https://news.ycombinator.com/item?id=48957779)
 
-**背景**: 凸优化是数学优化的一个分支，研究在凸集上最小化凸函数。它在工程、机器学习和运筹学中有广泛应用。与一般优化问题不同，凸优化问题通常可在多项式时间内求解，但仍有许多具体的复杂度问题悬而未决。
+**背景**: 凸优化是数学优化的一个分支，研究在凸集上最小化凸函数，广泛应用于机器学习、控制和工程等领域。其核心问题之一是计算复杂度——在利普希茨连续性等假设下，需要多少次迭代才能达到近似解。本次解决的猜想关乎球面上利普希茨凸函数优化所需的迭代次数上下界，已悬置约 30 年。
 
 
 **参考链接**:
 
 - [Convex optimization](https://en.wikipedia.org/wiki/Convex_optimization)
+- [Convex Optimization - Boyd and Vandenberghe - Stanford University](https://web.stanford.edu/~boyd/cvxbook/)
 
 
-**社区讨论**: 社区成员澄清该解决方案是人机协作的结果，而非 AI 自主突破。提示词经过一年时间与早期 GPT 模型迭代开发，声称的 148 分钟解决时间具有误导性。许多人认为这是一项有价值的贡献，但强调 AI 需要大量人类指导。
+**社区讨论**: 评论者指出，这一突破是全年迭代积累的结果，提示词中明确包含了技术方案，因此“148 分钟”的说法具有误导性。有人担心 AI 会让数学研究中的低垂果实失去意义，但也有人强调人类引导仍然不可或缺，这与培养初级开发者的过程类似。
 
-**标签**: `#AI`, `#mathematics`, `#convex-optimization`, `#GPT-5.6`, `#AI-assisted-research`
+**标签**: `#convex-optimization`, `#AI-math`, `#GPT-5.6`, `#research-breakthrough`, `#hackernews-discussion`
+
+---
+
+<a id="item-3"></a>
+## [SQLite 查询解释器](https://simonwillison.net/2026/Jul/18/sqlite-query-explainer/#atom-everything) ⭐️ 8.0/10
+
+Simon Willison 创建了一个交互式浏览器内 SQLite 查询解释器，使用 Pyodide 运行 EXPLAIN 和 EXPLAIN QUERY PLAN，并添加了人类可读的解释。
+
+rss · Simon Willison · 7月18日 17:19
+
+**标签**: `#sql`, `#sqlite`, `#python`, `#webassembly`, `#tools`
 
 ---
 
 <a id="item-4"></a>
-## [纽约市长要求出租房源必须披露 AI 生成图片](https://petapixel.com/2026/07/16/mayor-mamdani-says-landlords-cant-secretly-use-ai-images-to-advertise-properties/) ⭐️ 7.0/10
+## [文章：社群需主动建设，而非被动消费](https://www.benlandautaylor.com/p/if-you-build-it-they-will-come) ⭐️ 7.0/10
 
-纽约市长马姆达尼发布指令，要求房东和房地产经纪人在出租房源广告中使用 AI 生成或虚拟布置图片时必须进行披露，以打击欺骗性广告行为。 该指令针对房地产领域日益增多的 AI 欺骗行为，通过要求披露来保护租客免受误导，为城市监管 AI 生成内容树立了先例，与更广泛的 AI 伦理和消费者保护议题相呼应。 该指令要求披露但并未完全禁止 AI 虚拟布置，仅针对秘密使用 AI 图片且不告知公众的行为。指令的执行机制和处罚措施尚未明确，且由于出自市长而非立法机构，可能面临法律挑战。
+这篇文章认为，社群并非自给自足，而是需要主动的努力和投入，而当今社会的疏离感部分源于被动的消费者心态。 它挑战了被动社交的观念，为解决孤独流行病提供了思路，鼓励人们成为社群的主动创造者。 文章指出了“搭便车”问题，即许多人享受社群活动却不付出，并指出组织者常常面临倦怠和情感脆弱。
 
-hackernews · gnabgib · 7月18日 22:13 · [社区讨论](https://news.ycombinator.com/item?id=48962983)
+hackernews · barry-cotter · 7月18日 15:37 · [社区讨论](https://news.ycombinator.com/item?id=48959090)
 
-**背景**: 虚拟布置是一种数字技术，通过在空置房产照片中添加家具和装饰来吸引潜在租客，其成本比实体布置低 90%以上，因此被房地产行业广泛采用。在纽约市，租房平台 StreetEasy 上充斥着大量 AI 虚拟布置的房源，这些图片常通过扭曲空间来放入实际上放不下的家具，从而误导租客。现有的欺骗性广告法规已禁止虚假陈述，但该指令专门针对未披露的 AI 生成图像。
+**背景**: “搭便车”概念指那些不付出却享受资源的人。社会疏离感描述了一种与他人脱节的感觉，常与现代个人主义生活方式相关。社群建设需要组织活动、维系关系等主动行为。
 
+**社区讨论**: 评论者大多认同，分享了自己组织活动的经历。他们提到了情感上的付出和脆弱，但也看到了机会：一位评论者将街头节日活动变成了生意。总体情绪是支持的，强调社群建设是出于热爱。
 
-**参考链接**:
-
-- [Virtual staging](https://en.wikipedia.org/wiki/Virtual_staging)
-- [VirtualStaging.com | #1 Virtual Staging for Realtors](https://virtualstaging.com/)
-
-
-**社区讨论**: 评论者普遍支持披露要求，但也有人呼吁完全禁止 AI 虚拟布置。一些人指出现有的欺骗性广告法已应涵盖此类行为，质疑新指令的必要性；还有人讨论市长是否有权不经立法程序就发布此类指令，以及该指令仅要求披露而非禁止的关键点。
-
-**标签**: `#AI ethics`, `#real estate`, `#advertising`, `#regulation`, `#NYC`
+**标签**: `#community`, `#social-dynamics`, `#loneliness`, `#personal-growth`, `#culture`
 
 ---
 
 <a id="item-5"></a>
-## [Fable 5 与 GPT-5.6 Sol 在 NP-hard 问题上的对比：/goal 功能有效吗？](https://charlesazam.com/blog/fable-5-gpt-5-6-sol-goal/) ⭐️ 7.0/10
+## [硬核 IndieWeb：每天 0.01 美元独立运营网站](https://www.neatnik.net/hardcore-indieweb) ⭐️ 7.0/10
 
-一篇博文对比了 Anthropic 的 Fable 5 和 OpenAI 的 GPT-5.6 Sol 在 NP-hard 问题上的表现，测试了 /goal 功能是否能提升性能。结果好坏参半，并探讨了搜索策略对结果的影响。 该评估为开发者在顶级 AI 编程工具之间做出选择提供了实用参考，尤其在复杂优化任务上。它揭示了 /goal 等模型特有功能如何影响长程问题求解能力。 /goal 功能似乎有助于模型在长时间会话中保留重要指令，但 GPT-5.6 Sol 在优化任务上表现出优势，这与其在 AtCoder 启发式竞赛中的获胜相符。博文中的图表因 y 轴反转，导致视觉解读令人困惑。
+一篇教程展示了如何在 NearlyFreeSpeech.net 上以每天约 0.01 美元的成本托管静态网站，引发了关于网络托管独立性的讨论。 这彰显了个人网站托管和 IndieWeb 运动的复兴，强调低成本、自给自足的解决方案。它挑战了企业平台的主导地位，并鼓励技术素养。 NearlyFreeSpeech.net 是一种按使用量计费的托管服务，按存储和带宽收费，因此对于低流量的静态网站极为便宜。但它仍依赖第三方，且教程未涉及数据库等动态功能。
+
+hackernews · cdrnsf · 7月18日 21:45 · [社区讨论](https://news.ycombinator.com/item?id=48962758)
+
+**背景**: NearlyFreeSpeech.net 是一家成立于 2002 年、专注于言论自由的低成本托管服务商。IndieWeb 运动倡导拥有自己的内容并使用开放网络标准，而节俭计算则提倡可持续、低资源消耗的计算方式。
+
+
+**参考链接**:
+
+- [NearlyFreeSpeech - Wikipedia](https://en.wikipedia.org/wiki/NearlyFreeSpeech)
+- [IndieWeb](https://en.wikipedia.org/wiki/IndieWeb)
+- [[2303.06642] Frugal Computing -- On the need for low-carbon and sustainable computing and the path towards zero-carbon computing](https://arxiv.org/abs/2303.06642)
+
+
+**社区讨论**: 社区成员指出，NearlyFreeSpeech.net 并非真正 100%独立，因为它仍依赖第三方。有人建议使用 VPS 可以学到更多，也有人认为静态托管并非新鲜事，与 Vercel 或 Netlify 等免费服务区别不大，且缺乏数据库等功能。
+
+**标签**: `#indieweb`, `#self-hosting`, `#web-development`, `#static-site`, `#frugal-computing`
+
+---
+
+<a id="item-6"></a>
+## [Fable 5 与 GPT-5.6 Sol 在 NP 难问题上的对决：/goal 命令是否有用？](https://charlesazam.com/blog/fable-5-gpt-5-6-sol-goal/) ⭐️ 7.0/10
+
+一篇博客文章实证比较了 Anthropic 的 Claude Fable 5 与 OpenAI 的 GPT-5.6 Sol 在解决一个 NP 难问题上的表现，并特别测试了/goal 命令（自动化迭代改进）是否能提升性能。 此次评估揭示了前沿 AI 模型如何处理计算上困难的问题，以及/goal 这类指令命令能否提升解决效率，这对依赖 AI 进行复杂推理的开发者具有重要意义，同时也凸显了模型之间的持续竞争。 对比所用图表以“越低越好”标注，但 Y 轴方向颠倒，造成视觉误解；测试仅针对一个 NP 难问题实例，/goal 命令是 Claude Code v2.1.139+特有的功能，通过小型快速模型循环检查完成条件。
 
 hackernews · couAUIA · 7月18日 11:00 · [社区讨论](https://news.ycombinator.com/item?id=48956879)
 
-**背景**: Fable 5 是 Anthropic 的最新编码模型，在 FrontierBench 上获得最高分，擅长长程推理。GPT-5.6 Sol 是 OpenAI 的旗舰模型，专为复杂编码、推理和智能体工作流而设计。/goal 功能是一种基于子目标的框架，帮助 LLM 智能体在长时间任务中保持对最终目标的专注，避免丢失重要指令。
+**背景**: NP 难问题是指计算上难以求解的问题，常作为 AI 推理能力的测试基准。Claude Fable 5（2026 年 6 月发布）和 GPT-5.6 Sol（2026 年 7 月发布）分别是 Anthropic 和 OpenAI 的最新旗舰模型，均强调强大的编码和推理能力。Claude Code 中的/goal 命令允许模型自主循环迭代直至满足指定条件，减少了人工提示。
 
 
 **参考链接**:
 
 - [Claude Fable \ Anthropic](https://www.anthropic.com/claude/fable)
 - [Previewing GPT‑5.6 Sol: a next-generation model - OpenAI](https://openai.com/index/previewing-gpt-5-6-sol/)
-- [A Subgoal-driven Framework for Improving Long-Horizon LLM Agents](https://arxiv.org/abs/2603.19685)
+- [Keep Claude working toward a goal - Claude Code Docs](https://code.claude.com/docs/en/goal)
 
 
-**社区讨论**: 社区讨论指出了图表因 y 轴反转而令人困惑，建议使用 ultra 模式以获得更好的搜索策略，并普遍认为 GPT-5.6 Sol 在优化问题上可能更优。一些用户提到 Claude 在长会话中容易忘记指令，而 /goal 功能可能解决了这一问题。
+**社区讨论**: 社区成员指出图表中 Y 轴颠倒导致的困惑，一些人称赞/goal 命令在长会话中能帮助模型记住关键指令，另一些人则批评 Claude 在大型代码库上的表现。总体情绪复杂，但认可/goal 在特定迭代任务中的实用性。
 
-**标签**: `#ai-coding-tools`, `#llm-comparison`, `#np-hard`, `#evaluation`, `#hackernews`
-
----
-
-<a id="item-6"></a>
-## [SQLite 查询解释器：在浏览器中解读查询计划的工具](https://simonwillison.net/2026/Jul/18/sqlite-query-explainer/#atom-everything) ⭐️ 7.0/10
-
-西蒙·威利森利用 Pyodide 和 WebAssembly 在浏览器中运行 SQLite，构建了一个交互式工具，用于解释 EXPLAIN 和 EXPLAIN QUERY PLAN 命令的输出。 这使得学习者和开发者能够轻松理解 SQLite 查询计划，降低了掌握数据库性能优化和分析的门槛。 该工具基于 Pyodide（一个用于 WebAssembly 的 Python 发行版）构建，使 SQLite 能在浏览器中完全运行，无需服务器；作者提醒解释结果未经核实，因此使用时需谨慎。
-
-rss · Simon Willison · 7月18日 17:19
-
-**背景**: Pyodide 是将 CPython 移植到 WebAssembly 的项目，使得 Python 代码及其内置的 sqlite3 模块等包能在浏览器中运行。SQLite 的 EXPLAIN 和 EXPLAIN QUERY PLAN 命令用于显示数据库执行查询的策略，例如是否使用了索引、是否进行了全表扫描等。理解查询计划对优化数据库性能至关重要。
-
-
-**参考链接**:
-
-- [Pyodide — Version 314.0.2](https://pyodide.org/)
-- [EXPLAIN QUERY PLAN - SQLite](https://sqlite.org/eqp.html)
-
-
-**标签**: `#sqlite`, `#query-plan`, `#webassembly`, `#tool`, `#learning`
+**标签**: `#AI`, `#LLM`, `#NP-Hard`, `#Benchmarking`, `#HackerNews`
 
 ---
 
 <a id="item-7"></a>
-## [Anthropic 因竞争压力将 Claude Fable 5 永久纳入高级订阅计划](https://simonwillison.net/2026/Jul/18/claude-make-fable-5-permanent/#atom-everything) ⭐️ 7.0/10
+## [Anthropic 逆转决定，将 Claude Fable 5 永久纳入订阅计划](https://simonwillison.net/2026/Jul/18/claude-make-fable-5-permanent/#atom-everything) ⭐️ 7.0/10
 
-Anthropic 宣布，从 7 月 20 日起，Claude Fable 5 将以 50%的用量限制永久纳入 Max 和 Team Premium 套餐，推翻了此前将其从订阅中移除、仅通过 API 提供的决定。Pro 和 Team Standard 用户将继续通过使用额度访问 Fable，并获得一次性 100 美元赠送。 这一逆转凸显了 LLM 市场的激烈竞争——GPT-5.6 Sol 和 Kimi 3 迫使 Anthropic 为订阅用户保留顶尖模型的使用权。这直接影响依赖 Fable 5 进行高级编码的开发者和企业，他们不再需要支付按量计费的 API 成本或面临访问中断。 Max 套餐价格为每月 100 美元和 200 美元，而 20 美元/月的 Pro 套餐仍不包含 Fable 5。50%的速率限制意味着订阅用户获得的额度仅为完整 API 访问的一半；原计划是因计算容量限制所致，Anthropic 可能需为此重新分配训练资源。
+Anthropic 宣布，自 2026 年 7 月 20 日起，Claude Fable 5 将永久纳入 Max 和 Team Premium 计划，使用限额为一半，同时 Pro 和 Team Standard 用户将获得一次性 100 美元额度并通过使用额度访问该模型，这逆转了此前将其从订阅中移除的计划。 这一竞争举措回应了来自 OpenAI GPT-5.6 Sol 和 Moonshot AI Kimi K3 的压力，使高级订阅更具吸引力，也表明在市场竞争下 AI 模型访问定价正在快速演变。 每月 20 美元的订阅计划仍不包含 Claude Fable 5；Max 计划价格为 100 和 200 美元/月。Anthropic 最初移除该模型的计划是出于算力容量担忧，这一决定可能影响其训练投入。
 
 rss · Simon Willison · 7月18日 06:00
 
-**背景**: Claude Fable 5 是 Anthropic 旗下 Claude Mythos 系列的大语言模型，以强大的编码能力著称。OpenAI 于 2026 年 7 月 9 日发布的 GPT-5.6 Sol 在 Artificial Analysis 编码智能体指数上以更低的成本和延迟超越 Fable 5。月之暗面（Moonshot AI）于 2026 年 7 月 16 日发布的开源模型 Kimi 3（Kimi K3）拥有 100 万 token 上下文窗口，专注长程编码任务。这些模型的竞争压力使 Anthropic 原始仅限 API 的方案难以为继。
+**背景**: Claude Fable 5 是 Anthropic 于 2026 年 6 月发布的最强公开大型语言模型，专为高难度推理和自主编程任务设计。最初计划在试用期后仅通过 API 定价提供，但 GPT-5.6 Sol（2026 年 7 月 9 日发布）和 Kimi K3（2026 年 7 月 16 日发布）均取得顶尖基准测试成绩，迫使 Anthropic 将其保留在订阅中以保持竞争力。
 
 
 **参考链接**:
 
 - [Claude Fable 5](https://en.wikipedia.org/wiki/Claude_Fable_5)
 - [GPT-5.6 - Wikipedia](https://en.wikipedia.org/wiki/GPT-5.6)
-- [Kimi K3: Moonshot AI's Open-Source Flagship, Explained](https://kimi3.online/)
+- [Kimi (chatbot) - Wikipedia](https://en.wikipedia.org/wiki/Kimi_(chatbot))
 
 
-**社区讨论**: 社区此前曾焦虑地准备应对“Fable 末日”——即 Fable 5 从订阅中移除——因此逆转决定让许多人松了一口气。不过，20 美元 Pro 套餐的用户仍因被排除在外而不满，而 Max 和 Team 用户则庆幸竞争压力带来了更好的结果。
-
-**标签**: `#Anthropic`, `#Claude`, `#AI pricing`, `#LLM`, `#competition`
+**标签**: `#Claude`, `#AI models`, `#subscription pricing`, `#Anthropic`, `#competitive landscape`
 
 ---
 
 <a id="item-8"></a>
-## [GPT-2 Small 的嵌入几何：离散化与连续最近邻对比揭示“Trump”语义结构](https://www.reddit.com/r/MachineLearning/comments/1v07xai/gpt2_smalls_embedding_geometry_around_trump/) ⭐️ 7.0/10
+## [AI 生成的垃圾内容被指赢得 DeepMind/Kaggle 2.5 万美元大奖](https://www.reddit.com/r/MachineLearning/comments/1uzyf66/did_blatant_ai_slop_just_win_a_25k_usd_deepmind/) ⭐️ 7.0/10
 
-一项对 GPT-2 Small 静态词元嵌入的可视化分析发现，将嵌入坐标离散化（阈值化）后再计算“Trump”的最近邻，会得到一组通用政治人物名称（Mitt、Hillary、Pelosi、Blair），而使用原始连续坐标则得到更具体的家族成员、幕僚、对手和总统（Obama、Clinton、Bush、Eisenhower）。 这一发现揭示了语言模型词元嵌入中编码的细微语义关系如何被简单的离散化所掩盖或改变，为模型可解释性、嵌入压缩以及理解名称和政治实体在表示空间中的组织方式提供了见解。 该分析基于 GPT-2 Small 的静态嵌入表（未应用注意力或上下文），通过 t-SNE 投影了 32,070 个至少两个字符的字母词元；离散化仅对每个坐标进行阈值处理，然后计算最近邻，结果差异显著。
+一位 Reddit 用户指控，在 DeepMind 赞助的 Kaggle“迈向 AGI 的认知能力”竞赛中，一份低质量、由 AI 生成的提交内容赢得了 2.5 万美元大奖，该提交充满无意义的宣称且篇幅远超要求格式，而组织者则称评审过程得当，仅为主观分歧。 此事引发了对 AI 基准设计完整性和竞赛评审公正性的严重担忧，可能损害机器学习社区用于衡量 AGI 进展的评估过程的公信力。 该提交原本旨在测试 LLM 在面对替代观点时如何改变评估，但最终变成了一份结构混乱、篇幅为要求格式十倍的文件；指控者称作者和评审者都未对其进行认真审阅。
 
-reddit · r/MachineLearning · /u/Limp-Contest-7309 · 7月18日 21:29
+reddit · r/MachineLearning · /u/TheWerkmeister · 7月18日 15:10
 
-**背景**: GPT-2 Small 的词元嵌入是预训练过程中学习到的固定向量，在高维空间中表示每个词元。在该空间中的最近邻分析可以揭示模型认为语义相似的词元。t-SNE 是一种非线性降维技术，常用于将高维嵌入可视化到二维，同时保留局部邻域结构。离散化（坐标阈值化）是一种量化形式，可以减少存储空间，但可能丢失细微的语义差别。
+**背景**: 该竞赛是 Google DeepMind 旨在开发基于认知科学的新 AI 基准的一项举措，这类基准对于追踪人工通用智能（AGI）的进展至关重要。Kaggle 是数据科学竞赛的热门平台，常设高额奖金。术语“AI 垃圾”指缺乏真正见解或价值的低质量 AI 生成内容。
 
-
-**参考链接**:
-
-- [t-distributed stochastic neighbor embedding - Wikipedia](https://en.wikipedia.org/wiki/T-distributed_stochastic_neighbor_embedding)
-
-
-**标签**: `#embeddings`, `#NLP`, `#GPT-2`, `#interpretability`, `#visualization`
+**标签**: `#AI benchmarks`, `#Kaggle`, `#DeepMind`, `#AI safety`, `#machine learning`
 
 ---
 
 <a id="item-9"></a>
-## [Stereo2Spatial：开源 ML 模型将立体声转换为双耳空间音频](https://www.reddit.com/r/MachineLearning/comments/1uzevbg/stereo2spatial_convert_stereo_music_tracks_to/) ⭐️ 7.0/10
+## [GPT-2 词元嵌入的交互式地图：t-SNE 与最小生成树可视化](https://www.reddit.com/r/MachineLearning/comments/1v09muj/interactive_map_of_gpt2s_token_embedding_space/) ⭐️ 7.0/10
 
-开发者发布了 Stereo2Spatial，一个将立体声音乐转换为空间化双耳混音的机器学习模型。该模型最初在 VAE 潜空间中使用流匹配扩散模型和记忆令牌，后来转向原始波形模型并采用振幅提升以提高质量。 这使得任何人都能将现有立体声音乐转换为沉浸式空间音频，提升耳机上的聆听体验。它展示了实用的 AI 上混音技术，并可能影响未来空间音频生成和长上下文音频建模的工作。 波形模型在 7,669 首曲目上训练了约 20 天，使用 2 块 A6000 GPU，采用记忆令牌机制实现最长 122 秒序列的稳定长上下文生成。振幅提升技术（缩放至 RMS 0.33 后乘以 3，并进行裁剪）解决了训练不稳定性，模型支持混音风格条件控制。
+一个交互式、适合移动端的地图，使用 t-SNE 降维和最小生成树展示了 GPT-2-small 的词元嵌入空间，用户可点击词元探索其最近邻语义关系。 该工具为探索 GPT-2 词元间的语义关系提供了直观方式，使语言模型内部机制更易理解，有助于可解释性研究和教育。 该地图包含 GPT-2-small 词元嵌入表中的 32,070 个字母词元，无上下文和前向传播；t-SNE 应用于压缩后的嵌入表示，每条边均为最小生成树，确保每条连线都表示真实的最近邻关系。
 
-reddit · r/MachineLearning · /u/kittenkrazy · 7月17日 22:55
+reddit · r/MachineLearning · /u/Limp-Contest-7309 · 7月18日 22:42
 
-**背景**: 空间音频（如双耳或 7.1.4 环绕声）能营造三维声场，让音乐更具沉浸感。流匹配扩散模型是一类通过匹配流场将噪声变换为数据的生成模型。此前的工作 ImmersiveFlow 也使用流匹配进行立体声转 7.1.4 转换，但缺乏长上下文稳定性。开发者的潜空间模型使用了 EAR-VAE（一个预训练的音频变分自编码器）来编码输入和输出通道，但波形模型绕过了 VAE 以获得更高保真度。
+**背景**: 词元嵌入是词语或子词的高维向量表示，能捕捉语义信息。t-SNE 是一种非线性降维算法，常用于将高维数据可视化为二维。最小生成树是图论中连接所有顶点且边权总和最小的子图，在此可视化中用于突出词元之间最紧密的语义联系。
 
 
 **参考链接**:
 
-- [ImmersiveFlow : Stereo-to-7.1.4 Spatial Audio Generation with Flow ...](https://arxiv.org/html/2601.12950v1)
-- [Flow Matching and Diffusion Models](https://diffusion.csail.mit.edu/2025/index.html)
+- [t - SNE clearly explained. An intuitive explanation of t - SNE | Medium](https://medium.com/data-science/t-sne-clearly-explained-d84c537f53a)
+- [Minimum spanning tree](https://en.wikipedia.org/wiki/Minimum_spanning_tree)
+- [Tokenization vs Embeddings - GeeksforGeeks](https://www.geeksforgeeks.org/nlp/tokenization-vs-embeddings/)
 
 
-**标签**: `#audio processing`, `#diffusion models`, `#music generation`, `#machine learning`, `#VAE`
+**标签**: `#token-embeddings`, `#visualization`, `#gpt-2`, `#interpretability`, `#machine-learning`
 
 ---
 
 <a id="item-10"></a>
-## [EU AI Act OpenRAG 数据集：933 个法律结构块与 BGE-M3 嵌入](https://www.reddit.com/r/MachineLearning/comments/1uytlac/eu_ai_act_openrag_933_legally_structured_chunks/) ⭐️ 7.0/10
+## [Stereo2Spatial: 将立体声音乐转为空间化双耳混音](https://www.reddit.com/r/MachineLearning/comments/1uzevbg/stereo2spatial_convert_stereo_music_tracks_to/) ⭐️ 7.0/10
 
-一位开发者发布了‘EU AI Act OpenRAG’，一个 SQLite 数据集，包含 933 个按法律结构分块的《欧盟人工智能法案》条款，每个块都附有归一化的 1024 维 BGE-M3 嵌入，并针对 RAG 任务与基线进行了基准测试。 这为法律 NLP 和 RAG 研究，尤其是针对《欧盟人工智能法案》这一关键法规，提供了一个高质量、结构清晰的数据集；其按法律结构分块的方式可能比简单的滑动窗口分块更有利于检索准确性。 分块基于法律层级（每个条款段落、叙文、定义等为一个块），包含精确的 EUR-Lex 链接、元数据、狭窄派生标签，模糊情况保留 NULL；评估显示检索召回率（0.541 vs 基线 0.449）和 QA 命中率（0.927 vs 基线 0.898）有所提升，但分类性能略低；已公布完整结果与局限性。
+新开源的 Stereo2Spatial 模型利用在原始波形上训练的流匹配扩散模型，将立体声音乐转换为双耳空间音频。该模型引入了记忆令牌机制，以保持跨音频片段的长程一致性。 该工具可从任意立体声录音中生成沉浸式空间音频，无需昂贵的录音室重混。其记忆令牌方法也推动了音频模型的长上下文生成发展。 该模型在 7669 首曲目上使用 2 块 A6000 GPU 训练了 20 天，采用振幅提升（缩放至 RMS 0.33 后乘以 3）来稳定原始波形训练。它直接输出双耳音频，提供可选的混音风格调节，并包含 Windows 桌面推理应用。
+
+reddit · r/MachineLearning · /u/kittenkrazy · 7月17日 22:55
+
+**背景**: 流匹配扩散模型是一类通过匹配速度场将噪声转换为数据的生成模型，目前是许多模态中的先进技术。潜在扩散模型先将数据压缩到潜在空间再扩散，以提高效率。记忆令牌是一种通过在处理窗口间传递压缩摘要来保持长上下文一致性的技术，常用于大语言模型。
+
+
+**参考链接**:
+
+- [Flow Matching and Diffusion Models — 2026 Version](https://diffusion.csail.mit.edu/2026/index.html)
+- [AudioLDM Model for Conditional Audio Synthesis](https://www.emergentmind.com/topics/audioldm-model)
+- [Sliding Windows and Memory Tokens : Extending LLM Attention](https://ginno.net/sliding-windows-and-memory-tokens-extending-llm-attention)
+
+
+**标签**: `#audio processing`, `#spatial audio`, `#diffusion models`, `#generative AI`, `#machine learning`
+
+---
+
+<a id="item-11"></a>
+## [TabFM Studio：无需编程，点点选选即可在电子表格上使用表格基础模型预测](https://www.reddit.com/r/MachineLearning/comments/1uzx1el/tabfm_studio_pointandclick_predictions_on/) ⭐️ 7.0/10
+
+一款名为 TabFM Studio 的新网络应用，用户无需编写代码，即可上传 CSV 或 Excel 文件，点击列标题选择目标变量，利用 Google 的 TabFM 模型在电子表格中直接生成预测。 该工具使表格机器学习大众化，让业务分析师、研究人员等非编程人员也能在自己的数据上利用基础模型进行预测和分类，且完全本地运行，无需依赖云端。 应用目前仅支持 Google 的 TabFM，这是一个零样本表格基础模型，支持分类和回归。它采用上下文学习方式：目标值已填写的行作为示例，空行则被预测。该工具完全在本地运行，保护数据隐私。
+
+reddit · r/MachineLearning · /u/Lckylke · 7月18日 14:15
+
+**背景**: 表格基础模型是预训练的机器学习模型，无需针对特定任务训练即可处理结构化数据（行和列）。Google 的 TabFM 是一个近期例子，支持零样本分类和回归，即无需微调就能对新数据集进行预测。上下文学习机制使模型能够利用电子表格中少量已标注的示例来推断未知单元格的值。
+
+
+**参考链接**:
+
+- [Introducing TabFM : A zero-shot foundation model for tabular data](https://research.google/blog/introducing-tabfm-a-zero-shot-foundation-model-for-tabular-data/)
+- [google/ tabfm -1.0.0-pytorch · Hugging Face](https://huggingface.co/google/tabfm-1.0.0-pytorch)
+- [The state of Tabular Foundation Models (2026)](https://mindfulmodeler.substack.com/p/the-state-of-tabular-foundation-models)
+
+
+**标签**: `#tabular-data`, `#foundation-models`, `#no-code`, `#machine-learning`, `#web-app`
+
+---
+
+<a id="item-12"></a>
+## [纽约市长要求房东公开 AI 生成图片用于租房广告](https://petapixel.com/2026/07/16/mayor-mamdani-says-landlords-cant-secretly-use-ai-images-to-advertise-properties/) ⭐️ 6.0/10
+
+纽约市长马姆达尼宣布，房东如果在租房广告中使用了 AI 生成的图片，必须进行公开披露，从而禁止了秘密使用此类图片的行为。 这一政策针对日益严重的 AI 虚拟布景照片问题，这些照片会误导潜在租户，并在竞争激烈的住房市场中为 AI 修饰广告的透明度树立了先例。 该政策要求的是披露而非全面禁止，因此房东仍可使用 AI 图像，但必须明确标注。在 StreetEasy 等平台上，AI 布景常扭曲房间比例以塞入实际无法摆放的家具，这使得披露要求尤为重要。
+
+hackernews · gnabgib · 7月18日 22:13 · [社区讨论](https://news.ycombinator.com/item?id=48962983)
+
+**背景**: AI 虚拟布景利用人工智能为空房间照片添加家具或装饰，让房产看起来更具吸引力或空间更大。这种欺骗性做法在租房网站上愈发普遍，导致看房者遭遇虚假宣传。新规要求提高透明度，类似于其他行业对修图照片的披露要求。
+
+**社区讨论**: 评论者普遍支持该规定，强调关键在于防止欺骗，而非反对 AI 本身。有人主张应禁止所有虚假广告，而非仅针对 AI 生成内容。还有人指出，在约会、招聘和赌博等领域也应强制要求 AI 透明度，并指出标题应强调'秘密'使用 AI 图像，因为规定本意是要求披露。
+
+**标签**: `#AI`, `#regulation`, `#real-estate`, `#advertising`, `#deception`
+
+---
+
+<a id="item-13"></a>
+## [Reddit 用户分享 scRNA-seq 深度学习综述表格，涵盖 25 种方法](https://www.reddit.com/r/MachineLearning/comments/1v06nc1/deep_learning_tackles_singlecell_analysis_a/) ⭐️ 6.0/10
+
+一位 Reddit 用户发布了一份详细的总结表格，概述了某篇综述论文中 25 种用于 scRNA-seq 分析的深度学习方法，分为六个子类别。 这份结构化的总结为希望将深度学习应用于单细胞基因组学的研究人员和从业者提供了有价值的参考，可以快速概览前沿方法及其架构。 该总结表格包含每个方法的名称、类别、目的、架构、评估指标、解释和创新点等字段。原始综述论文将方法分为六个子类别，但帖子中未列出具体分类。
+
+reddit · r/MachineLearning · /u/teraRockstar · 7月18日 20:35
+
+**背景**: scRNA-seq（单细胞 RNA 测序）技术可测量单个细胞的基因表达，揭示细胞异质性。深度学习模型越来越多地被用于 scRNA-seq 数据，用于降噪、降维、聚类和批次效应校正等任务，利用其从高维数据中学习复杂模式的能力。
+
+
+**参考链接**:
+
+- [ScRNA-seq](https://en.wikipedia.org/wiki/ScRNA-seq)
+- [Single-cell sequencing - Wikipedia](https://en.wikipedia.org/wiki/Single-cell_sequencing)
+
+
+**标签**: `#deep learning`, `#single-cell analysis`, `#scRNA-seq`, `#bioinformatics`, `#survey`
+
+---
+
+<a id="item-14"></a>
+## [Prism 研究工具因漏洞泄露用户论文，网站迅速下线](https://www.reddit.com/r/MachineLearning/comments/1uz75qt/prism_accidentally_leaked_d/) ⭐️ 6.0/10
+
+Prism LaTeX 协作工具的一个漏洞导致其编译功能返回了其他用户的论文，而非用户自己的论文，意外泄露了未发表的研究文档。该问题在 Discord 和 Twitter 上被举报后，网站在 10 分钟内被下线。 此次事件凸显了 AI 驱动的研究工具在处理敏感未发表手稿时存在的隐私风险。这可能会动摇用户对此类平台的信任，并引发对协作研究环境中数据隔离与安全实践的质疑。 该泄露由编译功能触发，该功能向用户返回了错误的论文。尽管快速下线显示了响应速度，但根本原因以及此前编译的论文是否也曾遭到泄露仍不清楚。
+
+reddit · r/MachineLearning · /u/Few-Monitor5103 · 7月17日 17:59
+
+**背景**: Prism 是 OpenAI 推出的免费 AI 驱动 LaTeX 工作区，内置 GPT-5.2，旨在帮助研究人员在统一环境中写作、协作与推理。它提供自动生成参考文献、手写公式转换和实时协作等功能，需要强大的数据隔离机制来保护进行中的工作。
+
+
+**参考链接**:
+
+- [Introducing Prism | OpenAI](https://openai.com/index/introducing-prism/)
+- [OpenAI Prism : AI-Powered LaTeX Editor For Scientists](https://www.linkedin.com/pulse/prism-openai-finally-solves-latex-problem-researchers-dr-rahul-dev-zv1jc)
+
+
+**标签**: `#security`, `#incident`, `#research-tools`, `#machine-learning`, `#privacy`
+
+---
+
+<a id="item-15"></a>
+## [EU AI Act OpenRAG：法律结构分块与 BGE-M3 嵌入数据集](https://www.reddit.com/r/MachineLearning/comments/1uytlac/eu_ai_act_openrag_933_legally_structured_chunks/) ⭐️ 6.0/10
+
+发布了一个新的 EU AI Act 语料库，按法律结构（条款、前言、定义）分块而非滑动窗口，并用 BGE-M3 嵌入。该语料库包含 933 个块，存储在单个 SQLite 文件中，检索准确率优于基线模型。 该结构化分块方法比传统滑动窗口能更好地保留法律上下文，可能提升法律 NLP 中 RAG 系统的性能。它为法律 AI 研究提供了可复现的基准和数据集，尤其适用于 EU AI Act 合规工具。 该语料库使用 BGE-M3 嵌入（1024 维），并包含 EUR-Lex 链接和应用日期等元数据。在 AI Act 评估基准上，场景文章召回率@20 为 0.541（基线 0.449），问答文章命中率@10 为 0.927（基线 0.898）。但 RAG 分类性能略低，表明生成器行为占主导。
 
 reddit · r/MachineLearning · /u/Automatic-Forever-63 · 7月17日 08:18
 
-**背景**: BGE-M3 是 BAAI 推出的多功能嵌入模型，可生成稠密嵌入用于语义搜索，同时支持稀疏检索和多向量检索。检索增强生成（RAG）是一种让大语言模型先检索相关外部文档再生成回答的技术，能提高准确性并减少幻觉。《欧盟人工智能法案》（法规(EU) 2024/1689）是一项里程碑式法律，对 AI 系统进行风险分级并对提供商提出合规要求。
+**背景**: 检索增强生成（RAG）是一种技术，通过检索相关外部文档来增强大语言模型，常用于法律和事实性领域。传统的 RAG 文本分块常使用固定长度的滑动窗口，可能割裂法律条款等逻辑边界。BGE-M3 是一种多语言嵌入模型，支持密集检索、多向量检索和稀疏检索。
 
 
 **参考链接**:
 
 - [BAAI/bge-m3 · Hugging Face](https://huggingface.co/BAAI/bge-m3)
 - [Retrieval-augmented generation](https://en.wikipedia.org/wiki/Retrieval-augmented_generation)
+- [Chunking for RAG: Sliding Windows, Structure-Aware Splits ...](https://medium.com/@hariprasannaa2001/chunking-for-rag-sliding-windows-structure-aware-splits-and-what-actually-works-dfdafcc79c9a)
 
 
-**标签**: `#RAG`, `#legal-NLP`, `#EU-AI-Act`, `#dataset`, `#embeddings`
-
----
-
-<a id="item-11"></a>
-## [你若建造，他们便会来](https://www.benlandautaylor.com/p/if-you-build-it-they-will-come) ⭐️ 6.0/10
-
-Ben Landau-Taylor 发表了一篇新文章，通过个人轶事和敏锐观察，强调了建立和维持社交社区所需的、通常不为人知的努力。 在日益加剧的孤独感和社会分裂的背景下，这篇文章引发共鸣，促使读者认识到社区生活背后的无形付出，并考虑自己承担起这一角色。 文章基于作者组织社交活动的亲身经历，指出许多人将社区视为像野莓一样自然生长的事物，而非需要培育的成果。评论者进一步讨论了作为社交组织者的脆弱性，以及像狮子会这样的传统团体的衰落。
-
-hackernews · barry-cotter · 7月18日 15:37 · [社区讨论](https://news.ycombinator.com/item?id=48959090)
-
-**背景**: 文章标题引用了电影《梦幻之地》中的台词。文章涉及社会资本和社区制度侵蚀等主题，这些在罗伯特·普特南的《独自打保龄》等著作中有所讨论。Hacker News 社区经常讨论现代社交生活的挑战，以及组织聚会和在线论坛背后的努力。
-
-**社区讨论**: 评论者普遍认同文章的观点，分享了组织社交活动时付出努力却得不到回报的经历。他们指出成为社交支柱的脆弱性、将社区视为理所当然的消费者心态，以及传统社会机构的代际衰落。一些人对于缺乏社交组织方面的传承表示担忧。
-
-**标签**: `#community-building`, `#social-dynamics`, `#networking`, `#personal-essay`, `#hackernews-discussion`
-
----
-
-<a id="item-12"></a>
-## [配置闲置 Mac 供 Claude Code 控制的逐步指南](https://ykdojo.github.io/claude-controls-mac/) ⭐️ 6.0/10
-
-一篇新指南详细介绍了如何配置一台闲置 Mac，让 Claude Code 控制它，使 AI 代理能在专用机器上执行任务。 该指南突显了将 AI 代理与物理硬件集成以进行自动化、测试或家庭项目的兴趣日益增长，引发了关于实际应用场景和硬件选择的讨论。 此设置需要一台闲置 Mac，可能面临连接不稳定的问题；有评论者认为，对于不需要物理显示器的代理任务，虚拟机就足够了。
-
-hackernews · ykev · 7月18日 16:12 · [社区讨论](https://news.ycombinator.com/item?id=48959392)
-
-**背景**: Claude Code 是 Anthropic 公司开发的 AI 编程工具，运行在终端中，能够执行命令并与系统交互。利用闲置硬件供 AI 代理使用的想法，是语言模型用于桌面自动化这一更广泛趋势的一部分。
-
-
-**参考链接**:
-
-- [Claude Code](https://en.wikipedia.org/wiki/Claude_Code)
-- [Claude Code by Anthropic | AI Coding Agent, Terminal, IDE](https://claude.com/product/claude-code)
-
-
-**社区讨论**: 评论者意见不一：有人看到家居自动化或测试等实际用途，有人则认为虚拟机更高效，还有人难以找到这种设置的全天候应用场景。
-
-**标签**: `#AI agents`, `#home automation`, `#macOS`, `#Claude`, `#repurposing hardware`
-
----
-
-<a id="item-13"></a>
-## [观鸟而非高尔夫：讽刺性方案抵消超大规模数据中心用水](https://simonwillison.net/2026/Jul/17/spot-birds-not-golf/#atom-everything) ⭐️ 6.0/10
-
-Simon Willison 发布了一篇讽刺性提议，建议像 Google 这样的超大规模云服务商通过收购高尔夫球场、将它们改造成公园并引导原会员转向观鸟活动，来抵消其数据中心的用水量。文章引用了 Google 2025 年 109 亿加仑（约每日 3000 万加仑）的用水数据，以及科切拉山谷高尔夫球场每座每日约 75 万加仑的用水量，计算出收购 40 座球场即可抵消 Google 的用水。 这篇短文以幽默方式突出了人们对 AI 数据中心用水量日益增长的环境担忧。它用一种易于理解的方式提出了问题，引发了关于技术基础设施与资源消耗之间权衡的讨论，以及非传统的抵消方式能否为真正的可持续发展方案做出贡献。 计算基于 1 英亩英尺约等于 326,000 加仑。Google 每年 109 亿加仑的用水量相当于每日约 3000 万加仑，而科切拉山谷一座典型高尔夫球场每年消耗 800 英亩英尺，约合每日 75 万加仑。因此，40 座球场的水耗与 Google 数据中心每日用水量相当。
-
-rss · Simon Willison · 7月17日 02:58
-
-**背景**: 超大规模云服务商（hyperscaler）指 Google、Amazon、Microsoft 等运营大型数据中心的云计算提供商，这些数据中心需要大量水进行冷却。英亩英尺（acre-foot）是美国常用的体积单位，约等于 326,000 加仑，常用于衡量水库、灌溉等大规模水资源。加州的科切拉山谷是沙漠地区，拥有众多高尔夫球场，每座球场灌溉用水量极大。
-
-
-**参考链接**:
-
-- [Hyperscaler](https://en.wikipedia.org/wiki/Hyperscaler)
-- [Acre-foot](https://en.wikipedia.org/wiki/Acre-foot)
-
-
-**标签**: `#ai-energy-usage`, `#water-usage`, `#sustainability`, `#satire`, `#data-centers`
-
----
-
-<a id="item-14"></a>
-## [基于 t-SNE 与最小生成树的 GPT-2 词元嵌入交互地图](https://www.reddit.com/r/MachineLearning/comments/1v09muj/interactive_map_of_gpt2s_token_embedding_space/) ⭐️ 6.0/10
-
-一个新发布的交互式工具利用 t-SNE 和最小生成树将 GPT-2-small 的词元嵌入可视化，用户可点击词元探索其最近邻关系。 该可视化将抽象的嵌入空间变得直观，可作为理解语言模型如何表示词元间语义关系的教育工具。 地图包含来自 GPT-2-small 词元嵌入的 32,070 个字母词元，无需前向传播；t-SNE 应用于压缩表示，最小生成树确保每条边均为真实的最近邻关系。
-
-reddit · r/MachineLearning · /u/Limp-Contest-7309 · 7月18日 22:42
-
-**背景**: 词元嵌入是语言模型中表示单词或子词的高维向量，语义相近的词元向量相似。t-SNE 是一种非线性降维技术，可将高维数据映射到二维平面，同时保留局部相似性。最小生成树以最小总边权连接所有点，揭示了最邻近的关系。
-
-
-**参考链接**:
-
-- [T-SNE](https://en.wikipedia.org/wiki/T-SNE)
-- [Minimum spanning tree](https://en.wikipedia.org/wiki/Minimum_spanning_tree)
-- [A Beginner’s Guide to Tokens, Vectors, and Embeddings in NLP | by Sascha Metzger | Medium](https://medium.com/@saschametzger/what-are-tokens-vectors-and-embeddings-how-do-you-create-them-e2a3e698e037)
-
-
-**标签**: `#NLP`, `#tokenization`, `#visualization`, `#embeddings`, `#GPT-2`
-
----
-
-<a id="item-15"></a>
-## [scRNA-seq 深度学习分析 25 种方法综述表格总结](https://www.reddit.com/r/MachineLearning/comments/1v06nc1/deep_learning_tackles_singlecell_analysis_a/) ⭐️ 6.0/10
-
-一位 Reddit 用户分享了一份结构化总结表格，整理了近期一篇关于 scRNA-seq 分析的综述论文中涵盖的 25 种深度学习方法，并按六大功能类别列出架构、用途和创新点等关键信息。 这份总结为单细胞转录组学的深度学习方法提供了快速对比的概览，有助于研究人员和从业者选择合适的方法，并理解这一快速发展领域的设计趋势。 该表格涵盖 scRNA-seq 分析的六个子类别，包含类别、方法名称、用途、架构、评估指标、说明和创新点等列。原始综述论文汇总了来自不同文献的方法，并非新的基准测试。
-
-reddit · r/MachineLearning · /u/teraRockstar · 7月18日 20:35
-
-**背景**: 单细胞 RNA 测序（scRNA-seq）在单个细胞水平上测量基因表达，揭示细胞异质性。深度学习越来越多地被用于聚类、插补、批次校正和轨迹推断等任务，其处理高维稀疏数据的能力具有优势。该综述为社区梳理了不断增长的工具箱，提供了结构化的方法概览。
-
-
-**参考链接**:
-
-- [ScRNA-seq](https://en.wikipedia.org/wiki/ScRNA-seq)
-- [Single cell RNA-seq: An introductory overview and tools for getting started | 10x Genomics](https://www.10xgenomics.com/blog/single-cell-rna-seq-an-introductory-overview-and-tools-for-getting-started)
-
-
-**标签**: `#deep learning`, `#bioinformatics`, `#single-cell`, `#scRNA-seq`, `#survey`
+**标签**: `#RAG`, `#legal-NLP`, `#embeddings`, `#dataset`, `#EU-AI-Act`
 
 ---
 
