@@ -3,460 +3,342 @@ title: "AI 技术情报 · 2026-08-02"
 slug: horizon-2026-08-02
 date: 2026-08-02
 published: true
-description: "从 40 条内容中精选 21 条 AI/ML 重要动态"
-item_count: 21
-total_fetched: 40
+description: "从 36 条内容中精选 15 条 AI/ML 重要动态"
+item_count: 15
+total_fetched: 36
 ---
 
-> 从 40 条内容中筛选出 21 条重要资讯。
+> 从 36 条内容中筛选出 15 条重要资讯。
 
 ---
 
-1. [Diátaxis：一种清晰技术文档编写框架](#item-1) ⭐️ 8.0/10
-2. [Lean 内核可靠性漏洞事后分析探讨形式化验证的信任问题](#item-2) ⭐️ 8.0/10
-3. [《64 位汇编艺术》第二版：关于 MASM 的 800 页编程指南](#item-3) ⭐️ 8.0/10
-4. [Google 如何助推 RSS 订阅的衰落](#item-4) ⭐️ 8.0/10
-5. [ripgrep musl 版大规模搜索时段错误，追踪到内核缺陷](#item-5) ⭐️ 8.0/10
-6. [NetBSD 11.0 发布，新增 RISC-V 支持、微虚拟机内核和复古硬件改进](#item-6) ⭐️ 8.0/10
-7. [DeepSeek V4 Flash 发布：304B 参数模型，性价比超群](#item-7) ⭐️ 8.0/10
-8. [无状态 MCP 2.0 重燃 Simon Willison 兴趣，催生新工具](#item-8) ⭐️ 8.0/10
-9. [KataGo 研究揭示围棋 AI 如何在内部学习棋盘对称性](#item-9) ⭐️ 8.0/10
-10. [VLMs 在放射学报告中删除临床术语并引入幻觉偏差](#item-10) ⭐️ 8.0/10
-11. [MIT 研究：AI 财务建议仅在提问像专家时有效](#item-11) ⭐️ 7.0/10
-12. [Seedance 2.5：字节跳动推出支持灵活参考的一镜到底视频生成](#item-12) ⭐️ 7.0/10
-13. [格雷格·布罗克曼：AI 应增强而非隔绝人际联系](#item-13) ⭐️ 7.0/10
-14. [Oxide and Friends 播客讨论开放权重革命](#item-14) ⭐️ 7.0/10
-15. [smevals：一款用于评估 AI 模型、提示和框架的轻量级评估套件](#item-15) ⭐️ 7.0/10
-16. [Reddit 用户用 DILATE 和 pinball 损失训练 Transformer 预测血糖](#item-16) ⭐️ 7.0/10
-17. [datasette-apps 0.2a0 为 Datasette Agent 添加调试和列表工具](#item-17) ⭐️ 6.0/10
-18. [OpenAI 的 Astra 模型以不到 2000 美元成本解决十个十年未解数学难题](#item-18) ⭐️ 6.0/10
-19. [llm-mcp-client 0.1a0：模型上下文协议集成客户端 alpha 版发布](#item-19) ⭐️ 6.0/10
-20. [Datasette-agent 0.4a0 为代理工具新增浏览器端 JavaScript 执行能力](#item-20) ⭐️ 6.0/10
-21. [强制审稿要求下，模糊评审不再能以“志愿工作”开脱](#item-21) ⭐️ 6.0/10
+1. [Seedance 2.5 画质提升，成本翻倍，专注动作镜头](#item-1) ⭐️ 8.0/10
+2. [Diátaxis 框架因结构化技术文档而受关注](#item-2) ⭐️ 8.0/10
+3. [MIT 研究：AI 金融建议效果惊人，关键在于提问方式](#item-3) ⭐️ 8.0/10
+4. [Lean 4 内核健全性漏洞 \#14576 事后分析报告](#item-4) ⭐️ 8.0/10
+5. [DeepSeek 发布 V4-Flash-0731：304B 参数模型，顶级性价比与智能体能力](#item-5) ⭐️ 8.0/10
+6. [Oxide and Friends 播客：Simon Willison 探讨开放权重革命](#item-6) ⭐️ 8.0/10
+7. [VLM 基准高分掩盖临床术语擦除与偏见幻觉](#item-7) ⭐️ 8.0/10
+8. [《64 位汇编艺术》新书引发社区热议](#item-8) ⭐️ 7.0/10
+9. [OpenAI 总裁：人们不喜欢被同事的 AI 助手联系](#item-9) ⭐️ 7.0/10
+10. [OpenAI 内部模型 Astra 以不到 2000 美元成本解决十个数学难题](#item-10) ⭐️ 7.0/10
+11. [无状态 MCP 2.0 重新点燃兴趣，催生新工具](#item-11) ⭐️ 7.0/10
+12. [用 Transformer 模型预测血糖并量化不确定性](#item-12) ⭐️ 7.0/10
+13. [研究探查 KataGo 神经网络的内部对称性](#item-13) ⭐️ 7.0/10
+14. [谷歌关闭 Reader 如何损害了 RSS 的普及](#item-14) ⭐️ 6.0/10
+15. [smevals：面向 AI 模型、提示词与代理框架的轻量级评估套件](#item-15) ⭐️ 6.0/10
 
 ---
 
 <a id="item-1"></a>
-## [Diátaxis：一种清晰技术文档编写框架](https://diataxis.fr/) ⭐️ 8.0/10
+## [Seedance 2.5 画质提升，成本翻倍，专注动作镜头](https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5) ⭐️ 8.0/10
 
-Diátaxis 文档框架重新受到关注，软件团队分享了成功采用的案例，创始人宣布正在将该框架翻译成多种语言。 它提供了一种系统化组织文档的方法，提高了清晰度和用户体验，被支持团队采用，甚至用于生成 AI 辅助文档。 该框架将文档分为四种类型：教程、操作指南、解释和参考，每种类型都有明确的目的和写作语气。它需要仔细规划页面标题，但能产出一致、以用户为中心的内容。
+字节跳动发布了 Seedance 2.5，该视频生成模型支持 30 秒片段和最多 50 个多模态参照，质量提升，但成本约为 Seedance 2.0 的两倍。 此次更新体现了视频生成模型向更长、更可控输出的趋势，也凸显了质量与成本之间的权衡，同时反映出中国模型侧重动作特效而非对话，与西方创作者需求存在差异。 该模型可生成最长 30 秒的 4K 视频，支持最多 50 个文本/图像/视频/音频参照进行精确控制。社区反馈称在 Dreamina 上生成 30 秒视频需消耗 1440 积分，约合 15 美元。
+
+hackernews · njaremko · 8月1日 20:45 · [社区讨论](https://news.ycombinator.com/item?id=49138302)
+
+**背景**: Seedance 是字节跳动的文本转视频模型，于 2025 年 6 月首次发布。2.0 版因生成逼真的名人及虚构角色片段而迅速走红。Seedance 2.5 将生成时长延长至 30 秒，并增加了更精细的控制。
+
+
+**参考链接**:
+
+- [Seedance 2.0](https://en.wikipedia.org/wiki/Seedance_2.0)
+- [Seedance 2 . 5 Free: Try ByteDance AI Video, No Queue, Instant Results](https://www.seeddance.io/models/seedance-2-5)
+- [Official Seedance 2 . 5 : 4K &amp; 30s AI Video Generator](https://dreamina.capcut.com/seedance/seedance-2-5)
+
+
+**社区讨论**: 社区成员称赞视频质量，有人分享了令人印象深刻的 Seedance 生成片段。但指出成本约为前代两倍，且模型侧重动作和特效镜头而非对话，可能更契合中国市场而非西方电影制作人需求。
+
+**标签**: `#AI`, `#video-generation`, `#ByteDance`, `#Seedance`, `#machine-learning`
+
+---
+
+<a id="item-2"></a>
+## [Diátaxis 框架因结构化技术文档而受关注](https://diataxis.fr/) ⭐️ 8.0/10
+
+Diátaxis 文档框架（将文档分为四种类型）在技术写作社区重新受到关注，其创建者 Daniele Procida 正积极将其翻译成多种语言。 像 Diátaxis 这样清晰的文档结构有助于团队产出更一致、更易懂、更易维护的文档，直接改善开发者体验并减少上手难度。 该框架将内容分为教程、操作指南、参考和解释四种类型，每种类型都有特定的写作语气。虽然备受赞誉，但一些用户指出保持文档更新仍是一大挑战，而创建者正通过翻译工作解决可访问性问题。
 
 hackernews · ryanseys · 8月1日 20:33 · [社区讨论](https://news.ycombinator.com/item?id=49138188)
 
-**背景**: 技术文档经常因混合不同类型的内容而让读者困惑。Diátaxis 由 Daniele Procida 创建，是一种轻量级框架，通过明确分离内容类型来解决这一问题。它被广泛应用于开源项目，并得到 Ubuntu 发行商 Canonical 等公司的认可。
+**背景**: Diátaxis 是 Daniele Procida 创建的一种系统性技术文档方法。它摒弃了常见的“一刀切”风格，而是规定了四种不同的文档模式：教程（学习导向）、操作指南（任务导向）、参考（信息导向）和解释（理解导向）。该框架已被许多开源项目采用，常与 DITA、信息映射等文档方法论进行比较。
 
 
 **参考链接**:
 
 - [Diátaxis](https://diataxis.fr/)
-- [Diátaxis , a new foundation for Canonical documentation | Ubuntu](https://ubuntu.com/blog/diataxis-a-new-foundation-for-canonical-documentation)
-- [What is Diátaxis and should you be using it with your documentation ?](https://idratherbewriting.com/blog/what-is-diataxis-documentation-framework)
+- [What is Diátaxis and should you be using it with your documentation? | I&#x27;d Rather Be Writing Blog and API doc course](https://idratherbewriting.com/blog/what-is-diataxis-documentation-framework)
+- [GitHub - evildmp/diataxis-documentation-framework: A systematic approach to creating better documentation. · GitHub](https://github.com/evildmp/diataxis-documentation-framework)
 
 
-**社区讨论**: 有用户称赞 Diátaxis 让文档编写更清晰、更有条理，一个团队在复杂代码移交时觉得它‘棒极了’。创始人强调了正在进行的翻译工作。一条幽默评论称，一旦了解该框架，你就会发现所有文档都有缺陷。也有人将其与 LLM 结合使用，生成初稿文档。
+**社区讨论**: 社区成员普遍赞扬 Diátaxis 的清晰性和实用价值，一位开发者称其在复杂代码库交接中“非常棒”。一些人指出文档长期保持更新的困难，而另一些人则赞赏创建者的翻译计划。一位评论者幽默地警告说，阅读它后会让你发现大多数文档的缺陷。
 
 **标签**: `#documentation`, `#technical-writing`, `#framework`, `#best-practices`, `#software-engineering`
 
 ---
 
-<a id="item-2"></a>
-## [Lean 内核可靠性漏洞事后分析探讨形式化验证的信任问题](https://leodemoura.github.io/blog/2026-8-1-postmortem-for-kernel-soundness-bug-14576/) ⭐️ 8.0/10
+<a id="item-3"></a>
+## [MIT 研究：AI 金融建议效果惊人，关键在于提问方式](https://mitsloan.mit.edu/ideas-made-to-matter/ai-financial-advice-surprisingly-good-especially-if-you-ask-right-questions) ⭐️ 8.0/10
 
-Lean 定理证明器内核可靠性漏洞 \#14576 的事后分析详细说明了该漏洞的发现过程、影响以及对形式化验证系统信任的广泛影响。 此漏洞表明即使是很小的可信内核也可能存在缺陷，动摇了形式化证明绝对正确的保证，并凸显了独立验证和多重实现的必要性。 实际利用该漏洞需要在两个不同实现中同时存在两个不同的缺陷，而只要用户保持两者更新，独立的内核检查器仍然有效。
+MIT 斯隆管理学院的一项研究表明，如果用户能正确提问，AI 可以提供出奇有效的理财建议，这引发了 Hacker News 上关于其实际应用和局限性的热烈讨论。 这一发现表明，AI 有望普及理财指导，降低对昂贵人类顾问的依赖，同时也凸显了提示工程和金融素养的重要性。 虽然研究未说明具体模型，但 Hacker News 评论显示用户已用 AI 进行投资组合再平衡、卖出决策和重大购买规划。局限性在于，除非明确提示，否则 AI 缺乏个人背景和风险意识。
+
+hackernews · foxtrot8672 · 8月1日 22:25 · [社区讨论](https://news.ycombinator.com/item?id=49139102)
+
+**背景**: 许多人金融素养低下，传统理财顾问往往对标准化建议收取高额费用。大语言模型（LLM）能处理自然语言并生成结构化指导，因此成为潜在的低成本替代方案。但财务决策涉及风险和个人背景，LLM 缺少这些信息，除非用户主动提供。
+
+**社区讨论**: Hacker News 社区既兴奋又谨慎。一些用户已经在用 AI 处理实际理财任务，另一些人则担心 LLM 缺乏‘切身利益’且无法处理复杂的权衡取舍。总体来看，人们认为 AI 将颠覆理财规划，但无法完全取代人类专业知识。
+
+**标签**: `#AI`, `#finance`, `#personal-finance`, `#LLM`, `#financial-literacy`
+
+---
+
+<a id="item-4"></a>
+## [Lean 4 内核健全性漏洞 \#14576 事后分析报告](https://leodemoura.github.io/blog/2026-8-1-postmortem-for-kernel-soundness-bug-14576/) ⭐️ 8.0/10
+
+Lean 4 内核健全性漏洞 \#14576 的事后分析显示，两个独立存在于不同检查器中的缺陷可被联合利用，从而破坏证明助手的健全性，允许恶意元程序伪造出 False 的证明。 此事表明，即便是经过形式化验证的内核也可能包含隐蔽的缺陷，这强调了纵深防御（如独立检查器、持续模糊测试）的必要性，并引发了关于形式化验证在实践中可信度的讨论。 该漏洞利用需要两个不同的缺陷：一个在内核的归约检查器中，另一个在外部检查器中，这使得独立内核能够检测到攻击；漏洞已修复，用户需将 Lean 4 和外部检查器都更新到最新版本。
 
 hackernews · juhopitk · 8月1日 18:32 · [社区讨论](https://news.ycombinator.com/item?id=49137060)
 
-**背景**: Lean 是一个基于依赖类型论的证明助手，其核心是一个小的可信内核，负责检查所有证明。可靠性意味着系统中所有可证明的命题都是真实的。内核漏洞会破坏可靠性，使得假定理也能被证明。形式化验证依赖于内核的正确性，因此此类漏洞对整个系统的可信度至关重要。
+**背景**: Lean 4 是一个基于归纳构造演算的证明助手及函数式编程语言，让用户能够编写数学证明并形式化验证软件。其内核是负责检查证明正确性的可信代码基；健全性漏洞意味着内核可能接受无效证明，从而允许证明错误定理。形式化验证旨在提供数学确定性，但此类缺陷提醒我们实现仍可能存在瑕疵。
 
 
 **参考链接**:
 
 - [Lean (proof assistant) - Wikipedia](https://en.wikipedia.org/wiki/Lean_%28proof_assistant%29)
-- [Soundness - Wikipedia](https://en.wikipedia.org/wiki/Soundness)
+- [Lean 4 kernel bug lets metaprograms forge proofs of False](https://freenode.net/article/lean-4-kernel-bug-lets-metaprograms-forge-proofs-of-false)
+- [Formal verification - Wikipedia](https://en.wikipedia.org/wiki/Formal_verification)
 
 
-**社区讨论**: 评论者指出独立检查可降低风险，但考虑到更简单的类型检查器也曾出现可靠性问题，此漏洞并不意外。与 Metamath 的对比表明有人偏好更为严密的根基，另一些人则建议悬赏证明“假”来增强信任。也有人提到 AI 生成的证明可能利用漏洞，存在安全隐患。
+**社区讨论**: 社区成员强调该漏洞凸显了独立内核检查的重要性，并指出类似 Rust 这样的类型检查器也曾出现健全性问题。有人认为，这类缺陷的可能性是 Lean 等复杂证明助手的缺陷，建议使用 Metamath 这样的更简单系统。Knuth 关于‘已证明的代码仍有 Bug’的名言被广泛引用。
 
-**标签**: `#formal verification`, `#theorem proving`, `#Lean`, `#kernel bug`, `#soundness`
-
----
-
-<a id="item-3"></a>
-## [《64 位汇编艺术》第二版：关于 MASM 的 800 页编程指南](https://nostarch.com/art-64-bit-assembly-v2) ⭐️ 8.0/10
-
-No Starch Press 出版了《The Art of 64-bit Assembly》第二版，这是一本 800 页的书籍，教授使用微软宏汇编器\(MASM\)在 Windows 上进行 64 位汇编语言编程。 这本书为底层系统编程提供了深入的现代资源，对于理解性能关键型软件、编译器和安全研究至关重要。它填补了使用 MASM 高级宏功能进行 Windows 汇编教育的空白。 该书共 800 页，涵盖 x86-64 指令集架构，并利用 MASM 的宏语言进行循环、字符串处理和算术运算。它专为 Windows 设计，可能限制了其对 Linux 用户的吸引力。
-
-hackernews · 0x54MUR41 · 8月1日 14:09 · [社区讨论](https://news.ycombinator.com/item?id=49134599)
-
-**背景**: 汇编语言是一种低级编程语言，直接控制计算机硬件。x86-64 是 x86 指令集架构的 64 位扩展，用于大多数现代处理器。微软宏汇编器\(MASM\)是 Windows 上的汇编器，使用 Intel 语法，并提供具有字符串处理和循环等高级功能的宏语言，与 GNU Assembler\(GAS\)等汇编器不同。
-
-
-**参考链接**:
-
-- [Microsoft Macro Assembler - Wikipedia](https://en.wikipedia.org/wiki/Microsoft_Macro_Assembler)
-- [x86-64 - Wikipedia](https://en.wikipedia.org/wiki/X86-64)
-
-
-**社区讨论**: 社区讨论褒贬不一：一些人批评营销文案中引用 AI 的内容，另一些人则争论选择 MASM 而非对 Linux 友好的汇编器。许多人承认如今学习汇编的价值，但希望有 Linux 版本。一些评论者提供了技术见解，指出 MASM 宏语言的优势相对于 GNU Assembler 的局限性。
-
-**标签**: `#Assembly`, `#Programming`, `#Systems Programming`, `#x86-64`, `#Book`
-
----
-
-<a id="item-4"></a>
-## [Google 如何助推 RSS 订阅的衰落](https://openrss.org/blog/how-google-helped-destroy-adoption-of-rss-feeds) ⭐️ 8.0/10
-
-文章《Google 如何帮助摧毁 RSS 订阅的采用》通过回顾性分析，阐述了 Google 关闭 Google Reader 等行为对 RSS 衰落的影响，并认为这推动了封闭式网络平台的兴起。 此事关互联网从开放、去中心化的 RSS 标准向围墙花园式平台的转变，凸显了用户和内容创作者对开放网络的怀念，以及对当前互联网生态的担忧。 文章指出 Google Reader 于 2013 年 7 月 1 日关闭，同时 Google 力推其 Google+ 社交网络；此外，Mozilla 在 Firefox 64 中移除了 Live Bookmarks 和 RSS 订阅功能，进一步削弱了 RSS 生态。
-
-hackernews · pudgywalsh · 8月1日 18:07 · [社区讨论](https://news.ycombinator.com/item?id=49136821)
-
-**背景**: RSS（简易信息聚合）是一种允许用户通过阅读器订阅网站更新内容的标准化格式，曾是去中心化网络内容分发的核心。Google Reader 曾是全球最受欢迎的 RSS 阅读器，2013 年关闭后，RSS 生态遭受重创，用户逐渐转向社交媒体和算法推荐的内容平台。该文章回顾了 Google 如何通过削弱 RSS 支持来推动其封闭平台战略，加速了开放网络的衰落。
-
-
-**参考链接**:
-
-- [RSS feed](https://en.wikipedia.org/wiki/RSS_feed)
-- [Google Reader](https://en.wikipedia.org/wiki/Google_Reader)
-
-
-**社区讨论**: 社区成员普遍表达了对早期互联网的怀念，认为 Google 以“使用率下降”为由关闭 Reader 是虚伪的，尤其当时 Google 正全力推广无人使用的 Google+。有人指出 RSS 并未消亡，依然易于实现，如 Shopify 和 Rails 框架都支持；也有人提及 Mozilla 移除 RSS 功能进一步打击了开放网络。整体情绪是惋惜与批评，但也有人认为 RSS 仍有复兴可能。
-
-**标签**: `#RSS`, `#Google`, `#open web`, `#internet history`, `#tech nostalgia`
+**标签**: `#formal verification`, `#proof assistants`, `#software bugs`, `#soundness`, `#Lean`
 
 ---
 
 <a id="item-5"></a>
-## [ripgrep musl 版大规模搜索时段错误，追踪到内核缺陷](https://github.com/BurntSushi/ripgrep/issues/3494) ⭐️ 8.0/10
+## [DeepSeek 发布 V4-Flash-0731：304B 参数模型，顶级性价比与智能体能力](https://simonwillison.net/2026/Jul/31/deepseek-v4-flash-0731/#atom-everything) ⭐️ 8.0/10
 
-ripgrep 的 musl 静态链接二进制文件在进行大规模搜索时偶尔出现段错误，社区调查发现根本原因是 Linux 内核的一个竞争条件，并催生了 dfoxfranke 的 AI 生成分析以及 Andy Lutomirski 提交的内核补丁。 该问题降低了 ripgrep 在基于 musl 环境中的可靠性，其背后的内核竞争条件可能影响许多进行大文件映射的程序，而 AI 生成的分析则展示了 AI 在底层调试中的潜力和局限。 段错误仅在使用 musl 时出现，因为其默认的 mallocng 分配器在多线程 I/O 场景下存在内存分配争用问题；根本原因是 Linux 内核 mmap/remap 处理中的竞争条件，Andy Lutomirski 提交了内核补丁进行修复。dfoxfranke 的 AI 生成分析虽然不完美，但提供了详细的栈回溯分解。
+DeepSeek 发布了 V4-Flash-0731，一款拥有 3040 亿参数的语言模型，大幅增强了智能体能力，定价仅为每百万输入 tokens 0.14 美元、每百万输出 tokens 0.27 美元。根据 Artificial Analysis 的评估，它在当前模型中拥有最佳的智能性价比。 该发布为经济高效的 AI 设立了新标准，使高级智能体能力以远低于超大型模型的价格得以使用。这可能会加速在预算与性能需要平衡的应用场景中的采用，并迫使竞争对手降低价格。 该模型拥有 3040 亿参数，在 Hugging Face 上占用 167GB，在 Artificial Analysis 智能指数与成本对比图中位于最左侧的绿色高性价比象限，突显其无与伦比的价值。它支持可调节的推理努力程度；Simon Willison 的测试表明，默认推理水平生成的鹈鹕图像质量较差，但使用高推理努力后输出质量显著提升。
 
-hackernews · throwaway2037 · 8月1日 12:34 · [社区讨论](https://news.ycombinator.com/item?id=49133889)
+rss · Simon Willison · 7月31日 23:59
 
-**背景**: musl 是一个轻量级的 C 标准库，专为静态链接设计，占用空间小、结构简洁，常用于容器和嵌入式系统。ripgrep 是一款快速的命令行搜索工具，递归搜索目录，常用于大型代码库。段错误（segfault）是指程序访问了不允许的内存区域，通常由程序或系统缺陷引起。该 bug 出现在 ripgrep 的 musl 二进制版本中，指向 musl 内存分配器与 Linux 内核内存管理之间的交互，最终被追踪到内核竞争条件。
+**背景**: 智能体 AI（Agentic AI）指能够自主规划、推理和执行任务，只需极少人工干预的系统，超越了简单的文本生成。Artificial Analysis 智能指数是一项综合基准，评估模型在推理、知识、编码和智能体任务上的表现，评分从 0 到 100。每项智能指数任务的成本指标有助于比较模型的效率，表明每单位能力需要多少费用。
 
 
 **参考链接**:
 
-- [musl - Wikipedia](https://en.wikipedia.org/wiki/Musl)
-- [musl libc](https://musl.libc.org/)
+- [What is Agentic AI? | IBM](https://www.ibm.com/think/topics/agentic-ai)
+- [Artificial Analysis Intelligence Index | Artificial Analysis](https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index)
 
 
-**社区讨论**: 社区评论中，一位内核开发者指出 AI 生成的分析‘勤奋但相当糟糕’，另有用户建议 ripgrep 替换 musl 的默认分配器以提升多线程性能。还有人警告说这种 I/O 模式在高性能计算集群文件系统上可能有问题，但根本原因仍为内核缺陷。讨论技术深度高，协作性强。
-
-**标签**: `#ripgrep`, `#bug`, `#musl`, `#segfault`, `#performance`
+**标签**: `#LLM`, `#DeepSeek`, `#model release`, `#agentic AI`, `#cost-effectiveness`
 
 ---
 
 <a id="item-6"></a>
-## [NetBSD 11.0 发布，新增 RISC-V 支持、微虚拟机内核和复古硬件改进](https://blog.netbsd.org/tnf/entry/netbsd_11_0_released) ⭐️ 8.0/10
+## [Oxide and Friends 播客：Simon Willison 探讨开放权重革命](https://simonwillison.net/2026/Jul/31/oxide-and-friends/#atom-everything) ⭐️ 8.0/10
 
-NetBSD 11.0 正式发布，新增了对开源 RISC-V 架构的移植、x86 上可在约 10 毫秒内启动的微虚拟机内核，并大幅提升了针对 m68k、alpha 等老式硬件平台的兼容性。 该版本凸显了 NetBSD 对多架构支持的一贯承诺，从现代 RISC-V 系统到复古计算机，而微虚拟机内核则为轻量级虚拟化提供了可能，可实现类似容器的性能与完整内核隔离，巩固了 BSD 在嵌入式和复古计算领域的地位。 微虚拟机内核是专为 x86 设计的变体，可实现极速启动，适用于微服务和沙箱工作负载；npf 防火墙现在支持二层过滤和用户/组过滤。RISC-V 移植是 NetBSD 的首次，利用了在嵌入式和服务器市场日益普及的开放指令集架构。
+Simon Willison 做客 Oxide and Friends 播客，讨论了开放权重模型 Kimi K3 与闭源前沿模型性能相当的一周，以及相关的网络安全事件和政策公开信。这场对话还回顾了 2026 年预测，并指出 AI 发展速度极快，像 DeepSeek V4 Flash 这样的新发布已超出讨论范围。 本次讨论的意义在于，由 AI 领域备受尊敬的评论者 Simon Willison 深入剖析了开放权重模型的革命，这一趋势正在普及先进 AI 的获取，并挑战闭源模型的主导地位。对话还涵盖了紧密相关的网络安全和政策维度，为当前 AI 格局提供了全面视角。 Kimi K3 是首个参数规模达 2.8 万亿的开放权重模型，而播客录制当天发布的 DeepSeek V4 Flash 是一个 2840 亿参数的混合专家模型，支持 100 万 token 上下文，两者都体现了高速迭代。那份政策公开信获得了大多数头部 AI 公司的签名，但 Anthropic 显著缺席。
 
-hackernews · jaypatelani · 8月1日 17:56 · [社区讨论](https://news.ycombinator.com/item?id=49136736)
+rss · Simon Willison · 7月31日 21:33
 
-**背景**: RISC-V 是一种由加州大学伯克利分校开发的开源指令集架构，无需授权费，是 x86 和 ARM 等专有架构的替代方案。NetBSD 是一款高度可移植的类 Unix 操作系统，以其清晰的设计和广泛的硬件支持而闻名，常用于老旧和嵌入式系统。微虚拟机是一种精简的虚拟机，提供强隔离性，但内存和启动开销极低，非常适合高效运行大量隔离工作负载。
+**背景**: 开放权重模型是指公开训练参数的人工智能模型，任何人都可下载和运行，但修改和再分发取决于许可协议。Kimi K3 由月之暗面 AI 开发，是一个 2.8 万亿参数的多模态模型，性能可与 GPT-5.5 等闭源前沿模型媲美。DeepSeek V4 Flash 于 2026 年 7 月 31 日发布，是一个 2840 亿参数的混合专家模型，支持 100 万 token 上下文，强调效率。微软发布的《开放权重与美国 AI 领导力》公开信主张开放权重模型是普及先进 AI 和保持美国领导力的基石，并获得多家头部公司签署，但 Anthropic 未参与。
 
 
 **参考链接**:
 
-- [RISC-V](https://en.wikipedia.org/wiki/RISC-V)
-- [What is a microVM? | Blog — Northflank](https://northflank.com/blog/what-is-a-microvm)
+- [Open-weight model](https://en.wikipedia.org/wiki/Open-weight_model)
+- [Kimi K 3 Tech Blog: Open Frontier Intelligence](https://www.kimi.com/blog/kimi-k3)
+- [deepseek-ai/DeepSeek-V4-Flash · Hugging Face](https://huggingface.co/deepseek-ai/DeepSeek-V4-Flash)
 
 
-**社区讨论**: 评论者赞扬了 NetBSD 对老式硬件的持续支持，并将其与 Linux 放弃旧平台的做法进行对比，同时指出新的 npf 功能和微虚拟机内核是很有价值的补充。有人对 BSD 家族当前的发展状况提出了广泛疑问，反映了对它们与 Linux 相比地位的关注。
-
-**标签**: `#netbsd`, `#bsd`, `#operating-systems`, `#release`, `#retrocomputing`
+**标签**: `#open-weight`, `#AI`, `#podcast`, `#Simon-Willison`, `#open-source`
 
 ---
 
 <a id="item-7"></a>
-## [DeepSeek V4 Flash 发布：304B 参数模型，性价比超群](https://simonwillison.net/2026/Jul/31/deepseek-v4-flash-0731/#atom-everything) ⭐️ 8.0/10
+## [VLM 基准高分掩盖临床术语擦除与偏见幻觉](https://www.reddit.com/r/MachineLearning/comments/1vcipzz/vlms_can_score_well_on_benchmarks_while_silently/) ⭐️ 8.0/10
 
-DeepSeek 发布了 DeepSeek-V4-Flash-0731，这是一个 3040 亿参数的大模型，在智能体能力方面显著增强。该模型已在 Hugging Face 上架，并通过 OpenRouter 等 API 提供商提供，输入价格为每百万 tokens 0.14 美元，输出价格为每百万 tokens 0.27 美元。 DeepSeek V4 Flash 以极高的性价比脱颖而出，目前在智能价值比方面可能位居最佳模型之列。它虽然在参数量上小于 MiniMax M3 等模型，但在智能基准测试中表现更优且价格低得多，这将使先进的智能体 AI 能够惠及更广泛的开发者和应用场景。 该模型大小为 167GB，可通过本地运行或 API 调用使用。在 Artificial Analysis 的智能指数对比图中，它以约 0.028 美元的成本获得 50 分，处于帕累托前沿的独特位置，没有其他模型能以如此低的成本达到同等智能水平。此外，通过 OpenRouter 使用时，图像生成质量对推理努力参数敏感，设置“高”推理努力可显著改善输出效果。
+一篇新论文揭示，用于胸部 X 光报告生成的视觉语言模型（VLM）可以通过抹除重要临床术语和引入偏见幻觉来在传统基准测试中取得高分，从而使报告临床价值降低。作者提出了一个框架来量化这种抹除和偏见。 这一发现暴露了当前医疗 AI 评估指标的关键缺陷，可能导致对不安全模型的过度信任，这些模型生成不准确或有偏见的报告。它强调了迫切需要更好的评估方法，以保障患者安全和临床可靠性。 该论文聚焦于胸部 X 光的放射学报告生成，并引入了一个专门检测术语抹除和偏见幻觉的测量框架。该框架在 arXiv 预印本 2603.01625 中提供。
 
-rss · Simon Willison · 7月31日 23:59
+reddit · r/MachineLearning · /u/ade17\_in · 8月1日 09:27
 
-**背景**: 智能体能力是指 AI 模型自主规划并执行多步骤任务、使用工具和外部 API 的能力。Artificial Analysis 智能指数是一个综合基准，评估模型在推理、编码、知识、指令遵循等方面的表现，给出整体智能分数。成本-性能图中的帕累托前沿线代表了智能与成本之间的最佳平衡，位于线上的模型在其价格点上是最高效的。MiniMax M3 是中国 AI 公司 MiniMax 开发的 4280 亿参数模型，以超大上下文窗口和多模态能力著称。
+**背景**: 视觉语言模型（VLM）是能够同时解释图像和文本的 AI 系统，可用于从 X 光片生成医疗报告等任务。放射学报告生成旨在自动化报告书写以辅助放射科医生，但当前常用的评估指标如 BLEU 或 ROUGE 往往无法评估临床正确性。这些指标可能奖励重复或正常的模板，掩盖了重要临床术语的缺失和幻觉的存在。
 
 
 **参考链接**:
 
-- [Artificial Analysis Intelligence Index | Artificial Analysis](https://artificialanalysis.ai/evaluations/artificial-analysis-intelligence-index)
-- [MiniMax M3](https://en.wikipedia.org/wiki/MiniMax_M3)
-- [What is Agentic AI? | IBM](https://www.ibm.com/think/topics/agentic-ai)
+- [Vision Language Models (VLM)](https://en.wikipedia.org/wiki/Vision_Language_Models_%28VLM%29)
+- [[2405.10842] Automated Radiology Report Generation: A Review ... UniRG: Scaling medical imaging report generation with ... Automated Structured Radiology Report Generation - ACL Anthology Radiology Report Generation - arXiv.org Medical radiology report generation: A systematic review of ... Radiology report generation with a learned knowledge base and ... Collaboration between clinicians and vision–language models ...](https://arxiv.org/abs/2405.10842)
 
 
-**标签**: `#DeepSeek`, `#LLM`, `#agentic capabilities`, `#cost-effectiveness`, `#model release`
+**标签**: `#VLMs`, `#medical imaging`, `#evaluation metrics`, `#bias`, `#radiology report generation`
 
 ---
 
 <a id="item-8"></a>
-## [无状态 MCP 2.0 重燃 Simon Willison 兴趣，催生新工具](https://simonwillison.net/2026/Jul/31/stateless-mcp/#atom-everything) ⭐️ 8.0/10
+## [《64 位汇编艺术》新书引发社区热议](https://nostarch.com/art-64-bit-assembly-v2) ⭐️ 7.0/10
 
-2026 年 7 月 28 日发布的无状态 MCP 2.0 规范重新点燃了 Simon Willison 对模型上下文协议的热情，他因此开发了 mcp-explorer（用于探索 MCP 服务器的命令行工具）和 datasette-mcp（Datasette 集成）。 无状态 MCP 的转变大幅简化了客户端和服务器的实现，无需管理会话状态，更适合构建可扩展的 Web 应用。像 Simon Willison 这样有影响力的开发者重新投入，标志着 MCP 作为更安全、更可审计的替代方案（相比给代理无限制的终端访问）重新获得动力。 新的无状态方法将旧版 MCP 所需的两次 HTTP 请求（先获取会话 ID 再调用工具）简化为一次请求，通过请求头传递协议版本和方法，并在 JSON 体中包含客户端信息。Simon 还因缺乏好用的交互式 CLI 工具而构建了 mcp-explorer，并指出无状态 MCP 降低了构建和使用 MCP 服务器的门槛。
+Randall Hyde 的 800 页综合著作《64 位汇编艺术》（第一卷）已出版，在 Hacker News 上引发了热烈讨论。对话集中在该书的 AI 生成营销介绍以及选择微软宏汇编器（MASM）而非 Linux 替代方案上。 汇编语言对于理解计算机体系结构、底层安全和性能优化至关重要。像这本书这样的现代资源有助于程序员掌握 x86-64 汇编，但社区的反应凸显了真实技术沟通和跨平台工具的价值。 该书由 No Starch Press 出版，使用 MASM 并针对 Windows，这引起了 Linux 用户的批评。AI 生成的营销文案被认为与本书的低级手工精神相悖，而 800 页的篇幅则反映了内容的深度。
+
+hackernews · 0x54MUR41 · 8月1日 14:09 · [社区讨论](https://news.ycombinator.com/item?id=49134599)
+
+**背景**: x86-64 是 x86 指令集的 64 位扩展，用于大多数现代 PC 和服务器。汇编语言是机器码的低级、人类可读表示。MASM 是微软的汇编器，而 GNU 汇编器（GAS）在 Linux 上常见。Randall Hyde 之前曾撰写过使用高级汇编器的《汇编语言艺术》；这本新书则专注于 64 位并采用 MASM。
+
+
+**参考链接**:
+
+- [X86-64](https://en.wikipedia.org/wiki/X86-64)
+- [x86-64 assembly language reference](https://cs.brown.edu/courses/csci1260/spring-2021/lectures/x86-64-assembly-language-reference.html)
+- [Understanding Windows x64 Assembly](https://sonictk.github.io/asm_tutorial/)
+
+
+**社区讨论**: 讨论以元评论为主：许多人批评 AI 生成的营销介绍，认为其令人反感，与本书精神相悖。其他人争论了 MASM 与 Linux 兼容汇编器的选择，也有人质疑在 AI 时代学习汇编的意义。少数用户为这本书的价值辩护，并对其内容表达了真实的兴趣。
+
+**标签**: `#assembly`, `#book`, `#programming`, `#low-level`, `#x86-64`
+
+---
+
+<a id="item-9"></a>
+## [OpenAI 总裁：人们不喜欢被同事的 AI 助手联系](https://simonwillison.net/2026/Aug/1/greg-brockman/#atom-everything) ⭐️ 7.0/10
+
+OpenAI 总裁兼联合创始人 Greg Brockman 分享称，许多 OpenAI 员工将 ChatGPT 连接到 Slack，但人们非常不喜欢被同事的 AI 助手联系，即使他们很乐意直接帮助人类同事。 这一洞察表明，人们非常重视人际关系和互相帮助，暗示 AI 应被设计为增强人类互动，而非成为分隔人的一层；这对如何在协作型工作场所部署 AI 代理具有重要意义。 这一观察来自 OpenAI 内部使用 ChatGPT 的 Slack 集成；该行为表明人们更喜欢直接的人类沟通，即使任务相同，也可能拒绝 AI 作为中介的请求。
+
+rss · Simon Willison · 8月1日 22:29
+
+**背景**: Slack 是一个流行的团队消息平台。ChatGPT 可以集成到 Slack 中作为 AI 助手，代表用户发送消息、请求帮助或自动执行任务。OpenAI 的员工一直在试验这种集成，从而引发了这一社会动态观察。
+
+
+**参考链接**:
+
+- [ChatGPT Slack Integration : Mastering Team Communication | Medium](https://medium.com/@reveation-labs/chatgpt-slack-integration-mastering-team-communication-8123bf3d1c9f)
+- [The ultimate guide to using ChatGPT Slack | eesel AI](https://www.eesel.ai/blog/chatgpt-slack)
+
+
+**标签**: `#ai-ethics`, `#generative-ai`, `#human-ai-interaction`, `#openai`, `#social-dynamics`
+
+---
+
+<a id="item-10"></a>
+## [OpenAI 内部模型 Astra 以不到 2000 美元成本解决十个数学难题](https://simonwillison.net/2026/Aug/1/ten-advances-in-mathematics/#atom-everything) ⭐️ 7.0/10
+
+OpenAI 使用其即将推出的 Astra 模型的内部版本，解决了十个至少在十年内没有任何进展的数学难题，每个问题在 GPT-5.6 Sol 代币上的花费不到 2000 美元。这些解决方案用 Lean 4 进行了形式化验证，并发布了一篇论文和一份由大语言模型生成的推理演算记录，但该公司没有透露有多少其他问题在尝试后未能解决。 这表明 AI 模型现在能够参与高水平的数学研究，可能加速该领域的进展。这也加剧了 OpenAI 与 Anthropic 等公司之间的 AI 军备竞赛，并在数学界引发了一个类似于“深蓝”时刻的冲击，促使人们反思 AI 能够解决长期悬而未决的难题时，人类创造力的角色。 这些证明用 Lean 4 这一确保数学正确性的证明助手进行了形式化验证。成本基于 GPT-5.6 Sol 代币定价（每百万输入代币 5 美元，每百万输出代币 30 美元）。OpenAI 未透露失败尝试的次数，也未公布所使用的确切提示词，尽管模型的推理过程被重构为一份演算记录 PDF。
+
+rss · Simon Willison · 8月1日 20:34
+
+**背景**: Lean 4 是一种证明辅助工具和编程语言，允许数学家对证明进行形式化验证，确保其无误。1997 年击败加里·卡斯帕罗夫的“深蓝”国际象棋计算机，成为 AI 超越人类专业知识的象征，给棋手带来了意义危机。在 Astra 发布之前，OpenAI 将其描述为一个旨在处理长时间复杂任务的模型家族，可能使用多个智能体。数学家陶哲轩曾设想一个“大数学”的未来，人类与 AI 协作，由 AI 承担技术性的繁重工作。
+
+
+**参考链接**:
+
+- [OpenAI announces its &quot;next major model&quot; Astra by dropping ten previously unsolved math solutions](https://the-decoder.com/openai-announces-its-next-major-model-astra-by-dropping-ten-previously-unsolved-math-solutions/)
+- [GPT‑5.6: Frontier intelligence that scales with your ambition](https://openai.com/index/gpt-5-6/)
+
+
+**标签**: `#AI`, `#mathematics`, `#OpenAI`, `#theoretical computer science`, `#commentary`
+
+---
+
+<a id="item-11"></a>
+## [无状态 MCP 2.0 重新点燃兴趣，催生新工具](https://simonwillison.net/2026/Jul/31/stateless-mcp/#atom-everything) ⭐️ 7.0/10
+
+Simon Willison 对 MCP 的兴趣因新的无状态 MCP 2.0 规范而重新燃起，该规范用单次无状态 HTTP 请求替代了基于会话的有状态请求，大幅降低了复杂度。他因此开发了 mcp-explorer（一个用于探测 MCP 服务器的 CLI 工具）和 datasette-mcp。 无状态设计简化了客户端和服务器的实现，让 MCP 更具可扩展性且更易于审计。这可能会推动 MCP 重新成为更安全、更可控的代理工具方案，尤其适合在本地运行的小型模型，从而替代直接赋予代理终端和网络访问权限的做法。 旧版 MCP 需要两次 HTTP 请求：一次初始化会话获取会话 ID，另一次调用工具。无状态 MCP 将其合并为一个 POST 请求，所有必要元数据通过请求头和请求体传递，无需服务器端维护会话状态。
 
 rss · Simon Willison · 7月31日 23:13
 
-**背景**: MCP（模型上下文协议）是 Anthropic 于 2024 年 11 月推出的开放标准，用于让 LLM 与外部工具和数据源交互。它最初获得巨大关注，但后来因 Anthropic 的 Skills（赋予代理终端访问能力）而部分失势。旧版 MCP 采用有状态协议，需要管理会话，增加了复杂性。新的无状态 2.0 规范消除了这一开销，使其更接近 REST API 的简洁性。
+**背景**: MCP 即模型上下文协议，是 Anthropic 于 2024 年 11 月推出的开放标准，用于让 LLM 代理连接外部工具和数据。它曾被广泛采用，但后来受到“Skills”等更灵活方案的竞争，即直接让代理使用终端和 curl。原协议是有状态的，需要会话管理，给开发者带来复杂性并影响扩展性。2026 年 7 月 28 日发布的新规范将其改为无状态，类似于 REST，从而简化交互并提升可扩展性。
 
 
 **参考链接**:
 
 - [Model Context Protocol](https://en.wikipedia.org/wiki/Model_Context_Protocol)
 - [Stateless protocol](https://en.wikipedia.org/wiki/Stateless_protocol)
-- [What is the Model Context Protocol (MCP)? - Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)
+- [With a stateless makeover, new MCP spec targets enterprise scale - Ars Technica](https://arstechnica.com/ai/2026/07/with-a-stateless-makeover-new-mcp-spec-targets-enterprise-scale/)
 
 
-**标签**: `#MCP`, `#AI agents`, `#LLM tools`, `#stateless protocol`, `#Simon Willison`
+**标签**: `#MCP`, `#Model Context Protocol`, `#AI agents`, `#stateless protocol`, `#Simon Willison`
 
 ---
 
-<a id="item-9"></a>
-## [KataGo 研究揭示围棋 AI 如何在内部学习棋盘对称性](https://www.reddit.com/r/MachineLearning/comments/1vcrki2/how_symmetric_are_the_insides_of_a_go_network_r/) ⭐️ 8.0/10
+<a id="item-12"></a>
+## [用 Transformer 模型预测血糖并量化不确定性](https://www.reddit.com/r/MachineLearning/comments/1vc1txc/i_have_trained_a_model_to_predict_my_blood_sugar_p/) ⭐️ 7.0/10
 
-开源围棋引擎 KataGo 的维护者 David Wu 进行了一项可解释性研究，探究神经网络如何内部表示棋盘。他发现，仅通过训练时的数据增强，网络内部就涌现出大致对称的表征，即使没有显式地强制对称性。 这项研究为超人类围棋 AI 的内部运作提供了罕见的洞察，表明神经网络可以仅通过数据增强学习到棋盘方向的不变性。这对理解深度学习模型在空间推理中的表征学习很有意义。 研究使用了通过 8 倍随机旋转/反射数据增强训练的 KataGo 开源围棋引擎。其中一个发现出乎意料。文章由 AI 辅助生成，但经过作者精心整理以提高可读性，并提供了代码。
+一位 Reddit 用户训练了一个仅编码器的 Transformer 模型，利用过去血糖、碳水化合物和胰岛素数据预测未来血糖水平。该模型结合 DILATE 和 pinball 损失进行不确定性量化，在 Kovachev 风险空间中运行，并在模拟器上预训练后于真实数据集上微调。 该项目展示了如何将先进的机器学习应用于个人健康监测，通过准确且带有不确定性估计的预测，可能改善糖尿病管理。它凸显了个性化、开源医疗 AI 的日益趋势。 模型采用 BERT 式双向注意力，掩码未来血糖值；DILATE 损失用于拟合中位线，pinball 损失用于不确定性带，通过 Kendall-Gal 混合；最大版本参数量 1700 万，预训练 48 小时，微调不到 10 分钟，可在手机上运行；当前需要已知的碳水化合物和胰岛素输入。
+
+reddit · r/MachineLearning · /u/0xdeadf1sh · 7月31日 20:09
+
+**背景**: 血糖预测对于 1 型糖尿病管理至关重要，可帮助患者预防低血糖和高血糖。Transformer 架构最初用于自然语言处理，但可适配时间序列预测。该项目使用 DILATE 损失函数同时惩罚形状和时间误差，使用 pinball 损失进行分位数回归以估计预测不确定性区间。Kovachev 风险空间重新参数化将血糖读数转换为对风险敏感的尺度，突出危险的低值和高值。模型在模拟器上预训练，并在 OhioT1DM、Azt1D、ShanghaiT1DM 等公开数据集上微调。
+
+
+**参考链接**:
+
+- [Re: Shape and Time Distortion Loss for Training Deep Time Series](https://openreview.net/pdf?id=ryxarpcfTB)
+- [An Introduction to Quantile Loss, a.k.a. the Pinball Loss | Towards Data Science](https://towardsdatascience.com/an-introduction-to-quantile-loss-a-k-a-the-pinball-loss-33cccac378a9/)
+- [Model-Based Control of Type 1 Diabetes in “Risk Space”](https://www.sciencedirect.com/science/article/pii/S1474667016416216)
+
+
+**标签**: `#machine learning`, `#healthcare`, `#transformer`, `#time series`, `#personal project`
+
+---
+
+<a id="item-13"></a>
+## [研究探查 KataGo 神经网络的内部对称性](https://www.reddit.com/r/MachineLearning/comments/1vcrki2/how_symmetric_are_the_insides_of_a_go_network_r/) ⭐️ 7.0/10
+
+研究人员发布了一项关于开源围棋引擎 KataGo 的可解释性研究，探讨其神经网络如何在训练中仅使用随机八倍数据增强的情况下学习对称的棋盘表示。 该研究揭示了深度神经网络如何泛化并学习不变性，这是可解释性领域的核心问题，也可为训练更稳健的 AI 系统提供启发。 该研究主要借助 AI 完成并有人类指导，但经过精心打磨以通俗易懂。代码已公开，且分析揭示了一个关于网络内部对称性的意外发现。
 
 reddit · r/MachineLearning · /u/icosaplex · 8月1日 16:18
 
-**背景**: KataGo 是一个免费开源的围棋引擎，采用类似 AlphaZero 的深度强化学习，达到超人类水平。围棋棋盘是正方形，规则在旋转和反射下完全对称。围棋神经网络通常将棋盘当作图像处理，训练时可用数据增强，即随机旋转或反射每个训练样本，以增加数据多样性。该研究调查了网络内部激活是否最终变得对称，还是为每个方向独立学习特征。
+**背景**: 围棋是一种在 8 个二面体变换（旋转和反射）下完全对称的棋盘游戏。KataGo 是一款顶尖的开源围棋引擎，使用基于自对弈强化学习的深度神经网络，类似于 AlphaZero。神经网络可解释性研究旨在使此类模型的“黑盒”决策变得可理解。通常，对称性约束不会硬编码，而是通过随机翻转和旋转来增强训练数据。
 
 
 **参考链接**:
 
 - [KataGo](https://en.wikipedia.org/wiki/KataGo)
-- [Data augmentation](https://en.wikipedia.org/wiki/Data_augmentation)
-- [GitHub - lightvector/KataGo: GTP engine and self-play learning in Go · GitHub](https://github.com/lightvector/katago)
+- [A Survey on Neural Network Interpretability](https://arxiv.org/pdf/2012.14261)
 
 
-**标签**: `#Machine Learning`, `#Interpretability`, `#Neural Networks`, `#Game AI`, `#Go`
-
----
-
-<a id="item-10"></a>
-## [VLMs 在放射学报告中删除临床术语并引入幻觉偏差](https://www.reddit.com/r/MachineLearning/comments/1vcipzz/vlms_can_score_well_on_benchmarks_while_silently/) ⭐️ 8.0/10
-
-一项新研究发现，用于胸部 X 光报告生成的视觉-语言模型（VLMs）会系统性地删除罕见但具有临床意义的术语，并引入幻觉偏差，却仍能在标准基准测试中获得高分。作者提出了一个全新的框架来量化这种术语删除和偏差引入。 这暴露了医学 AI 评估中的一个关键缺陷：常用指标会奖励空洞、重复的报告，缺乏临床实用性，可能误导模型部署并危及患者安全。新的衡量框架有助于确保 AI 生成的报告真正具有信息量和可信度。 该论文专注于胸部 X 光的放射学报告生成（RRG），并引入了一个框架来衡量罕见临床术语被删除的频率以及幻觉偏差术语的出现情况。预印本可在 arXiv:2603.01625 查阅。
-
-reddit · r/MachineLearning · /u/ade17\_in · 8月1日 09:27
-
-**背景**: 视觉-语言模型（VLMs）是一种能够同时处理图像和文本的 AI 系统，可用于从 X 光片生成医疗报告等任务。标准的评估指标如 BLEU、ROUGE 和 CIDEr 通过将生成文本与参考报告进行比较，但模型可以通过生成安全、重复的模板并省略不常见的临床术语来欺骗这些指标。AI 幻觉是指生成虚假或无意义的信息，这在可能危及患者安全的临床环境中尤其危险。
-
-
-**参考链接**:
-
-- [Vision-language model](https://en.wikipedia.org/wiki/Vision-language_model)
-- [Hallucination (artificial intelligence) - Wikipedia](https://en.wikipedia.org/wiki/Hallucination_%28artificial_intelligence%29)
-
-
-**标签**: `#VLM`, `#Radiology`, `#Evaluation Metrics`, `#Bias`, `#Medical AI`
-
----
-
-<a id="item-11"></a>
-## [MIT 研究：AI 财务建议仅在提问像专家时有效](https://mitsloan.mit.edu/ideas-made-to-matter/ai-financial-advice-surprisingly-good-especially-if-you-ask-right-questions) ⭐️ 7.0/10
-
-MIT 的一项研究发现，AI 模型能提供出人意料的优质财务建议，但前提是用户以专家式的方式提问，这反映了模型的训练数据特征。 这凸显了大语言模型的一个关键局限：它们对已具备领域专业知识的用户最为有效，可能拉大新手用户的差距。同时也强调，AI 尚无法复制人类财务顾问提供的情感与行为指导。 研究的评论者指出，模型缺乏情商，难以应对复杂的权衡取舍，而这些都是现实财务规划中的关键。模型的表现取决于提示语在多大程度上反映了专家话语，因为它正是基于这类数据训练的。
-
-hackernews · foxtrot8672 · 8月1日 22:25 · [社区讨论](https://news.ycombinator.com/item?id=49139102)
-
-**背景**: 大语言模型在海量语料上训练，其中包括专家撰写的材料，因此它们对类似专家风格的提问反应最佳。财务建议不仅仅是数字问题，还涉及理解客户的情感、恐惧和长期目标。传统财务顾问常常扮演行为教练的角色，帮助客户在市场波动中保持纪律。
-
-**社区讨论**: 评论者一致认为，需要专家式提问是核心缺陷，AI 在情感和行为方面存在困难。有人指出，关于金钱的讨论往往关乎安全与恐惧，而非金钱本身。另一位评论者提到，AI 难以处理涉及嵌套权衡的决策，并分享了一个 GitHub 上的个人财务规划技能链接。
-
-**标签**: `#AI`, `#LLMs`, `#financial-advice`, `#human-ai-interaction`, `#ai-limitations`
-
----
-
-<a id="item-12"></a>
-## [Seedance 2.5：字节跳动推出支持灵活参考的一镜到底视频生成](https://seed.bytedance.com/en/blog/one-take-creation-flexible-referencing-introducing-seedance-2-5) ⭐️ 7.0/10
-
-字节跳动发布了 Seedance 2.5，一款 AI 视频生成模型，引入了一镜到底创作和灵活参考功能，擅长动作和特效镜头，但缺乏对话能力。 该发布展示了 AI 视频生成向动作密集型方向发展的趋势，满足了国内市场的高需求，并通过精准控制推动了连贯的多镜头叙事能力。 该模型擅长生成 30 秒的音频视频联合生成内容，但用户指出推理成本高，且人脸和动作仍存在挥之不去的恐怖谷效应。
-
-hackernews · njaremko · 8月1日 20:45 · [社区讨论](https://news.ycombinator.com/item?id=49138302)
-
-**背景**: Seedance 是字节跳动推出的文本转视频模型系列，2025 年 6 月首次发布 Seedance 2.0 便因生成逼真名人片段而走红，引发版权担忧。Seedance 2.5 在此基础上增强了长镜头、多素材理解和编辑能力，主打一镜到底叙事。
-
-
-**参考链接**:
-
-- [Seedance 2.0](https://en.wikipedia.org/wiki/Seedance_2.0)
-- [Seedance 2.5](https://seed.bytedance.com/en/seedance2_5)
-
-
-**社区讨论**: 社区成员赞扬了示例视频的高质量和创意用例，但批评其过于侧重动作镜头而忽视对话，推理成本高昂，以及动作和表情中令人不安的 AI 感。还有人指出，该模型符合中国市场对奇观内容的需求。
-
-**标签**: `#AI`, `#video-generation`, `#ByteDance`, `#generative-models`, `#machine-learning`
-
----
-
-<a id="item-13"></a>
-## [格雷格·布罗克曼：AI 应增强而非隔绝人际联系](https://simonwillison.net/2026/Aug/1/greg-brockman/#atom-everything) ⭐️ 7.0/10
-
-OpenAI 总裁格雷格·布罗克曼分享称，OpenAI 员工不喜欢收到同事的 ChatGPT 助手发来的任务请求，即便他们乐意直接帮忙。这一观察强调了人际互动比 AI 中介沟通更受重视。 OpenAI 联合创始人的这一观察揭示了重要的社会动态：若不加注意，AI 工具可能侵蚀职场信任与合作。这表明开发者必须设计 AI 来增强人际联系，而非用替代品疏远用户。 该观察源于 OpenAI 内部将 ChatGPT 接入 Slack 的做法，AI 助手可自动向同事发消息。布罗克曼的见解表明，即使任务是相同的，沟通媒介的改变也会显著影响他人的帮助意愿。
-
-rss · Simon Willison · 8月1日 22:29
-
-**背景**: ChatGPT 是 OpenAI 开发的生成式 AI 聊天机器人，广泛用于起草消息和自动化工作流程。将 AI 与 Slack 等通信平台集成后，AI 助手可代表用户发送消息，有时会导致缺乏人情味的互动。格雷格·布罗克曼是 OpenAI 的联合创始人，他的观察来自公司内部使用实践，这与 AI 伦理及自动化对社会动态影响的广泛讨论相关。
-
-**标签**: `#ai-ethics`, `#human-ai-interaction`, `#social-dynamics`, `#openai`, `#generative-ai`
+**标签**: `#deep learning`, `#neural network interpretability`, `#Go`, `#symmetry`, `#game AI`
 
 ---
 
 <a id="item-14"></a>
-## [Oxide and Friends 播客讨论开放权重革命](https://simonwillison.net/2026/Jul/31/oxide-and-friends/#atom-everything) ⭐️ 7.0/10
+## [谷歌关闭 Reader 如何损害了 RSS 的普及](https://openrss.org/blog/how-google-helped-destroy-adoption-of-rss-feeds) ⭐️ 6.0/10
 
-Simon Willison 在 Oxide and Friends 播客中讨论了 Kimi K3 开放权重模型与闭源前沿模型旗鼓相当的表现、近期的网络安全事件，以及一封由众多 AI 领袖签署但 Anthropic 未参与的关于开放权重与美国 AI 领导力的公开信。 这次讨论凸显了开放权重模型与闭源模型差距的迅速缩小，以及将塑造 AI 发展和监管未来的网络安全与政策辩论。 播客涉及了 Kimi K3（拥有 2.8T 参数和 1M token 上下文窗口的开放权重模型）、DeepSeek V4 Flash 0731 模型（2840 亿参数混合专家模型，活跃参数 130 亿），以及 OpenAI 与 Hugging Face 的意外网络攻击。节目还指出 Anthropic 拒绝了签署由微软牵头的开放权重政策公开信。
+这篇博客文章分析了谷歌在 2013 年关闭 Google Reader 以及其缺乏对 RSS 的支持，如何导致了 RSS 源的衰落和网络的中心化。 RSS 的衰落代表着从开放、去中心化的网络标准到由少数公司控制的中心化平台的转变，削弱了信息多样性和用户对自己内容来源的控制。 Google Reader 于 2005 年推出，2013 年 7 月以使用量下降为由关闭。该文认为，作为当时占主导地位的聚合器，关闭 Reader 使得内容创作者不再有动力提供 RSS 源，加速了用户转向社交媒体平台。社区指出 RSS 并未消亡，但可见度已大不如前。
 
-rss · Simon Willison · 7月31日 21:33
+hackernews · pudgywalsh · 8月1日 18:07 · [社区讨论](https://news.ycombinator.com/item?id=49136821)
 
-**背景**: 开放权重模型公开释放训练好的 AI 模型参数，允许任何人下载和使用，但具体许可条款各异。来自月之暗面的 Kimi K3 是近期一个开放权重模型能与 GPT-4 等闭源模型媲美的例子。DeepSeek V4 Flash 是一个面向编程和推理的快速思考模型。美国的 AI 政策辩论围绕开放权重模型是加强还是威胁美国领导力展开，微软主张开放，而 Anthropic 则持反对态度。
+**背景**: RSS（Really Simple Syndication）是一种用于订阅网站更新的 XML 协议，用户可通过新闻聚合器集中阅读。Google Reader 是 2005 年推出的流行 RSS 阅读器，曾是许多人获取信息的主要方式。2013 年谷歌以使用量下降为由将其关闭，大量用户转向社交媒体，RSS 因此失去主流地位。
 
 
 **参考链接**:
 
-- [Open-weight model](https://en.wikipedia.org/wiki/Open-weight_model)
-- [Kimi K3 Tech Blog: Open Frontier Intelligence](https://www.kimi.com/blog/kimi-k3)
-- [DeepSeek V 4 Flash 0731 - API Pricing &amp; Benchmarks | OpenRouter](https://openrouter.ai/deepseek/deepseek-v4-flash-0731)
+- [RSS - Wikipedia](https://en.wikipedia.org/wiki/RSS)
+- [Google Reader](https://en.wikipedia.org/wiki/Google_Reader)
 
 
-**标签**: `#open-weight-models`, `#AI`, `#podcast`, `#cybersecurity`, `#AI-policy`
+**社区讨论**: 评论者表达了对早期互联网的怀念和对谷歌决策的不满，称其“使用量下降”的借口在推广 Google+的背景下“明显虚假”。有人指出 RSS 并未消亡，提及 NetNewsWire 等应用和 Shopify 等平台仍支持 RSS。还有人感叹网络转向围墙花园的现实。
+
+**标签**: `#RSS`, `#open web`, `#Google`, `#web history`, `#decentralization`
 
 ---
 
 <a id="item-15"></a>
-## [smevals：一款用于评估 AI 模型、提示和框架的轻量级评估套件](https://simonwillison.net/2026/Jul/31/smevals/#atom-everything) ⭐️ 7.0/10
+## [smevals：面向 AI 模型、提示词与代理框架的轻量级评估套件](https://simonwillison.net/2026/Jul/31/smevals/#atom-everything) ⭐️ 6.0/10
 
-smevals 是一个新的开源工具，允许开发者通过基于 YAML 的目录结构和由 uvx 驱动的命令行界面，快速构建并运行评估套件，以测试不同配置下的 AI 模型能力。 它简化了评估大语言模型、智能体框架和提示词变体的过程，使团队能够更轻松地基准测试模型性能并发现回归问题，无需复杂基础设施。这种轻量级方法可能加速 AI 开发中的迭代周期。 该工具将运行与评分分离，支持带有检查脚本的自定义评分器，并能生成静态 HTML 报告或提供本地 Web 仪表板。它使用 uvx 实现临时执行，其术语体系定义了评估组、任务、配置、运行、评分器和检查项。
+Simon Willison 与 Prime Radiant 发布了 smevals，一个轻量级开源框架，用于创建并运行自定义评估套件，以比较不同 AI 模型配置、提示词和代理框架的表现。 它为应用 AI 从业者提供了一种简单、可复现的方式，在特定任务上评估模型，帮助其做出明智的模型与配置选择，并降低了 LLM 评估的门槛。 smevals 通过 uvx 实现无安装运行，使用 YAML 目录定义评估，将运行与评分分离，并支持本地 Web 仪表盘或静态 HTML 报告。它引入了一套术语：评估、任务、配置、运行、评分器、检查项和检查脚本。
 
 rss · Simon Willison · 7月31日 21:15
 
-**背景**: AI 评估套件帮助开发者衡量模型在特定任务上的表现，类似于软件中的单元测试。smevals 是 EleutherAI 的 lm-evaluation-harness 等重型框架的轻量级替代方案，注重灵活性和易用性。该工具依赖 uvx，这是 uv Python 包管理器的一个命令，可以在隔离环境中运行 Python 工具，无需手动安装。这种设计使得 smevals 只需一条命令即可运行，无需持久配置。
+**背景**: 在 AI 模型开发中，评估套件（evals）用于衡量模型在特定任务上的表现。现有的框架如 EleutherAI 的 lm-evaluation-harness 提供了标准化评估，但使用较为复杂。smevals 旨在为自定义评估提供更简单、更灵活的替代方案。工具 uvx 是一个 Python 运行器，可创建临时隔离环境，使 smevals 无需永久安装即可运行。
 
 
 **参考链接**:
 
-- [Demystifying evals for AI agents \ Anthropic](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents)
-- [EleutherAI’s lm- evaluation - harness : Architecture and Configuration...](https://slyracoon23.github.io/blog/posts/2025-03-21_eleutherai-evaluation-methods.html)
-- [How to Run Python CLI Tools with uvx : Complete Command... | BSWEN](https://docs.bswen.com/blog/2026-03-05-uvx-commands-guide/)
+- [uvx: Run Python CLI Tools in Isolated Environments](https://pydevtools.com/handbook/reference/uvx/)
+- [Eval harness: What it is, how to use it, and why you should care | DeepEval - The LLM Evaluation Framework](https://deepeval.com/blog/what-is-an-eval-harness)
 
 
-**标签**: `#evals`, `#llm`, `#ai`, `#tools`, `#software`
-
----
-
-<a id="item-16"></a>
-## [Reddit 用户用 DILATE 和 pinball 损失训练 Transformer 预测血糖](https://www.reddit.com/r/MachineLearning/comments/1vc1txc/i_have_trained_a_model_to_predict_my_blood_sugar_p/) ⭐️ 7.0/10
-
-一位 Reddit 用户构建了一个仅编码器的 Transformer 模型，通过输入过去的血糖、碳水化合物和胰岛素数据以及未来的已宣告碳水化合物与胰岛素，预测未来 2 小时血糖，并采用 DILATE 损失对齐波形与时间、pinball 损失捕获不确定性，所有预测均在 Kovatchev 风险空间中进行。 这个个人项目展示了如何将先进的深度学习架构和专门设计的损失函数应用于个性化糖尿病管理，有望降低低血糖风险并改善自动胰岛素输注系统。 模型采用双向注意力并屏蔽未来血糖，将血糖值重参数化至 Kovatchev 风险空间\[40,400\]区间，通过 Kendall-Gal 方法混合 DILATE 和 pinball 损失；训练了四种规模（nano 版本不到 40K 参数），最大模型有 17M 参数，预训练耗时 48 小时。
-
-reddit · r/MachineLearning · /u/0xdeadf1sh · 7月31日 20:09
-
-**背景**: DILATE 损失是一种结合形状失真和时间失真的损失函数，能同时惩罚预测波形与真实波形在形状和时间上的偏差，适合用于对齐血糖曲线。Pinball 损失（分位数损失）用于分位数回归，使模型能输出不确定性区间（如中位数、上下分位数）。Kovatchev 风险空间将血糖值转换为能够反映低血糖和高血糖非对称临床风险的数值，因此在低血糖区域预测误差会受到更大惩罚。
-
-
-**参考链接**:
-
-- [DILATE : Loss for Shape &amp; Time in Forecasting](https://www.emergentmind.com/topics/distortion-loss-incorporating-shape-and-time-dilate)
-- [An Introduction to Quantile Loss, a.k.a. the Pinball Loss | Towards Data Science](https://towardsdatascience.com/an-introduction-to-quantile-loss-a-k-a-the-pinball-loss-33cccac378a9/)
-- [Boris KOVATCHEV | Ph.D. | University of Virginia, Charlottesville | UVa | Center for Diabetes Technology (CDT) | Research profile](https://www.researchgate.net/profile/Boris-Kovatchev)
-
-
-**标签**: `#machine learning`, `#healthcare`, `#transformers`, `#time series`, `#diabetes`
-
----
-
-<a id="item-17"></a>
-## [datasette-apps 0.2a0 为 Datasette Agent 添加调试和列表工具](https://simonwillison.net/2026/Aug/1/datasette-apps/#atom-everything) ⭐️ 6.0/10
-
-datasette-apps 0.2a0 版本为 Datasette Agent 新增了两个工具：app\_debug\(\) 可在沙盒化 iframe 中无感地测试应用，app\_list\(\) 则允许 Agent 列出用户可编辑的应用。 这些工具使 AI 代理能够主动调试和管理 Datasette 中的应用，从简单的代码生成走向交互式测试与编排。 app\_debug\(\) 将应用渲染在一个 opacity:0 且 pointer-events:none 的 iframe 中，执行 Agent 提供的 JavaScript 进行冒烟测试和元素尺寸测量，依赖于 datasette-agent 0.4a0 新增的 context.browser\_task\(\) 机制。
-
-rss · Simon Willison · 8月1日 21:23
-
-**背景**: Datasette 是一个用于数据探索和发布的开源工具。Datasette Agent 是由大语言模型驱动的助手，能查询和可视化数据。datasette-apps 插件允许用户在 Datasette 内部托管轻量级的 HTML/JavaScript 应用。沙盒化 iframe 是一种隔离的浏览器容器，可限制嵌入内容的行为，避免安全风险。
-
-
-**参考链接**:
-
-- [GitHub - datasette/ datasette - apps : Apps that live inside Datasette](https://github.com/datasette/datasette-apps)
-- [Host applications inside Datasette with Datasette ... - Datasette Blog](https://datasette.io/blog/2026/datasette-apps/)
-- [Datasette Agent : an AI assistant for Datasette to help explore and...](https://agent.datasette.io/)
-
-
-**标签**: `#datasette`, `#release`, `#app-development`, `#testing`, `#tools`
-
----
-
-<a id="item-18"></a>
-## [OpenAI 的 Astra 模型以不到 2000 美元成本解决十个十年未解数学难题](https://simonwillison.net/2026/Aug/1/ten-advances-in-mathematics/#atom-everything) ⭐️ 6.0/10
-
-OpenAI 宣称其即将推出的 Astra 模型的一个内部版本解决了十个至少十年未取得进展的数学难题，每个问题的解决成本不到 2000 美元（按 GPT-5.6 Sol 代币价格计算）。他们发布了 Lean 4 形式化证明、一篇论文以及一份由 LLM 生成的推理过程重现文档。 这一成就可能标志着 AI 辅助数学研究的新时代，模型能以远低于传统方法的成本解决长期悬而未决的难题。这加剧了关于 AI 在创造性领域中的作用以及人类数学家未来的讨论。 成本对比鲜明：每个问题仅 2000 美元，而 Anthropic 使用 Claude Mythos 发现密码学弱点花费了 10 万美元。不过，OpenAI 未披露其尝试但未成功解决的问题数量，也未公开所用提示词。证明以 Lean 4 证明助手形式化，且模型的推理轨迹未公开发布。
-
-rss · Simon Willison · 8月1日 20:34
-
-**背景**: OpenAI 的 Astra 是下一代模型系列，专为长时间运行、多智能体协作解决问题而设计。GPT-5.6 Sol 是当前旗舰模型，定价为每百万输入 token 5 美元、每百万输出 token 30 美元，因此 2000 美元约相当于 4 亿输入 token 或 6600 万输出 token。Lean 4 是一种证明助手，用于将数学证明形式化，以便机器验证。菲尔兹奖得主陶哲轩倡导“大数学”理念，即 AI 承担技术性繁重工作，人类专注于创造性部分。
-
-
-**参考链接**:
-
-- [OpenAI announces its &quot;next major model&quot; Astra by dropping ten previously unsolved math solutions](https://the-decoder.com/openai-announces-its-next-major-model-astra-by-dropping-ten-previously-unsolved-math-solutions/)
-- [GPT-5.6: Frontier intelligence that scales with your ambition | OpenAI](https://openai.com/index/gpt-5-6/)
-
-
-**标签**: `#AI`, `#OpenAI`, `#mathematics`, `#research`, `#commentary`
-
----
-
-<a id="item-19"></a>
-## [llm-mcp-client 0.1a0：模型上下文协议集成客户端 alpha 版发布](https://simonwillison.net/2026/Jul/31/llm-mcp-client/#atom-everything) ⭐️ 6.0/10
-
-Simon Willison 发布了 llm-mcp-client 0.1a0，这是一个集成了模型上下文协议（MCP）与 LLM 工具的 alpha 版客户端，使得 LLM 能够通过 MCP 服务器执行工具。 该版本为新兴的 MCP 标准提供了一个实用的客户端，降低了开发者尝试工具增强型 LLM 的门槛。随着 MCP 在行业内获得关注，这类早期工具可以加速生态系统的发展。 该客户端是一个 alpha 版本（0.1a0），意味着它处于早期阶段，可能缺乏稳定性。它旨在与 MCP 配合使用，并且随附的关于无状态 MCP 的博客文章暗示客户端可能专注于 MCP 交互的无状态模式。
-
-rss · Simon Willison · 7月31日 23:03
-
-**背景**: 模型上下文协议（MCP）是 Anthropic 于 2024 年 11 月推出的开放标准，旨在标准化 AI 模型（如 LLM）与外部工具、数据源和服务的连接方式。MCP 提供了统一的接口，用于读取文件、执行函数和处理提示，旨在解决“模型蔓延”问题，即不同 AI 无法与用户数据通信。该协议已被 OpenAI 和 Google DeepMind 等主要 AI 提供商采用。
-
-
-**参考链接**:
-
-- [Model Context Protocol](https://en.wikipedia.org/wiki/Model_Context_Protocol)
-- [What is the Model Context Protocol (MCP)? - Model Context Protocol](https://modelcontextprotocol.io/docs/getting-started/intro)
-
-
-**标签**: `#llm`, `#model-context-protocol`, `#mcp`, `#tools`, `#release`
-
----
-
-<a id="item-20"></a>
-## [Datasette-agent 0.4a0 为代理工具新增浏览器端 JavaScript 执行能力](https://simonwillison.net/2026/Jul/31/datasette-agent/#atom-everything) ⭐️ 6.0/10
-
-Datasette-agent 0.4a0 的 alpha 版本引入了 await context.browser\_task\(\) 机制，允许代理插件直接在用户浏览器中运行自定义 JavaScript 代码。 这一能力将代理的交互范围从服务端 SQL 查询扩展到客户端浏览器操控，可支持更丰富的可视化交互和调试工作流，但目前影响范围较小。 该机制通过 context.browser\_task\(\) 方法提供，在 PR \#33 中合并，并已被 datasette-apps 0.2a0 用于添加调试循环。该功能仍处于 alpha 阶段，稳定性可能有限。
-
-rss · Simon Willison · 7月31日 14:14
-
-**背景**: Datasette 是一个基于 SQLite 的开源数据发布与探索工具，可将数据转化为交互式网站。Datasette Agent 是其插件，利用 LLM 工具调用（tool use）能力，让 AI 助手自动编写和运行 SQL 查询、生成图表等。新的 browser\_task 功能让这些工具可以直接在用户浏览器中执行 JavaScript，而非仅限服务器端。
-
-
-**参考链接**:
-
-- [Datasette Agent : an AI assistant for Datasette to help explore and...](https://agent.datasette.io/)
-- [GitHub - datasette/ datasette - agent : An LLM-powered agent for...](https://github.com/datasette/datasette-agent)
-- [Datasette Agent : an AI assistant for Datasette built on LLM](https://simonw.substack.com/p/datasette-agent-an-ai-assistant-for)
-
-
-**标签**: `#datasette`, `#datasette-agent`, `#llm-tool-use`, `#browser-execution`, `#javascript`
-
----
-
-<a id="item-21"></a>
-## [强制审稿要求下，模糊评审不再能以“志愿工作”开脱](https://www.reddit.com/r/MachineLearning/comments/1vbeqhw/if_reviewing_is_mandatory_for_paper_submissions/) ⭐️ 6.0/10
-
-一篇讨论指出，当人工智能会议将审稿作为论文提交前提时，评审不再是自愿行为，模糊且缺乏具体证据的批评不能再以“志愿工作”为借口，审稿人应提供有明确依据的评判。 这关系到整个机器学习社区，因为低质量评审可能不公平地决定论文命运，浪费作者时间，损害同行评审公信力。在强制审稿制度下提高评审标准，有助于提升学术发表的公平性和质量。 帖子举例说明了好的评审应包含的内容：明确引用相关先前工作，解释为何需要某项缺失的比较，并具体说明声称的缺乏新颖性如何与现有方法重叠。文章还强调，没有证据的一句话评审不应与经过仔细阅读的详细评审等同对待。
-
-reddit · r/MachineLearning · /u/Kwangryeol · 7月31日 03:05
-
-**背景**: 许多顶级人工智能会议（如 NeurIPS、ICML、CVPR）近年来已采用强制审稿政策，要求投稿作者必须完成一定数量的审稿，以应对日益增长的投稿量和审稿人短缺。传统上，同行评审是自愿的，低质量评审常以“无偿志愿工作”为由被谅解。该帖子认为，制度背景已变，这一理由不再成立。
-
-**标签**: `#peer-review`, `#academic-publishing`, `#machine-learning`, `#research-culture`, `#conference-policies`
+**标签**: `#evals`, `#model-evaluation`, `#open-source`, `#AI-tools`, `#Simon-Willison`
 
 ---
 
