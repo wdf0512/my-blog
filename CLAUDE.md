@@ -53,3 +53,17 @@ src/
 ### Tailwind Custom Tokens
 
 Colors reference CSS variables: `background`, `foreground`, `primary`, `text-primary`, `text-secondary`, `border`, `surface`. Font families: `font-sans` (Geist), `font-mono` (Geist Mono), `font-display` (Clash Display).
+
+## Agent skills
+
+### Issue tracker
+
+Issues live in GitHub Issues for `wdf0512/my-blog`, driven by the `gh` CLI. See `docs/agents/issue-tracker.md`.
+
+### Triage labels
+
+The five canonical roles, each label string equal to its name. See `docs/agents/triage-labels.md`.
+
+### Domain docs
+
+Single-context — one `CONTEXT.md` + `docs/adr/` at the repo root. See `docs/agents/domain.md`.
