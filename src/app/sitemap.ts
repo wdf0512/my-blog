@@ -1,5 +1,6 @@
 import { MetadataRoute } from 'next';
-import { posts, digests } from '#/.velite';
+import { posts } from '#/.velite';
+import { getIssues, DIGEST_LANGS } from '@/lib/issues';
 
 const SITE_URL = 'https://defangweng.xyz';
 
@@ -34,22 +35,21 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.8,
     }));
 
-  const digestLocales = ['en', 'zh'] as const;
-  const digestRoutes = digestLocales.flatMap((locale) => [
+  // Sourced from the Issue module so the sitemap cannot advertise a URL that
+  // generateStaticParams excludes.
+  const digestRoutes = DIGEST_LANGS.flatMap((locale) => [
     {
       url: `${SITE_URL}/digest/${locale}`,
       lastModified: new Date(),
       changeFrequency: 'daily' as const,
       priority: 0.8,
     },
-    ...digests
-      .filter((digest) => digest.published && digest.lang === locale)
-      .map((digest) => ({
-        url: `${SITE_URL}/digest/${locale}/${digest.slug}`,
-        lastModified: new Date(digest.date),
-        changeFrequency: 'monthly' as const,
-        priority: 0.7,
-      })),
+    ...getIssues(locale).map((issue) => ({
+      url: `${SITE_URL}${issue.href}`,
+      lastModified: new Date(issue.date),
+      changeFrequency: 'monthly' as const,
+      priority: 0.7,
+    })),
   ]);
 
   return [...routes, ...postRoutes, ...digestRoutes];

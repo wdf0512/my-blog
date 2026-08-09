@@ -1,4 +1,23 @@
-import { toRoman, type DigestLang } from '@/lib/digests';
+import type { DigestLang } from '@/lib/issues';
+
+const ROMAN: Array<[number, string]> = [
+  [1000, 'M'], [900, 'CM'], [500, 'D'], [400, 'CD'],
+  [100, 'C'], [90, 'XC'], [50, 'L'], [40, 'XL'],
+  [10, 'X'], [9, 'IX'], [5, 'V'], [4, 'IV'], [1, 'I'],
+];
+
+/** The Volume numeral is the calendar year; it is unrelated to Issue numbers. */
+function toRoman(num: number): string {
+  let out = '';
+  let n = num;
+  for (const [value, symbol] of ROMAN) {
+    while (n >= value) {
+      out += symbol;
+      n -= value;
+    }
+  }
+  return out;
+}
 
 type MastheadProps = {
   variant?: 'archive' | 'detail';

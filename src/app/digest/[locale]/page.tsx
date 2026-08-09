@@ -2,13 +2,7 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowRight } from 'lucide-react';
 import type { Metadata } from 'next';
-import {
-  getPublishedDigests,
-  getIssueNumberMap,
-  formatShortDate,
-  isToday,
-  type DigestLang,
-} from '@/lib/digests';
+import { getIssues, isDigestLang, DIGEST_LANGS, type Issue } from '@/lib/issues';
 import { Masthead } from '@/components/digest/Masthead';
 import { LocaleToggle } from '@/components/digest/LocaleToggle';
 
@@ -17,7 +11,7 @@ type Props = {
 };
 
 export function generateStaticParams() {
-  return [{ locale: 'en' }, { locale: 'zh' }];
+  return DIGEST_LANGS.map((locale) => ({ locale }));
 }
 
 const COPY = {
@@ -27,10 +21,8 @@ const COPY = {
     olderHeading: 'The Archive · Older Issues',
     emptyEyebrow: 'No issues on file',
     emptyTitle: 'Check back tomorrow.',
-    colophon: (n: number) =>
-      n === 0
-        ? 'Briefs are auto-curated each morning from ~50 sources'
-        : `Briefs are auto-curated each morning · Issue №${String(n).padStart(2, '0')} is the latest`,
+    colophon: (label: string) =>
+      `Briefs are auto-curated each morning · ${label} is the latest`,
   },
   zh: {
     metaTitle: '每日简报 · 归档',
@@ -38,58 +30,42 @@ const COPY = {
     olderHeading: '过往简报 · 历史归档',
     emptyEyebrow: '暂无简报',
     emptyTitle: '请明日再来。',
-    colophon: (n: number) =>
-      n === 0
-        ? '每日自动精选,从约 50 个信息源中策展'
-        : `每日自动精选 · 第 ${String(n).padStart(2, '0')} 期为最新一期`,
+    colophon: (label: string) => `每日自动精选 · ${label}为最新一期`,
   },
 } as const;
 
-function isLocale(value: string): value is DigestLang {
-  return value === 'en' || value === 'zh';
-}
-
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { locale } = await params;
-  if (!isLocale(locale)) return {};
+  if (!isDigestLang(locale)) return {};
   const copy = COPY[locale];
   return { title: copy.metaTitle, description: copy.metaDescription };
 }
 
 export default async function DigestArchivePage({ params }: Props) {
   const { locale } = await params;
-  if (!isLocale(locale)) notFound();
+  if (!isDigestLang(locale)) notFound();
 
   const copy = COPY[locale];
-  const published = getPublishedDigests(locale);
-  const issueBySlug = getIssueNumberMap(getPublishedDigests());
-
-  const featured = published[0];
-  const archive = published.slice(1);
+  const issues = getIssues(locale);
+  const [featured, ...archive] = issues;
 
   return (
     <div className="container mx-auto px-4 pt-12 pb-20 md:pt-16 md:pb-28 max-w-6xl">
       <Masthead
         variant="archive"
         locale={locale}
-        issueCount={published.length}
+        issueCount={issues.length}
         rightSlot={<LocaleToggle locale={locale} variant="archive" />}
       />
 
-      {published.length === 0 ? (
+      {!featured ? (
         <div className="mt-24 text-center">
           <p className="digest-mono-eyebrow text-text-muted">{copy.emptyEyebrow}</p>
           <p className="font-display text-2xl mt-3 text-text-primary">{copy.emptyTitle}</p>
         </div>
       ) : (
         <>
-          {featured && (
-            <FeatureCard
-              digest={featured}
-              issueNumber={issueBySlug.get(featured.slug) ?? 0}
-              locale={locale}
-            />
-          )}
+          <FeatureCard issue={featured} />
 
           {archive.length > 0 && (
             <>
@@ -97,13 +73,8 @@ export default async function DigestArchivePage({ params }: Props) {
                 {copy.olderHeading}
               </h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-                {archive.map((digest) => (
-                  <TearSheet
-                    key={digest.slug}
-                    digest={digest}
-                    issueNumber={issueBySlug.get(digest.slug) ?? 0}
-                    locale={locale}
-                  />
+                {archive.map((issue) => (
+                  <TearSheet key={issue.slug} issue={issue} />
                 ))}
               </div>
             </>
@@ -114,7 +85,7 @@ export default async function DigestArchivePage({ params }: Props) {
               ✦
             </div>
             <p className="digest-mono-eyebrow text-center text-text-muted">
-              {copy.colophon(issueBySlug.get(featured?.slug ?? '') ?? 0)}
+              {copy.colophon(featured.label)}
             </p>
           </div>
         </>
@@ -123,28 +94,11 @@ export default async function DigestArchivePage({ params }: Props) {
   );
 }
 
-type CardDigest = {
-  slug: string;
-  title: string;
-  date: string;
-  item_count: number;
-  total_fetched: number;
-  description?: string;
-  cover_image?: string;
-};
-
-type CardProps = {
-  digest: CardDigest;
-  issueNumber: number;
-  locale: DigestLang;
-};
-
 const CARD_COPY = {
   en: {
     today: "Today's Issue",
     latest: 'Latest Issue',
     todayShort: 'Today',
-    issuePrefix: 'Issue Nº',
     picksFmt: (n: number, total: number) => `${n} picks · curated from ${total}`,
     picksShort: (n: number, total: number) => `${n} picks · from ${total}`,
     cta: 'Read the issue',
@@ -153,30 +107,24 @@ const CARD_COPY = {
     today: '今日简报',
     latest: '最新一期',
     todayShort: '今日',
-    issuePrefix: '第 ',
     picksFmt: (n: number, total: number) => `精选 ${n} 条 · 共 ${total} 条来源`,
     picksShort: (n: number, total: number) => `${n} 条 · 来自 ${total} 条`,
     cta: '阅读本期',
   },
 } as const;
 
-function FeatureCard({ digest, issueNumber, locale }: CardProps) {
-  const todayFlag = isToday(digest.date);
-  const copy = CARD_COPY[locale];
-  const issueLabel =
-    locale === 'zh'
-      ? `第 ${String(issueNumber).padStart(2, '0')} 期`
-      : `Issue Nº${String(issueNumber).padStart(2, '0')}`;
+function FeatureCard({ issue }: { issue: Issue }) {
+  const copy = CARD_COPY[issue.lang];
 
   return (
     <Link
-      href={`/digest/${locale}/${digest.slug}`}
+      href={issue.href}
       className="group relative mt-12 block overflow-hidden rounded-3xl bg-[#0d0c0b] shadow-lg hover:shadow-2xl transition-shadow duration-500 isolate min-h-[460px] md:min-h-[520px] md:aspect-[16/9]"
     >
-      {digest.cover_image ? (
+      {issue.cover ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src={digest.cover_image}
+          src={issue.cover}
           alt=""
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.03]"
         />
@@ -194,15 +142,15 @@ function FeatureCard({ digest, issueNumber, locale }: CardProps) {
         aria-hidden="true"
         className="absolute -top-6 right-2 md:right-6 font-display font-black tracking-tighter leading-none text-white/[0.08] text-[12rem] md:text-[18rem] select-none pointer-events-none"
       >
-        {String(issueNumber).padStart(2, '0')}
+        {issue.numeral}
       </span>
 
       <div className="absolute top-6 left-6 md:top-7 md:left-7 z-10 flex items-center gap-2">
         <span className="font-mono uppercase text-[10px] tracking-[0.2em] bg-primary text-[#0d0c0b] px-2.5 py-1 rounded-md font-bold">
-          {todayFlag ? copy.today : copy.latest}
+          {issue.isToday ? copy.today : copy.latest}
         </span>
         <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-white/60">
-          № {String(issueNumber).padStart(2, '0')}
+          № {issue.numeral}
         </span>
       </div>
 
@@ -213,24 +161,24 @@ function FeatureCard({ digest, issueNumber, locale }: CardProps) {
 
       <div className="absolute inset-x-0 bottom-0 z-10 p-6 md:p-9">
         <p className="font-mono uppercase text-[11px] tracking-[0.22em] text-white/65 mb-3">
-          {issueLabel}
+          {issue.label}
           <span className="mx-2 opacity-50">·</span>
-          {formatShortDate(digest.date, locale)}
+          {issue.dateShort}
         </p>
 
         <h2 className="font-display text-3xl md:text-5xl lg:text-6xl font-black text-white leading-[0.98] tracking-tight max-w-[22ch] group-hover:text-primary transition-colors duration-300">
-          {digest.title}
+          {issue.title}
         </h2>
 
-        {digest.description && (
+        {issue.description && (
           <p className="mt-4 text-white/70 text-sm md:text-base italic leading-relaxed line-clamp-2 max-w-prose">
-            {digest.description}
+            {issue.description}
           </p>
         )}
 
         <div className="mt-6 md:mt-8 pt-4 border-t border-white/15 flex items-center justify-between gap-4">
           <span className="font-mono text-[11px] md:text-xs text-white/60">
-            {copy.picksFmt(digest.item_count, digest.total_fetched)}
+            {copy.picksFmt(issue.itemCount, issue.totalFetched)}
           </span>
           <span className="inline-flex items-center gap-1.5 text-primary font-bold text-sm">
             {copy.cta}
@@ -245,23 +193,18 @@ function FeatureCard({ digest, issueNumber, locale }: CardProps) {
   );
 }
 
-function TearSheet({ digest, issueNumber, locale }: CardProps) {
-  const todayFlag = isToday(digest.date);
-  const copy = CARD_COPY[locale];
-  const issueLabel =
-    locale === 'zh'
-      ? `第 ${String(issueNumber).padStart(2, '0')} 期`
-      : `Issue Nº${String(issueNumber).padStart(2, '0')}`;
+function TearSheet({ issue }: { issue: Issue }) {
+  const copy = CARD_COPY[issue.lang];
 
   return (
     <Link
-      href={`/digest/${locale}/${digest.slug}`}
+      href={issue.href}
       className="group relative block overflow-hidden rounded-2xl bg-[#0d0c0b] shadow-md hover:shadow-2xl hover:-translate-y-0.5 transition-all duration-500 isolate min-h-[280px] md:min-h-[300px] aspect-[4/3] md:aspect-[5/4]"
     >
-      {digest.cover_image ? (
+      {issue.cover ? (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src={digest.cover_image}
+          src={issue.cover}
           alt=""
           className="absolute inset-0 w-full h-full object-cover transition-transform duration-[900ms] ease-out group-hover:scale-[1.04]"
         />
@@ -279,17 +222,17 @@ function TearSheet({ digest, issueNumber, locale }: CardProps) {
         aria-hidden="true"
         className="absolute -top-3 right-1 md:right-3 font-display font-black tracking-tighter leading-none text-white/[0.07] text-[7rem] md:text-[9rem] select-none pointer-events-none"
       >
-        {String(issueNumber).padStart(2, '0')}
+        {issue.numeral}
       </span>
 
       <div className="absolute top-4 left-4 md:top-5 md:left-5 z-10 flex items-center gap-2">
-        {todayFlag && (
+        {issue.isToday && (
           <span className="font-mono uppercase text-[9px] tracking-[0.2em] bg-primary text-[#0d0c0b] px-2 py-0.5 rounded-md font-bold">
             {copy.todayShort}
           </span>
         )}
         <span className="font-mono text-[9px] uppercase tracking-[0.2em] text-white/55">
-          № {String(issueNumber).padStart(2, '0')}
+          № {issue.numeral}
         </span>
       </div>
 
@@ -300,18 +243,18 @@ function TearSheet({ digest, issueNumber, locale }: CardProps) {
 
       <div className="absolute inset-x-0 bottom-0 z-10 p-5 md:p-6">
         <p className="font-mono uppercase text-[10px] tracking-[0.22em] text-white/65 mb-2">
-          {issueLabel}
+          {issue.label}
           <span className="mx-2 opacity-50">·</span>
-          {formatShortDate(digest.date, locale)}
+          {issue.dateShort}
         </p>
 
         <h3 className="font-display text-lg md:text-2xl font-black text-white leading-[1.05] tracking-tight line-clamp-2 max-w-[22ch] group-hover:text-primary transition-colors duration-300">
-          {digest.title}
+          {issue.title}
         </h3>
 
         <div className="mt-4 pt-3 border-t border-white/12 flex items-center justify-between gap-3">
           <span className="font-mono text-[10px] md:text-[11px] text-white/55">
-            {copy.picksShort(digest.item_count, digest.total_fetched)}
+            {copy.picksShort(issue.itemCount, issue.totalFetched)}
           </span>
           <ArrowRight
             aria-hidden="true"

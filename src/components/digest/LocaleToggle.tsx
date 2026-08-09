@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import type { DigestLang } from '@/lib/digests';
+import type { DigestLang } from '@/lib/issues';
 
 type Props = {
   locale: DigestLang;

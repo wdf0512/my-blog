@@ -41,12 +41,15 @@ const digests = defineCollection({
       item_count: s.number().default(0),
       total_fetched: s.number().default(0),
       cover_image: s.string().optional(),
+      // Measured from the raw markdown. `computedFields` cannot be used here:
+      // it runs after `s.mdx()` has compiled the body to minified JS, so it
+      // would count JS tokens rather than prose.
+      metadata: s.metadata(),
       body: s.mdx(),
     })
     .transform((data) => ({
       ...data,
       issue_id: data.issue_id ?? data.date.slice(0, 10),
-      ...computedFields(data),
     })),
 });
 

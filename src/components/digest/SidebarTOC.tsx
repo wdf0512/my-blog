@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from 'react';
 import { ListOrdered, X } from 'lucide-react';
-import type { DigestLang } from '@/lib/digests';
+import type { DigestLang } from '@/lib/issues';
 
 type TocItem = {
   id: string;
