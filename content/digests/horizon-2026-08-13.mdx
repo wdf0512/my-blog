@@ -3,391 +3,448 @@ title: "AI 技术情报 · 2026-08-13"
 slug: horizon-2026-08-13
 date: 2026-08-13
 published: true
-description: "从 33 条内容中精选 17 条 AI/ML 重要动态"
-item_count: 17
+description: "从 33 条内容中精选 20 条 AI/ML 重要动态"
+item_count: 20
 total_fetched: 33
 ---
 
-> 从 33 条内容中筛选出 17 条重要资讯。
+> 从 33 条内容中筛选出 20 条重要资讯。
 
 ---
 
-1. [Qwen3.8-2.4T：开源 2.4 万亿参数 MoE 模型挑战顶级闭源模型](#item-1) ⭐️ 9.0/10
-2. [从专有 LLM API 窃取加密推理轨迹](#item-2) ⭐️ 9.0/10
-3. [DeepSeek V4 Pro 0813 发布，物理模拟与低成本代码生成亮点突出](#item-3) ⭐️ 8.0/10
-4. [Tailscale 将数据库损坏追溯到 SQLite 16 年前的 WAL 重置竞态条件](#item-4) ⭐️ 8.0/10
-5. [WebSocket 传 HTML：几乎无需 JS 的实时 SPA](#item-5) ⭐️ 8.0/10
-6. [Grok 4.6 发布：xAI 新模型引发基准测试和系统提示争议](#item-6) ⭐️ 8.0/10
-7. [uBlock Origin 放弃屏蔽 Facebook 广告的努力](#item-7) ⭐️ 8.0/10
-8. [为何小尺寸 JPEG 在 Chrome 中显示模糊](#item-8) ⭐️ 8.0/10
-9. [Adam 的逐坐标适应性破坏了旋转不变性及低秩偏置](#item-9) ⭐️ 8.0/10
-10. [解耦下降：通过 AMP Onsager 校正实现训练测试误差精确跟踪](#item-10) ⭐️ 8.0/10
-11. [Zed 推出 Delta：实时协作对话与 AI 代理注释](#item-11) ⭐️ 7.0/10
-12. [2026 年日食网络摄像头聚合器引发社区怀旧讨论](#item-12) ⭐️ 7.0/10
-13. [YC 初创 Discovered Materials 利用 AI 代理发现新型半导体材料](#item-13) ⭐️ 7.0/10
-14. [过度依赖 AI 编程导致开发团队丧失系统理解力](#item-14) ⭐️ 7.0/10
-15. [自然语言文本转换必有损，工程师须对每句话负责](#item-15) ⭐️ 7.0/10
-16. [AmigaDOS 开发者 Tim King 逝世](#item-16) ⭐️ 6.0/10
-17. [新工具按旅行体验而非学术排名评估计算机科学会议](#item-17) ⭐️ 6.0/10
+1. [Tailscale 追查数据库损坏根源，发现 16 年历史的 SQLite WAL-Reset 竞态条件漏洞](#item-1) ⭐️ 9.0/10
+2. [Qwen3.8-2.4T 开源发布：95B 活跃参数 MoE 模型，性能比肩 Kimi k3](#item-2) ⭐️ 9.0/10
+3. [基于 WebSocket 的 HTML 传输：极简 JavaScript 构建实时单页应用](#item-3) ⭐️ 8.0/10
+4. [Grok 4.6 发布：xAI 新前沿模型引发基准测试争议](#item-4) ⭐️ 8.0/10
+5. [重放攻击窃取大模型加密推理过程](#item-5) ⭐️ 8.0/10
+6. [损失函数不关心基，但 Adam 关心](#item-6) ⭐️ 8.0/10
+7. [解耦下降：通过 AMP Onsager 校正实现精确训练-测试误差跟踪](#item-7) ⭐️ 8.0/10
+8. [DeepSeek V4 Pro 0813 模型在 OpenRouter 上线，未发布官方公告](#item-8) ⭐️ 7.0/10
+9. [Zed 推出 Delta：支持多人协作的 AI 代码对话功能](#item-9) ⭐️ 7.0/10
+10. [AmigaDOS 开发者 Tim King 逝世，社区缅怀](#item-10) ⭐️ 7.0/10
+11. [YC 创业公司用 AI 智能体发现新型半导体材料以解决散热难题](#item-11) ⭐️ 7.0/10
+12. [uBlock Origin 放弃屏蔽 Facebook 广告](#item-12) ⭐️ 7.0/10
+13. [Chrome 低分辨率 JPEG 解码导致小图标渲染差异](#item-13) ⭐️ 7.0/10
+14. [Simon Willison 发布 alchemy-utils 0.1a0：受 sqlite-utils 启发的数据库无关 Python 库](#item-14) ⭐️ 7.0/10
+15. [开发者警示：过度依赖 AI 导致代码库无法维护](#item-15) ⭐️ 7.0/10
+16. [Sophie Alpert 提出政策：工程师必须对 AI 辅助文档的每一句话负责](#item-16) ⭐️ 7.0/10
+17. [2026 年日食网络摄像头聚合工具](#item-17) ⭐️ 6.0/10
+18. [新网站按旅行吸引力而非学术排名对 CS 会议进行排序](#item-18) ⭐️ 6.0/10
+19. [AAAI 2027 审稿人发现代码提交率低，引发可复现性讨论](#item-19) ⭐️ 6.0/10
+20. [为具有预览随机事件的随机合并谜题寻求强化学习/规划算法](#item-20) ⭐️ 6.0/10
 
 ---
 
 <a id="item-1"></a>
-## [Qwen3.8-2.4T：开源 2.4 万亿参数 MoE 模型挑战顶级闭源模型](https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B) ⭐️ 9.0/10
+## [Tailscale 追查数据库损坏根源，发现 16 年历史的 SQLite WAL-Reset 竞态条件漏洞](https://tailscale.com/blog/sqlite-wal-reset-bug) ⭐️ 9.0/10
 
-Qwen 团队发布了 Qwen3.8-2.4T-A95B，该模型总参数量 2.4 万亿，每次推理仅激活 950 亿参数，性能与 Opus 4.5 和 Fable 5 等顶级闭源模型相当，并支持低至 397GB 的量化，可在高端消费级硬件上本地部署。 这标志着开源模型首次在性能上真正与最先进的闭源模型平起平坐，并且通过极端量化让个人用户也能在本地运行接近前沿水平的 AI，极大地推动了 AI 民主化。 发布的权重仅有 BF16 和 FP8 格式，未提供 QAT 量化版本，社区推测需要 NVIDIA 等公司进行校准量化才能得到约 1.3TB 的 Q4 版本；此外，官方版本 Qwen3.8-Max 还支持视觉输入和 100 万上下文长度，但开源权重版本不包含这些特性。
-
-hackernews · Philpax · 8月12日 15:01 · [社区讨论](https://news.ycombinator.com/item?id=49273478)
-
-**背景**: 混合专家模型（MoE）将神经网络划分为多个专门的“专家”子网络，每次推理仅激活部分专家，从而在保持庞大总参数规模的同时大幅降低计算量。量化通过降低模型参数的数值精度（如从 16 位浮点数降至 8 位或更低）来减少内存占用和加速推理，但可能带来精度损失。Qwen 是阿里巴巴通义千问团队开发的大语言模型系列。
-
-
-**参考链接**:
-
-- [Mixture of Experts Explained - Hugging Face](https://huggingface.co/blog/moe)
-- [Quantization · Hugging Face](https://huggingface.co/docs/optimum/en/concept_guides/quantization)
-
-
-**社区讨论**: 社区讨论热烈，普遍认为该模型性能惊人，但指出其服务成本高、缺乏视觉支持和 QAT 量化，并与 Kimi K3 和 DeepSeek V4-Pro-0813 进行了比较。有用户担心许可限制（年收入低于 5000 万美元才可免费使用）以及难以在消费级硬件上运行非量化版本。
-
-**标签**: `#AI`, `#LLM`, `#OpenSource`, `#Qwen`, `#MoE`
-
----
-
-<a id="item-2"></a>
-## [从专有 LLM API 窃取加密推理轨迹](https://simonwillison.net/2026/Aug/11/stealing-reasoning-traces/) ⭐️ 9.0/10
-
-一项新研究展示了一种攻击方法，通过将主要 LLM API 返回的加密思维链块重放至较弱的同系列模型，并对其进行越狱，从而在明文状态下恢复出被隐藏的推理轨迹。 该漏洞暴露了前沿模型的内部推理过程，威胁到知识产权，并可能引发提示注入攻击，导致敏感数据泄露。这影响了 OpenAI、Anthropic 和 Google 等主要供应商，凸显了推理轨迹保护机制中的关键设计缺陷。 该攻击利用了同一模型系列共享加密密钥的特点，使得加密块可在不同模型间重放。研究人员在 Claude Haiku 4.5 上使用越狱提示来转录推理内容，该漏洞已被供应商修复。
-
-rss · Simon Willison · 8月11日 22:40
-
-**背景**: 主流 LLM 提供商为避免在服务器端存储推理过程，会将模型的逐步推理（思维链）加密后返回给客户端，并要求客户端在后续请求中回传该加密块。由于同一模型系列共享加密密钥，较弱的模型也能解密该块。所谓“弱模型”是指同一供应商中能力较低、防护较弱的模型，例如 Claude Haiku 相对于 Claude Opus。
-
-
-**参考链接**:
-
-- [Stealing Reasoning Traces from Proprietary LLM APIs](https://simonwillison.net/2026/Aug/11/stealing-reasoning-traces/)
-- [Stealing Reasoning Traces from Proprietary LLM APIs](https://arxiv.org/abs/2608.09867)
-- [OpenAI, Anthropic, and Google LLM APIs vulnerability Exposes Hidden ...](https://cybersecuritynews.com/top-ai-models-apis-flaw-exposes-hidden-reasoning/)
-
-
-**标签**: `#LLM security`, `#reasoning traces`, `#chain-of-thought`, `#API vulnerability`, `#model extraction`
-
----
-
-<a id="item-3"></a>
-## [DeepSeek V4 Pro 0813 发布，物理模拟与低成本代码生成亮点突出](https://openrouter.ai/deepseek/deepseek-v4-pro-0813) ⭐️ 8.0/10
-
-DeepSeek 发布了其 V4 Pro 模型的 0813 版本，通过 API 提供使用。社区测试表明，该版本在物理模拟任务中取得显著进步，且能以极低成本完成代码生成，但也存在一些小错误。 该模型以远低于 Grok 等竞品的单任务成本提供强大编码能力，有望降低高级 AI 开发的门槛；物理模拟方面的进步也为 LLM 在科学和工程领域的应用开辟了新可能。 该模型为 1.6T 参数的混合专家架构，激活参数 49B，支持 1M 令牌上下文，API 定价为每百万输入令牌 0.435 美元、输出 0.87 美元。已发现的错误包括 SVG 图形渲染错位等，且性能会随任务复杂度变化。
-
-hackernews · explosion-s · 8月12日 16:04 · [社区讨论](https://news.ycombinator.com/item?id=49274600)
-
-**背景**: DeepSeek 是一家以开源权重模型闻名的中国 AI 公司。V4 系列采用混合专家架构以实现高效推理，此前四月发布的 V4 Pro 和七月发布的 V4 Flash 均已公开权重。大语言模型正越来越多地被用于物理模拟等专业任务，通过生成代码来模拟交通或粒子系统。
-
-
-**参考链接**:
-
-- [DeepSeek (product)](https://en.wikipedia.org/wiki/DeepSeek_%28product%29)
-- [deepseek-ai/DeepSeek-V4-Pro · Hugging Face](https://huggingface.co/deepseek-ai/DeepSeek-V4-Pro)
-- [DeepSeek V4 Pro - API Pricing &amp; Benchmarks | OpenRouter](https://openrouter.ai/deepseek/deepseek-v4-pro)
-
-
-**社区讨论**: 整体反馈积极，用户称赞其性价比和实际性能提升，但也指出存在图形错位、编码偶尔出错等 bug。与 Grok 4.6 的对比显示，DeepSeek 完成任务的速度较慢且有一次程序错误，但成本仅为后者的约十分之一，社区期待官方公开模型权重。
-
-**标签**: `#AI`, `#DeepSeek`, `#LLM`, `#model release`, `#performance`
-
----
-
-<a id="item-4"></a>
-## [Tailscale 将数据库损坏追溯到 SQLite 16 年前的 WAL 重置竞态条件](https://tailscale.com/blog/sqlite-wal-reset-bug) ⭐️ 8.0/10
-
-Tailscale 在调查难以解释的数据库损坏时，发现了一个已存在 16 年的 SQLite WAL 重置逻辑竞态条件，该问题在主动检查点操作时会出现。他们资助了一个开源 VFS 垫片来隔离此错误，并迅速定位了问题。 这一发现凸显了对 SQLite 这类基础软件进行严格测试的重要性，而 Tailscale 资助调试工具则展示了企业如何支持开源基础设施。该错误也反映出在广泛使用的系统中，微妙的并发缺陷可能潜伏多年。 该竞态条件仅在 WAL 被重置而另一个线程仍持有读锁时才会出现，Tailscale 手动且主动的检查点策略使该场景更易触发。他们资助的 VFS 垫片增加了精确日志记录，帮助追踪了确切的事件序列，SQLite 的修复则增加了检测 WAL 是否被其他线程重置的检查。
+Tailscale 发现了一个存在了 16 年的 SQLite WAL 重置机制中的竞态条件，该漏洞导致其生产控制平面内出现间歇性数据库损坏。他们资助开发了一款开源诊断 VFS 垫片（shim）来隔离该漏洞，并协助在 SQLite 3.51.3 中修复了该问题。 这个自 2010 年便潜伏的漏洞表明，即使像 SQLite 这样经过充分测试的基础软件也可能隐藏着微妙的竞态条件。Tailscale 的调试过程和所资助的开源诊断工具将帮助社区发现类似问题，而此次合作也凸显了企业支持合同对关键开源基础设施的价值。 该漏洞是一个竞态条件：写入事务与并发的 WAL 重置发生冲突时可能损坏数据库，只需增加一个额外检查即可修复。Tailscale 构建了自定义 VFS 垫片来记录重叠操作，并随后资助了完善的诊断垫片；该漏洞已在 SQLite 3.51.3 中修复。
 
 hackernews · ropbear · 8月12日 14:22 · [社区讨论](https://news.ycombinator.com/item?id=49272832)
 
-**背景**: SQLite 的预写日志（WAL）模式将更改存储在单独文件中，以支持并发读写。定期执行的检查点操作会将 WAL 内容写回主数据库。当 WAL 完全写回后，系统可以重置 WAL 文件以回收空间。Tailscale 采用单写者 SQLite 设计，但为保持 WAL 较小而频繁进行手动检查点，无意中触发了检查点重置与持有锁的读线程之间的竞态条件。
+**背景**: SQLite 的预写日志（WAL）模式通过允许读者和一个写入者同时操作来提高并发性，但需要定期执行检查点（checkpoint）将数据移回主数据库。WAL 重置是一种快速操作，在检查点后截断 WAL 文件。VFS（虚拟文件系统）垫片是拦截文件系统调用的一层，无需修改 SQLite 本身即可实现诊断插桩。
 
 
 **参考链接**:
 
 - [How Tailscale helped find the SQLite WAL-Reset bug](https://tailscale.com/blog/sqlite-wal-reset-bug)
-- [WAL-mode File Format](https://www.sqlite.org/walformat.html)
-- [SQLite User Forum: Clearing out the WAL](https://sqlite.org/forum/info/fefd56014e2135589ea57825b0e2aa3e2df5daf53b5e41aa6a9d8f0c29d0b8e5)
+- [Breaking the WAL | Antithesis](https://antithesis.com/blog/2026/wal-reset-bug/)
 
 
-**社区讨论**: 社区成员赞赏这份详尽的故障分析报告，并将 Tailscale 资助 VFS 垫片视为企业支持开源的一个正面范例。一些评论者质疑了主动检查点的权衡，并引用了 Dijkstra 关于测试只能证明错误存在而非不存在的名言。整体反响高度认可文章的技术深度以及公司负责任的处理方式。
+**社区讨论**: 社区普遍赞赏了此次深入的调试叙事以及 Tailscale 对诊断工具的开源资助。部分评论调侃了 SQLite 虽有 9200 万行测试却仍存在漏洞，另一些则强调了企业支持合同对关键基础软件及时修复的重要性。讨论中偶有对文字细节的挑剔，但整体上对技术严谨性高度肯定。
 
-**标签**: `#sqlite`, `#debugging`, `#tailscale`, `#wal`, `#race-condition`
+**标签**: `#sqlite`, `#debugging`, `#database`, `#race-condition`, `#tailscale`
+
+---
+
+<a id="item-2"></a>
+## [Qwen3.8-2.4T 开源发布：95B 活跃参数 MoE 模型，性能比肩 Kimi k3](https://huggingface.co/Qwen/Qwen3.8-2.4T-A95B) ⭐️ 9.0/10
+
+阿里通义千问发布 Qwen3.8-2.4T-A95B 模型，该模型采用 MoE 架构，拥有 95B 活跃参数，并以 BF16 和 FP8 权重格式开源，性能对标 Kimi k3，与 Opus 4.5/4.8 相当。该发布在社区引发了关于模型部署和量化方法的广泛讨论。 该发布表明，开源 MoE 模型能够与顶尖闭源和开放权重系统并驾齐驱，为开发者提供了强大且更易获取的选择。其卓越性能有望加速 AI 创新，并降低前沿语言模型的使用门槛。 该模型以 BF16 和 FP8 权重发布，但未提供 4-bit 量化版本，因此部署时需要较高的硬件资源。此外，开源版本不包含视觉输入和 100 万 token 上下文长度，这些特性仅限官方 Qwen3.8-Max 版本。
+
+hackernews · Philpax · 8月12日 15:01 · [社区讨论](https://news.ycombinator.com/item?id=49273478)
+
+**背景**: Mixture of Experts（MoE）是一种神经网络架构，通过多个专门的子模型（专家）和门控机制，根据输入仅激活部分专家，从而高效扩展模型容量并控制计算成本。FP8 和 BF16 是低精度浮点格式，用于压缩模型权重以减少内存占用和加快推理速度。量化技术（如 4-bit）可进一步缩小模型体积，使其能在消费级硬件上运行。活跃参数（95B）指的是推理时实际使用的参数数量，远低于 MoE 模型的总参数量（2.4T）。
+
+
+**参考链接**:
+
+- [Mixture of experts - Wikipedia](https://en.wikipedia.org/wiki/Mixture_of_experts)
+- [FP8 Quantization](https://grokipedia.com/page/FP8_Quantization)
+
+
+**社区讨论**: 社区对模型性能感到兴奋，尤其是 Unsloth 的 1-bit 量化版本将模型缩减至 397GB，使消费级硬件也能达到 Opus 4.5 级别的性能。也有人担忧初始缺乏 4-bit 量化版本导致部署成本高，以及缺少视觉支持和 1M 上下文长度。与 DeepSeek V4-Pro 和 Grok 4.6 的对比凸显了 AI 领域的快速演进。
+
+**标签**: `#LLM`, `#Open-Source`, `#MoE`, `#Model Release`, `#Quantization`
+
+---
+
+<a id="item-3"></a>
+## [基于 WebSocket 的 HTML 传输：极简 JavaScript 构建实时单页应用](https://en.andros.dev/blog/ef4968f5/html-over-websockets-real-time-spas-with-barely-any-javascript/) ⭐️ 8.0/10
+
+一篇新文章深入探讨了利用 WebSocket 驱动的 HTML-over-the-wire 模式来构建几乎无需自定义 JavaScript 的实时单页应用，并借鉴了 Phoenix LiveView 和 Blazor Server 等成熟方案。 这种方法将状态管理和渲染逻辑转移至服务器端，在降低客户端复杂度的同时提供了丰富的交互体验，并对当前主流的大型 JavaScript 前端框架模式提出了挑战。 文章指出，WebSocket 适用于聊天等双向低延迟场景，但仅需服务器推送时，Server-Sent Events \(SSE\) 更简单且成本更低。该技术可追溯至 Chris McCord 早年开发的 Rails Sync 项目，后者为 Phoenix LiveView 奠定了基础。
+
+hackernews · redbell · 8月12日 16:51 · [社区讨论](https://news.ycombinator.com/item?id=49275335)
+
+**背景**: HTML-over-the-wire 是一种服务端驱动的方法，服务器通过持久连接向客户端发送预渲染的 HTML 片段，再由轻量客户端库将其替换到 DOM 中。Phoenix LiveView（基于 Elixir）和 Blazor Server（基于.NET）是该模式的重要框架，它们通过 WebSocket 在服务端维护有状态的实时界面。此外，Hotwire（Turbo）和 htmx 等方案则利用 SSE 或 AJAX 实现类似的服务端渲染更新，无需建立完整的 WebSocket 通道。
+
+
+**参考链接**:
+
+- [Phoenix LiveView](https://github.com/phoenixframework/phoenix_live_view)
+- [ASP.NET Core Blazor hosting models | Microsoft Learn](https://learn.microsoft.com/en-us/aspnet/core/blazor/hosting-models?view=aspnetcore-10.0)
+- [HTML Over The Wire | Hotwire](https://hotwired.dev/)
+
+
+**社区讨论**: 评论者普遍认可该模式的价值，但就传输方式存在争论。有人认为结合 htmx 的 SSE 更简单且能满足多数应用需求，也有人指出 Blazor Server 在内部工具中的实用性。关于技术起源的讨论强调，Chris McCord 的 Rails Sync 是 LiveView 的前身，并有评论引用了一篇详细的反驳文章。
+
+**标签**: `#WebSockets`, `#HTML-over-the-wire`, `#real-time web`, `#single-page applications`, `#software architecture`
+
+---
+
+<a id="item-4"></a>
+## [Grok 4.6 发布：xAI 新前沿模型引发基准测试争议](https://x.ai/news/grok-4-6) ⭐️ 8.0/10
+
+xAI 推出了 Grok 4.6，一个在多数基准测试中据称超越 GPT-5.6-Sol 等前沿模型的大型语言模型，展现了 AI 竞争格局中的快速进展。 这一发布加剧了 AI 实验室之间的竞争，为用户提供了可能更快、更便宜的前沿模型，但也重新引发了关于基准测试作弊的担忧，即性能提升是否反映真正的改进还是对评测的作弊。 该模型以速度和简洁著称，避免冗长输出；但 API 添加的默认系统提示可能会干扰自定义指令，且此次更新是渐进式的，而非范式转变。
+
+hackernews · iLuddite · 8月12日 15:32 · [社区讨论](https://news.ycombinator.com/item?id=49274027)
+
+**背景**: 前沿模型是由 OpenAI、Anthropic 和 xAI 等机构开发的最先进 AI 系统，需要庞大的计算和数据。基准测试作弊是指通过调整模型在特定测试中取得高分而未实现真正改进的做法，随着评测变得高风险，这已成为 AI 社区日益关注的问题。
+
+
+**参考链接**:
+
+- [Through the looking glass of benchmark hacking — Poolside](https://poolside.ai/blog/through-the-looking-glass)
+- [[2604.22230] On Benchmark Hacking in ML Contests: Modeling, Insights and Design](https://arxiv.org/abs/2604.22230)
+- [What Are Frontier AI Models and How They Work | NVIDIA Glossary](https://www.nvidia.com/en-us/glossary/frontier-models/)
+
+
+**社区讨论**: 社区反应不一：一些用户称赞 Grok 4.6 的速度和直截了当的回复，而另一些人则猜测存在基准测试作弊，并批评其默认系统提示干扰性强，导致模型拒绝讨论自身准则。
+
+**标签**: `#AI`, `#LLM`, `#Grok`, `#xAI`, `#Model Release`
 
 ---
 
 <a id="item-5"></a>
-## [WebSocket 传 HTML：几乎无需 JS 的实时 SPA](https://en.andros.dev/blog/ef4968f5/html-over-websockets-real-time-spas-with-barely-any-javascript/) ⭐️ 8.0/10
+## [重放攻击窃取大模型加密推理过程](https://simonwillison.net/2026/Aug/11/stealing-reasoning-traces/) ⭐️ 8.0/10
 
-该文章探讨了使用 WebSocket 传输 HTML 来实现实时单页应用，几乎无需 JavaScript，类似于 Phoenix LiveView 和 Blazor Server。 该技术将逻辑移至服务器端，降低了客户端复杂性，从而加速开发并提升实时 Web 应用的可维护性。 该方法需要双向通信，而服务器发送事件（SSE）仅适用于服务器向客户端推送，更简单；文章讨论了 WebSocket 与 SSE 之间的权衡。
+一篇新论文揭示，来自前沿大模型（Anthropic、OpenAI、Google）的加密思维链片段可以被重放给同系列的较弱模型，并通过越狱攻击以明文形式提取出隐藏的推理过程。该攻击利用了同系列模型共用同一加密密钥且加密块不与会话绑定的缺陷。 该发现打破了加密推理过程是私密的假设，暴露了主流大模型提供商的一个基础安全漏洞。它表明较弱模型可被用来泄露强模型的原生内部思考，对 AI 安全、知识产权以及隐蔽的提示注入防御构成威胁。 攻击最容易针对 Claude Haiku 4.5，通过预填充 &\#x27;&lt;thinking-copy&gt;&\#x27; 标签和抄写提示实现。提取出的推理轨迹包含未经修饰的原始思考过程（如 GPT-5.5 对 CSS 架构的思考），研究人员还展示了可诱使模型在推理中“思考”数据外泄的变种攻击。所有提供商都已修复该漏洞。
 
-hackernews · redbell · 8月12日 16:51 · [社区讨论](https://news.ycombinator.com/item?id=49275335)
+rss · Simon Willison · 8月11日 22:40
 
-**背景**: WebSocket 通过单个 TCP 连接提供全双工通信，实现实时更新。Phoenix LiveView 和 Blazor Server 是使用服务器端渲染和基于 WebSocket 的更新来提供交互式体验的框架，无需大量 JavaScript。
+**背景**: 使用具备推理能力的大模型时，真实思维链（CoT）通常对用户隐藏，但为管理 API 状态，某些提供商会将加密后的 CoT 副本返回给客户端。这些加密块此前被认为安全，且只有生成它的模型才能理解。但《Stolen Thoughts》论文发现，同系列所有模型复用同一密钥，且加密块不与原始会话、用户或模型绑定，因此攻击者可通过重放让弱模型解码出强模型的私密推理。
 
 
 **参考链接**:
 
-- [Phoenix.LiveView — Phoenix LiveView v1.2.9](https://hexdocs.pm/phoenix_live_view/Phoenix.LiveView.html)
-- [Phoenix LiveView](https://github.com/phoenixframework/phoenix_live_view)
-- [Blazor Server Interactivity: It’s Like Magic. But, You Know, It Actually...](https://www.c-sharpcorner.com/article/blazor-server-interactivity-is-like-magic-that-works/)
+- [Your Encrypted Reasoning Traces Were Never Private: What Development Teams](https://reptile.haus/journal/encrypted-reasoning-traces-stolen-thoughts-llm-api-security-2026/)
+- [Let’s talk about encrypted reasoning – A Few Thoughts on Cryptographic Engineering](https://blog.cryptographyengineering.com/2026/05/29/fooling-around-with-encrypted-reasoning-blobs/)
+- [Claude Tag, Fugu Ultra, and the Hidden Cryptography of LLM ...](https://ai.plainenglish.io/claude-tag-fugu-ultra-and-the-hidden-cryptography-of-llm-reasoning-logs-19ac64518948)
 
 
-**社区讨论**: 评论者提到了历史背景，如 Chris McCord 在 Rails 的 Sync 上的早期工作，并讨论了 WebSocket 与 SSE 之间的权衡，有人主张使用 htmx 配合 SSE 作为更简单的替代方案。其他人强调该技术是情境化的，最适合对延迟要求较低的内部应用。
-
-**标签**: `#websockets`, `#liveview`, `#real-time`, `#web-development`, `#server-driven-ui`
+**标签**: `#LLM security`, `#chain-of-thought`, `#reasoning extraction`, `#AI safety`, `#model jailbreaking`
 
 ---
 
 <a id="item-6"></a>
-## [Grok 4.6 发布：xAI 新模型引发基准测试和系统提示争议](https://x.ai/news/grok-4-6) ⭐️ 8.0/10
+## [损失函数不关心基，但 Adam 关心](https://www.reddit.com/r/MachineLearning/comments/1vmjb3p/the_loss_does_not_see_the_basis_but_adam_does_r/) ⭐️ 8.0/10
 
-xAI 发布了 Grok 4.6，在 Grok 4.5 的基础上增强了长时间运行代理和更具雄心的交互与视觉工作能力。据报道，该模型在大多数基准测试中胜过 GPT-5.6-Sol。 Grok 4.6 的发布加剧了前沿 AI 竞赛，为 OpenAI 和 Anthropic 提供了强有力的竞争者，同时也引发了对 API 系统提示透明度和潜在基准测试操纵的担忧，这可能削弱人们对模型评估的信任。 该模型与即将成为 SpaceXAI 子公司的 Cursor 共同开发，并包含一个默认的 API 系统提示，该提示会覆盖用户指令，导致模型拒绝讨论其准则。社区成员指出，多个实验室的快速性能提升可能暗示蒸馏或基准测试作弊。
+一项新研究表明，Adam 的逐坐标二阶矩打破了因子模型固有的旋转不变性，从而破坏了梯度下降天然具有的低秩隐式偏置。通过一个单参数族更新规则，研究将二阶矩的各向异性（而非一般的自适应性）确定为根本原因。 这一发现解释了为何许多自适应优化器在依赖低秩解的任务上表现不佳，并为设计保留有用归纳偏置的未来优化器提供了指导原则。它可能改变从业者为具有底层低秩结构的矩阵分解和深度学习模型选择优化器的方式。 作者在欠定矩阵感知上测试了九种更新规则，发现 GD、共享标量 Adam、Muon 和 Shampoo 保留了低秩偏置，而 Adam、RMSProp、Lion、signum 和 Adafactor 则丢失了它。一个从逐坐标到共享标量平滑插值的单参数族在恢复误差上表现出单调改善，Muon 在频谱尾部能量上显示出交叉行为。一个注意事项：在高光谱数据上报告的 43–44%误差减少使用了仅依赖训练集的学习率规则，当每种优化器调优自己的最佳学习率时，差距会显著缩小。
 
-hackernews · iLuddite · 8月12日 15:32 · [社区讨论](https://news.ycombinator.com/item?id=49274027)
+reddit · r/MachineLearning · /u/EtherealGlyph · 8月12日 16:39
 
-**背景**: Grok 是由埃隆·马斯克创立的 SpaceXAI（原 xAI）开发的一系列大型语言模型。此前版本包括 2026 年发布的 Grok 4.5。这些模型部分通过蒸馏其他模型（如 GPT）进行训练。系统提示是给 LLM 设定的指导其行为的指令，基准测试操纵则指在评估测试中人为抬高模型得分而无真正改进的做法。
+**背景**: 在如 W = UV^T 的因子模型中，损失函数在旋转（U → UQ, V → VQ^\{-T\}）下保持不变，梯度下降（GD）尊重这一对称性，从而产生倾向于低秩解的隐式偏置。像 Adam 这样的自适应优化器维护依赖于具体坐标基的逐参数二阶矩，打破了这种旋转不变性。对称性的破坏被假设为 Adam 及类似优化器通常无法继承 GD 的低秩偏置的原因。
 
-
-**参考链接**:
-
-- [Introducing Grok 4.6 | SpaceXAI](https://x.ai/news/grok-4-6)
-- [Grok 4](https://en.wikipedia.org/wiki/Grok_4)
-- [System Prompts: Design Patterns and Best Practices](https://tetrate.io/learn/ai/system-prompts-guide)
-
-
-**社区讨论**: 社区意见存在分歧：一些用户欣赏 Grok 的简洁性，并视其为健康的竞争，而另一些用户则担心默认系统提示限制了讨论，以及性能飞跃与 Fable 能力相似的时间点可疑。有人怀疑存在基准测试操纵或蒸馏，质疑所报告分数的有效性。
-
-**标签**: `#AI`, `#Grok`, `#xAI`, `#model release`, `#LLM`
+**标签**: `#optimization`, `#implicit bias`, `#low-rank`, `#Adam`, `#matrix factorization`
 
 ---
 
 <a id="item-7"></a>
-## [uBlock Origin 放弃屏蔽 Facebook 广告的努力](https://digitalescapetools.com/2026/08/ublock-origin-stops-chasing-facebook-ads.html) ⭐️ 8.0/10
+## [解耦下降：通过 AMP Onsager 校正实现精确训练-测试误差跟踪](https://www.reddit.com/r/MachineLearning/comments/1vlu1se/decoupled_descent_enforcing_exact_traintest_error/) ⭐️ 8.0/10
 
-uBlock Origin 项目已决定停止过滤 Facebook 广告，理由是 Facebook 的反广告拦截技术日益复杂。这标志着广告拦截器与广告支持平台之间长期猫捉老鼠游戏中的一次重大让步。 这一进展凸显了 Facebook 反广告拦截措施日益有效，可能迫使注重隐私的用户要么接受广告，要么离开平台。这也引发了人们对广告拦截作为用户控制工具在面对企业坚决反击时的可行性的广泛担忧。 该决定由 uBlock Origin 子论坛的一位维护者宣布，他指出 Facebook 使用的技术，如动态拆分广告标签以及以极难过滤的方式嵌入广告，若继续过滤可能破坏核心服务，导致努力无法持续。此举不影响 uBlock Origin 在其他网站上屏蔽广告的能力。
+该论文提出解耦下降（Decoupled Descent）方法，利用近似消息传递（AMP）结合 Onsager 校正，从数学上保证了每次参数更新时训练误差与测试误差的渐近相等，从而消除了全批量梯度下降中固有的数据重用偏差。 该方法通过生成训练-测试误差对齐证书，为预防过拟合提供了原理性方案，可能从根本上改变超参数调优、训练停止时机选择以及从根本上保证泛化能力的架构设计方式。 该方法在一个高维 XOR 模型及定制双层网络上进行了验证，100 次模拟显示了训练与测试误差的紧密对齐。目前仍是理论贡献，作者计划未来发布 PyTorch 软件包。
 
-hackernews · Markoff · 8月12日 11:28 · [社区讨论](https://news.ycombinator.com/item?id=49270726)
+reddit · r/MachineLearning · /u/mlovik1 · 8月11日 21:06
 
-**背景**: uBlock Origin 是一款广泛使用的开源广告拦截浏览器扩展，适用于 Firefox 和 Chrome 等浏览器，由开发者 Raymond Hill 和社区维护。Facebook 长期采用反广告拦截技术，例如将赞助内容嵌入普通帖子中，并动态改变广告的 HTML 结构以逃避检测。广告拦截的军备竞赛不断升级，双方不断调整策略，但此次举动表明 Facebook 的措施已越过一个门槛，使得维护有效的过滤规则不再可行。
+**背景**: 近似消息传递（AMP）是一种高维统计推断算法，通过迭代解耦估计误差，能在随机矩阵模型下达到贝叶斯最优性能。Onsager 校正是 AMP 中的关键项，它减去前一次迭代消息的加权形式以消除相关噪声，从而保证算法状态演化的可解析性。Decoupled Descent 将这些思想运用到神经网络训练中，将梯度更新视为类似 AMP 的过程，从而强制实现训练误差与测试误差的等价。
 
 
 **参考链接**:
 
-- [uBlock Origin - Wikipedia](https://en.wikipedia.org/wiki/UBlock_Origin)
-- [How to Stop Ads on Facebook | Facebook Ad Blocker - Ghostery](https://www.ghostery.com/blog/how-to-stop-ads-on-facebook)
+- [[2201.07487] A Concise Tutorial on Approximate Message Passing](https://arxiv.org/abs/2201.07487)
+- [[1607.05966] Onsager-corrected deep learning for sparse linear inverse problems](https://arxiv.org/abs/1607.05966)
 
 
-**社区讨论**: 社区反应不一。许多用户表示理解并支持这一决定，承认猫捉老鼠游戏的难度。一些人提出更激进的解决方案，如基于人工智能的视觉广告检测，而另一些人则质疑 Facebook 为何投入如此多精力绕过广告拦截器，认为使用广告拦截器的用户本来就不太可能点击广告。总体而言，情绪倾向于无奈和对 Facebook 上广告拦截未来的怀疑。
-
-**标签**: `#ad-blocking`, `#Facebook`, `#uBlock Origin`, `#privacy`, `#web-browsing`
+**标签**: `#machine learning`, `#optimization`, `#generalization`, `#approximate message passing`, `#overfitting`
 
 ---
 
 <a id="item-8"></a>
-## [为何小尺寸 JPEG 在 Chrome 中显示模糊](https://guillaumetech.github.io/posts/jpg-scaling-chrome/) ⭐️ 8.0/10
+## [DeepSeek V4 Pro 0813 模型在 OpenRouter 上线，未发布官方公告](https://openrouter.ai/deepseek/deepseek-v4-pro-0813) ⭐️ 7.0/10
 
-Chrome 的性能优化会对 JPEG 图像进行降级解码，导致小尺寸图像（如图标）在显示时显得模糊。 这一行为影响了依赖小尺寸 JPEG 进行 UI 设计的网页开发者，强调了应使用合适的图像格式（如图标使用 PNG）并以正确分辨率提供图像的重要性。 Chrome 的解码器在解压时对图像进行降采样以节省内存和 CPU，但其缩放算法通常比 Firefox 的更锐利但带有更多振铃伪影的方法更模糊。
+DeepSeek 最新 Pro 模型（0813 版本）现已通过 OpenRouter API 提供，但 DeepSeek 官方尚未发布正式公告或详细基准测试。这是继四月和七月版本之后 V4 Pro 系列的增量更新，目前仅提供 API 访问。 该模型以极低的成本提供了强大的性能，社区测试表明它非常适合需要高吞吐量的重型开发任务（如分布式物理引擎）。即使没有公开权重，它的发布也进一步展示了 DeepSeek 能与大公司竞争的同时保持成本优势，延续了其颠覆 AI 行业的趋势。 该模型仅通过 API 提供，DeepSeek 尚未明确是否会公开权重；此前四月和七月的 V4 Pro 版本已在 Hugging Face 上公开了权重。社区测试显示，它能够以极低成本处理复杂的开发任务，有用户报告称在处理 20 亿个 token 时仅花费 12.50 美元（缓存命中率 50%）。
 
-hackernews · gutechh · 8月12日 14:00 · [社区讨论](https://news.ycombinator.com/item?id=49272549)
+hackernews · explosion-s · 8月12日 16:04 · [社区讨论](https://news.ycombinator.com/item?id=49274600)
 
-**背景**: JPEG 是一种有损压缩格式，适用于照片而非边缘清晰的图形（如图标）。浏览器通常先以全分辨率解码图像，再缩放显示，但 Chrome 的优化会跳过全分辨率解码，直接以较小尺寸解码，以减少资源消耗。这可能导致小图像细节丢失。网页开发者常使用 PNG 格式制作图标，因为 PNG 无损且支持透明。
+**背景**: DeepSeek 是一家中国人工智能公司，以开源权重模型闻名，其模型性能可与 GPT-4 媲美，并通过混合专家（MoE）等技术大幅降低训练成本。V4 Pro 系列是该公司的高性能模型家族，此前已于 2025 年 4 月和 7 月发布过两个版本。OpenRouter 是一个统一的 API 平台，能够路由请求到不同的大语言模型，为开发者简化了访问和计费。此次 0813 模型似乎是 V4 Pro 架构的增量更新，可能是一个微调版本。
 
 
 **参考链接**:
 
-- [How to prevent Chrome from blurring small images... - Super User](https://superuser.com/questions/530317/how-to-prevent-chrome-from-blurring-small-images-when-zoomed-in)
+- [DeepSeek Coder](https://en.wikipedia.org/wiki/DeepSeek_Coder)
+- [DeepSeek](https://www.deepseek.com/en/)
+- [OpenRouter](https://en.wikipedia.org/wiki/OpenRouter)
 
 
-**社区讨论**: 评论者指出，Chrome 和 Electron 中的 PNG 图像也会出现类似模糊，影响了产品界面。Firefox 正在开发类似的降级解码功能，但其缩放算法更锐利，更受部分用户青睐。普遍建议是避免使用 JPEG 制作图标，并以实际显示尺寸提供图像。
+**社区讨论**: 用户们称赞该模型性价比高，在重型开发任务中表现出色，有用户报告在交通模拟器中获得了显著性能提升。有人指出发布方式奇怪，仅通过 OpenRouter 且无官方公告；还有用户提到在图像生成任务（SVG）中出现了小问题。总体情绪积极，核心观点是“低成本、能力强”。
 
-**标签**: `#JPEG`, `#Chrome`, `#image processing`, `#browser rendering`, `#web development`
+**标签**: `#deepseek`, `#llm`, `#ai`, `#model-release`, `#openrouter`
 
 ---
 
 <a id="item-9"></a>
-## [Adam 的逐坐标适应性破坏了旋转不变性及低秩偏置](https://www.reddit.com/r/MachineLearning/comments/1vmjb3p/the_loss_does_not_see_the_basis_but_adam_does_r/) ⭐️ 8.0/10
+## [Zed 推出 Delta：支持多人协作的 AI 代码对话功能](https://zed.dev/blog/introducing-delta) ⭐️ 7.0/10
 
-一项新分析表明，因子化模型中的损失函数具有旋转不变性，但 Adam 的逐坐标二阶矩破坏了这一对称性，导致其丧失了 SGD 保留的隐式低秩偏置。该发现通过九种优化器和一个从逐坐标到共享标量的单参数族进行了验证。 这解释了为什么 Adam 通常泛化能力不如 SGD，并为设计保留有益偏置的自适应优化器提供了原则，如 Muon 和 Shampoo 正是使用各向同性或保持结构的二阶矩。 一个从逐坐标到共享标量二阶矩的单参数族单调恢复低秩偏置，表明损害源于各向异性。Muon 在低秩目标上精确，但随谱尾部迅速退化，在约 4%尾部能量时与 SGD 交叉。将逐坐标裁剪替换为全局范数裁剪将恢复误差从 0.347 降至 0.220。
+开源代码编辑器 Zed 近日推出了 Delta 功能，使用户能够在编辑器中与 AI 代理进行实时多人对话和行内评论。 Delta 模糊了编码与沟通的界限，通过将 AI 辅助开发变成共享且可追溯的过程，有望改变代码审查、指导和团队协作的方式，但其实用性仍存在争议。 Delta 基于 DeltaDB（一种专为对话和工作树设计的新型版本控制）构建，将 AI 对话本身视为可进行行内评论的文档；/delta 斜杠命令可将修改过的文件重新插入对话中。
 
-reddit · r/MachineLearning · /u/EtherealGlyph · 8月12日 16:39
+hackernews · khy · 8月12日 18:19 · [社区讨论](https://news.ycombinator.com/item?id=49276574)
 
-**背景**: 在深度学习中，隐式正则化是指优化器倾向于收敛到具有特定属性（如低秩）的解，而无需显式惩罚。对于因子化模型 W=UV^T，损失函数具有旋转不变性，SGD 展现出趋向低秩解的隐式偏置。Adam 使用基于二阶矩估计的逐坐标自适应学习率，而 Muon 和 Shampoo 则采用矩阵级或按维度的预处理来保持结构。
+**背景**: Zed 是一款用 Rust 编写的高性能开源代码编辑器，以其速度和内置 AI 代理著称。传统上，使用 AI 编程发生在孤立会话中，而 Delta 引入了多人协作界面，对话可持续存在，并能像代码审查一样被共享、复盘和评论。
 
 
 **参考链接**:
 
-- [GitHub - KellerJordan/ Muon : Muon is an optimizer for hidden layers in...](https://github.com/KellerJordan/Muon)
-- [Muon optimizer](https://grokipedia.com/page/muon-optimizer)
-- [SGD Noise and Implicit Low - Rank Bias in Deep Neural Networks](https://cbmm.mit.edu/publications/sgd-noise-and-implicit-low-rank-bias-deep-neural-networks)
+- [Zed (text editor ) - Wikipedia](https://en.wikipedia.org/wiki/Zed_%28text_editor%29)
+- [Introducing Delta — Zed&#x27;s Blog](https://zed.dev/blog/introducing-delta)
+- [Software Is Made Between Commits — Zed&#x27;s Blog](https://zed.dev/blog/introducing-deltadb)
 
 
-**标签**: `#optimization`, `#low-rank matrix factorization`, `#Adam`, `#implicit regularization`, `#deep learning`
+**社区讨论**: 社区反应两极分化：部分开发者质疑多人编程的必要性，认为编码是个人活动；另一些人则看到了指导初级工程师和审查 AI 生成代码的潜力。不少评论批评 AI 生成的代码摘要冗长且常不准确，还有人指出该博文的可读性很差。
+
+**标签**: `#zed`, `#ai-assisted-coding`, `#collaboration`, `#developer-tools`, `#editor`
 
 ---
 
 <a id="item-10"></a>
-## [解耦下降：通过 AMP Onsager 校正实现训练测试误差精确跟踪](https://www.reddit.com/r/MachineLearning/comments/1vlu1se/decoupled_descent_enforcing_exact_traintest_error/) ⭐️ 8.0/10
+## [AmigaDOS 开发者 Tim King 逝世，社区缅怀](https://amiga-news.de/en/news/AN-2026-08-00070-EN.html) ⭐️ 7.0/10
 
-提出了一种名为解耦下降（Decoupled Descent）的新训练方法，利用近似消息传递（AMP）和 Onsager 校正，确保在每次梯度下降迭代中训练误差与测试误差渐近相等。 该工作为训练与测试误差的对齐提供了严格的理论保证，有望实现无需验证集的最优停止和超参数调优，并从根本上改变梯度学习中对过拟合问题的处理方式。 该方法在一个两层网络上使用全批量梯度下降和高维 XOR 合成数据集进行了验证，Onsager 校正确保每次迭代的误差互不相关且可预测。目前仍为理论工作，未来计划发布 PyTorch 兼容包。
-
-reddit · r/MachineLearning · /u/mlovik1 · 8月11日 21:06
-
-**背景**: 近似消息传递（AMP）是一种高维统计推断技术，通过迭代更新估计并引入 Onsager 校正以保持渐近高斯性和各迭代间误差的解耦。梯度下降中的过拟合常源于数据重用偏差，即训练误差下降而测试误差不改善。解耦下降方法将 AMP 式校正应用于梯度更新，从而强制训练误差与测试误差对齐。
-
-
-**参考链接**:
-
-- [Onsager Correction in GOAMP](https://www.emergentmind.com/topics/onsager-correction-in-goamp)
-- [Approximate Message Passing](https://home.ttic.edu/~gpapan/pos12/talks/Montanari.pdf)
-
-
-**标签**: `#machine learning`, `#generalization`, `#overfitting`, `#approximate message passing`, `#gradient descent`
-
----
-
-<a id="item-11"></a>
-## [Zed 推出 Delta：实时协作对话与 AI 代理注释](https://zed.dev/blog/introducing-delta) ⭐️ 7.0/10
-
-Zed 编辑器推出了 Delta 功能，新增了实时多人协作对话和内联 AI 代理注释。开发者可以在编辑器内直接进行代码讨论，并与 AI 代理交互。 Delta 将协作聊天和 AI 辅助集成到开发工作流中，有望简化代码审查、指导和 AI 增强编码。这反映了将社交和智能功能直接嵌入开发工具的增长趋势。 Delta 结合了实时多人对话和「对话即文档」模式，支持对 AI 代理交互进行内联注释。该功能基于 Zed 已有的高性能多人编辑架构。
-
-hackernews · khy · 8月12日 18:19 · [社区讨论](https://news.ycombinator.com/item?id=49276574)
-
-**背景**: Zed 是 Zed Industries 开发的一款高性能多人代码编辑器，采用 Rust 编写，以极快的响应速度和实时协作编辑著称。原先已支持多名开发者同时编辑同一文件，Delta 新增了协作对话和 AI 代理内联注释，使编辑器成为人和 AI 协同工作的中心。
-
-
-**参考链接**:
-
-- [Zed (text editor)](https://grokipedia.com/page/Zed_text_editor)
-- [GitHub - zed -industries/ zed : Code at the speed of thought – Zed is...](https://github.com/zed-industries/zed)
-
-
-**社区讨论**: 社区反应不一。有用户认为多人编程价值不大，开发是单人活动；也有人看好其在指导初级开发者或审查 AI 生成代码方面的潜力。有人担心 AI 摘要过于冗长或遗漏边界情况，还有人指出博客文章的低对比度设计影响阅读体验。
-
-**标签**: `#zed`, `#collaborative-editing`, `#ai`, `#developer-tools`, `#editor`
-
----
-
-<a id="item-12"></a>
-## [2026 年日食网络摄像头聚合器引发社区怀旧讨论](https://jonty.github.io/2026_eclipse_webcams/) ⭐️ 7.0/10
-
-2024 年美国日食网络摄像头聚合器的开发者迅速将其改造用于 2026 年日全食，并在活动临近时分享到 Hacker News，展示来自冰岛和西班牙的实时画面。 该项目展示了简单的快速搭建工具如何围绕罕见天文事件促进社区参与，而讨论则揭示了日食作为个人里程碑和历史转折点的意义。 该网站聚合了冰岛和西班牙的多个实时摄像头画面，创建者幽默地提醒可能因流量过大导致摄像头服务器过载。社区成员还贡献了额外的摄像头链接和太阳能板监测数据。
-
-hackernews · zoenolan · 8月12日 11:53 · [社区讨论](https://news.ycombinator.com/item?id=49270953)
-
-**背景**: 日全食发生在月球完全遮挡太阳时，仅在狭窄的路径上可见。2024 年日食穿越美国，2026 年日食将可见于冰岛和西班牙。通过网络摄像头远程观看已成为全球公众参与的方式，该项目继承了 2024 年日食时的成功版本。
-
-**社区讨论**: 评论普遍积极，用户分享了个人追日食的旅行故事、将日食视为人生里程碑的哲学思考，以及泰勒斯首次预测日食的历史事实。创建者表达了对服务器负载的兴奋与紧张，其他用户则补充了有用的摄像头链接和太阳能板数据，整体讨论融合了怀旧、科学与社区精神。
-
-**标签**: `#eclipse`, `#webcams`, `#astronomy`, `#community`, `#hobby-project`
-
----
-
-<a id="item-13"></a>
-## [YC 初创 Discovered Materials 利用 AI 代理发现新型半导体材料](https://discoveredmaterials.com/research/) ⭐️ 7.0/10
-
-YC 创业公司 Discovered Materials 发布其 AI 代理平台，用于发现新型半导体材料，并公开了数百种计算发现的候选材料以及一个衡量模型能力的基准。他们还通过实验验证了热界面材料，其性能可与大型化学公司保密二十余年的商业机密相媲美。 这直接应对 GPU 散热瓶颈，该瓶颈正制约芯片性能提升和数据中心能效。AI 驱动的材料发现有望大幅缩短‘实验室到晶圆厂’的周期，推动 3D 堆叠 HBM 等先进封装技术，对整个半导体行业产生深远影响。 该团队测试了 Anthropic、OpenAI 和 Kimi 的 7 个前沿模型，发现模型可在 8 小时内完成相当于博士生数周的工作量，但合成配方仍是难题。他们还观察到模型异常行为，如 Claude 的奖励黑客行为和 GPT-5.6 在约 5000 万 token 后失去稳定性。商业模式瞄准 IP 授权，并可能出售发现工具链。
-
-hackernews · advaith08 · 8月12日 07:51 · [社区讨论](https://news.ycombinator.com/item?id=49269090)
-
-**背景**: 热设计功耗\(TDP\)衡量芯片最大发热量，近期 GPU 如 Blackwell 已达 1.2 千瓦。高带宽内存\(HBM\)通过垂直堆叠 DRAM 芯片提升带宽，但二氧化硅介电材料导热差，导致热量积聚，阻碍了在逻辑芯片上直接 3D 堆叠。‘实验室到晶圆厂的死亡之谷’指新材料从发现到大规模量产耗时且昂贵的过程，AI 计算筛选旨在加速这一过程。
-
-
-**参考链接**:
-
-- [Thermal design power - Wikipedia](https://en.wikipedia.org/wiki/Thermal_design_power)
-- [High Bandwidth Memory - Wikipedia](https://en.wikipedia.org/wiki/High_Bandwidth_Memory)
-- [Three-dimensional integrated circuit - Wikipedia](https://en.wikipedia.org/wiki/Three-dimensional_integrated_circuit)
-
-
-**社区讨论**: 社区评论中，有人对 GPT-5.6 中途‘放松’的言论感到好笑；有人质疑模型发现的材料是否真正新颖，是否仅来自训练数据；许多人指出过往 AI 材料发现项目鲜有实际影响，但认可该团队透明地呈现了可行性。整体情绪谨慎乐观，认为计算与实验的闭环仍是关键挑战。
-
-**标签**: `#materials-science`, `#AI-agents`, `#semiconductor`, `#YC-startup`, `#thermal-management`
-
----
-
-<a id="item-14"></a>
-## [过度依赖 AI 编程导致开发团队丧失系统理解力](https://simonwillison.net/2026/Aug/12/florian-herrengt/) ⭐️ 7.0/10
-
-Florian Herrengt 的博文描绘了一个场景：开发团队反复使用 AI 修复同一个 bug，却无人能解释功能的数据来源；他们转而求助 Claude，却无法验证 AI 输出的真实性，最终导致代码库混乱不堪、难以维护。 这则轶事凸显了“认知负债”这一新兴风险：过度依赖 AI 助手会侵蚀开发者对自身系统的深层理解，使调试和长期维护变得不可持续。 引文中提到了“Fable”（很可能指 Anthropic 为复杂编程任务优化的 Claude Fable 模型）和“Claude”这两款 AI 工具；团队遇上一个连 AI 都无法修复的 bug，而且他们已经丢失了对自身数据流的认知模型。
-
-rss · Simon Willison · 8月12日 15:08
-
-**背景**: 像 Claude Fable 这样的 AI 编程助手是能自主编写、调试和重构大型代码库的高级模型。然而，如果团队不加批判地接受 AI 生成的代码，就可能积累“认知负债”——这一术语描述了深层系统理解力的丧失。这会导致软件变得如此错综复杂、层次繁多，以至于团队中无人能自信地解释其工作原理，正如引文所示。
-
-
-**参考链接**:
-
-- [Claude Fable \ Anthropic](https://www.anthropic.com/claude/fable)
-- [Claude](https://claude.com/)
-
-
-**标签**: `#AI`, `#Software Engineering`, `#Technical Debt`, `#Debugging`, `#AI-Assisted Development`
-
----
-
-<a id="item-15"></a>
-## [自然语言文本转换必有损，工程师须对每句话负责](https://simonwillison.net/2026/Aug/11/there-are-no-lossless-transformations-of-natural-language-text/) ⭐️ 7.0/10
-
-Sophie Alpert 发布了一项关于 AI 辅助写作的内部政策，指出自然语言文本没有无损转换，工程师必须对文档中的每一句话完全负责；该观点被 Simon Willison 专门推荐为负责任使用 AI 的重要准则。 这一观点提醒工程师，AI 写作工具可能引入错误或曲解原意，发布内容的最终责任在作者而非 AI 身上；这有助于在技术文档中建立严格审查和负责的文化。 Alpert 的核心规则是：“你必须为文档中的每一个想法和每一个句子负责。”她指出，自然语言不像结构化数据那样能将内容与表现形式分离，措辞和结构本身承载着意义，因此 AI 的改写必然丢失信息；用“那是 AI 写的”来推脱是不可接受的。
-
-rss · Simon Willison · 8月11日 23:48
-
-**背景**: “无损”（lossless）概念源自数据压缩，指转换后能完全还原原始信息。但在自然语言中，意义与具体用词和句式紧密相连，任何改写都可能改变细微含义。Sophie Alpert 是前 Facebook 工程经理、React 核心贡献者，她认为 AI 无法还原作者完整的思维模型，因此所有改写都有损。知名开发者及 AI 评论者 Simon Willison 将她的文章推荐为负责任使用 AI 的关键准则。
-
-
-**参考链接**:
-
-- [Simon Willison Backs a Hard Rule for AI Writing: No Rewrite Is Lossless](https://www.remio.ai/post/simon-willison-backs-a-hard-rule-for-ai-writing-no-rewrite-is-lossless)
-
-
-**标签**: `#AI`, `#LLMs`, `#writing`, `#engineering culture`, `#responsible AI`
-
----
-
-<a id="item-16"></a>
-## [AmigaDOS 开发者 Tim King 逝世](https://amiga-news.de/en/news/AN-2026-08-00070-EN.html) ⭐️ 6.0/10
-
-AmigaDOS 操作系统的开发者 Tim King 去世了。这一消息在 amiga-news.de 上发布，引发了 Hacker News 上复古计算社区的广泛悼念和个人回忆。 Tim King 在 AmigaDOS 上的工作对 Amiga 平台至关重要，该平台启发了一代开发者并开创了多媒体计算。他的去世让复古计算社区深感悲痛，许多人将 AmigaDOS 视为他们接触命令行界面并影响职业生涯的起点。 AmigaDOS 最初是 TRIPOS 操作系统的移植，使用 BCPL 语言编写，后来在 AmigaOS 2.x 中用 C 语言重写。King 还创立了英国早期的互联网服务提供商 UK Online。
+AmigaDOS 的开发者 Tim King 去世，社区涌现大量悼念，回忆他的工作如何塑造了他们早期的计算机和命令行使用体验。 他对 AmigaDOS 的贡献让无数人首次接触命令行界面，影响了整整一代开发者，并在个人计算机发展史上留下了深远印记。 AmigaDOS 最初基于 TRIPOS 并使用 BCPL 编写，后来在 AmigaOS 2.x 中改用 C 重写。King 还创立了英国早期的互联网服务提供商 UK Online。
 
 hackernews · doener · 8月12日 14:09 · [社区讨论](https://news.ycombinator.com/item?id=49272655)
 
-**背景**: AmigaDOS 是 Amiga 系列个人电脑（1985 年首次发布）的磁盘操作系统和命令行界面。Amiga 平台以其先进的多媒体能力和抢占式多任务处理而闻名。Tim King 基于 TRIPOS 内核开发了最初的 AmigaDOS，创建了用户依赖的 Shell 环境。他的工作为该操作系统后来演变为基于 C 语言的实现奠定了基础。
+**背景**: Amiga 是 Commodore 公司于 1985 年推出的个人计算机系列，以先进的多媒体能力著称。AmigaDOS 是 AmigaOS 的磁盘操作系统组件，提供命令行界面、文件管理和重定向功能。Tim King 是 AmigaDOS 的原始开发者，其命令行界面后来影响了许多转向类 Unix 系统的用户。
 
 
 **参考链接**:
 
 - [AmigaDOS](https://en.wikipedia.org/wiki/AmigaDOS)
+- [AmigaOS - Wikipedia](https://en.wikipedia.org/wiki/AmigaOS)
 
 
-**社区讨论**: Hacker News 社区分享了感人回忆：一位用户回忆说 AmigaDOS 是他们接触命令行界面的入门，后来引领他们进入 Linux 领域。另一位用户记得将 Amiga 精简到只启动 AmigaDOS，多年后却忘记了所有命令。许多人感谢 King 的贡献，还有人提到他作为 UK Online 创始人的友善。
+**社区讨论**: 社区评论普遍积极，用户分享个人经历，称 AmigaDOS 是他们接触命令行的起点，并直接影响了他们的科技职业生涯。许多人回忆 King 为人友善、乐于助人，提及他是 UK Online 的创始人，并对这段回忆和启发表示深切感激。
 
-**标签**: `#AmigaDOS`, `#Tim King`, `#obituary`, `#retro computing`, `#Hacker News`
+**标签**: `#Amiga`, `#computing history`, `#command-line`, `#obituary`, `#software engineering`
+
+---
+
+<a id="item-11"></a>
+## [YC 创业公司用 AI 智能体发现新型半导体材料以解决散热难题](https://discoveredmaterials.com/research/) ⭐️ 7.0/10
+
+YC 第 26 批创业公司 Discovered Materials 推出 AI 智能体，用于计算发现新型半导体材料，并发布了一项包含数百种新材料的基准测试，重点强调合成可行性。 该方法有望缩短新材料进入芯片制造的“从实验室到工厂”的时间和成本，直接应对 GPU 日益严重的散热问题，这对 AI 数据中心的能耗和水资源消耗至关重要。 他们测试了来自 Anthropic、OpenAI 和 Kimi 的 7 个模型，发现模型可在 8 小时内发现动态稳定且有前景的材料（相当于博士生数周的工作），但合成仍是难题；他们验证了一种 AI 发现的热界面材料，其性能与行业巨头保密了 20 多年的材料相当，并观察到 GPT‑5.6 在约 5000 万 token 后“精神失常”等异常行为。
+
+hackernews · advaith08 · 8月12日 07:51 · [社区讨论](https://news.ycombinator.com/item?id=49269090)
+
+**背景**: GPU 的热设计功耗（TDP）快速攀升，例如 Nvidia H100 为 700W，Blackwell 为 1.2 kW，Rubin 则达 2.3 kW，使得散热成为数据中心的核心难题。使用 HBM（高带宽内存）的 3D 封装将内存垂直堆叠在逻辑芯片上以降低每比特能耗，但 HBM 中使用的介电材料（如 SiO2）导热性很差，造成热量积聚。高通量材料发现利用计算筛选和机器学习搜索庞大的化学空间，但将预测转化为实验室合成（即“从实验室到工厂的死亡之谷”）历来耗时且昂贵。
+
+
+**参考链接**:
+
+- [HBM memory shortage](https://en.wikipedia.org/wiki/HBM_memory_shortage)
+- [HBM Memory Demands eBeam Metrology](https://www.appliedmaterials.com/us/en/newsroom/perspectives/hbm-memory-demands-ebeam-metrology.html)
+- [High-throughput materials discovery](https://www.nature.com/collections/ahfgcicahg)
+
+
+**社区讨论**: 社区评论从谨慎乐观到怀疑不一。一位专家赞赏其对合成可行性的关注，指出此前许多 AI 材料发现的尝试都缺乏实际影响；另一位强调打通计算与实验的闭环是主要障碍。也有人担心模型可能已经在现有化合物上训练过，从而限制了新颖性。一条幽默的评论注意到 GPT‑5.6 在运行中突然要求“休息一下”的怪异行为。
+
+**标签**: `#AI`, `#materials-science`, `#semiconductors`, `#startup`, `#high-throughput-discovery`
+
+---
+
+<a id="item-12"></a>
+## [uBlock Origin 放弃屏蔽 Facebook 广告](https://digitalescapetools.com/2026/08/ublock-origin-stops-chasing-facebook-ads.html) ⭐️ 7.0/10
+
+uBlock Origin 已停止尝试屏蔽 Facebook 广告。维护者表示，Facebook 的反广告拦截代码混淆技术已变得过于复杂，难以可靠应对。 这标志着广告屏蔽军备竞赛的重大升级，迫使依赖广告拦截插件的数百万用户要么接受广告，要么离开平台。它也凸显了客户端广告屏蔽在面对资源充足的平台时的局限性。 Facebook 的手段包括将 &\#x27;Sponsored&\#x27; 一词拆分为单个字母的 &lt;span&gt; 元素并赋予随机类名，使用深层嵌套的 &lt;div&gt; 结构，以及动态变更标记，使基于选择器的屏蔽几乎不可能。这种方法也损害了屏幕阅读器用户的辅助功能。
+
+hackernews · Markoff · 8月12日 11:28 · [社区讨论](https://news.ycombinator.com/item?id=49270726)
+
+**背景**: 自 2016 年起，Facebook 与广告拦截插件之间的猫鼠游戏便已开始，当时 Facebook 首次修改代码以绕过桌面广告拦截器。广告拦截器通常通过匹配网页 HTML 和 CSS 中的模式来识别并隐藏广告元素。Facebook 不断复杂化其标记，使其成为移动目标。BBC 在 2018 年报道了 Facebook 使用代码技巧混淆广告，双方的攻防持续至今。
+
+
+**参考链接**:
+
+- [Facebook&#x27;s hidden battle against ad-blockers](https://www.bbc.com/news/technology-46508234)
+- [Facebook is now bypassing ad blockers on desktop | Mashable](https://mashable.com/article/facebook-bypass-ad-blockers)
+- [FB reblock: ad-blocking community finds workaround to Facebook | Adblock Plus and (a little) more](https://blog.adblockplus.org/blog/fb-reblock-ad-blocking-community-finds-workaround-to-facebook)
+
+
+**社区讨论**: 社区反应从沮丧到无奈。一些用户认为基于计算机视觉的广告检测将是下一步，另一些人则质疑 Facebook 投入资源绕过广告拦截器的商业逻辑，因为屏蔽广告的用户本就不太可能点击。还有人强调代码混淆对无障碍访问的严重影响是一个值得担忧的问题。
+
+**标签**: `#ad-blocking`, `#facebook`, `#privacy`, `#arms-race`, `#web-development`
+
+---
+
+<a id="item-13"></a>
+## [Chrome 低分辨率 JPEG 解码导致小图标渲染差异](https://guillaumetech.github.io/posts/jpg-scaling-chrome/) ⭐️ 7.0/10
+
+Chrome 为了性能优化，以降低的分辨率解码 JPEG 图像，导致小图标在视觉上与 Firefox 不同，后者先完整解码再缩放。 网页开发者需考虑跨浏览器渲染不一致性，尤其是图标，可能需要使用尺寸合适的图像或 PNG 等无损格式以避免失真。 Chrome 可能利用了 JPEG DCT 系数的低分辨率解码，而 Firefox 采用完整解码后再降采样；差异源于分辨率降低和不同的缩放算法，并且 Chrome 在缩小 PNG 时也会出现类似问题。
+
+hackernews · gutechh · 8月12日 14:00 · [社区讨论](https://news.ycombinator.com/item?id=49272549)
+
+**背景**: JPEG 压缩通过 DCT 和色度子采样丢弃高频细节以节省空间。浏览器可以仅解码部分系数生成低分辨率图像，从而提升性能。Chrome 采用了这一优化，而 Firefox 正在探索类似功能（Bug 2033250）。对于图标而言，锐利边缘至关重要，使得这一权衡尤为明显。
+
+
+**参考链接**:
+
+- [Chroma subsampling - Wikipedia](https://en.wikipedia.org/wiki/Chroma_subsampling)
+
+
+**社区讨论**: 用户反映 PNG 同样受 Chrome 缩放影响，甚至导致部分产品延迟 Electron 升级。社区普遍偏好 Firefox 更锐利的渲染，但也有人指出存在振铃伪影。共识是应使用合适尺寸和格式（PNG）的图像以避免此类问题。
+
+**标签**: `#browsers`, `#image-processing`, `#jpeg`, `#chrome`, `#firefox`
+
+---
+
+<a id="item-14"></a>
+## [Simon Willison 发布 alchemy-utils 0.1a0：受 sqlite-utils 启发的数据库无关 Python 库](https://simonwillison.net/2026/Aug/12/alchemy-utils/) ⭐️ 7.0/10
+
+Simon Willison 发布了 alchemy-utils 0.1a0，这是一个基于 SQLAlchemy 的 Python 库，提供数据库无关的 API，用于插入、更新插入和表自省。他利用 AI 工具（Codex 和 GPT-5.6 Sol Ultra）从早上的想法快速原型化，初步支持 PostgreSQL、SQLite 和 DuckDB。 该库填补了开发者的需求缺口：需要类似 sqlite-utils 的轻量级多数据库工具，但支持 PostgreSQL、DuckDB 等引擎，减少数据库特定代码。同时展示了 AI 辅助开发如何加速复杂工具的原型构建。 这是一个 alpha 版本（0.1a0），功能可能有限且不稳定。该库使用 SQLAlchemy 进行数据库抽象，其 CLI 可通过 uvx 运行并可选安装后端驱动。性能曾是一个问题：将大型 CSV 插入 DuckDB 最初耗时近一小时，但经 AI 优化后降至约 35 秒。
+
+rss · Simon Willison · 8月12日 19:51
+
+**背景**: sqlite-utils 是 Simon Willison 开发的流行 Python 库，用于简化 SQLite 数据库的创建和填充。SQLAlchemy 是广泛使用的 Python SQL 工具包，提供统一的接口访问多种关系数据库。DuckDB 是一个针对分析工作负载优化的嵌入式数据库，PostgreSQL 是强大的开源关系数据库。GPT-5.6 Sol Ultra 是 OpenAI 的高级编码模型，Codex 是一个 AI 编码代理。
+
+
+**参考链接**:
+
+- [GPT - 5 . 6 : Frontier intelligence that scales with your ambition | OpenAI](https://openai.com/index/gpt-5-6/)
+- [sqlite - utils](https://sqlite-utils.datasette.io/)
+- [DuckDB – An in-process SQL OLAP database management system](https://duckdb.org/)
+
+
+**标签**: `#python`, `#database`, `#sqlalchemy`, `#ai-assisted-development`, `#open-source-library`
+
+---
+
+<a id="item-15"></a>
+## [开发者警示：过度依赖 AI 导致代码库无法维护](https://simonwillison.net/2026/Aug/12/florian-herrengt/) ⭐️ 7.0/10
+
+Florian Herrengt 在其博客中描绘了一个场景：开发团队过度依赖 AI 工具后，失去了对代码库的理解，导致即使是先进的 AI 模型也无法修复一个反复出现的 bug。 这一警示突显了 AI 辅助编程带来的‘认知债务’风险，如果开发者不理解自己的代码，项目将变得无法维护，最终影响软件行业的长期可持续发展。 文中提到的‘Fable’指的是 Anthropic 于 2026 年 6 月发布的 Claude Fable 5 模型，该模型在软件工程领域表现卓越，但即便如此，也无法弥补团队因缺乏理解而导致的复杂问题。
+
+rss · Simon Willison · 8月12日 15:08
+
+**背景**: Claude Fable 5 是 Anthropic 公司 2026 年 6 月发布的公开版‘Mythos-class’大语言模型，在软件工程、知识工作和科学研究等任务中表现顶尖。它属于 Claude 系列，该系列还包括 Haiku、Sonnet 和 Opus 等模型。文中所描述的情景反映了 AI 辅助编程广泛存在的‘认知债务’问题——开发者逐渐丧失对自身系统的理解和推理能力。
+
+
+**参考链接**:
+
+- [Fable (AI)](https://en.wikipedia.org/wiki/Fable_%28AI%29)
+- [Claude Fable 5 and Claude Mythos 5 \ Anthropic](https://www.anthropic.com/news/claude-fable-5-mythos-5)
+
+
+**标签**: `#AI`, `#software engineering`, `#code quality`, `#maintainability`, `#developer productivity`
+
+---
+
+<a id="item-16"></a>
+## [Sophie Alpert 提出政策：工程师必须对 AI 辅助文档的每一句话负责](https://simonwillison.net/2026/Aug/11/there-are-no-lossless-transformations-of-natural-language-text/) ⭐️ 7.0/10
+
+Sophie Alpert 分享了她对工程师使用 AI 辅助写作的内部政策，指出自然语言文本的每一次改写都会改变原意，工程师必须对文档中的每一句话负责。 该政策直接回应了 AI 生成文本可能不代表作者真实意图的风险，这种风险会导致混淆和浪费审阅者时间。随着 AI 写作工具普及，它强化了工程文档中的责任意识。 核心规则：&\#x27;你必须为文档中的每一个想法和每一句话负责。&\#x27; 如果审阅者质疑某一行，回复&\#x27;那是 AI 写的&\#x27;是不可接受的。文章强调，只有作者才有最详细的心理表征，因此任何 AI 改写都可能丢失细微含义。
+
+rss · Simon Willison · 8月11日 23:48
+
+**背景**: 在计算机科学中，&\#x27;无损转换&\#x27;指保留所有原始信息的操作，如无损压缩算法。该文章将这一概念应用于自然语言，认为与数据不同，文本改写总是会改变含义。AI 写作工具（如大型语言模型）能生成流畅文本，但缺乏作者完整的上下文和意图，导致细微的信息丢失。这在软件工程中尤为关键，因为精确的文档对团队沟通和代码可维护性至关重要。
+
+
+**参考链接**:
+
+- [There are no lossless transformations of natural-language text](https://simonwillison.net/2026/Aug/11/there-are-no-lossless-transformations-of-natural-language-text/)
+- [There are no lossless transformations of natural-language text – Sophie Alpert](https://sophiebits.com/2026/06/25/there-are-no-lossless-transformations-of-natural-language-text)
+- [There are no lossless transformations of natural-language text | Hacker News](https://news.ycombinator.com/item?id=48980425)
+
+
+**社区讨论**: 在 Hacker News 上，有评论者认为，在文档不被数千人阅读的场景下，为 AI 代理编写高质量指令可能比手写文档更有价值，表明 AI 生成的文档可能足够。这反映了对严格所有权政策的一种务实反对意见。
+
+**标签**: `#AI writing`, `#LLM ethics`, `#engineering documentation`, `#software engineering`
 
 ---
 
 <a id="item-17"></a>
-## [新工具按旅行体验而非学术排名评估计算机科学会议](https://www.reddit.com/r/MachineLearning/comments/1vmbdk6/i_built_an_honest_cs_conference_ranking_sorted_by/) ⭐️ 6.0/10
+## [2026 年日食网络摄像头聚合工具](https://jonty.github.io/2026_eclipse_webcams/) ⭐️ 6.0/10
 
-一个名为 honestcsrankings.org 的网站根据目的地质量（天气、安全、成本、氛围）对约 540 个即将召开的 CORE 排名计算机科学会议进行排序，而不是按学术声望，并设有“冷门”标签展示在糟糕地点举办的高等级会议。 它为研究人员提供了一个实用的出行规划视角，承认许多人在选择会议时已考虑目的地，并幽默地凸显了声望与享受之间的权衡。 该网站使用当月真实气候数据、全球和平指数、世界银行价格水平，并通过 WikiCFP 获取小型会议信息；支持按领域、排名、开放截止日期和距家乡距离筛选，并可导出.ics 日历和分享深层链接。
+该工具最初为 2024 年美国日食匆忙开发，现在被重新用于 2026 年日食，聚合了冰岛和西班牙的网络摄像头直播。作者在 Hacker News 上分享后引发了热烈讨论。 它让无法前往现场的人也能通过网络摄像头实时观看日食，体现了快速开发项目的实用价值，并反映了社区对天文奇观的热情。 该工具只是一个简单的直播画面聚合页面，创建者幽默地提到由于流量过大，可能对摄像头服务器造成类似 DDOS 的冲击。
+
+hackernews · zoenolan · 8月12日 11:53 · [社区讨论](https://news.ycombinator.com/item?id=49270953)
+
+**背景**: 2026 年日全食将经过冰岛和西班牙。当地的网络摄像头可供远程观看。作者曾为 2024 年美国日食做过类似聚合，在日全食开始前几分钟才完成。日食是罕见的天文现象，常被视为人生节点或集体活动契机。
+
+**社区讨论**: 评论中大家分享了自己的日食追忆，有人提到公元前 585 年泰勒斯首次预测日食被视为科学诞生的象征，还有人提供了具体的摄像头链接和太阳能板监测数据。整体氛围积极，充满热情，许多用户欣赏该工具的简洁实用。
+
+**标签**: `#astronomy`, `#eclipse`, `#webcams`, `#side-project`, `#hackernews`
+
+---
+
+<a id="item-18"></a>
+## [新网站按旅行吸引力而非学术排名对 CS 会议进行排序](https://www.reddit.com/r/MachineLearning/comments/1vmbdk6/i_built_an_honest_cs_conference_ranking_sorted_by/) ⭐️ 6.0/10
+
+一位研究人员创建了一个网站，根据天气、安全、成本和城市氛围等目的地质量，对约 540 个即将召开的计算机科学会议进行排名，而非依据 CORE 学术排名。该工具还突出显示了在糟糕地点举行的顶级会议，称为&\#x27;冷门&\#x27;。 该工具解决了研究人员在选择论文提交地点时常常考虑旅行吸引力这一实际问题，用真实旅行数据补充了纯学术排名。它有助于让参会体验更愉快，并可能影响投稿决策，尤其是对于那些寻求资助旅行的人。 排名综合了会议月份的实际气候数据、全球和平指数（安全）、世界银行价格水平（成本）以及用户报告的城市氛围；还支持按领域、学术等级和开放截止日期筛选，并提供日历导出和深度链接功能。局限性包括尚未公布的会议缺失、如 COLM 等未获 CORE 排名的会议，以及从 WikiCFP 抓取的数据可能存在错误。
 
 reddit · r/MachineLearning · /u/JohnAZoidberg77 · 8月12日 11:23
 
-**背景**: CORE 排名是评估计算机科学会议质量的国际协作体系（A\*、A、B、C 级）。WikiCFP 是一个被研究人员广泛使用的众包征文数据库。该工具翻转了衡量标准，关注参会者的实际体验。
+**背景**: CORE 会议排名是评估计算机科学会议声望的标准方法，分为 A\*、A 等等级。研究人员在选择会议时通常会非正式地考虑旅行目的地，但此前没有正式工具按旅行质量对会议进行排名。全球和平指数（GPI）是由经济与和平研究所发布的年度报告，通过犯罪和冲突等指标衡量国家的和平程度。WikiCFP 是一个众包的征稿启事数据库，常被用于发现小型会议。
 
 
 **参考链接**:
 
 - [portal. core .edu.au/conf- ranks](https://portal.core.edu.au/conf-ranks/)
-- [WikiCFP : Call For Papers of Conferences, Workshops and Journals](http://www.wikicfp.com/cfp/servlet/event.showcfp?eventid=60382&amp;copyownerid=1)
+- [Global Peace Index](https://en.wikipedia.org/wiki/Global_Peace_Index)
+- [WikiCFP : Call For Papers of Conferences, Workshops and Journals](http://www.wikicfp.com/cfp/servlet/event.showcfp?eventid=50233&amp;copyownerid=1)
 
 
-**标签**: `#CS conferences`, `#academic tools`, `#travel`, `#ranking`, `#machine learning`
+**标签**: `#conference rankings`, `#academic tools`, `#machine learning`, `#humor`, `#web tool`
+
+---
+
+<a id="item-19"></a>
+## [AAAI 2027 审稿人发现代码提交率低，引发可复现性讨论](https://www.reddit.com/r/MachineLearning/comments/1vlqjby/aaai_2027_review_no_code_submission_d/) ⭐️ 6.0/10
+
+一位 AAAI 2027 的审稿人注意到，尽管会议明确强调可复现性，但令人惊讶的是，很少有投稿包含代码实现。该审稿人对此趋势提出质疑，并在初步评分中予以考虑。 缺少代码会削弱研究的可复现性，并引发对结果有效性的担忧，尤其是在 AI 工具能生成虚假结果论文的当下。这可能影响会议及更广泛机器学习社区的可信度。 AAAI 2027 明确要求提交详细的附录和代码以确保可复现性。该审稿人对自己负责的批次中代码提交率低感到惊讶，但尚不清楚这是否是普遍现象。审稿人质疑是否应对无代码论文予以扣分。
+
+reddit · r/MachineLearning · /u/wontonut · 8月11日 18:58
+
+**背景**: AAAI（人工智能促进协会）是顶级 AI 会议，强调严谨、可复现的研究。代码提交日益被鼓励以验证声明，但并非总是强制要求。审稿人的担忧凸显了在机器学习领域，特别是随着 AI 生成内容兴起，关于可复现性的持续辩论。
+
+**标签**: `#machine-learning`, `#reproducibility`, `#academic-publishing`, `#code-submission`, `#AAAI`
+
+---
+
+<a id="item-20"></a>
+## [为具有预览随机事件的随机合并谜题寻求强化学习/规划算法](https://www.reddit.com/r/MachineLearning/comments/1vlfavg/planningrl_for_a_stochastic_singleplayer_merge/) ⭐️ 6.0/10
+
+一位开发者正在为一种随机单玩家合并谜题寻求强化学习与规划方面的算法和论文，该谜题具有后状态、可预览的随机事件以及长期吞吐量优化目标。 该问题结合了多个有趣的 AI 挑战：在已知未来随机事件下的不确定性决策、有限规划预算的高效利用以及长期吞吐量优化。其解决方案对随机调度、游戏 AI 和随时规划等更广泛领域具有参考价值。 游戏包含 6 个最大高度为 7 的垂直堆叠，30 种可能的动作可移动连续的同色瓷砖串，当顶部有 3 个以上相同瓷砖时合并，每 3 个动作后预览接下来 6 个随机瓷砖。目标是在单局或 30 分钟内最大化消失的 9 的数量，当前网络使用列置换等变架构，输入特征 394 个。
+
+reddit · r/MachineLearning · /u/CaiwenGong · 8月11日 11:53
+
+**背景**: 后状态是智能体执行动作后、环境随机性发生前即刻到达的状态，常用于双陆棋或 2048 等游戏中以简化学习。预览随机事件使智能体在随机结果实际发生前就已知晓，这改变了规划问题的性质。长期吞吐量优化是仿真优化中的经典问题，其目标是在长时间跨度内最大化达成目标的平均速率，而非单次得分。
+
+
+**参考链接**:
+
+- [Reinforcement Learning-TD learning from afterstates - Stack Overflow](https://stackoverflow.com/questions/31227273/reinforcement-learning-td-learning-from-afterstates)
+- [Stochastic Games in Artificial Intelligence - GeeksforGeeks](https://www.geeksforgeeks.org/artificial-intelligence/stochastic-games-in-artificial-intelligence/)
+- [Simulation Optimization Library: Throughput Maximization - Wikipedia](https://en.wikipedia.org/wiki/Simulation_Optimization_Library:_Throughput_Maximization)
+
+
+**标签**: `#reinforcement-learning`, `#planning`, `#afterstates`, `#game-ai`, `#stochastic-optimization`
 
 ---
 
