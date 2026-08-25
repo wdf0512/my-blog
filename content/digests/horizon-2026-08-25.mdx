@@ -1,0 +1,310 @@
+---
+title: "AI 技术情报 · 2026-08-25"
+slug: horizon-2026-08-25
+date: 2026-08-25
+published: true
+description: "从 34 条内容中精选 14 条 AI/ML 重要动态"
+item_count: 14
+total_fetched: 34
+---
+
+> 从 34 条内容中筛选出 14 条重要资讯。
+
+---
+
+1. [微软画图和照片在 AI 编辑图像中嵌入隐形用户标识水印](#item-1) ⭐️ 8.0/10
+2. [旧金山变身可交互 3D 视频游戏](#item-2) ⭐️ 8.0/10
+3. [欧盟包装废弃物法规引发争议，小创客负担过重？](#item-3) ⭐️ 8.0/10
+4. [Claude Fable 的高昂成本终结了 AI 模型改进的“免费午餐”时代](#item-4) ⭐️ 8.0/10
+5. [AI 通过空间编程生成可编程 3D 物体](#item-5) ⭐️ 8.0/10
+6. [小米新 ARM 芯片宣称单核性能比肩苹果，多核更优](#item-6) ⭐️ 7.0/10
+7. [XMPP 协议诞生 25 周年：去中心化通讯的独立之路](#item-7) ⭐️ 7.0/10
+8. [IPFS 维护团队 Shipyard 将逐步终止集中式支持](#item-8) ⭐️ 7.0/10
+9. [你的可执行文件其实是一个 SQLite 数据库](#item-9) ⭐️ 7.0/10
+10. [AAAI 2027 组织方承认存在评审者通过“2-循环”串通的行为](#item-10) ⭐️ 7.0/10
+11. [CCPL：延迟校正的贝尔曼算子与因果归因，用于带约束的强化学习](#item-11) ⭐️ 7.0/10
+12. [苹果确认 iCloud+ 隐藏邮件地址将继续使用 icloud.com 域名](#item-12) ⭐️ 6.0/10
+13. [中国互联网边缘群体声称唐朝从未存在](#item-13) ⭐️ 6.0/10
+14. [Unbounded Labs 开源复古 LLM Bart：基于 1931 年前文本的 2.82B 参数模型](#item-14) ⭐️ 6.0/10
+
+---
+
+<a id="item-1"></a>
+## [微软画图和照片在 AI 编辑图像中嵌入隐形用户标识水印](https://xusheng.dev/posts/reversing/mspaint_invisible_watermark/main/) ⭐️ 8.0/10
+
+微软画图和照片被发现会在使用 AI 功能编辑的图像中悄悄添加一个不可见的、用户专属的水印（GUID），即使 AI 处理在本地完成也是如此。 这种无法由用户禁用的隐形水印可将图像追溯到创作者的微软账户，破坏匿名性，尤其对敏感或政治内容构成严重隐私风险。 该水印是一个全局唯一标识符（GUID），嵌入在图像元数据或像素数据中，即使使用本地 AI 模型（如 Stable Diffusion）进行生成或编辑也会被添加。目前尚不清楚非 AI 编辑是否也包含此水印。
+
+hackernews · ComputerGuru · 8月24日 15:28 · [社区讨论](https://news.ycombinator.com/item?id=49421158)
+
+**背景**: 隐形数字水印是一种在不影响视觉感知的情况下将信息嵌入媒体的技术，用于内容认证和来源追踪。AI 生成内容越来越多地被水印标记以区分合成媒体。微软的方法使用与用户账户绑定的唯一标识符（GUID），类似于数字指纹，可用来在图像公开分享时识别创作者。
+
+
+**参考链接**:
+
+- [Invisible Digital Watermarking | The smart way to protect your online content](https://www.imatag.com/digital-watermarking)
+- [AI Watermarking 101: Tools and Techniques](https://huggingface.co/blog/watermarking)
+
+
+**社区讨论**: 社区普遍担忧隐私和匿名性。评论指出，隐形水印是“针对互联网匿名性的武器”，因为可通过法律要求微软交出用户身份。有人认为 AI 方面是转移视线，真正问题是秘密嵌入标识符。还有人回忆起微软在其他工具中曾有类似草率的水印实现，建议避免使用画图和其他任何 AI 功能微软应用。
+
+**标签**: `#privacy`, `#watermarking`, `#microsoft`, `#reverse-engineering`, `#ai-ethics`
+
+---
+
+<a id="item-2"></a>
+## [旧金山变身可交互 3D 视频游戏](https://sf.thijs.gg/) ⭐️ 8.0/10
+
+开发者发布了一个互动 3D 演示，利用真实地图数据渲染街道、建筑和地形，将旧金山整座城市变成了类似视频游戏的体验。用户可以驾车探索并收集金币，该项目已引发社区热烈反响。 它展示了将开放地理数据与游戏引擎结合，创造沉浸式城市模拟的潜力，可能启发游戏、城市规划或虚拟旅游等应用。同时也表明相关技术已变得容易获取，引发了关于 MMO 和 GTA 式体验的讨论。 该演示基于网页，可能使用 WebGL 和 OpenStreetMap 数据，实时渲染海拔和建筑。评论指出某些人行天桥下存在碰撞缺陷，且尽管可驾驶汽车，但整体仍为技术演示而非完整游戏。
+
+hackernews · centrosphere · 8月24日 17:05 · [社区讨论](https://news.ycombinator.com/item?id=49422784)
+
+**背景**: 该项目利用开源地理空间数据（如 OpenStreetMap）和 3D 渲染技术构建游戏化环境。WebGL 等技术支持浏览器端 3D 图形，开发者通过地图数据生成建筑、道路和地形的 3D 网格，并加入金币收集等简单玩法。这契合了‘数字孪生’和现实数据在娱乐中应用的潮流。
+
+**社区讨论**: 社区评论总体非常积极，人们对可能推出高分辨率离线版本、多人模式和与 Google 街景的整合感到兴奋。有人表达了对虚拟旧金山的怀旧和情感共鸣。还有人讨论了添加地标、生成 GTA 风格地图等技术改进，同时一个小涂层碰撞缺陷被指出。
+
+**标签**: `#3D rendering`, `#game development`, `#map data`, `#San Francisco`, `#urban simulation`
+
+---
+
+<a id="item-3"></a>
+## [欧盟包装废弃物法规引发争议，小创客负担过重？](https://lectronz.com/u/lectronz/articles/how-europe-is-killing-makers-and-micro-entrepreneurs) ⭐️ 8.0/10
+
+Lectronz 上一篇文章称，欧盟的包装和包装废弃物法规给微型创业者和硬件创客带来了过高的合规成本，可能扼杀创新。该文章引发了激烈讨论，社区成员指出微型企业享有豁免，并批评了文章的解读方式。 这场争论凸显了环境监管与小规模创业生存之间的紧张关系。如果法规被认为过于繁重，可能会赶走独立创客和初创企业，削弱欧洲的创新生态，并将活动推向监管更集中或更宽松的地区。 欧盟的常见问题解答明确指出，使用通用包装的微型企业可豁免多项要求，且欧盟委员会现已建议成员国在修正案生效前暂停执法。评论者认为，真正的问题在于 20 多个成员国各自为政，形成了多个版本的法律，而不是欧盟法规本身。
+
+hackernews · l-one-lone · 8月24日 13:05 · [社区讨论](https://news.ycombinator.com/item?id=49419237)
+
+**背景**: 欧盟包装和包装废弃物法规旨在减少包装废弃物并促进循环经济。它要求生产者对投入市场的包装进行注册、报告数据并支付费用。创客社区由小型硬件初创企业和个人创作者组成，通常发货量小，可能缺乏资源应对原本为大型企业设计的复杂合规流程。
+
+**社区讨论**: 评论者普遍认为文章夸大了影响，指出微型企业享有豁免且欧盟委员会正在修正。他们强调真正的痛点是各成员国各自为政的执法方式，给小企业造成了高昂的成本碎片化。有人将中国集中式监管模式进行对比，即所有平台通过单一系统完成合规，并对欧盟成员国破坏统一努力表示失望。
+
+**标签**: `#EU regulations`, `#entrepreneurship`, `#small business`, `#maker community`, `#policy`
+
+---
+
+<a id="item-4"></a>
+## [Claude Fable 的高昂成本终结了 AI 模型改进的“免费午餐”时代](https://simonwillison.net/2026/Aug/23/drew-breunig/) ⭐️ 8.0/10
+
+Anthropic 发布的 Claude Fable 模型能力极强但价格昂贵，打破了以往新模型总是以相同或更低价格带来性能提升的趋势，迫使开发者必须在编码任务中分配不同模型。 这标志着 AI 辅助编码领域的重大转变：自动、免费的改进时代已经结束，企业必须根据成本与能力的权衡策略性地分配工作，这将影响生产力和预算。 Claude Fable 在编程和推理上表现卓越，但 Drew Breunig 特别指出 Opus、K3 和智谱 AI 的开源模型 GLM 对大多数任务“足够好”，Fable 的高昂成本仅在最棘手的问题上才值得。
+
+rss · Simon Willison · 8月23日 19:55
+
+**背景**: 长期以来，AI 行业遵循着“新模型性能提升但价格不变或更低”的模式，开发者习惯无成本地享受升级。Anthropic 的 Claude Opus 系列一直是顶级模型，而新发布的 Claude Fable 在编码能力上取得突破，但价格高昂。GLM 是智谱 AI 开发的开源大模型，为许多任务提供了经济实惠的选择。
+
+
+**参考链接**:
+
+- [Claude Fable \ Anthropic](https://www.anthropic.com/claude/fable)
+- [Claude Opus 5](https://overchat.ai/models/claude/claude-opus-5)
+- [GLM (AI) - Wikipedia](https://en.wikipedia.org/wiki/GLM_%28AI%29)
+
+
+**标签**: `#ai`, `#llm`, `#claude`, `#coding`, `#cost-optimization`
+
+---
+
+<a id="item-5"></a>
+## [AI 通过空间编程生成可编程 3D 物体](https://www.reddit.com/r/MachineLearning/comments/1vxcc1h/r_using_ai_as_a_spatial_software_generator_to/) ⭐️ 8.0/10
+
+该论文提出了一种方法，让大语言模型生成结构化、参数化的代码而非固定的多边形网格，从而创造出从诞生起就具备分层结构、可关节运动和可适应性的 3D 资产。 这种方法可能彻底改变游戏开发、模拟、AR/VR 和工业设计，因为生成的物体可立即编辑、直接用于动画，并能根据不同计算环境自动调整细节级别，大幅减少人工后期处理。 生成的代码式物体在创建复杂有机形状方面落后于基于网格的 AI 生成器，但在结构逻辑和可编程性上表现突出。该论文标题为“Code-native generation of highly programmable 3D assets”，并在 nova3d.xyz 提供实时演示和 GitHub 代码库。
+
+reddit · r/MachineLearning · /u/mhb\_11 · 8月24日 19:10
+
+**背景**: 传统 AI 3D 生成器产生的是不透明的多边形网格模型，难以编辑或动画化。空间编程使用代码定义 3D 几何体，包含参数、逻辑和关系，使物体可被检查、测量和修改。随着大语言模型生成代码的能力越来越强，它们现在能生成本质上为软件的 3D 资产，解锁了静态网格无法提供的功能。
+
+
+**参考链接**:
+
+- [Paper page - Nova 3 D : Code-Native Generation of Programmable ...](https://huggingface.co/papers/2607.22738)
+- [Researchers Generate 3 D Assets as Editable Code... | The Revision](https://therevision.co/articles/researchers-generate-3d-assets-as-editable-code-not-meshes)
+
+
+**标签**: `#3D Generation`, `#Spatial Programming`, `#LLMs`, `#Programmable Assets`, `#Neural 3D Synthesis`
+
+---
+
+<a id="item-6"></a>
+## [小米新 ARM 芯片宣称单核性能比肩苹果，多核更优](https://twitter.com/lemire/status/2091894299289874926) ⭐️ 7.0/10
+
+小米发布了基于 ARM 架构的 XRing O3 芯片，其 Geekbench 单核跑分 3945，与苹果 M5 相当；多核跑分 15221，凭借 10 核设计超越 6 核的苹果 M5 iPad。 这标志着小米芯片设计能力的提升，作为全球第三大智能手机制造商，它可能减少对高通和联发科的依赖，从而重塑移动芯片市场格局。 该芯片采用 ARM Cortex C1-Ultra 架构，与联发科天玑 9500 相同，但集成了小米自研的互联总线、台积电 3nm 工艺、自研 NPU 及 LPDDR6 内存支持。受手机散热限制，实际性能可能低于测试值，能效表现也未经验证。
+
+hackernews · tosh · 8月24日 15:08 · [社区讨论](https://news.ycombinator.com/item?id=49420873)
+
+**背景**: ARM 公司将处理器设计授权给芯片厂商。苹果持有架构许可，可自研核心；而联发科、小米等多采用 ARM 现成的 Cortex 核心。单线程性能对手机响应速度至关重要，Geekbench 是常用的性能测试工具。
+
+
+**参考链接**:
+
+- [ARM Cortex](https://en.wikipedia.org/wiki/ARM_Cortex)
+- [Single threaded performance](https://en.wikipedia.org/wiki/Single_threaded_performance)
+
+
+**社区讨论**: 评论指出，小米并未自研 CPU 核心，而是使用标准 ARM 设计，多核优势仅来自核心数增加。能效是关键缺失指标，部分人认为这是对联发科和高通的威胁，也有人强调其仍落后于苹果的自研芯片。
+
+**标签**: `#hardware`, `#ARM`, `#mobile-processors`, `#Xiaomi`, `#Apple`
+
+---
+
+<a id="item-7"></a>
+## [XMPP 协议诞生 25 周年：去中心化通讯的独立之路](https://gultsch.de/posts/25-years-of-digital-independence/) ⭐️ 7.0/10
+
+一篇回顾性文章纪念 XMPP 协议诞生 25 周年，强调其在去中心化消息传递中的持久作用，并引发了社区对其韧性和未来潜力的热烈讨论。 在即时通讯日益中心化的趋势下，XMPP 的联邦化架构和开放标准为数字主权提供了关键替代方案，其持续存在的社区活跃度表明开放协议仍具有重要价值。 文章提到了 Movim、Fluux 等现代 XMPP 项目，以及 jmp.chat 等电话桥接方案，社区还探讨了利用 Iroh 网络实现无服务器对等通信等创新思路。
+
+hackernews · inputmice · 8月24日 15:51 · [社区讨论](https://news.ycombinator.com/item?id=49421536)
+
+**背景**: XMPP（原名 Jabber）是一种基于 XML 的开放即时通讯协议，采用类似电子邮件的联邦架构，允许任何人自建服务器并与全球用户互通。它曾于 2004 年被确立为 IETF 标准，并曾被 Google、Facebook 等大型平台采用，目前仍有许多客户端和服务器软件持续维护。
+
+
+**参考链接**:
+
+- [XMPP protocol](https://en.wikipedia.org/wiki/XMPP_protocol)
+- [An Overview of XMPP | XMPP - The universal messaging standard](https://xmpp.org/about/technology-overview/)
+
+
+**社区讨论**: 社区讨论整体积极怀旧且充满期待。用户表达了对 XMPP 的喜爱，惋惜 Matrix 协议未在 XMPP 基础上发展，有人分享了将 XMPP 用于 AI 代理通信、自建电话桥接等实际案例，并提出了基于 Iroh 等去中心化网络消除服务器依赖的创新构想。
+
+**标签**: `#xmpp`, `#decentralization`, `#open-protocols`, `#messaging`, `#retrospective`
+
+---
+
+<a id="item-8"></a>
+## [IPFS 维护团队 Shipyard 将逐步终止集中式支持](https://ipshipyard.com/blog/2026-the-end-of-ipfs-at-shipyard/) ⭐️ 7.0/10
+
+IPFS 核心维护团队 Shipyard 宣布将停止对上游项目（如 go-libp2p 和 js-libp2p）的贡献，并终止规范制定与生态协调工作，结束其集中式支持角色。IPFS 项目本身不会关闭，将转向个人维护者资助模式。 这标志着 IPFS 去中心化进程的重大转变，大型集中维护团队的退出可能影响关键实现的开发速度和稳定性。这凸显了去中心化开源基础设施的可持续性挑战，并可能影响依赖这些实现的用户。 Shipyard 于 2024 年 4 月成立，由 IPFS 和 libp2p 维护者组成的独立集体，仅两年后便终止，凸显了缺乏强大商业模式下开源维护的困难。最初的公告含混不清，导致许多人误以为整个 IPFS 项目要关闭，但后续澄清确认仅是 Shipyard 团队结束其角色。
+
+hackernews · iand · 8月24日 15:48 · [社区讨论](https://news.ycombinator.com/item?id=49421489)
+
+**背景**: IPFS（星际文件系统）是一种去中心化的点对点协议，通过内容寻址而非位置寻址来存储和共享数据。它依赖于多种实现和节点网络。Interplanetary Shipyard 是一个独立的开发者集体，负责维护 go-libp2p、js-libp2p 等关键实现，并参与 IPFS 规范制定和生态协调。它于 2024 年在 Protocol Labs 减少集中支持后成立，旨在推动维护去中心化。
+
+
+**参考链接**:
+
+- [The end of IPFS at Shipyard](https://ipshipyard.com/blog/2026-the-end-of-ipfs-at-shipyard/)
+- [IPFS &amp; libp2p Devs Go Independent: Meet Interplanetary Shipyard | IPFS Blog &amp; News](https://blog.ipfs.tech/shipyard-hello-world/)
+- [IPFS](https://en.wikipedia.org/wiki/IPFS)
+
+
+**社区讨论**: 社区成员对误导性公告表示困惑，最高赞评论澄清 IPFS 不会关闭。前维护者表达了惋惜，并推荐了由前 IPFS 开发者构建的 Iroh 等替代方案。有人批评 Protocol Labs 的优先事项，指出 Cloudflare 早前放弃 IPFS 已是预兆。还有人讽刺用 Google 表单收集反馈与去中心化理念相悖。总体情绪是失望和对可持续性的担忧。
+
+**标签**: `#IPFS`, `#decentralization`, `#open-source-maintenance`, `#p2p`, `#ecosystem-shift`
+
+---
+
+<a id="item-9"></a>
+## [你的可执行文件其实是一个 SQLite 数据库](https://simonwillison.net/2026/Aug/24/your-executable-is-a-sqlite-database/) ⭐️ 7.0/10
+
+Farid Zakaria 展示了一种巧妙的技术，将 ELF 可执行组件嵌入 SQLite 数据库文件中，使其可直接执行。他将数据库文件头的应用 ID（偏移 68 字节）设为&\#x27;SELF&\#x27;，并通过自带的 self-exec 解释器提取并运行这些组件。 这一技巧将两种广泛使用的文件格式巧妙结合，展现了 ELF 和 binfmt\_misc 的灵活性，可能简化依赖 SQLite 数据的工具打包和分发，为 Linux 可执行文件格式提供了新的创意思路。 该技术使用特定的 SQLite 表结构（self.sql）和 C 语言编写的 self-exec 解释器。通过 binfmt\_misc 注册，内核可自动识别文件偏移 68 字节处的&\#x27;SELF&\#x27;魔数，并调用 self-exec 执行。
+
+rss · Simon Willison · 8月24日 11:38
+
+**背景**: ELF（可执行与可链接格式）是 Linux 系统上标准的二进制文件格式。binfmt\_misc 是 Linux 内核的一项功能，允许根据魔数将任意文件格式交给用户空间程序执行。SQLite 数据库文件头部有一个 4 字节的应用 ID 字段，位于偏移 68 字节处。本文利用该字段来伪装成一个自定义的可执行格式。
+
+
+**参考链接**:
+
+- [Executable and Linkable Format - Wikipedia](https://en.wikipedia.org/wiki/Executable_and_Linkable_Format)
+- [Binfmt misc](https://en.wikipedia.org/wiki/Binfmt_misc)
+- [Kernel Support for miscellaneous Binary Formats (binfmt_misc) — The Linux Kernel documentation](https://docs.kernel.org/admin-guide/binfmt-misc.html)
+
+
+**标签**: `#SQLite`, `#ELF`, `#Linux`, `#executable`, `#file format`
+
+---
+
+<a id="item-10"></a>
+## [AAAI 2027 组织方承认存在评审者通过“2-循环”串通的行为](https://www.reddit.com/r/MachineLearning/comments/1vwujcy/aaai_2027_reviewer_bidding_and_assignment/) ⭐️ 7.0/10
+
+AAAI 2027 组织方发送邮件承认审稿过程中存在串通行为，特别指出“2-循环”模式（即论文 A 的作者审阅论文 B，而论文 B 的作者审阅论文 A），并暗示这类模式可能集中在某个国家的作者中。 这一揭露威胁到顶级机器学习会议的公正性，引发对同行评审公平性的担忧，以及串通作者可能获得不正当优势的问题，从而可能损害整个学术出版过程的公信力。 邮件指出，当大量投稿来自同一国家时，分配算法可能自然产生“2-循环”，这可能导致检测出现偏差。发帖者还提到，一些顶级会议接收的论文未公开代码，妨碍了结果的可复现性。
+
+reddit · r/MachineLearning · /u/Fragrant\_Fan\_6751 · 8月24日 06:11
+
+**背景**: AAAI、NeurIPS、ICML 等机器学习会议使用自动评审分配系统，根据专家领域和利益冲突将论文与评审者匹配。2-循环是指两位作者互相审阅对方论文的配对，若作者之间协调评审，则可能被用于串通。这种模式可能偶然出现，但当某个国家投稿量占主导时，其作者之间出现 2-循环的概率增加，使得区分巧合与蓄意串通更加困难。
+
+
+**参考链接**:
+
+- [Options for improving peer review | by Matthew McKeever | Medium](https://mittmattmutt.medium.com/options-for-improving-peer-review-aa21b245fa04)
+
+
+**标签**: `#peer review`, `#academic integrity`, `#collusion`, `#AAAI`, `#machine learning`
+
+---
+
+<a id="item-11"></a>
+## [CCPL：延迟校正的贝尔曼算子与因果归因，用于带约束的强化学习](https://www.reddit.com/r/MachineLearning/comments/1vx11hz/delaycorrected_bellman_operator_causal/) ⭐️ 7.0/10
+
+研究者提出了 CCPL，一种带约束的强化学习方法，该方法引入了延迟校正的贝尔曼算子，该算子具有自适应有效折扣因子，并给出了在未知随机延迟下成立的压缩性证明；同时提出了干预后果网络（ICN），利用结构因果模型标签将延迟后果归因到真正的因果动作。 该工作填补了带约束强化学习在真实场景中的关键空白：基于时间邻近性的惩罚往往会错误归因延迟且随机的违规行为，导致策略不安全。通过提供原则性的归因机制，它有望使机器人、自动驾驶和医疗等领域的安全部署成为可能。 延迟校正的贝尔曼算子从后果延迟分布中学习期望意义下的有效折扣因子，且压缩性证明在延迟分布未知时依然成立。ICN 估计每个动作的边际因果贡献，但需要来自环境结构因果模型的预训练标签，这是一个重要的实际限制。
+
+reddit · r/MachineLearning · /u/No\_Cauliflower7923 · 8月24日 12:11
+
+**背景**: 标准的带约束强化学习对即时结果施加约束，但现实中的后果（如安全违规、部件磨损）通常经过随机延迟后才显现。贝尔曼算子是强化学习中根据预期未来奖励表达状态价值的基本更新规则，其压缩性质保证了价值迭代等算法的收敛。因果归因有助于区分相关性和因果性，在归责延迟事件时尤为关键。结构因果模型（SCM）显式描述了变量间的相互影响，支持反事实推理。
+
+
+**参考链接**:
+
+- [Causal Consequence-Penalized Learning for delayed constrained...](https://pypi.org/project/ccpl-rl/)
+- [terminology - What is the Bellman operator in reinforcement learning?](https://ai.stackexchange.com/questions/11057/what-is-the-bellman-operator-in-reinforcement-learning)
+- [Understanding (Exact) Dynamic Programming through Bellman ...](https://web.stanford.edu/class/cme241/lecture_slides/BellmanOperators.pdf)
+
+
+**标签**: `#constrained-reinforcement-learning`, `#causal-inference`, `#bellman-operator`, `#delay-correction`, `#structural-causal-models`
+
+---
+
+<a id="item-12"></a>
+## [苹果确认 iCloud+ 隐藏邮件地址将继续使用 icloud.com 域名](https://developer.apple.com/news/?id=1ptvdtcm) ⭐️ 6.0/10
+
+苹果正式宣布，iCloud+ 的隐藏邮件地址将继续使用 icloud.com 域名，此前曾考虑更改域名，现已根据用户反馈撤销该计划。 这一决定确保了依赖这些匿名地址的用户跨服务的稳定性，避免了地址失效和大量账户更新。同时也体现了苹果对用户反馈的重视。 隐藏邮件地址会生成随机地址并转发到用户真实邮箱，默认使用 icloud.com 域名。部分用户曾看到 privaterelay.appleid.com 地址，造成困惑，苹果此次确认保留了熟悉的 icloud.com。
+
+hackernews · K7PJP · 8月24日 22:13 · [社区讨论](https://news.ycombinator.com/item?id=49426564)
+
+**背景**: 隐藏邮件地址是 iCloud+ 订阅中的一项隐私功能，可生成唯一的随机邮件地址，用于在注册网站或服务时隐藏真实邮箱。这些地址会将邮件转发到真实收件箱，并可随时删除。若更改域名，用户将被迫更新或重新创建地址，可能导致登录和通信中断。
+
+
+**参考链接**:
+
+- [ICloud](https://en.wikipedia.org/wiki/ICloud)
+- [About iCloud Private Relay - Apple Support](https://support.apple.com/en-us/102602)
+
+
+**社区讨论**: 用户普遍对此表示欢迎，许多人感谢苹果听取了反馈。部分用户对 privaterelay.appleid.com 地址仍感到困惑，还有评论希望无需付费开发者账号即可设置“通过 Apple 登录”。
+
+**标签**: `#apple`, `#privacy`, `#email`, `#icloud`, `#product-update`
+
+---
+
+<a id="item-13"></a>
+## [中国互联网边缘群体声称唐朝从未存在](https://www.cnn.com/2026/08/19/style/china-tang-dynasty-never-existed-hoax-intl-hnk) ⭐️ 6.0/10
+
+CNN 报道了中国互联网上一个边缘群体坚称唐朝从未存在，引发在 Hacker News 上的高质量讨论。 这一现象与‘幻影时间’阴谋论类似，表明边缘叙事如何在网上获得关注，损害公众对既有历史学术的信任。 评论者指出，唐朝有大量一手史料、乾陵等考古遗址以及同时期外国记载为证，因此否认唐朝存在的说法荒诞不经。
+
+hackernews · related · 8月24日 21:03 · [社区讨论](https://news.ycombinator.com/item?id=49425819)
+
+**背景**: 唐朝（公元 618-907 年）是中国历史上真实且影响深远的黄金时代，以其文化和经济成就著称。否认其存在是一种边缘阴谋论，类似于西方宣称某些历史时期系伪造的‘幻影时间’假说，这类理论常受民族主义或种族主义叙事驱动。
+
+**社区讨论**: Hacker News 社区普遍认为该阴谋论荒诞不经，用户们指出唐朝存在的大量证据。有人将其比作‘幻影时间’理论并指出其种族主义动机，也有人对叙事战争侵蚀历史真相的广泛趋势表示担忧。
+
+**标签**: `#misinformation`, `#history`, `#conspiracy-theories`, `#internet-culture`, `#China`
+
+---
+
+<a id="item-14"></a>
+## [Unbounded Labs 开源复古 LLM Bart：基于 1931 年前文本的 2.82B 参数模型](https://www.reddit.com/r/MachineLearning/comments/1vx94er/bart_a_vintage_llm_r/) ⭐️ 6.0/10
+
+Unbounded Labs 开发并开源了 Bart，一个 28.2 亿参数的语言模型，该模型完全使用 1931 年之前撰写的 201 亿个英文词元训练，旨在测试模型能否像历史上的科学家那样产生原创科学思想。 该项目挑战了 LLM 仅复述模式的观点；通过将训练数据限制在 1931 年前的文本中，它提供了一个独特的实验平台，以评估模型在没有接触现代知识的情况下能否独立推理科学概念，从而可能深化我们对机器创造力的理解。 该模型在单块 H100 GPU 上训练了 5 天，实现了 60%的模型利用率（MFU）；团队还整理了最大的复古监督微调数据集（41.6 万对分级问答），构建了包含 20 个任务的 Vintage CORE 基准套件，并进行了自主研究，运行了 100 次实验，发现了 26 项改进。
+
+reddit · r/MachineLearning · /u/soggydoggy8 · 8月24日 17:20
+
+**背景**: 在机器学习中，消融研究通过移除组件来评估其影响。监督微调（SFT）是在预训练模型上进一步使用标注示例进行训练，以提升特定任务表现的过程。后训练指的是初始预训练之后的阶段，如 SFT 和对齐，使模型适应实际应用。‘复古 LLM’指仅使用特定历史时期文本训练的语言模型，本例中为 1931 年之前，以模拟该时期的知识和风格。
+
+
+**参考链接**:
+
+- [Ablation (machine learning)](https://en.wikipedia.org/wiki/Ablation_%28machine_learning%29)
+- [Supervised Fine-Tuning (SFT) for LLMs - GeeksforGeeks](https://www.geeksforgeeks.org/artificial-intelligence/supervised-fine-tuning-sft-for-llms/)
+- [Post-training of large language models](https://en.wikipedia.org/wiki/Post-training_of_large_language_models)
+
+
+**标签**: `#LLM`, `#historical-text`, `#training-from-scratch`, `#NLP`, `#experiment`
+
+---
+
