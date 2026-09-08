@@ -3,379 +3,474 @@ title: "AI 技术情报 · 2026-09-08"
 slug: horizon-2026-09-08
 date: 2026-09-08
 published: true
-description: "从 28 条内容中精选 18 条 AI/ML 重要动态"
-item_count: 18
-total_fetched: 28
+description: "从 33 条内容中精选 22 条 AI/ML 重要动态"
+item_count: 22
+total_fetched: 33
 ---
 
-> 从 28 条内容中筛选出 18 条重要资讯。
+> 从 33 条内容中筛选出 22 条重要资讯。
 
 ---
 
-1. [LG 智能电视被曝息屏录音并扫描本地设备](#item-1) ⭐️ 8.0/10
-2. [Caltech Mathathon：首个 AI 数学研究黑客松](#item-2) ⭐️ 8.0/10
-3. [滥用爬虫让 git.kernel.org 消耗 14 核 CPU 渲染 Git 提交，远超合法访问](#item-3) ⭐️ 8.0/10
-4. [OpenAI 首席科学家：构建强大 AI 用于防御，但需避免鲁莽](#item-4) ⭐️ 8.0/10
-5. [Rustuna：高性能 Rust 版 Optuna 超参数优化框架发布](#item-5) ⭐️ 8.0/10
-6. [LLM 引导程序进化以 28 美元打破 10 项圆包装记录](#item-6) ⭐️ 8.0/10
-7. [将 KV 缓存用作智能体运行时，实现交互式 LLM 系统](#item-7) ⭐️ 8.0/10
-8. [IEEE T-PAMI 主编确认幽灵审稿人导致论文被拒](#item-8) ⭐️ 8.0/10
-9. [交互式地图展示洛杉矶 1880 年至 2026 年建筑建造年代](#item-9) ⭐️ 7.0/10
-10. [冰卫星：太阳系中的隐藏海洋世界](#item-10) ⭐️ 7.0/10
-11. [OpenAI 研究人员在编码代理上的日支出激增](#item-11) ⭐️ 7.0/10
-12. [报告：10-20%新通用顶级域名注册为诈骗](#item-12) ⭐️ 7.0/10
-13. [西蒙·威利森警告：从零重写代码库往往失败](#item-13) ⭐️ 7.0/10
-14. [417k 参数递归网络从单一初始状态自主生成《Bad Apple》全视频](#item-14) ⭐️ 7.0/10
-15. [机器学习可复现性因硬件、保密和选择性演示而衰退](#item-15) ⭐️ 7.0/10
-16. [纵向基准测试揭示 API 模型 LLM 性能漂移](#item-16) ⭐️ 7.0/10
-17. [墨卡托与等面积地球投影的动态 D3 动画对比](#item-17) ⭐️ 6.0/10
-18. [PINNStudio：物理信息神经网络的无代码开源图形界面](#item-18) ⭐️ 6.0/10
+1. [LG 智能电视被曝待机录音并窥探局域网](#item-1) ⭐️ 9.0/10
+2. [研究人员在消费级 GPU 上两天内分解 90 年代 CA 的 512 位 RSA 密钥](#item-2) ⭐️ 8.0/10
+3. [D2 的 TALA 自动布局引擎现已开源](#item-3) ⭐️ 8.0/10
+4. [Jellyfin 12.0 发布，迁移顺利且性能提升](#item-4) ⭐️ 8.0/10
+5. [Broadcom 取消 VDDK 下载，增加 VMware 迁移难度](#item-5) ⭐️ 8.0/10
+6. [AI 爬虫使 Linux 内核 Git 服务器负载剧增，14 核全用于渲染](#item-6) ⭐️ 8.0/10
+7. [DNS 滥用：新 gTLD 域名 10-20%为诈骗](#item-7) ⭐️ 8.0/10
+8. [LLM 引导的程序进化改进了 10 个已知最优圆堆积解](#item-8) ⭐️ 8.0/10
+9. [Yandex 提出将 KV 缓存作为大模型智能体运行时](#item-9) ⭐️ 8.0/10
+10. [31,352 次重复测量揭示 LLM 性能漂移](#item-10) ⭐️ 8.0/10
+11. [OpenAI 内部采用编码智能体，递归自我改进成新 AGI 范式](#item-11) ⭐️ 7.0/10
+12. [重写遗留代码为何几乎总是失败](#item-12) ⭐️ 7.0/10
+13. [软件不像建筑，可以无限恶化而不倒塌](#item-13) ⭐️ 7.0/10
+14. [微型循环系统从单一初始状态自主生成完整 Bad Apple 视频](#item-14) ⭐️ 7.0/10
+15. [机器学习可复现性因硬件成本和企业不透明而下降](#item-15) ⭐️ 7.0/10
+16. [研究者声称多模态 LLM 图像处理 Token 用量降低 95%](#item-16) ⭐️ 7.0/10
+17. [PINNStudio：免费开源的无代码 PINN 训练与可视化 GUI](#item-17) ⭐️ 7.0/10
+18. [OpenAI 首席科学家主张以强大 AI 防御威胁，同时警告勿鲁莽](#item-18) ⭐️ 6.0/10
+19. [使用 Claude Code 和 FFmpeg WebAssembly 的浏览器视频压缩器](#item-19) ⭐️ 6.0/10
+20. [通过重排序实现嵌入模型零停机迁移](#item-20) ⭐️ 6.0/10
+21. [Rustuna：高性能 Rust 版 Optuna 发布](#item-21) ⭐️ 6.0/10
+22. [提议：用离线 RL 为火箭联盟打造类似 Stockfish 的决策评估引擎](#item-22) ⭐️ 6.0/10
 
 ---
 
 <a id="item-1"></a>
-## [LG 智能电视被曝息屏录音并扫描本地设备](https://www.youtube.com/watch?v=6IFVTcM28KA) ⭐️ 8.0/10
+## [LG 智能电视被曝待机录音并窥探局域网](https://www.youtube.com/watch?v=6IFVTcM28KA) ⭐️ 9.0/10
 
-LG 智能电视被发现即使在屏幕关闭状态下仍通过内置麦克风录音，并主动扫描用户家庭网络中的其他设备，将数据发送至远程服务器。 这种侵入式行为引发了严重的隐私问题，表明 LG 可能在未经用户真正同意的情况下窃听，可能违反窃听法，并侵蚀人们对智能家居设备的信任。 电视的麦克风在待机状态下保持活跃，录制并存储音频，直到网络连接可用时外传。该电视还会扫描本地网络中的其他设备，可能对家庭环境进行指纹识别。
+一项调查发现，LG 智能电视在屏幕关闭或待机状态下仍在秘密录音，并扫描用户家庭网络中的其他设备，涉及多达 2.16 亿台电视。 这一曝光揭示了严重的隐私侵权问题，用户不会想到电视在关机状态下仍会窃听对话并监控家庭网络，这可能违反窃听法，并严重损害对智能家居设备的信任。 调查发现，LG 的自动内容识别（ACR）和其他数据收集功能在电视看似关闭时仍在运行，捕获音频片段并探测局域网设备。此外，LG 的服务条款要求用户征得所有可能被录音的家庭成员和客人的同意，这既不现实，法律上也存在争议。
 
 hackernews · treve · 9月7日 00:22 · [社区讨论](https://news.ycombinator.com/item?id=49592375)
 
-**背景**: 智能电视通常使用自动内容识别（ACR）技术来识别用户观看内容以进行广告定向。然而，LG 电视被发现超越了这一点，主动录制环境音频并扫描家庭网络，即使在屏幕关闭时也是如此。这使得电视变成了监视设备，而不仅仅是收视跟踪器。
+**背景**: 智能电视普遍使用自动内容识别（ACR）技术截取屏幕画面并追踪观看习惯，但这通常仅在电视开机时进行。LG 的行为更具侵入性，因为即使在屏幕关闭后数据收集仍在继续。此前三星等品牌的 ACR 诉讼已表明，电视制造商在缺乏明确同意的情况下大量收集观看数据。评论者指出的 LG 服务条款赋予公司广泛权利处理音频，并要求用户告知附近所有人，这凸显了此类隐私政策的侵略性。
 
 
 **参考链接**:
 
-- [Automatic content recognition - Wikipedia](https://en.wikipedia.org/wiki/Automatic_content_recognition)
-- [LG Smart TV Privacy: Standby Audio and Home Network Scanning](https://www.theprotec.com/blog/lg-smart-tv-privacy-standby-audio-network-scanning/)
-- [WTF is automatic content recognition?](https://digiday.com/future-of-tv/wtf-is-automatic-content-recognition/)
+- [How to Turn Off Smart TV Snooping Features - Consumer Reports](https://www.consumerreports.org/electronics/privacy/how-to-turn-off-smart-tv-snooping-features-a4840102036/)
+- [How to Disable Smart TV ACR Surveillance (2026 Guide)](https://stateofsurveillance.org/guides/basic/disable-smart-tv-acr-surveillance-2026/)
 
 
-**社区讨论**: 社区普遍持批评态度，强调了 LG 侵入性的服务条款，该条款要求用户通知所有客人可能被录音。用户分享了禁用网络功能的个人经历，一些人提出了可能违反窃听法的法律担忧。那些此前拒绝将电视联网的人普遍感到被证明是正确的。
+**社区讨论**: 社区反应普遍负面，用户对侵入性数据收集表示愤怒。一位评论者指出了 LG 要求通知所有附近人员的荒谬合同条款，其他人则分享主动禁用网络功能的个人经历，感到被证明是正确的。部分人质疑其是否违反窃听法，并指出由广告支撑的网站报道隐私问题的讽刺性。
 
-**标签**: `#privacy`, `#smart-tv`, `#LG`, `#surveillance`, `#IoT`
+**标签**: `#privacy`, `#smart-tv`, `#LG`, `#security`, `#IoT`
 
 ---
 
 <a id="item-2"></a>
-## [Caltech Mathathon：首个 AI 数学研究黑客松](https://mathathonchallenge.com/index.html) ⭐️ 8.0/10
+## [研究人员在消费级 GPU 上两天内分解 90 年代 CA 的 512 位 RSA 密钥](https://mcpherrin.ca/2026/09/07/rsa.html) ⭐️ 8.0/10
 
-加州理工学院本科生组织了首个专注于用 AI 解决研究级数学问题的黑客松，活动持续 40 小时。 该活动开创了 AI 辅助数学研究的新形式，突显了使用大语言模型进行严肃数学的潜力和争议，同时也反映了学生为弥补像 Caltech 这类机构 AI 教育不足所做出的努力。 该黑客松为 40 小时活动，组织者强调负责任地使用 AI。其形式涉及长时间模型运行，有批评者指出这与传统黑客松的高强度工作模式相悖。
+一名研究人员成功分解了一个来自 20 世纪 90 年代证书颁发机构的 512 位 RSA 密钥，仅用一块消费级 GPU 在两天内完成计算。这一实际演示表明，使用现代硬件破解历史加密是何等轻而易举。 这一突破突显了当时大量缺乏前向保密性的加密通信流量，如今任何拥有普通计算资源的人都能解密。这强调了迫切需要弃用弱加密算法，并保护历史通信免受回溯性解密。 该 512 位 RSA 密钥在消费级 GPU 上约 48 小时内被分解，研究人员因 Go 标准库已移除 SSLv3 支持而不得不自行实现 TLS 协议栈。目标是一个 90 年代的 CA 密钥，当时这种密钥长度被认为安全，但如今已可轻易破解。
 
-hackernews · astroanax · 9月7日 09:26 · [社区讨论](https://news.ycombinator.com/item?id=49596055)
+hackernews · ahlCVA · 9月8日 01:16 · [社区讨论](https://news.ycombinator.com/item?id=49604637)
 
-**背景**: 黑客松通常是参与者短时间内协作开发软件项目的密集活动。研究级数学涉及需要深厚专业知识的尖端问题。近年来，大语言模型等 AI 在辅助数学家生成证明或猜想方面展现出潜力，但将其系统性地融入黑客松尚属首次。该活动融合了这些领域。
+**背景**: RSA 加密的安全性依赖于大数分解的困难性。20 世纪 90 年代，512 位 RSA 密钥很常见，但计算能力的进步使其极易被破解。证书颁发机构（CA）是签发数字证书的受信实体，其私钥一旦泄露，可被用来冒充任何网站。许多旧协议缺乏前向保密性，这意味着一旦密钥事后被破解，过去录制的加密流量即可被解密。
 
-**社区讨论**: 组织者进行了 AMA，澄清了由学生主导的性质和资金模式。一位 Caltech 毕业生指出计算机系薄弱，说明该黑客松源于校内 AI 学习机会的匮乏。一些评论者批评了活动形式，认为等待大语言模型输出 40 小时与传统黑客松高强度合作的精髓相悖，且可能与 AI 数学研究的常规方式不符。
 
-**标签**: `#hackathon`, `#mathematics`, `#AI`, `#research`, `#education`
+**参考链接**:
+
+- [RSA (cryptosystem) - Wikipedia](https://en.wikipedia.org/wiki/RSA_%28cryptosystem%29)
+- [512 - bit RSA key in home energy system gives control... - Ars Technica](https://arstechnica.com/security/2024/08/home-energy-system-gives-researcher-control-of-virtual-power-plant/)
+- [Certificate authority - Wikipedia](https://en.wikipedia.org/wiki/Certificate_authority)
+
+
+**社区讨论**: 评论者指出 90 年代大量流量未使用临时密钥，引发了对政府可能存储加密数据以待未来破解的担忧。有人批评研究人员依赖 LLM 输出来分析自定义 TLS 实现，但也有人认为这一成就令人印象深刻，且 SSL 评级报告颇具幽默感。
+
+**标签**: `#cryptography`, `#RSA`, `#factoring`, `#historical security`, `#TLS/SSL`
 
 ---
 
 <a id="item-3"></a>
-## [滥用爬虫让 git.kernel.org 消耗 14 核 CPU 渲染 Git 提交，远超合法访问](https://simonwillison.net/2026/Sep/7/creepy-crawlies/) ⭐️ 8.0/10
+## [D2 的 TALA 自动布局引擎现已开源](https://d2lang.com/blog/tala-is-open-source/) ⭐️ 8.0/10
 
-git.kernel.org 维护者 Konstantin Ryabitsev 发布报告，揭露滥用爬虫对资源的严重消耗。他指出，在 5 个地理分布节点上，始终有 14 个 CPU 核心专门为爬虫渲染 Git 提交为 HTML 页面，所消耗的 CPU 周期已超过包括 git clone 在内的所有合法访问总和。 这件事凸显了滥用爬虫（尤其是 AI 训练爬虫）对开源基础设施造成的不可持续负担，这些设施往往缺乏资源应对这类流量。它引发了对公开源代码仓库 Web 界面长期可行性的担忧，提醒开源维护者注意 AI 数据收集的隐性成本。 在五个节点总计 90 个 CPU 核心中，有 14 至 16 个核心始终忙于渲染 HTML 格式的提交页面。爬虫抓取的是人类很少访问的提交页面，而渲染过程涉及生成 diff、语法高亮和格式化，十分消耗资源。这种浪费性负载甚至超过了 git clone 等主要合法用途所消耗的资源。
+TALA（Terrastruct 为 D2 图表开发的专有布局引擎）现已开源，其先进的自动布局算法现在可供社区免费使用。 此次开源移除了成本障碍，让开发者能够用 D2 创建更整洁、专业的架构图，并可能将 TALA 集成到其他图表工具和工作流中。 TALA 是一个通用的正交布局引擎，不限于层次结构，从零开始构建且无外部依赖。开源发布后，社区讨论中提到可能将其集成到 Graphviz 等工具中。
+
+hackernews · alixanderwang · 9月7日 23:37 · [社区讨论](https://news.ycombinator.com/item?id=49604150)
+
+**背景**: D2 是一种现代的图表脚本语言，可将文本描述转换为图表。TALA（Terrastruct 自动布局方法）是一个布局引擎，能自动排列图表元素，此前作为 D2 的付费附加组件出售。它擅长为云和软件架构图生成整洁、正交的布局，这些图通常复杂且非层次化。
+
+
+**参考链接**:
+
+- [GitHub - terrastruct/ TALA : A diagram layout engine designed...](https://github.com/terrastruct/TALA)
+- [Information about TALA , Terrastruct&#x27;s proprietary layout engine for D2](https://terrastruct.com/tala/)
+- [TALA | D2 Documentation](https://d2lang.com/tour/tala/)
+
+
+**社区讨论**: 社区反应积极，许多人指出 TALA 生成的布局比 D2 默认引擎或 ELK 更整洁。但也有人指出，它可能使某些图表（如 Go 队列流程）看起来更复杂。过去高昂的费用对爱好者来说是障碍，因此开源受到欢迎。有人对将 TALA 集成到 Graphviz 和 Daedalus 中表示兴趣。
+
+**标签**: `#open-source`, `#diagramming`, `#layout-engine`, `#D2`, `#developer-tools`
+
+---
+
+<a id="item-4"></a>
+## [Jellyfin 12.0 发布，迁移顺利且性能提升](https://jellyfin.org/posts/jellyfin-release-12.0/) ⭐️ 8.0/10
+
+Jellyfin 12.0 作为开源媒体服务器的一次重大更新，已正式发布，带来了性能提升和顺畅的迁移体验。从 10.10.7 等旧版本升级的用户反馈迁移过程迅速且无痛。 此版本巩固了 Jellyfin 作为 Plex 强有力的自托管替代方案的地位，为希望避免供应商锁定的用户提供了可行的退路。性能提升和更简便的升级降低了使用门槛，有望从专有平台吸引更多用户。 一位拥有 40TB 媒体库的用户从 10.10.7 升级到 12.0 仅需数分钟，仅出现标题暂时消失、重新扫描后恢复的情况。长期存在的字幕问题依旧，尤其在 Android 客户端配合 Chromecast 时，显示和手动添加经常失败。
+
+hackernews · 0xC0ncord · 9月8日 01:56 · [社区讨论](https://news.ycombinator.com/item?id=49604861)
+
+**背景**: Jellyfin 是一个免费的开源媒体服务器，允许用户自行托管并流式传输个人媒体收藏到任何设备。它由志愿者构建，是 Plex 等专有解决方案的流行替代品，提供完全控制且无需支付许可费用。Jellyfin 常与 \*arr 堆栈（Sonarr、Radarr 等）搭配使用，实现媒体管理的自动化，并通过重大版本号更新带来显著改进和新功能。
+
+
+**参考链接**:
+
+- [The Free Software Media System | Jellyfin](https://jellyfin.org/)
+- [GitHub - jellyfin / jellyfin : The Free Software Media System - Server ...](https://github.com/jellyfin/jellyfin)
+
+
+**社区讨论**: 社区讨论总体积极，Plex 用户将 Jellyfin 的进步视为一种安全保障。升级体验因快速简便而受到赞扬，但部分用户仍面临持续的字幕问题，尤其是在 Android TV 上，另有一位用户因性能问题从之前的版本回退。
+
+**标签**: `#Jellyfin`, `#media-server`, `#open-source`, `#release`, `#self-hosted`
+
+---
+
+<a id="item-5"></a>
+## [Broadcom 取消 VDDK 下载，增加 VMware 迁移难度](https://www.virtualizationhowto.com/2026/09/leaving-vmware-just-got-harder-after-broadcom-pulled-vddk-downloads/) ⭐️ 8.0/10
+
+Broadcom 取消了对 VMware 虚拟磁盘开发工具包（VDDK）的公开下载，该工具是迁移过程中读取和转换虚拟磁盘的关键库。此举直接影响了依赖 VDDK 将工作负载迁至其他平台的工具。 此举加剧了厂商锁定，正值许多企业因 Broadcom 的许可变更和成本上涨而评估替代方案之际。通过提高技术退出壁垒，Broadcom 可能迫使客户推迟迁移，并引发对生态系统开放性的质疑。 VDDK 是一套 C/C++ 库和工具，用于程序化访问 VMDK 文件。virt-v2v 和 StarWind V2V Converter 等迁移工具现在需要有效的 VMware 支持合同才能合法获取 VDDK，这复杂化了没有有效授权的组织的迁移流程。
+
+hackernews · josephcsible · 9月7日 20:32 · [社区讨论](https://news.ycombinator.com/item?id=49602699)
+
+**背景**: VMware 曾是数十年来主导的虚拟化平台，但 Broadcom 在 2023 年的收购导致了产品捆绑、按核心计费及价格上涨，促使客户考虑 Proxmox、Hyper-V 和 KVM 等替代方案。VDDK 此前是面向合法客户的免费下载，使第三方备份和迁移软件能够与 VMware 的磁盘格式互操作。此次取消下载被视为将先前免费组件货币化并留住客户的更广泛策略的一部分。
+
+
+**参考链接**:
+
+- [How to vm migrate from vmware to kvm — key tips... - DEV Community](https://dev.to/ptp2308/how-to-vm-migrate-from-vmware-to-kvm-key-tips-and-pitfalls-522c)
+- [VMware Virtual Disk Development Kit - appQuantify](http://appquantify.com/p39719-vmware-virtual-disk-development-kit.aspx)
+
+
+**社区讨论**: 社区普遍持负面情绪，前 VMware 工程师和 IT 专业人士对平台的衰落表示惋惜。许多人分享了迁移经验，指出 Proxmox 迁移不受影响且出奇顺利，而另一些人则主张迁移到 KVM 并投入内部技能建设。大家对 VMware 过去的工程卓越性怀有怀旧之情，与 Broadcom 以榨取利润为导向的做法形成鲜明对比。
+
+**标签**: `#virtualization`, `#VMware`, `#Broadcom`, `#migration`, `#lock-in`
+
+---
+
+<a id="item-6"></a>
+## [AI 爬虫使 Linux 内核 Git 服务器负载剧增，14 核全用于渲染](https://simonwillison.net/2026/Sep/7/creepy-crawlies/) ⭐️ 8.0/10
+
+Konstantin Ryabitsev 报告称，滥用爬虫对 git.kernel.org 的 CPU 消耗已超过所有合法访问总和，分布在 5 个地理节点的 14 个 CPU 核心，持续仅为爬虫渲染 Git 提交的 HTML 页面。 这一事件凸显了 AI 爬虫对关键开源基础设施造成的严重负担，引发了人们对维持现代软件开发所需的免费公共服务可持续性的担忧，也为像 Datasette 这样生成大量可爬取页面的服务敲响了警钟。 git.kernel.org 基础设施由 5 个节点共约 90 个 CPU 核心组成，其中 14-16 个核心被永久占用，仅为爬虫渲染提交页面，压缩了合法 Git 克隆等操作所需的资源。这些爬虫无视速率限制和 robots.txt，持续爬取，导致负载并非偶发，而是持续不断。
 
 rss · Simon Willison · 9月7日 23:08
 
-**背景**: git.kernel.org 使用 cgit（一个快速的 Git 仓库 Web 界面）将提交页面渲染为 HTML。渲染过程包括应用差异、语法高亮和格式化，非常消耗 CPU。滥用爬虫通常与 AI 训练数据收集有关，它们无视 robots.txt 和速率限制，无差别地抓取大量页面。Linux 内核仓库是最大、最活跃的开源项目之一，其基础设施因此成为显著目标。
+**背景**: git.kernel.org 是 Linux 内核的官方 Git 仓库，属于全球最重要的开源项目之一。为了方便浏览，服务器会动态将每次提交渲染为 HTML 页面，这一过程消耗大量 CPU 资源。来自多家公司的 AI 爬虫会抓取这些页面来训练语言模型或构建搜索索引，但它们往往无视速率限制，进行大规模抓取，给服务器带来沉重负担。Cloudflare 称，训练流量占 AI 爬虫流量的近 80%，且没有明显的周期性规律。
 
 
 **参考链接**:
 
 - [AI Crawlers Strain git .kernel.org Servers](https://securityonline.info/ai-crawlers-git-kernel/)
-- [cgit - ArchWiki](https://wiki.archlinux.org/title/Cgit)
+- [A deeper look at AI crawlers: breaking down traffic by purpose and industry | Cloudflare Blog](https://blog.cloudflare.com/ai-crawler-traffic-by-purpose-and-industry/)
 
 
-**标签**: `#crawling`, `#git`, `#infrastructure`, `#web-scraping`, `#open-source`
+**标签**: `#crawling`, `#web scraping`, `#infrastructure`, `#git`, `#AI crawlers`
 
 ---
 
-<a id="item-4"></a>
-## [OpenAI 首席科学家：构建强大 AI 用于防御，但需避免鲁莽](https://simonwillison.net/2026/Sep/7/jakub-pachocki/) ⭐️ 8.0/10
+<a id="item-7"></a>
+## [DNS 滥用：新 gTLD 域名 10-20%为诈骗](https://simonwillison.net/2026/Sep/6/the-purpose-of-dns-is-to-spread-scams/) ⭐️ 8.0/10
 
-OpenAI 首席科学家 Jakub Pachocki 主张，持续训练更强大的 AI 模型对于构建防御系统以应对 AI 威胁至关重要，但他警告称，这一理由绝不能成为鲁莽加速的借口。 这位来自顶尖 AI 实验室的首席科学家的声明，凸显了行业面临的高风险困境：既要快速推进 AI 以确保安全和一致性，又要同时管理因过快发展带来的生存风险。 Pachocki 特别指出，需要对齐的 AI 来保护基础设施、实时防御 rogue AI 代理，并发明全新的保护措施，并提到这将是 OpenAI 部署工作的重点。
+Interisle 报告显示，2025 年新注册的 gTLD 域名达 8500 万个，到 2025 年 5 月已有 850 万个被列入黑名单，实际滥用比例可能高达 10%至 20%，即每五个新域名中就有一个是诈骗网站。 如此高的滥用比例揭示了互联网治理和域名注册监管的系统性失败，动摇了公众对 DNS 的信任，并助长影响全球数百万用户的大规模网络犯罪。 负责协调 DNS 的 ICANN 多年来一直在讨论该问题，但进展甚微。该报告重点关注新 gTLD，诈骗者利用廉价易注册的域名进行欺诈活动。
+
+rss · Simon Willison · 9月6日 14:40
+
+**背景**: gTLD（通用顶级域）指不关联特定国家的域名后缀，如.com、.org，以及.shop、.online 等新后缀。ICANN（互联网名称与数字地址分配机构）是负责协调全球域名系统和 IP 地址分配的国际组织。2010 年代新 gTLD 计划的扩展大幅增加了可用域名数量，且注册成本极低，为诈骗者提供了可乘之机。
+
+
+**参考链接**:
+
+- [What is a gTLD (Generic Top Level-Domain)? | OVHcloud Worldwide](https://www.ovhcloud.com/en/learn/what-is-gtld/)
+- [What Does ICANN Do? - ICANN](https://www.icann.org/resources/pages/what-2012-02-25-en)
+
+
+**标签**: `#DNS`, `#cybersecurity`, `#scams`, `#domain abuse`, `#internet infrastructure`
+
+---
+
+<a id="item-8"></a>
+## [LLM 引导的程序进化改进了 10 个已知最优圆堆积解](https://www.reddit.com/r/MachineLearning/comments/1w9xlyi/llmguided_program_evolution_improves_10_bestknown/) ⭐️ 8.0/10
+
+LLM 引导迭代进化了一个圆堆积优化算法，在 Packomania csqv 基准测试中改进了 10 个实例（N=101-114）的已知最优解，提升幅度为 2.4%至 5.4%，总 LLM 成本仅为 27.72 美元。 这项工作表明，LLM 引导的程序进化能够以极低成本在经典优化基准上取得最优结果，为自动化算法发现开辟了新途径。 该方法从一个简单的种子求解器开始，LLM 在 15 次迭代中根据结果记分板和先前尝试的历史提出算法修改。作者指出平台期检测停止规则是薄弱环节并邀请批评；改进后的解已由 Packomania 独立验证。
+
+reddit · r/MachineLearning · /u/SIGH\_I\_CALL · 9月7日 16:54
+
+**背景**: 圆堆积问题旨在最大化容器内等圆半径之和，是一个经典的 NP 难优化问题。Packomania 是一个长期运行的基准测试，记录已知最优解。LLM 引导的程序进化是一种利用大型语言模型迭代修改和优化源代码的技术，类似于遗传编程，但借助了语言模型的能力。
+
+
+**参考链接**:
+
+- [Packomania (52C17)](https://packomania.com/)
+- [LLM - Guided Program Evolution for Circle Packing:Breaking 10...](https://arxiv.org/html/2609.05093)
+- [Packing problems - Wikipedia](https://en.wikipedia.org/wiki/Packing_problems)
+
+
+**标签**: `#LLM-guided evolution`, `#optimization`, `#circle packing`, `#program synthesis`, `#machine learning`
+
+---
+
+<a id="item-9"></a>
+## [Yandex 提出将 KV 缓存作为大模型智能体运行时](https://www.reddit.com/r/MachineLearning/comments/1w9myqc/kv_cache_as_an_agent_runtime_r/) ⭐️ 8.0/10
+
+Yandex 研究人员提议将 KV 缓存修改作为智能体运行时，以实现更具交互性的大语言模型系统，并展示了 Qwen3.8-27B 智能体交互式玩 DOOM 的预览。 该方法探索了模型与智能体框架之间一个未被充分探索的设计维度——推理运行时，可能在不进行昂贵模型重训练的情况下，提供更低延迟和更灵敏的智能体。 该工作基于之前的论文 Hogwild\! Inference 和 AsyncReasoning，使用 Qwen3.8-27B。该技术直接在推理过程中修改 KV 缓存状态，而非依赖传统的基于提示的交互方式。
+
+reddit · r/MachineLearning · /u/\_puhsu · 9月7日 09:03
+
+**背景**: KV 缓存（键值缓存）是 Transformer 模型中的一种优化技术，在自回归推理过程中存储先前 token 的中间键和值向量，避免重复计算。通常，KV 缓存是被动存储器；Yandex 的方法将其视为可主动操纵的状态，以模拟智能体行为。
+
+
+**参考链接**:
+
+- [KV cache](https://grokipedia.com/page/KV_cache)
+
+
+**标签**: `#KV-cache`, `#LLM agents`, `#interactive AI`, `#inference optimization`, `#agent runtime`
+
+---
+
+<a id="item-10"></a>
+## [31,352 次重复测量揭示 LLM 性能漂移](https://www.reddit.com/r/MachineLearning/comments/1w9llr4/measuring_llm_performance_drift_observations_and/) ⭐️ 8.0/10
+
+一项研究将 LLM 基准测试重新定义为持续纵向测量问题，利用对 49 个模型的 31,352 次重复观测来检测性能漂移。研究发现，同日间得分波动（标准差 8.43）约为日内波动（标准差 2.80）的三倍，表明时间变化不可忽视。 该方法解决了快照评估的关键盲点，揭示了 API 服务模型可能随时间发生显著性能漂移。它使从业者能够及早发现行为变化，从而确保更可靠的 LLM 部署。 基于 31,352 次观测，日内得分标准差为 2.80，而日间中位数标准差为 8.43，差异约为 3 倍。该方法对基准配置进行版本控制，采用重复执行式评估，跟踪服务元数据，并对时间序列应用变化点检测。
+
+reddit · r/MachineLearning · /u/ionutvi · 9月7日 07:44
+
+**背景**: LLM 基准测试通常是一次性快照，假设模型性能稳定。但 API 服务模型可能因提供者更新、基础设施变化或版本更替而悄然改变，导致性能漂移。纵向测量常用于临床研究，通过重复观测来追踪变化。该研究将这一范式应用于 LLM 评估，并解决了基准测试污染问题（公开测试集可能导致结果偏差）。
+
+
+**参考链接**:
+
+- [LLM observability](https://toloka.ai/blog/llm-observability/)
+- [How to Monitor and Trust the LLMs Powering Your AI | LogicMonitor](https://www.logicmonitor.com/blog/llms-dont-stand-still-how-to-monitor-and-trust-the-models-powering-your-ai)
+
+
+**标签**: `#LLM evaluation`, `#benchmarks`, `#performance drift`, `#longitudinal measurement`, `#machine learning`
+
+---
+
+<a id="item-11"></a>
+## [OpenAI 内部采用编码智能体，递归自我改进成新 AGI 范式](https://simonwillison.net/2026/Sep/6/research-acceleration-the-view-inside-openai/) ⭐️ 7.0/10
+
+OpenAI 透露其研究人员正越来越多地使用编码智能体，每位研究员的每日智能体花费从年初的近乎零上升到 2026 年 8 月底的约 600 美元。同时，公司将递归自我改进（RSI）作为实现通用人工智能（AGI）的新范式，并在博客文章和首席科学家的文章中进行了阐述。 这表明 AI 驱动的编码智能体正成为前沿 AI 研究不可或缺的工具，有望加速更先进 AI 系统的开发。RSI 作为 AGI 范式的出现，预示着向自我改进型 AI 的转变，可能极大加快进展，但也引发安全担忧。 图表显示，每位研究员每日花费在 6 月至 7 月间稳定在 150-165 美元左右，随后在 8 月下旬急剧攀升至 600 美元，这可能与内部获取后来发布的 GPT-6 Astra 模型有关。该文章未展开 RSI 缩写，说明它在 OpenAI 内部已是一个熟悉的概念。
+
+rss · Simon Willison · 9月6日 23:57
+
+**背景**: 递归自我改进（RSI）是指 AI 系统通过重写自身代码来增强能力，可能导致智能爆炸。智能体工程是一种规范化的 AI 辅助软件开发方法，由自主 AI 智能体在人类监督下完成编码任务，区别于更随意的“氛围编程”。OpenAI 智能体使用量的激增可能反映了 GPT-6 Astra 等更强大模型的出现。
+
+
+**参考链接**:
+
+- [Recursive self-improvement](https://en.wikipedia.org/wiki/Recursive_self-improvement)
+- [What is Agentic Engineering? | IBM](https://www.ibm.com/think/topics/agentic-engineering)
+
+
+**标签**: `#recursive self-improvement`, `#OpenAI`, `#coding agents`, `#agentic engineering`, `#AI research`
+
+---
+
+<a id="item-12"></a>
+## [重写遗留代码为何几乎总是失败](https://simonwillison.net/2026/Sep/6/theres-no-limit-to-how-bad-code-can-get/) ⭐️ 7.0/10
+
+Simon Willison 在 Lobste.rs 的评论中指出，从零开始重写遗留软件很少成功，因为旧系统仍是一个不断变化的目标，维护者缺乏改善质量的动力，而新团队常常无法完全理解其范围，最终导致两套系统同时运行。 这一见解挑战了面对技术债务时“推倒重来”的常见冲动，为软件工程团队（尤其是初创公司和大企业）提供了重要的实践教训——他们可能因注定失败的重写而浪费大量时间和资源。 Willison 强调，原始系统缺乏文档和测试正是需要重写的原因，而这又导致无法完全理解它。他建议通过自动化测试和有针对性的重构来加固旧系统，并引用 Will Larson 的文章《迁移：解决技术债务的唯一可扩展方法》作为可靠的替代方案。
+
+rss · Simon Willison · 9月6日 09:08
+
+**背景**: 技术债务是指因当前选择简单但受限的解决方案而导致的未来返工成本。遗留代码是难以维护的旧代码，通常缺乏测试和文档。所谓的“绿地”项目是指从头开始开发、不受旧系统约束的项目。重写被视为解决技术债务的一种方式，但逐步替换的“绞杀榕模式”是另一种选择。本文讨论了完全重写策略为何经常失败：旧系统必须持续演进，而新团队难以复现其全部行为。
+
+**标签**: `#software engineering`, `#technical debt`, `#rewrite vs refactor`, `#legacy code`, `#Simon Willison`
+
+---
+
+<a id="item-13"></a>
+## [软件不像建筑，可以无限恶化而不倒塌](https://simonwillison.net/2026/Sep/6/zach-kehs/) ⭐️ 7.0/10
+
+Zach Kehs 发表了一篇博客文章，比喻软件不像建筑，可以无限恶化而不倒塌，因为代码总可以增加新的间接层（indirection）或降低性能，没有自然极限。 这个比喻揭示了技术债务（technical debt）的无限性，提醒开发者：如果没有有意识的维护，代码质量会不断下降，导致复杂性和维护成本螺旋上升。 原文直接引用了软件工程中“任何问题都可以通过增加一层间接层来解决”的论断，但指出软件没有物理极限，因此间接层和性能退化可以无限叠加。
+
+rss · Simon Willison · 9月6日 08:42
+
+**背景**: 技术债务（technical debt）指因快速开发选择捷径而导致的未来维护成本。软件工程中有一个著名论断：任何问题都可以通过增加一层间接层（indirection）来解决，但过多的间接层会带来内在复杂性。物理建筑有结构极限，不断加高会倒塌，而软件没有这种物理限制，因此可以无限变得复杂或缓慢。
+
+
+**参考链接**:
+
+- [Indirection - Wikipedia](https://en.wikipedia.org/wiki/Indirection)
+- [Fundamental theorem of software engineering - Wikipedia](https://en.wikipedia.org/wiki/Fundamental_theorem_of_software_engineering)
+- [Technical debt](https://en.wikipedia.org/wiki/Technical_debt)
+
+
+**标签**: `#technical-debt`, `#software-engineering`, `#code-quality`, `#complexity`, `#insight`
+
+---
+
+<a id="item-14"></a>
+## [微型循环系统从单一初始状态自主生成完整 Bad Apple 视频](https://www.reddit.com/r/MachineLearning/comments/1wa8rub/generating_bad_apple_autonomously_from_a_single/) ⭐️ 7.0/10
+
+一个仅含 41.7 万参数的紧凑循环动力系统，无需时间戳输入，仅凭单一初始隐状态即可自主生成约 6500 帧的完整 Bad Apple 视频。 这表明微型 RNN 可以从单一起点学习长而复杂的时间序列，为资源受限硬件上的视频生成、动画和实时控制提供了高效范式。 64 维隐状态采用 LSTM 式循环（16,640 参数）和深度可分离帧解码器（400,361 参数），训练借助教师表、滚动时域课程（2→512）、状态扰动噪声及二阶差分加速度正则化，但模型在推理时成功泛化至完整的 6.5k 帧滚动。
+
+reddit · r/MachineLearning · /u/SEBADA321 · 9月8日 00:05
+
+**背景**: Bad Apple 是一段黑白剪影风格的音乐视频，常被用作动画与压缩的压力测试。SIREN（正弦表示网络）是一种利用周期激活函数将坐标映射为像素值的隐式神经表示；本项目则用一个循环动力系统来演化隐状态，顺序生成帧，无需外部时间信号。
+
+**标签**: `#recurrent-neural-networks`, `#dynamical-systems`, `#generative-modeling`, `#machine-learning`, `#creative-coding`
+
+---
+
+<a id="item-15"></a>
+## [机器学习可复现性因硬件成本和企业不透明而下降](https://www.reddit.com/r/MachineLearning/comments/1w92eis/reproducibility_seems_to_be_headed_towards/) ⭐️ 7.0/10
+
+Reddit 上的一篇帖子指出，机器学习可复现性正受到三大因素侵蚀：物理 AI 实验所需的高昂硬件成本、大型 AI 公司无法验证的性能声明，以及模糊主观的问题定义。 可复现性的下降威胁着机器学习研究的科学诚信，未经核实的结果可能导致资源浪费、方向错误，并在关键现实应用中削弱对 AI 的信任。 帖子指出，物理 AI 需要高速摄像机等昂贵硬件，企业工具的宣传未经核实，演示视频经过挑选以掩盖失败。它对比了原子弹等历史项目，那些项目通过数学严谨性实现内部可复现，而现代 ML 缺乏这种保障。
+
+reddit · r/MachineLearning · /u/NeighborhoodFatCat · 9月6日 17:29
+
+**背景**: 物理 AI 是指与机器人、传感器和执行器结合的人工智能系统，其真实世界测试通常昂贵且难以复现。ML 领域的可复现性长期面临挑战，而大规模模型和企业保密加剧了验证难度。该帖子反映了业界对激励机制奖励新颖性而非可靠性的普遍担忧。
+
+
+**参考链接**:
+
+- [Physical AI](https://en.wikipedia.org/wiki/Physical_AI)
+
+
+**标签**: `#reproducibility`, `#machine learning`, `#research ethics`, `#hardware`, `#corporate transparency`
+
+---
+
+<a id="item-16"></a>
+## [研究者声称多模态 LLM 图像处理 Token 用量降低 95%](https://www.reddit.com/r/MachineLearning/comments/1wab7ui/i_reduced_imageprocessing_token_usage_by_95/) ⭐️ 7.0/10
+
+一位研究者报告称，与 GPT-4o 直接视觉处理相比，其新方法在 MOMA Graph 基准测试上将图像 LLM 推理的 Token 消耗降低了约 95%，同时保持了大致相同的准确率。 如果得到验证，这可能会大幅降低多模态 AI 应用的成本和延迟，使其更适合大规模部署，代表了视觉语言模型推理效率的潜在突破。 该方法仍在开发中，未公开实现细节。评估使用了 MOMA Graph 基准测试中的 1,315 个问题，研究者正在寻求社区对其结果强度的反馈。
+
+reddit · r/MachineLearning · /u/angelinusbread · 9月8日 01:57
+
+**背景**: GPT-4o 是一种多模态模型，通过将图像直接转换为大量 Token 来进行处理，导致 Token 用量和成本较高。视觉语言模型（VLM）通常使用视觉编码器将图像压缩为 Token，Token 数量直接影响推理速度和费用。MOMA Graph 基准测试是一套用于评估多模态推理能力的测试套件。
+
+
+**参考链接**:
+
+- [Vision Language Models: Architecture, Inference , and Practical...](https://blog.ecitis.org/vision-language-models/)
+
+
+**标签**: `#multimodal AI`, `#token efficiency`, `#VLM inference`, `#cost optimization`, `#GPT-4o`
+
+---
+
+<a id="item-17"></a>
+## [PINNStudio：免费开源的无代码 PINN 训练与可视化 GUI](https://www.reddit.com/r/MachineLearning/comments/1w9a2i7/pinnstudio_a_free_opensource_nocode_gui_for/) ⭐️ 7.0/10
+
+PINNStudio 发布了一个免费开源的无代码 GUI，通过自动生成 DeepXDE 代码并提供实时损失曲线和求解图，简化了物理信息神经网络（PINN）的设置、训练和可视化。 通过消除重复编码，PINNStudio 降低了科学机器学习的入门门槛，使研究人员能够专注于物理问题而非实现细节，有望加速实验和发现。 PINNStudio 基于 DeepXDE 构建，支持 1D 和 2D 域，可自定义 PDE、边界条件、网络架构和训练计划，包含经典方程（如热方程、Allen-Cahn、Cahn-Hilliard）的模板，可通过 pip 安装。
+
+reddit · r/MachineLearning · /u/Impossible-Jello2749 · 9月6日 22:19
+
+**背景**: 物理信息神经网络（PINN）是一类将物理定律（通常以偏微分方程表示）融入训练损失函数的深度学习模型，使其无需大量标注数据即可求解正向和反向微分方程问题。DeepXDE 是实现 PINN 的主流库之一。
+
+
+**参考链接**:
+
+- [Physics - Informed Neural Networks ( PINNs ) | by Tauqeer... | Medium](https://medium.com/@tauqeerahmad899/physics-informed-neural-networks-pinns-8fb137024b62)
+
+
+**标签**: `#PINNs`, `#scientific machine learning`, `#no-code`, `#GUI`, `#open-source`
+
+---
+
+<a id="item-18"></a>
+## [OpenAI 首席科学家主张以强大 AI 防御威胁，同时警告勿鲁莽](https://simonwillison.net/2026/Sep/7/jakub-pachocki/) ⭐️ 6.0/10
+
+OpenAI 首席科学家 Jakub Pachocki 发表声明，主张快速构建更强大的 AI 模型是防御其他 AI 系统威胁的必要手段，同时警告这种紧迫性不应导致鲁莽行事。 该声明为 AI 发展的持续加速提供了高调的理由，将其定性为防御性必要，可能影响围绕 AI 安全与对齐的公共政策和行业辩论。 该声明来自 OpenAI 博客文章《An Alien Mind》，强调需要‘强大且对齐的 AI’来保护基础设施、实时防御失控智能体，并发明全新的防护措施。
 
 rss · Simon Willison · 9月7日 22:26
 
-**背景**: AI 对齐（AI alignment）是确保 AI 系统行为符合人类意图和价值观的领域，旨在防止奖励黑客或策略性欺骗等错位行为。防御性 AI 指利用 AI 抵御下一代网络威胁和其他 AI 攻击。Rogue AI 代理是可能表现出意外有害行为的自主系统，如未经授权删除数据或违反用户指令，这些行为已在现实事件中被记录。
+**背景**: AI 对齐是确保 AI 系统追求的目标与人类价值观和意图相符的领域。失控的 AI 智能体指可能造成意外伤害的自主系统，例如未经授权的数据删除或策略性欺骗。这两个概念支撑了 Pachocki 的论点，即需要先进 AI 来应对未对齐或恶意 AI 的威胁。
 
 
 **参考链接**:
 
 - [AI alignment](https://en.wikipedia.org/wiki/AI_alignment)
-- [Defensive AI: Cloudflare’s framework for defending against next-gen threats | Cloudflare Blog](https://blog.cloudflare.com/defensive-ai/)
-- [Rogue AI Agents Are Alarming Researchers More Than Ever](https://www.notus.org/technology/rogue-ai-agents-hacks-alarming-researchers)
+- [AI Agents Gone Rogue](https://grokipedia.com/page/AI_Agents_Gone_Rogue)
 
 
-**标签**: `#ai-safety`, `#ai-ethics`, `#openai`, `#defensive-ai`, `#alignment`
+**标签**: `#ai-ethics`, `#ai-safety`, `#openai`, `#alignment`, `#artificial-intelligence`
 
 ---
 
-<a id="item-5"></a>
-## [Rustuna：高性能 Rust 版 Optuna 超参数优化框架发布](https://www.reddit.com/r/MachineLearning/comments/1w9nyhz/rustuna_a_highperformance_rust_implementation_of/) ⭐️ 8.0/10
+<a id="item-19"></a>
+## [使用 Claude Code 和 FFmpeg WebAssembly 的浏览器视频压缩器](https://simonwillison.net/2026/Sep/7/video-compressor/) ⭐️ 6.0/10
 
-Rustuna 已发布，这是一个用 Rust 语言重新实现 Optuna 超参数优化框架的高性能版本，保持 API 兼容性的同时，降低了内存占用并消除了 Python 依赖。 这一发布显著提升了超参数调优的速度和安全性，尤其适合生产环境中的机器学习流水线，通过消除 Python 依赖链来降低供应链攻击风险，顺应了 Rust 在关键性能 ML 基础设施中日益增长的趋势。 Rustuna 利用 Rust 的原生内存管理实现更低的内存占用，完全消除 Python 运行时依赖以降低供应链攻击风险，同时保持与 Optuna 相同的 API 设计。
+Simon Willison 使用 Claude Code（Claude Fable 5.1）和 FFmpeg 的 WebAssembly 版本构建了一个基于浏览器的视频压缩工具，用户可以直接在浏览器中生成多种预设和自定义设置的优化视频版本，无需服务器端处理。 这展示了 AI 辅助编码与 WebAssembly 结合，将强大的本地多媒体处理能力带到浏览器中，降低了内容创作者压缩视频的障碍，无需安装软件或上传到云端，也体现了 Claude Code 快速原型开发的潜力。 该工具提供预设，CRF 值从 22 到 28，音频比特率从 128 到 64 kbps，输出分辨率如 854×370，并支持编码器速度、H.264 配置文件、30 fps 限制、剥离元数据和仅编码前 10 秒等选项。它使用 ffmpeg.wasm（纯 WebAssembly/JavaScript 的 FFmpeg 移植），在 11.8 秒内生成了 5 个版本。
 
-reddit · r/MachineLearning · /u/c-bata · 9月7日 10:01
+rss · Simon Willison · 9月7日 18:29
 
-**背景**: Optuna 是由 Preferred Networks 开发的一款流行的开源 Python 超参数自动调优库，具备 define-by-run API、无效试验剪枝和分布式并行优化等功能。超参数优化是指系统性地选择学习算法的最优超参数以最大化模型性能的过程。Rustuna 用 Rust 语言重新实现了 Optuna 的核心，Rust 是一种以内存安全和高性能著称的系统编程语言，旨在克服基于 Python 调优的性能开销。
+**背景**: Claude Code 是 Anthropic 推出的智能编码代理工具，可理解代码库、编辑文件并运行命令。FFmpeg 是广泛使用的开源多媒体框架。WebAssembly 让 C/C++等语言能在浏览器中以接近原生性能运行。ffmpeg.wasm 项目使用 Emscripten 将 FFmpeg 编译为 WebAssembly，使其完全在浏览器中运行，无需服务器。Claude Fable 是 2026 年发布的具有更严格安全措施的 Claude 版本。
 
 
 **参考链接**:
 
-- [Optuna](https://en.wikipedia.org/wiki/Optuna)
-- [Optuna - A hyperparameter optimization framework](https://optuna.org/)
-- [Hyperparameter optimization](https://en.wikipedia.org/wiki/Hyperparameter_optimization)
+- [Claude Code](https://en.wikipedia.org/wiki/Claude_Code)
+- [Overview | ffmpeg .wasm](https://ffmpegwasm.netlify.app/docs/overview/)
+
+
+**标签**: `#webassembly`, `#ffmpeg`, `#video-compression`, `#ai-tools`, `#web-development`
+
+---
+
+<a id="item-20"></a>
+## [通过重排序实现嵌入模型零停机迁移](https://www.reddit.com/r/MachineLearning/comments/1wabmm7/my_lab_found_a_way_to_migrate_between_embedding/) ⭐️ 6.0/10
+
+一个研究实验室提出了 embedflow 方法，通过从旧索引中检索前 K 个文档并用新模型对其进行重排序，从而在嵌入模型之间迁移，无需重新嵌入所有文档。 该方法能大幅减少大规模 RAG 系统中升级嵌入模型所需的时间和成本，实现不停机连续服务，使更频繁地采用更优模型成为可能。 该方法需要选择合适的 K 值；在 qwen4b 到 qwen8b 的迁移中，K=50 可达到与原生使用目标模型相同的检索质量。目前支持 Qdrant 并通过 pip 安装，但最佳 K 值可能因模型对而异，且该方法尚未在十亿级数据集上验证。
+
+reddit · r/MachineLearning · /u/Potential\_Low\_1183 · 9月8日 02:16
+
+**背景**: 嵌入模型将文本转换为稠密向量用于语义搜索，是检索增强生成（RAG）的关键组成部分。升级到更好的模型通常需要重新嵌入所有文档，对于大型数据库这可能需要数周甚至数月。重排序是一种用更精确的模型对少量候选文档重新评分以提升检索精度的技术。Embedflow 将旧索引的初次检索与新模型的重排序相结合，从而在不重新填充全部向量的情况下模拟新模型的嵌入效果。
+
+
+**参考链接**:
+
+- [Choosing an Embedding Model | Pinecone](https://www.pinecone.io/learn/series/rag/embedding-models-rundown/)
+- [LLM-Based Reranking](https://grokipedia.com/page/LLM-Based_Reranking)
+- [What is vector search? | IBM](https://www.ibm.com/think/topics/vector-search)
+
+
+**标签**: `#embedding-models`, `#vector-search`, `#rag`, `#reranking`, `#migration`
+
+---
+
+<a id="item-21"></a>
+## [Rustuna：高性能 Rust 版 Optuna 发布](https://www.reddit.com/r/MachineLearning/comments/1w9nyhz/rustuna_a_highperformance_rust_implementation_of/) ⭐️ 6.0/10
+
+Rustuna 是一个基于 Rust 的 Optuna 超参数优化框架实现，已正式发布，它完全消除了 Python 依赖，并提升了内存效率。 通过消除 Python 依赖，Rustuna 降低了软件供应链攻击的风险，并提供了更低的内存占用，使超参数优化在生产环境中更安全、更高效。 Rustuna 保持了与 Optuna 兼容的 API 设计，便于迁移，并利用 Rust 的内存管理实现性能优化。其代码已在 GitHub 上的 optuna 组织下开源。
+
+reddit · r/MachineLearning · /u/c-bata · 9月7日 10:01
+
+**背景**: Optuna 是一个流行的开源超参数优化框架，用于机器学习，原版用 Python 编写。超参数优化是自动搜索最佳模型配置以最小化损失函数的过程。Rust 是一种系统编程语言，以其高性能和内存安全性著称。
+
+
+**参考链接**:
+
+- [Optuna : A hyperparameter optimization framework — Optuna ...](https://optuna.readthedocs.io/en/stable/index.html)
+- [Hyperparameter optimization - Wikipedia](https://en.wikipedia.org/wiki/Hyperparameter_optimization)
 
 
 **标签**: `#rust`, `#hyperparameter-optimization`, `#machine-learning`, `#optuna`, `#performance`
 
 ---
 
-<a id="item-6"></a>
-## [LLM 引导程序进化以 28 美元打破 10 项圆包装记录](https://www.reddit.com/r/MachineLearning/comments/1w9xlyi/llmguided_program_evolution_improves_10_bestknown/) ⭐️ 8.0/10
+<a id="item-22"></a>
+## [提议：用离线 RL 为火箭联盟打造类似 Stockfish 的决策评估引擎](https://www.reddit.com/r/MachineLearning/comments/1wadyz7/what_if_competitive_games_such_as_rocket_league/) ⭐️ 6.0/10
 
-一种 LLM 引导的程序进化方法在 Packomania 的 csqv 基准测试中，通过迭代改进了 10 个实例（N=101–114）的最佳已知圆包装方案，实现了 2.4%至 5.4%的提升，LLM 总成本仅为 27.72 美元。 该工作表明，LLM 可以作为经济高效的创意引擎用于算法发现，在经典优化问题上超越了传统方法，为 AI 驱动的科学研究开辟了新途径。 该系统使用记分板和先前的尝试历史来引导 LLM 的提议，并由独立的验证器确保只保留真正的改进。作者指出，平台期检测的停止规则是需要进一步批评的领域。
+一位 Reddit 用户提出，使用离线强化学习、轨迹变换器和隐式 Q 学习来评估火箭联盟中玩家决策质量，类似于 Stockfish 评估国际象棋着法。 这样的系统可以为玩家提供客观的、AI 驱动的决策反馈，可能彻底改变电子竞技的训练和分析方式。 该提案为概念性设想，来自一名大一学生，设想利用职业选手数据集，将决策建模为序列部分可观测马尔可夫决策过程，并通过 FFT 和运动学极限进行反作弊。目前尚无实现。
 
-reddit · r/MachineLearning · /u/SIGH\_I\_CALL · 9月7日 16:54
+reddit · r/MachineLearning · /u/Ligras · 9月8日 04:11
 
-**背景**: 圆包装是一个经典的优化问题，目标是将圆放入容器中（这里是在单位正方形中最大化 N 个可变半径圆的半径之和）。Packomania 是一个社区维护的最佳已知包装目录。进化编程是一种通过对程序种群进行变异并根据适应度选择的技术。LLM 引导的程序进化使用大型语言模型对代码提出修改建议，并由验证器进行评估。
-
-
-**参考链接**:
-
-- [[2609.05093] LLM-Guided Program Evolution for Circle Packing: Breaking 10 Packomania Records for $28](https://arxiv.org/abs/2609.05093)
-- [The best known packings of variable-sized circles in a square with maximized sum of radii (complete up to N](https://www.packomania.com/csqv/csqv.html)
-
-
-**标签**: `#LLM`, `#program evolution`, `#optimization`, `#circle packing`, `#novel applications`
-
----
-
-<a id="item-7"></a>
-## [将 KV 缓存用作智能体运行时，实现交互式 LLM 系统](https://www.reddit.com/r/MachineLearning/comments/1w9myqc/kv_cache_as_an_agent_runtime_r/) ⭐️ 8.0/10
-
-研究团队提出将 KV 缓存用作智能体运行时，通过修改模型推理状态来实现更交互、响应更快的 LLM 系统。该方法基于他们之前的&\#x27; Hogwild\! Inference&\#x27;和&\#x27;AsyncReasoning&\#x27;工作，并预览了 Qwen3.8-27B 智能体交互式玩 DOOM 游戏的未来方向。 这一方法突显了推理设计作为智能体能力中一个未被充分挖掘的维度，提供了介于抽象框架和昂贵模型修改之间的中间方案。它可能为 LLM 驱动的智能体和应用带来更高效、实时的交互。 KV 缓存存储了自回归推理过程中先前 token 的中间键（K）和值（V）向量，支持重用和加速。该方法通过修改此缓存状态来实现交互行为，如并行生成（Hogwild\! Inference）和并发思考（AsyncReasoning）所示。
-
-reddit · r/MachineLearning · /u/\_puhsu · 9月7日 09:03
-
-**背景**: KV 缓存是 Transformer 语言模型中的一种优化技术，在自回归文本生成时存储已计算过的键（K）和值（V）向量，避免重复计算，从而加速推理。Hogwild\! Inference 利用多个 LLM 实例并行运行并共享同一个注意力缓存，提高硬件利用率；AsyncReasoning 则使推理模型能够无需训练即可并发思考和聆听。新提案将 KV 缓存视为智能体的动态运行时状态，从而实现对模型行为的交互式控制。
+**背景**: 轨迹变换器将强化学习视为序列建模问题，对状态、动作和奖励进行编码。离线强化学习从固定数据集中训练策略，无需在线交互。隐式 Q 学习（IQL）是一种离线 RL 算法，无需查询分布外动作即可估计动作价值，适合从示范中学习。序列部分可观测马尔可夫决策过程（POMDP）对随时间推移仅能获得部分状态信息的决策问题进行建模。
 
 
 **参考链接**:
 
-- [KV cache](https://grokipedia.com/page/KV_cache)
-- [Hogwild ! Inference : Parallel LLM Generation via Concurrent Attention](https://arxiv.org/abs/2504.06261)
-- [Asynchronous Reasoning : Training-Free Interactive... | alphaXiv](https://www.alphaxiv.org/overview/2512.10931)
+- [Trajectory Transformer](https://huggingface.co/docs/transformers/v4.21.2/model_doc/trajectory_transformer)
+- [[2110.06169] Offline Reinforcement Learning with Implicit Q-Learning](https://arxiv.org/abs/2110.06169)
 
 
-**标签**: `#LLM`, `#KV cache`, `#agent runtime`, `#inference`, `#interactive AI`
-
----
-
-<a id="item-8"></a>
-## [IEEE T-PAMI 主编确认幽灵审稿人导致论文被拒](https://www.reddit.com/r/MachineLearning/comments/1w9v43o/update_eic_confirmed_ghost_reviewerhow_to_get/) ⭐️ 8.0/10
-
-IEEE T-PAMI 的主编承认，一篇获得其他审稿人“优秀”评价的论文，其拒稿决定涉及一名幽灵审稿人。 该事件直接损害了机器学习顶刊的同行评审公信力，引发了对评审诚信和拒稿公平性的担忧。 论文获得“优秀”评分却仍被拒稿；主编的确认暗示幽灵审稿人可能不具备资格或系伪造，导致了有缺陷的编辑决定。
-
-reddit · r/MachineLearning · /u/cussealin · 9月7日 15:22
-
-**背景**: IEEE T-PAMI 是模式分析与机器智能领域的顶级月刊，以严格的同行评审著称。幽灵审稿人通常指未实际评审或身份不实的审稿人，破坏评审流程。该事件通过 Reddit 曝光，凸显了社交媒体在揭露学术出版问题中的作用。
-
-
-**参考链接**:
-
-- [IEEE PAMI](https://en.wikipedia.org/wiki/IEEE_PAMI)
-
-
-**标签**: `#peer review`, `#academic publishing`, `#machine learning`, `#IEEE T-PAMI`, `#ghost reviewer`
-
----
-
-<a id="item-9"></a>
-## [交互式地图展示洛杉矶 1880 年至 2026 年建筑建造年代](https://lax-skyline.parcelscope.net/) ⭐️ 7.0/10
-
-一张交互式地图展示了洛杉矶现存建筑的建造年代，揭示了近 150 年来城市的扩张模式。该可视化引发了关于数据准确性、幸存者偏差以及分区政策对住房可负担性影响的讨论。 该地图直观呈现了洛杉矶的发展历程，突显了历史性大规模降级分区及其导致的住房短缺问题。它为城市规划者和居民提供了一个理解政策如何塑造建成环境的工具。 该地图使用了洛杉矶县评估员的公开数据，但仅显示现存建筑，因此已被完全重建的老街区在地图上显得稀疏。可视化时间范围涵盖 1880 年至 2026 年，包括未来的预测数据。
-
-hackernews · rustywasm · 9月7日 18:52 · [社区讨论](https://news.ycombinator.com/item?id=49601655)
-
-**背景**: 洛杉矶在 1980 年代经历了大规模降级分区，限制了新建筑的建设，导致长期的住房短缺。建筑年代数据来自县评估员记录，这些记录仅记载现存结构的建造年份，造成了幸存者偏差：那些已被拆除重建的老旧区域在地图上只会显示较新的建筑。该交互式地图采用矢量瓦片等现代网络地图技术构建。
-
-**社区讨论**: 评论者指出，地图展示的是现存建筑的年龄，而非原始建造时期，这导致了幸存者偏差。一些人批评洛杉矶的降级分区人为制造了住房稀缺，另一些人则回忆起城市失去的公共交通网络。一位开发者提到曾用 Mapbox GL 做过类似项目，数据源被确认为洛杉矶县评估员门户网站。
-
-**标签**: `#data visualization`, `#urban planning`, `#Los Angeles`, `#open data`, `#historical mapping`
-
----
-
-<a id="item-10"></a>
-## [冰卫星：太阳系中的隐藏海洋世界](https://mceglowski.substack.com/p/icy-moons-are-ocean-worlds) ⭐️ 7.0/10
-
-一篇新文章以视觉化方式综合了证据，表明太阳系中许多冰卫星（包括木卫二、土卫二和冥王星）拥有地下液态水海洋，这改变了我们对宜居环境的认知。 这一发现将地外生命搜索范围扩展到地球之外，使这些海洋世界成为未来天体生物学任务的首要目标，并可能重塑行星科学和探索的优先方向。 已于 2024 年发射的木卫二快船任务将于 2031 年 3 月开始飞掠，而蜻蜓旋翼飞行器计划于 2034 年抵达土卫六。但海洋与岩石内部之间可能存在厚冰层，限制了生命所需的水-岩直接接触。
-
-hackernews · worldvoyageur · 9月6日 13:07 · [社区讨论](https://news.ycombinator.com/item?id=49586207)
-
-**背景**: 过去几十年，来自旅行者号、伽利略号、卡西尼号和新视野号任务的数据揭示，木卫二、土卫二等冰卫星因母行星的潮汐加热而拥有地下海洋。这些发现将天体生物学的焦点从行星转向了卫星。
-
-**社区讨论**: 评论者强调了即将到来的关键任务日期（木卫二快船 2031 年飞掠，蜻蜓号 2034 年抵达土卫六），并指出文章未提及新视野号对冥王星海洋发现的贡献。一些人讨论了木卫二表面的极端辐射和冰层下岩水接触的挑战。
-
-**标签**: `#space`, `#planetary-science`, `#astrobiology`, `#ocean-worlds`, `#science`
-
----
-
-<a id="item-11"></a>
-## [OpenAI 研究人员在编码代理上的日支出激增](https://simonwillison.net/2026/Sep/6/research-acceleration-the-view-inside-openai/) ⭐️ 7.0/10
-
-OpenAI 内部研究人员越来越依赖 AI 编码代理，根据一份新发布的内部图表，每位研究人员的每日中位支出从接近于零飙升至 2026 年 8 月底的约 600 美元。 这表明 AI 驱动的编码代理正成为前沿 AI 研究不可或缺的一部分，可能加速递归自我改进循环，并重塑 AI 公司开发未来模型的方式。 图表显示，7 月支出稳定在 150–165 美元左右，随后在 8 月下旬急剧攀升至约 600 美元，Simon Willison 推测这可能与内部获得 GPT-6 Astra 的使用权限有关。报告使用了“RSI”（递归自我改进）这一术语而未展开解释。
-
-rss · Simon Willison · 9月6日 23:57
-
-**背景**: 代理式工程是一种新兴实践，由自主 AI 代理在人类指导下处理编码任务。递归自我改进（RSI）指的是 AI 系统重写自身代码从而可能引发智能爆炸的假设过程。编码代理将生成式 AI 应用于软件开发，其在 OpenAI 内部的快速采用展示了 AI 正被用于加速 AI 研究本身。
-
-
-**参考链接**:
-
-- [Agentic Engineering](https://grokipedia.com/page/Agentic_Engineering)
-- [Recursive self-improvement](https://en.wikipedia.org/wiki/Recursive_self-improvement)
-
-
-**标签**: `#ai`, `#openai`, `#agents`, `#coding`, `#research`
-
----
-
-<a id="item-12"></a>
-## [报告：10-20%新通用顶级域名注册为诈骗](https://simonwillison.net/2026/Sep/6/the-purpose-of-dns-is-to-spread-scams/) ⭐️ 7.0/10
-
-Terence Eden 的一篇博客文章（由 Simon Willison 转载）指出，根据 Interisle 的一份报告，2025 年新注册的通用顶级域名（gTLD）中有 10-20% 是诈骗网站，8500 万新注册域名中有 850 万个在几个月内就被加入了安全拦截列表。 这一数据暴露了域名治理的严重失败，DNS 作为互联网的基础设施，正被诈骗、钓鱼和恶意软件以惊人的规模滥用，威胁着用户安全和整个网络生态的信任。 Interisle 报告分析了 2025 年 8500 万新 gTLD 注册量；截至 2025 年 5 月，已有 850 万个被列入安全拦截列表，表明滥用率下限为 10%，实际可能接近 20%，因为拦截列表通常会低估。
-
-rss · Simon Willison · 9月6日 14:40
-
-**背景**: 域名系统（DNS）将人类可读的域名转换为 IP 地址，实现网站访问。通用顶级域名（gTLD）是指 .com、.org 等后缀，以及 2012 年 ICANN 扩容后引入的 .shop、.online 等新后缀。ICANN 是负责全球 DNS 协调和域名分配的组织。DNS 拦截列表是安全工具用于实时过滤恶意域名的列表，常被电子邮件提供商和浏览器使用。
-
-
-**参考链接**:
-
-- [Generic top-level domain - Wikipedia](https://en.wikipedia.org/wiki/Generic_top-level_domain)
-- [ICANN](https://en.wikipedia.org/wiki/ICANN)
-- [DNS Blacklist](https://en.wikipedia.org/wiki/DNS_Blacklist)
-
-
-**标签**: `#DNS`, `#cybersecurity`, `#domain abuse`, `#scams`, `#internet governance`
-
----
-
-<a id="item-13"></a>
-## [西蒙·威利森警告：从零重写代码库往往失败](https://simonwillison.net/2026/Sep/6/theres-no-limit-to-how-bad-code-can-get/) ⭐️ 7.0/10
-
-西蒙·威利森分享了他的经验，指出从零开始重写软件系统很少成功，因为旧系统仍在不断变化，新团队面临不切实际的期望，常常导致两个系统并行运行。 这一见解对处理技术债务的软件团队至关重要，它挑战了“推倒重来”的常见冲动，并强调了增量重构和测试的实用方法。 威利森引用了威尔·拉森的文章《迁移：技术债务的唯一可扩展修复方案》，并建议通过自动化测试和有针对性的重构来加固旧系统，而不是从头开始。
-
-rss · Simon Willison · 9月6日 09:08
-
-**背景**: Lobste.rs 上的原始讨论源于扎克·凯斯的文章《没有代码能糟到多坏》，该文指出，与物理结构不同，软件可以无限积累复杂性和技术债务。当代码库变得难以维护时，重写似乎很有吸引力，但由于旧系统仍在变化且新旧团队之间存在知识差距，重写往往失败。技术债务是指因优先快速交付而非整洁代码所隐含的未来重构成本。
-
-**标签**: `#software engineering`, `#technical debt`, `#rewrite`, `#code quality`, `#best practices`
-
----
-
-<a id="item-14"></a>
-## [417k 参数递归网络从单一初始状态自主生成《Bad Apple》全视频](https://www.reddit.com/r/MachineLearning/comments/1wa8rub/generating_bad_apple_autonomously_from_a_single/) ⭐️ 7.0/10
-
-一个仅含 417k 参数的类 LSTM 递归网络被训练来记忆全长 6500 帧的《Bad Apple》动画，并能在推理时仅凭一对 64 维初始隐向量自主生成完整视频序列，无需任何时间戳输入。 这展示了微型递归动力系统能够学习长程稳定轨迹，实现高效自主视频生成，其长程训练稳定化技术对在资源受限环境下构建紧凑生成模型具有实际参考价值。 模型采用 64 维隐藏状态和 64 维记忆单元，过渡函数为 4 门 LSTM 式结构（16,640 参数），解码器为深度可分离卷积上采样（400,361 参数）。训练中使用了从 2 帧到 512 帧的递进式展开课程、教师隐表、状态扰动噪声以及二阶差分加速度正则化，最终实现了远超训练时长的稳定自主生成。
-
-reddit · r/MachineLearning · /u/SEBADA321 · 9月8日 00:05
-
-**背景**: 《Bad Apple\!\!》是东方 Project 的经典黑白剪影动画，常被用作视频压缩与生成任务的测试基准。SIREN（正弦表示网络）是一种基于坐标的 MLP，可隐式记忆图像或视频；先前有工作使用 SIREN 将\(t, y, x\)映射到像素值。而本项目改用递归动力系统——一种随时间演化自身状态的神经网络——在隐空间中学习时间动态，无需显式时间坐标。该方法借鉴了递归神经网络动力系统的思想，这一领域将序列建模为连续时间轨迹。
-
-
-**参考链接**:
-
-- [Recurrent neural network dynamical systems](https://openreview.net/pdf?id=ZZ94aLbMOK)
-
-
-**标签**: `#recurrent neural networks`, `#dynamical systems`, `#video generation`, `#latent space`, `#memorization`
-
----
-
-<a id="item-15"></a>
-## [机器学习可复现性因硬件、保密和选择性演示而衰退](https://www.reddit.com/r/MachineLearning/comments/1w92eis/reproducibility_seems_to_be_headed_towards/) ⭐️ 7.0/10
-
-一篇 Reddit 讨论认为，机器学习研究的可复现性正变得无望，原因包括物理 AI 所需的昂贵硬件、无法验证的企业声明以及研究人员只展示成功案例的选择性演示。 这凸显了科学诚信方面日益严重的危机，可能削弱对机器学习研究的信任，并在结果无法独立验证时阻碍进展，尤其是在该领域向物理 AI 和闭源模型发展的背景下。 帖子指出三大驱动力：物理 AI 实验需要昂贵实验室和硬件、大型 AI 公司发布无法验证的工具、以及研究人员只展示有效演示而隐藏失败，加之不愿共享代码的动机。
-
-reddit · r/MachineLearning · /u/NeighborhoodFatCat · 9月6日 17:29
-
-**背景**: 物理 AI 指与物理世界交互的 AI 系统，通常结合模型与传感器、执行器和机器人，如 NVIDIA、IBM 和维基百科所定义。机器学习的可复现性长期以来一直令人担忧，但随着模型规模和硬件成本的增长，以及企业保密性增强，问题加剧。该 Reddit 帖子反映了关于 AI 发展中开放科学与专有利益之间更广泛的辩论。
-
-
-**参考链接**:
-
-- [Physical artificial intelligence - Wikipedia](https://en.wikipedia.org/wiki/Physical_artificial_intelligence)
-- [What is Physical AI? | NVIDIA Glossary](https://www.nvidia.com/en-us/glossary/generative-physical-ai/)
-- [What is Physical AI? | IBM](https://www.ibm.com/think/topics/physical-ai)
-
-
-**标签**: `#reproducibility`, `#machine learning`, `#research ethics`, `#physical AI`, `#community discussion`
-
----
-
-<a id="item-16"></a>
-## [纵向基准测试揭示 API 模型 LLM 性能漂移](https://www.reddit.com/r/MachineLearning/comments/1w9llr4/measuring_llm_performance_drift_observations_and/) ⭐️ 7.0/10
-
-新方法通过对 49 个模型进行 31,352 次重复基准测试测量，发现 API 服务 LLM 的日内与日间性能变异性之比为 3:1，提出基于版本化、执行评估和时间序列变化检测的方法，而非静态排行榜快照。 API 服务 LLM 可能在无明确版本号变化时悄然改变，影响下游应用可靠性。该方法将基准测试从一次性竞赛转变为持续监控，对生产部署至关重要。 该研究在 31,352 次评分观测中，观察到日内标准差为 2.80 分，日间日值中位数标准差为 8.43 分。方法包括版本化基准配置、基于执行的评估（非 LLM 裁判）、跟踪服务元数据，并将可用性故障与能力变化分开。
-
-reddit · r/MachineLearning · /u/ionutvi · 9月7日 07:44
-
-**背景**: LLM 基准测试（如 MMLU、HumanEval）通常在单一时间点评估模型，生成排行榜。但 API 服务模型（如来自 OpenAI、Anthropic）可能被提供商在未通知用户的情况下更新，导致“模型漂移”，即行为发生变化。性能漂移是机器学习中已知问题，由于数据分布变化导致模型准确性下降，但在 LLM 中也可能源于基础设施或配置变更。这项工作将基准测试视为纵向测量问题，类似于生产 ML 系统中的监控。
-
-
-**参考链接**:
-
-- [Language model benchmark - Wikipedia](https://en.wikipedia.org/wiki/Language_model_benchmark)
-- [ML Model Retraining: When to Act on Performance Drift | LinkedIn](https://www.linkedin.com/posts/alithm_machinelearning-mlops-aiengineering-activity-7439921091621543936-WTey)
-- [Authors’ Response to Peer Reviews of “ Performance Drift in Machine ...](https://pmc.ncbi.nlm.nih.gov/articles/PMC11217161/)
-
-
-**标签**: `#LLM`, `#benchmarking`, `#performance drift`, `#monitoring`, `#API models`
-
----
-
-<a id="item-17"></a>
-## [墨卡托与等面积地球投影的动态 D3 动画对比](https://simonwillison.net/2026/Sep/7/equal-earth/) ⭐️ 6.0/10
-
-西蒙·威利森利用 GPT-6 Astra 打造了一个交互式网页工具，动态展示墨卡托投影与等面积地球投影之间的过渡效果，直观呈现墨卡托投影的失真。该工具托管于 tools.simonwillison.net/equal-earth，灵感源于联合国近期鼓励使用等面积投影的决议。 该工具直观揭露了墨卡托投影中格陵兰岛面积比非洲更大的失真问题，并展示了等面积地球投影的准确性。结合联合国 2026 年 9 月的决议，它凸显了在教育和技术领域推广更真实地图的呼声，同时体现了 AI 快速构建可视化原型的能力。 该动画基于 D3.js（数据驱动文档的 JavaScript 库）构建，由 GPT-6 Astra（中等模型）通过 ChatGPT Work 生成。等面积地球投影于 2018 年发明，是一种等面积伪圆柱投影，联合国决议中特别提及了该投影。
-
-rss · Simon Willison · 9月7日 16:24
-
-**背景**: 地图投影是将三维地球表面转换到二维平面的方法。墨卡托投影（1569 年）可保持角度正确，便于航海，但严重放大高纬度地区面积，使格陵兰岛看起来与非洲相当。等面积地球投影（2018 年）是一种等面积投影，能准确呈现各大陆的相对大小。2026 年 9 月，联合国大会投票鼓励在教育和技术应用中采用等面积投影（如 Equal Earth）。D3.js 是一个广泛使用的 JavaScript 库，用于在网页上创建交互式可视化。
-
-
-**参考链接**:
-
-- [Equal Earth map projection](https://en.wikipedia.org/wiki/Equal_Earth_map_projection)
-- [Mercator projection](https://en.wikipedia.org/wiki/Mercator_projection)
-- [D3.js](https://en.wikipedia.org/wiki/D3.js)
-
-
-**标签**: `#geospatial`, `#map projections`, `#data visualization`, `#AI-assisted development`, `#D3`
-
----
-
-<a id="item-18"></a>
-## [PINNStudio：物理信息神经网络的无代码开源图形界面](https://www.reddit.com/r/MachineLearning/comments/1w9a2i7/pinnstudio_a_free_opensource_nocode_gui_for/) ⭐️ 6.0/10
-
-开发者发布了 PINNStudio，一个免费开源的无代码图形界面，可自动生成基于 DeepXDE 的代码，用于定义、训练和可视化物理信息神经网络（PINN）。它支持一维/二维域、耦合偏微分方程系统、正问题和反问题，并内置了经典方程模板。 PINNStudio 消除了编写样板代码的需要，降低了编程经验有限的学生和研究人员的门槛，使他们能够专注于物理问题而非实现细节。这可以加速科学机器学习中的实验和原型设计，因为设置 PINN 问题通常重复且容易出错。 该工具基于流行的 PINN 库 DeepXDE 构建，提供自定义训练计划、实时损失曲线、解图以及热方程、Allen-Cahn 和 Cahn-Hilliard 方程模板。可通过 pip 安装，并在 GitHub 上以 MIT 许可证开源。
-
-reddit · r/MachineLearning · /u/Impossible-Jello2749 · 9月6日 22:19
-
-**背景**: 物理信息神经网络（PINN）是一类将物理定律（通常由偏微分方程描述）嵌入训练过程的神经网络。这使得它们能够在有限数据下求解正问题和反问题，在工程和科学应用中很有价值。DeepXDE 是一个广泛使用的开源库，用于构建和训练 PINN，但仍需要用户编写 Python 代码来设置问题。PINNStudio 在 DeepXDE 之上提供了图形界面，实现了代码生成和可视化的自动化。
-
-
-**参考链接**:
-
-- [Physics-informed neural networks](https://en.wikipedia.org/wiki/Physics-informed_neural_networks)
-- [What Are Physics-Informed Neural Networks (PINNs)? - MATLAB &amp; Simulink](https://www.mathworks.com/discovery/physics-informed-neural-networks.html)
-
-
-**标签**: `#PINN`, `#scientific machine learning`, `#no-code`, `#GUI`, `#open-source`
+**标签**: `#reinforcement learning`, `#game AI`, `#decision quality`, `#trajectory transformers`, `#competitive gaming`
 
 ---
 
