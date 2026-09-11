@@ -1,0 +1,403 @@
+---
+title: "AI 技术情报 · 2026-09-11"
+slug: horizon-2026-09-11
+date: 2026-09-11
+published: true
+description: "从 26 条内容中精选 18 条 AI/ML 重要动态"
+item_count: 18
+total_fetched: 26
+---
+
+> 从 26 条内容中筛选出 18 条重要资讯。
+
+---
+
+1. [trynix.dev 让您在浏览器中运行过去 13 年任意 Nix 软件包](#item-1) ⭐️ 10.0/10
+2. [AI 仅用一周余构建出首个微信零点击蠕虫 WeWorm](#item-2) ⭐️ 10.0/10
+3. [OpenAI 推出 Agents API，支持托管的 LLM 交互](#item-3) ⭐️ 9.0/10
+4. [Forgejo 16.0.3 及之前版本存在严重远程代码执行漏洞](#item-4) ⭐️ 9.0/10
+5. [微软正式将 Rust 列为首要支持语言](#item-5) ⭐️ 9.0/10
+6. [OpenAI 发布纳维-斯托克斯证明，含 Lean 4 形式化验证](#item-6) ⭐️ 9.0/10
+7. [Shopify 放弃 React Native，回归 Swift 与 Kotlin 原生开发](#item-7) ⭐️ 8.0/10
+8. [研究者能否信任 OpenAI 不擅用未发表数学成果？](#item-8) ⭐️ 8.0/10
+9. [果蝇连接组玩《乓》实验失败，暴露出 neuPrint 漏洞和缺失神经通路](#item-9) ⭐️ 8.0/10
+10. [uv 0.12.12 为 macOS 和 Windows 可执行文件引入代码签名](#item-10) ⭐️ 7.0/10
+11. [PlanetScale 推出分片式 Postgres 方案 Neki 引发争议](#item-11) ⭐️ 7.0/10
+12. [日立推出具备太阳能友好电价控制的二氧化碳热泵热水器](#item-12) ⭐️ 7.0/10
+13. [348M 小模型通过列式演算超越 GPT-3 175B 的算术能力](#item-13) ⭐️ 7.0/10
+14. [Sante 高分仅反映多选题作答，非开放诊断推理](#item-14) ⭐️ 7.0/10
+15. [uv 0.12.13 发布：支持 GraalPy 3.13.0、加速依赖解析并修复 Windows 问题](#item-15) ⭐️ 6.0/10
+16. [Cognition 发布 SWE-2 编码模型，声称媲美 Fable 5.1 与 GPT-Astra](#item-16) ⭐️ 6.0/10
+17. [NASA 去相关拉伸揭示古代岩画](#item-17) ⭐️ 6.0/10
+18. [斯坦福推出免费 AI 概率课，逾千志愿者申请任教](#item-18) ⭐️ 6.0/10
+
+---
+
+<a id="item-1"></a>
+## [trynix.dev 让您在浏览器中运行过去 13 年任意 Nix 软件包](https://simonwillison.net/2026/Sep/10/trynix/) ⭐️ 10.0/10
+
+Farid Zakaria 推出了 trynix.dev，它利用 qemu-wasm 驱动的 x86\_64 Linux 虚拟机，在浏览器中直接启动过去 13 年中的任意 Nix 软件包。用户只需访问类似 trynix.dev/?pkg=python3@3.6.2 的链接即可获得交互式 shell，配套的 GitHub Action trynix-preview 还能在拉取请求上评论一个链接以启动该 PR 的构建。 这消除了对本地安装或服务器的依赖，实现了可复现环境的即时演示、测试和代码审查。它可能大大降低探索历史软件版本的门槛，并彻底革新 CI 工作流程。 通过访问类似 trynix.dev/?pkg=python3@3.6.2 的 URL 即可使用该虚拟机，服务完全在客户端运行，无需服务器。trynix-preview GitHub Action 将这一能力扩展到拉取请求，允许审查者在浏览器中启动 PR 的构建。性能受限于 WebAssembly 模拟，但仍可正常使用。
+
+rss · Simon Willison · 9月10日 23:44
+
+**背景**: Nix 是一个通过隔离每个软件包并追踪确切依赖来确保可复现性的包管理器，其仓库包含了超过 13 年的软件包版本。WebAssembly 允许浏览器以高性能运行编译后的代码。qemu-wasm 是一个将 QEMU 模拟器编译为 WebAssembly 的项目，使得在浏览器中完整模拟 x86\_64 系统成为可能。三者结合，实现了按需重现任意历史 Nix 环境。
+
+
+**参考链接**:
+
+- [Nix (package manager) - Wikipedia](https://en.wikipedia.org/wiki/Nix_%28package_manager%29)
+- [GitHub - ktock/qemu-wasm: QEMU on browser · GitHub](https://github.com/ktock/qemu-wasm)
+
+
+**标签**: `#nix`, `#webassembly`, `#virtualization`, `#developer-tools`, `#reproducibility`
+
+---
+
+<a id="item-2"></a>
+## [AI 仅用一周余构建出首个微信零点击蠕虫 WeWorm](https://simonwillison.net/2026/Sep/10/calif-research/) ⭐️ 10.0/10
+
+Calif Research 发布了 WeWorm 演示，这是首个通过微信语音通话在 iOS 与 Android 上传播的零点击蠕虫，受害者无需任何交互。团队借助 AI，在约两天内发现漏洞并编写远程代码执行利用，再用一周完成完整蠕虫，此前这类工作需要更大团队耗时数月。 WeWorm 借助 AI 在短时间内完成构建，标志着攻击性网络能力的显著升级，将漏洞利用开发时间从数月压缩至数天。这对微信（超 14 亿账户）等大规模平台构成严峻威胁，凸显了主动安全防御的紧迫性。 WeWorm 利用了微信 VoIP 功能中的内存破坏漏洞，无需受害者接听即可通过来自现有联系人的来电入侵 iOS 与 Android 账户。Calif 已向腾讯报告该漏洞并获修复；该概念验证蠕虫通过通讯录传播。
+
+rss · Simon Willison · 9月10日 00:56
+
+**背景**: 零点击攻击无需受害者任何操作，极其危险。微信是一款集通讯、支付等功能于一体的超级应用，拥有超过 14 亿月活跃用户。以往，挖掘并利用此类漏洞通常需要安全专家数月的精细劳动，但 AI 工具如今大幅加快了漏洞发现与利用代码编写的速度。
+
+
+**参考链接**:
+
+- [WeWorm – First 0-Click Worm Spreading Through WeChat Calls ...](https://cybersecuritynews.com/weworm-first-0-click-worm/)
+- [WeChat Zero-Click Worm Took Over Accounts on iPhone and ...](https://thehackernews.com/2026/09/wechat-zero-click-worm-took-over.html)
+- [AI-Powered Exploit Generation: Speed, Scale &amp; Cyber Risk | Horizon3](https://horizon3.ai/intelligence/blogs/ai-exploit-speed-scale/)
+
+
+**标签**: `#ai-security-research`, `#zero-click`, `#worm`, `#WeChat`, `#exploit-development`
+
+---
+
+<a id="item-3"></a>
+## [OpenAI 推出 Agents API，支持托管的 LLM 交互](https://developers.openai.com/api/docs/guides/agents-api/overview) ⭐️ 9.0/10
+
+OpenAI 推出了 Agents API，开发者只需一次 API 调用，指定任务、模型、工具和环境即可创建生产就绪的智能体。该 API 包含托管的基础设施，具备自动上下文压缩、多智能体编排和程序化工具调用功能。 这使基于智能体的大语言模型交互走向商品化，推动行业向托管式智能体服务转变，模糊了原始 LLM 端点与完整智能体框架的界限。它能降低构建自定义框架的复杂性从而加速应用普及，但也可能带来供应商锁定风险。 API 支持自托管沙盒环境，便于在不同提供商之间迁移。其核心概念包括 Agent（代理）、Environment（可选的沙盒或计算机）、Session（会话）和 Events/Items（事件与条目），并支持 MCP 服务器。
+
+hackernews · aquir · 9月10日 19:43 · [社区讨论](https://news.ycombinator.com/item?id=49649213)
+
+**背景**: 智能体 AI（Agentic AI）指能自主追求目标、使用外部工具并执行多步骤任务的 AI 程序，通常由大语言模型驱动。过去，开发者需自行构建复杂的智能体框架或使用开源库，面临状态持久化和环境耦合等挑战。新的 Agents API 提供了托管式框架，将底层基础设施抽象化。
+
+
+**参考链接**:
+
+- [Agents API | OpenAI API](https://developers.openai.com/api/docs/guides/agents-api/overview)
+- [Introducing the Agents API | OpenAI](https://openai.com/index/introducing-the-agents-api/)
+
+
+**社区讨论**: 评论者指出 LLM 端点与智能体间的界限日益模糊，讨论智能体产品的合理抽象方式，并交流自托管替代方案。有人赞赏文档中隐藏的自托管沙盒选项，认为可避免被锁定；也有人强调托管服务在降低复杂性方面的价值。
+
+**标签**: `#openai`, `#agents`, `#api`, `#llm`, `#agentic-ai`
+
+---
+
+<a id="item-4"></a>
+## [Forgejo 16.0.3 及之前版本存在严重远程代码执行漏洞](https://codeberg.org/forgejo/forgejo/src/branch/forgejo/release-notes-published/16.0.4.md) ⭐️ 9.0/10
+
+Forgejo 16.0.3 及之前版本存在一个严重的远程代码执行漏洞，攻击者可在从模板初始化仓库时通过模板展开干扰 Git 操作触发该漏洞。该问题已在 16.0.4 版本中修复。 Forgejo 是一个广泛使用的自托管 Git 服务，这个严重 RCE 漏洞（评分 9.0/10）可能使攻击者完全控制托管仓库的服务器，危及源代码和敏感数据，因此立即升级至关重要。 漏洞成因是模板变量展开在 Git 仓库完全初始化之前进行，允许通过精心构造的模板文件注入并执行恶意命令。修复见 PR \#14301，发布说明因 Codeberg 速率限制暂时难以访问。
+
+hackernews · weierstass · 9月10日 15:57 · [社区讨论](https://news.ycombinator.com/item?id=49645907)
+
+**背景**: Forgejo 是一个自托管的 Git 服务，源自 Gitea，以轻量和易于维护为特点。它支持从模板仓库创建新仓库，模板文件中的占位符变量会被替换为实际值。这一模板展开功能与 Git 仓库初始化的结合导致了该漏洞。
+
+
+**参考链接**:
+
+- [Forgejo](https://en.wikipedia.org/wiki/Forgejo)
+- [Forgejo – Beyond coding. We forge .](https://forgejo.org/)
+
+
+**社区讨论**: 社区评论确认了漏洞严重性，Gitea 项目负责人表示 Gitea 不受影响。有用户担心拒绝 AI 贡献可能延缓漏洞发现，另一些用户则因 Codeberg 访问速度限制难以查看发布说明。普遍认为应立即修补。
+
+**标签**: `#security`, `#RCE`, `#Forgejo`, `#vulnerability`
+
+---
+
+<a id="item-5"></a>
+## [微软正式将 Rust 列为首要支持语言](https://rustfoundation.org/media/guest-post-rust-is-tier-1-language-at-microsoft/) ⭐️ 9.0/10
+
+微软已正式将 Rust 确立为公司内部的一级语言，这意味着 Rust 现在享有与 C++ 和 C\# 等成熟语言相同的安全审查、工具支持和内部推广水平，成为微软系统编程的正式首选语言之一。 这是一个强烈的信号，表明 Rust 是一门成熟且可用于生产的语言，并获得了全球最大软件公司之一的背书。这可能会加快 Rust 在行业内的采用，尤其是在安全关键的基础设施中，并鼓励更多组织投入 Rust 工具链和开发者生态。 虽然 Rust 已晋升为一级语言，但在现有代码库中 C++ 仍占主导地位；微软计划利用自动化代码转换工具将传统 C/C++ 代码迁移到 Rust，并设想到 2030 年转换十亿行代码。Rust 与 MSVC 和 Windows 的集成正在改进，而一流的 C++ 互操作性被视为下一个重大挑战。
+
+hackernews · mmastrac · 9月10日 13:39 · [社区讨论](https://news.ycombinator.com/item?id=49643546)
+
+**背景**: 在微软内部，一级语言意味着该语言在所有内部工具、安全审查和质量关卡中获得全面、高优先级的支持，地位与 C++、C\# 并列。Rust 是一种系统编程语言，能在不需要垃圾回收的情况下提供内存安全保证，非常适合防止缓冲区溢出等常见漏洞。微软和其他操作系统厂商正越来越多地投资 Rust，以减少与内存相关的安全漏洞——这类漏洞约占大型 C/C++ 代码库中严重漏洞的 70%。继谷歌、亚马逊等公司之后，这一举措标志着业界正向更安全的系统语言转变。
+
+
+**参考链接**:
+
+- [Guest Post: Rust Is Tier-1 Language at Microsoft](https://rustfoundation.org/media/guest-post-rust-is-tier-1-language-at-microsoft/)
+- [Rust Is Tier-1 Language at Microsoft | Lobsters](https://lobste.rs/s/eerwba/rust_is_tier_1_language_at_microsoft)
+
+
+**社区讨论**: 社区普遍认为这是对 Rust 成熟度和安全性优势的里程碑式认可。评论者强调微软计划到 2030 年自动转换数十亿行代码到 Rust 的雄心，一流的 C++ 互操作性的重要性，以及此举可能巩固 Rust 作为 &\#x27;更安全的 C++&\#x27; 的地位，领先于 Zig 等较新的替代语言。许多人乐观地认为，这将加速 Rust 在企业和操作系统开发中的采用。
+
+**标签**: `#rust`, `#microsoft`, `#systems-programming`, `#programming-languages`, `#industry-adoption`
+
+---
+
+<a id="item-6"></a>
+## [OpenAI 发布纳维-斯托克斯证明，含 Lean 4 形式化验证](https://www.johndcook.com/blog/2026/09/09/formal-method-revolution/) ⭐️ 9.0/10
+
+OpenAI 的内部 AI 系统为千禧年大奖难题之一的纳维-斯托克斯存在性与光滑性问题生成了解决方案，并同时发布了传统证明文稿和用 Lean 4 语言编写的可机器验证的形式化证明。 这表明人工智能不仅能解决深刻的数学难题，还能生成可形式化验证的证明，有望加速研究进程并提高证明的可靠性标准，标志着 AI 辅助的形式化数学正走向实用。 Lean 4 形式化允许独立机械验证，但此前像费马大定理这样的大型证明在 Lean 中需要 15 小时和 230GB 内存，引发了性能讨论。此外，数学家 Tristan Buckmaster 在 OpenAI 公告前 12 小时宣称在同一问题上取得进展，引发了优先级争议；AI 代理总成本估计为 4000 万美元，而等效人工成本约 1.32 亿美元。
+
+hackernews · ibobev · 9月10日 21:22 · [社区讨论](https://news.ycombinator.com/item?id=49650326)
+
+**背景**: 纳维-斯托克斯存在性与光滑性问题是七大千禧年大奖难题之一，询问描述流体运动的纳维-斯托克斯方程的解是否总是存在且保持光滑。Lean 4 是一个开源证明助手和函数式编程语言，可将数学证明编码为代码并由计算机机械验证，从而消除人工检查中的错误。
+
+
+**参考链接**:
+
+- [On the Navier–Stokes Millennium Prize Problem | OpenAI](https://openai.com/index/navier-stokes-solution/)
+- [Navier–Stokes priority controversy - Wikipedia](https://en.wikipedia.org/wiki/Navier%E2%80%93Stokes_priority_controversy)
+- [Lean (proof assistant)](https://en.wikipedia.org/wiki/Lean_%28proof_assistant%29)
+
+
+**社区讨论**: 评论者既感到振奋又保持务实，着重讨论了 Lean 的性能瓶颈（如大证明验证缓慢）、成本节约（4000 万美元对比 1.32 亿美元），并期待更直接或归纳式的证明。部分人对成本和工作量的可比性提出疑问，还有一些人担忧可能出现超出人类验证能力的证明。
+
+**标签**: `#formal-verification`, `#lean4`, `#openai`, `#automated-reasoning`, `#navier-stokes`
+
+---
+
+<a id="item-7"></a>
+## [Shopify 放弃 React Native，回归 Swift 与 Kotlin 原生开发](https://shopify.engineering/back-to-native) ⭐️ 8.0/10
+
+Shopify 宣布将其移动应用从 React Native 迁移回原生开发，iOS 采用 Swift，Android 采用 Kotlin，并借助大型语言模型（LLM）辅助代码迁移，以降低转型工作量。 一家大型科技公司此举可能标志着对跨平台框架的背离，因为 LLM 辅助的迁移让原生开发的成本效益更高，挑战了长期以来共享代码库对效率至关重要的假设。 此次迁移使用 Codex 等 LLM 及 Maestro 等测试工具，从 React Native 代码库快速生成原生代码，大部分屏幕在一夜间完成移植，细节打磨则花费数天。Shopify 因 LLM 改变了成本假设，重新评估了 2020 年的决策。
+
+hackernews · fnthawar2 · 9月10日 14:09 · [社区讨论](https://news.ycombinator.com/item?id=49643982)
+
+**背景**: React Native 是一个跨平台框架，允许用 JavaScript 同时为 iOS 和 Android 编写应用，以平台间代码共享而流行。Shopify 于 2020 年采用它以加速开发。原生应用（iOS 用 Swift，Android 用 Kotlin）通常能提供更好的性能和平台专属优化。如今，像 GitHub Copilot 这样的 LLM 能自动将现有代码翻译为原生语言，大幅减少此类迁移所需的人工工作。
+
+
+**参考链接**:
+
+- [Experimenting LLM - assisted software migrations : a Java Spring case...](https://www.linkedin.com/pulse/experimenting-llm-assisted-software-migrations-java-spring-case-fdose)
+- [Ideas for LLM -driven code migration | by Monojit Choudhury | Medium](https://medium.com/@monojitchoudhury/ideas-for-llm-driven-code-migration-0455faa7a070)
+
+
+**社区讨论**: 社区普遍认可这一决策，许多工程师分享了利用 LLM 一夜完成迁移的成功经验。也有人提醒 LLM 的作用可能被夸大，因为大部分工作在 LLM 成熟前已完成。主流观点认为，LLM 削弱了 React Native 的吸引力——如果代码生成变得简单，直接原生开发更具优势，从而挑战了管理层推动共享代码库的做法。
+
+**标签**: `#React Native`, `#Swift`, `#Kotlin`, `#Mobile Development`, `#Cross-platform`
+
+---
+
+<a id="item-8"></a>
+## [研究者能否信任 OpenAI 不擅用未发表数学成果？](https://mathstodon.xyz/@andreasthom/117240535270608201) ⭐️ 8.0/10
+
+研究者间日益激烈的讨论质疑，OpenAI 是否滥用了合作过程中分享的未发表数学创意，并可能未给予合理署名。 这一争议动摇了人们对 AI 研究合作的信任，因为它引发了关于知识产权和科学协作诚信的伦理担忧。如果研究者感到自己的创意可能被占用，他们可能会对使用先进 AI 工具产生犹豫，从而减缓共同进步。 具体案例包括 Buckmaster 博士的 Codex 提示可能泄露到模型输出中，以及 OpenAI 在得知训练数据中可能包含一个重要证明后，可疑地生成了 3000 亿个 token。
+
+hackernews · pred\_ · 9月10日 06:49 · [社区讨论](https://news.ycombinator.com/item?id=49639408)
+
+**背景**: 像 OpenAI 那样的大语言模型经常被数学家用来测试开放问题，双方交流想法。这种互动可能在无意中将新鲜、未发表的研究成果送入模型的训练管道。这些模型已知会记忆训练数据，如果用户提供的提示被用于后续训练，就可能包含在内。由于 AI 合作中缺乏明确的数据使用和署名规范，局面变得更加严峻。
+
+**社区讨论**: 评论意见分歧：一些人把 OpenAI 比作不道德的人类合作者窃取荣誉，另一些人则认为模型可能独立重新发现了技术。对 OpenAI 大规模输出时机的怀疑普遍存在，同时要求更高透明度的呼声也很高。
+
+**标签**: `#AI ethics`, `#OpenAI`, `#research integrity`, `#machine learning`, `#data privacy`
+
+---
+
+<a id="item-9"></a>
+## [果蝇连接组玩《乓》实验失败，暴露出 neuPrint 漏洞和缺失神经通路](https://www.reddit.com/r/MachineLearning/comments/1wc67ci/i_tried_to_make_a_real_fly_connectome_learn_to/) ⭐️ 8.0/10
+
+一名研究者尝试用果蝇连接组 MaleCNS v1.0 的一部分，通过多巴胺样可塑性学习玩《乓》，但未能成功；审计发现 neuPrint 正则漏洞导致两类神经元被错误清零，且缺失的中间层导致光感受器到运动神经元的信号无法传递。 该案例表明，严谨审计下的失败结果极具科学价值，它揭示了连接组模拟中的常见陷阱，同时批评了多个热门项目缺乏严格验证，凸显了计算神经科学对科学严谨性的迫切需求。 审计发现 neuPrint 查询的正则表达式错误，导致两类神经元被清零；模型中缺失光感受器到运动检测器的中间层，且一半的运动神经元与感官通路无任何连接；重建求偶追踪通路后，学习态出现差异，但仅表现为惩罚导致的全局输出抑制，而非技能提升。
+
+reddit · r/MachineLearning · /u/oPeraza2007 · 9月10日 02:28
+
+**背景**: 连接组是通过电子显微镜（EM）重建脑组织得到的完整神经连接图谱。MaleCNS v1.0 是新发布的雄性果蝇中枢神经系统 EM 重建数据集，包含约 16.6 万个神经元。neuPrint 是一个公开的连接组查询与分析平台。研究者常用多巴胺样可塑性规则（即根据奖励或惩罚信号调整突触强度）来模拟连接组的学习能力。
+
+
+**参考链接**:
+
+- [neuPrintExplorer - Janelia Research Campus](https://neuprint.janelia.org/help/api)
+- [Connectome - Wikipedia](https://en.wikipedia.org/wiki/Connectome)
+
+
+**标签**: `#computational neuroscience`, `#connectomics`, `#reinforcement learning`, `#scientific rigor`, `#biomimetic AI`
+
+---
+
+<a id="item-10"></a>
+## [uv 0.12.12 为 macOS 和 Windows 可执行文件引入代码签名](https://github.com/astral-sh/uv/releases/tag/0.12.12) ⭐️ 7.0/10
+
+2026 年 9 月 9 日发布的 uv 0.12.12 开始为 macOS 和 Windows 平台提供代码签名的可执行文件。macOS 版本使用 Apple Developer ID 证书签名并通过苹果公证，Windows 版本则通过 Azure Artifact Signing 添加了带时间戳的 Authenticode 签名。 代码签名使用户能够验证 uv 的发布者和完整性，减少安全警告和杀毒软件误报，并支持企业基于已验证的发布者设置白名单，从而提升对这一热门 Python 打包工具的信任和采用率。 签名覆盖了 macOS 和 Windows 发布归档中的可执行文件，以及 \`uv\` 和 \`uv\_build\` 的 wheel 文件。此版本还修复了一个错误：之前在生成锁定文件和要求哈希时，会错误地包含在 \`exclude-newer\` 截止时间之后上传的分发包。
+
+github · astral-automations-bot\[bot\] · 9月9日 16:45
+
+**背景**: uv 是一个用 Rust 编写的快速 Python 包和项目管理器。代码签名利用数字证书以加密方式验证软件的发布者和完整性。苹果的公证流程要求软件在签名前提交自动化安全扫描；微软的 Authenticode 是 Windows 可执行文件签名的标准，Azure Artifact Signing 则通过带时间戳的签名自动完成这一过程。
+
+
+**参考链接**:
+
+- [Notarization | Apple Developer Forums](https://developer.apple.com/forums/tags/notarization)
+- [Authenticode Digital Signatures - Windows drivers | Microsoft ...](https://learn.microsoft.com/en-us/windows-hardware/drivers/install/authenticode)
+- [Code signing options for Windows app developers - Windows ...](https://learn.microsoft.com/en-us/windows/apps/package-and-deploy/code-signing-options)
+
+
+**标签**: `#uv`, `#Python`, `#packaging`, `#security`, `#release`
+
+---
+
+<a id="item-11"></a>
+## [PlanetScale 推出分片式 Postgres 方案 Neki 引发争议](https://planetscale.com/blog/introducing-neki) ⭐️ 7.0/10
+
+PlanetScale 发布了分片式 Postgres 数据库解决方案 Neki，但其发布博文对产品的描述含糊不清，引发了社区的困惑。 分片式 Postgres 对扩展现代应用至关重要，PlanetScale 凭借 Vitess 的实践经验可能填补重要空白，但含混的宣传和 CEO 的态度可能损害社区信任。 Neki 目前为闭源，承诺在生产环境测试完成后开源；它声称优于开源替代方案 multigres，但有关其一致性处理和 CAP 定理取舍的技术细节尚不明确。
+
+hackernews · simon\_weber · 9月10日 15:43 · [社区讨论](https://news.ycombinator.com/item?id=49645686)
+
+**背景**: 数据库分片通过在多台服务器上分布数据来实现水平扩展。PlanetScale 曾创建了开源的 MySQL 分片中间件 Vitess，被 Google 等广泛使用。PostgreSQL 缺乏原生的内置分片功能，催生了多种分支方案。CAP 定理指出，分布式数据库无法同时保证一致性、可用性和分区容错性。
+
+
+**参考链接**:
+
+- [Neki — PlanetScale | Sharded Postgres by the Team Behind Vitess.](https://planetscale.com/neki)
+- [Sharded Postgres by PlanetScale | Neki](https://neki.dev/)
+
+
+**社区讨论**: 社区批评发布博文未能解释 Neki 到底是什么及其用途。用户对 CEO 的攻击性语气表示反感，并指出 PlanetScale 凭借开源 Vitess 起家却推出闭源对标的讽刺意味。技术讨论集中在 Neki 能否在不牺牲可用性的情况下提供强一致性。
+
+**标签**: `#database`, `#postgres`, `#sharding`, `#planetscale`, `#launch`
+
+---
+
+<a id="item-12"></a>
+## [日立推出具备太阳能友好电价控制的二氧化碳热泵热水器](https://www.pv-magazine.com/2026/09/07/hitachi-launches-co2-heat-pump-water-heaters-with-solar-friendly-tariff-controls/) ⭐️ 7.0/10
+
+日立新款二氧化碳热泵热水器通过电价感知控制利用白天太阳能盈余，在 Hacker News 上引发了关于实际使用与术语的热烈讨论。
+
+hackernews · thelastgallon · 9月9日 14:54 · [社区讨论](https://news.ycombinator.com/item?id=49627634)
+
+**标签**: `#heat-pump`, `#solar-energy`, `#energy-efficiency`, `#smart-grid`, `#japan`
+
+---
+
+<a id="item-13"></a>
+## [348M 小模型通过列式演算超越 GPT-3 175B 的算术能力](https://www.reddit.com/r/MachineLearning/comments/1wc7hmu/i_trained_a_348m_model_trained_from_scratch_on/) ⭐️ 7.0/10
+
+一个从零开始训练、拥有 3.48 亿参数的模型，在 227 亿 token 数据上学习，通过显式生成列式加法、进位和借位步骤完成多位数加减乘运算，在 GPT-3 算术子任务上平均准确率达 99.4%，远超 GPT-3 175B 的直接输出表现。 这表明小模型可以通过学习程序性推理掌握算术，挑战了必须依靠庞大模型规模才能实现的观念，并为构建更高效、可解释的推理系统提供了方向。 模型推理步骤是准确性的关键：95.3%的正确回答伴随有效演算过程。当数位名称不足时，模型会跳列；将位名从 6 个扩展到 19 个后，14 位加法准确率达 90%。但应用题（GSM8K 4%）和除法完全无法处理，且必须使用贪婪解码。
+
+reddit · r/MachineLearning · /u/nkthebass · 9月10日 03:28
+
+**背景**: 思维链提示通过引导中间步骤增强推理，但本模型通过微调内化了列式算术的完整流程。部分积乘法是其计算多位数乘法的核心方法，将数字拆分后分步相乘。这与大型语言模型通常依赖模式识别而非逐步计算来回答算术问题的方式形成对比。
+
+
+**参考链接**:
+
+- [Chain-of-thought prompting](https://en.wikipedia.org/wiki/Chain-of-thought_prompting)
+- [What Is a Partial Product? Definition, Methods ... - SplashLearn](https://www.splashlearn.com/math-vocabulary/multiplication/partial-product)
+
+
+**标签**: `#small language models`, `#arithmetic reasoning`, `#model efficiency`, `#benchmarking`, `#natural language processing`
+
+---
+
+<a id="item-14"></a>
+## [Sante 高分仅反映多选题作答，非开放诊断推理](https://www.reddit.com/r/MachineLearning/comments/1wbkxsa/what_santes_8383_on_diagnosisarenamcq_actually/) ⭐️ 7.0/10
+
+Sante（Ling-3.0-flash-Sante）在 DiagnosisArena-MCQ 上取得了 83.83 分，该多选题变体要求模型从四个给定选项中选择诊断，而非进行开放式推理。该模型还在 MedXpertQA-Text 上获 53.88 分，在 HealthBench Professional 上获 45.73 分。 这一澄清至关重要，因为多选题成绩可能被误认为等同于开放式临床推理能力，从而导致高估模型在真实世界中的诊断水平。它突显了医学 AI 领域需要更细致的基准测试评估方式。 DiagnosisArena-MCQ 提供病例信息和检查结果，要求从四个诊断选项中选择。HealthBench Professional 的评分基于医生编写的评估表，并非百分数准确率，且发布未说明该分值是经过长度调整还是未经调整，因此与其他已发布结果的直接比较需要核实。
+
+reddit · r/MachineLearning · /u/Expert\_Coffee\_203 · 9月9日 13:01
+
+**背景**: DiagnosisArena 是用于评估大语言模型诊断推理能力的基准，其多选题变体 DiagnosisArena-MCQ 要求模型从四个诊断中进行选择。MedXpertQA-Text 包含 2,450 道专家组卷水平的纯文本多选题，每题设有十个选项。HealthBench Professional 则基于医生评分标准，评估大语言模型在护理咨询、文书撰写和医学研究等真实临床任务上的表现。
+
+
+**参考链接**:
+
+- [DiagnosisArena : Benchmarking Diagnostic Reasoning for Large...](https://arxiv.org/pdf/2505.14107)
+- [MedXpertQA](https://medxpertqa.github.io/)
+- [[2604.27470] HealthBench Professional: Evaluating Large ...](https://arxiv.org/abs/2604.27470)
+
+
+**标签**: `#medical AI`, `#benchmarks`, `#model evaluation`, `#clinical reasoning`, `#large language models`
+
+---
+
+<a id="item-15"></a>
+## [uv 0.12.13 发布：支持 GraalPy 3.13.0、加速依赖解析并修复 Windows 问题](https://github.com/astral-sh/uv/releases/tag/0.12.13) ⭐️ 6.0/10
+
+uv 0.12.13 于 2026-09-10 发布，新增对 GraalPy 3.13.0 的支持，通过复用直接 URL 片段中的哈希加快依赖解析速度，验证 PEP 658 元数据侧文件的哈希，并修复了 Windows 入口点启动器问题以兼容 Nano Server。 对 GraalPy 的支持将 uv 扩展到基于 GraalVM 的高性能 Python 3.13 运行时，有助于 Java 嵌入和原生镜像；解析性能的提升可减少 CI/CD 管道耗时和带宽占用，而 Windows 修复则确保在轻量级 Nano Server 容器上稳定运行。 在依赖解析时，如果通过直接 URL 片段另行提供了元数据，解析器会复用支持的哈希而避免下载完整的 wheel 文件；Windows 启动器现改为在内存中编辑资源，以适应 Nano Server 文件系统修改受限的环境。此外，uv 现在优先使用 JSON 索引响应中的 &\#x27;core-metadata&\#x27; 键而非旧版别名。
+
+github · astral-automations-bot\[bot\] · 9月10日 19:27
+
+**背景**: GraalPy 是 Oracle 开发的一种符合 Python 3.13 规范的运行时，基于 GraalVM 生态，具备高性能，并原生支持将 Python 嵌入 Java 应用及编译为原生二进制文件。PEP 658 是一项 Python 增强提案，允许包索引（如 PyPI）单独提供分发包的元数据文件，从而无需下载完整包即可加快依赖解析。Windows Nano Server 是 Windows Server 的一种最小化无头安装选项，专为容器和云环境设计，某些 API 和文件系统操作受到限制。
+
+
+**参考链接**:
+
+- [GitHub - oracle/graalpython: GraalPy – A high-performance...](https://github.com/oracle/graalpython)
+- [PEP 658 – Serve Distribution Metadata in the Simple ...](https://peps.python.org/pep-0658/)
+- [Windows Nano Server](https://en.wikipedia.org/wiki/Windows_Nano_Server)
+
+
+**标签**: `#python`, `#package-manager`, `#uv`, `#release-notes`, `#performance`
+
+---
+
+<a id="item-16"></a>
+## [Cognition 发布 SWE-2 编码模型，声称媲美 Fable 5.1 与 GPT-Astra](https://cognition.com/blog/swe-2) ⭐️ 6.0/10
+
+Cognition 发布了 SWE‑2，这是一款基于 2.8 万亿参数 Kimi K33 进行后训练的私有编码模型，声称在智能编码基准测试中可与 Anthropic 的 Claude Fable 5.1 和 OpenAI 的 GPT‑Astra 匹敌。 此次发布加剧了 AI 编码领域的竞争，但社区对其基准测试过度拟合和闭源性质的质疑，可能限制其采用，尤其是当 DeepSeek Flash 4.1 等开源替代品日益流行时。 SWE‑2 拥有 100 万 token 上下文窗口和显式推理模式，但其在 Terminal Bench 2.1 上 92.8% 的成绩在较新的 Terminal Bench 4 上骤降至 27.3%，表明对未见过任务的泛化能力较弱。
+
+hackernews · seelos · 9月10日 15:29 · [社区讨论](https://news.ycombinator.com/item?id=49645443)
+
+**背景**: SWE‑2 基于月之暗面（Moonshot AI）的 Kimi K33 模型，该模型此前已通过强化学习为智能编码进行了大量优化。Claude Fable 5.1 和 GPT‑Astra（即 GPT‑6 Astra）分别是 Anthropic 和 OpenAI 的顶级闭源模型，在编码任务上得分很高。Terminal Bench 2.1 和 4 是一组成对的基准测试，其中较新版本包含训练时未见过的问题；成绩大幅下滑通常暗示模型存在“benchmaxxing”，而非真正的编码能力。
+
+
+**参考链接**:
+
+- [Introducing SWE - 2 : Pushing the Pareto Frontier | Cognition](https://cognition.com/blog/swe-2)
+- [SWE - 2 Benchmarks &amp; Context (September 2026) | BenchLM.ai](https://benchlm.ai/models/swe-2)
+- [GPT -6 Astra - Wikipedia](https://en.wikipedia.org/wiki/GPT-6_Astra)
+
+
+**社区讨论**: 评论者普遍质疑 SWE‑2 的泛化能力，指出 Terminal Bench 2.1 和 4 之间的巨大分差就是过度拟合的证据。不少人强调该模型并非开源权重，吸引力不如 DeepSeek Flash 4.1，并回想起了 Cognition 此前 Devin 演示在仔细审视下暴露的问题。一些人认为通过强化学习在 Kimi K3 上达到 Fable 5.1 级别的结果本身很有意思，但整体情绪对又一个闭源模型表示怀疑。
+
+**标签**: `#AI`, `#coding models`, `#benchmarking`, `#LLMs`, `#skepticism`
+
+---
+
+<a id="item-17"></a>
+## [NASA 去相关拉伸揭示古代岩画](https://spinoff.nasa.gov/Manipulating_Satellite_Photos_Now_Reveals_Ancient_Images) ⭐️ 6.0/10
+
+NASA 技术转移衍生项目重点介绍了去相关拉伸技术，该技术原用于卫星图像增强，数十年来已被考古学家用于显现褪色岩画，尤其是通过 Dstretch 插件。 这种从太空探索到文化遗产保护的跨学科技术转移，使肉眼不可见的古代艺术得以记录，有望普及文物研究并激励更多跨领域应用。 去相关拉伸通过降低通道间相关性来放大细微颜色差异。ImageJ 的 Dstretch 插件可自动实现这一效果用于岩画，且通过 GIMP 的 LAB 颜色分解和对比度调整也可手动获得类似结果。
+
+hackernews · gumby · 9月10日 15:29 · [社区讨论](https://news.ycombinator.com/item?id=49645437)
+
+**背景**: 去相关拉伸是一种减少颜色通道间相关性的图像增强方法，可让细微颜色差异变得可见。它最初为卫星和航空遥感开发，用于区分植被、矿物及土地利用，对岩画而言能显现数百年褪色的颜料，实质恢复丢失的图像。基于此原理的开源 Dstretch 插件自 2005 年以来一直被考古学家使用。
+
+
+**参考链接**:
+
+- [Decorrelation - Wikipedia](https://en.wikipedia.org/wiki/Decorrelation)
+- [DStretch.com home page](https://dstretch.com/)
+
+
+**社区讨论**: 社区成员指出该技术并不新鲜，Dstretch 插件自 2005 年就已存在，且类似的增强方法更早。他们分享了遥感中假彩色合成的个人经历、GIMP 手动实现及野外尝试的经历，认为该报道是对长期存在的工具有趣但迟来的认可。
+
+**标签**: `#image-processing`, `#remote-sensing`, `#archaeology`, `#nasa-spinoff`, `#computer-vision`
+
+---
+
+<a id="item-18"></a>
+## [斯坦福推出免费 AI 概率课，逾千志愿者申请任教](https://www.reddit.com/r/MachineLearning/comments/1wbf3ox/teach_ml_community_service_project_from_stanford_n/) ⭐️ 6.0/10
+
+斯坦福大学教授 Chris Piech 宣布推出免费的在线课程“Probability for AI”，将于 10 月 9 日开课，采用每 10 名学生配一名志愿教师的小班模式。已有超过 1000 人申请任教，课程包含动手项目，如结合编码代理构建 AI 文本检测应用。 这种由社区驱动的模式极大地拓展了高质量 AI 教育的覆盖面，降低了经济与地理门槛。通过将严谨的概率论基础与个性化指导相结合，有助于缩小全球机器学习人才缺口。 课程采用“可教学代理”进行教师培训，志愿教师可在带领学生小组之前先练习教授 AI 代理。申请截止于 9 月底，所有费用由一位校友捐赠资助。
+
+reddit · r/MachineLearning · /u/chrispiech · 9月9日 07:54
+
+**背景**: “可教学代理”是一种基于教学相长理念的 AI 系统，学习者通过教授代理来加深自身理解。最著名的例子是 Betty’s Brain，一个用于科学教育的定性推理工具。斯坦福的课程借鉴了这一概念，可能利用 AI 代理模拟学生互动，帮助志愿教师打磨教学技巧，这种方法被证明能促进元认知和自主学习。
+
+
+**参考链接**:
+
+- [Teachable agent](https://en.wikipedia.org/wiki/Teachable_agent)
+- [AutoGen&#x27;s Teachable Agents | AutoGen 0.2 - GitHub Pages](https://microsoft.github.io/autogen/0.2/blog/2023/10/26/TeachableAgent/)
+
+
+**标签**: `#education`, `#machine learning`, `#probability`, `#community service`, `#Stanford`
+
+---
+
